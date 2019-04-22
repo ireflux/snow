@@ -6,6 +6,7 @@
     <description>Recent content on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml" />
     
@@ -36,22 +37,20 @@
     </item>
     
     <item>
-      <title>2018，告别青春期</title>
-      <link>https://ireflux.github.io/snow/post/2018-farewell-to-adolescence/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>杂谈</title>
+      <link>https://ireflux.github.io/snow/post/casual-talk/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/2018-farewell-to-adolescence/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文是和菜头先生于2018年12月28日发表在微信公众号「槽边往事」上的一篇文章。每次和菜头写这类题型，或者悼文之类，总能写的很好。&lt;/p&gt;
-&lt;/blockquote&gt;
+      <guid>https://ireflux.github.io/snow/post/casual-talk/</guid>
+      <description>&lt;p&gt;近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code&gt;sslocal -c /path/filename.config&lt;/code&gt; 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p&gt;
 
-&lt;p&gt;岁末的时候，苍井空发文感谢粉丝，宣布她怀孕的消息。我看完内心波澜不兴，当她宣布隐退的那一刻起，结婚、生子这样的事情就注定会发生。当她还在面对镜头拍摄，当网友还有大把时间面对屏幕的时候，大家都处在各自的青春期。人生尚未定型，一切皆有可能，大家就像是在一片旷野之中疯玩疯闹，一直跑到筋疲力竭。但总有那么一刻，即便是在极速奔跑中的人们内心里也非常清楚，总有那么一刻大家会挥手作别，消失在不同的小径。那些小径一旦踏足其上，大家彼此的过程和终点其实都相差不大。只不过人们再也不会有机会回到那片旷野，可以再次没心没肺地疯跑。&lt;/p&gt;</description>
+&lt;p&gt;v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code&gt;inbounds&lt;/code&gt; 和 &lt;code&gt;outbounds&lt;/code&gt; 的配置，一般来说v2ray官网的 &lt;code&gt;新手上路&lt;/code&gt; 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>AVL tree 学习笔记</title>
       <link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
@@ -74,37 +73,221 @@
     </item>
     
     <item>
-      <title>ArchLinux安装教程</title>
-      <link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>微信随想——写在张小龙4小时公开演讲之后</title>
+      <link>https://ireflux.github.io/snow/post/think-of-wechat/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid>
-      <description>&lt;p&gt;体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p&gt;
+      <guid>https://ireflux.github.io/snow/post/think-of-wechat/</guid>
+      <description>&lt;p&gt;我并没有去看这一场4小时的演讲，也并不感兴趣。&lt;/p&gt;
 
-&lt;p&gt;心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p&gt;
-
-&lt;p&gt;入了Arch神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方Wiki，因为中途需要点各种链接跳来跳去，刚装Arch的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装Arch时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位dalao的基于官方Wiki的中文教程，遂引用如下：&lt;/p&gt;</description>
+&lt;p&gt;几年前在我第一次试用微信的时候，就觉得它写的介绍很&amp;rdquo;有趣&amp;rdquo;。它声称&lt;code&gt;30MB&lt;/code&gt;可发几千条语音信息。而且还煞有介事的说它的短信和通话是完全免费的，只需要消耗一些数据流量。描述中的语音电话和短信息也有混淆视听的嫌疑，让人以为能够达到电话和短信的程度，随时能联系到别人一样。就我个人而言，对微信这个产品并没有好感，对张小龙也只是一些简单的了解。总之整体给人的感觉就像是普通大学生的毕设，明明没有多少东西，却强行要编出一套说辞，把简陋的功能用语言润色一番，却有些粉饰太过的感觉，看起来很是滑稽。当然强调免费也有可能是存在一些历史原因，在功能机时代，玩个游戏都有可能莫名其妙被扣话费。在功能机向智能机过渡的阶段打出这样的旗号没毛病，但几年后体积是同类软件的几倍，功能上却远远不及，仍然是个很简陋的软件，还拿这个作为卖点，就感觉很好笑。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Coding动态Pages初体验</title>
-      <link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>2018，告别青春期</title>
+      <link>https://ireflux.github.io/snow/post/2018-farewell-to-adolescence/</link>
+      <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid>
+      <guid>https://ireflux.github.io/snow/post/2018-farewell-to-adolescence/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文是和菜头先生于2018年12月28日发表在微信公众号「槽边往事」上的一篇文章。每次和菜头写这类题型，或者悼文之类，总能写的很好。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;岁末的时候，苍井空发文感谢粉丝，宣布她怀孕的消息。我看完内心波澜不兴，当她宣布隐退的那一刻起，结婚、生子这样的事情就注定会发生。当她还在面对镜头拍摄，当网友还有大把时间面对屏幕的时候，大家都处在各自的青春期。人生尚未定型，一切皆有可能，大家就像是在一片旷野之中疯玩疯闹，一直跑到筋疲力竭。但总有那么一刻，即便是在极速奔跑中的人们内心里也非常清楚，总有那么一刻大家会挥手作别，消失在不同的小径。那些小径一旦踏足其上，大家彼此的过程和终点其实都相差不大。只不过人们再也不会有机会回到那片旷野，可以再次没心没肺地疯跑。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>拍飞奇遇记</title>
+      <link>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</link>
+      <pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文为余晟于2018年10月28日发表在微的信公众号「余晟以为」的一篇文章。作者叙事的风格就像以前的文章一样，又让我想到了小时候。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;去年底一个偶然的机会，我开车去浦东机场，发现起飞的飞机特别近，在高架上看得非常真切。于是我想，应该有个什么地方可以近距离拍到正在起降的飞机。&lt;/p&gt;
+
+&lt;p&gt;在很长的时间里，这都只是一个念头而没有付诸行动。我只是在网上搜了搜相关的资料，才知道这种活动叫“拍飞”，专门拍飞机的摄友自称“飞友”，而且列出了几个在浦东机场“拍飞”的好地点。到了10月1日，天气难得的好，又难得有空，我终于可以去尝试“拍飞”了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>致遥远的过去</title>
+      <link>https://ireflux.github.io/snow/post/to-the-distant-past/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;最是人间留不住，朱颜辞镜花辞树&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我依然记得她的模样。我还依稀记得，小时候去她家里，她都笑容满面的模样，有时侯她看着我们玩，有时问我一些家里的、生活上的琐事。&lt;/p&gt;
+
+&lt;p&gt;长大一些后，我更想待在家里玩电脑，不再像小时候天天跑别人家里，找别人出去玩。虽然次数开始变得很少，但每次去她家，她都会很热情的拿过来一些东西让我们吃，她每次见到我们都会笑，笑容显得很和煦。离开的时候，都会叫我们以后有空了就来玩。那时候的她看起来依然很健朗。&lt;/p&gt;
+
+&lt;p&gt;直到现在我依然觉得难以相信，只能不得不感叹有时候人的命运真的很难预料。但这却又让我想起另一件事情。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>不再年轻</title>
+      <link>https://ireflux.github.io/snow/post/no-longer-young/</link>
+      <pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/no-longer-young/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;大三时当我忽然发觉我都已经21岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经20多了啊，他感叹道。&lt;/p&gt;
+
+&lt;p&gt;对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p&gt;
+
+&lt;p&gt;我一直认为22岁就像是个分水岭，22岁就已经变老了，从数值上来说，21毕竟还紧挨着20，虽然年龄看起来大，但感觉上还是年轻的。一旦到了22，就已经呈现出渐渐远离的姿态，马不停蹄地奔向下一个点，就像宇宙加速膨胀，月球加速远离地球一样。&lt;/p&gt;
+
+&lt;p&gt;时间似乎也在以加速度前进。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>漫谈中国的饮酒文化</title>
+      <link>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</guid>
+      <description>&lt;p&gt;中国社会有个很神奇的现象，每逢聚会或商业应酬必定要喝酒，小到还在上学的初中生，大至几十岁的大龄人员，几乎很难看到在同一桌相互认识的同龄人想喝酒的人喝酒，想喝饮料/果汁的人喝饮料/果汁的和谐景象。总有人觉得别人喝酒，自己不和人家一块喝好像不尊重别人。这一点就很奇怪，这难道不是看个人意愿？为什么“酒”这个东西在中国被赋予了如此厚重的意义？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>子元素margin-top影响父元素问题</title>
+      <link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid>
+      <description>&lt;p&gt;今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p&gt;
+
+&lt;p&gt;我的HTML嵌套关系如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;site-head&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;blog-logo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;logo&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>腾讯做不出好产品</title>
+      <link>https://ireflux.github.io/snow/post/tencent-do-not-have-good-product/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/tencent-do-not-have-good-product/</guid>
+      <description>&lt;p&gt;最近一篇《腾讯没有梦想》的文章刷遍网络，网上四处流传了老马对此进行回应的截图。&lt;/p&gt;
+
+&lt;p&gt;截图中的老马回复中提到：
+&amp;gt; “从写第一行代码开始，我的理想都是如何做出最好的产品，而不是赚多少钱，这点我相信公司很多同事都是这样想的。”&lt;/p&gt;
+
+&lt;p&gt;虽然事后进行了辟谣，老马根本没对此文进行任何回应。不过对于国内媒体来讲，反复是正常操作，操控事件来吸引眼球的手段也见怪不怪了。今天要说的是，老马当真不知道自己及自己的团队做的产品有多烂吗？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一道笔试题</title>
+      <link>https://ireflux.github.io/snow/post/an-interview-question/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 
-&lt;p&gt;前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p&gt;
+&lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;体验&#34;&gt;体验&lt;/h2&gt;
+&lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>四十不惑</title>
+      <link>https://ireflux.github.io/snow/post/forty-years-old/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/forty-years-old/</guid>
+      <description>&lt;p&gt;When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&amp;rsquo;t know how to do is right.&lt;/p&gt;
 
-&lt;p&gt;于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p&gt;</description>
+&lt;p&gt;When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数据结构知识点总结</title>
+      <link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
+      <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
+
+&lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;树(Tree)&lt;/strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的&lt;strong&gt;子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为&lt;strong&gt;节点的度(Degree)&lt;/strong&gt;。
+度为0的节点称为&lt;strong&gt;叶子节点(Leaf)&lt;/strong&gt;或&lt;strong&gt;终端节点&lt;/strong&gt;。不为0的称为&lt;strong&gt;非终端节点&lt;/strong&gt;或&lt;strong&gt;分支节点&lt;/strong&gt;。节点的子树的根称为该节点的&lt;strong&gt;孩子(Child)&lt;/strong&gt;，相应的，该节点称为孩子的&lt;strong&gt;双亲(Parent)&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learn Spring Framework</title>
+      <link>https://ireflux.github.io/snow/post/learn-spring-framework/</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;
+
+&lt;p&gt;At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p&gt;
+
+&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recommend two websites</title>
+      <link>https://ireflux.github.io/snow/post/recommend-two-sites/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid>
+      <description>&lt;h1 id=&#34;i-remember-http-i-remember-fr-en&#34;&gt;&lt;a href=&#34;http://i-remember.fr/en&#34;&gt;I remember&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p&gt;
+
+&lt;p&gt;初次进入I remember时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p&gt;
+
+&lt;p&gt;鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>追逐快乐</title>
+      <link>https://ireflux.github.io/snow/post/chasing-happiness/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/chasing-happiness/</guid>
+      <description>&lt;p&gt;不知道你是否注意到这样一种情况：&lt;/p&gt;
+
+&lt;p&gt;那些容易快乐的人，常常都被冠以这样的评价：热爱生活！&lt;/p&gt;
+
+&lt;p&gt;可他妈的什么叫热爱生活？积极？坦然？开放？热忱？都对又都不对！&lt;/p&gt;
+
+&lt;p&gt;罗曼罗兰也说：生活中只有一种英雄主义，那就是在认清生活真相之后依然热爱生活。可是这也没说太清楚。&lt;/p&gt;
+
+&lt;p&gt;当我读到《孟子·离娄下》这一句的时候，突然发现这才是一切的答案：“大人者，不失其赤子之心者也。”&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Git常用命令</title>
       <link>https://ireflux.github.io/snow/post/git-common-commands/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/git-common-commands/</guid>
       <description>&lt;h1 id=&#34;相关名词&#34;&gt;相关名词&lt;/h1&gt;
@@ -148,24 +331,81 @@ git clone [url]&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     </item>
     
     <item>
-      <title>Learn Spring Framework</title>
-      <link>https://ireflux.github.io/snow/post/learn-spring-framework/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>寂静之城 (The Silence City)</title>
+      <link>https://ireflux.github.io/snow/post/the-silence-city/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid>
+      <guid>https://ireflux.github.io/snow/post/the-silence-city/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;马伯庸《寂静之城》未删节版本全文&lt;br /&gt;
+发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And in the naked light I saw ten thousand people, maybe more.&lt;br /&gt;
+People talking without speaking, people hearing without listening.&lt;br /&gt;
+People writing songs that voices never shared, no one dared disturb the sound of silence.&lt;/p&gt;
+
+&lt;p&gt;—— The sound of silence&lt;/p&gt;
+
+&lt;p&gt;美利坚合众国，2015 年，纽约。&lt;/p&gt;
+
+&lt;p&gt;当电话响起来的时候，阿瓦登正趴在电脑前面睡觉。电话铃声十分急促，尖锐，每一次振动都让他的耳膜难受好久。他揉了揉干涩的眼睛，十分不情愿地爬起来，觉得脑子沉滞无比。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Coding动态Pages初体验</title>
+      <link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link>
+      <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 
-&lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;
+&lt;p&gt;前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p&gt;
 
-&lt;p&gt;At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p&gt;
+&lt;h2 id=&#34;体验&#34;&gt;体验&lt;/h2&gt;
 
-&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
+&lt;p&gt;于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New Year&#39;s Eve</title>
+      <link>https://ireflux.github.io/snow/post/new-years-eve/</link>
+      <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/new-years-eve/</guid>
+      <description>&lt;p&gt;前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p&gt;
+
+&lt;p&gt;每次听到仙剑的经典音乐，总会把我拉进回忆漩涡里。那种奇特而又熟悉的感觉，就想起在玩仙剑四的场景。在游戏里探索，进入民宅搜索可用的物资，在村子里四处闲逛。&lt;/p&gt;
+
+&lt;p&gt;村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wallpaper</title>
+      <link>https://ireflux.github.io/snow/post/wallpaper/</link>
+      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/wallpaper/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;[持续更新]本文用于展示一些优秀的壁纸，也算是Backup吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw1024/ea5eda6dly1fpb2f3vnmcj21kw11xwz5.jpg&#34; alt=&#34;wallpaper&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>线</title>
+      <link>https://ireflux.github.io/snow/post/line/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/line/</guid>
+      <description>就像在河的对岸, 我看不到她,她看不到我, 但似乎能够感受到来自对岸细若游丝的信号, 像一根随时都会断掉的线, 就像是宇宙中遥远星辰散发着若有若无的</description>
     </item>
     
     <item>
       <title>Linux下MPlayer编译教程</title>
       <link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
@@ -186,52 +426,31 @@ git clone [url]&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     </item>
     
     <item>
-      <title>New Year&#39;s Eve</title>
-      <link>https://ireflux.github.io/snow/post/new-years-eve/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>一个梦</title>
+      <link>https://ireflux.github.io/snow/post/a-dream/</link>
+      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/new-years-eve/</guid>
-      <description>&lt;p&gt;前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p&gt;
-
-&lt;p&gt;每次听到仙剑的经典音乐，总会把我拉进回忆漩涡里。那种奇特而又熟悉的感觉，就想起在玩仙剑四的场景。在游戏里探索，进入民宅搜索可用的物资，在村子里四处闲逛。&lt;/p&gt;
-
-&lt;p&gt;村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p&gt;</description>
+      <guid>https://ireflux.github.io/snow/post/a-dream/</guid>
+      <description>2105年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。 我们都在沙子上坐着，背靠着身后长约五六米，高约一米</description>
     </item>
     
     <item>
-      <title>Recommend two websites</title>
-      <link>https://ireflux.github.io/snow/post/recommend-two-sites/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>ArchLinux安装教程</title>
+      <link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid>
-      <description>&lt;h1 id=&#34;i-remember-http-i-remember-fr-en&#34;&gt;&lt;a href=&#34;http://i-remember.fr/en&#34;&gt;I remember&lt;/a&gt;&lt;/h1&gt;
+      <guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid>
+      <description>&lt;p&gt;体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p&gt;
 
-&lt;p&gt;很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p&gt;
-
-&lt;p&gt;初次进入I remember时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p&gt;
-
-&lt;p&gt;鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Wallpaper</title>
-      <link>https://ireflux.github.io/snow/post/wallpaper/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/wallpaper/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;[持续更新]本文用于展示一些优秀的壁纸，也算是Backup吧。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw1024/ea5eda6dly1fpb2f3vnmcj21kw11xwz5.jpg&#34; alt=&#34;wallpaper&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;入了Arch神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方Wiki，因为中途需要点各种链接跳来跳去，刚装Arch的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装Arch时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位dalao的基于官方Wiki的中文教程，遂引用如下：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win10内置Linux子系统初体验</title>
       <link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
@@ -246,35 +465,9 @@ git clone [url]&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     </item>
     
     <item>
-      <title>Windows下优秀软件收录</title>
-      <link>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid>
-      <description>&lt;p&gt;此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p&gt;
-
-&lt;h3 id=&#34;spacesniffer&#34;&gt;spacesniffer&lt;/h3&gt;
-
-&lt;p&gt;它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a href=&#34;http://www.uderzo.it/main_products/space_sniffer/download.html&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;ccleaner&#34;&gt;CCleaner&lt;/h3&gt;
-
-&lt;p&gt;清理浏览器缓存和注册表很有用.&lt;a href=&#34;https://www.piriform.com/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>一个梦</title>
-      <link>https://ireflux.github.io/snow/post/a-dream/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/a-dream/</guid>
-      <description>2105年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。 我们都在沙子上坐着，背靠着身后长约五六米，高约一米</description>
-    </item>
-    
-    <item>
       <title>一日囚</title>
       <link>https://ireflux.github.io/snow/post/one-day-prisoner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/one-day-prisoner/</guid>
       <description>&lt;blockquote&gt;
@@ -298,161 +491,26 @@ git clone [url]&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     </item>
     
     <item>
-      <title>一道笔试题</title>
-      <link>https://ireflux.github.io/snow/post/an-interview-question/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Windows下优秀软件收录</title>
+      <link>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</link>
+      <pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+      <guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid>
+      <description>&lt;p&gt;此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p&gt;
 
-&lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;spacesniffer&#34;&gt;spacesniffer&lt;/h3&gt;
 
-&lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>不再年轻</title>
-      <link>https://ireflux.github.io/snow/post/no-longer-young/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/no-longer-young/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a href=&#34;http://www.uderzo.it/main_products/space_sniffer/download.html&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;大三时当我忽然发觉我都已经21岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经20多了啊，他感叹道。&lt;/p&gt;
+&lt;h3 id=&#34;ccleaner&#34;&gt;CCleaner&lt;/h3&gt;
 
-&lt;p&gt;对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p&gt;
-
-&lt;p&gt;我一直认为22岁就像是个分水岭，22岁就已经变老了，从数值上来说，21毕竟还紧挨着20，虽然年龄看起来大，但感觉上还是年轻的。一旦到了22，就已经呈现出渐渐远离的姿态，马不停蹄地奔向下一个点，就像宇宙加速膨胀，月球加速远离地球一样。&lt;/p&gt;
-
-&lt;p&gt;时间似乎也在以加速度前进。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>四十不惑</title>
-      <link>https://ireflux.github.io/snow/post/forty-years-old/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/forty-years-old/</guid>
-      <description>&lt;p&gt;When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&amp;rsquo;t know how to do is right.&lt;/p&gt;
-
-&lt;p&gt;When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>子元素margin-top影响父元素问题</title>
-      <link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid>
-      <description>&lt;p&gt;今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p&gt;
-
-&lt;p&gt;我的HTML嵌套关系如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;site-head&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;blog-logo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;logo&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>寂静之城 (The Silence City)</title>
-      <link>https://ireflux.github.io/snow/post/the-silence-city/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/the-silence-city/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;马伯庸《寂静之城》未删节版本全文&lt;br /&gt;
-发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And in the naked light I saw ten thousand people, maybe more.&lt;br /&gt;
-People talking without speaking, people hearing without listening.&lt;br /&gt;
-People writing songs that voices never shared, no one dared disturb the sound of silence.&lt;/p&gt;
-
-&lt;p&gt;—— The sound of silence&lt;/p&gt;
-
-&lt;p&gt;美利坚合众国，2015 年，纽约。&lt;/p&gt;
-
-&lt;p&gt;当电话响起来的时候，阿瓦登正趴在电脑前面睡觉。电话铃声十分急促，尖锐，每一次振动都让他的耳膜难受好久。他揉了揉干涩的眼睛，十分不情愿地爬起来，觉得脑子沉滞无比。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>微信随想——写在张小龙4小时公开演讲之后</title>
-      <link>https://ireflux.github.io/snow/post/think-of-wechat/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/think-of-wechat/</guid>
-      <description>&lt;p&gt;我并没有去看这一场4小时的演讲，也并不感兴趣。&lt;/p&gt;
-
-&lt;p&gt;几年前在我第一次试用微信的时候，就觉得它写的介绍很&amp;rdquo;有趣&amp;rdquo;。它声称&lt;code&gt;30MB&lt;/code&gt;可发几千条语音信息。而且还煞有介事的说它的短信和通话是完全免费的，只需要消耗一些数据流量。描述中的语音电话和短信息也有混淆视听的嫌疑，让人以为能够达到电话和短信的程度，随时能联系到别人一样。就我个人而言，对微信这个产品并没有好感，对张小龙也只是一些简单的了解。总之整体给人的感觉就像是普通大学生的毕设，明明没有多少东西，却强行要编出一套说辞，把简陋的功能用语言润色一番，却有些粉饰太过的感觉，看起来很是滑稽。当然强调免费也有可能是存在一些历史原因，在功能机时代，玩个游戏都有可能莫名其妙被扣话费。在功能机向智能机过渡的阶段打出这样的旗号没毛病，但几年后体积是同类软件的几倍，功能上却远远不及，仍然是个很简陋的软件，还拿这个作为卖点，就感觉很好笑。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>拍飞奇遇记</title>
-      <link>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文为余晟于2018年10月28日发表在微的信公众号「余晟以为」的一篇文章。作者叙事的风格就像以前的文章一样，又让我想到了小时候。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;去年底一个偶然的机会，我开车去浦东机场，发现起飞的飞机特别近，在高架上看得非常真切。于是我想，应该有个什么地方可以近距离拍到正在起降的飞机。&lt;/p&gt;
-
-&lt;p&gt;在很长的时间里，这都只是一个念头而没有付诸行动。我只是在网上搜了搜相关的资料，才知道这种活动叫“拍飞”，专门拍飞机的摄友自称“飞友”，而且列出了几个在浦东机场“拍飞”的好地点。到了10月1日，天气难得的好，又难得有空，我终于可以去尝试“拍飞”了。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>数据结构知识点总结</title>
-      <link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
-      <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
-
-&lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;树(Tree)&lt;/strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的&lt;strong&gt;子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为&lt;strong&gt;节点的度(Degree)&lt;/strong&gt;。
-度为0的节点称为&lt;strong&gt;叶子节点(Leaf)&lt;/strong&gt;或&lt;strong&gt;终端节点&lt;/strong&gt;。不为0的称为&lt;strong&gt;非终端节点&lt;/strong&gt;或&lt;strong&gt;分支节点&lt;/strong&gt;。节点的子树的根称为该节点的&lt;strong&gt;孩子(Child)&lt;/strong&gt;，相应的，该节点称为孩子的&lt;strong&gt;双亲(Parent)&lt;/strong&gt;。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>杂谈</title>
-      <link>https://ireflux.github.io/snow/post/casual-talk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/casual-talk/</guid>
-      <description>&lt;p&gt;近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code&gt;sslocal -c /path/filename.config&lt;/code&gt; 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p&gt;
-
-&lt;p&gt;v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code&gt;inbounds&lt;/code&gt; 和 &lt;code&gt;outbounds&lt;/code&gt; 的配置，一般来说v2ray官网的 &lt;code&gt;新手上路&lt;/code&gt; 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>漫谈中国的饮酒文化</title>
-      <link>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</guid>
-      <description>&lt;p&gt;中国社会有个很神奇的现象，每逢聚会或商业应酬必定要喝酒，小到还在上学的初中生，大至几十岁的大龄人员，几乎很难看到在同一桌相互认识的同龄人想喝酒的人喝酒，想喝饮料/果汁的人喝饮料/果汁的和谐景象。总有人觉得别人喝酒，自己不和人家一块喝好像不尊重别人。这一点就很奇怪，这难道不是看个人意愿？为什么“酒”这个东西在中国被赋予了如此厚重的意义？&lt;/p&gt;</description>
+&lt;p&gt;清理浏览器缓存和注册表很有用.&lt;a href=&#34;https://www.piriform.com/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>爸爸的清明节</title>
       <link>https://ireflux.github.io/snow/post/qingming-festival-of-dad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/qingming-festival-of-dad/</guid>
       <description>&lt;blockquote&gt;
@@ -462,63 +520,6 @@ People writing songs that voices never shared, no one dared disturb the sound of
 &lt;p&gt;以前，我总觉得清明节是别人家的事。&lt;/p&gt;
 
 &lt;p&gt;父亲家的祖坟在遥远的怒江，伯父没有葬在那里，父亲也没有葬在那里。母亲家的祖坟要近一些，我只在外婆的葬礼上去过一次。那时候我还小，只记得外婆身材缩了好大一圈，肤色雪白，躺在木质棺材里。周围鼓乐喧天，一个油漆匠很专心地在棺材头上用金漆画福字，空气里都是浓烈的生漆和土香味道。四个乡人抬了棺材去祖坟安葬，我跟在后面走山路，感觉和一次春游并没有什么不同。都太远了，在那么多年的清明节，我们家并没有扫过任何墓。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>线</title>
-      <link>https://ireflux.github.io/snow/post/line/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/line/</guid>
-      <description>就像在河的对岸, 我看不到她,她看不到我, 但似乎能够感受到来自对岸细若游丝的信号, 像一根随时都会断掉的线, 就像是宇宙中遥远星辰散发着若有若无的</description>
-    </item>
-    
-    <item>
-      <title>腾讯做不出好产品</title>
-      <link>https://ireflux.github.io/snow/post/tencent-do-not-have-good-product/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/tencent-do-not-have-good-product/</guid>
-      <description>&lt;p&gt;最近一篇《腾讯没有梦想》的文章刷遍网络，网上四处流传了老马对此进行回应的截图。&lt;/p&gt;
-
-&lt;p&gt;截图中的老马回复中提到：
-&amp;gt; “从写第一行代码开始，我的理想都是如何做出最好的产品，而不是赚多少钱，这点我相信公司很多同事都是这样想的。”&lt;/p&gt;
-
-&lt;p&gt;虽然事后进行了辟谣，老马根本没对此文进行任何回应。不过对于国内媒体来讲，反复是正常操作，操控事件来吸引眼球的手段也见怪不怪了。今天要说的是，老马当真不知道自己及自己的团队做的产品有多烂吗？&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>致遥远的过去</title>
-      <link>https://ireflux.github.io/snow/post/to-the-distant-past/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;最是人间留不住，朱颜辞镜花辞树&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我依然记得她的模样。我还依稀记得，小时候去她家里，她都笑容满面的模样，有时侯她看着我们玩，有时问我一些家里的、生活上的琐事。&lt;/p&gt;
-
-&lt;p&gt;长大一些后，我更想待在家里玩电脑，不再像小时候天天跑别人家里，找别人出去玩。虽然次数开始变得很少，但每次去她家，她都会很热情的拿过来一些东西让我们吃，她每次见到我们都会笑，笑容显得很和煦。离开的时候，都会叫我们以后有空了就来玩。那时候的她看起来依然很健朗。&lt;/p&gt;
-
-&lt;p&gt;直到现在我依然觉得难以相信，只能不得不感叹有时候人的命运真的很难预料。但这却又让我想起另一件事情。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>追逐快乐</title>
-      <link>https://ireflux.github.io/snow/post/chasing-happiness/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/chasing-happiness/</guid>
-      <description>&lt;p&gt;不知道你是否注意到这样一种情况：&lt;/p&gt;
-
-&lt;p&gt;那些容易快乐的人，常常都被冠以这样的评价：热爱生活！&lt;/p&gt;
-
-&lt;p&gt;可他妈的什么叫热爱生活？积极？坦然？开放？热忱？都对又都不对！&lt;/p&gt;
-
-&lt;p&gt;罗曼罗兰也说：生活中只有一种英雄主义，那就是在认清生活真相之后依然热爱生活。可是这也没说太清楚。&lt;/p&gt;
-
-&lt;p&gt;当我读到《孟子·离娄下》这一句的时候，突然发现这才是一切的答案：“大人者，不失其赤子之心者也。”&lt;/p&gt;</description>
     </item>
     
   </channel>
