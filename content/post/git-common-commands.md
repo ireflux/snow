@@ -16,6 +16,8 @@ Repository          #仓库区（或本地仓库）
 Remote              #远程仓
 ```
 
+<!--more-->
+
 # 新建代码库
 
 ```git
@@ -28,8 +30,6 @@ git init [project-name]
 # 下载一个项目和它的整个代码历史
 git clone [url]
 ```
-
-<!--more-->
 
 # 配置
 

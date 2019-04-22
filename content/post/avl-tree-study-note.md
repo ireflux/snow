@@ -15,6 +15,8 @@ author: "sherry"
 
 AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家[Georgy Adelson-Velsky](https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky)和[Evgenii Landis](https://en.wikipedia.org/wiki/Evgenii_Landis)于1962年在论文《[An algorithm for the organization of information](http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf)》中首次提出。
 
+<!--more-->
+
 ## AVL树的性质
 
 AVL是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:
@@ -22,8 +24,6 @@ AVL是一个平衡二叉查找树，首先它应是一个二叉查找树（又�
 - 若左子树不空，则左子树上所有结点的值均小于它的根结点的值。
 - 若右子树不空，则右子树上所有结点的值均大于它的根结点的值。
 - 左、右子树也分别为二叉排序树。
-
-<!--more-->
 
 AVL引入了平衡因子，即：
 
