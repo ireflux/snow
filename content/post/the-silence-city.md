@@ -1,7 +1,10 @@
 ---
-title: 寂静之城 (The Silence City)
-date: 2018-2-7 13:23:00
-categories: 转载
+title: "寂静之城 (The Silence City)"
+date: 2018-2-7T13:23:00+8:00
+lastmod: 2018-2-7T13:23:00+8:00
+draft: false
+categories: ["转载"]
+author: "sherry"
 ---
 
 > 马伯庸《寂静之城》未删节版本全文  

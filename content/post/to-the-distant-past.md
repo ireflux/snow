@@ -1,7 +1,10 @@
 ---
-title: 致遥远的过去
-date: 2018-8-30 12:41:00
-categories: 随笔
+title: "致遥远的过去"
+date: 2018-8-30T12:41:00+8:00
+lastmod: 2018-8-30T12:41:00+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 > 最是人间留不住，朱颜辞镜花辞树
 

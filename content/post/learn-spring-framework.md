@@ -1,9 +1,11 @@
 ---
-title: Learn Spring Framework
-date: 2018-3-18 23:34:00
-categories: Java
-tags:
-    - Spring学习之路
+title: "Learn Spring Framework"
+date: 2018-3-18T23:34:00+8:00
+lastmod: 2018-3-18T23:34:00+8:00
+draft: false
+categories: ["Java"]
+tags: ["Spring学习之路"]
+author: "sherry"
 ---
 # 前言
 

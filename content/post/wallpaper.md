@@ -1,9 +1,11 @@
 ---
-title: Wallpaper
-date: 2017-11-28 20:03:00
-categories: 收录
-tags:
-    - Awesome Wallpapers
+title: "Wallpaper"
+date: 2017-11-28T20:03:00+8:00
+lastmod: 2017-11-28T20:03:00+8:00
+draft: false
+categories: ["收录"]
+tags: ["Awesome Wallpapers"]
+author: "sherry"
 ---
 > [持续更新]本文用于展示一些优秀的壁纸，也算是Backup吧。
 

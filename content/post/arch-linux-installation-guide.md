@@ -1,7 +1,10 @@
 ---
-title: ArchLinux安装教程
-date: 2017-10-18 14:10:00
-categories: 随笔
+title: "ArchLinux安装教程"
+date: 2017-10-18T14:10:00+8:00
+lastmod: 2017-10-18T14:10:00+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……
 

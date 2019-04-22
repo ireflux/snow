@@ -1,9 +1,11 @@
 ---
-title: 一道笔试题
-date: 2018-4-16 11:11:00
-categories: 数据结构与算法
-tags:
-    - 算法
+title: "一道笔试题"
+date: 2018-4-16T11:11:00+8:00
+lastmod: 2018-4-16T11:11:00+8:00
+draft: false
+categories: ["数据结构与算法"]
+tags: ["算法"]
+author: "sherry"
 ---
 # 前言
 

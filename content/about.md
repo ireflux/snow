@@ -1,7 +1,9 @@
 ---
-title: About Me
-date: 2015-8-6 12:00:00
-categories: 随笔
+title: "About"
+date: 2015-8-6T12:00:00+8:00
+lastmod: 2019-1-19T5:00:00+8:00
+menu: "main"
+weight: 50
 ---
 欢迎来到我的个人Blog！
 

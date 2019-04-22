@@ -1,7 +1,10 @@
 ---
-title: 追逐快乐
-date: 2018-3-10 16:24:00
-categories: 转载
+title: "追逐快乐"
+date: 2018-3-10T16:24:00+8:00
+lastmod: 2018-3-10T16:24:00+8:00
+draft: false
+categories: ["转载"]
+author: "sherry"
 ---
 不知道你是否注意到这样一种情况：
 

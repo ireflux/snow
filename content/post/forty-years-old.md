@@ -1,7 +1,10 @@
 ---
-title: 四十不惑
-date: 2018-4-12 00:25:00
-categories: 随笔
+title: "四十不惑"
+date: 2018-4-12T00:25:00+8:00
+lastmod: 2018-4-12T00:25:00+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don't know how to do is right.
 

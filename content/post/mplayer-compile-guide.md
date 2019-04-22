@@ -1,7 +1,10 @@
 ---
-title: Linux下MPlayer编译教程
-date: 2017-11-8 10:14:00
-categories: 随笔
+title: "Linux下MPlayer编译教程"
+date: 2017-11-8T10:14:00+8:00
+lastmod: 2017-11-8T10:14:00+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 # 前言
 

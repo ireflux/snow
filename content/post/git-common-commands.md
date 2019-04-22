@@ -1,9 +1,11 @@
 ---
-title: Git常用命令
-date: 2018-3-8 16:49:00
-categories: 转载
-tags:
-    - Git
+title: "Git常用命令"
+date: 2018-3-8T16:49:00+8:00
+lastmod: 2018-3-8T16:49:00+8:00
+draft: false
+categories: ["转载"]
+tags: ["Git"]
+author: "sherry"
 ---
 # 相关名词
 

@@ -1,7 +1,10 @@
 ---
-title: 一日囚
-date: 2017-7-16 10:00:00
-categories: 转载
+title: "一日囚"
+date: 2017-7-16T10:00:00+8:00
+lastmod: 2017-7-16T10:00:00+8:00
+draft: false
+categories: ["转载"]
+author: "sherry"
 ---
 
 > 《一日囚》作者：柳文扬  

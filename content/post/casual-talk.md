@@ -1,7 +1,10 @@
 ---
-title: 杂谈
-date: 2019-4-17 21:10:00
-categories: 随笔
+title: "杂谈"
+date: 2019-4-17T21:10:00+8:00
+lastmod: 2019-4-17T21:10:00+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 近日全面将Shadowsockes向v2ray切换，原本Arch上用着 `sslocal -c /path/filename.config` 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。
 

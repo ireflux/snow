@@ -1,9 +1,11 @@
 ---
-title: New Year's Eve
-date: 2017-12-31 23:35:00
-categories: 随笔
-tags:
-    - 年末
+title: "New Year's Eve"
+date: 2017-12-31T23:35:00+8:00
+lastmod: 2017-12-31T23:35:00+8:00
+draft: false
+categories: ["随笔"]
+tags: ["年末"]
+author: "sherry"
 ---
 前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。
 

@@ -1,7 +1,10 @@
 ---
-title: Win10内置Linux子系统初体验
-date: 2017-08-29 15:29:56
-categories: 随笔
+title: "Win10内置Linux子系统初体验"
+date: 2017-08-29T15:29:56+8:00
+lastmod: 2017-08-29T15:29:56+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 # 前言
 

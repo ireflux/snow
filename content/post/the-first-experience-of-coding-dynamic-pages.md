@@ -1,7 +1,10 @@
 ---
-title: Coding动态Pages初体验
-date: 2018-2-5 21:53:00
-categories: 随笔
+title: "Coding动态Pages初体验"
+date: 2018-2-5T21:53:00+8:00
+lastmod: 2018-2-5T21:53:00+8:00
+draft: false
+categories: ["随笔"]
+author: "sherry"
 ---
 # 前言
 
