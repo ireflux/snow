@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on sherry&#39;s blog</title>
+    <link>https://ireflux.github.io/snow/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on sherry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://ireflux.github.io/snow/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一道笔试题</title>
+      <link>https://ireflux.github.io/snow/post/an-interview-question/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

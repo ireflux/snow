@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构与算法 on sherry&#39;s blog</title>
+    <link>https://ireflux.github.io/snow/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 数据结构与算法 on sherry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://ireflux.github.io/snow/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AVL tree 学习笔记</title>
+      <link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p&gt;
+
+&lt;h2 id=&#34;什么是avl树&#34;&gt;什么是AVL树&lt;/h2&gt;
+
+&lt;p&gt;AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a href=&#34;https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky&#34;&gt;Georgy Adelson-Velsky&lt;/a&gt;和&lt;a href=&#34;https://en.wikipedia.org/wiki/Evgenii_Landis&#34;&gt;Evgenii Landis&lt;/a&gt;于1962年在论文《&lt;a href=&#34;http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf&#34;&gt;An algorithm for the organization of information&lt;/a&gt;》中首次提出。&lt;/p&gt;
+
+&lt;h2 id=&#34;avl树的性质&#34;&gt;AVL树的性质&lt;/h2&gt;
+
+&lt;p&gt;AVL是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;若左子树不空，则左子树上所有结点的值均小于它的根结点的值。&lt;/li&gt;
+&lt;li&gt;若右子树不空，则右子树上所有结点的值均大于它的根结点的值。&lt;/li&gt;
+&lt;li&gt;左、右子树也分别为二叉排序树。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>一道笔试题</title>
+      <link>https://ireflux.github.io/snow/post/an-interview-question/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数据结构知识点总结</title>
+      <link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
+      <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
+
+&lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;树(Tree)&lt;/strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的&lt;strong&gt;子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为&lt;strong&gt;节点的度(Degree)&lt;/strong&gt;。
+度为0的节点称为&lt;strong&gt;叶子节点(Leaf)&lt;/strong&gt;或&lt;strong&gt;终端节点&lt;/strong&gt;。不为0的称为&lt;strong&gt;非终端节点&lt;/strong&gt;或&lt;strong&gt;分支节点&lt;/strong&gt;。节点的子树的根称为该节点的&lt;strong&gt;孩子(Child)&lt;/strong&gt;，相应的，该节点称为孩子的&lt;strong&gt;双亲(Parent)&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

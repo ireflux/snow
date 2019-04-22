@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on sherry&#39;s blog</title>
+    <link>https://ireflux.github.io/snow/categories/java/</link>
+    <description>Recent content in Java on sherry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://ireflux.github.io/snow/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learn Spring Framework</title>
+      <link>https://ireflux.github.io/snow/post/learn-spring-framework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;
+
+&lt;p&gt;At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p&gt;
+
+&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

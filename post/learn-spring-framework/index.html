@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Learn Spring Framework - sherry&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sherry" /><meta name="description" content="前言 Recently,I was learning the Spring Framework.
+At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.
+After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://ireflux.github.io/snow/post/learn-spring-framework/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
+<link rel="manifest" href="/snow/manifest.json">
+<link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/snow/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Learn Spring Framework" />
+<meta property="og:description" content="前言
+
+Recently,I was learning the Spring Framework.
+
+At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.
+
+After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&rsquo;t even know it how to work, e.g. annotation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ireflux.github.io/snow/post/learn-spring-framework/" />
+
+
+<meta itemprop="name" content="Learn Spring Framework">
+<meta itemprop="description" content="前言
+
+Recently,I was learning the Spring Framework.
+
+At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.
+
+After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&rsquo;t even know it how to work, e.g. annotation.">
+
+
+
+<meta itemprop="wordCount" content="2046">
+
+
+
+<meta itemprop="keywords" content="Spring学习之路," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learn Spring Framework"/>
+<meta name="twitter:description" content="前言
+
+Recently,I was learning the Spring Framework.
+
+At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.
+
+After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&rsquo;t even know it how to work, e.g. annotation."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/snow/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/snow/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/snow/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/snow/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/snow/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/snow/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/snow/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/snow/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Learn Spring Framework</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        <div class="post-category">
+            <a href="/snow/categories/java/"> Java </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#前言">前言</a>
+<ul>
+<li><a href="#原文摘录">原文摘录</a>
+<ul>
+<li><a href="#building-a-restful-web-service">Building a RESTful Web Service</a>
+<ul>
+<li><a href="#src-main-java-hello-greeting-java">src/main/java/hello/Greeting.java</a></li>
+<li><a href="#src-main-java-hello-greetingcontroller-java">src/main/java/hello/GreetingController.java</a></li>
+<li><a href="#src-main-java-hello-application-java">src/main/java/hello/Application.java</a></li>
+</ul></li>
+<li><a href="#测试">测试</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+
+<p>Recently,I was learning the Spring Framework.</p>
+
+<p>At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.</p>
+
+<p>After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&rsquo;t even know it how to work, e.g. annotation.</p>
+
+<p>Obviously, I encountered resistance.</p>
+
+<p>One day, I searched &ldquo;Why is learning Spring Framework so hard&rdquo; on search engines, I found the answer in quora. The high-vote answer is very good and inspiring. So I decided to relearn the spring framework from the official website. Just like a ring. Three months later, I returned to the origin.</p>
+
+<p>Thanks for that article again!</p>
+
+<hr />
+
+<p>以下是可能会用到的资料：</p>
+
+<p>Spring Framework Documentation
+&gt; <a href="https://docs.spring.io/spring/docs/">https://docs.spring.io/spring/docs/</a></p>
+
+<p>Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的</p>
+
+<p>Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE
+&gt; <a href="https://repo.spring.io/release/org/springframework/spring/">https://repo.spring.io/release/org/springframework/spring/</a></p>
+
+<p>Spring核心容器依赖于Common-logging的JAR包，下载地址如下：
+&gt; <a href="https://commons.apache.org/proper/commons-logging/download_logging.cgi">https://commons.apache.org/proper/commons-logging/download_logging.cgi</a></p>
+
+<h2 id="原文摘录">原文摘录</h2>
+
+<p><strong>原文链接:</strong> <a href="http://springtutorials.com/spring-tutorial-1/">http://springtutorials.com/spring-tutorial-1/</a></p>
+
+<blockquote>
+<p>A simple question for you before I begin:</p>
+
+<p>Can you count from 1 to 20?</p>
+
+<p>Here, Let me help you. Go ahead and read it out loud.</p>
+
+<p>One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten.
+Eleven. Twelve. Thirteen. Fourteen. Fifteen. Sixteen. Seventeen. Eighteen. Nineteen. Twenty.</p>
+
+<p>Do you see any pattern in the numbers above? Anything that rhymes with the words or the way you count them?</p>
+
+<p>Some of these end with ‘teen’ in them but is there anything else?</p>
+
+<p>Unlearn everything you know about numbers and see if you can spot anything that will help you see it?</p>
+
+<p>(Hint: There is none)</p>
+
+<p>My daughter was 3 (she is 7 now) when she had to go through this exercise and she found it very challenging.</p>
+
+<p>I think she was 4 when she started to count a little more…</p>
+
+<p>Twenty One. Twenty Two. Twenty Three. Twenty Four. Twenty Five. Twenty Six. Twenty Seven. Twenty Eight. Twenty Nine. Thirty.</p>
+
+<p>Did she see any pattern now? Of course, she did. ‘Twenty‘ seemed to show up everywhere.</p>
+
+<p>Counting from thirty to forty was not any different now. She was over the learning curve and needed few corrections here and there.</p>
+
+<p>She spent almost a full year learning to count from 1 to 20.
+But she spent only a few months going from 20 to 100.</p>
+
+<p>Let me clarify this. Counting from 1 to 20 is the hardest thing you can do.</p>
+
+<p>There is no pattern here.</p>
+
+<p>You have to learn it the hard way. Get over this curve and life becomes easier.</p>
+
+<p>Take that as a big lesson in life. Start anything and you have to go through the grind. Once you are past the initial struggle, things get easier.</p>
+
+<p>Can you predict what I am going to say next:</p>
+
+<p>Learning Spring Framework (or anything new) is no different from learning to count.</p>
+
+<p>It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.</p>
+
+<p>As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.</p>
+
+<p>As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.</p>
+
+<p>It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.</p>
+</blockquote>
+
+<h3 id="building-a-restful-web-service">Building a RESTful Web Service</h3>
+
+<p><strong>UPDATE:</strong> 初学的时候不懂，感觉有点奇怪，原来这是Spring boot里的内容 =。=</p>
+
+<p>UPDATE(2018.12.28)：现在再回过头来看，纯粹达到会使用的话也没那么复杂，真是难了不会，会了不难，原本想要做成一个学习系列，用来督促学习的，现在看来当初的计划也失败了，就这样结束吧。</p>
+
+<p>哦对了，下文基本上是官方文档的英译中。嗯，就这样吧。</p>
+
+<p>源文档：<a href="https://spring.io/guides/gs/rest-service/">https://spring.io/guides/gs/rest-service/</a></p>
+
+<p>部分代码摘录如下：</p>
+
+<h4 id="src-main-java-hello-greeting-java">src/main/java/hello/Greeting.java</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">hello</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Greeting</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">content</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Greeting</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getContent</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">content</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="src-main-java-hello-greetingcontroller-java">src/main/java/hello/GreetingController.java</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">hello</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicLong</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
+
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreetingController</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">template</span> <span class="o">=</span> <span class="s">&#34;Hello, %s!&#34;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">AtomicLong</span> <span class="n">counter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicLong</span><span class="o">();</span>
+
+    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">Greeting</span> <span class="nf">greeting</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">defaultValue</span><span class="o">=</span><span class="s">&#34;World&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Greeting</span><span class="o">(</span><span class="n">counter</span><span class="o">.</span><span class="na">incrementAndGet</span><span class="o">(),</span>
+                            <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">template</span><span class="o">,</span> <span class="n">name</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li><p><code>@RequestMapping</code>注解确保对/greeting的HTTP请求映射到greeting()方法中，默认映射所有HTTP操作，所以即使不指定GET，PUT还是POST也没关系.若想指定映射方式可使用<code>@RequestMapping(method=GET)</code>的方式.</p></li>
+
+<li><p><code>@RequestParam</code>将查询字符串<code>name</code>的值绑定到<code>greeting()</code>方法的<code>name</code>参数中.查询字符参数为可选,默认为<code>required=true</code>.</p></li>
+
+<li><p>传统的MVC控制器和上面的RESTful Web服务控制器之间的一个主要区别在于HTTP响应主体的创建方式.这个RESTful Web服务控制器只需填充并返回一个Greeting对象,而不是依赖视图技术将问候数据的服务器端呈现呈现给HTML.对象数据将作为JSON直接写入HTTP响应.</p></li>
+
+<li><p><code>@RestController</code>为Spring 4的新注解,它将类标记为控制器,其中每个方法都返回一个域对象而不是视图.它是<code>@Controller</code>和<code>@ResponseBody</code>的缩写.</p></li>
+</ol>
+
+<h4 id="src-main-java-hello-application-java">src/main/java/hello/Application.java</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">hello</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>
+
+<span class="nd">@SpringBootApplication</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Application</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Application</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>@SpringBootApplication</code>是一个方便的注释，它增加了以下所有内容：</p>
+
+<ul>
+<li><p><code>@Configuration</code>将类标记为应用程序上下文的bean定义的来源。</p></li>
+
+<li><p><code>@EnableAutoConfiguration</code>通知Spring Boot根据类路径设置，其他bean和各种属性设置开始添加bean。</p></li>
+
+<li><p>通常你会为Spring MVC应用程序添加<code>@EnableWebMvc</code>，但Spring Boot在类路径中看到spring-webmvc时会自动添加。 这将该应用程序标记为Web应用程序并激活关键行为，例如设置DispatcherServlet。</p></li>
+
+<li><p><code>@ComponentScan</code>告诉Spring在hello包中查找其他组件，配置和服务，以便找到控制器。</p></li>
+</ul>
+
+<h3 id="测试">测试</h3>
+
+<p>打包：
+&gt; mvn compile
+&gt;
+&gt; mvn package</p>
+
+<p>测试运行：
+&gt; java -jar gs-rest-service-0.1.0.jar</p>
+
+<p>访问：<a href="http://localhost:8080/greeting">http://localhost:8080/greeting</a></p>
+
+<p>或者加入参数：<a href="http://localhost:8080/greeting?name=User">http://localhost:8080/greeting?name=User</a></p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">sherry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/snow/tags/spring%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Spring学习之路</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/snow/post/git-common-commands/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Git常用命令</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/snow/post/mplayer-compile-guide/">
+            <span class="next-text nav-default">Linux下MPlayer编译教程</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ireflux.github.io/snow/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sherry</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/snow/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
