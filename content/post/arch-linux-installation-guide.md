@@ -1,7 +1,7 @@
 ---
 title: "ArchLinux安装教程"
-date: 2017-10-18T14:10:00+8:00
-lastmod: 2017-10-18T14:10:00+8:00
+date: 2017-10-18
+lastmod: 2017-10-18
 draft: false
 categories: ["随笔"]
 author: "sherry"

@@ -1,7 +1,7 @@
 ---
 title: "不再年轻"
-date: 2018-8-4T23:09:00+8:00
-lastmod: 2018-8-4T23:09:00+8:00
+date: 2018-08-04
+lastmod: 2018-08-04
 draft: false
 categories: ["随笔"]
 author: "sherry"

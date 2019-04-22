@@ -1,7 +1,7 @@
 ---
 title: "寂静之城 (The Silence City)"
-date: 2018-2-7T13:23:00+8:00
-lastmod: 2018-2-7T13:23:00+8:00
+date: 2018-02-07
+lastmod: 2018-02-07
 draft: false
 categories: ["转载"]
 author: "sherry"

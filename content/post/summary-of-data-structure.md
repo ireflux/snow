@@ -1,7 +1,7 @@
 ---
 title: "数据结构知识点总结"
-date: 2018-3-25T23:00:00+8:00
-lastmod: 2018-3-25T23:00:00+8:00
+date: 2018-03-25
+lastmod: 2018-03-25
 draft: false
 categories: ["数据结构与算法"]
 author: "sherry"

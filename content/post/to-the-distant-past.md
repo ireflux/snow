@@ -1,7 +1,7 @@
 ---
 title: "致遥远的过去"
-date: 2018-8-30T12:41:00+8:00
-lastmod: 2018-8-30T12:41:00+8:00
+date: 2018-08-30
+lastmod: 2018-08-30
 draft: false
 categories: ["随笔"]
 author: "sherry"

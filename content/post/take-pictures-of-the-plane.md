@@ -1,7 +1,7 @@
 ---
 title: "拍飞奇遇记" 
-date: 2018-10-28T22:00:00+8:00
-lastmod: 2018-10-28T22:00:00+8:00
+date: 2018-10-28
+lastmod: 2018-10-28
 draft: false
 categories: ["转载"]
 author: "sherry"

@@ -1,7 +1,7 @@
 ---
 title: "Wallpaper"
-date: 2017-11-28T20:03:00+8:00
-lastmod: 2017-11-28T20:03:00+8:00
+date: 2017-11-28
+lastmod: 2017-11-28
 draft: false
 categories: ["收录"]
 tags: ["Awesome Wallpapers"]

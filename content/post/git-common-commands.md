@@ -1,7 +1,7 @@
 ---
 title: "Git常用命令"
-date: 2018-3-8T16:49:00+8:00
-lastmod: 2018-3-8T16:49:00+8:00
+date: 2018-03-08
+lastmod: 2018-03-08
 draft: false
 categories: ["转载"]
 tags: ["Git"]

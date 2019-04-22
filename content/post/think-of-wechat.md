@@ -1,7 +1,7 @@
 ---
 title: "微信随想——写在张小龙4小时公开演讲之后"
-date: 2019-1-11T23:12:00+8:00
-lastmod: 2019-1-11T23:12:00+8:00
+date: 2019-01-11
+lastmod: 2019-01-11
 draft: false
 categories: ["随笔"]
 author: "sherry"

@@ -1,7 +1,7 @@
 ---
 title: "爸爸的清明节" 
-date: 2015-5-21T22:00:00+8:00
-lastmod: 2015-5-21T22:00:00+8:00
+date: 2015-05-21
+lastmod: 2015-05-21
 draft: false
 categories: ["转载"]
 author: "sherry"

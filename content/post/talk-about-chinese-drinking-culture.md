@@ -1,7 +1,7 @@
 ---
 title: "漫谈中国的饮酒文化"
-date: 2018-5-29T00:59:00+8:00
-lastmod: 2018-5-29T00:59:00+8:00
+date: 2018-05-29
+lastmod: 2018-05-29
 draft: false
 categories: ["随笔"]
 author: "sherry"

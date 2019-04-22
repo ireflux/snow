@@ -1,7 +1,7 @@
 ---
 title: "AVL tree 学习笔记"
-date: 2019-3-26T23:48:00+8:00
-lastmod: 2019-3-26T23:48:00+8:00
+date: 2019-03-26
+lastmod: 2019-03-26
 draft: false
 categories: ["数据结构与算法"]
 author: "sherry"

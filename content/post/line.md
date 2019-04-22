@@ -1,7 +1,7 @@
 ---
 title: "线"
-date: 2017-11-10T16:03:12+8:00
-lastmod: 2017-11-10T16:03:12+8:00
+date: 2017-11-10
+lastmod: 2017-11-10
 draft: false
 categories: ["随笔"]
 author: "sherry"

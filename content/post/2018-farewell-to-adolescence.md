@@ -1,7 +1,7 @@
 ---
 title: "2018，告别青春期" 
-date: 2018-12-28T22:10:00+8:00
-lastmod: 2018-12-28T22:10:00+8:00
+date: 2018-12-28
+lastmod: 2018-12-28
 draft: false
 categories: ["转载"]
 author: "sherry"

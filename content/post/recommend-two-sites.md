@@ -1,7 +1,7 @@
 ---
 title: "Recommend two websites"
-date: 2018-3-10T19:43:00+8:00
-lastmod: 2018-3-10T19:43:00+8:00
+date: 2018-03-10
+lastmod: 2018-03-10
 draft: false
 categories: ["随笔"]
 author: "sherry"

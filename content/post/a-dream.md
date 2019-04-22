@@ -1,7 +1,7 @@
 ---
 title: "一个梦"
-date: 2017-10-20T20:03:12+8:00
-lastmod: 2017-10-20T20:03:12+8:00
+date: 2017-10-20
+lastmod: 2017-10-20
 draft: false
 categories: ["随笔"]
 author: "sherry"

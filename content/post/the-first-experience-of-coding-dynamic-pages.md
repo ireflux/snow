@@ -1,7 +1,7 @@
 ---
 title: "Coding动态Pages初体验"
-date: 2018-2-5T21:53:00+8:00
-lastmod: 2018-2-5T21:53:00+8:00
+date: 2018-02-05
+lastmod: 2018-02-05
 draft: false
 categories: ["随笔"]
 author: "sherry"

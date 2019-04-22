@@ -1,7 +1,7 @@
 ---
 title: "Win10内置Linux子系统初体验"
-date: 2017-08-29T15:29:56+8:00
-lastmod: 2017-08-29T15:29:56+8:00
+date: 2017-08-29
+lastmod: 2017-08-29
 draft: false
 categories: ["随笔"]
 author: "sherry"

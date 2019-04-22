@@ -1,7 +1,7 @@
 ---
 title: "New Year's Eve"
-date: 2017-12-31T23:35:00+8:00
-lastmod: 2017-12-31T23:35:00+8:00
+date: 2017-12-31
+lastmod: 2017-12-31
 draft: false
 categories: ["随笔"]
 tags: ["年末"]

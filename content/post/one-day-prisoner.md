@@ -1,7 +1,7 @@
 ---
 title: "一日囚"
-date: 2017-7-16T10:00:00+8:00
-lastmod: 2017-7-16T10:00:00+8:00
+date: 2017-07-16
+lastmod: 2017-07-16
 draft: false
 categories: ["转载"]
 author: "sherry"

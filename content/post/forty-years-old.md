@@ -1,7 +1,7 @@
 ---
 title: "四十不惑"
-date: 2018-4-12T00:25:00+8:00
-lastmod: 2018-4-12T00:25:00+8:00
+date: 2018-04-12
+lastmod: 2018-04-12
 draft: false
 categories: ["随笔"]
 author: "sherry"

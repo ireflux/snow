@@ -1,7 +1,7 @@
 ---
 title: "Windows下优秀软件收录"
-date: 2016-06-03T17:50:56+8:00
-lastmod: 2016-06-03T17:50:56+8:00
+date: 2016-06-03
+lastmod: 2016-06-03
 draft: false
 categories: ["收录"]
 author: "sherry"

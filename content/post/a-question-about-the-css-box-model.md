@@ -1,7 +1,7 @@
 ---
 title: "子元素margin-top影响父元素问题"
-date: 2018-5-10T10:33:00+8:00
-lastmod: 2018-5-10Y10:33:00+8:00
+date: 2018-05-10
+lastmod: 2018-05-10
 draft: false
 categories: ["前端"]
 tags: ["我的前端之路"]

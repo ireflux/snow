@@ -1,7 +1,7 @@
 ---
 title: "Learn Spring Framework"
-date: 2018-3-18T23:34:00+8:00
-lastmod: 2018-3-18T23:34:00+8:00
+date: 2018-03-18
+lastmod: 2018-03-18
 draft: false
 categories: ["Java"]
 tags: ["Spring学习之路"]

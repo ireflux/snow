@@ -1,7 +1,7 @@
 ---
 title: "腾讯做不出好产品"
-date: 2018-5-7T10:25:00+8:00
-lastmod: 2018-5-7T10:25:00+8:00
+date: 2018-05-07
+lastmod: 2018-05-07
 draft: false
 categories: ["随笔"]
 author: "sherry"

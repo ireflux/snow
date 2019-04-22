@@ -1,7 +1,7 @@
 ---
 title: "杂谈"
-date: 2019-4-17T21:10:00+8:00
-lastmod: 2019-4-17T21:10:00+8:00
+date: 2019-04-17
+lastmod: 2019-04-17
 draft: false
 categories: ["随笔"]
 author: "sherry"
