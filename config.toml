@@ -137,10 +137,10 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     clientSecret = ""       # Your client secret
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
-    clientId = ""           # Your client ID
-    clientSecret = ""       # Your client secret
+    owner = "ireflux"              # Your GitHub ID
+    repo = "snow"               # The repo to store comments
+    clientId = "2856414b5f6b869b40e9"           # Your client ID
+    clientSecret = "9114a49cdf885ae08828683792d2b3d4cf8444f6"       # Your client secret
 
   [params.flowchartDiagrams]# see https://blog.olowolo.com/example-site/post/js-flowchart-diagrams/
     enable = false
@@ -162,21 +162,21 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "mailto:your@email.com"
-    b-stack-overflow = "http://localhost:1313"
-    c-twitter = "http://localhost:1313"
-    d-facebook = "http://localhost:1313"
-    e-linkedin = "http://localhost:1313"
-    f-google = "http://localhost:1313"
-    g-github = "http://localhost:1313"
-    h-weibo = "http://localhost:1313"
-    i-zhihu = "http://localhost:1313"
-    j-douban = "http://localhost:1313"
-    k-pocket = "http://localhost:1313"
-    l-tumblr = "http://localhost:1313"
-    m-instagram = "http://localhost:1313"
-    n-gitlab = "http://localhost:1313"
-    o-bilibili = "http://localhost:1313"
+   # a-email = "mailto:your@email.com"
+   # b-stack-overflow = "http://localhost:1313"
+    c-twitter = "https://twitter.com/Hisutorial"
+   # d-facebook = "http://localhost:1313"
+   # e-linkedin = "http://localhost:1313"
+   # f-google = "http://localhost:1313"
+    g-github = "https://github.com/ireflux"
+    h-weibo = "https://www.weibo.com/3932084845"
+   # i-zhihu = "http://localhost:1313"
+   # j-douban = "http://localhost:1313"
+   # k-pocket = "http://localhost:1313"
+   # l-tumblr = "http://localhost:1313"
+   # m-instagram = "http://localhost:1313"
+   # n-gitlab = "http://localhost:1313"
+    o-bilibili = "http://space.bilibili.com/13546666"
 
 # See https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
