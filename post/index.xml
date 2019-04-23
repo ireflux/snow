@@ -164,7 +164,7 @@
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
 
@@ -448,6 +448,15 @@ People writing songs that voices never shared, no one dared disturb the sound of
 &lt;p&gt;以前，我总觉得清明节是别人家的事。&lt;/p&gt;
 
 &lt;p&gt;父亲家的祖坟在遥远的怒江，伯父没有葬在那里，父亲也没有葬在那里。母亲家的祖坟要近一些，我只在外婆的葬礼上去过一次。那时候我还小，只记得外婆身材缩了好大一圈，肤色雪白，躺在木质棺材里。周围鼓乐喧天，一个油漆匠很专心地在棺材头上用金漆画福字，空气里都是浓烈的生漆和土香味道。四个乡人抬了棺材去祖坟安葬，我跟在后面走山路，感觉和一次春游并没有什么不同。都太远了，在那么多年的清明节，我们家并没有扫过任何墓。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>博客迁移记录</title>
+      <link>https://ireflux.github.io/snow/post/blog-migration-record/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/blog-migration-record/</guid>
+      <description>&lt;p&gt;前些天看到霍矩大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。&lt;/p&gt;</description>
     </item>
     
   </channel>
