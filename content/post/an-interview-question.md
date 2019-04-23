@@ -7,7 +7,7 @@ categories: ["数据结构与算法"]
 tags: ["算法"]
 author: "sherry"
 ---
-# 前言
+## 前言
 
 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：__输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。__
 
@@ -21,7 +21,7 @@ author: "sherry"
 
 要判断运算符优先级，首先要将数字和运算符分两边存储，然后看第一个运算符和第二个运算符之间的大小，如果第一个比第二个大或者相等就可以先算第一个，反之则要先计算第二个，很符合先进先出的规则。这样就很自然的想到用到栈来表示。
 
-## 中缀表达式
+### 中缀表达式
 
 以下是“中缀表达式”在栈中执行过程，假设表达式为：__5+6*7/8__
 
@@ -77,7 +77,7 @@ author: "sherry"
 
 全部压入栈中后，每次只需从操作数中取出两个数字，从操作符中取出一个运算符，并将其结果压入操作数栈中即可。
 
-## 调度场算法
+### 调度场算法
 
 以下来源于Wikipedia:
 
@@ -108,7 +108,7 @@ end | Pop entire stack to output | 3 4 2 × 1 5 − 2 3 ^ ^ ÷ +
 
 可以看出，基本上是和“中缀表达式”原理差不多的，也是需要比较运算符的优先级，按照计算的先后顺序排序。
 
-## 逆波兰表达式
+### 逆波兰表达式
 
 以下例子来源于Wikipedia:
 
@@ -128,7 +128,7 @@ end | Pop entire stack to output | 3 4 2 × 1 5 − 2 3 ^ ^ ÷ +
 
 计算完成时，栈内只有一个操作数，这就是表达式的结果：14
 
-## 程序
+### 程序
 
 再次回到这个笔试题目，我这里做了些改动，毕竟手动画出用‘6’组成的0-9的图形很累，也不美观，因此我在[AsciiArt](https://www.asciiart.eu/)的常用问题页面找了个自动[生成AsciiArt](http://www.network-science.de/ascii/)的网页，经过对比，感觉“larry3d”这个字体比较美观，因此我选择了这个来生成图案。
 
@@ -139,7 +139,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class num_graphic {
-    private String getGraphic(int rel){
+    private String getGraphic(char rel){
         String zero= "\n" +
                 "   __     \n" +
                 " /'__`\\   \n" +
@@ -228,28 +228,28 @@ public class num_graphic {
                 "       \\/_/\n" +
                 "           ";
         switch (rel){
-            case 0:
+            case '0':
                 return zero;
-            case 1:
+            case '1':
                 return one;
-            case 2:
+            case '2':
                 return two;
-            case 3:
+            case '3':
                 return three;
-            case 4:
+            case '4':
                 return four;
-            case 5:
+            case '5':
                 return five;
-            case 6:
+            case '6':
                 return six;
-            case 7:
+            case '7':
                 return seven;
-            case 8:
+            case '8':
                 return eight;
-            case 9:
+            case '9':
                 return nine;
-                default:
-                    System.out.println("Unknown error...");
+            default:
+                System.out.println("Unknown error...");
         }
         return "";
     }
@@ -297,10 +297,7 @@ public class num_graphic {
     private boolean hasPrecedence(char op1, char op2) {
         if (op2 == '(' || op2 == ')')
             return false;
-        if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
-            return false;
-        else
-            return true;
+        return (op1 != '*' && op1 != '/') || (op2 != '+' && op2 != '-');
     }
 
     private float calculate(char op, float b, float a) {
@@ -320,16 +317,16 @@ public class num_graphic {
         return 0;
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         Scanner in=new Scanner(System.in);
         System.out.print("Enter expression:");
         String input=in.next();
 //        String[] parts=input.split("(?=[+-/*])|(?<=[+-/*])");
         num_graphic ng=new num_graphic();
         int result=(int)ng.evaluate(input);
-        while (result!=0){
-            System.out.print(ng.getGraphic(result%10));
-            result/=10;
+        String str = result+"";
+        for (int i=0;i<str.length();i++){
+            System.out.println(ng.getGraphic(str.charAt(i)));
         }
     }
 }

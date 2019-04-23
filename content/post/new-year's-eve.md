@@ -4,7 +4,6 @@ date: 2017-12-31
 lastmod: 2017-12-31
 draft: false
 categories: ["随笔"]
-tags: ["年末"]
 author: "sherry"
 ---
 前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。
