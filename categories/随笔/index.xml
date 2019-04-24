@@ -6,10 +6,19 @@
     <description>Recent content in 随笔 on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>博客迁移记录</title>
+      <link>https://ireflux.github.io/snow/post/blog-migration-record/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/blog-migration-record/</guid>
+      <description>&lt;p&gt;前些天看到霍矩大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>杂谈</title>
@@ -211,15 +220,6 @@
 &lt;h2 id=&#34;教程&#34;&gt;教程&lt;/h2&gt;
 
 &lt;p&gt;根据官方的&lt;a href=&#34;https://msdn.microsoft.com/en-us/commandline/wsl/install_guide&#34;&gt;Guide&lt;/a&gt;，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>博客迁移记录</title>
-      <link>https://ireflux.github.io/snow/post/blog-migration-record/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/blog-migration-record/</guid>
-      <description>&lt;p&gt;前些天看到霍矩大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。&lt;/p&gt;</description>
     </item>
     
   </channel>
