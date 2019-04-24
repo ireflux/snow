@@ -1,7 +1,7 @@
 ---
 title: "博客迁移记录"
-date: 2019-4-23
-lastmod: 2019-4-23
+date: 2019-04-23
+lastmod: 2019-04-23
 draft: false
 categories: ["随笔"]
 author: "sherry"
