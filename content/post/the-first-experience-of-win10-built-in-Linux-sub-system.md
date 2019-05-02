@@ -47,6 +47,5 @@ author: "sherry"
 
 不过Windows内置的Linux感觉并不自由，内置的文件不能用Windows的工具来创建或修改。否则可能会出现文件损坏导致Linux系统无法使用。因此，如果是Linux的初学者，用这个还不错，但是要当作开发环境，那就算了吧。
 
-> 官方安装指南：https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
->
+> 官方安装指南：https://msdn.microsoft.com/en-us/commandline/wsl/install_guide  
 > 详情链接：https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/

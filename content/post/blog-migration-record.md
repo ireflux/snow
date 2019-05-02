@@ -18,5 +18,5 @@ Github pages上分为 `User/Organization pages` 和 `Project pages`，配置的�
 
 ## 参考资料
 
-> [host on github](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+> [host on github](https://gohugo.io/hosting-and-deployment/hosting-on-github/)  
 > [official documentation for custom domains](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)

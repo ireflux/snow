@@ -68,5 +68,5 @@ _p.s. 以上图片通过draw.io绘制而成，凑活能看（_
 
 ## 参考资料
 
-> https://en.wikipedia.org/wiki/AVL_tree
+> https://en.wikipedia.org/wiki/AVL_tree  
 > https://www.geeksforgeeks.org/avl-tree-set-1-insertion/

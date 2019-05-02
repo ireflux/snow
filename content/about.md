@@ -18,8 +18,6 @@ weight: 50
 此Blog不准备开设第三方评论系统，~~就把Github的Issue当作评论好了(笑~~
 
 > We can do anything. We can be anybody.
->
-> And just for fun.
 
 <!--more-->
 
