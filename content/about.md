@@ -1,7 +1,5 @@
 ---
 title: "About"
-date: 2015-8-6T12:00:00+8:00
-lastmod: 2019-1-19T5:00:00+8:00
 menu: "main"
 weight: 50
 ---
