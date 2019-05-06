@@ -6,10 +6,19 @@
     <description>Recent content in 随笔 on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>利用Firefox自带的Network Settings科学上网</title>
+      <link>https://ireflux.github.io/snow/post/firefox-network-settings-config/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/firefox-network-settings-config/</guid>
+      <description>&lt;p&gt;自从Chrome 71(没记错的话是这个版本= =)曝出追踪用户的&lt;a href=&#34;https://www.valuewalk.com/2018/11/google-chrome-71-track-abusive-experiences/&#34;&gt;丑闻&lt;/a&gt;后，我的主力浏览器便全面切换到的Firefox。那个时候Firefox推出的新版本Firefox Quantum也有一段时间了，是用Rust新写的内核，感觉确实比之前要快上不少（虽然还是不如Chrome快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于Firefox的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的SwitchyOmega。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux上adb的使用记录</title>
