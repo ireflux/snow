@@ -14,11 +14,11 @@ v2ray的服务端和客户端是同一套程序，配置成服务端还是客户
 
 linux上使用最简单的方式就是找一些配置文件改改来用。例如：可以在线生成配置文件的[配置文件生成器](https://www.veekxt.com/utils/v2ray_gen);再比如 V2Ray 配置文件模板收集仓库 [Github](https://github.com/KiriKira/vTemplate);还可以直接导入到Windows GUI程序中，然后再导出配置文件来用。
 
-...
+- - -
 
 前几天python连接docker中的redis的时候发现总是出现 `Connection refused` ，刚开始还以为docker网络的配置原因，后来才发现原来是redis配置文件的缘故。将 `bind 127.0.0.1` 着一条注释掉就好了 Hmmm
 
-...
+- - -
 
 今天照例滚系统，在安装Wps office的时候yaourt提示 `No space left on device`，看了一下，原来是/tmp空间不够。搜寻了一圈之后发现两个解决方案：
 
@@ -41,7 +41,7 @@ linux上使用最简单的方式就是找一些配置文件改改来用。例如
 
 不得不说 Wps for linux 新版本UI变漂亮了好多。
 
-嗯，真香:)
+嗯，真香。
 
 ## 参考资料
 
