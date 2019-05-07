@@ -39,7 +39,7 @@ linux上使用最简单的方式就是找一些配置文件改改来用。例如
 
 看了看发现大家比较推荐yay，自己 `makepkg -si` 的话确实会麻烦一点，想了一下还是换成了yay。archlinuxcn源也能解决不少aur里的东西，于是再次添加上了archlinuxcn源。
 
-不得不说 Wps for linux 新版本UI变漂亮了好多。
+不得不说 wps for linux 新版本UI变漂亮了好多。
 
 嗯，真香。
 
