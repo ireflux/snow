@@ -6,7 +6,7 @@
     <description>Recent content in Categories on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>随笔</title>
       <link>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</link>
-      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
@@ -35,33 +35,6 @@
       <pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>前端</title>
-      <link>https://ireflux.github.io/snow/categories/%E5%89%8D%E7%AB%AF/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/categories/%E5%89%8D%E7%AB%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://ireflux.github.io/snow/categories/java/</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>收录</title>
-      <link>https://ireflux.github.io/snow/categories/%E6%94%B6%E5%BD%95/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/categories/%E6%94%B6%E5%BD%95/</guid>
       <description></description>
     </item>
     
