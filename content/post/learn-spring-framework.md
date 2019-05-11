@@ -3,7 +3,8 @@ title: "Learn Spring Framework"
 date: 2018-03-18
 lastmod: 2018-03-18
 draft: false
-categories: ["Java"]
+categories: ["随笔"]
+tags: ["Java"]
 author: "sherry"
 ---
 # 前言

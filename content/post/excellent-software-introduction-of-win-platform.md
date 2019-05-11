@@ -3,7 +3,7 @@ title: "Windows下优秀软件收录"
 date: 2016-06-03
 lastmod: 2016-06-03
 draft: false
-categories: ["收录"]
+categories: ["随笔"]
 author: "sherry"
 ---
 此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。

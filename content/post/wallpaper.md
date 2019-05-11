@@ -3,7 +3,7 @@ title: "Wallpaper"
 date: 2017-11-28
 lastmod: 2017-11-28
 draft: false
-categories: ["收录"]
+categories: ["随笔"]
 tags: ["Awesome Wallpapers"]
 author: "sherry"
 ---
