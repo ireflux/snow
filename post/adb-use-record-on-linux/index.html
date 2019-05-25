@@ -18,14 +18,16 @@
 
 <meta name="author" content="sherry" /><meta name="description" content="前言 我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑
 言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 adb devices 会显示：
-1 2  List of devices attached [device name] unauthorized  " /><meta name="keywords" content="Hugo, theme, even" />
+ List of devices attached
+[device name] unauthorized
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.55.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/adb-use-record-on-linux/" />
@@ -48,13 +50,8 @@
 言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 adb devices 会显示：
 
 
-1
-2
-
-
-List of devices attached 
+List of devices attached
 [device name]    unauthorized
-
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ireflux.github.io/snow/post/adb-use-record-on-linux/" />
@@ -69,19 +66,14 @@ List of devices attached
 言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 adb devices 会显示：
 
 
-1
-2
-
-
-List of devices attached 
+List of devices attached
 [device name]    unauthorized
-
 ">
 
 
 <meta itemprop="datePublished" content="2019-05-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="933">
+<meta itemprop="wordCount" content="926">
 
 
 
@@ -95,13 +87,8 @@ List of devices attached
 言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 adb devices 会显示：
 
 
-1
-2
-
-
-List of devices attached 
+List of devices attached
 [device name]    unauthorized
-
 "/>
 
 <!--[if lte IE 9]>
@@ -205,16 +192,12 @@ List of devices attached
 <p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑</p>
 
 <p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 <code>adb devices</code> 会显示：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">List of devices attached 
-<span class="o">[</span>device name<span class="o">]</span>    unauthorized</code></pre></td></tr></table>
-</div>
-</div>
+
+<blockquote>
+<p>List of devices attached<br />
+[device name]    unauthorized</p>
+</blockquote>
+
 <p>要进行配置之前，首先需要找到自己手机的USB vendor ID和product ID，启用开发者模式，然后打开usb调试模式插上手机后在terminal中执行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -231,18 +214,13 @@ List of devices attached
 <h3 id="添加udev规则">添加udev规则</h3>
 
 <p>1.首先要确保系统中有安装 <code>android-udev</code> 这个包。可以通过包管理器来安装或者访问<a href="https://source.android.com/setup/build/initializing#configuring-usb-access">source.android.com</a>来手动安装。在这里新建一个文件：<code>/etc/udev/rules.d/51-android.rules</code>，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>, ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;[VENDOR ID]&#34;</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">&#34;0660&#34;</span>, <span class="nv">GROUP</span><span class="o">=</span><span class="s2">&#34;adbusers&#34;</span>
-<span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>,ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;[VENDOR ID]&#34;</span>,ATTR<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;[PRODUCT ID]&#34;</span>,SYMLINK+<span class="o">=</span><span class="s2">&#34;android_adb&#34;</span>
-<span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>,ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;[VENDOR ID]&#34;</span>,ATTR<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;[PRODUCT ID]&#34;</span>,SYMLINK+<span class="o">=</span><span class="s2">&#34;android_fastboot&#34;</span></code></pre></td></tr></table>
-</div>
-</div>
+
+<blockquote>
+<p>SUBSYSTEM==&ldquo;usb&rdquo;, ATTR{idVendor}==&rdquo;[VENDOR ID]&ldquo;, MODE=&ldquo;0660&rdquo;, GROUP=&ldquo;adbusers&rdquo;<br />
+SUBSYSTEM==&ldquo;usb&rdquo;,ATTR{idVendor}==&rdquo;[VENDOR ID]&ldquo;,ATTR{idProduct}==&rdquo;[PRODUCT ID]&ldquo;,SYMLINK+=&ldquo;android_adb&rdquo;<br />
+SUBSYSTEM==&ldquo;usb&rdquo;,ATTR{idVendor}==&rdquo;[VENDOR ID]&ldquo;,ATTR{idProduct}==&rdquo;[PRODUCT ID]&ldquo;,SYMLINK+=&ldquo;android_fastboot&rdquo;</p>
+</blockquote>
+
 <p>2.然后重新载入新的配置文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -275,16 +253,12 @@ List of devices attached
 </div>
 </div>
 <p>这样的话，应该就能看到设备被列出来了，类似于这样：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">List of devices attached 
-<span class="o">[</span>device name<span class="o">]</span>    device</code></pre></td></tr></table>
-</div>
-</div>
+
+<blockquote>
+<p>List of devices attached<br />
+[device name]    device</p>
+</blockquote>
+
 <p>这样就算是完成了。</p>
 
 <h2 id="后记">后记</h2>

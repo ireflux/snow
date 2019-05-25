@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/" />
@@ -141,27 +141,6 @@
 <pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo docker swarm init</code></pre></td></tr></table>
 </div>
 </div>
-<p>执行上句后，会有类似如下的东西出现：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.
-
-To add a worker to this swarm, run the following command:
-
-    docker swarm join --token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377
-
-To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.</pre></td></tr></table>
-</div>
-</div>
     </div>
     <div class="read-more">
       <a href="/snow/post/docker-swarm-cluster-create/" class="read-more-link">Read more..</a>
@@ -208,16 +187,11 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 <p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑</p>
 
 <p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 <code>adb devices</code> 会显示：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">List of devices attached 
-<span class="o">[</span>device name<span class="o">]</span>    unauthorized</code></pre></td></tr></table>
-</div>
-</div>
+
+<blockquote>
+<p>List of devices attached<br />
+[device name]    unauthorized</p>
+</blockquote>
     </div>
     <div class="read-more">
       <a href="/snow/post/adb-use-record-on-linux/" class="read-more-link">Read more..</a>

@@ -17,15 +17,14 @@
 
 
 <meta name="author" content="sherry" /><meta name="description" content="Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。
-初始化 1  $ sudo docker swarm init   执行上句后，会有类似如下的东西出现：
-1 2 3 4 5 6 7  Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager. To add a worker to this swarm, run the following command: docker swarm join --token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377 To add a manager to this swarm, run &amp;#39;docker swarm join-token manager&amp;#39; and follow the instructions.  " /><meta name="keywords" content="Hugo, theme, even" />
+初始化 1  $ sudo docker swarm init  " /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.55.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/docker-swarm-cluster-create/" />
@@ -51,27 +50,6 @@
 
 $ sudo docker swarm init
 
-
-执行上句后，会有类似如下的东西出现：
-
-
-1
-2
-3
-4
-5
-6
-7
-
-
-Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.
-
-To add a worker to this swarm, run the following command:
-
-    docker swarm join --token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377
-
-To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.
-
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ireflux.github.io/snow/post/docker-swarm-cluster-create/" />
@@ -89,33 +67,12 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 
 $ sudo docker swarm init
 
-
-执行上句后，会有类似如下的东西出现：
-
-
-1
-2
-3
-4
-5
-6
-7
-
-
-Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.
-
-To add a worker to this swarm, run the following command:
-
-    docker swarm join --token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377
-
-To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.
-
 ">
 
 
 <meta itemprop="datePublished" content="2019-05-11T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="292">
+<meta itemprop="wordCount" content="284">
 
 
 
@@ -131,27 +88,6 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 
 
 $ sudo docker swarm init
-
-
-执行上句后，会有类似如下的东西出现：
-
-
-1
-2
-3
-4
-5
-6
-7
-
-
-Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.
-
-To add a worker to this swarm, run the following command:
-
-    docker swarm join --token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377
-
-To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.
 
 "/>
 
@@ -261,37 +197,22 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 </div>
 </div>
 <p>执行上句后，会有类似如下的东西出现：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.
 
-To add a worker to this swarm, run the following command:
+<blockquote>
+<p>Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.<br />
+To add a worker to this swarm, run the following command:<br />
+    docker swarm join &ndash;token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377<br />
+To add a manager to this swarm, run &lsquo;docker swarm join-token manager&rsquo; and follow the instructions.</p>
+</blockquote>
 
-    docker swarm join --token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377
-
-To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.</pre></td></tr></table>
-</div>
-</div>
 <h2 id="加入集群">加入集群</h2>
 
 <p>直接复制初始化后显示的命令，在同一网段的另一台主机上输入即可。如果成功的话，会出现如下反馈：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">This node joined a swarm as a worker.</pre></td></tr></table>
-</div>
-</div>
+
+<blockquote>
+<p>This node joined a swarm as a worker.</p>
+</blockquote>
+
 <p>如果不小心关掉了 terminal ，还可以通过以下命令看到 token：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

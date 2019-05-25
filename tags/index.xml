@@ -38,23 +38,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>Git</title>
-      <link>https://ireflux.github.io/snow/tags/git/</link>
-      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Awesome Wallpapers</title>
-      <link>https://ireflux.github.io/snow/tags/awesome-wallpapers/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/tags/awesome-wallpapers/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
