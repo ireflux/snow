@@ -12,10 +12,8 @@ author: "sherry"
 
 言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 `adb devices` 会显示：
 
-```bash
-List of devices attached 
+> List of devices attached  
 [device name]    unauthorized
-```
 
 <!--more-->
 
@@ -33,11 +31,9 @@ $ lsusb
 
 1.首先要确保系统中有安装 `android-udev` 这个包。可以通过包管理器来安装或者访问[source.android.com](https://source.android.com/setup/build/initializing#configuring-usb-access)来手动安装。在这里新建一个文件：`/etc/udev/rules.d/51-android.rules`，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:
 
-```bash
-SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0660", GROUP="adbusers"
-SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
+> SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0660", GROUP="adbusers"  
+SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"  
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_fastboot"
-```
 
 2.然后重新载入新的配置文件：
 
@@ -63,10 +59,8 @@ $ ./adb devices
 
 这样的话，应该就能看到设备被列出来了，类似于这样：
 
-```bash
-List of devices attached 
+> List of devices attached  
 [device name]    device
-```
 
 这样就算是完成了。
 

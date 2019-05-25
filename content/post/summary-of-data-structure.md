@@ -119,3 +119,15 @@ __赫夫曼树__又称最优二叉树，即带权路径长度最短的树。
 外部排序于我个人而言不常用，因此以后用到在补吧。
 
 # 复杂度比较
+排序算法 | 平均时间复杂度 | 最好情况 | 最坏情况 | 空间复杂度 | 排序方式 | 稳定性
+:---: | :---: | :---: | :---: | :---: | :---: | :---: 
+冒泡排序 | O(n^2) | O(n) |O(n^2) | O(1) | In-Place | 稳定
+选择排序 | O(n^2) | O(n^2) |O(n^2) | O(1) | In-Place | 不稳定
+插入排序 | O(n^2) | O(n) |O(n^2) | O(1) | In-Place | 稳定
+希尔排序 | O(n log n) | O(n log^2 n) |O(n log^2 n) | O(1) | In-Place | 不稳定
+归并排序 | O(n log n) | O(n log n) |O(n log n) | O(n) | Out-Place | 稳定
+快速排序 | O(n log n) | O(n log n) |O(n^2) | O(log n) | In-Place | 不稳定
+堆排序 | O(n log n) | O(n log n) |O(n log n) | O(1) | In-Place | 不稳定
+计数排序 | O(n+k) | O(n+k) |O(n+k) | O(k) | Out-Place | 稳定
+桶排序 | O(n+k) | O(n+k) |O(n^2) | O(n+k) | Out-Place | 稳定
+基数排序 | O(n*k) | O(n*k) |O(n*k) | O(n+k) | Out-Place | 稳定

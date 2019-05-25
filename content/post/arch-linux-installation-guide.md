@@ -18,6 +18,6 @@ author: "sherry"
 
 2. [ArchLinux安装后的必须配置与图形界面安装教程](http://www.viseator.com/2017/05/19/arch_setup/)
 
-在这里说一句，第二篇设置NetworkManager开机启动时，如果提示错误，就先安装下一步的network-manager-applet.然后在设置开机启动。
+在这里说一句，第二篇设置NetworkManager开机启动时，如果提示错误，那就是还没装NetworkManager，先安装下一步的network-manager-applet，它会把NetworkManager作为依赖项装上，然后再设置开机启动。
 
 至此，enjoy！
