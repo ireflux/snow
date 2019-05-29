@@ -6,7 +6,7 @@
     <description>Recent content on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,23 @@
       
       <guid>https://ireflux.github.io/snow/about/</guid>
       <description>玉京星阙杳然迹，无人唱彻大风歌。</description>
+    </item>
+    
+    <item>
+      <title>初探PostgreSQL</title>
+      <link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid>
+      <description>&lt;p&gt;在群友的安利（&lt;del&gt;传教&lt;/del&gt;）下，成功引起了我的兴趣&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;在作了一些了解之后，记录如下。由于本文的基础是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p&gt;
+
+&lt;p&gt;安装没什么可说的，直接 &lt;code&gt;sudo pacman -S postgresql&lt;/code&gt; 就好了。(其他发行版请使用对应的包管理器)&lt;/p&gt;
+
+&lt;p&gt;安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p&gt;
+
+&lt;p&gt;如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -193,20 +210,6 @@
 &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>腾讯做不出好产品</title>
-      <link>https://ireflux.github.io/snow/post/tencent-do-not-have-good-product/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/tencent-do-not-have-good-product/</guid>
-      <description>&lt;p&gt;最近一篇《腾讯没有梦想》的文章刷遍网络，网上四处流传了老马对此进行回应的截图。&lt;/p&gt;
-
-&lt;p&gt;截图中的老马回复中提到：
-&amp;gt; “从写第一行代码开始，我的理想都是如何做出最好的产品，而不是赚多少钱，这点我相信公司很多同事都是这样想的。”&lt;/p&gt;
-
-&lt;p&gt;虽然事后进行了辟谣，老马根本没对此文进行任何回应。不过对于国内媒体来讲，反复是正常操作，操控事件来吸引眼球的手段也见怪不怪了。今天要说的是，老马当真不知道自己及自己的团队做的产品有多烂吗？&lt;/p&gt;</description>
     </item>
     
     <item>
