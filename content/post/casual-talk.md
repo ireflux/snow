@@ -12,7 +12,7 @@ v2ray的服务端和客户端是同一套程序，配置成服务端还是客户
 
 <!--more-->
 
-linux上使用最简单的方式就是找一些配置文件改改来用。例如：可以在线生成配置文件的[配置文件生成器](https://www.veekxt.com/utils/v2ray_gen);再比如 V2Ray 配置文件模板收集仓库 [Github](https://github.com/KiriKira/vTemplate);还可以直接导入到Windows GUI程序中，然后再导出配置文件来用。
+linux上客户端的使用最简单的方式就是找一些配置文件改改来用。例如：可以在线生成配置文件的[配置文件生成器](https://www.veekxt.com/utils/v2ray_gen);再比如 V2Ray 配置文件模板收集仓库 [Github](https://github.com/KiriKira/vTemplate);还可以直接导入到Windows GUI程序中，然后再导出配置文件来用。
 
 - - -
 
