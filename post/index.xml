@@ -19,13 +19,11 @@
       <guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid>
       <description>&lt;p&gt;在群友的安利（&lt;del&gt;传教&lt;/del&gt;）下，成功引起了我的兴趣&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;在作了一些了解之后，记录如下。由于本文的基础是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p&gt;
+&lt;p&gt;在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p&gt;
 
 &lt;p&gt;安装没什么可说的，直接 &lt;code&gt;sudo pacman -S postgresql&lt;/code&gt; 就好了。(其他发行版请使用对应的包管理器)&lt;/p&gt;
 
-&lt;p&gt;安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p&gt;
-
-&lt;p&gt;如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：&lt;/p&gt;</description>
+&lt;p&gt;安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p&gt;</description>
     </item>
     
     <item>
