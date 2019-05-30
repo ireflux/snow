@@ -8,15 +8,15 @@ author: "sherry"
 ---
 在群友的安利（~~传教~~）下，成功引起了我的兴趣...
 
-在作了一些了解之后，记录如下。由于本文的基础是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。
+在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。
 
 安装没什么可说的，直接 `sudo pacman -S postgresql` 就好了。(其他发行版请使用对应的包管理器)
 
 安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。
 
-如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：
-
 <!--more-->
+
+如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：
 
 ```
 postgres does not know where to find the server configuration file.  
