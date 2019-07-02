@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on sherry&#39;s blog</title>
+    <link>https://ireflux.github.io/snow/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on sherry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ireflux.github.io/snow/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据结构知识点总结</title>
+      <link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
+      <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
+
+&lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;树(Tree)&lt;/strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的&lt;strong&gt;子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为&lt;strong&gt;节点的度(Degree)&lt;/strong&gt;。
+度为0的节点称为&lt;strong&gt;叶子节点(Leaf)&lt;/strong&gt;或&lt;strong&gt;终端节点&lt;/strong&gt;。不为0的称为&lt;strong&gt;非终端节点&lt;/strong&gt;或&lt;strong&gt;分支节点&lt;/strong&gt;。节点的子树的根称为该节点的&lt;strong&gt;孩子(Child)&lt;/strong&gt;，相应的，该节点称为孩子的&lt;strong&gt;双亲(Parent)&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
