@@ -3,7 +3,8 @@ title: "数据结构知识点总结"
 date: 2018-03-25
 lastmod: 2018-03-25
 draft: false
-categories: ["数据结构与算法"]
+categories: ["Clavicula Salomonis"]
+tags: ["数据结构"]
 author: "sherry"
 ---
 最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～

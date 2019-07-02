@@ -3,8 +3,8 @@ title: "Learn Spring Framework"
 date: 2018-03-18
 lastmod: 2018-03-18
 draft: false
-categories: ["随笔"]
-tags: ["Java"]
+categories: ["Clavicula Salomonis"]
+tags: ["Java", "Spring"]
 author: "sherry"
 ---
 # 前言

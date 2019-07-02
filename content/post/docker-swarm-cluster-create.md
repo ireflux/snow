@@ -3,7 +3,7 @@ title: "Docker Swarm 集群创建过程"
 date: 2019-05-11
 lastmod: 2019-05-11
 draft: false
-categories: ["随笔"]
+categories: ["Clavicula Salomonis"]
 tags: ["Docker"]
 author: "sherry"
 ---

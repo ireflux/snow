@@ -3,7 +3,8 @@ title: "AVL tree 学习笔记"
 date: 2019-03-26
 lastmod: 2019-03-26
 draft: false
-categories: ["数据结构与算法"]
+categories: ["Clavicula Salomonis"]
+tags: ["AVL tree"]
 author: "sherry"
 ---
 

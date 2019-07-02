@@ -3,7 +3,8 @@ title: "子元素margin-top影响父元素问题"
 date: 2018-05-10
 lastmod: 2018-05-10
 draft: false
-categories: ["随笔"]
+categories: ["Clavicula Salomonis"]
+tags: ["CSS"]
 author: "sherry"
 ---
 今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。

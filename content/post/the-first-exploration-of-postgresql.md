@@ -3,7 +3,8 @@ title: "初探PostgreSQL"
 date: 2019-05-29
 lastmod: 2019-05-29
 draft: false
-categories: ["随笔"]
+categories: ["Clavicula Salomonis"]
+tags: ["Postgresql"]
 author: "sherry"
 ---
 在群友的安利（~~传教~~）下，成功引起了我的兴趣...

@@ -3,7 +3,8 @@ title: "Linux上adb的使用记录"
 date: 2019-05-02
 lastmod: 2019-05-02
 draft: false
-categories: ["随笔"]
+categories: ["Clavicula Salomonis"]
+tags: ["Linux", "adb"]
 author: "sherry"
 ---
 ## 前言

@@ -3,7 +3,7 @@ title: "一道笔试题"
 date: 2018-04-16
 lastmod: 2018-04-16
 draft: false
-categories: ["数据结构与算法"]
+categories: ["Clavicula Salomonis"]
 tags: ["算法"]
 author: "sherry"
 ---
@@ -332,7 +332,7 @@ public class num_graphic {
 }
 ```
 
-## 参考
+## 参考资料
 
 > 逆波兰表达式：https://en.wikipedia.org/wiki/Reverse_Polish_notation  
 > 调度场算法：https://en.wikipedia.org/wiki/Shunting-yard_algorithm  
