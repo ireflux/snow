@@ -190,13 +190,9 @@ public class Application {
 
 ### 测试
 
-打包：
-> mvn compile
->
-> mvn package
+打包：mvn package
 
-测试运行：
-> java -jar gs-rest-service-0.1.0.jar
+测试运行:java -jar gs-rest-service-0.1.0.jar
 
 访问：http://localhost:8080/greeting
 

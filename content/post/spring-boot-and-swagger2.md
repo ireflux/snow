@@ -79,8 +79,8 @@ public class CitiesController {
 ```
 
 此处涉及到的 API 及解释如下所示：
-1. @Api：用于标记 Controller 的功能
-2. @ApiOperation：用于标记一个方法的功能。
+1. @Api：用于标记 Controller 的功能  
+2. @ApiOperation：用于标记一个方法的功能。  
 3. @ApiImplicitParam：用于描述一个参数所代表的意思，默认值及是否必填等相关信息（这里的 `required = true` 只是在文档中表明必填，不会对接口产生作用），若有多个参数，多个 `@ApiImplicitParam` 注解需要放在一个 `@ApiImplicitParams` 注解中
 
 还可以对实体类进行标记：

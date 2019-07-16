@@ -33,7 +33,7 @@ __二叉树(Binary Tree)__中每个节点至多只有两颗子树(即二叉树�
 
 ### AVL树
 
-AVL树是一种自平衡的二叉查找树，详见: {% post_path AVL-tree学习笔记 'AVL tree学习笔记' %}
+AVL树是一种自平衡的二叉查找树，详见: [AVL树学习笔记](https://wanmei.ml/snow/post/avl-tree-study-note/)
 
 ### 遍历二叉树
 

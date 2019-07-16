@@ -6,6 +6,8 @@ draft: false
 categories: ["转载"]
 author: "sherry"
 ---
+> 此文系转载，原文来源：豆瓣，地址:https://www.douban.com/note/323805946/
+
 不知道你是否注意到这样一种情况：
 
 那些容易快乐的人，常常都被冠以这样的评价：热爱生活！
