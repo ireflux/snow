@@ -9,18 +9,37 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/post/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/about-imagination/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -40,12 +59,6 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/tags/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -87,12 +100,6 @@
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

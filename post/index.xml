@@ -6,10 +6,21 @@
     <description>Recent content in Posts on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于想象力</title>
+      <link>https://ireflux.github.io/snow/post/about-imagination/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/about-imagination/</guid>
+      <description>&lt;p&gt;许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p&gt;
+
+&lt;p&gt;但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Spring Boot 整合 Swagger2</title>
@@ -154,7 +165,9 @@
       <guid>https://ireflux.github.io/snow/post/think-of-wechat/</guid>
       <description>&lt;p&gt;我并没有去看这一场4小时的演讲，也并不感兴趣。&lt;/p&gt;
 
-&lt;p&gt;几年前在我第一次试用微信的时候，就觉得它写的介绍很&amp;rdquo;有趣&amp;rdquo;。它声称&lt;code&gt;30MB&lt;/code&gt;可发几千条语音信息。而且还煞有介事的说它的短信和通话是完全免费的，只需要消耗一些数据流量。描述中的语音电话和短信息也有混淆视听的嫌疑，让人以为能够达到电话和短信的程度，随时能联系到别人一样。就我个人而言，对微信这个产品并没有好感，明明功能很少，却强行要编出一套说辞，把简陋的功能用语言润色一番，却有些粉饰太过的感觉，看起来很是滑稽。&lt;/p&gt;
+&lt;p&gt;几年前在我第一次试用微信的时候，就觉得它写的介绍很&amp;rdquo;有趣&amp;rdquo;。它声称 30MB 可发几千条语音信息。而且还煞有介事的说它的短信和通话是完全免费的，只需要消耗一些数据流量。描述中的语音电话和短信息也有混淆视听的嫌疑，让人以为能够达到电话和短信的程度，随时能联系到别人一样。&lt;/p&gt;
+
+&lt;p&gt;就我个人而言，对微信这个产品并没有好感，明明功能很少，却强行要编出一套说辞，把简陋的功能用语言润色一番，却有些粉饰太过的感觉，看起来很是滑稽。&lt;/p&gt;
 
 &lt;p&gt;当然强调免费也有可能是存在一些历史原因，在功能机时代，玩个游戏都有可能莫名其妙被扣话费。在功能机向智能机过渡的阶段打出这样的旗号没毛病，但几年后体积是同类软件的几倍，功能上却远远不及，仍然是个很简陋的软件，却依然拿这个作为卖点。&lt;/p&gt;</description>
     </item>
