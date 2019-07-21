@@ -6,10 +6,22 @@
     <description>Recent content in Posts on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring Data Redis 学习笔记</title>
+      <link>https://ireflux.github.io/snow/post/notes-of-spring-data-redis/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/notes-of-spring-data-redis/</guid>
+      <description>&lt;p&gt;Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a href=&#34;https://github.com/xetorthio/jedis&#34;&gt;Jedis&lt;/a&gt;， &lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;lettuce&lt;/a&gt;， &lt;a href=&#34;https://github.com/mrniko/redisson&#34;&gt;Redisson&lt;/a&gt;， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p&gt;
+
+&lt;p&gt;以下是&lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;官方&lt;/a&gt;对 lettuce 的描述，摘录如下：
+&amp;gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>关于想象力</title>
