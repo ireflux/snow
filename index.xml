@@ -6,7 +6,7 @@
     <description>Recent content on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,17 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
     </item>
     
     <item>
+      <title>Einstein&#39;s five-houses riddle</title>
+      <link>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</guid>
+      <description>&lt;p&gt;最近看到一篇发布在 v2ex &lt;a href=&#34;https://www.v2ex.com/t/585712&#34;&gt;文章&lt;/a&gt;，po 主抛出了一个问题：“随着年龄增长越来越难以集中注意力，你们有吗？”，他在里面描述道：“解题时的注意力越来越发散，难以在头脑里形成完整的逻辑链”，“反而清楚的记得我在小学时就可以仅凭思考就算出爱因斯坦的那个著名推理题甚至不需要借助纸笔”。&lt;/p&gt;
+
+&lt;p&gt;看到他描述的现象感觉和我之前的一篇&lt;a href=&#34;https://wanmei.ml/snow/post/about-imagination/&#34;&gt;文章&lt;/a&gt;有一点相似之处，只不过他称之为“注意力”，我在文章中描述的是“想象力的强度”，需要“注意力”，但又不完全是”注意力“。他的经历也从某种程度上佐证了我那个观点——幼年时期的大脑皮层可能更为活跃&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Spring Data Redis 学习笔记</title>
       <link>https://ireflux.github.io/snow/post/notes-of-spring-data-redis/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
@@ -29,8 +40,11 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
       <guid>https://ireflux.github.io/snow/post/notes-of-spring-data-redis/</guid>
       <description>&lt;p&gt;Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a href=&#34;https://github.com/xetorthio/jedis&#34;&gt;Jedis&lt;/a&gt;， &lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;lettuce&lt;/a&gt;， &lt;a href=&#34;https://github.com/mrniko/redisson&#34;&gt;Redisson&lt;/a&gt;， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p&gt;
 
-&lt;p&gt;以下是&lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;官方&lt;/a&gt;对 lettuce 的描述，摘录如下：
-&amp;gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p&gt;</description>
+&lt;p&gt;以下是&lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;官方&lt;/a&gt;对 lettuce 的描述，摘录如下：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>

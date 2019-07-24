@@ -17,7 +17,8 @@
 
 
 <meta name="author" content="sherry" /><meta name="description" content="Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：Jedis， lettuce， Redisson， Spring Boot 2.X 中默认集成了 lettuce。
-以下是官方对 lettuce 的描述，摘录如下： &amp;gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.
+以下是官方对 lettuce 的描述，摘录如下：
+ Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -44,7 +45,10 @@
 <meta property="og:description" content="Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：Jedis， lettuce， Redisson， Spring Boot 2.X 中默认集成了 lettuce。
 
 以下是官方对 lettuce 的描述，摘录如下：
-&gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models." />
+
+
+Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ireflux.github.io/snow/post/notes-of-spring-data-redis/" />
 <meta property="article:published_time" content="2019-07-21T00:00:00&#43;00:00"/>
@@ -54,12 +58,15 @@
 <meta itemprop="description" content="Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：Jedis， lettuce， Redisson， Spring Boot 2.X 中默认集成了 lettuce。
 
 以下是官方对 lettuce 的描述，摘录如下：
-&gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.">
+
+
+Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.
+">
 
 
 <meta itemprop="datePublished" content="2019-07-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="645">
+<meta itemprop="wordCount" content="644">
 
 
 
@@ -69,7 +76,10 @@
 <meta name="twitter:description" content="Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：Jedis， lettuce， Redisson， Spring Boot 2.X 中默认集成了 lettuce。
 
 以下是官方对 lettuce 的描述，摘录如下：
-&gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models."/>
+
+
+Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -163,8 +173,11 @@
     <div class="post-content">
       <p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：<a href="https://github.com/xetorthio/jedis">Jedis</a>， <a href="https://github.com/lettuce-io/lettuce-core">lettuce</a>， <a href="https://github.com/mrniko/redisson">Redisson</a>， Spring Boot 2.X 中默认集成了 lettuce。</p>
 
-<p>以下是<a href="https://github.com/lettuce-io/lettuce-core">官方</a>对 lettuce 的描述，摘录如下：
-&gt; Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.</p>
+<p>以下是<a href="https://github.com/lettuce-io/lettuce-core">官方</a>对 lettuce 的描述，摘录如下：</p>
+
+<blockquote>
+<p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.</p>
+</blockquote>
 
 <p>因此可以看出，lettuce 是线程安全的，基于 netty，在不包含阻塞和事务的情况下多个线程还可以共用一个连接。相比之下 Jedis 的实现上是直连的 redis server，多线程环境下是非线程安全的。</p>
 
@@ -349,7 +362,11 @@ spring.redis.lettuce.shutdown-timeout=100ms</code></pre></td></tr></table>
           <a href="/snow/tags/spring/">spring</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/snow/post/einsteins-five-houses-riddle/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Einstein&#39;s five-houses riddle</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/snow/post/about-imagination/">
             <span class="next-text nav-default">关于想象力</span>
             <span class="next-text nav-mobile">Next</span>
