@@ -6,7 +6,7 @@
     <description>Recent content on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,15 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
     </item>
     
     <item>
+      <title>RabbitMQ 学习笔记(1)</title>
+      <link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</guid>
+      <description>此文仅作个记录 开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 apt repository on Package Cloud or Bintray这种方式</description>
+    </item>
+    
+    <item>
       <title>Einstein&#39;s five-houses riddle</title>
       <link>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</link>
       <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
@@ -34,10 +43,10 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
     
     <item>
       <title>Spring Data Redis 学习笔记</title>
-      <link>https://ireflux.github.io/snow/post/notes-of-spring-data-redis/</link>
+      <link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/notes-of-spring-data-redis/</guid>
+      <guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid>
       <description>&lt;p&gt;Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a href=&#34;https://github.com/xetorthio/jedis&#34;&gt;Jedis&lt;/a&gt;， &lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;lettuce&lt;/a&gt;， &lt;a href=&#34;https://github.com/mrniko/redisson&#34;&gt;Redisson&lt;/a&gt;， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p&gt;
 
 &lt;p&gt;以下是&lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;官方&lt;/a&gt;对 lettuce 的描述，摘录如下：&lt;/p&gt;
