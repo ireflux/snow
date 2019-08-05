@@ -128,4 +128,4 @@ Einstein wrote this riddle this century. He said that 98% of the world could not
 | Natl | Norwegian | Dane | Brit | German | Swede |
 | beverages | Water | Tea | Milk | Coffee | Beer |
 | Smokes | Dunhill | Blends | Pall Mall | Prince | Blue Master |
-| Pet | Cat | Horse | Birds | Birds | Dogs |
+| Pet | Cat | Horse | Birds | Fish | Dogs |
