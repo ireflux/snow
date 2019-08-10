@@ -17,7 +17,9 @@
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</guid>
-      <description>此文仅作个记录 开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 apt repository on Package Cloud or Bintray这种方式</description>
+      <description>&lt;p&gt;此文仅作个记录&lt;/p&gt;
+
+&lt;p&gt;开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a href=&#34;https://www.rabbitmq.com/install-debian.html#apt&#34;&gt;apt repository on Package Cloud or Bintray&lt;/a&gt;这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a href=&#34;https://www.rabbitmq.com/which-erlang.html#compatibility-matrix&#34;&gt;表格&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,6 +57,31 @@
       <description>&lt;p&gt;许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p&gt;
 
 &lt;p&gt;但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>细数 Breaking Bad 经典片段(1)</title>
+      <link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</guid>
+      <description>&lt;p&gt;Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;season-1-episode-1-pilot&#34;&gt;Season 1 Episode 1 &amp;ndash; Pilot&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=syrW-M41O3U&#34;&gt;https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

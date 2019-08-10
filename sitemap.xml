@@ -64,6 +64,12 @@
   </url>
   
   <url>
+    <loc>https://ireflux.github.io/snow/tags/spring/</loc>
+    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</loc>
     <lastmod>2019-07-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -71,13 +77,14 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/tags/spring/</loc>
-    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://ireflux.github.io/snow/post/about-imagination/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/about-imagination/</loc>
+    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

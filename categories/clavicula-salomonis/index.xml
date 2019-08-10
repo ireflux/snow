@@ -17,7 +17,9 @@
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</guid>
-      <description>此文仅作个记录 开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 apt repository on Package Cloud or Bintray这种方式</description>
+      <description>&lt;p&gt;此文仅作个记录&lt;/p&gt;
+
+&lt;p&gt;开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a href=&#34;https://www.rabbitmq.com/install-debian.html#apt&#34;&gt;apt repository on Package Cloud or Bintray&lt;/a&gt;这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a href=&#34;https://www.rabbitmq.com/which-erlang.html#compatibility-matrix&#34;&gt;表格&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
