@@ -16,3 +16,6 @@ author: "sherry"
 首先在配置好的SwitchyOmega上选择`Export PAC`，然后打开Firefox`Preferences`，下拉打开`Network Settings`，在弹出的对话框中选择`Automatic proxy configuration URL`，在对应的文本框中写入刚刚导出的PAC文件路径即可。
 
 此时应该就能顺利看到Google了:)
+
+UPDATE(2019.08.09)：最近偶有断流现象，不知为啥，还是先切换回了 Proxy SwitchyOmega ...
+UPDATE(2019.08.10)：好象是 Firefox 的问题...

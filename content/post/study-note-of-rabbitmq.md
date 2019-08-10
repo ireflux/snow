@@ -11,6 +11,8 @@ author: "sherry"
 
 开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 [apt repository on Package Cloud or Bintray](https://www.rabbitmq.com/install-debian.html#apt)这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性[表格](https://www.rabbitmq.com/which-erlang.html#compatibility-matrix)
 
+<!--more-->
+
 然而 Debian 的 Erlang 版本很旧，因此还需要先安装 Erlang，关于[这一点](https://www.rabbitmq.com/which-erlang.html#debian)，官网上也提到了。因此也给出了[解决方案](https://www.rabbitmq.com/install-debian.html#erlang-repositories)，安装过程此处不再赘述。
 
 安装完毕之后，其他一些需要注意的地方：比如说默认情况下端口号是 5672，HTTP的端口是 15672，更多默认端口可以参考[这里](https://www.rabbitmq.com/install-debian.html#ports)。RabbitMQ 自带了一个管理界面，如若要开启这个 WEB 界面，需要开启一个插件，只需要输入以下命令即可开启：
