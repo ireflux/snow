@@ -1,7 +1,7 @@
 ---
 title: "细数 Breaking Bad 经典片段(1)" 
-date: 2019-07-17
-lastmod: 2019-07-17
+date: 2019-08-10
+lastmod: 2019-08-10
 draft: false
 categories: ["随笔"]
 author: "sherry"

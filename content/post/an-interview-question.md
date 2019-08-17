@@ -4,7 +4,7 @@ date: 2018-04-16
 lastmod: 2018-04-16
 draft: false
 categories: ["Clavicula Salomonis"]
-tags: ["算法"]
+tags: ["algorithm"]
 author: "sherry"
 ---
 ## 前言
