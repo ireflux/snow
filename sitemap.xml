@@ -9,18 +9,37 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/post/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -45,22 +64,10 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2019-07-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -78,13 +85,6 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/post/about-imagination/</loc>
-    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -237,16 +237,16 @@
   </url>
   
   <url>
+    <loc>https://ireflux.github.io/snow/tags/algorithm/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ireflux.github.io/snow/post/an-interview-question/</loc>
     <lastmod>2018-04-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -257,7 +257,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://ireflux.github.io/snow/tags/data-structure/</loc>
     <lastmod>2018-03-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
