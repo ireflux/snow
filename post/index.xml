@@ -6,10 +6,30 @@
     <description>Recent content in Posts on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>栈和队列的相互转换</title>
+      <link>https://ireflux.github.io/snow/post/stack-to-queue/</link>
+      <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid>
+      <description>&lt;p&gt;关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如何使用栈实现队列？&lt;/li&gt;
+&lt;li&gt;如何使用队列实现栈？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)&lt;/p&gt;
+
+&lt;p&gt;接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：&lt;/p&gt;
+
+&lt;p&gt;进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>细数 Breaking Bad 经典片段(1)</title>
@@ -25,15 +45,15 @@
 
 &lt;h3 id=&#34;season-1-episode-1-pilot&#34;&gt;Season 1 Episode 1 &amp;ndash; Pilot&lt;/h3&gt;
 
-&lt;ol&gt;
-&lt;li&gt;这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;场景1：&lt;/p&gt;
+
+&lt;p&gt;视频链接: &lt;a href=&#34;https://www.youtube.com/watch?v=syrW-M41O3U&#34;&gt;https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=syrW-M41O3U&#34;&gt;https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
