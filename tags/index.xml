@@ -66,20 +66,20 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://ireflux.github.io/snow/tags/linux/</link>
-      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>adb</title>
       <link>https://ireflux.github.io/snow/tags/adb/</link>
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/tags/adb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://ireflux.github.io/snow/tags/linux/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/tags/linux/</guid>
       <description></description>
     </item>
     

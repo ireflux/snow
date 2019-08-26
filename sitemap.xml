@@ -8,39 +8,45 @@
   </url>
   
   <url>
+    <loc>https://ireflux.github.io/snow/tags/algorithm/</loc>
+    <lastmod>2019-08-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ireflux.github.io/snow/categories/</loc>
     <lastmod>2019-08-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
     <lastmod>2019-08-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/post/</loc>
     <lastmod>2019-08-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/</loc>
-    <lastmod>2019-08-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/algorithm/</loc>
-    <lastmod>2019-08-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/</loc>
     <lastmod>2019-08-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/tags/</loc>
+    <lastmod>2019-08-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -51,7 +57,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</loc>
+    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</loc>
     <lastmod>2019-08-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -60,17 +66,19 @@
   <url>
     <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2019-08-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/tags/rabbitmq/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</loc>
+    <loc>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -86,7 +94,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/spring/</loc>
     <lastmod>2019-07-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -113,7 +122,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/postgresql/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -126,7 +136,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/docker/</loc>
     <lastmod>2019-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -139,7 +150,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/firefox/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -150,9 +162,17 @@
   </url>
   
   <url>
+    <loc>https://ireflux.github.io/snow/tags/adb/</loc>
+    <lastmod>2019-05-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ireflux.github.io/snow/tags/linux/</loc>
     <lastmod>2019-05-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -160,12 +180,6 @@
     <lastmod>2019-05-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/adb/</loc>
-    <lastmod>2019-05-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -185,19 +199,13 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/avl-tree/</loc>
     <lastmod>2019-03-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/post/avl-tree-study-note/</loc>
-    <lastmod>2019-03-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/think-of-wechat/</loc>
-    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <loc>https://ireflux.github.io/snow/post/avl-tree-study-note/</loc>
+    <lastmod>2019-03-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -212,7 +220,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/</loc>
     <lastmod>2018-10-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -239,7 +248,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/css/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -266,7 +276,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/data-structure/</loc>
     <lastmod>2018-03-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -279,7 +290,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/java/</loc>
     <lastmod>2018-03-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -369,7 +381,8 @@
   <url>
     <loc>https://ireflux.github.io/snow/tags/windows/</loc>
     <lastmod>2016-06-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>

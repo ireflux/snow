@@ -13,26 +13,14 @@
     
     <item>
       <title>细数 Breaking Bad 经典片段(1)</title>
-      <link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</link>
+      <link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</link>
       <pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</guid>
+      <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</guid>
       <description>&lt;p&gt;Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;season-1-episode-1-pilot&#34;&gt;Season 1 Episode 1 &amp;ndash; Pilot&lt;/h3&gt;
-
-&lt;p&gt;场景1：&lt;/p&gt;
-
-&lt;p&gt;视频链接: &lt;a href=&#34;https://www.youtube.com/watch?v=syrW-M41O3U&#34;&gt;https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -85,21 +73,6 @@
       <description>&lt;p&gt;近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code&gt;sslocal -c /path/filename.config&lt;/code&gt; 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p&gt;
 
 &lt;p&gt;v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code&gt;inbounds&lt;/code&gt; 和 &lt;code&gt;outbounds&lt;/code&gt; 的配置，一般来说v2ray官网的 &lt;code&gt;新手上路&lt;/code&gt; 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>微信随想——写在张小龙4小时公开演讲之后</title>
-      <link>https://ireflux.github.io/snow/post/think-of-wechat/</link>
-      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/think-of-wechat/</guid>
-      <description>&lt;p&gt;我并没有去看这一场4小时的演讲，也并不感兴趣。&lt;/p&gt;
-
-&lt;p&gt;几年前在我第一次试用微信的时候，就觉得它写的介绍很&amp;rdquo;有趣&amp;rdquo;。它声称 30MB 可发几千条语音信息。而且还煞有介事的说它的短信和通话是完全免费的，只需要消耗一些数据流量。描述中的语音电话和短信息也有混淆视听的嫌疑，让人以为能够达到电话和短信的程度，随时能联系到别人一样。&lt;/p&gt;
-
-&lt;p&gt;就我个人而言，对微信这个产品并没有好感，明明功能很少，却强行要编出一套说辞，把简陋的功能用语言润色一番，却有些粉饰太过的感觉，看起来很是滑稽。&lt;/p&gt;
-
-&lt;p&gt;当然强调免费也有可能是存在一些历史原因，在功能机时代，玩个游戏都有可能莫名其妙被扣话费。在功能机向智能机过渡的阶段打出这样的旗号没毛病，但几年后体积是同类软件的几倍，功能上却远远不及，仍然是个很简陋的软件，却依然拿这个作为卖点。&lt;/p&gt;</description>
     </item>
     
     <item>

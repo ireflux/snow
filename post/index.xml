@@ -33,35 +33,23 @@
     
     <item>
       <title>细数 Breaking Bad 经典片段(1)</title>
-      <link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</link>
+      <link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</link>
       <pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad/</guid>
+      <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</guid>
       <description>&lt;p&gt;Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;season-1-episode-1-pilot&#34;&gt;Season 1 Episode 1 &amp;ndash; Pilot&lt;/h3&gt;
-
-&lt;p&gt;场景1：&lt;/p&gt;
-
-&lt;p&gt;视频链接: &lt;a href=&#34;https://www.youtube.com/watch?v=syrW-M41O3U&#34;&gt;https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
     <item>
       <title>RabbitMQ 学习笔记(1)</title>
-      <link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</link>
+      <link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq/</guid>
+      <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</guid>
       <description>&lt;p&gt;此文仅作个记录&lt;/p&gt;
 
 &lt;p&gt;开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a href=&#34;https://www.rabbitmq.com/install-debian.html#apt&#34;&gt;apt repository on Package Cloud or Bintray&lt;/a&gt;这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a href=&#34;https://www.rabbitmq.com/which-erlang.html#compatibility-matrix&#34;&gt;表格&lt;/a&gt;&lt;/p&gt;</description>
@@ -237,21 +225,6 @@
 &lt;h2 id=&#34;什么是avl树&#34;&gt;什么是AVL树&lt;/h2&gt;
 
 &lt;p&gt;AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a href=&#34;https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky&#34;&gt;Georgy Adelson-Velsky&lt;/a&gt;和&lt;a href=&#34;https://en.wikipedia.org/wiki/Evgenii_Landis&#34;&gt;Evgenii Landis&lt;/a&gt;于1962年在论文《&lt;a href=&#34;http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf&#34;&gt;An algorithm for the organization of information&lt;/a&gt;》中首次提出。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>微信随想——写在张小龙4小时公开演讲之后</title>
-      <link>https://ireflux.github.io/snow/post/think-of-wechat/</link>
-      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/think-of-wechat/</guid>
-      <description>&lt;p&gt;我并没有去看这一场4小时的演讲，也并不感兴趣。&lt;/p&gt;
-
-&lt;p&gt;几年前在我第一次试用微信的时候，就觉得它写的介绍很&amp;rdquo;有趣&amp;rdquo;。它声称 30MB 可发几千条语音信息。而且还煞有介事的说它的短信和通话是完全免费的，只需要消耗一些数据流量。描述中的语音电话和短信息也有混淆视听的嫌疑，让人以为能够达到电话和短信的程度，随时能联系到别人一样。&lt;/p&gt;
-
-&lt;p&gt;就我个人而言，对微信这个产品并没有好感，明明功能很少，却强行要编出一套说辞，把简陋的功能用语言润色一番，却有些粉饰太过的感觉，看起来很是滑稽。&lt;/p&gt;
-
-&lt;p&gt;当然强调免费也有可能是存在一些历史原因，在功能机时代，玩个游戏都有可能莫名其妙被扣话费。在功能机向智能机过渡的阶段打出这样的旗号没毛病，但几年后体积是同类软件的几倍，功能上却远远不及，仍然是个很简陋的软件，却依然拿这个作为卖点。&lt;/p&gt;</description>
     </item>
     
     <item>
