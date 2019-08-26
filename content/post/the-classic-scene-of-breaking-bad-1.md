@@ -10,6 +10,8 @@ Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善�
 
 > The title comes from the Southern colloquialism "breaking bad" which means to "raise hell" or turn to a life of crime.Gilligan characterized the series as showing Walter's transformation from a soft-spoken Mr. Chips into Scarface. 
 
+<!--more-->
+
 ### Season 1 Episode 1 -- Pilot
 
 场景1：
@@ -19,8 +21,6 @@ Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善�
 这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：
 
 > Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself
-
-<!--more-->
 
 场景2：
 
