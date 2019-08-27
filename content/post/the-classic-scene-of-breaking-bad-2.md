@@ -10,7 +10,7 @@ Breaking Bad 的[电影](https://twitter.com/BreakingBad/status/1165405442039676
 
 ### 关联文章
 
-[细数 Breaking Bad 经典片段(1)](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad/)
+[细数 Breaking Bad 经典片段(1)](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/)
 
 <!--more-->
 
@@ -83,6 +83,10 @@ Walt 晚上在酒吧里遇到了 Jane 的父亲 Donald Margolis，真是奇妙�
 > You can't give up on them. Never.
 
 这使得 Walt 回去找 Jesse，推了推 Jesse，未能叫醒，反而她的女友 Jane 睡姿从侧卧被推开成了仰面朝上，Jane 被口中呕吐物呛到时，Walt 想要救她但最后还是停止了，Jane 最终因口中呕吐物窒息而死。
+
+### 结语
+
+从另一方面来讲，入了 Gus 的坑也使得 Salamanca 家族的人没能杀掉他，也是好事。
 
 ## 参考资料
 
