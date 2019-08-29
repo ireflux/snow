@@ -58,7 +58,7 @@ Where's my money, bitch?
 
 视频链接： https://www.youtube.com/watch?v=dryYPhnvIWw
 
-终于出现了！Saul Goodman！原名 Jimmy McGill(全名：James Morgan McGill)，他哥哥 Chuck McGill(全名：Charles Lindbergh McGill)唱歌很好听，在前传 < better call saul > 中和 Jimmy 合唱的一首 [The Winner Takes It All](https://www.youtube.com/watch?v=qll7hCYFNjs)很好听。
+终于出现了！Saul Goodman！原名 Jimmy McGill(全名：James Morgan McGill)，他哥哥 Chuck McGill(全名：Charles Lindbergh McGill)唱歌很好听，在前传 < better call saul > 中和 Jimmy 合唱的一首 [The Winner Takes It All](https://www.youtube.com/watch?v=qll7hCYFNjs) 很好听。
 
 ### Season 2 Episode 11 -- Mandala
 
