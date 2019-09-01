@@ -53,6 +53,14 @@ why are you doing this?
 
 事到如今，为了自保白老师不得不杀了他。在看到 crazy 8 伸手探向腰间的时候，白老师眼泪都掉下来了，这是一个无可挽回的决定。这是 walt 第一次近距离亲自动手用物理方式杀人。
 
+### Season 1 Episode 4 -- Cancer Man
+
+场景1：
+
+视频链接： https://www.youtube.com/watch?v=fI52h9YZ-bI
+
+这老哥也是倒霉，在前传 < better call saul > 中就被 Jimmy 和 Kim 骗了一次，在这里又被 Walt 搞，蛤蛤蛤。
+
 ### Season 1 Episode 5 -- Gray Matter
 
 场景1：
@@ -65,7 +73,7 @@ why are you doing this?
 
 场景1：
 
-视频链接： https://www.youtube.com/watch?v=i8HATRPJwAk
+视频链接： https://www.youtube.com/watch?v=4IAXG9rj9WQ
 
 jesse 被 tuco 打了，白老师带着雷汞酸盐去报仇。
 
@@ -73,15 +81,15 @@ jesse 被 tuco 打了，白老师带着雷汞酸盐去报仇。
 
 场景1：
 
-视频链接： https://www.youtube.com/watch?v=Ng79utnURVY
+视频链接： https://www.youtube.com/watch?v=am_6X_B0OPE
 
 白老师给 jesse 科普铝热剂。
 
 场景2：
 
-视频链接： https://www.youtube.com/watch?v=bQrvCr_cvCw
+视频链接： https://www.youtube.com/watch?v=tJpfokxtr7c
 
-walt 自制铝热剂开锁，和 jesse 一起去偷甲氨。可惜没找到用铝热剂开锁的场景视频，又不想自己做:(
+walt 自制铝热剂开锁，和 jesse 一起去偷甲氨。
 
 ### 结语
 
