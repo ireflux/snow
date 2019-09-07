@@ -18,7 +18,7 @@ Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善�
 
 视频链接: https://www.youtube.com/watch?v=syrW-M41O3U
 
-这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论 /笑哭：
+这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论：
 
 > Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself
 
@@ -44,8 +44,8 @@ that we once knew, long ago, he's gone.
 没错，他的却是一个善良的人，但此时内心非常纠结，最终经过在地下室的一番谈话后，walter 决定放了 crazy 8，直至他检查了盘子碎片，发现少了一块...
 
 > No, don't do this. Don't do this.  
-Why are you doing this?  
-why are you doing this?
+> Why are you doing this?  
+> why are you doing this?
 
 场景2：
 
