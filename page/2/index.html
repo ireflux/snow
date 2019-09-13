@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ireflux.github.io/snow/" />
 
-<meta property="og:updated_time" content="2019-09-06T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-13T00:00:00+00:00" />
 <meta itemprop="name" content="sherry&#39;s blog">
 <meta itemprop="description" content="Do something amazing.">
 
@@ -116,6 +116,38 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/stack-to-queue/">栈和队列的相互转换</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-08-18 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>关于栈和队列，有时会在面试题中看到诸如以下的问题：</p>
+
+<ol>
+<li>如何使用栈实现队列？</li>
+<li>如何使用队列实现栈？</li>
+</ol>
+
+<p>栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)</p>
+
+<p>接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：</p>
+
+<p>进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/stack-to-queue/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></h1>
@@ -210,29 +242,6 @@
     </div>
     <div class="read-more">
       <a href="/snow/post/study-note-of-spring-data-redis/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/about-imagination/">关于想象力</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-07-17 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。</p>
-
-<p>但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。</p>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/about-imagination/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>

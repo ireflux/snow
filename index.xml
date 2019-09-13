@@ -6,7 +6,7 @@
     <description>Recent content on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,17 @@
       <guid>https://ireflux.github.io/snow/about/</guid>
       <description>That cold black cloud is comin&amp;rsquo; down
 Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</description>
+    </item>
+    
+    <item>
+      <title>试用 Firefox Private Network</title>
+      <link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
