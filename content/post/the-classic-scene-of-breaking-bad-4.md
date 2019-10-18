@@ -115,7 +115,7 @@ Jesse 的气场。Gus 的表情好像要笑，一种很欣慰，很为 Jesse 骄
 
 视频链接: https://www.youtube.com/watch?v=Jf8GaDkFm3E
 
-白老师演的真棒，笑声里充满了绝望。
+白老师演的真棒，笑声里充满了绝望。(莫名压上了韵)
 
 ### Season 4 Episode 12 -- End Times
 

@@ -19,8 +19,9 @@ author: "sherry"
 
 场景1：
 
-视频链接: 
+视频链接: https://www.youtube.com/watch?v=w-h05P0doX4
 
+利用强磁场强弱的瞬间转化来消磁，还有从火车上偷甲氨，第五季的 Pinkman 脑袋被开光了啊。
 
 ### 结语
 
