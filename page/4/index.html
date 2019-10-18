@@ -118,11 +118,112 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/try-firefox-private-network/">试用 Firefox Private Network</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/adb-use-record-on-linux/">Linux上adb的使用记录</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-13 </span>
+      <span class="post-time"> 2019-05-02 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="前言">前言</h2>
+
+<p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑</p>
+
+<p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 <code>adb devices</code> 会显示：</p>
+
+<blockquote>
+<p>List of devices attached<br />
+[device name]    unauthorized</p>
+</blockquote>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/adb-use-record-on-linux/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/blog-migration-record/">博客迁移记录</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-04-23 </span>
       <div class="post-category">
           <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>前些天看到某大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/blog-migration-record/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/casual-talk/">杂谈</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-04-17 </span>
+      <div class="post-category">
+          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>近日全面将Shadowsockes向v2ray切换，原本Arch上用着 <code>sslocal -c /path/filename.config</code> 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。</p>
+
+<p>v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 <code>inbounds</code> 和 <code>outbounds</code> 的配置，一般来说v2ray官网的 <code>新手上路</code> 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/casual-talk/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/avl-tree-study-note/">AVL tree 学习笔记</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-03-26 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h1 id="前言">前言</h1>
+
+<p>最近在复习数据结构，学习了一下AVL树，现记录如下。</p>
+
+<h2 id="什么是avl树">什么是AVL树</h2>
+
+<p>AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家<a href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky">Georgy Adelson-Velsky</a>和<a href="https://en.wikipedia.org/wiki/Evgenii_Landis">Evgenii Landis</a>于1962年在论文《<a href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf">An algorithm for the organization of information</a>》中首次提出。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/avl-tree-study-note/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/take-pictures-of-the-plane/">拍飞奇遇记</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-10-28 </span>
+      <div class="post-category">
+          <a href="/snow/categories/%E8%BD%AC%E8%BD%BD/"> 转载 </a>
           </div>
     </div>
   </header>
@@ -130,110 +231,15 @@
   <div class="post-content">
     <div class="post-summary">
       <blockquote>
-<p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。</p>
+<p>本文为余晟于2018年10月28日发表在微的信公众号「余晟以为」的一篇文章。作者叙事的风格就像以前的文章一样，又让我想到了小时候。</p>
 </blockquote>
+
+<p>去年底一个偶然的机会，我开车去浦东机场，发现起飞的飞机特别近，在高架上看得非常真切。于是我想，应该有个什么地方可以近距离拍到正在起降的飞机。</p>
+
+<p>在很长的时间里，这都只是一个念头而没有付诸行动。我只是在网上搜了搜相关的资料，才知道这种活动叫“拍飞”，专门拍飞机的摄友自称“飞友”，而且列出了几个在浦东机场“拍飞”的好地点。到了10月1日，天气难得的好，又难得有空，我终于可以去尝试“拍飞”了。</p>
     </div>
     <div class="read-more">
-      <a href="/snow/post/try-firefox-private-network/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/mistakes-that-entrepreneurs-should-not-make-/">创业者不应该犯的错误</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-06 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。</p>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/mistakes-that-entrepreneurs-should-not-make-/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-4/">细数 Breaking Bad 经典片段(4)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-01 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
-
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段(3)</a></li>
-</ol>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-4/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-3/">细数 Breaking Bad 经典片段(3)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-29 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
-
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-</ol>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-3/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-2/">细数 Breaking Bad 经典片段(2)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-27 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Breaking Bad 的<a href="https://twitter.com/BreakingBad/status/1165405442039676928">电影</a>要出了，后续剧情，哇，好激动！！</p>
-
-<h3 id="关联文章">关联文章</h3>
-
-<p><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></p>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-2/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/take-pictures-of-the-plane/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
@@ -241,8 +247,11 @@
     </section>
   
   <nav class="pagination">
-    
-    <a class="next" href="/snow/page/2/">
+    <a class="prev" href="/snow/page/3/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">Prev</span>
+      </a>
+    <a class="next" href="/snow/page/5/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

@@ -118,9 +118,41 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/try-firefox-private-network/">试用 Firefox Private Network</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/stack-to-queue/">栈和队列的相互转换</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-13 </span>
+      <span class="post-time"> 2019-08-18 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>关于栈和队列，有时会在面试题中看到诸如以下的问题：</p>
+
+<ol>
+<li>如何使用栈实现队列？</li>
+<li>如何使用队列实现栈？</li>
+</ol>
+
+<p>栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)</p>
+
+<p>接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：</p>
+
+<p>进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/stack-to-queue/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-08-10 </span>
       <div class="post-category">
           <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
           </div>
@@ -129,21 +161,46 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <blockquote>
-<p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。</p>
+      <p>Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：</p>
+
+<blockquote>
+<p>The title comes from the Southern colloquialism &ldquo;breaking bad&rdquo; which means to &ldquo;raise hell&rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.</p>
 </blockquote>
     </div>
     <div class="read-more">
-      <a href="/snow/post/try-firefox-private-network/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/the-classic-scene-of-breaking-bad-1/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/mistakes-that-entrepreneurs-should-not-make-/">创业者不应该犯的错误</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/study-note-of-rabbitmq-1/">RabbitMQ 学习笔记(1)</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-06 </span>
+      <span class="post-time"> 2019-08-05 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>此文仅作个记录</p>
+
+<p>开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 <a href="https://www.rabbitmq.com/install-debian.html#apt">apt repository on Package Cloud or Bintray</a>这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性<a href="https://www.rabbitmq.com/which-erlang.html#compatibility-matrix">表格</a></p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/study-note-of-rabbitmq-1/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/einsteins-five-houses-riddle/">Einstein&#39;s five-houses riddle</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-07-24 </span>
       <div class="post-category">
           <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
           </div>
@@ -152,88 +209,39 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。</p>
+      <p>最近看到一篇发布在 v2ex <a href="https://www.v2ex.com/t/585712">文章</a>，po 主抛出了一个问题：“随着年龄增长越来越难以集中注意力，你们有吗？”，他在里面描述道：“解题时的注意力越来越发散，难以在头脑里形成完整的逻辑链”，“反而清楚的记得我在小学时就可以仅凭思考就算出爱因斯坦的那个著名推理题甚至不需要借助纸笔”。</p>
+
+<p>看到他描述的现象感觉和我之前的一篇<a href="https://wanmei.ml/snow/post/about-imagination/">文章</a>有一点相似之处，只不过他称之为“注意力”，我在文章中描述的是“想象力的强度”，需要“注意力”，但又不完全是”注意力“。他的经历也从某种程度上佐证了我那个观点——幼年时期的大脑皮层可能更为活跃</p>
     </div>
     <div class="read-more">
-      <a href="/snow/post/mistakes-that-entrepreneurs-should-not-make-/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/einsteins-five-houses-riddle/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-4/">细数 Breaking Bad 经典片段(4)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/study-note-of-spring-data-redis/">Spring Data Redis 学习笔记</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-01 </span>
+      <span class="post-time"> 2019-07-21 </span>
       <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
+      <p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：<a href="https://github.com/xetorthio/jedis">Jedis</a>， <a href="https://github.com/lettuce-io/lettuce-core">lettuce</a>， <a href="https://github.com/mrniko/redisson">Redisson</a>， Spring Boot 2.X 中默认集成了 lettuce。</p>
 
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段(3)</a></li>
-</ol>
+<p>以下是<a href="https://github.com/lettuce-io/lettuce-core">官方</a>对 lettuce 的描述，摘录如下：</p>
+
+<blockquote>
+<p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.</p>
+</blockquote>
     </div>
     <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-4/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-3/">细数 Breaking Bad 经典片段(3)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-29 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
-
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-</ol>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-3/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-2/">细数 Breaking Bad 经典片段(2)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-27 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Breaking Bad 的<a href="https://twitter.com/BreakingBad/status/1165405442039676928">电影</a>要出了，后续剧情，哇，好激动！！</p>
-
-<h3 id="关联文章">关联文章</h3>
-
-<p><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></p>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-2/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/study-note-of-spring-data-redis/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
@@ -241,8 +249,11 @@
     </section>
   
   <nav class="pagination">
-    
-    <a class="next" href="/snow/page/2/">
+    <a class="prev" href="/snow/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">Prev</span>
+      </a>
+    <a class="next" href="/snow/page/3/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

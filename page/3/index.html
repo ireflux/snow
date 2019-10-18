@@ -118,9 +118,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/try-firefox-private-network/">试用 Firefox Private Network</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/about-imagination/">关于想象力</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-13 </span>
+      <span class="post-time"> 2019-07-17 </span>
       <div class="post-category">
           <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
           </div>
@@ -129,95 +129,130 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <blockquote>
-<p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。</p>
-</blockquote>
+      <p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。</p>
+
+<p>但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。</p>
     </div>
     <div class="read-more">
-      <a href="/snow/post/try-firefox-private-network/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/about-imagination/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/mistakes-that-entrepreneurs-should-not-make-/">创业者不应该犯的错误</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/spring-boot-and-swagger2/">Spring Boot 整合 Swagger2</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-06 </span>
+      <span class="post-time"> 2019-07-01 </span>
       <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。</p>
+      <p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。</p>
+
+<p>首先需要引入 Swagger2 的依赖，截止发文前版本号如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>springfox-swagger2<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.9.2<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>springfox-swagger-ui<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.9.2<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
     <div class="read-more">
-      <a href="/snow/post/mistakes-that-entrepreneurs-should-not-make-/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/spring-boot-and-swagger2/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-4/">细数 Breaking Bad 经典片段(4)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/the-first-exploration-of-postgresql/">初探PostgreSQL</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-09-01 </span>
+      <span class="post-time"> 2019-05-29 </span>
       <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
+      <p>在群友的安利（<del>传教</del>）下，成功引起了我的兴趣&hellip;</p>
 
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段(3)</a></li>
-</ol>
+<p>在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。</p>
+
+<p>安装没什么可说的，直接 <code>sudo pacman -S postgresql</code> 就好了。(其他发行版请使用对应的包管理器)</p>
+
+<p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。</p>
     </div>
     <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-4/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/the-first-exploration-of-postgresql/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-3/">细数 Breaking Bad 经典片段(3)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/docker-swarm-cluster-create/">Docker Swarm 集群创建过程</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-08-29 </span>
+      <span class="post-time"> 2019-05-11 </span>
       <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
+      <p>Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。</p>
 
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-</ol>
+<h2 id="初始化">初始化</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo docker swarm init</code></pre></td></tr></table>
+</div>
+</div>
     </div>
     <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-3/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/docker-swarm-cluster-create/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-2/">细数 Breaking Bad 经典片段(2)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/firefox-network-settings-config/">利用Firefox自带的Network Settings科学上网</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2019-08-27 </span>
+      <span class="post-time"> 2019-05-06 </span>
       <div class="post-category">
           <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
           </div>
@@ -226,14 +261,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      <p>Breaking Bad 的<a href="https://twitter.com/BreakingBad/status/1165405442039676928">电影</a>要出了，后续剧情，哇，好激动！！</p>
-
-<h3 id="关联文章">关联文章</h3>
-
-<p><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></p>
+      <p>自从Chrome 71(没记错的话是这个版本= =)曝出追踪用户的<a href="https://www.valuewalk.com/2018/11/google-chrome-71-track-abusive-experiences/">丑闻</a>后，我的主力浏览器便全面切换到的Firefox。那个时候Firefox推出的新版本Firefox Quantum也有一段时间了，是用Rust新写的内核，感觉确实比之前要快上不少（虽然还是不如Chrome快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于Firefox的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的SwitchyOmega。</p>
     </div>
     <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-2/" class="read-more-link">Read more...</a>
+      <a href="/snow/post/firefox-network-settings-config/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
@@ -241,8 +272,11 @@
     </section>
   
   <nav class="pagination">
-    
-    <a class="next" href="/snow/page/2/">
+    <a class="prev" href="/snow/page/2/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">Prev</span>
+      </a>
+    <a class="next" href="/snow/page/4/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
