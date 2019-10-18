@@ -140,8 +140,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     owner = "ireflux"              # Your GitHub ID
     repo = "snow"               # The repo to store comments
     admin = ["ireflux"]
-    clientId = "2856414b5f6b869b40e9"           # Your client ID
-    clientSecret = "9114a49cdf885ae08828683792d2b3d4cf8444f6"       # Your client secret
+    clientId = ""           # Your client ID
+    clientSecret = ""       # Your client secret
 
   [params.flowchartDiagrams]# see https://blog.olowolo.com/example-site/post/js-flowchart-diagrams/
     enable = false
