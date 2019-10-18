@@ -13,10 +13,10 @@
     
     <item>
       <title>初探PostgreSQL</title>
-      <link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link>
+      <link>https://ireflux.github.io/snow/posts/the-first-exploration-of-postgresql/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid>
+      <guid>https://ireflux.github.io/snow/posts/the-first-exploration-of-postgresql/</guid>
       <description>&lt;p&gt;在群友的安利（&lt;del&gt;传教&lt;/del&gt;）下，成功引起了我的兴趣&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p&gt;

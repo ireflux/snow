@@ -13,10 +13,10 @@
     
     <item>
       <title>Linux上adb的使用记录</title>
-      <link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link>
+      <link>https://ireflux.github.io/snow/posts/adb-use-record-on-linux/</link>
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid>
+      <guid>https://ireflux.github.io/snow/posts/adb-use-record-on-linux/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p&gt;
@@ -31,10 +31,10 @@
     
     <item>
       <title>ArchLinux安装教程</title>
-      <link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link>
+      <link>https://ireflux.github.io/snow/posts/arch-linux-installation-guide/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid>
+      <guid>https://ireflux.github.io/snow/posts/arch-linux-installation-guide/</guid>
       <description>&lt;p&gt;体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p&gt;
 
 &lt;p&gt;心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p&gt;</description>

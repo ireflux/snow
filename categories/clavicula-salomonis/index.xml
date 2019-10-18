@@ -13,10 +13,10 @@
     
     <item>
       <title>栈和队列的相互转换</title>
-      <link>https://ireflux.github.io/snow/post/stack-to-queue/</link>
+      <link>https://ireflux.github.io/snow/posts/stack-to-queue/</link>
       <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid>
+      <guid>https://ireflux.github.io/snow/posts/stack-to-queue/</guid>
       <description>&lt;p&gt;关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p&gt;
 
 &lt;ol&gt;
@@ -33,10 +33,10 @@
     
     <item>
       <title>RabbitMQ 学习笔记(1)</title>
-      <link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</link>
+      <link>https://ireflux.github.io/snow/posts/study-note-of-rabbitmq-1/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</guid>
+      <guid>https://ireflux.github.io/snow/posts/study-note-of-rabbitmq-1/</guid>
       <description>&lt;p&gt;此文仅作个记录&lt;/p&gt;
 
 &lt;p&gt;开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a href=&#34;https://www.rabbitmq.com/install-debian.html#apt&#34;&gt;apt repository on Package Cloud or Bintray&lt;/a&gt;这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a href=&#34;https://www.rabbitmq.com/which-erlang.html#compatibility-matrix&#34;&gt;表格&lt;/a&gt;&lt;/p&gt;</description>
@@ -44,10 +44,10 @@
     
     <item>
       <title>Spring Data Redis 学习笔记</title>
-      <link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link>
+      <link>https://ireflux.github.io/snow/posts/study-note-of-spring-data-redis/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid>
+      <guid>https://ireflux.github.io/snow/posts/study-note-of-spring-data-redis/</guid>
       <description>&lt;p&gt;Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a href=&#34;https://github.com/xetorthio/jedis&#34;&gt;Jedis&lt;/a&gt;， &lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;lettuce&lt;/a&gt;， &lt;a href=&#34;https://github.com/mrniko/redisson&#34;&gt;Redisson&lt;/a&gt;， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p&gt;
 
 &lt;p&gt;以下是&lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;官方&lt;/a&gt;对 lettuce 的描述，摘录如下：&lt;/p&gt;
@@ -59,10 +59,10 @@
     
     <item>
       <title>Spring Boot 整合 Swagger2</title>
-      <link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link>
+      <link>https://ireflux.github.io/snow/posts/spring-boot-and-swagger2/</link>
       <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid>
+      <guid>https://ireflux.github.io/snow/posts/spring-boot-and-swagger2/</guid>
       <description>&lt;p&gt;关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p&gt;
 
 &lt;p&gt;首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p&gt;
@@ -98,10 +98,10 @@
     
     <item>
       <title>初探PostgreSQL</title>
-      <link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link>
+      <link>https://ireflux.github.io/snow/posts/the-first-exploration-of-postgresql/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid>
+      <guid>https://ireflux.github.io/snow/posts/the-first-exploration-of-postgresql/</guid>
       <description>&lt;p&gt;在群友的安利（&lt;del&gt;传教&lt;/del&gt;）下，成功引起了我的兴趣&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p&gt;
@@ -113,10 +113,10 @@
     
     <item>
       <title>Docker Swarm 集群创建过程</title>
-      <link>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</link>
+      <link>https://ireflux.github.io/snow/posts/docker-swarm-cluster-create/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</guid>
+      <guid>https://ireflux.github.io/snow/posts/docker-swarm-cluster-create/</guid>
       <description>&lt;p&gt;Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。&lt;/p&gt;
 
 &lt;h2 id=&#34;初始化&#34;&gt;初始化&lt;/h2&gt;
@@ -132,10 +132,10 @@
     
     <item>
       <title>Linux上adb的使用记录</title>
-      <link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link>
+      <link>https://ireflux.github.io/snow/posts/adb-use-record-on-linux/</link>
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid>
+      <guid>https://ireflux.github.io/snow/posts/adb-use-record-on-linux/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p&gt;
@@ -150,10 +150,10 @@
     
     <item>
       <title>AVL tree 学习笔记</title>
-      <link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link>
+      <link>https://ireflux.github.io/snow/posts/avl-tree-study-note/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid>
+      <guid>https://ireflux.github.io/snow/posts/avl-tree-study-note/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p&gt;
@@ -165,10 +165,10 @@
     
     <item>
       <title>子元素margin-top影响父元素问题</title>
-      <link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link>
+      <link>https://ireflux.github.io/snow/posts/a-question-about-the-css-box-model/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid>
+      <guid>https://ireflux.github.io/snow/posts/a-question-about-the-css-box-model/</guid>
       <description>&lt;p&gt;今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p&gt;
 
 &lt;p&gt;我的HTML嵌套关系如下：&lt;/p&gt;
@@ -192,10 +192,10 @@
     
     <item>
       <title>一道笔试题</title>
-      <link>https://ireflux.github.io/snow/post/an-interview-question/</link>
+      <link>https://ireflux.github.io/snow/posts/an-interview-question/</link>
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
+      <guid>https://ireflux.github.io/snow/posts/an-interview-question/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
@@ -205,10 +205,10 @@
     
     <item>
       <title>数据结构知识点总结</title>
-      <link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link>
+      <link>https://ireflux.github.io/snow/posts/summary-of-data-structure/</link>
       <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
+      <guid>https://ireflux.github.io/snow/posts/summary-of-data-structure/</guid>
       <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
 
 &lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
@@ -219,10 +219,10 @@
     
     <item>
       <title>Learn Spring Framework</title>
-      <link>https://ireflux.github.io/snow/post/learn-spring-framework/</link>
+      <link>https://ireflux.github.io/snow/posts/learn-spring-framework/</link>
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid>
+      <guid>https://ireflux.github.io/snow/posts/learn-spring-framework/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;

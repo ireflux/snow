@@ -15,7 +15,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/</loc>
+    <loc>https://ireflux.github.io/snow/posts/</loc>
     <lastmod>2019-09-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/try-firefox-private-network/</loc>
+    <loc>https://ireflux.github.io/snow/posts/try-firefox-private-network/</loc>
     <lastmod>2019-09-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -43,28 +43,28 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make-/</loc>
+    <loc>https://ireflux.github.io/snow/posts/mistakes-that-entrepreneurs-should-not-make-/</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-classic-scene-of-breaking-bad-4/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-classic-scene-of-breaking-bad-3/</loc>
     <lastmod>2019-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-classic-scene-of-breaking-bad-2/</loc>
     <lastmod>2019-08-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -92,14 +92,14 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/stack-to-queue/</loc>
+    <loc>https://ireflux.github.io/snow/posts/stack-to-queue/</loc>
     <lastmod>2019-08-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-classic-scene-of-breaking-bad-1/</loc>
     <lastmod>2019-08-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -113,14 +113,14 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</loc>
+    <loc>https://ireflux.github.io/snow/posts/study-note-of-rabbitmq-1/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</loc>
+    <loc>https://ireflux.github.io/snow/posts/einsteins-five-houses-riddle/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -134,21 +134,21 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</loc>
+    <loc>https://ireflux.github.io/snow/posts/study-note-of-spring-data-redis/</loc>
     <lastmod>2019-07-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/about-imagination/</loc>
+    <loc>https://ireflux.github.io/snow/posts/about-imagination/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</loc>
+    <loc>https://ireflux.github.io/snow/posts/spring-boot-and-swagger2/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -162,7 +162,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-first-exploration-of-postgresql/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -176,7 +176,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</loc>
+    <loc>https://ireflux.github.io/snow/posts/docker-swarm-cluster-create/</loc>
     <lastmod>2019-05-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -190,7 +190,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/firefox-network-settings-config/</loc>
+    <loc>https://ireflux.github.io/snow/posts/firefox-network-settings-config/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -211,21 +211,21 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</loc>
+    <loc>https://ireflux.github.io/snow/posts/adb-use-record-on-linux/</loc>
     <lastmod>2019-05-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/blog-migration-record/</loc>
+    <loc>https://ireflux.github.io/snow/posts/blog-migration-record/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/casual-talk/</loc>
+    <loc>https://ireflux.github.io/snow/posts/casual-talk/</loc>
     <lastmod>2019-05-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -239,14 +239,14 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/avl-tree-study-note/</loc>
+    <loc>https://ireflux.github.io/snow/posts/avl-tree-study-note/</loc>
     <lastmod>2019-03-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</loc>
+    <loc>https://ireflux.github.io/snow/posts/take-pictures-of-the-plane/</loc>
     <lastmod>2018-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -260,21 +260,21 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/to-the-distant-past/</loc>
+    <loc>https://ireflux.github.io/snow/posts/to-the-distant-past/</loc>
     <lastmod>2018-08-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/no-longer-young/</loc>
+    <loc>https://ireflux.github.io/snow/posts/no-longer-young/</loc>
     <lastmod>2018-08-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</loc>
+    <loc>https://ireflux.github.io/snow/posts/talk-about-chinese-drinking-culture/</loc>
     <lastmod>2018-05-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -288,21 +288,21 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</loc>
+    <loc>https://ireflux.github.io/snow/posts/a-question-about-the-css-box-model/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/an-interview-question/</loc>
+    <loc>https://ireflux.github.io/snow/posts/an-interview-question/</loc>
     <lastmod>2018-04-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/forty-years-old/</loc>
+    <loc>https://ireflux.github.io/snow/posts/forty-years-old/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -316,7 +316,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/summary-of-data-structure/</loc>
+    <loc>https://ireflux.github.io/snow/posts/summary-of-data-structure/</loc>
     <lastmod>2018-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -330,84 +330,84 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/learn-spring-framework/</loc>
+    <loc>https://ireflux.github.io/snow/posts/learn-spring-framework/</loc>
     <lastmod>2018-03-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/recommend-two-sites/</loc>
+    <loc>https://ireflux.github.io/snow/posts/recommend-two-sites/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/chasing-happiness/</loc>
+    <loc>https://ireflux.github.io/snow/posts/chasing-happiness/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-silence-city/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-silence-city/</loc>
     <lastmod>2018-02-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-first-experience-of-coding-dynamic-pages/</loc>
     <lastmod>2018-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/new-years-eve/</loc>
+    <loc>https://ireflux.github.io/snow/posts/new-years-eve/</loc>
     <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/line/</loc>
+    <loc>https://ireflux.github.io/snow/posts/line/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/mplayer-compile-guide/</loc>
+    <loc>https://ireflux.github.io/snow/posts/mplayer-compile-guide/</loc>
     <lastmod>2017-11-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/a-dream/</loc>
+    <loc>https://ireflux.github.io/snow/posts/a-dream/</loc>
     <lastmod>2017-10-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</loc>
+    <loc>https://ireflux.github.io/snow/posts/arch-linux-installation-guide/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</loc>
+    <loc>https://ireflux.github.io/snow/posts/the-first-experience-of-win10-built-in-linux-sub-system/</loc>
     <lastmod>2017-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/one-day-prisoner/</loc>
+    <loc>https://ireflux.github.io/snow/posts/one-day-prisoner/</loc>
     <lastmod>2017-07-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -421,7 +421,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</loc>
+    <loc>https://ireflux.github.io/snow/posts/excellent-software-introduction-of-win-platform/</loc>
     <lastmod>2016-06-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

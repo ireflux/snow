@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Win10内置Linux子系统初体验 - sherry&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sherry" /><meta name="description" content="前言 主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10&amp;hellip;
+体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了&amp;hellip;(lll￢ω￢)既然如此，那果断要来体验一把！
+教程 根据官方的Guide，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607&#43;.
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://ireflux.github.io/snow/posts/the-first-experience-of-win10-built-in-linux-sub-system/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
+<link rel="manifest" href="/snow/manifest.json">
+<link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/snow/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Win10内置Linux子系统初体验" />
+<meta property="og:description" content="前言
+
+主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10&hellip;
+
+体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了&hellip;(lll￢ω￢)既然如此，那果断要来体验一把！
+
+教程
+
+根据官方的Guide，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607&#43;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ireflux.github.io/snow/posts/the-first-experience-of-win10-built-in-linux-sub-system/" />
+<meta property="article:published_time" content="2017-08-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-08-29T00:00:00+00:00" />
+<meta itemprop="name" content="Win10内置Linux子系统初体验">
+<meta itemprop="description" content="前言
+
+主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10&hellip;
+
+体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了&hellip;(lll￢ω￢)既然如此，那果断要来体验一把！
+
+教程
+
+根据官方的Guide，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607&#43;.">
+
+
+<meta itemprop="datePublished" content="2017-08-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-08-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="944">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Win10内置Linux子系统初体验"/>
+<meta name="twitter:description" content="前言
+
+主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10&hellip;
+
+体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了&hellip;(lll￢ω￢)既然如此，那果断要来体验一把！
+
+教程
+
+根据官方的Guide，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607&#43;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/snow/" class="logo">sherry&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/snow/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/snow/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/snow/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/snow/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/snow/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/snow/" class="logo">sherry&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/snow/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h1 id="前言">前言</h1>
+
+<p>主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10&hellip;</p>
+
+<p>体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了&hellip;(lll￢ω￢)既然如此，那果断要来体验一把！</p>
+
+<h2 id="教程">教程</h2>
+
+<p>根据官方的<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">Guide</a>，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.</p>
+
+<p>查看方法：
+&gt; 设置-&gt;系统-&gt;关于</p>
+
+<h3 id="安装">安装</h3>
+
+<p>之后需要安装适用于Linux的windows子系统。</p>
+
+<p>1.以管理员运行Windows PowerShell,输入以下内容回车
+&gt; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</p>
+
+<p>2.重新启动Windows</p>
+
+<p>之后打开开发者人员模式。方法如下：
+&gt; 设置-&gt;更新和安全-&gt;针对开发人员</p>
+
+<p>开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。</p>
+
+<p>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。</p>
+
+<h3 id="卸载">卸载</h3>
+
+<p>打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。</p>
+
+<h2 id="体验结论">体验结论</h2>
+
+<p>这个Windows内置的Linux就是将Linux的系统调用实时的转换成Windows的系统调用，就像是Linux上的Wine的反向技术。Wine可以将Windows上的应用放到Linux上运行，这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine开源，微软也毫无办法。</p>
+
+<p>不过Windows内置的Linux感觉并不自由，内置的文件不能用Windows的工具来创建或修改。否则可能会出现文件损坏导致Linux系统无法使用。因此，如果是Linux的初学者，用这个还不错，但是要当作开发环境，那就算了吧。</p>
+
+<blockquote>
+<p>官方安装指南：<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</a><br />
+详情链接：<a href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/">https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/</a></p>
+</blockquote>
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2017-08-29 00:00:00 \x2b0000 UTC',
+        title: 'Win10内置Linux子系统初体验',
+        clientID: '',
+        clientSecret: '',
+        repo: 'snow',
+        owner: 'ireflux',
+        admin: ['ireflux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/ireflux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com/3932084845" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://space.bilibili.com/13546666" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ireflux.github.io/snow/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sherry</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/snow/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
