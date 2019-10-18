@@ -13,10 +13,10 @@
     
     <item>
       <title>Docker Swarm 集群创建过程</title>
-      <link>https://ireflux.github.io/snow/posts/docker-swarm-cluster-create/</link>
+      <link>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/posts/docker-swarm-cluster-create/</guid>
+      <guid>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</guid>
       <description>&lt;p&gt;Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。&lt;/p&gt;
 
 &lt;h2 id=&#34;初始化&#34;&gt;初始化&lt;/h2&gt;

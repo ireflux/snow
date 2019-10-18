@@ -13,10 +13,10 @@
     
     <item>
       <title>AVL tree 学习笔记</title>
-      <link>https://ireflux.github.io/snow/posts/avl-tree-study-note/</link>
+      <link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/posts/avl-tree-study-note/</guid>
+      <guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p&gt;
