@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/an-interview-question/" />
@@ -814,14 +814,14 @@
 </span><span class="lnt">197
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nf">interview</span><span class="p">;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="err">package interview</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Scanner</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Stack</span><span class="p">;</span>
+<span class="err">import java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Scanner</span><span class="p">;</span>
+<span class="err">import java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Stack</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">num_graphic</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">getGraphic</span><span class="p">(</span><span class="kt">char</span> <span class="nf">rel</span><span class="p">){</span>
-        <span class="n">String</span> <span class="nf">zero</span><span class="o">=</span> <span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+<span class="err">public class </span><span class="n">num_graphic</span> <span class="p">{</span>
+    <span class="err">private String </span><span class="n">getGraphic</span><span class="p">(</span><span class="err">char rel</span><span class="p">){</span>
+        <span class="err">String zero</span><span class="o">=</span> <span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   __     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39;__`\\   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\ \\/\\ \\  \n&#34;</span> <span class="o">+</span>
@@ -830,7 +830,7 @@
                 <span class="s">&#34;  \\ \\____/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   \\/___/ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;          &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">one</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+        <span class="err">String one</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   _     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39; \\    \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\_, \\   \n&#34;</span> <span class="o">+</span>
@@ -839,7 +839,7 @@
                 <span class="s">&#34;    \\ \\_\\\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;     \\/_/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;         &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">two</span><span class="o">=</span><span class="s">&#34;   ___     \n&#34;</span> <span class="o">+</span>
+        <span class="err">String two</span><span class="o">=</span><span class="s">&#34;   ___     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39;___`\\   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\_\\ /\\ \\  \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;\\/_/// /__ \n&#34;</span> <span class="o">+</span>
@@ -847,7 +847,7 @@
                 <span class="s">&#34;  /\\______/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;  \\/_____/ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;           &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">three</span><span class="o">=</span><span class="s">&#34;   __     \n&#34;</span> <span class="o">+</span>
+        <span class="err">String three</span><span class="o">=</span><span class="s">&#34;   __     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39;__`\\   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\_\\L\\ \\  \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;\\/_/_\\_&lt;_ \n&#34;</span> <span class="o">+</span>
@@ -855,7 +855,7 @@
                 <span class="s">&#34;  \\ \\____/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   \\/___/ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;          &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">four</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+        <span class="err">String four</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; __ __      \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\ \\\\ \\     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;\\ \\ \\\\ \\    \n&#34;</span> <span class="o">+</span>
@@ -864,7 +864,7 @@
                 <span class="s">&#34;   \\/_/\\_\\_/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;      \\/_/  \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;            &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">five</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+        <span class="err">String five</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; ______    \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\  ___\\   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;\\ \\ \\__/   \n&#34;</span> <span class="o">+</span>
@@ -873,7 +873,7 @@
                 <span class="s">&#34;   \\ \\____/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;    \\/___/ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;           &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">six</span><span class="o">=</span><span class="s">&#34;  ____    \n&#34;</span> <span class="o">+</span>
+        <span class="err">String six</span><span class="o">=</span><span class="s">&#34;  ____    \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39;___\\   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\ \\__/   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;\\ \\  _``\\ \n&#34;</span> <span class="o">+</span>
@@ -881,7 +881,7 @@
                 <span class="s">&#34;  \\ \\____/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   \\/___/ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;          &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">seven</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+        <span class="err">String seven</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; ________ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\_____  \\\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;\\/___//&#39;/&#39;\n&#34;</span> <span class="o">+</span>
@@ -890,7 +890,7 @@
                 <span class="s">&#34; /\\_/     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; \\//      \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;          &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">eight</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+        <span class="err">String eight</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   __     \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39;_ `\\   \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\ \\L\\ \\  \n&#34;</span> <span class="o">+</span>
@@ -899,7 +899,7 @@
                 <span class="s">&#34;  \\ \\____/\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   \\/___/ \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;          &#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">nine</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
+        <span class="err">String nine</span><span class="o">=</span><span class="s">&#34;\n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;   __      \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34; /&#39;_ `\\    \n&#34;</span> <span class="o">+</span>
                 <span class="s">&#34;/\\ \\L\\ \\   \n&#34;</span> <span class="o">+</span>
@@ -935,19 +935,19 @@
         <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">private</span> <span class="nf">float</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">String</span> <span class="nf">expression</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">char</span><span class="p">[]</span> <span class="nf">tokens</span> <span class="o">=</span> <span class="n">expression</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">();</span>
+    <span class="err">private float </span><span class="n">evaluate</span><span class="p">(</span><span class="err">String expression</span><span class="p">)</span> <span class="p">{</span>
+        <span class="err">char[] tokens </span><span class="o">=</span> <span class="n">expression</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">();</span>
 
-        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Float</span><span class="o">&gt;</span> <span class="nf">stackOfNum</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="nf">stackOfOps</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="err">Stack&lt;Float&gt; stackOfNum </span><span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="err">Stack&lt;Character&gt; stackOfOps </span><span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tokens</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tokens</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="p">)</span>
                 <span class="k">continue</span><span class="p">;</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">StringBuilder</span> <span class="nf">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+                <span class="err">StringBuilder str </span><span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
 
                 <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">tokens</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">str</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]);</span>
@@ -975,13 +975,13 @@
         <span class="k">return</span> <span class="n">stackOfNum</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="kd">private</span> <span class="nf">boolean</span> <span class="n">hasPrecedence</span><span class="p">(</span><span class="kt">char</span> <span class="nf">op1</span><span class="p">,</span> <span class="kt">char</span> <span class="nf">op2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="err">private boolean </span><span class="n">hasPrecedence</span><span class="p">(</span><span class="err">char op1</span><span class="p">,</span> <span class="err">char op2</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">op2</span> <span class="o">==</span> <span class="sc">&#39;(&#39;</span> <span class="o">||</span> <span class="n">op2</span> <span class="o">==</span> <span class="sc">&#39;)&#39;</span><span class="p">)</span>
             <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">op1</span> <span class="o">!=</span> <span class="sc">&#39;*&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">op1</span> <span class="o">!=</span> <span class="sc">&#39;/&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">op2</span> <span class="o">!=</span> <span class="sc">&#39;+&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">op2</span> <span class="o">!=</span> <span class="sc">&#39;-&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kd">private</span> <span class="nf">float</span> <span class="n">calculate</span><span class="p">(</span><span class="kt">char</span> <span class="nf">op</span><span class="p">,</span> <span class="kt">float</span> <span class="nf">b</span><span class="p">,</span> <span class="kt">float</span> <span class="nf">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="err">private float </span><span class="n">calculate</span><span class="p">(</span><span class="err">char op</span><span class="p">,</span> <span class="err">float b</span><span class="p">,</span> <span class="err">float a</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">switch</span> <span class="p">(</span><span class="n">op</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">case</span> <span class="sc">&#39;+&#39;</span><span class="o">:</span>
                 <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
@@ -998,15 +998,15 @@
         <span class="k">return</span> <span class="n">0</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">){</span>
-        <span class="n">Scanner</span> <span class="nf">in</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+    <span class="err">public static void main</span><span class="p">(</span><span class="err">String[] args</span><span class="p">){</span>
+        <span class="err">Scanner in</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;Enter expression:&#34;</span><span class="p">);</span>
-        <span class="n">String</span> <span class="nf">input</span><span class="o">=</span><span class="n">in</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+        <span class="err">String input</span><span class="o">=</span><span class="n">in</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
 <span class="c1">//        String[] parts=input.split(&#34;(?=[+-/*])|(?&lt;=[+-/*])&#34;);
-</span><span class="c1"></span>        <span class="n">num_graphic</span> <span class="nf">ng</span><span class="o">=</span><span class="k">new</span> <span class="n">num_graphic</span><span class="p">();</span>
-        <span class="kt">int</span> <span class="nf">result</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">ng</span><span class="p">.</span><span class="na">evaluate</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
-        <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="n">result</span><span class="o">+</span><span class="s">&#34;&#34;</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span><span class="o">=</span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class="c1"></span>        <span class="err">num_graphic ng</span><span class="o">=</span><span class="k">new</span> <span class="n">num_graphic</span><span class="p">();</span>
+        <span class="err">int result</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">ng</span><span class="p">.</span><span class="na">evaluate</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+        <span class="err">String str </span><span class="o">=</span> <span class="n">result</span><span class="o">+</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="err">int i</span><span class="o">=</span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ng</span><span class="p">.</span><span class="na">getGraphic</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)));</span>
         <span class="p">}</span>
     <span class="p">}</span>

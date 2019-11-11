@@ -27,7 +27,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/stack-to-queue/" />
@@ -242,16 +242,16 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">StackToQueue</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="err">public class </span><span class="n">StackToQueue</span> <span class="p">{</span>
 
-    <span class="kd">private</span> <span class="nf">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">stack1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="kd">private</span> <span class="nf">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">stack2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="err">private Stack</span><span class="o">&lt;</span><span class="err">Integer&gt; stack1 </span><span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="err">private Stack</span><span class="o">&lt;</span><span class="err">Integer&gt; stack2 </span><span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    <span class="kd">private</span> <span class="nf">void</span> <span class="n">pushQueue</span><span class="p">(</span><span class="kt">int</span> <span class="nf">num</span><span class="p">){</span>
+    <span class="err">private void </span><span class="n">pushQueue</span><span class="p">(</span><span class="err">int num</span><span class="p">){</span>
         <span class="n">stack1</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kd">private</span> <span class="nf">Integer</span> <span class="n">popQueue</span><span class="p">(){</span>
+    <span class="err">private Integer </span><span class="n">popQueue</span><span class="p">(){</span>
 
         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">stack2</span><span class="p">.</span><span class="na">empty</span><span class="p">()</span> <span class="o">||</span> <span class="o">!</span><span class="n">stack1</span><span class="p">.</span><span class="na">empty</span><span class="p">()){</span>
             <span class="k">if</span><span class="p">(</span><span class="n">stack2</span><span class="p">.</span><span class="na">empty</span><span class="p">()){</span>
@@ -265,8 +265,8 @@
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">){</span>
-        <span class="n">StackToQueue</span> <span class="nf">stackToQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StackToQueue</span><span class="p">();</span>
+    <span class="err">public static void main</span><span class="p">(</span><span class="err">String[] args</span><span class="p">){</span>
+        <span class="err">StackToQueue stackToQueue </span><span class="o">=</span> <span class="k">new</span> <span class="n">StackToQueue</span><span class="p">();</span>
         <span class="n">stackToQueue</span><span class="p">.</span><span class="na">pushQueue</span><span class="p">(</span><span class="n">1</span><span class="p">);</span>
         <span class="n">stackToQueue</span><span class="p">.</span><span class="na">pushQueue</span><span class="p">(</span><span class="n">2</span><span class="p">);</span>
         <span class="n">stackToQueue</span><span class="p">.</span><span class="na">pushQueue</span><span class="p">(</span><span class="n">3</span><span class="p">);</span>
@@ -331,19 +331,19 @@
 </span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">QueueToStack</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="err">public class </span><span class="n">QueueToStack</span> <span class="p">{</span>
 
-    <span class="kd">private</span> <span class="nf">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="kd">private</span> <span class="nf">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="err">private Queue</span><span class="o">&lt;</span><span class="err">Integer&gt; queue1 </span><span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="err">private Queue</span><span class="o">&lt;</span><span class="err">Integer&gt; queue2 </span><span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    <span class="kd">private</span> <span class="nf">void</span> <span class="n">pushStack</span><span class="p">(</span><span class="n">Integer</span> <span class="nf">num</span><span class="p">){</span>
+    <span class="err">private void </span><span class="n">pushStack</span><span class="p">(</span><span class="err">Integer num</span><span class="p">){</span>
         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">queue1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
             <span class="n">queue1</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="n">queue2</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kd">private</span> <span class="nf">Integer</span> <span class="n">popStack</span><span class="p">(){</span>
+    <span class="err">private Integer </span><span class="n">popStack</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">queue2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
             <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="p">;</span>
         <span class="p">}</span>
@@ -361,8 +361,8 @@
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">){</span>
-        <span class="n">QueueToStack</span> <span class="nf">queueToStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueToStack</span><span class="p">();</span>
+    <span class="err">public static void main</span><span class="p">(</span><span class="err">String[] args</span><span class="p">){</span>
+        <span class="err">QueueToStack queueToStack </span><span class="o">=</span> <span class="k">new</span> <span class="n">QueueToStack</span><span class="p">();</span>
         <span class="n">queueToStack</span><span class="p">.</span><span class="na">pushStack</span><span class="p">(</span><span class="n">1</span><span class="p">);</span>
         <span class="n">queueToStack</span><span class="p">.</span><span class="na">pushStack</span><span class="p">(</span><span class="n">2</span><span class="p">);</span>
         <span class="n">queueToStack</span><span class="p">.</span><span class="na">pushStack</span><span class="p">(</span><span class="n">3</span><span class="p">);</span>

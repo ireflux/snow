@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/spring-boot-and-swagger2/" />
@@ -301,9 +301,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
 <span class="nd">@EnableSwagger2</span>
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">SwaggerConfig</span> <span class="p">{</span>
+<span class="err">public class </span><span class="n">SwaggerConfig</span> <span class="p">{</span>
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="nf">Docket</span> <span class="n">createRestApi</span><span class="p">()</span> <span class="p">{</span>
+    <span class="err">public Docket </span><span class="n">createRestApi</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="n">Docket</span><span class="p">(</span><span class="n">DocumentationType</span><span class="p">.</span><span class="na">SWAGGER_2</span><span class="p">)</span>
                 <span class="p">.</span><span class="na">pathMapping</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">)</span>
                 <span class="p">.</span><span class="na">select</span><span class="p">()</span>
@@ -350,21 +350,21 @@
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
 <span class="nd">@Api</span><span class="p">(</span><span class="n">tags</span> <span class="o">=</span> <span class="s">&#34;城市相关接口&#34;</span><span class="p">)</span>
 <span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/city&#34;</span><span class="p">)</span>
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">CitiesController</span> <span class="p">{</span>
+<span class="err">public class </span><span class="n">CitiesController</span> <span class="p">{</span>
 
     <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="nf">ICitiesService</span> <span class="n">citiesService</span><span class="p">;</span>
+    <span class="err">private ICitiesService </span><span class="n">citiesService</span><span class="p">;</span>
 
     <span class="nd">@GetMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/list&#34;</span><span class="p">)</span>
     <span class="nd">@ApiOperation</span><span class="p">(</span><span class="s">&#34;查询城市列表&#34;</span><span class="p">)</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cities</span><span class="o">&gt;</span> <span class="nf">getList</span><span class="p">(){</span>
+    <span class="err">List&lt;Cities&gt; getList</span><span class="p">(){</span>
         <span class="k">return</span> <span class="n">citiesService</span><span class="p">.</span><span class="na">getList</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="nd">@GetMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/{id}&#34;</span><span class="p">)</span>
     <span class="nd">@ApiOperation</span><span class="p">(</span><span class="s">&#34;根据id查询城市位置信息&#34;</span><span class="p">)</span>
     <span class="nd">@ApiImplicitParam</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s">&#34;编号&#34;</span><span class="p">,</span> <span class="n">defaultValue</span> <span class="o">=</span> <span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="n">Cities</span> <span class="nf">getCityById</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="n">Integer</span> <span class="nf">id</span><span class="p">){</span>
+    <span class="err">Cities getCityById</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="err">Integer id</span><span class="p">){</span>
         <span class="k">return</span> <span class="n">citiesService</span><span class="p">.</span><span class="na">getLocationById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></td></tr></table>
@@ -401,18 +401,18 @@
 <span class="nd">@EqualsAndHashCode</span><span class="p">(</span><span class="n">callSuper</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 <span class="nd">@Accessors</span><span class="p">(</span><span class="n">chain</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
 <span class="nd">@ApiModel</span>
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">Cities</span> <span class="nf">implements</span> <span class="n">Serializable</span> <span class="p">{</span>
+<span class="err">public class Cities implements </span><span class="n">Serializable</span> <span class="p">{</span>
 
-    <span class="kd">private</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">1L</span><span class="p">;</span>
+    <span class="err">private static final long </span><span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">1L</span><span class="p">;</span>
 
     <span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;编号&#34;</span><span class="p">)</span>
-    <span class="kd">private</span> <span class="nf">Integer</span> <span class="n">id</span><span class="p">;</span>
+    <span class="err">private Integer </span><span class="n">id</span><span class="p">;</span>
 
     <span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;城市名称&#34;</span><span class="p">)</span>
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">city</span><span class="p">;</span>
+    <span class="err">private String </span><span class="n">city</span><span class="p">;</span>
 
     <span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;位置&#34;</span><span class="p">)</span>
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">location</span><span class="p">;</span>
+    <span class="err">private String </span><span class="n">location</span><span class="p">;</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
