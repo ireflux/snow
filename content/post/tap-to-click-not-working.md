@@ -23,9 +23,11 @@ Section "InputClass"
 EndSection
 ```
 
+<!--more-->
+
 注：在有些资料中 Driver 项可能是 synaptics，这是旧的驱动，已经不再更新了。
 
-此外还有一些其他的选项，更多可参考 [libinput - libinput-based X.Org input driver](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)
+上方的配置项有些可根据个人习惯来设置，例如：NaturalScrolling，TappingButtonMap，ScrollMethod...它们还有一些其他的选项，可参考 [libinput - libinput-based X.Org input driver](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)
 
 ## 参考资料
 
