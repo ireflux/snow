@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ireflux.github.io/snow/" />
 
-<meta property="og:updated_time" content="2019-11-23T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-11-29T00:00:00+00:00" />
 <meta itemprop="name" content="sherry&#39;s blog">
 <meta itemprop="description" content="Do something amazing.">
 
@@ -116,6 +116,33 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/study-note-of-rabbitmq-2/">RabbitMQ 学习笔记(2)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-11-29 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+        <span class="more-meta"> 772 words </span>
+        <span class="more-meta"> 2 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：<a href="https://wanmei.ml/snow/post/study-note-of-rabbitmq-1/">RabbitMQ 学习笔记(1)</a></p>
+
+<p>对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。</p>
+
+<p>RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 <code>AbstractMessageListenerContainer</code> 定义的 <code>DEFAULT_PREFETCH_COUNT</code> 值为 250,如果将其设置为 1,则将会变为循环调度。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/study-note-of-rabbitmq-2/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/snow/post/note-on-using-spring-session/">Spring Session 使用笔记</a></h1>
@@ -256,35 +283,6 @@ EndSection</code></pre></td></tr></table>
     </div>
     <div class="read-more">
       <a href="/snow/post/mistakes-that-entrepreneurs-should-not-make/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-4/">细数 Breaking Bad 经典片段(4)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-01 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 1400 words </span>
-        <span class="more-meta"> 3 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
-
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段(3)</a></li>
-</ol>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-4/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

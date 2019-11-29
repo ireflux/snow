@@ -6,10 +6,19 @@
     <description>Recent content in Tags on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://ireflux.github.io/snow/tags/rabbitmq/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/tags/rabbitmq/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Spring</title>
@@ -44,15 +53,6 @@
       <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RabbitMQ</title>
-      <link>https://ireflux.github.io/snow/tags/rabbitmq/</link>
-      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/tags/rabbitmq/</guid>
       <description></description>
     </item>
     

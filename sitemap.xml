@@ -9,28 +9,49 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/post/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/tags/rabbitmq/</loc>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/</loc>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/tags/</loc>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -51,13 +72,6 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/post/note-on-using-spring-session/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -136,13 +150,6 @@
   <url>
     <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</loc>
     <lastmod>2019-08-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/rabbitmq/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
