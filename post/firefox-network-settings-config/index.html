@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/firefox-network-settings-config/" />
@@ -47,16 +47,13 @@
 <meta property="article:modified_time" content="2019-05-06T00:00:00+00:00" />
 <meta itemprop="name" content="利用Firefox自带的Network Settings科学上网">
 <meta itemprop="description" content="自从Chrome 71(没记错的话是这个版本= =)曝出追踪用户的丑闻后，我的主力浏览器便全面切换到的Firefox。那个时候Firefox推出的新版本Firefox Quantum也有一段时间了，是用Rust新写的内核，感觉确实比之前要快上不少（虽然还是不如Chrome快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于Firefox的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的SwitchyOmega。">
-
-
 <meta itemprop="datePublished" content="2019-05-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="630">
 
 
 
-<meta itemprop="keywords" content="Firefox," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Firefox," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="利用Firefox自带的Network Settings科学上网"/>
 <meta name="twitter:description" content="自从Chrome 71(没记错的话是这个版本= =)曝出追踪用户的丑闻后，我的主力浏览器便全面切换到的Firefox。那个时候Firefox推出的新版本Firefox Quantum也有一段时间了，是用Rust新写的内核，感觉确实比之前要快上不少（虽然还是不如Chrome快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于Firefox的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的SwitchyOmega。"/>
 
@@ -141,18 +138,14 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
       <p>自从Chrome 71(没记错的话是这个版本= =)曝出追踪用户的<a href="https://www.valuewalk.com/2018/11/google-chrome-71-track-abusive-experiences/">丑闻</a>后，我的主力浏览器便全面切换到的Firefox。那个时候Firefox推出的新版本Firefox Quantum也有一段时间了，是用Rust新写的内核，感觉确实比之前要快上不少（虽然还是不如Chrome快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于Firefox的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的SwitchyOmega。</p>
-
 <p>事实上Firefox自带了网络设置的选项，也没有必要再去用SwitchyOmega。当初尝试手动配置了一下Network Settings，不知为什么并没有生效，只好先继续使用着SwitchyOmega。本着奥卡姆剃刀原则，长时间以来一直想用自带的网络设置换掉SwitchyOmega，然而一直也没有付诸行动。现在Firefox扩展无法使用也终于促使我再次去拾起这个想法。</p>
-
 <p>首先在配置好的SwitchyOmega上选择<code>Export PAC</code>，然后打开Firefox<code>Preferences</code>，下拉打开<code>Network Settings</code>，在弹出的对话框中选择<code>Automatic proxy configuration URL</code>，在对应的文本框中写入刚刚导出的PAC文件路径即可。</p>
-
 <p>此时应该就能顺利看到Google了:)</p>
-
 <p>UPDATE(2019.08.09)：最近偶有断流现象，不知为啥，还是先切换回了 Proxy SwitchyOmega &hellip;
 UPDATE(2019.08.10)：好象是 Firefox 的问题&hellip;</p>
     </div>

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Github Actions 每天自动发送比特币的估值邮件</title>
+      <link>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</guid>
+      <description>前段时间，在阮一峰老师那里看到了GitHub Actions 入门教程，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github</description>
+    </item>
     
     <item>
       <title>RabbitMQ 学习笔记(2)</title>
@@ -18,9 +27,7 @@
       
       <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/</guid>
       <description>&lt;p&gt;开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：&lt;a href=&#34;https://wanmei.ml/snow/post/study-note-of-rabbitmq-1/&#34;&gt;RabbitMQ 学习笔记(1)&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。&lt;/p&gt;
-
 &lt;p&gt;RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 &lt;code&gt;AbstractMessageListenerContainer&lt;/code&gt; 定义的 &lt;code&gt;DEFAULT_PREFETCH_COUNT&lt;/code&gt; 值为 250,如果将其设置为 1,则将会变为循环调度。&lt;/p&gt;</description>
     </item>
     
@@ -31,11 +38,10 @@
       
       <guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid>
       <description>&lt;p&gt;Spring Session 的配置非常简单，根据&lt;a href=&#34;https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html&#34;&gt;官方文档&lt;/a&gt;的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p&gt;
-
 &lt;p&gt;首先需要添加依赖项:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
@@ -45,14 +51,15 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependencies&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt;&lt;span class=&#34;c&#34;&gt; ... &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;--&amp;gt;&lt;/span&gt;
 
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.session&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-session-data-redis&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;org.springframework.session&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;spring-session-data-redis&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
 	&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -64,11 +71,10 @@
       
       <guid>https://ireflux.github.io/snow/post/tap-to-click-not-working/</guid>
       <description>&lt;p&gt;最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p&gt;
-
 &lt;p&gt;在路径 &lt;code&gt;/etc/X11/xorg.conf.d/&lt;/code&gt; 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
@@ -87,7 +93,8 @@
         Option &lt;span class=&#34;s2&#34;&gt;&amp;#34;TappingButtonMap&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;lrm&amp;#34;&lt;/span&gt;
         Option &lt;span class=&#34;s2&#34;&gt;&amp;#34;NaturalScrolling&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;
         Option &lt;span class=&#34;s2&#34;&gt;&amp;#34;ScrollMethod&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;twofinger&amp;#34;&lt;/span&gt;
-EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+EndSection
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -118,8 +125,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid>
-      <description>&lt;h3 id=&#34;关联文章&#34;&gt;关联文章&lt;/h3&gt;
-
+      <description>&lt;h3 id=&#34;heading&#34;&gt;关联文章&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/&#34;&gt;细数 Breaking Bad 经典片段(1)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2&#34;&gt;细数 Breaking Bad 经典片段(2)&lt;/a&gt;&lt;/li&gt;
@@ -133,8 +139,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</guid>
-      <description>&lt;h3 id=&#34;关联文章&#34;&gt;关联文章&lt;/h3&gt;
-
+      <description>&lt;h3 id=&#34;heading&#34;&gt;关联文章&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/&#34;&gt;细数 Breaking Bad 经典片段(1)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2&#34;&gt;细数 Breaking Bad 经典片段(2)&lt;/a&gt;&lt;/li&gt;
@@ -148,9 +153,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</guid>
       <description>&lt;p&gt;Breaking Bad 的&lt;a href=&#34;https://twitter.com/BreakingBad/status/1165405442039676928&#34;&gt;电影&lt;/a&gt;要出了，后续剧情，哇，好激动！！&lt;/p&gt;
-
-&lt;h3 id=&#34;关联文章&#34;&gt;关联文章&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading&#34;&gt;关联文章&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/&#34;&gt;细数 Breaking Bad 经典片段(1)&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -161,16 +164,12 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid>
       <description>&lt;p&gt;关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;如何使用栈实现队列？&lt;/li&gt;
 &lt;li&gt;如何使用队列实现栈？&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)&lt;/p&gt;
-
 &lt;p&gt;接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：&lt;/p&gt;
-
 &lt;p&gt;进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。&lt;/p&gt;</description>
     </item>
     
@@ -181,9 +180,8 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</guid>
       <description>&lt;p&gt;Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p&gt;
-
 &lt;blockquote&gt;
-&lt;p&gt;The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p&gt;
+&lt;p&gt;The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&#39;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -194,7 +192,6 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</guid>
       <description>&lt;p&gt;此文仅作个记录&lt;/p&gt;
-
 &lt;p&gt;开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a href=&#34;https://www.rabbitmq.com/install-debian.html#apt&#34;&gt;apt repository on Package Cloud or Bintray&lt;/a&gt;这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a href=&#34;https://www.rabbitmq.com/which-erlang.html#compatibility-matrix&#34;&gt;表格&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -205,7 +202,6 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</guid>
       <description>&lt;p&gt;最近看到一篇发布在 v2ex &lt;a href=&#34;https://www.v2ex.com/t/585712&#34;&gt;文章&lt;/a&gt;，po 主抛出了一个问题：“随着年龄增长越来越难以集中注意力，你们有吗？”，他在里面描述道：“解题时的注意力越来越发散，难以在头脑里形成完整的逻辑链”，“反而清楚的记得我在小学时就可以仅凭思考就算出爱因斯坦的那个著名推理题甚至不需要借助纸笔”。&lt;/p&gt;
-
 &lt;p&gt;看到他描述的现象感觉和我之前的一篇&lt;a href=&#34;https://wanmei.ml/snow/post/about-imagination/&#34;&gt;文章&lt;/a&gt;有一点相似之处，只不过他称之为“注意力”，我在文章中描述的是“想象力的强度”，需要“注意力”，但又不完全是”注意力“。他的经历也从某种程度上佐证了我那个观点——幼年时期的大脑皮层可能更为活跃&lt;/p&gt;</description>
     </item>
     
@@ -216,9 +212,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid>
       <description>&lt;p&gt;Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a href=&#34;https://github.com/xetorthio/jedis&#34;&gt;Jedis&lt;/a&gt;， &lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;lettuce&lt;/a&gt;， &lt;a href=&#34;https://github.com/mrniko/redisson&#34;&gt;Redisson&lt;/a&gt;， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p&gt;
-
 &lt;p&gt;以下是&lt;a href=&#34;https://github.com/lettuce-io/lettuce-core&#34;&gt;官方&lt;/a&gt;对 lettuce 的描述，摘录如下：&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -231,7 +225,6 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/about-imagination/</guid>
       <description>&lt;p&gt;许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p&gt;
-
 &lt;p&gt;但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p&gt;</description>
     </item>
     
@@ -242,11 +235,10 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid>
       <description>&lt;p&gt;关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p&gt;
-
 &lt;p&gt;首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
@@ -259,17 +251,18 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;springfox-swagger2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;springfox-swagger2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;springfox-swagger-ui&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;springfox-swagger-ui&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -281,11 +274,8 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid>
       <description>&lt;p&gt;在群友的安利（&lt;del&gt;传教&lt;/del&gt;）下，成功引起了我的兴趣&amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p&gt;
-
 &lt;p&gt;安装没什么可说的，直接 &lt;code&gt;sudo pacman -S postgresql&lt;/code&gt; 就好了。(其他发行版请使用对应的包管理器)&lt;/p&gt;
-
 &lt;p&gt;安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p&gt;</description>
     </item>
     
@@ -296,14 +286,14 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</guid>
       <description>&lt;p&gt;Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。&lt;/p&gt;
-
-&lt;h2 id=&#34;初始化&#34;&gt;初始化&lt;/h2&gt;
+&lt;h2 id=&#34;heading&#34;&gt;初始化&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo docker swarm init&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo docker swarm init
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -323,14 +313,11 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p&gt;
-
 &lt;p&gt;言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code&gt;adb devices&lt;/code&gt; 会显示：&lt;/p&gt;
-
 &lt;blockquote&gt;
-&lt;p&gt;List of devices attached&lt;br /&gt;
+&lt;p&gt;List of devices attached&lt;br&gt;
 [device name]    unauthorized&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -351,7 +338,6 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/casual-talk/</guid>
       <description>&lt;p&gt;近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code&gt;sslocal -c /path/filename.config&lt;/code&gt; 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p&gt;
-
 &lt;p&gt;v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code&gt;inbounds&lt;/code&gt; 和 &lt;code&gt;outbounds&lt;/code&gt; 的配置，一般来说v2ray官网的 &lt;code&gt;新手上路&lt;/code&gt; 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p&gt;</description>
     </item>
     
@@ -361,12 +347,9 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-
+      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p&gt;
-
-&lt;h2 id=&#34;什么是avl树&#34;&gt;什么是AVL树&lt;/h2&gt;
-
+&lt;h2 id=&#34;avl&#34;&gt;什么是AVL树&lt;/h2&gt;
 &lt;p&gt;AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a href=&#34;https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky&#34;&gt;Georgy Adelson-Velsky&lt;/a&gt;和&lt;a href=&#34;https://en.wikipedia.org/wiki/Evgenii_Landis&#34;&gt;Evgenii Landis&lt;/a&gt;于1962年在论文《&lt;a href=&#34;http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf&#34;&gt;An algorithm for the organization of information&lt;/a&gt;》中首次提出。&lt;/p&gt;</description>
     </item>
     
@@ -379,9 +362,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文为余晟于2018年10月28日发表在微的信公众号「余晟以为」的一篇文章。作者叙事的风格就像以前的文章一样，又让我想到了小时候。&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;去年底一个偶然的机会，我开车去浦东机场，发现起飞的飞机特别近，在高架上看得非常真切。于是我想，应该有个什么地方可以近距离拍到正在起降的飞机。&lt;/p&gt;
-
 &lt;p&gt;在很长的时间里，这都只是一个念头而没有付诸行动。我只是在网上搜了搜相关的资料，才知道这种活动叫“拍飞”，专门拍飞机的摄友自称“飞友”，而且列出了几个在浦东机场“拍飞”的好地点。到了10月1日，天气难得的好，又难得有空，我终于可以去尝试“拍飞”了。&lt;/p&gt;</description>
     </item>
     
@@ -394,11 +375,8 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <description>&lt;blockquote&gt;
 &lt;p&gt;最是人间留不住，朱颜辞镜花辞树&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;我依然记得她的模样。我还依稀记得，小时候去她家里，她都笑容满面的模样，有时侯她看着我们玩，有时问我一些家里的、生活上的琐事。&lt;/p&gt;
-
 &lt;p&gt;长大一些后，我更想待在家里玩电脑，不再像小时候天天跑别人家里，找别人出去玩。虽然次数开始变得很少，但每次去她家，她都会很热情的拿过来一些东西让我们吃，她每次见到我们都会笑，笑容显得很和煦。离开的时候，都会叫我们以后有空了就来玩。那时候的她看起来依然很健朗。&lt;/p&gt;
-
 &lt;p&gt;直到现在我依然觉得难以相信，只能不得不感叹有时候人的命运真的很难预料。但这却又让我想起另一件事情。&lt;/p&gt;</description>
     </item>
     
@@ -411,9 +389,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <description>&lt;blockquote&gt;
 &lt;p&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;大三时当我忽然发觉我都已经21岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经20多了啊，他感叹道。&lt;/p&gt;
-
 &lt;p&gt;对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p&gt;</description>
     </item>
     
@@ -433,22 +409,22 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid>
       <description>&lt;p&gt;今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p&gt;
-
 &lt;p&gt;我的HTML嵌套关系如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;site-head&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;blog-logo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;logo&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;site-head&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;blog-logo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;logo&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -459,10 +435,8 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
     </item>
     
@@ -472,8 +446,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/forty-years-old/</guid>
-      <description>&lt;p&gt;When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&amp;rsquo;t know how to do is right.&lt;/p&gt;
-
+      <description>&lt;p&gt;When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&#39;t know how to do is right.&lt;/p&gt;
 &lt;p&gt;When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p&gt;</description>
     </item>
     
@@ -484,11 +457,9 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
       <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
-
-&lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;树(Tree)&lt;/strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的&lt;strong&gt;子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为&lt;strong&gt;节点的度(Degree)&lt;/strong&gt;。
-度为0的节点称为&lt;strong&gt;叶子节点(Leaf)&lt;/strong&gt;或&lt;strong&gt;终端节点&lt;/strong&gt;。不为0的称为&lt;strong&gt;非终端节点&lt;/strong&gt;或&lt;strong&gt;分支节点&lt;/strong&gt;。节点的子树的根称为该节点的&lt;strong&gt;孩子(Child)&lt;/strong&gt;，相应的，该节点称为孩子的&lt;strong&gt;双亲(Parent)&lt;/strong&gt;。&lt;/p&gt;</description>
+&lt;h1 id=&#34;heading&#34;&gt;树&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;树(Tree)&lt;strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的__子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为__节点的度(Degree)&lt;/strong&gt;。
+度为0的节点称为__叶子节点(Leaf)&lt;strong&gt;或__终端节点&lt;/strong&gt;。不为0的称为__非终端节点__或__分支节点__。节点的子树的根称为该节点的__孩子(Child)__，相应的，该节点称为孩子的__双亲(Parent)__。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -497,13 +468,10 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-
+      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;
-
 &lt;p&gt;At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p&gt;
-
-&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
+&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&#39;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&#39;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -512,14 +480,10 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid>
-      <description>&lt;h1 id=&#34;i-remember-http-i-remember-fr-en&#34;&gt;&lt;a href=&#34;http://i-remember.fr/en&#34;&gt;I remember&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;&lt;em&gt;Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em&gt;&lt;/p&gt;
-
+      <description>&lt;h1 id=&#34;i-rememberhttpi-rememberfren&#34;&gt;&lt;a href=&#34;http://i-remember.fr/en&#34;&gt;I remember&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Let&#39;s share our memories and make sure this website does not disappear.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p&gt;
-
 &lt;p&gt;初次进入I remember时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p&gt;
-
 &lt;p&gt;鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p&gt;</description>
     </item>
     
@@ -530,17 +494,12 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/chasing-happiness/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;此文系转载，原文来源：豆瓣，地址:&lt;a href=&#34;https://www.douban.com/note/323805946/&#34;&gt;https://www.douban.com/note/323805946/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;此文系转载，原文来源：豆瓣，地址:https://www.douban.com/note/323805946/&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;不知道你是否注意到这样一种情况：&lt;/p&gt;
-
 &lt;p&gt;那些容易快乐的人，常常都被冠以这样的评价：热爱生活！&lt;/p&gt;
-
 &lt;p&gt;可他妈的什么叫热爱生活？积极？坦然？开放？热忱？都对又都不对！&lt;/p&gt;
-
 &lt;p&gt;罗曼罗兰也说：生活中只有一种英雄主义，那就是在认清生活真相之后依然热爱生活。可是这也没说太清楚。&lt;/p&gt;
-
 &lt;p&gt;当我读到《孟子·离娄下》这一句的时候，突然发现这才是一切的答案：“大人者，不失其赤子之心者也。”&lt;/p&gt;</description>
     </item>
     
@@ -551,18 +510,14 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
       <guid>https://ireflux.github.io/snow/post/the-silence-city/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;马伯庸《寂静之城》未删节版本全文&lt;br /&gt;
+&lt;p&gt;马伯庸《寂静之城》未删节版本全文&lt;br&gt;
 发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;And in the naked light I saw ten thousand people, maybe more.&lt;br /&gt;
-People talking without speaking, people hearing without listening.&lt;br /&gt;
+&lt;p&gt;And in the naked light I saw ten thousand people, maybe more.&lt;br&gt;
+People talking without speaking, people hearing without listening.&lt;br&gt;
 People writing songs that voices never shared, no one dared disturb the sound of silence.&lt;/p&gt;
-
 &lt;p&gt;—— The sound of silence&lt;/p&gt;
-
 &lt;p&gt;美利坚合众国，2015 年，纽约。&lt;/p&gt;
-
 &lt;p&gt;当电话响起来的时候，阿瓦登正趴在电脑前面睡觉。电话铃声十分急促，尖锐，每一次振动都让他的耳膜难受好久。他揉了揉干涩的眼睛，十分不情愿地爬起来，觉得脑子沉滞无比。&lt;/p&gt;</description>
     </item>
     
@@ -572,12 +527,9 @@ People writing songs that voices never shared, no one dared disturb the sound of
       <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-
+      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p&gt;
-
-&lt;h2 id=&#34;体验&#34;&gt;体验&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;体验&lt;/h2&gt;
 &lt;p&gt;于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p&gt;</description>
     </item>
     
@@ -588,9 +540,7 @@ People writing songs that voices never shared, no one dared disturb the sound of
       
       <guid>https://ireflux.github.io/snow/post/new-year-eve/</guid>
       <description>&lt;p&gt;前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p&gt;
-
 &lt;p&gt;每次听到仙剑的经典音乐，总会把我拉进回忆漩涡里。那种奇特而又熟悉的感觉，就想起在玩仙剑四的场景。在游戏里探索，进入民宅搜索可用的物资，在村子里四处闲逛。&lt;/p&gt;
-
 &lt;p&gt;村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p&gt;</description>
     </item>
     
@@ -609,19 +559,13 @@ People writing songs that voices never shared, no one dared disturb the sound of
       <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-
+      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。&lt;/p&gt;
-
-&lt;h2 id=&#34;编译之前&#34;&gt;编译之前&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;编译之前&lt;/h2&gt;
 &lt;p&gt;编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在&lt;a href=&#34;http://www.mplayerhq.hu/design7/dload.html&#34;&gt;官方网站&lt;/a&gt;获得.&lt;/p&gt;
-
 &lt;p&gt;Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;如果是x86，就选择Linux x86&lt;/p&gt;
-
 &lt;p&gt;x86_64就选择Linux AMD64&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -633,7 +577,6 @@ People writing songs that voices never shared, no one dared disturb the sound of
       
       <guid>https://ireflux.github.io/snow/post/a-dream/</guid>
       <description>&lt;p&gt;2105年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。&lt;/p&gt;
-
 &lt;p&gt;我们都在沙子上坐着，背靠着身后长约五六米，高约一米的破败围墙，静静的看着前方来来往往的人，百无聊赖。黄土弥漫在空气中，有轻微的朦胧感。左前方似乎是一座被黄沙掩盖的只剩下上半截的城堡，人们在那里或来回走动，或聚在一起讨论着什么，大概是婚礼前的准备事宜吧。一眼望去，四周都是看不到边的荒漠。沙子很厚，时不时有人从沙子地下钻出来，一会又钻进去，大概是很好玩。&lt;/p&gt;</description>
     </item>
     
@@ -644,7 +587,6 @@ People writing songs that voices never shared, no one dared disturb the sound of
       
       <guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid>
       <description>&lt;p&gt;体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p&gt;
-
 &lt;p&gt;心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p&gt;</description>
     </item>
     
@@ -654,14 +596,10 @@ People writing songs that voices never shared, no one dared disturb the sound of
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid>
-      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-
+      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10&amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了&amp;hellip;(lll￢ω￢)既然如此，那果断要来体验一把！&lt;/p&gt;
-
-&lt;h2 id=&#34;教程&#34;&gt;教程&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;教程&lt;/h2&gt;
 &lt;p&gt;根据官方的&lt;a href=&#34;https://msdn.microsoft.com/en-us/commandline/wsl/install_guide&#34;&gt;Guide&lt;/a&gt;，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.&lt;/p&gt;</description>
     </item>
     
@@ -672,14 +610,11 @@ People writing songs that voices never shared, no one dared disturb the sound of
       
       <guid>https://ireflux.github.io/snow/post/one-day-prisoner/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;《一日囚》作者：柳文扬&lt;br /&gt;
+&lt;p&gt;《一日囚》作者：柳文扬&lt;br&gt;
 发表于2002年11期《科幻世界》&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;B先生死了。就在他搬进这座大楼不到二十四小时。&lt;/p&gt;
-
 &lt;p&gt;B先生是昨夜，不，准确地说是今天凌晨0点住进来的。那时夜雾弥漫，有两个黑衣男子陪着他，拎着三只大提箱，敲开我值班的房门，要租一间不带家具的房子。这个要求有点奇怪，因为大多数人都想要有家具的房间。&lt;/p&gt;
-
 &lt;p&gt;“请问你们要租多大的屋子？”我打量着B的光头问。他戴着眼镜，苍白而又腼腆，脸上有种愁苦的模样。&lt;/p&gt;</description>
     </item>
     
@@ -690,13 +625,9 @@ People writing songs that voices never shared, no one dared disturb the sound of
       
       <guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid>
       <description>&lt;p&gt;此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p&gt;
-
 &lt;h3 id=&#34;spacesniffer&#34;&gt;spacesniffer&lt;/h3&gt;
-
 &lt;p&gt;它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a href=&#34;http://www.uderzo.it/main_products/space_sniffer/download.html&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-
 &lt;h3 id=&#34;ccleaner&#34;&gt;CCleaner&lt;/h3&gt;
-
 &lt;p&gt;清理浏览器缓存和注册表很有用.&lt;a href=&#34;https://www.piriform.com/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
