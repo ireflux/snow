@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="sherry" /><meta name="description" content="在 terminal 中输入 pacman -Si openbsd-netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有openbsd版本，gnu版本，nmap社区版本ncat
+<meta name="author" content="sherry" /><meta name="description" content="当在debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -40,22 +40,22 @@
 
 
 <meta property="og:title" content="netcat的使用笔记" />
-<meta property="og:description" content="在 terminal 中输入 pacman -Si openbsd-netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有openbsd版本，gnu版本，nmap社区版本ncat" />
+<meta property="og:description" content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ireflux.github.io/snow/post/netcat-note/" />
 <meta property="article:published_time" content="2020-03-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-03-16T00:00:00+00:00" />
 <meta itemprop="name" content="netcat的使用笔记">
-<meta itemprop="description" content="在 terminal 中输入 pacman -Si openbsd-netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有openbsd版本，gnu版本，nmap社区版本ncat">
+<meta itemprop="description" content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat">
 <meta itemprop="datePublished" content="2020-03-16T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1165">
+<meta itemprop="wordCount" content="1193">
 
 
 
 <meta itemprop="keywords" content="linux,netcat," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="netcat的使用笔记"/>
-<meta name="twitter:description" content="在 terminal 中输入 pacman -Si openbsd-netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有openbsd版本，gnu版本，nmap社区版本ncat"/>
+<meta name="twitter:description" content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
         <div class="post-category">
             <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
             </div>
-          <span class="more-meta"> 1165 words </span>
+          <span class="more-meta"> 1193 words </span>
           <span class="more-meta"> 3 mins read </span>
         
       </div>
@@ -150,7 +150,7 @@
   </div>
 </div>
     <div class="post-content">
-      <p>在 terminal 中输入 <code>pacman -Si openbsd-netcat</code> 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码</a> 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有<a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本</a>，<a href="http://netcat.sourceforge.net/download.php">gnu版本</a>，<a href="https://nmap.org/ncat/">nmap社区版本ncat</a></p>
+      <p>当在<a href="https://packages.debian.org/sid/netcat-openbsd"> debian 的仓库</a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码</a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有<a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本</a>，<a href="http://netcat.sourceforge.net/download.php">gnu版本</a>，<a href="https://nmap.org/ncat/">nmap社区版本ncat</a></p>
 <p>netcat 最初的作者是一个名为“<em>Hobbit</em>”的人在1995年10月28号以源代码的形式发布的。在其<a href="https://nc110.sourceforge.io/">官网</a>还能找到一些其他信息以及由“<em>Hobbit</em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。</p>
 <p>首先来看一下 <code>nc -h</code> 里平时使用频率比较高的一些选项：</p>
 <ul>
