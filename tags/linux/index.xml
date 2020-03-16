@@ -6,10 +6,19 @@
     <description>Recent content in Linux on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>netcat的使用笔记</title>
+      <link>https://ireflux.github.io/snow/post/netcat-note/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/netcat-note/</guid>
+      <description>&lt;p&gt;在 terminal 中输入 &lt;code&gt;pacman -Si openbsd-netcat&lt;/code&gt; 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a href=&#34;https://github.com/openbsd/src/tree/master/usr.bin/nc&#34;&gt;源代码&lt;/a&gt; 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有&lt;a href=&#34;https://packages.debian.org/sid/netcat-openbsd&#34;&gt;openbsd版本&lt;/a&gt;，&lt;a href=&#34;http://netcat.sourceforge.net/download.php&#34;&gt;gnu版本&lt;/a&gt;，&lt;a href=&#34;https://nmap.org/ncat/&#34;&gt;nmap社区版本ncat&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>i3gaps上触摸板的使用</title>
@@ -52,7 +61,7 @@ EndSection
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid>
-      <description>&lt;h2 id=&#34;heading&#34;&gt;前言&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p&gt;
 &lt;p&gt;言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code&gt;adb devices&lt;/code&gt; 会显示：&lt;/p&gt;
 &lt;blockquote&gt;

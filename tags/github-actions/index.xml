@@ -17,7 +17,13 @@
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</guid>
-      <description>前段时间，在阮一峰老师那里看到了GitHub Actions 入门教程，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github</description>
+      <description>&lt;p&gt;前段时间，在阮一峰老师那里看到了&lt;a href=&#34;http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html&#34;&gt;GitHub Actions 入门教程&lt;/a&gt;，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：&lt;a href=&#34;http://www.ruanyifeng.com/blog/2019/12/github_actions.html&#34;&gt;GitHub Actions 教程：定时发送天气邮件&lt;/a&gt;，这又让我想起了这个功能，于是决定重新捡起来。&lt;/p&gt;
+&lt;p&gt;Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2-core CPU&lt;/li&gt;
+&lt;li&gt;7 GB of RAM memory&lt;/li&gt;
+&lt;li&gt;14 GB of SSD disk space&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

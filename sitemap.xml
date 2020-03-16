@@ -9,41 +9,62 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/categories/clavicula-salomonis/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/tags/github-actions/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <loc>https://ireflux.github.io/snow/tags/linux/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/tags/netcat/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/netcat-note/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/post/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ireflux.github.io/snow/tags/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/tags/github-actions/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -93,13 +114,6 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/post/tap-to-click-not-working/</loc>
-    <lastmod>2019-11-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/linux/</loc>
     <lastmod>2019-11-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

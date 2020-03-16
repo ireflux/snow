@@ -18,14 +18,14 @@
 
 <meta name="author" content="sherry" /><meta name="description" content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
 首先需要添加依赖项:
-1 2 3 4 5 6 7 8  &amp;lt;dependencies&amp;gt; &amp;lt;!--... --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.session&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-session-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;   " /><meta name="keywords" content="Hugo, theme, even" />
+1 2 3 4 5 6 7 8  &amp;lt;dependencies&amp;gt; &amp;lt;!-- ... --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.session&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-session-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;   " /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.67.1 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/note-on-using-spring-session/" />
@@ -98,7 +98,7 @@
 ">
 <meta itemprop="datePublished" content="2019-11-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-11-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="732">
+<meta itemprop="wordCount" content="734">
 
 
 
@@ -202,7 +202,7 @@
         <div class="post-category">
             <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
             </div>
-          <span class="more-meta"> 732 words </span>
+          <span class="more-meta"> 734 words </span>
           <span class="more-meta"> 2 mins read </span>
         
       </div>
@@ -229,12 +229,12 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies</span><span class="nt">&gt;</span>
-	<span class="c">&lt;!--</span><span class="c"> ... </span><span class="c">--&gt;</span>
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+	<span class="c">&lt;!-- ... --&gt;</span>
 
-	<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
-		<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;dependency&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
 	<span class="nt">&lt;/dependency&gt;</span>
 <span class="nt">&lt;/dependencies&gt;</span>
 </code></pre></td></tr></table>
@@ -275,15 +275,15 @@ spring.session.store-type=redis # Session store type.
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/set&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">setSession</span><span class="o">(</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">)</span><span class="o">{</span>
-        <span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">,</span><span class="s">&#34;sherry&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">setSession</span><span class="o">(</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">){</span>
+        <span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">,</span><span class="s">&#34;sherry&#34;</span><span class="o">);</span>
 
         <span class="k">return</span> <span class="s">&#34;ok&#34;</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/get&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getSession</span><span class="o">(</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">)</span><span class="o">{</span>
-        <span class="k">return</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getSession</span><span class="o">(</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -303,14 +303,14 @@ spring.session.store-type=redis # Session store type.
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;plugins</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!--</span><span class="c"> ... </span><span class="c">--&gt;</span>
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;plugins&gt;</span>
+    <span class="c">&lt;!-- ... --&gt;</span>
 
-	<span class="nt">&lt;plugin</span><span class="nt">&gt;</span>
-	    <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-		    <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-		    <span class="nt">&lt;configuration</span><span class="nt">&gt;</span>
-			    <span class="nt">&lt;skipTests</span><span class="nt">&gt;</span>true<span class="nt">&lt;/skipTests&gt;</span>
+	<span class="nt">&lt;plugin&gt;</span>
+	    <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+		    <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+		    <span class="nt">&lt;configuration&gt;</span>
+			    <span class="nt">&lt;skipTests&gt;</span>true<span class="nt">&lt;/skipTests&gt;</span>
 		    <span class="nt">&lt;/configuration&gt;</span>
 	<span class="nt">&lt;/plugin&gt;</span>
 <span class="nt">&lt;/plugins&gt;</span>
@@ -367,7 +367,7 @@ server {
 </code></pre></td></tr></table>
 </div>
 </div><p>然后 <code>nginx -s reload</code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。</p>
-<h1 id="heading">参考资料</h1>
+<h1 id="参考资料">参考资料</h1>
 <p><a href="http://nginx.org/en/docs/">nginx documentation</a><br>
 <a href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html">扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”</a></p>
     </div>
@@ -455,7 +455,7 @@ server {
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

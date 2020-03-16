@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.67.1 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/" />
@@ -44,7 +44,7 @@
 <meta property="og:description" content="Do something amazing." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ireflux.github.io/snow/" />
-<meta property="og:updated_time" content="2019-12-24T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-03-16T00:00:00+00:00" />
 <meta itemprop="name" content="sherry&#39;s blog">
 <meta itemprop="description" content="Do something amazing."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="sherry&#39;s blog"/>
@@ -115,20 +115,49 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/netcat-note/">netcat的使用笔记</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-03-16 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+        <span class="more-meta"> 1165 words </span>
+        <span class="more-meta"> 3 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在 terminal 中输入 <code>pacman -Si openbsd-netcat</code> 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码</a> 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有<a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本</a>，<a href="http://netcat.sourceforge.net/download.php">gnu版本</a>，<a href="https://nmap.org/ncat/">nmap社区版本ncat</a></p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/netcat-note/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/snow/post/send-mail-with-bitcoin-rate-everyday/">使用 Github Actions 每天自动发送比特币的估值邮件</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-12-24 </span>
       <div class="post-category">
           <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
-        <span class="more-meta"> 723 words </span>
+        <span class="more-meta"> 727 words </span>
         <span class="more-meta"> 2 mins read </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      前段时间，在阮一峰老师那里看到了GitHub Actions 入门教程，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github
+      <p>前段时间，在阮一峰老师那里看到了<a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程</a>，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：<a href="http://www.ruanyifeng.com/blog/2019/12/github_actions.html">GitHub Actions 教程：定时发送天气邮件</a>，这又让我想起了这个功能，于是决定重新捡起来。</p>
+<p>Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：</p>
+<ul>
+<li>2-core CPU</li>
+<li>7 GB of RAM memory</li>
+<li>14 GB of SSD disk space</li>
+</ul>
     </div>
     <div class="read-more">
       <a href="/snow/post/send-mail-with-bitcoin-rate-everyday/" class="read-more-link">Read more...</a>
@@ -169,7 +198,7 @@
       <div class="post-category">
           <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
-        <span class="more-meta"> 732 words </span>
+        <span class="more-meta"> 734 words </span>
         <span class="more-meta"> 2 mins read </span>
     </div>
   </header>
@@ -190,12 +219,12 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies</span><span class="nt">&gt;</span>
-	<span class="c">&lt;!--</span><span class="c"> ... </span><span class="c">--&gt;</span>
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+	<span class="c">&lt;!-- ... --&gt;</span>
 
-	<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
-		<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;dependency&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
 	<span class="nt">&lt;/dependency&gt;</span>
 <span class="nt">&lt;/dependencies&gt;</span>
 </code></pre></td></tr></table>
@@ -257,31 +286,6 @@ EndSection
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/try-firefox-private-network/">试用 Firefox Private Network</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-13 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 211 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <blockquote>
-<p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。</p>
-</blockquote>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/try-firefox-private-network/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -320,7 +324,7 @@ EndSection
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

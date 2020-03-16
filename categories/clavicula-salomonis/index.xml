@@ -6,10 +6,19 @@
     <description>Recent content in Clavicula Salomonis on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/categories/clavicula-salomonis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>netcat的使用笔记</title>
+      <link>https://ireflux.github.io/snow/post/netcat-note/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/netcat-note/</guid>
+      <description>&lt;p&gt;在 terminal 中输入 &lt;code&gt;pacman -Si openbsd-netcat&lt;/code&gt; 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a href=&#34;https://github.com/openbsd/src/tree/master/usr.bin/nc&#34;&gt;源代码&lt;/a&gt; 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有&lt;a href=&#34;https://packages.debian.org/sid/netcat-openbsd&#34;&gt;openbsd版本&lt;/a&gt;，&lt;a href=&#34;http://netcat.sourceforge.net/download.php&#34;&gt;gnu版本&lt;/a&gt;，&lt;a href=&#34;https://nmap.org/ncat/&#34;&gt;nmap社区版本ncat&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用 Github Actions 每天自动发送比特币的估值邮件</title>
@@ -17,7 +26,13 @@
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</guid>
-      <description>前段时间，在阮一峰老师那里看到了GitHub Actions 入门教程，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github</description>
+      <description>&lt;p&gt;前段时间，在阮一峰老师那里看到了&lt;a href=&#34;http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html&#34;&gt;GitHub Actions 入门教程&lt;/a&gt;，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：&lt;a href=&#34;http://www.ruanyifeng.com/blog/2019/12/github_actions.html&#34;&gt;GitHub Actions 教程：定时发送天气邮件&lt;/a&gt;，这又让我想起了这个功能，于是决定重新捡起来。&lt;/p&gt;
+&lt;p&gt;Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2-core CPU&lt;/li&gt;
+&lt;li&gt;7 GB of RAM memory&lt;/li&gt;
+&lt;li&gt;14 GB of SSD disk space&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -51,12 +66,12 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependencies&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt;&lt;span class=&#34;c&#34;&gt; ... &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;--&amp;gt;&lt;/span&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
 
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;org.springframework.session&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;spring-session-data-redis&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.session&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-session-data-redis&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
 	&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
@@ -126,16 +141,16 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;springfox-swagger2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;springfox-swagger2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;springfox-swagger-ui&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.springfox&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;springfox-swagger-ui&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2.9.2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -161,7 +176,7 @@
       
       <guid>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</guid>
       <description>&lt;p&gt;Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;初始化&lt;/h2&gt;
+&lt;h2 id=&#34;初始化&#34;&gt;初始化&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -179,7 +194,7 @@
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid>
-      <description>&lt;h2 id=&#34;heading&#34;&gt;前言&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p&gt;
 &lt;p&gt;言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code&gt;adb devices&lt;/code&gt; 会显示：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -194,9 +209,9 @@
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid>
-      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p&gt;
-&lt;h2 id=&#34;avl&#34;&gt;什么是AVL树&lt;/h2&gt;
+&lt;h2 id=&#34;什么是avl树&#34;&gt;什么是AVL树&lt;/h2&gt;
 &lt;p&gt;AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a href=&#34;https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky&#34;&gt;Georgy Adelson-Velsky&lt;/a&gt;和&lt;a href=&#34;https://en.wikipedia.org/wiki/Evgenii_Landis&#34;&gt;Evgenii Landis&lt;/a&gt;于1962年在论文《&lt;a href=&#34;http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf&#34;&gt;An algorithm for the organization of information&lt;/a&gt;》中首次提出。&lt;/p&gt;</description>
     </item>
     
@@ -217,11 +232,11 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;site-head&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;blog-logo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;logo&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;site-head&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;blog-logo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;logo&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -233,7 +248,7 @@
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
-      <description>&lt;h2 id=&#34;heading&#34;&gt;前言&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
     </item>
@@ -245,7 +260,7 @@
       
       <guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid>
       <description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;树&lt;/h1&gt;
+&lt;h1 id=&#34;树&#34;&gt;树&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;树(Tree)&lt;strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的__子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为__节点的度(Degree)&lt;/strong&gt;。
 度为0的节点称为__叶子节点(Leaf)&lt;strong&gt;或__终端节点&lt;/strong&gt;。不为0的称为__非终端节点__或__分支节点__。节点的子树的根称为该节点的__孩子(Child)__，相应的，该节点称为孩子的__双亲(Parent)__。&lt;/p&gt;</description>
     </item>
@@ -256,10 +271,10 @@
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid>
-      <description>&lt;h1 id=&#34;heading&#34;&gt;前言&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;
 &lt;p&gt;At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p&gt;
-&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&#39;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&#39;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
+&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p&gt;</description>
     </item>
     
   </channel>
