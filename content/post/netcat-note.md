@@ -7,7 +7,7 @@ categories: ["Clavicula Salomonis"]
 tags: ["linux", "netcat"]
 author: "sherry"
 ---
-在 terminal 中输入 `pacman -Si openbsd-netcat` 时，会看到描述中有这样一句话：“TCP/IP swiss army knife. OpenBSD variant.”，netcat 被誉为 TCP/IP 的瑞士军刀，它在2001年，2003年，2006年的 insecure.org 几次安全工具的投票中都稳居前五名。它不仅是一个非常优秀的软件，体积还很小（只有几十KB），[源代码](https://github.com/openbsd/src/tree/master/usr.bin/nc) 也很少，以至于有很多人去重写，出现了很多变种，比较知名的有[openbsd版本](https://packages.debian.org/sid/netcat-openbsd)，[gnu版本](http://netcat.sourceforge.net/download.php)，[nmap社区版本ncat](https://nmap.org/ncat/)
+当在[ debian 的仓库](https://packages.debian.org/sid/netcat-openbsd)中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），[源代码](https://github.com/openbsd/src/tree/master/usr.bin/nc) 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有[openbsd版本](https://packages.debian.org/sid/netcat-openbsd)，[gnu版本](http://netcat.sourceforge.net/download.php)，[nmap社区版本ncat](https://nmap.org/ncat/)
 
 <!--more-->
 
