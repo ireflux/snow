@@ -16,6 +16,8 @@ Github Actions 对于个人用户来说确实是一个很棒的东西，因为�
 - 7 GB of RAM memory
 - 14 GB of SSD disk space
 
+<!--more-->
+
 但为什么说“部分”呢？因为它还有一些限制，以下引用来自 github：
 
 - You can execute up to 1000 API requests in an hour across all actions within a repository.
