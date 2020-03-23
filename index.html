@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.67.1 with theme even" />
+<meta name="generator" content="Hugo 0.68.0 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/" />
@@ -44,7 +44,7 @@
 <meta property="og:description" content="Do something amazing." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ireflux.github.io/snow/" />
-<meta property="og:updated_time" content="2020-03-16T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-03-23T00:00:00+00:00" />
 <meta itemprop="name" content="sherry&#39;s blog">
 <meta itemprop="description" content="Do something amazing."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="sherry&#39;s blog"/>
@@ -115,20 +115,47 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/netcat-note/">netcat的使用笔记</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/snow/post/study-notes-of-elasticsearch-1/">Elasticsearch 入门(一)</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-03-16 </span>
+      <span class="post-time"> 2020-03-23 </span>
       <div class="post-category">
           <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
           </div>
-        <span class="more-meta"> 1193 words </span>
+        <span class="more-meta"> 1256 words </span>
         <span class="more-meta"> 3 mins read </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>当在<a href="https://packages.debian.org/sid/netcat-openbsd"> debian 的仓库</a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码</a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有<a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本</a>，<a href="http://netcat.sourceforge.net/download.php">gnu版本</a>，<a href="https://nmap.org/ncat/">nmap社区版本ncat</a></p>
+      <p>本文是我开始学习 Elasticsearch 系列的第一篇笔记，计划先以我初学者的状态对 Elasticsearch 的看法以及目前学到的知识做个概览性的总结，之后的系列再单独对其细节专门去学习和记录，留备后期翻阅查看。</p>
+<p>注：截至本文发表前，Elasticsearch 的版本号为 7.6.1，本文的内容也建立于此之上。</p>
+<h2 id="elasticsearch-是什么">Elasticsearch 是什么？</h2>
+<p>根据官方文档和 Wikipedia 的说法：</p>
+<p>Elasticsearch是一个基于Apache Lucene构建的分布式的开源搜索和分析引擎，可以处理所有类型的数据，包括文本，数字，地理空间，结构化和非结构化的数据。</p>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/study-notes-of-elasticsearch-1/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/netcat-note/">netcat的使用笔记</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-03-16 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+        <span class="more-meta"> 1194 words </span>
+        <span class="more-meta"> 3 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>当在<a href="https://packages.debian.org/sid/netcat-openbsd"> debian 的仓库</a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码</a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有<a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本</a>，<a href="http://netcat.sourceforge.net/download.php">gnu版本</a>，<a href="https://nmap.org/ncat/">nmap社区版本ncat</a>。</p>
     </div>
     <div class="read-more">
       <a href="/snow/post/netcat-note/" class="read-more-link">Read more...</a>
@@ -233,55 +260,6 @@
     </div>
     <div class="read-more">
       <a href="/snow/post/note-on-using-spring-session/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/tap-to-click-not-working/">i3gaps上触摸板的使用</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-11-10 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 272 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。</p>
-<p>在路径 <code>/etc/X11/xorg.conf.d/</code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Section <span class="s2">&#34;InputClass&#34;</span>
-        Identifier <span class="s2">&#34;touchpad&#34;</span>
-        MatchIsTouchpad <span class="s2">&#34;on&#34;</span>
-        Driver <span class="s2">&#34;libinput&#34;</span>
-        Option <span class="s2">&#34;Tapping&#34;</span> <span class="s2">&#34;on&#34;</span>
-        Option <span class="s2">&#34;TappingButtonMap&#34;</span> <span class="s2">&#34;lrm&#34;</span>
-        Option <span class="s2">&#34;NaturalScrolling&#34;</span> <span class="s2">&#34;false&#34;</span>
-        Option <span class="s2">&#34;ScrollMethod&#34;</span> <span class="s2">&#34;twofinger&#34;</span>
-EndSection
-</code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/tap-to-click-not-working/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
