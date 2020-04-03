@@ -37,7 +37,7 @@ Elasticsearch是一个基于Apache Lucene构建的分布式的开源搜索和分
 
 在此跳过了 ES 的安装，是因为在我的安装体验里，并没有遇到什么阻力，因此无需记录。关于下载安装，可以查阅[此页面](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 
-ES 的配置主要是修改 elasticsearch.yml，打开这个文件，文件中已经列出了大多数重要的设置，划分了几个区域，分别是 Cluster，Node，Paths，Memory，Network，Discorey，Gateway，Various
+ES 的配置主要是修改 `elasticsearch.yml`，打开这个文件，文件中已经列出了大多数重要的设置，划分了几个区域，分别是 Cluster，Node，Paths，Memory，Network，Discorey，Gateway，Various
 
 ### 关于路径的设置
 
@@ -55,13 +55,13 @@ ES 的配置主要是修改 elasticsearch.yml，打开这个文件，文件中�
 network.host: x.x.x.x
 ```
 
-注：一旦为 `network.host` 设置了自定义配置，ES 就会认为你从开发模式转移到了生产模式，会自动将系统启动检查从警告升级为异常。见[Development mode vs production mode](https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html#dev-vs-prod)
+注：一旦为 `network.host` 设置了自定义配置，ES 就会认为你从开发模式转移到了生产模式，会自动将系统启动检查从警告升级为异常。见 [Development mode vs production mode](https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html#dev-vs-prod)
 
 ### 关于 Discovery 的配置
 
 为使集群中各个 ES 之间可见，应设置 `discovery.seed_hosts`：
 
-以下引用官网的例子，更详细的设置见[文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/discovery-settings.html)：
+以下引用官网的例子：
 
 ```
 discovery.seed_hosts:
@@ -73,13 +73,13 @@ discovery.seed_hosts:
 
 注: 如果不加端口号，则默认是9300。
 
-当首次启动 ES 集群时，会有一个引导步骤，它确定了首次选举中来对其票数进行计数的有主要资格节点的集合。在开发模式中是由节点自动确定的，但却是不安全的。若在生产模式中，应当指定 `cluster.initial_master_nodes`，具体配置可详见[文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/discovery-settings.html#initial_master_nodes)
+当首次启动 ES 集群时，会有一个引导步骤，它确定了首次选举中来对其票数进行计数的有主要资格节点的集合。这个“计数权”在开发模式中是由节点自动确定的，但却是不安全的。若在生产模式中，应当指定 `cluster.initial_master_nodes`，具体配置可详见[文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/discovery-settings.html#initial_master_nodes)
 
 ## ES 的启动与关闭
 
 一般而言，ES 可使用 `./bin/elasticsearch` 来启动，但我们往往需要它作为一个守护进程来运行。除了使用 `nohup` 之外，ES 本身有自带的方法：`./bin/elasticsearch -d -p pid`
 
-注：-p选项将进程记录到文件中，因此此处的 pid 应为文件路径。
+注：-p 选项将进程记录到文件中，因此此处的 pid 应为文件路径。
 
 一旦启动后，可以通过 `curl localhost:9200` 来获取 ES 的相关信息。
 
