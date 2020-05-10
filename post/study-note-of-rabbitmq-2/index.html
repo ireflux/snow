@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>RabbitMQ 学习笔记(2) - sherry&#39;s blog</title>
+  <title>RabbitMQ 学习笔记 | 二 - sherry&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -26,7 +26,7 @@ RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即�
 
 
 
-<meta name="generator" content="Hugo 0.68.0 with theme even" />
+<meta name="generator" content="Hugo 0.70.0 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/" />
@@ -41,7 +41,7 @@ RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即�
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="RabbitMQ 学习笔记(2)" />
+<meta property="og:title" content="RabbitMQ 学习笔记 | 二" />
 <meta property="og:description" content="开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：RabbitMQ 学习笔记(1)
 对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。
 RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 AbstractMessageListenerContainer 定义的 DEFAULT_PREFETCH_COUNT 值为 250,如果将其设置为 1,则将会变为循环调度。" />
@@ -49,7 +49,7 @@ RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即�
 <meta property="og:url" content="https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/" />
 <meta property="article:published_time" content="2019-11-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-11-29T00:00:00+00:00" />
-<meta itemprop="name" content="RabbitMQ 学习笔记(2)">
+<meta itemprop="name" content="RabbitMQ 学习笔记 | 二">
 <meta itemprop="description" content="开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：RabbitMQ 学习笔记(1)
 对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。
 RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 AbstractMessageListenerContainer 定义的 DEFAULT_PREFETCH_COUNT 值为 250,如果将其设置为 1,则将会变为循环调度。">
@@ -60,7 +60,7 @@ RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即�
 
 
 <meta itemprop="keywords" content="RabbitMQ," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RabbitMQ 学习笔记(2)"/>
+<meta name="twitter:title" content="RabbitMQ 学习笔记 | 二"/>
 <meta name="twitter:description" content="开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：RabbitMQ 学习笔记(1)
 对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。
 RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 AbstractMessageListenerContainer 定义的 DEFAULT_PREFETCH_COUNT 值为 250,如果将其设置为 1,则将会变为循环调度。"/>
@@ -130,7 +130,7 @@ RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即�
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">RabbitMQ 学习笔记(2)</h1>
+      <h1 class="post-title">RabbitMQ 学习笔记 | 二</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2019-11-29 </span>
@@ -221,7 +221,7 @@ RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即�
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2019-11-29 00:00:00 \x2b0000 UTC',
-        title: 'RabbitMQ 学习笔记(2)',
+        title: 'RabbitMQ 学习笔记 | 二',
         clientID: '',
         clientSecret: '',
         repo: 'snow',
