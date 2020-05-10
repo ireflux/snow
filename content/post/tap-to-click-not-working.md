@@ -1,5 +1,5 @@
 ---
-title: "i3gaps上触摸板的使用"
+title: "i3gaps 上触摸板的使用"
 date: 2019-11-10
 lastmod: 2019-11-10
 draft: false

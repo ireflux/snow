@@ -1,5 +1,5 @@
 ---
-title: "netcat的使用笔记"
+title: "netcat 的使用笔记"
 date: 2020-03-16
 lastmod: 2020-03-16
 draft: false
@@ -42,7 +42,7 @@ nc -nv [ip] [port]
 ### 端口扫描
 
 ```bash
-nc -znv [ip] [port-port]
+nc -znv [ip] [port-port] 2>&1 | grep succeeded
 ```
 
 可以用来做渗透测试。

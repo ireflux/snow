@@ -1,5 +1,5 @@
 ---
-title: "Elasticsearch 入门(一)" 
+title: "Elasticsearch 入门 | 一" 
 date: 2020-03-23
 lastmod: 2020-03-23
 draft: false

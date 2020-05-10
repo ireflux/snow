@@ -1,5 +1,5 @@
 ---
-title: "RabbitMQ 学习笔记(1)" 
+title: "RabbitMQ 学习笔记 | 一" 
 date: 2019-08-05
 lastmod: 2019-08-05
 draft: false

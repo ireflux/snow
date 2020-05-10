@@ -1,4 +1,8 @@
-My personal blog source files.
+This is my personal blog source files.
+
+- - -
+
+RSS feeds for your Github releases, tags and activity
 
 > Repo releases   
 > https://github.com/:owner/:repo/releases.atom
@@ -9,12 +13,11 @@ My personal blog source files.
 > Private feed (You can find Subscribe to your news feed in dashboard page after login)   
 > https://github.com/:user.private.atom?token=:secret
 
->  Repo tags  
+> Repo tags  
 > https://github.com/:user/:repo/tags.atom
 
 > User activity  
 > https://github.com/:user.atom
-```
 
 # References
 
