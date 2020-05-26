@@ -6,10 +6,20 @@
     <description>Recent content in Posts on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器</title>
+      <link>https://ireflux.github.io/snow/post/a-deep-dive-into-zen-based-hygon-dhyana-processors/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/a-deep-dive-into-zen-based-hygon-dhyana-processors/</guid>
+      <description>&lt;p&gt;从阮老师的一篇 &lt;a href=&#34;http://www.ruanyifeng.com/blog/2020/05/weekly-issue-106.html&#34;&gt;周刊&lt;/a&gt; 中发现了这篇文章，感觉很有趣的样子。原文链接在这里：&lt;a href=&#34;https://www.anandtech.com/show/15493/hygon-dhyana-reviewed-chinese-x86-cpus-amd&#34;&gt;Testing a Chinese x86 CPU: A Deep Dive into Zen-based Hygon Dhyana Processors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下是译文：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>The night king piano sheet</title>
@@ -345,7 +355,7 @@ EndSection
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/firefox-network-settings-config/</guid>
-      <description>&lt;p&gt;自从Chrome 71(没记错的话是这个版本= =)曝出追踪用户的&lt;a href=&#34;https://www.valuewalk.com/2018/11/google-chrome-71-track-abusive-experiences/&#34;&gt;丑闻&lt;/a&gt;后，我的主力浏览器便全面切换到的Firefox。那个时候Firefox推出的新版本Firefox Quantum也有一段时间了，是用Rust新写的内核，感觉确实比之前要快上不少（虽然还是不如Chrome快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于Firefox的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的SwitchyOmega。&lt;/p&gt;</description>
+      <description>&lt;p&gt;自从 Chrome 71(没记错的话是这个版本= =) 曝出追踪用户的 &lt;a href=&#34;https://www.valuewalk.com/2018/11/google-chrome-71-track-abusive-experiences/&#34;&gt;丑闻&lt;/a&gt; 后，我的主力浏览器便全面切换到的 Firefox。那个时候 Firefox 推出的新版本 Firefox Quantum 也有一段时间了，是用 Rust 新写的内核，感觉确实比之前要快上不少（虽然还是不如 Chrome 快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于 Firefox 的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的 SwitchyOmega。&lt;/p&gt;</description>
     </item>
     
     <item>
