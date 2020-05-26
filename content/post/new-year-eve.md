@@ -25,4 +25,4 @@ author: "sherry"
 这也是2017年最后一篇博文了。
 
 再见了，2017。
-![2017_2018](https://wx2.sinaimg.cn/mw1024/ea5eda6dly1fpdgmp1svtj20660zkab1.jpg)
+![2017_2018](https://s1.ax1x.com/2020/05/26/tPUMge.jpg)
