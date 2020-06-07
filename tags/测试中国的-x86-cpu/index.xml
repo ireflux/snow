@@ -6,10 +6,20 @@
     <description>Recent content in 测试中国的 x86 CPU on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/tags/%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%9B%BD%E7%9A%84-x86-cpu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus</title>
+      <link>https://ireflux.github.io/snow/post/our-hygon-systems/</link>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/our-hygon-systems/</guid>
+      <description>&lt;p&gt;海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
+&lt;img src=&#34;https://s1.ax1x.com/2020/06/07/t2jV9P.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器</title>
