@@ -6,27 +6,37 @@
     <description>Recent content in 测试中国的 x86 CPU on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ireflux.github.io/snow/tags/%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%9B%BD%E7%9A%84-x86-cpu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>「译文」| 海光 CPU：中文加密，不同的性能</title>
+      <link>https://ireflux.github.io/snow/post/hygon-cpuschinese-crypto-different-performance/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/post/hygon-cpuschinese-crypto-different-performance/</guid>
+      <description>&lt;p&gt;最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。&lt;/p&gt;
+&lt;p&gt;从总体上来看，我们可以确定，核心布局是相同的，缓存大小，&lt;a href=&#34;https://en.wikipedia.org/wiki/Translation_lookaside_buffer&#34;&gt;TLB(Translation Lookaside Buffer 转换后备缓冲区)&lt;/a&gt; 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus</title>
-      <link>https://ireflux.github.io/snow/post/our-hygon-systems/</link>
+      <link>https://ireflux.github.io/snow/post/hygon-cpusour-hygon-systems/</link>
       <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/our-hygon-systems/</guid>
+      <guid>https://ireflux.github.io/snow/post/hygon-cpusour-hygon-systems/</guid>
       <description>&lt;p&gt;海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
 &lt;img src=&#34;https://s1.ax1x.com/2020/06/07/t2jV9P.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器</title>
-      <link>https://ireflux.github.io/snow/post/a-deep-dive-into-zen-based-hygon-dhyana-processors/</link>
+      <link>https://ireflux.github.io/snow/post/hygon-cpusa-deep-dive-into-zen-based-hygon-dhyana-processors/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ireflux.github.io/snow/post/a-deep-dive-into-zen-based-hygon-dhyana-processors/</guid>
+      <guid>https://ireflux.github.io/snow/post/hygon-cpusa-deep-dive-into-zen-based-hygon-dhyana-processors/</guid>
       <description>&lt;p&gt;从阮老师的一篇 &lt;a href=&#34;http://www.ruanyifeng.com/blog/2020/05/weekly-issue-106.html&#34;&gt;周刊&lt;/a&gt; 中发现了这篇文章，感觉很有趣的样子。原文链接在这里：&lt;a href=&#34;https://www.anandtech.com/show/15493/hygon-dhyana-reviewed-chinese-x86-cpus-amd&#34;&gt;Testing a Chinese x86 CPU: A Deep Dive into Zen-based Hygon Dhyana Processors&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;以下是译文：&lt;/p&gt;</description>
     </item>
