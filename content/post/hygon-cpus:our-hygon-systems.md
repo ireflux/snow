@@ -8,9 +8,10 @@ tags: ["测试中国的 x86 CPU"]
 author: "sherry"
 ---
 海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
-![img](https://s1.ax1x.com/2020/06/07/t2jV9P.jpg)
 
 <!--more-->
+
+![img](https://s1.ax1x.com/2020/06/07/t2jV9P.jpg)
 
 我们要测试的8核工程样本系统没有提供任何准确的 SKU 编号——CPU上标着“C86”，代表“中国的 x86”。其余的编号可能与硅片所来自的晶圆和批次相关，但是我们没有可用的[解码器环](https://en.wikipedia.org/wiki/Secret_decoder_ring)。
 

@@ -1,5 +1,5 @@
 ---
-title: "「译文」| 海光 CPU：中文加密，不同的性能" 
+title: "「译文」| 海光 CPU：中版的加密方式，不同的性能" 
 date: 2020-06-11
 lastmod: 2020-06-11
 draft: false

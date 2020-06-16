@@ -10,9 +10,9 @@ author: "sherry"
 
 从阮老师的一篇 [周刊](http://www.ruanyifeng.com/blog/2020/05/weekly-issue-106.html) 中发现了这篇文章，感觉很有趣的样子。原文链接在这里：[Testing a Chinese x86 CPU: A Deep Dive into Zen-based Hygon Dhyana Processors](https://www.anandtech.com/show/15493/hygon-dhyana-reviewed-chinese-x86-cpus-amd)
 
-以下是译文：
-
 <!--more-->
+
+以下是译文：
 
 - - -
 
