@@ -44,7 +44,7 @@
 <meta property="og:description" content="Do something amazing." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ireflux.github.io/snow/" />
-<meta property="og:updated_time" content="2020-06-11T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-06-16T00:00:00+00:00" />
 <meta itemprop="name" content="sherry&#39;s blog">
 <meta itemprop="description" content="Do something amazing."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="sherry&#39;s blog"/>
@@ -113,6 +113,55 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/tap-to-click-not-working/">i3gaps 上触摸板的使用</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-11-10 </span>
+      <div class="post-category">
+          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+          </div>
+        <span class="more-meta"> 272 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。</p>
+<p>在路径 <code>/etc/X11/xorg.conf.d/</code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Section <span class="s2">&#34;InputClass&#34;</span>
+        Identifier <span class="s2">&#34;touchpad&#34;</span>
+        MatchIsTouchpad <span class="s2">&#34;on&#34;</span>
+        Driver <span class="s2">&#34;libinput&#34;</span>
+        Option <span class="s2">&#34;Tapping&#34;</span> <span class="s2">&#34;on&#34;</span>
+        Option <span class="s2">&#34;TappingButtonMap&#34;</span> <span class="s2">&#34;lrm&#34;</span>
+        Option <span class="s2">&#34;NaturalScrolling&#34;</span> <span class="s2">&#34;false&#34;</span>
+        Option <span class="s2">&#34;ScrollMethod&#34;</span> <span class="s2">&#34;twofinger&#34;</span>
+EndSection
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/tap-to-click-not-working/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/snow/post/try-firefox-private-network/">试用 Firefox Private Network</a></h1>
@@ -212,31 +261,6 @@
     </div>
     <div class="read-more">
       <a href="/snow/post/the-classic-scene-of-breaking-bad-3/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-2/">细数 Breaking Bad 经典片段 | 二</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-27 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 786 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Breaking Bad 的<a href="https://twitter.com/BreakingBad/status/1165405442039676928">电影</a>要出了，后续剧情，哇，好激动！！</p>
-<h3 id="关联文章">关联文章</h3>
-<p><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></p>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-2/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

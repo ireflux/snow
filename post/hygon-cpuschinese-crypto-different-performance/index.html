@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>「译文」| 海光 CPU：中文加密，不同的性能 - sherry&#39;s blog</title>
+  <title>「译文」| 海光 CPU：中版的加密方式，不同的性能 - sherry&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -40,14 +40,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="「译文」| 海光 CPU：中文加密，不同的性能" />
+<meta property="og:title" content="「译文」| 海光 CPU：中版的加密方式，不同的性能" />
 <meta property="og:description" content="最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。
 从总体上来看，我们可以确定，核心布局是相同的，缓存大小，TLB(Translation Lookaside Buffer 转换后备缓冲区) 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpuschinese-crypto-different-performance/" />
 <meta property="article:published_time" content="2020-06-11T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-11T00:00:00+00:00" />
-<meta itemprop="name" content="「译文」| 海光 CPU：中文加密，不同的性能">
+<meta itemprop="name" content="「译文」| 海光 CPU：中版的加密方式，不同的性能">
 <meta itemprop="description" content="最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。
 从总体上来看，我们可以确定，核心布局是相同的，缓存大小，TLB(Translation Lookaside Buffer 转换后备缓冲区) 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下：">
 <meta itemprop="datePublished" content="2020-06-11T00:00:00&#43;00:00" />
@@ -57,7 +57,7 @@
 
 
 <meta itemprop="keywords" content="测试中国的 x86 CPU," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="「译文」| 海光 CPU：中文加密，不同的性能"/>
+<meta name="twitter:title" content="「译文」| 海光 CPU：中版的加密方式，不同的性能"/>
 <meta name="twitter:description" content="最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。
 从总体上来看，我们可以确定，核心布局是相同的，缓存大小，TLB(Translation Lookaside Buffer 转换后备缓冲区) 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下："/>
 
@@ -126,7 +126,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">「译文」| 海光 CPU：中文加密，不同的性能</h1>
+      <h1 class="post-title">「译文」| 海光 CPU：中版的加密方式，不同的性能</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-06-11 </span>
@@ -315,7 +315,11 @@
           <a href="/snow/tags/%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%9B%BD%E7%9A%84-x86-cpu/">测试中国的 x86 CPU</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/snow/post/hygon-cpusbenchmarks-windows/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">「译文」| 基准测试：Windows</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/snow/post/hygon-cpusour-hygon-systems/">
             <span class="next-text nav-default">「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus</span>
             <span class="next-text nav-mobile">Next</span>
@@ -331,7 +335,7 @@
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2020-06-11 00:00:00 \u002b0000 UTC',
-        title: '「译文」| 海光 CPU：中文加密，不同的性能',
+        title: '「译文」| 海光 CPU：中版的加密方式，不同的性能',
         clientID: '',
         clientSecret: '',
         repo: 'snow',

@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="sherry" /><meta name="description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。 " /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="sherry" /><meta name="description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,15 +40,13 @@
 
 
 <meta property="og:title" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus" />
-<meta property="og:description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
-" />
+<meta property="og:description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpusour-hygon-systems/" />
 <meta property="article:published_time" content="2020-06-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-07T00:00:00+00:00" />
 <meta itemprop="name" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus">
-<meta itemprop="description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
-">
+<meta itemprop="description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。">
 <meta itemprop="datePublished" content="2020-06-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-07T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1356">
@@ -56,8 +55,7 @@
 
 <meta itemprop="keywords" content="测试中国的 x86 CPU," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus"/>
-<meta name="twitter:description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
-"/>
+<meta name="twitter:description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -144,8 +142,8 @@
   </div>
 </div>
     <div class="post-content">
-      <p>海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。
-<img src="https://s1.ax1x.com/2020/06/07/t2jV9P.jpg" alt="img"></p>
+      <p>海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。</p>
+<p><img src="https://s1.ax1x.com/2020/06/07/t2jV9P.jpg" alt="img"></p>
 <p>我们要测试的8核工程样本系统没有提供任何准确的 SKU 编号——CPU上标着“C86”，代表“中国的 x86”。其余的编号可能与硅片所来自的晶圆和批次相关，但是我们没有可用的<a href="https://en.wikipedia.org/wiki/Secret_decoder_ring">解码器环</a>。</p>
 <p><img src="https://s1.ax1x.com/2020/06/07/t2jktI.jpg" alt="img"></p>
 <p>主板使用 <a href="https://en.wikipedia.org/wiki/MicroATX">microATX</a> 尺寸，并且是一个带有横向 DDR4 插槽的服务器主板，以便引导气流通过服务器机箱中的系统。现在从最主要的插槽开始说，由于我们目前拿到的 CPU 是无插槽 BGA 设计，已经绑定到主板上了，因此无法升级，这个有点类似于我们在笔记本电脑和嵌入式系统中看到的那种。而且这些安装孔让我感到有点惊讶——这些不是我们通常在 Ryzen 消费级产品中看到的那种 AM4 安装孔，而是 Intel 的安装孔。我猜肯定是有人有很多旧的 Intel 散热器？要么就是为了能够更容易找到特定的服务器级的散热器。</p>
@@ -186,7 +184,7 @@
       <nav class="post-nav">
         <a class="prev" href="/snow/post/hygon-cpuschinese-crypto-different-performance/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">「译文」| 海光 CPU：中文加密，不同的性能</span>
+            <span class="prev-text nav-default">「译文」| 海光 CPU：中版的加密方式，不同的性能</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         <a class="next" href="/snow/post/hygon-cpusa-deep-dive-into-zen-based-hygon-dhyana-processors/">
