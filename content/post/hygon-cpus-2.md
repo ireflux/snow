@@ -1,5 +1,5 @@
 ---
-title: "「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus" 
+title: "「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)" 
 date: 2020-06-07
 lastmod: 2020-06-07
 draft: false
@@ -44,3 +44,10 @@ author: "sherry"
 当我们尝试探测该 CPU 时，CPU-Z 似乎没有太多线索。该软件为8核用户提供了该接口，显示了 3.2 GHz 频率，但只有一个核，除了对 AVX，AVX2 和 FMA3 的支持外，没有其他的细节。对于服务器 CPU，CPU-Z 完全无法运行。而且似乎对于海光的型号，在 AMD 消费级 CPU 上访问数据的一些常用方法都已经全部更改，要么规避常规方法检测，要么遵循不同的标准。有趣的一点是，尽管 CPU-Z 检测到 AVX 和 AVX2，但我们的某些软件无法检测到，因此我们不得不恢复为 SSE 检测，以使该软件运行。
 
 (未完待续...)
+
+## 其他篇章
+
+1. [「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)](https://sherry.ml/snow/post/hygon-cpus-1/)
+2. [「译文」| 海光 CPU：中国版的加密方式，不同的性能(三)](https://sherry.ml/snow/post/hygon-cpus-3/)
+3. [「译文」| 基准测试：Windows(四)](https://sherry.ml/snow/post/hygon-cpus-4/)
+4. [「译文」| 结论(五)](https://sherry.ml/snow/post/hygon-cpus-5/)
