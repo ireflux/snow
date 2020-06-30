@@ -1,7 +1,7 @@
 ---
 title: "「译文」| 结论(五)" 
-date: 2020-05-26
-lastmod: 2020-05-26
+date: 2020-06-30
+lastmod: 2020-06-30
 draft: false
 categories: ["To The New World"]
 tags: ["测试中国的 x86 CPU"]
