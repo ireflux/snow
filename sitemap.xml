@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/hygon-cpusbenchmarks-windows/</loc>
+    <loc>https://ireflux.github.io/snow/post/hygon-cpus-4/</loc>
     <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -57,21 +57,28 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/hygon-cpuschinese-crypto-different-performance/</loc>
+    <loc>https://ireflux.github.io/snow/post/hygon-cpus-3/</loc>
     <lastmod>2020-06-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/hygon-cpusour-hygon-systems/</loc>
+    <loc>https://ireflux.github.io/snow/post/hygon-cpus-2/</loc>
     <lastmod>2020-06-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/hygon-cpusa-deep-dive-into-zen-based-hygon-dhyana-processors/</loc>
+    <loc>https://ireflux.github.io/snow/post/hygon-cpus-1/</loc>
+    <lastmod>2020-05-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/hygon-cpus-5/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

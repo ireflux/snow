@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>「译文」| 基准测试：Windows - sherry&#39;s blog</title>
+  <title>「译文」| 基准测试：Windows(四) - sherry&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -24,10 +24,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.72.0 with theme even" />
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
 
 
-<link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpusbenchmarks-windows/" />
+<link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpus-4/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="「译文」| 基准测试：Windows" />
+<meta property="og:title" content="「译文」| 基准测试：Windows(四)" />
 <meta property="og:description" content="对于这两个系统，我们安装了 Windows：小型的8核 Dhyana 系统装了 Windows 10 专业版，而大型双32核 Dhyana Plus 服务器上安装 Windows 10 企业版，由于 AVX / AVX2 无法正常工作，因此我们的测试范围受到了限制。正如之前所说的，某些软件在系统上无法运行，例如服务器上的 CPU-Z。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpusbenchmarks-windows/" />
+<meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpus-4/" />
 <meta property="article:published_time" content="2020-06-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-16T00:00:00+00:00" />
-<meta itemprop="name" content="「译文」| 基准测试：Windows">
+<meta itemprop="name" content="「译文」| 基准测试：Windows(四)">
 <meta itemprop="description" content="对于这两个系统，我们安装了 Windows：小型的8核 Dhyana 系统装了 Windows 10 专业版，而大型双32核 Dhyana Plus 服务器上安装 Windows 10 企业版，由于 AVX / AVX2 无法正常工作，因此我们的测试范围受到了限制。正如之前所说的，某些软件在系统上无法运行，例如服务器上的 CPU-Z。">
 <meta itemprop="datePublished" content="2020-06-16T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="336">
+<meta itemprop="wordCount" content="451">
 
 
 
 <meta itemprop="keywords" content="测试中国的 x86 CPU," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="「译文」| 基准测试：Windows"/>
+<meta name="twitter:title" content="「译文」| 基准测试：Windows(四)"/>
 <meta name="twitter:description" content="对于这两个系统，我们安装了 Windows：小型的8核 Dhyana 系统装了 Windows 10 专业版，而大型双32核 Dhyana Plus 服务器上安装 Windows 10 企业版，由于 AVX / AVX2 无法正常工作，因此我们的测试范围受到了限制。正如之前所说的，某些软件在系统上无法运行，例如服务器上的 CPU-Z。"/>
 
 <!--[if lte IE 9]>
@@ -122,14 +122,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">「译文」| 基准测试：Windows</h1>
+      <h1 class="post-title">「译文」| 基准测试：Windows(四)</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-06-16 </span>
         <div class="post-category">
             <a href="/snow/categories/to-the-new-world/"> To The New World </a>
             </div>
-          <span class="more-meta"> 336 words </span>
+          <span class="more-meta"> 451 words </span>
           <span class="more-meta"> 1 min read </span>
         
       </div>
@@ -138,7 +138,11 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#其他篇章">其他篇章</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
@@ -151,6 +155,14 @@
 <p><img src="https://s1.ax1x.com/2020/06/16/NFBkzF.png" alt="img"></p>
 <p><img src="https://s1.ax1x.com/2020/06/16/NFBEM4.png" alt="img"></p>
 <p>从数据中可以看出，由于时钟速度的原因，8核 Dhyana 处理器介于6核 Ryzen 5 1600X 和8核 Ryzen 6 1800X 之间，但在某些方面的测试中，它甚至还不如速龙(Athlon) 200GE。而双32核 Dhyana Plus 服务器的结果似乎看起来杂乱无章，很多方面甚至被 Ryzen 7 1800X 吊打，即使有些方面能够超过 Ryzen 7 1800X 但却轻易的被 Ryzen 9 3950X 吊打。唯一一个确实表现出色的基准测试是 Corona——一个基于内存/<a href="https://en.wikipedia.org/wiki/Non-uniform_memory_access">NUMA(Non-uniform memory access)</a> 的不可知整数渲染器——这一点的测试结果看起来倒是和这个芯片很相合。</p>
+<p>(未完待续&hellip;)</p>
+<h2 id="其他篇章">其他篇章</h2>
+<ol>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-1/">「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-2/">「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-3/">「译文」| 海光 CPU：中版的加密方式，不同的性能(三)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-5/">「译文」| 结论(五)</a></li>
+</ol>
     </div>
 
     <div class="post-copyright">
@@ -174,8 +186,8 @@
           </div>
       <nav class="post-nav">
         
-        <a class="next" href="/snow/post/hygon-cpuschinese-crypto-different-performance/">
-            <span class="next-text nav-default">「译文」| 海光 CPU：中版的加密方式，不同的性能</span>
+        <a class="next" href="/snow/post/hygon-cpus-3/">
+            <span class="next-text nav-default">「译文」| 海光 CPU：中版的加密方式，不同的性能(三)</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -189,7 +201,7 @@
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2020-06-16 00:00:00 \u002b0000 UTC',
-        title: '「译文」| 基准测试：Windows',
+        title: '「译文」| 基准测试：Windows(四)',
         clientID: '',
         clientSecret: '',
         repo: 'snow',

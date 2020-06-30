@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>「译文」| 结论(五) - sherry&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sherry" /><meta name="description" content="美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。
+如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
+
+
+<link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpus-5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
+<link rel="manifest" href="/snow/manifest.json">
+<link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/snow/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="「译文」| 结论(五)" />
+<meta property="og:description" content="美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。
+如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpus-5/" />
+<meta property="article:published_time" content="2020-05-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-26T00:00:00+00:00" />
+<meta itemprop="name" content="「译文」| 结论(五)">
+<meta itemprop="description" content="美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。
+如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。">
+<meta itemprop="datePublished" content="2020-05-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1551">
+
+
+
+<meta itemprop="keywords" content="测试中国的 x86 CPU," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="「译文」| 结论(五)"/>
+<meta name="twitter:description" content="美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。
+如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/snow/" class="logo">sherry&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/snow/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/snow/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/snow/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/snow/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/snow/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/snow/" class="logo">sherry&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/snow/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/snow/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">「译文」| 结论(五)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-26 </span>
+        <div class="post-category">
+            <a href="/snow/categories/to-the-new-world/"> To The New World </a>
+            </div>
+          <span class="more-meta"> 1551 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#其他篇章">其他篇章</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。</p>
+<p>如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。</p>
+<p>我们发现这些处理器已经从 Zen 1 设计中进行了多个地方的更改。很多人怀疑它们是 Zen 1 SoC 的副本，这是不正确的——设计中的变化已经足够多，以至于这些部件之间能够重新平衡，主要是因为其性能比 Zen 1 同类产品差。整数性能基本上是相同的，但是浮点性能已降低——普通指令的吞吐量只有一半，并且随机数生成已调整为既慢又产生质量较低的随机数。加密引擎也已被替换，从而不再加速常见的 AES 指令，而是包含了一些更专门针对中国安全性的指令，例如 SM2，SM3 和 SM4。在我们的测试中，尽管处理器在探测时显示支持 AVX/AVX2，但似乎已被禁用。我们怀疑这更多是固件错误，而不是海光 CPU 的限制。</p>
+<p>AMD 将其第一代 Zen 核心设计的修改后的版本变成为“中国”设计的 x86 CPU 的方法非常复杂。首先与一个叫做中国天津海光先进技术投资有限公司(THATIC)的中国公司建立合资企业，然后组建海光微电子有限公司(HMC)和成都海光集成电路设计有限公司(Hygon)，AMD和中国天津海光(THATIC)分别持有这两家公司不同的股份，他们讨论了各自对 IP 有控制权的部分，以便让机密仍掌握在 AMD 手中，允许合资企业的中方有进行修改的请求权利。而且必须批准这些请求，然后海光微电子(HMC)从 <a href="https://www.globalfoundries.com/">GlobalFoundries</a> 下芯片订单，而成都海光集成电路(Hygon)打包并将其出售给中科曙光(sugon)等公司。我们在第一章的概述中对此进行了详细介绍，但是足以说明所有方面的工作几乎就像在玩被蒙住眼睛的风险游戏一样。</p>
+<p>由于 AMD 不愿在记录上讨论处理器的安排或更改的任何更详细的细节，当被问及是否可以披露处理器的更改方式时，我们被告知“如果您发现任何问题，我们可能会确认“。有一次我看到海光 Dhyana 处理器，是由于在台北电脑展时和海光的供应商之一之间有误解，事件发生后，让我拍照的那个人突然停止与我交流（我猜想是为了保住他的工作）。经过一些讨论后，仍然花费了一年多的时间才得以拿到芯片来测试，而且由于当前美国实体列表禁令涵盖了其中一家合资公司，我们才能够获得这些芯片。这从根本上杀死了该项目，并导致美国一家子公司被封存，使某些零件泄漏到曾经受到严格控制的市场上。</p>
+<p>总体而言，这些海光 CPU 为中国市场提供了英特尔之外的替代产品，并且或许比通过进口限制而购买的那些速度更快。AMD 在急需的时候赚到了一些钱，但是随着 Zen 2 平台的成功，我不认为 AMD 在未来十年内还需要做类似的事情。AMD、中国天津海光(THATIC)和合资公司之间协议的性质仅针对单一核心设计 Zen 1，而非 Zen 2，从而限制了其竞争力。此外，出于所有意图和目的，美国实体名单禁止合资企业使该项目无效。中国的海光 Dhyana x86 处理器在未来几年仍将被政府和其他类似组织使用，但这必将成为半导体历史上最奇怪的历史之一。</p>
+<p>(完)</p>
+<h2 id="其他篇章">其他篇章</h2>
+<ol>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-1/">「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-2/">「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-3/">「译文」| 海光 CPU：中版的加密方式，不同的性能(三)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-4/">「译文」| 基准测试：Windows(四)</a></li>
+</ol>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">sherry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-05-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/snow/tags/%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%9B%BD%E7%9A%84-x86-cpu/">测试中国的 x86 CPU</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/snow/post/hygon-cpus-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的海光 Dhyana 处理器(一)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/snow/post/the-night-king-piano-sheet/">
+            <span class="next-text nav-default">The night king piano sheet</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-05-26 00:00:00 \u002b0000 UTC',
+        title: '「译文」| 结论(五)',
+        clientID: '',
+        clientSecret: '',
+        repo: 'snow',
+        owner: 'ireflux',
+        admin: ['ireflux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/ireflux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com/3932084845" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://space.bilibili.com/13546666" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ireflux.github.io/snow/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sherry</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/snow/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

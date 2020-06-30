@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.72.0 with theme even" />
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/" />
@@ -113,6 +113,53 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/snow/post/note-on-using-spring-session/">Spring Session 使用笔记</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-11-23 </span>
+      <div class="post-category">
+          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
+          </div>
+        <span class="more-meta"> 734 words </span>
+        <span class="more-meta"> 2 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Spring Session 的配置非常简单，根据<a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档</a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。</p>
+<p>首先需要添加依赖项:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+	<span class="c">&lt;!-- ... --&gt;</span>
+
+	<span class="nt">&lt;dependency&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/snow/post/note-on-using-spring-session/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/snow/post/tap-to-click-not-working/">i3gaps 上触摸板的使用</a></h1>
@@ -234,33 +281,6 @@ EndSection
     </div>
     <div class="read-more">
       <a href="/snow/post/the-classic-scene-of-breaking-bad-4/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/the-classic-scene-of-breaking-bad-3/">细数 Breaking Bad 经典片段 | 三</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-29 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 1593 words </span>
-        <span class="more-meta"> 4 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h3 id="关联文章">关联文章</h3>
-<ol>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/">细数 Breaking Bad 经典片段(1)</a></li>
-<li><a href="https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段(2)</a></li>
-</ol>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/the-classic-scene-of-breaking-bad-3/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

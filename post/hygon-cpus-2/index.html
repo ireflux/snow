@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus - sherry&#39;s blog</title>
+  <title>「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二) - sherry&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -24,10 +24,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.72.0 with theme even" />
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
 
 
-<link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpusour-hygon-systems/" />
+<link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpus-2/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus" />
+<meta property="og:title" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)" />
 <meta property="og:description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpusour-hygon-systems/" />
+<meta property="og:url" content="https://ireflux.github.io/snow/post/hygon-cpus-2/" />
 <meta property="article:published_time" content="2020-06-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-07T00:00:00+00:00" />
-<meta itemprop="name" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus">
+<meta itemprop="name" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)">
 <meta itemprop="description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。">
 <meta itemprop="datePublished" content="2020-06-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1356">
+<meta itemprop="wordCount" content="1449">
 
 
 
 <meta itemprop="keywords" content="测试中国的 x86 CPU," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus"/>
+<meta name="twitter:title" content="「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)"/>
 <meta name="twitter:description" content="海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。"/>
 
 <!--[if lte IE 9]>
@@ -122,14 +122,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus</h1>
+      <h1 class="post-title">「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-06-07 </span>
         <div class="post-category">
             <a href="/snow/categories/to-the-new-world/"> To The New World </a>
             </div>
-          <span class="more-meta"> 1356 words </span>
+          <span class="more-meta"> 1449 words </span>
           <span class="more-meta"> 3 mins read </span>
         
       </div>
@@ -138,7 +138,11 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#其他篇章">其他篇章</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
@@ -160,6 +164,13 @@
 <p><img src="https://s1.ax1x.com/2020/06/07/t2vp80.jpg" alt="img"></p>
 <p>当我们尝试探测该 CPU 时，CPU-Z 似乎没有太多线索。该软件为8核用户提供了该接口，显示了 3.2 GHz 频率，但只有一个核，除了对 AVX，AVX2 和 FMA3 的支持外，没有其他的细节。对于服务器 CPU，CPU-Z 完全无法运行。而且似乎对于海光的型号，在 AMD 消费级 CPU 上访问数据的一些常用方法都已经全部更改，要么规避常规方法检测，要么遵循不同的标准。有趣的一点是，尽管 CPU-Z 检测到 AVX 和 AVX2，但我们的某些软件无法检测到，因此我们不得不恢复为 SSE 检测，以使该软件运行。</p>
 <p>(未完待续&hellip;)</p>
+<h2 id="其他篇章">其他篇章</h2>
+<ol>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-1/">「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-3/">「译文」| 海光 CPU：中国版的加密方式，不同的性能(三)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-4/">「译文」| 基准测试：Windows(四)</a></li>
+<li><a href="https://sherry.ml/snow/post/hygon-cpus-5/">「译文」| 结论(五)</a></li>
+</ol>
     </div>
 
     <div class="post-copyright">
@@ -182,13 +193,13 @@
           <a href="/snow/tags/%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%9B%BD%E7%9A%84-x86-cpu/">测试中国的 x86 CPU</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/snow/post/hygon-cpuschinese-crypto-different-performance/">
+        <a class="prev" href="/snow/post/hygon-cpus-3/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">「译文」| 海光 CPU：中版的加密方式，不同的性能</span>
+            <span class="prev-text nav-default">「译文」| 海光 CPU：中版的加密方式，不同的性能(三)</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/snow/post/hygon-cpusa-deep-dive-into-zen-based-hygon-dhyana-processors/">
-            <span class="next-text nav-default">「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器</span>
+        <a class="next" href="/snow/post/hygon-cpus-1/">
+            <span class="next-text nav-default">「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的海光 Dhyana 处理器(一)</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -202,7 +213,7 @@
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2020-06-07 00:00:00 \u002b0000 UTC',
-        title: '「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus',
+        title: '「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)',
         clientID: '',
         clientSecret: '',
         repo: 'snow',
