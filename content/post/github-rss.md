@@ -8,6 +8,10 @@ author: "sherry"
 ---
 RSS feeds for your Github releases, tags and activity
 
+GitHub provides several timeline resources in Atom format. That’s how I get latest info about projects that I follow and their fixed bugs and new features. Some of official RSS feeds are:
+
+<!--more-->
+
 > Repo releases   
 > https://github.com/:owner/:repo/releases.atom
 
