@@ -4,6 +4,7 @@ date: 2019-08-10
 lastmod: 2019-08-10
 draft: false
 categories: ["随笔"]
+tags: ["Breaking Bad"]
 author: "sherry"
 ---
 Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：
@@ -11,6 +12,14 @@ Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善�
 > The title comes from the Southern colloquialism "breaking bad" which means to "raise hell" or turn to a life of crime.Gilligan characterized the series as showing Walter's transformation from a soft-spoken Mr. Chips into Scarface. 
 
 <!--more-->
+
+### 关联文章
+
+1. [细数 Breaking Bad 经典片段 | 一](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1)
+2. [细数 Breaking Bad 经典片段 | 二](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2)
+3. [细数 Breaking Bad 经典片段 | 三](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3)
+4. [细数 Breaking Bad 经典片段 | 四](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-4)
+5. [细数 Breaking Bad 经典片段 | 五](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-5)
 
 ### Season 1 Episode 1 -- Pilot
 

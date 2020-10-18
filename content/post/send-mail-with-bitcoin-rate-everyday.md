@@ -93,6 +93,7 @@ uses: dawidd6/action-send-mail@master
 
 发送邮件的用法可见 [dawidd6/action-send-mail](https://github.com/dawidd6/action-send-mail)
 
+注： 开启 163 邮箱的 POP3/SMTP 服务，原来的密码处应填写为授权码。
 
 ## 参考资料
 

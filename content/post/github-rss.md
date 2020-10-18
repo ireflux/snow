@@ -6,6 +6,9 @@ draft: false
 categories: ["转载"]
 author: "sherry"
 ---
+
+> 本文转载于 [ronaldsvilcins](https://www.ronaldsvilcins.com/2020/03/26/rss-feeds-for-your-github-releases-tags-and-activity/)，以下为原文：
+
 RSS feeds for your Github releases, tags and activity
 
 GitHub provides several timeline resources in Atom format. That’s how I get latest info about projects that I follow and their fixed bugs and new features. Some of official RSS feeds are:
@@ -27,6 +30,3 @@ GitHub provides several timeline resources in Atom format. That’s how I get la
 > User activity  
 > https://github.com/:user.atom
 
-# References
-
-[ronaldsvilcins](https://www.ronaldsvilcins.com/2020/03/26/rss-feeds-for-your-github-releases-tags-and-activity/)

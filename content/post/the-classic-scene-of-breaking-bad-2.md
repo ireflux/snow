@@ -4,13 +4,18 @@ date: 2019-08-27
 lastmod: 2019-08-27
 draft: false
 categories: ["随笔"]
+tags: ["Breaking Bad"]
 author: "sherry"
 ---
 Breaking Bad 的[电影](https://twitter.com/BreakingBad/status/1165405442039676928)要出了，后续剧情，哇，好激动！！
 
 ### 关联文章
 
-[细数 Breaking Bad 经典片段(1)](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/)
+1. [细数 Breaking Bad 经典片段 | 一](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1)
+2. [细数 Breaking Bad 经典片段 | 二](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2)
+3. [细数 Breaking Bad 经典片段 | 三](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3)
+4. [细数 Breaking Bad 经典片段 | 四](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-4)
+5. [细数 Breaking Bad 经典片段 | 五](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-5)
 
 <!--more-->
 

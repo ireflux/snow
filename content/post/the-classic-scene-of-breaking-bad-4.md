@@ -4,13 +4,16 @@ date: 2019-09-01
 lastmod: 2019-09-01
 draft: false
 categories: ["随笔"]
+tags: ["Breaking Bad"]
 author: "sherry"
 ---
 ### 关联文章
 
-1. [细数 Breaking Bad 经典片段(1)](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1/)
-2. [细数 Breaking Bad 经典片段(2)](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2)
-3. [细数 Breaking Bad 经典片段(3)](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3)
+1. [细数 Breaking Bad 经典片段 | 一](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1)
+2. [细数 Breaking Bad 经典片段 | 二](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2)
+3. [细数 Breaking Bad 经典片段 | 三](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3)
+4. [细数 Breaking Bad 经典片段 | 四](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-4)
+5. [细数 Breaking Bad 经典片段 | 五](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-5)
 
 <!--more-->
 
