@@ -27,7 +27,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.73.0 with theme even" />
+<meta name="generator" content="Hugo 0.76.5 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/adb-use-record-on-linux/" />
@@ -62,13 +62,14 @@ List of devices attached
 List of devices attached
 [device name]    unauthorized
 ">
-<meta itemprop="datePublished" content="2019-05-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-02T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2019-05-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-05-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="926">
 
 
 
-<meta itemprop="keywords" content="Linux,adb," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Linux,adb," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux上adb的使用记录"/>
 <meta name="twitter:description" content="前言
 我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑
@@ -195,9 +196,9 @@ List of devices attached
 <h3 id="添加udev规则">添加udev规则</h3>
 <p>1.首先要确保系统中有安装 <code>android-udev</code> 这个包。可以通过包管理器来安装或者访问<a href="https://source.android.com/setup/build/initializing#configuring-usb-access">source.android.com</a>来手动安装。在这里新建一个文件：<code>/etc/udev/rules.d/51-android.rules</code>，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:</p>
 <blockquote>
-<p>SUBSYSTEM==&quot;usb&rdquo;, ATTR{idVendor}==&rdquo;[VENDOR ID]&rdquo;, MODE=&quot;0660&rdquo;, GROUP=&quot;adbusers&rdquo;<br>
-SUBSYSTEM==&quot;usb&rdquo;,ATTR{idVendor}==&rdquo;[VENDOR ID]&quot;,ATTR{idProduct}==&rdquo;[PRODUCT ID]&quot;,SYMLINK+=&quot;android_adb&rdquo;<br>
-SUBSYSTEM==&quot;usb&rdquo;,ATTR{idVendor}==&rdquo;[VENDOR ID]&quot;,ATTR{idProduct}==&rdquo;[PRODUCT ID]&quot;,SYMLINK+=&quot;android_fastboot&rdquo;</p>
+<p>SUBSYSTEM==&ldquo;usb&rdquo;, ATTR{idVendor}==&quot;[VENDOR ID]&quot;, MODE=&ldquo;0660&rdquo;, GROUP=&ldquo;adbusers&rdquo;<br>
+SUBSYSTEM==&ldquo;usb&rdquo;,ATTR{idVendor}==&quot;[VENDOR ID]&quot;,ATTR{idProduct}==&quot;[PRODUCT ID]&quot;,SYMLINK+=&ldquo;android_adb&rdquo;<br>
+SUBSYSTEM==&ldquo;usb&rdquo;,ATTR{idVendor}==&quot;[VENDOR ID]&quot;,ATTR{idProduct}==&quot;[PRODUCT ID]&quot;,SYMLINK+=&ldquo;android_fastboot&rdquo;</p>
 </blockquote>
 <p>2.然后重新载入新的配置文件：</p>
 <div class="highlight"><div class="chroma">

@@ -27,7 +27,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.73.0 with theme even" />
+<meta name="generator" content="Hugo 0.76.5 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/stack-to-queue/" />
@@ -64,13 +64,14 @@
 栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)
 接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：
 进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。">
-<meta itemprop="datePublished" content="2019-08-18T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-18T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2019-08-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-08-18T00:00:00+00:00" />
 <meta itemprop="wordCount" content="724">
 
 
 
-<meta itemprop="keywords" content="algorithm," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="algorithm," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="栈和队列的相互转换"/>
 <meta name="twitter:description" content="关于栈和队列，有时会在面试题中看到诸如以下的问题：
 

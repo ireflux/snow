@@ -8,8 +8,50 @@
   </url>
   
   <url>
+    <loc>https://ireflux.github.io/snow/tags/breaking-bad/</loc>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ireflux.github.io/snow/categories/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/</loc>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/</loc>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/tags/</loc>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</loc>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2020-10-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -22,29 +64,8 @@
   </url>
   
   <url>
-    <loc>https://ireflux.github.io/snow/post/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/tags/</loc>
-    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -100,13 +121,6 @@
   
   <url>
     <loc>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</loc>
-    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

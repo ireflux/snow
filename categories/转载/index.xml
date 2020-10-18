@@ -6,18 +6,17 @@
     <description>Recent content in 转载 on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github RSS</title>
       <link>https://ireflux.github.io/snow/post/github-rss/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ireflux.github.io/snow/post/github-rss/</guid>
-      <description>&lt;p&gt;RSS feeds for your Github releases, tags and activity&lt;/p&gt;
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文转载于 &lt;a href=&#34;https://www.ronaldsvilcins.com/2020/03/26/rss-feeds-for-your-github-releases-tags-and-activity/&#34;&gt;ronaldsvilcins&lt;/a&gt;，以下为原文：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;RSS feeds for your Github releases, tags and activity&lt;/p&gt;
 &lt;p&gt;GitHub provides several timeline resources in Atom format. That’s how I get latest info about projects that I follow and their fixed bugs and new features. Some of official RSS feeds are:&lt;/p&gt;</description>
     </item>
     

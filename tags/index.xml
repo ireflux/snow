@@ -6,10 +6,15 @@
     <description>Recent content in Tags on sherry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://ireflux.github.io/snow/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 18 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Breaking Bad</title>
+      <link>https://ireflux.github.io/snow/tags/breaking-bad/</link>
+      <pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ireflux.github.io/snow/tags/breaking-bad/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>测试中国的 x86 CPU</title>

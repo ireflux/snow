@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.73.0 with theme even" />
+<meta name="generator" content="Hugo 0.76.5 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/an-interview-question/" />
@@ -52,13 +52,14 @@
 <meta itemprop="description" content="前言
 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6&#43;6,就需要输出由‘6’组成的结果为“36”的图形。
 事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&lt;数据结构&gt;上曾经学过的表达式求值:(">
-<meta itemprop="datePublished" content="2018-04-16T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-04-16T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2018-04-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-04-16T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2624">
 
 
 
-<meta itemprop="keywords" content="algorithm," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="algorithm," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一道笔试题"/>
 <meta name="twitter:description" content="前言
 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6&#43;6,就需要输出由‘6’组成的结果为“36”的图形。
@@ -173,14 +174,14 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -188,18 +189,18 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">6</td>
+<td style="text-align:center">6</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -207,18 +208,18 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">6</td>
-<td align="center">*</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">*</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -226,22 +227,22 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">7</td>
+<td style="text-align:center">7</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">*</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">*</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -249,18 +250,18 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">6*7</td>
+<td style="text-align:center">6*7</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -268,18 +269,18 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">6*7</td>
-<td align="center">/</td>
+<td style="text-align:center">6*7</td>
+<td style="text-align:center">/</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -287,22 +288,22 @@
 <table>
 <thead>
 <tr>
-<th align="center">操作数栈</th>
-<th align="center">操作符栈</th>
+<th style="text-align:center">操作数栈</th>
+<th style="text-align:center">操作符栈</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">8</td>
+<td style="text-align:center">8</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">6*7</td>
-<td align="center">/</td>
+<td style="text-align:center">6*7</td>
+<td style="text-align:center">/</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">+</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">+</td>
 </tr>
 </tbody>
 </table>
@@ -316,137 +317,137 @@
 <table>
 <thead>
 <tr>
-<th align="center">Token</th>
-<th align="left">Action</th>
-<th align="left">Output(in RPN)</th>
-<th align="right">Operator stack</th>
-<th align="center">Notes</th>
+<th style="text-align:center">Token</th>
+<th style="text-align:left">Action</th>
+<th style="text-align:left">Output(in RPN)</th>
+<th style="text-align:right">Operator stack</th>
+<th style="text-align:center">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">3</td>
-<td align="left">Add token to output</td>
-<td align="left">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td align="center">+</td>
-<td align="left">Push token to stack</td>
-<td align="left">3</td>
-<td align="right">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3</td>
+<td style="text-align:right">+</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="left">Add token to output</td>
-<td align="left">3 4</td>
-<td align="right">+</td>
+<td style="text-align:center">4</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3 4</td>
+<td style="text-align:right">+</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">×</td>
-<td align="left">Push token to stack</td>
-<td align="left">3 4</td>
-<td align="right">× +</td>
-<td align="center">× has higher precedence than +</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3 4</td>
+<td style="text-align:right">× +</td>
+<td style="text-align:center">× has higher precedence than +</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">Add token to output</td>
-<td align="left">3 4 2</td>
-<td align="right">× +</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3 4 2</td>
+<td style="text-align:right">× +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">÷</td>
-<td align="left">Pop stack to output</td>
-<td align="left">3 4 2 ×</td>
-<td align="right">+</td>
-<td align="center">÷ and × have same precedence</td>
+<td style="text-align:center">÷</td>
+<td style="text-align:left">Pop stack to output</td>
+<td style="text-align:left">3 4 2 ×</td>
+<td style="text-align:right">+</td>
+<td style="text-align:center">÷ and × have same precedence</td>
 </tr>
 <tr>
-<td align="center">(same up)</td>
-<td align="left">Push token to stack</td>
-<td align="left">3 4 2 ×</td>
-<td align="right">÷ +</td>
-<td align="center">÷ has higher precedence than +</td>
+<td style="text-align:center">(same up)</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3 4 2 ×</td>
+<td style="text-align:right">÷ +</td>
+<td style="text-align:center">÷ has higher precedence than +</td>
 </tr>
 <tr>
-<td align="center">(</td>
-<td align="left">Push token to stack</td>
-<td align="left">3 4 2 ×</td>
-<td align="right">( ÷ +</td>
+<td style="text-align:center">(</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3 4 2 ×</td>
+<td style="text-align:right">( ÷ +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="left">Add token to output</td>
-<td align="left">3 4 2 × 1</td>
-<td align="right">( ÷ +</td>
+<td style="text-align:center">1</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3 4 2 × 1</td>
+<td style="text-align:right">( ÷ +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">−</td>
-<td align="left">Push token to stack</td>
-<td align="left">3 4 2 × 1</td>
-<td align="right">− ( ÷ +</td>
+<td style="text-align:center">−</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3 4 2 × 1</td>
+<td style="text-align:right">− ( ÷ +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="left">Add token to output</td>
-<td align="left">3 4 2 × 1 5</td>
-<td align="right">− ( ÷ +</td>
+<td style="text-align:center">5</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3 4 2 × 1 5</td>
+<td style="text-align:right">− ( ÷ +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">)</td>
-<td align="left">Pop stack to output</td>
-<td align="left">3 4 2 × 1 5 −</td>
-<td align="right">( ÷ +</td>
-<td align="center">Repeated until &ldquo;(&rdquo; found</td>
+<td style="text-align:center">)</td>
+<td style="text-align:left">Pop stack to output</td>
+<td style="text-align:left">3 4 2 × 1 5 −</td>
+<td style="text-align:right">( ÷ +</td>
+<td style="text-align:center">Repeated until &ldquo;(&rdquo; found</td>
 </tr>
 <tr>
-<td align="center">(same up)</td>
-<td align="left">Pop stack</td>
-<td align="left">3 4 2 × 1 5 −</td>
-<td align="right">÷ +</td>
-<td align="center">Discard matching parenthesis</td>
+<td style="text-align:center">(same up)</td>
+<td style="text-align:left">Pop stack</td>
+<td style="text-align:left">3 4 2 × 1 5 −</td>
+<td style="text-align:right">÷ +</td>
+<td style="text-align:center">Discard matching parenthesis</td>
 </tr>
 <tr>
-<td align="center">^</td>
-<td align="left">Push token to stack</td>
-<td align="left">3 4 2 × 1 5 −</td>
-<td align="right">^ ÷ +</td>
-<td align="center">^ has higher precedence than ÷</td>
+<td style="text-align:center">^</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3 4 2 × 1 5 −</td>
+<td style="text-align:right">^ ÷ +</td>
+<td style="text-align:center">^ has higher precedence than ÷</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">Add token to output</td>
-<td align="left">3 4 2 × 1 5 − 2</td>
-<td align="right">^ ÷ +</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3 4 2 × 1 5 − 2</td>
+<td style="text-align:right">^ ÷ +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">^</td>
-<td align="left">Push token to stack</td>
-<td align="left">3 4 2 × 1 5 − 2</td>
-<td align="right">^ ^ ÷ +</td>
-<td align="center">^ is evaluated right-to-left</td>
+<td style="text-align:center">^</td>
+<td style="text-align:left">Push token to stack</td>
+<td style="text-align:left">3 4 2 × 1 5 − 2</td>
+<td style="text-align:right">^ ^ ÷ +</td>
+<td style="text-align:center">^ is evaluated right-to-left</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="left">Add token to output</td>
-<td align="left">3 4 2 × 1 5 − 2 3</td>
-<td align="right">^ ^ ÷ +</td>
+<td style="text-align:center">3</td>
+<td style="text-align:left">Add token to output</td>
+<td style="text-align:left">3 4 2 × 1 5 − 2 3</td>
+<td style="text-align:right">^ ^ ÷ +</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">end</td>
-<td align="left">Pop entire stack to output</td>
-<td align="left">3 4 2 × 1 5 − 2 3 ^ ^ ÷ +</td>
+<td style="text-align:center">end</td>
+<td style="text-align:left">Pop entire stack to output</td>
+<td style="text-align:left">3 4 2 × 1 5 − 2 3 ^ ^ ÷ +</td>
 <td></td>
 <td></td>
 </tr>
@@ -459,66 +460,66 @@
 <table>
 <thead>
 <tr>
-<th align="center">输入</th>
-<th align="center">操作</th>
-<th align="center">堆栈</th>
-<th align="center">注释</th>
+<th style="text-align:center">输入</th>
+<th style="text-align:center">操作</th>
+<th style="text-align:center">堆栈</th>
+<th style="text-align:center">注释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">5</td>
-<td align="center">入栈</td>
-<td align="center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">入栈</td>
+<td style="text-align:center">5</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="center">入栈</td>
-<td align="center">5, 1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">入栈</td>
+<td style="text-align:center">5, 1</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">入栈</td>
-<td align="center">5, 1, 2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">入栈</td>
+<td style="text-align:center">5, 1, 2</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">+</td>
-<td align="center">加法运算</td>
-<td align="center">5, 3</td>
-<td align="center">(1, 2)出栈；将结果（3）入栈</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加法运算</td>
+<td style="text-align:center">5, 3</td>
+<td style="text-align:center">(1, 2)出栈；将结果（3）入栈</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">入栈</td>
-<td align="center">5, 3, 4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">入栈</td>
+<td style="text-align:center">5, 3, 4</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">*</td>
-<td align="center">乘法运算</td>
-<td align="center">5, 12</td>
-<td align="center">(3, 4)出栈；将结果（12）入栈</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘法运算</td>
+<td style="text-align:center">5, 12</td>
+<td style="text-align:center">(3, 4)出栈；将结果（12）入栈</td>
 </tr>
 <tr>
-<td align="center">+</td>
-<td align="center">加法运算</td>
-<td align="center">17</td>
-<td align="center">(5, 12)出栈；将结果 (17)入栈</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加法运算</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">(5, 12)出栈；将结果 (17)入栈</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">入栈</td>
-<td align="center">17, 3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">入栈</td>
+<td style="text-align:center">17, 3</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">−</td>
-<td align="center">减法运算</td>
-<td align="center">14</td>
-<td align="center">(17, 3)出栈；将结果（14）入栈</td>
+<td style="text-align:center">−</td>
+<td style="text-align:center">减法运算</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">(17, 3)出栈；将结果（14）入栈</td>
 </tr>
 </tbody>
 </table>

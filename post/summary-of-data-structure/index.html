@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.73.0 with theme even" />
+<meta name="generator" content="Hugo 0.76.5 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/summary-of-data-structure/" />
@@ -54,13 +54,14 @@
 树
 树(Tree)是(n&gt;=0)个节点的有限集。当n&gt;0,其余节点可分为m(m&gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&hellip;)，其中每个集合又是一棵树，称为根的__子树(SubTree)。节点拥有的子树的个数称为__节点的度(Degree)。
 度为0的节点称为__叶子节点(Leaf)或__终端节点。不为0的称为__非终端节点__或__分支节点__。节点的子树的根称为该节点的__孩子(Child)__，相应的，该节点称为孩子的__双亲(Parent)__。">
-<meta itemprop="datePublished" content="2018-03-25T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-03-25T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2018-03-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-03-25T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1700">
 
 
 
-<meta itemprop="keywords" content="data-structure," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="data-structure," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="数据结构知识点总结"/>
 <meta name="twitter:description" content="最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～
 树
@@ -208,20 +209,20 @@
 <table>
 <thead>
 <tr>
-<th align="center">左子树</th>
-<th align="center">左标志域</th>
-<th align="center">数据</th>
-<th align="center">右标志域</th>
-<th align="center">右子树</th>
+<th style="text-align:center">左子树</th>
+<th style="text-align:center">左标志域</th>
+<th style="text-align:center">数据</th>
+<th style="text-align:center">右标志域</th>
+<th style="text-align:center">右子树</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">lchild</td>
-<td align="center">LTag</td>
-<td align="center">data</td>
-<td align="center">RTag</td>
-<td align="center">rchild</td>
+<td style="text-align:center">lchild</td>
+<td style="text-align:center">LTag</td>
+<td style="text-align:center">data</td>
+<td style="text-align:center">RTag</td>
+<td style="text-align:center">rchild</td>
 </tr>
 </tbody>
 </table>
@@ -291,105 +292,105 @@
 <table>
 <thead>
 <tr>
-<th align="center">排序算法</th>
-<th align="center">平均时间复杂度</th>
-<th align="center">最好情况</th>
-<th align="center">最坏情况</th>
-<th align="center">空间复杂度</th>
-<th align="center">排序方式</th>
-<th align="center">稳定性</th>
+<th style="text-align:center">排序算法</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">最好情况</th>
+<th style="text-align:center">最坏情况</th>
+<th style="text-align:center">空间复杂度</th>
+<th style="text-align:center">排序方式</th>
+<th style="text-align:center">稳定性</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">冒泡排序</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(1)</td>
-<td align="center">In-Place</td>
-<td align="center">稳定</td>
+<td style="text-align:center">冒泡排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">In-Place</td>
+<td style="text-align:center">稳定</td>
 </tr>
 <tr>
-<td align="center">选择排序</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(1)</td>
-<td align="center">In-Place</td>
-<td align="center">不稳定</td>
+<td style="text-align:center">选择排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">In-Place</td>
+<td style="text-align:center">不稳定</td>
 </tr>
 <tr>
-<td align="center">插入排序</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(1)</td>
-<td align="center">In-Place</td>
-<td align="center">稳定</td>
+<td style="text-align:center">插入排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">In-Place</td>
+<td style="text-align:center">稳定</td>
 </tr>
 <tr>
-<td align="center">希尔排序</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n log^2 n)</td>
-<td align="center">O(n log^2 n)</td>
-<td align="center">O(1)</td>
-<td align="center">In-Place</td>
-<td align="center">不稳定</td>
+<td style="text-align:center">希尔排序</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n log^2 n)</td>
+<td style="text-align:center">O(n log^2 n)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">In-Place</td>
+<td style="text-align:center">不稳定</td>
 </tr>
 <tr>
-<td align="center">归并排序</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n)</td>
-<td align="center">Out-Place</td>
-<td align="center">稳定</td>
+<td style="text-align:center">归并排序</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">Out-Place</td>
+<td style="text-align:center">稳定</td>
 </tr>
 <tr>
-<td align="center">快速排序</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(log n)</td>
-<td align="center">In-Place</td>
-<td align="center">不稳定</td>
+<td style="text-align:center">快速排序</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(log n)</td>
+<td style="text-align:center">In-Place</td>
+<td style="text-align:center">不稳定</td>
 </tr>
 <tr>
-<td align="center">堆排序</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(n log n)</td>
-<td align="center">O(1)</td>
-<td align="center">In-Place</td>
-<td align="center">不稳定</td>
+<td style="text-align:center">堆排序</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(n log n)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">In-Place</td>
+<td style="text-align:center">不稳定</td>
 </tr>
 <tr>
-<td align="center">计数排序</td>
-<td align="center">O(n+k)</td>
-<td align="center">O(n+k)</td>
-<td align="center">O(n+k)</td>
-<td align="center">O(k)</td>
-<td align="center">Out-Place</td>
-<td align="center">稳定</td>
+<td style="text-align:center">计数排序</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">O(k)</td>
+<td style="text-align:center">Out-Place</td>
+<td style="text-align:center">稳定</td>
 </tr>
 <tr>
-<td align="center">桶排序</td>
-<td align="center">O(n+k)</td>
-<td align="center">O(n+k)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n+k)</td>
-<td align="center">Out-Place</td>
-<td align="center">稳定</td>
+<td style="text-align:center">桶排序</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">Out-Place</td>
+<td style="text-align:center">稳定</td>
 </tr>
 <tr>
-<td align="center">基数排序</td>
-<td align="center">O(n*k)</td>
-<td align="center">O(n*k)</td>
-<td align="center">O(n*k)</td>
-<td align="center">O(n+k)</td>
-<td align="center">Out-Place</td>
-<td align="center">稳定</td>
+<td style="text-align:center">基数排序</td>
+<td style="text-align:center">O(n*k)</td>
+<td style="text-align:center">O(n*k)</td>
+<td style="text-align:center">O(n*k)</td>
+<td style="text-align:center">O(n+k)</td>
+<td style="text-align:center">Out-Place</td>
+<td style="text-align:center">稳定</td>
 </tr>
 </tbody>
 </table>

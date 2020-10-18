@@ -25,7 +25,7 @@ v2ray的服务端和客户端是同一套程序，配置成服务端还是客户
 
 
 
-<meta name="generator" content="Hugo 0.73.0 with theme even" />
+<meta name="generator" content="Hugo 0.76.5 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/casual-talk/" />
@@ -50,13 +50,14 @@ v2ray的服务端和客户端是同一套程序，配置成服务端还是客户
 <meta itemprop="name" content="杂谈">
 <meta itemprop="description" content="近日全面将Shadowsockes向v2ray切换，原本Arch上用着 sslocal -c /path/filename.config 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。
 v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 inbounds 和 outbounds 的配置，一般来说v2ray官网的 新手上路 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket&#43;TLS&#43;Web这种方案。">
-<meta itemprop="datePublished" content="2019-04-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-02T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2019-04-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-05-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1006">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="杂谈"/>
 <meta name="twitter:description" content="近日全面将Shadowsockes向v2ray切换，原本Arch上用着 sslocal -c /path/filename.config 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。
 v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 inbounds 和 outbounds 的配置，一般来说v2ray官网的 新手上路 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket&#43;TLS&#43;Web这种方案。"/>
@@ -167,7 +168,7 @@ v2ray的服务端和客户端是同一套程序，配置成服务端还是客户
 </blockquote>
 <p>大概就是类似于 <code>chmod</code> ，至于为什么会是 <code>1777</code> ，以下引用 <a href="https://en.wikipedia.org/wiki/Sticky_bit">wikipedia</a>:</p>
 <blockquote>
-<p>When a directory&rsquo;s sticky bit is set, the filesystem treats the files in such directories in a special way so only the file&rsquo;s owner, the directory&rsquo;s owner, or root user can rename or delete the file. Without the sticky bit set, any user with write and execute permissions for the directory can rename or delete contained files, regardless of the file&rsquo;s owner. Typically this is set on the /tmp directory to prevent ordinary users from deleting or moving other users&rsquo; files.</p>
+<p>When a directory&rsquo;s sticky bit is set, the filesystem treats the files in such directories in a special way so only the file&rsquo;s owner, the directory&rsquo;s owner, or root user can rename or delete the file. Without the sticky bit set, any user with write and execute permissions for the directory can rename or delete contained files, regardless of the file&rsquo;s owner. Typically this is set on the /tmp directory to prevent ordinary users from deleting or moving other users' files.</p>
 </blockquote>
 <p>大致意思就是说一旦设置了 <code>sticky bit</code> ，只有目录/文件的所有者或者root账户才能对文件进行写操作，其他的用户即使获得了对这个目录写操作权限，也无法对其进行写操作。</p>
 <p>之后又去 archlinux wiki 上看了看，发现yaourt开发者在2018年11月10号的一条<a href="https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631">issue</a>中表示无意再继续维护yaourt了，之后2018年11月30号被aur helper页面标记为停更，2019年3月25号从aur help中被移除。</p>

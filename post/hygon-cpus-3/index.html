@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.73.0 with theme even" />
+<meta name="generator" content="Hugo 0.76.5 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpus-3/" />
@@ -50,13 +50,14 @@
 <meta itemprop="name" content="「译文」| 海光 CPU：中版的加密方式，不同的性能(三)">
 <meta itemprop="description" content="最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。
 从总体上来看，我们可以确定，核心布局是相同的，缓存大小，TLB(Translation Lookaside Buffer 转换后备缓冲区) 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下：">
-<meta itemprop="datePublished" content="2020-06-11T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-11T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-06-11T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-06-11T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2277">
 
 
 
-<meta itemprop="keywords" content="测试中国的 x86 CPU," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="测试中国的 x86 CPU," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「译文」| 海光 CPU：中版的加密方式，不同的性能(三)"/>
 <meta name="twitter:description" content="最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。
 从总体上来看，我们可以确定，核心布局是相同的，缓存大小，TLB(Translation Lookaside Buffer 转换后备缓冲区) 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下："/>
@@ -171,51 +172,51 @@
 <table>
 <thead>
 <tr>
-<th align="center">AnandTech</th>
-<th align="center">EPYC Naples</th>
-<th align="center">Hygon Dhyana</th>
+<th style="text-align:center">AnandTech</th>
+<th style="text-align:center">EPYC Naples</th>
+<th style="text-align:center">Hygon Dhyana</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">ADD/SUB</td>
-<td align="center">2 per clock</td>
-<td align="center">1 per clock</td>
+<td style="text-align:center">ADD/SUB</td>
+<td style="text-align:center">2 per clock</td>
+<td style="text-align:center">1 per clock</td>
 </tr>
 <tr>
-<td align="center">CMP/MULP*</td>
-<td align="center">2 per clock</td>
-<td align="center">1 per clock</td>
+<td style="text-align:center">CMP/MULP*</td>
+<td style="text-align:center">2 per clock</td>
+<td style="text-align:center">1 per clock</td>
 </tr>
 <tr>
-<td align="center">ADDSUBP*</td>
-<td align="center">2 per clock</td>
-<td align="center">1 per clock</td>
+<td style="text-align:center">ADDSUBP*</td>
+<td style="text-align:center">2 per clock</td>
+<td style="text-align:center">1 per clock</td>
 </tr>
 <tr>
-<td align="center">RCP*/RSQRT*</td>
-<td align="center">1 per clock</td>
-<td align="center">0.5 per clock</td>
+<td style="text-align:center">RCP*/RSQRT*</td>
+<td style="text-align:center">1 per clock</td>
+<td style="text-align:center">0.5 per clock</td>
 </tr>
 <tr>
-<td align="center">BLENDW</td>
-<td align="center">3 per clock</td>
-<td align="center">2 per clock</td>
+<td style="text-align:center">BLENDW</td>
+<td style="text-align:center">3 per clock</td>
+<td style="text-align:center">2 per clock</td>
 </tr>
 <tr>
-<td align="center">PMIN/MAX*</td>
-<td align="center">3 per clock</td>
-<td align="center">2 per clcok</td>
+<td style="text-align:center">PMIN/MAX*</td>
+<td style="text-align:center">3 per clock</td>
+<td style="text-align:center">2 per clcok</td>
 </tr>
 <tr>
-<td align="center">PAND/ANDN/OR/XOR</td>
-<td align="center">4 per clock</td>
-<td align="center">2 per clock</td>
+<td style="text-align:center">PAND/ANDN/OR/XOR</td>
+<td style="text-align:center">4 per clock</td>
+<td style="text-align:center">2 per clock</td>
 </tr>
 <tr>
-<td align="center">MOVs</td>
-<td align="center">4 per clock</td>
-<td align="center">2 per clock</td>
+<td style="text-align:center">MOVs</td>
+<td style="text-align:center">4 per clock</td>
+<td style="text-align:center">2 per clock</td>
 </tr>
 </tbody>
 </table>
@@ -225,30 +226,30 @@
 <table>
 <thead>
 <tr>
-<th align="center">AnandTech</th>
-<th align="center">Zen 1 Desktop</th>
-<th align="center">Hygon Dhyana</th>
-<th align="center">Hygon Dhyana Plus</th>
+<th style="text-align:center">AnandTech</th>
+<th style="text-align:center">Zen 1 Desktop</th>
+<th style="text-align:center">Hygon Dhyana</th>
+<th style="text-align:center">Hygon Dhyana Plus</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">16-bit</td>
-<td align="center">1200 clocks</td>
-<td align="center">1100 clocks</td>
-<td align="center">800 clocks</td>
+<td style="text-align:center">16-bit</td>
+<td style="text-align:center">1200 clocks</td>
+<td style="text-align:center">1100 clocks</td>
+<td style="text-align:center">800 clocks</td>
 </tr>
 <tr>
-<td align="center">32-bit</td>
-<td align="center">1200 clocks</td>
-<td align="center">1100 clocks</td>
-<td align="center">800 clocks</td>
+<td style="text-align:center">32-bit</td>
+<td style="text-align:center">1200 clocks</td>
+<td style="text-align:center">1100 clocks</td>
+<td style="text-align:center">800 clocks</td>
 </tr>
 <tr>
-<td align="center">64-bit</td>
-<td align="center">2365 clocks</td>
-<td align="center">2125 clocks</td>
-<td align="center">1520 clocks</td>
+<td style="text-align:center">64-bit</td>
+<td style="text-align:center">2365 clocks</td>
+<td style="text-align:center">2125 clocks</td>
+<td style="text-align:center">1520 clocks</td>
 </tr>
 </tbody>
 </table>
@@ -256,30 +257,30 @@
 <table>
 <thead>
 <tr>
-<th align="center">AnandTech</th>
-<th align="center">Zen 1 Desktop</th>
-<th align="center">Hygon Dhyana</th>
-<th align="center">Hygon Dhyana Plus</th>
+<th style="text-align:center">AnandTech</th>
+<th style="text-align:center">Zen 1 Desktop</th>
+<th style="text-align:center">Hygon Dhyana</th>
+<th style="text-align:center">Hygon Dhyana Plus</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">16-bit</td>
-<td align="center">1200 clocks</td>
-<td align="center">1100 clocks</td>
-<td align="center">12000 clocks</td>
+<td style="text-align:center">16-bit</td>
+<td style="text-align:center">1200 clocks</td>
+<td style="text-align:center">1100 clocks</td>
+<td style="text-align:center">12000 clocks</td>
 </tr>
 <tr>
-<td align="center">32-bit</td>
-<td align="center">1200 clocks</td>
-<td align="center">1100 clocks</td>
-<td align="center">12000 clocks</td>
+<td style="text-align:center">32-bit</td>
+<td style="text-align:center">1200 clocks</td>
+<td style="text-align:center">1100 clocks</td>
+<td style="text-align:center">12000 clocks</td>
 </tr>
 <tr>
-<td align="center">64-bit</td>
-<td align="center">2365 clocks</td>
-<td align="center">2125 clocks</td>
-<td align="center">27100 clocks</td>
+<td style="text-align:center">64-bit</td>
+<td style="text-align:center">2365 clocks</td>
+<td style="text-align:center">2125 clocks</td>
+<td style="text-align:center">27100 clocks</td>
 </tr>
 </tbody>
 </table>
