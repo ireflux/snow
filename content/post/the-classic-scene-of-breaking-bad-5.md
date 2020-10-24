@@ -9,11 +9,11 @@ author: "sherry"
 ---
 ### 系列文章
 
-1. [细数 Breaking Bad 经典片段 | 一](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-1)
-2. [细数 Breaking Bad 经典片段 | 二](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-2)
-3. [细数 Breaking Bad 经典片段 | 三](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-3)
-4. [细数 Breaking Bad 经典片段 | 四](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-4)
-5. [细数 Breaking Bad 经典片段 | 五](https://wanmei.ml/snow/post/the-classic-scene-of-breaking-bad-5)
+1. [细数 Breaking Bad 经典片段 | 一](https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1)
+2. [细数 Breaking Bad 经典片段 | 二](https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2)
+3. [细数 Breaking Bad 经典片段 | 三](https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3)
+4. [细数 Breaking Bad 经典片段 | 四](https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4)
+5. [细数 Breaking Bad 经典片段 | 五](https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5)
 
 <!--more-->
 
@@ -269,7 +269,7 @@ Skyler 也很聪明，知道对方在给她脱罪。正如 saul 所说，这通�
 视频链接1：https://www.youtube.com/watch?v=1EehA6C8b4s
 视频链接2：https://www.youtube.com/watch?v=7l6u1FqGMuY
 
-让大富豪”帮忙“把钱转移给家人，聪明。
+让大富豪”帮忙“把钱转移给家人，smart guy！
 
 场景二：
 
@@ -277,6 +277,7 @@ Skyler 也很聪明，知道对方在给她脱罪。正如 saul 所说，这通�
 
 唉，什么都不说了，看对话吧。
 
+Walt:
 > Skyler  斯凯勒  
 > Skyler  斯凯勒  
 > All the things that I did,  我所做的一切  
@@ -297,7 +298,53 @@ Skyler 也很聪明，知道对方在给她脱罪。正如 saul 所说，这通�
 
 视频链接：https://www.youtube.com/watch?v=NPRZMtrEgus
 
-可以说是非常精彩了的复仇了！白老师和 Gus 一样，都是跑到对方的地盘将对方一锅端了，甚至连 Lydia 都没放过，心思缜密如此，乃至于斯！
+可以说是非常精彩了的复仇了！白老师和 Gus 一样，都是跑到对方的地盘将对方一锅端了，甚至连 Lydia 都没放过，心思缜密如此，乃至于斯！当然这也正印证了复仇前对 skyler 说的话：
+
+Skyler:
+> You didn't kill anybody sneaking in here, did you?  你偷着进来没有杀谁  对吧
+> You didn't hurt anybody?  你没有伤害别人吧
+
+Walt:
+> No  没有
+> Didn't have to.  没有必要
+
+Skyler:
+> You look terrible.  你好狼狈
+
+Walt:
+> Yeah.  是啊
+> But I feel good.  但是我感觉很好
+
+Skyler:
+> So talk.  说吧
+> Why are you here?  你为什么来这里
+
+Walt:
+> It's over.  都结束了
+> And I needed a proper goodbye.  我需要好好告别
+> Not our last phone call.  上次在电话里不算
+
+Skyler:
+> So you're going to the police?  你要去自首吗
+
+Walt:
+> They'll be coming to me.  他们会来抓我
+
+Skyler:
+> If you're in custody,  如果你被捕了
+> what stops those people from coming back,  那些人不会回来报复吗
+> those people you worked with?  跟你合作的那些人
+> When--when I still had the house,  我还住在家里的时候
+> three men came  三个男人
+> in the middle of the night,  大半夜闯进来
+> wearing masks, threatening Holly and Flynn and me.   蒙着面  威胁霍莉  弗林和我
+> They told me not to talk about  他们告诉我不要再提及
+> that woman I saw at the car wash,  我在洗车行看到的那个女人
+> and if you're in custody and they find out--  如果你被捕了  他们发现...
+
+Walt: 
+> They're not coming back.  他们不会回来报复的
+> Not after tonight.  今晚过后就不会了
 
 场景四：
 
@@ -324,15 +371,17 @@ Jesse:
 
 视频链接：https://www.youtube.com/watch?v=6AlEEcanbus
 
-结尾白老师去了制毒现场，环顾那些熟悉的场景，摸了摸仪器，拿起了制毒时用的防毒面具，脸上的笑容看起来既欣慰又愉悦。啊，这才是他这样的人应该待的地方。远方数辆警车带着警笛声赶来，白老师倒在了地上，身下白衣被一摊血迹浸染，镜头随即升高、升高。真的是艺术！
+结尾白老师去了制毒现场，环顾那些熟悉的场景，摸了摸仪器，拿起了制毒时用的防毒面具，脸上的笑容看起来既欣慰又愉悦。这才是他这样的人应该待的地方！远方数辆警车带着警笛声赶来，白老师倒在了地上，身下白衣被一摊血迹浸染，镜头随即升高、升高。真的是艺术！
 
 ### 结语
 
-时至今日，Better Call Saul 都已经更完到了第五季，还是同样的风格。Breaking Bad 也出了续集电影，讲述了 Jesse 开车逃出来之后的事情，惟一的遗憾是在续集中没听到 Skyler 及其子女的情况，前合伙人到底有没有把钱捐给 Skyler，如果捐了，Skyler有没有收下...
-
 本来这篇文章一直到 S5E11 的部分我在去年九月份就写完了，由于之后 YouTuBe 官方一直没更 11 集后面的剧情回顾和精彩片段，缺少引用素材，因此就一直放下了。时隔一年，官方的 YouTuBe 频道上 14、15、16 还是没更新，所以只好在链接里引用了别人的剪辑，总而言之系列文章这个坑我还是补回来了hhh
 
-就这样吧，最后感谢 Vince Gilligan 大佬创作了如此精彩、令人回味无穷的电视剧！
+刚开始我只是想做个简单的回顾，一篇搞定。但看到里面精彩的台词对话，忍不住把他们全部搬出来细细品味，结果挖了个大坑，最终把五季的台词看了个遍，把里面我认为比较精彩的部分摘录出来共同组成了这五篇《细数 breaking bad 的经典片段》
+
+时至今日，Better Call Saul 都已经更完到了第五季，还是同样的风格。Breaking Bad 也出了续集电影，讲述了 Jesse 开车逃出来之后的事情，惟一的遗憾是在续集中没听到 Skyler 及其子女的情况，如今他们住在哪里？生活得怎么样？前合伙人到底有没有把钱捐给 Skyler，如果捐了，Skyler有没有收下...
+
+上面那些疑问可能不会再有答案了，后面还是一起来期待后续 Better Call Saul 的精彩表现吧！
 
 ## 参考资料
 
