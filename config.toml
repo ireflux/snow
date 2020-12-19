@@ -88,7 +88,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   mathjax = false           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
   mathjaxEnableSingleDollar = false                                                     # 是否使用 $...$ 即可進行inline latex渲染
   mathjaxEnableAutoNumber = false                                                       # 是否使用公式自动编号
-  mathjaxUseLocalFiles = false  # You should install mathjax in `yout-site/static/lib/mathjax`
+  mathjaxUseLocalFiles = false  # You should install mathjax in `your-site/static/lib/mathjax`
 
   postMetaInFooter = true   # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown链接，许可信息
   linkToMarkDown = false    # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
@@ -136,12 +136,29 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     clientId = ""           # Your client ID
     clientSecret = ""       # Your client secret
 
+  [params.utterances]       # https://utteranc.es/
+    owner = ""              # Your GitHub ID
+    repo = ""               # The repo to store comments
+
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
-    owner = "ireflux"              # Your GitHub ID
-    repo = "snow"               # The repo to store comments
-    admin = ["ireflux"]
+    owner = ""              # Your GitHub ID
+    repo = ""               # The repo to store comments
+    admin = ""
     clientId = ""           # Your client ID
     clientSecret = ""       # Your client secret
+
+  # Valine.
+  # You can get your appid and appkey from https://leancloud.cn
+  # more info please open https://valine.js.org
+  [params.valine]
+    enable = true
+    appId = '9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz'
+    appKey = 's9mFa6SokCKP5xh5pJlTiXHv'
+    notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+    verify = false # Verification code
+    avatar = 'mm'
+    placeholder = '说点什么吧...'
+    visitor = false
 
   [params.flowchartDiagrams]# see https://blog.olowolo.com/example-site/post/js-flowchart-diagrams/
     enable = false
@@ -152,7 +169,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     options = ""            # default: "{theme: 'simple'}"
 
   [params.busuanzi]         # count web traffic by busuanzi                             # 是否使用不蒜子统计站点访问量
-    enable = false
+    enable = true
     siteUV = true
     sitePV = true
     pagePV = true
@@ -185,6 +202,13 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     anonymizeIP = true      # 12.214.31.144 -> 12.214.31.0
   [privacy.youtube]
     privacyEnhanced = true
+
+# see https://gohugo.io/getting-started/configuration-markup
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+  [markup.goldmark.renderer]
+    unsafe = true
 
 # 将下面这段配置取消注释可以使 hugo 生成 .md 文件
 # Uncomment these options to make hugo output .md files.
