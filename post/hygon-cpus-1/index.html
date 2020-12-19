@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.76.5 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/hygon-cpus-1/" />
@@ -34,8 +34,9 @@
 <link rel="manifest" href="/snow/manifest.json">
 <link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="/snow/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link href="/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -132,7 +133,7 @@
             </div>
           <span class="more-meta"> 4722 words </span>
           <span class="more-meta"> 10 mins read </span>
-        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
 
@@ -141,12 +142,16 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#让我们从头开始">让我们从头开始</a></li>
-    <li><a href="#amd-的尽职调查">AMD 的尽职调查</a></li>
-    <li><a href="#合资企业中的合资企业">合资企业中的合资企业</a></li>
-    <li><a href="#核心-ip-的授权不同于-x86-的转授权">核心 IP 的授权不同于 x86 的转授权</a></li>
-    <li><a href="#与-wendell-合作采购海光cpu">与 Wendell 合作：采购海光CPU</a></li>
-    <li><a href="#相关篇章">相关篇章</a></li>
+    <li>
+      <ul>
+        <li><a href="#让我们从头开始">让我们从头开始</a></li>
+        <li><a href="#amd-的尽职调查">AMD 的尽职调查</a></li>
+        <li><a href="#合资企业中的合资企业">合资企业中的合资企业</a></li>
+        <li><a href="#核心-ip-的授权不同于-x86-的转授权">核心 IP 的授权不同于 x86 的转授权</a></li>
+        <li><a href="#与-wendell-合作采购海光cpu">与 Wendell 合作：采购海光CPU</a></li>
+        <li><a href="#相关篇章">相关篇章</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -269,25 +274,24 @@
     </footer>
   </article>
         </div>
-        <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      var gitalk = new Gitalk({
-        id: '2020-05-26 00:00:00 \u002b0000 UTC',
-        title: '「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的海光 Dhyana 处理器(一)',
-        clientID: '',
-        clientSecret: '',
-        repo: 'snow',
-        owner: 'ireflux',
-        admin: ['ireflux'],
-        body: decodeURI(location.href)
-      });
-      gitalk.render('gitalk-container');
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+        
 
   
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',
+        appKey: 's9mFa6SokCKP5xh5pJlTiXHv',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
 
   
 
@@ -312,18 +316,19 @@
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
-  
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
 
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">sherry</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>sherry</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -334,7 +339,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/snow/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/snow/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 

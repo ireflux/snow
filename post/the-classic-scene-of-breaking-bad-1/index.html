@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.76.5 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/" />
@@ -35,8 +35,9 @@
 <link rel="manifest" href="/snow/manifest.json">
 <link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="/snow/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link href="/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -142,7 +143,7 @@ The title comes from the Southern colloquialism &ldquo;breaking bad&rdquo; which
             </div>
           <span class="more-meta"> 998 words </span>
           <span class="more-meta"> 2 mins read </span>
-        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
 
@@ -153,17 +154,21 @@ The title comes from the Southern colloquialism &ldquo;breaking bad&rdquo; which
   <ul>
     <li>
       <ul>
-        <li><a href="#关联文章">关联文章</a></li>
-        <li><a href="#season-1-episode-1----pilot">Season 1 Episode 1 &ndash; Pilot</a></li>
-        <li><a href="#season-1-episode-3----and-the-bags-in-the-river">Season 1 Episode 3 &ndash; &hellip;And the Bag&rsquo;s in the River</a></li>
-        <li><a href="#season-1-episode-4----cancer-man">Season 1 Episode 4 &ndash; Cancer Man</a></li>
-        <li><a href="#season-1-episode-5----gray-matter">Season 1 Episode 5 &ndash; Gray Matter</a></li>
-        <li><a href="#season-1-episode-6----crazy-handful-of-nothin">Season 1 Episode 6 &ndash; Crazy Handful of Nothin'</a></li>
-        <li><a href="#season-1-episode-7----a-no-rough-stuff-type-deal">Season 1 Episode 7 &ndash; A No-Rough-Stuff-Type Deal</a></li>
-        <li><a href="#结语">结语</a></li>
+        <li>
+          <ul>
+            <li><a href="#关联文章">关联文章</a></li>
+            <li><a href="#season-1-episode-1----pilot">Season 1 Episode 1 &ndash; Pilot</a></li>
+            <li><a href="#season-1-episode-3----and-the-bags-in-the-river">Season 1 Episode 3 &ndash; &hellip;And the Bag&rsquo;s in the River</a></li>
+            <li><a href="#season-1-episode-4----cancer-man">Season 1 Episode 4 &ndash; Cancer Man</a></li>
+            <li><a href="#season-1-episode-5----gray-matter">Season 1 Episode 5 &ndash; Gray Matter</a></li>
+            <li><a href="#season-1-episode-6----crazy-handful-of-nothin">Season 1 Episode 6 &ndash; Crazy Handful of Nothin'</a></li>
+            <li><a href="#season-1-episode-7----a-no-rough-stuff-type-deal">Season 1 Episode 7 &ndash; A No-Rough-Stuff-Type Deal</a></li>
+            <li><a href="#结语">结语</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考资料">参考资料</a></li>
       </ul>
     </li>
-    <li><a href="#参考资料">参考资料</a></li>
   </ul>
 </nav>
   </div>
@@ -269,25 +274,24 @@ why are you doing this?</p>
     </footer>
   </article>
         </div>
-        <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      var gitalk = new Gitalk({
-        id: '2019-08-10 00:00:00 \u002b0000 UTC',
-        title: '细数 Breaking Bad 经典片段 |  一',
-        clientID: '',
-        clientSecret: '',
-        repo: 'snow',
-        owner: 'ireflux',
-        admin: ['ireflux'],
-        body: decodeURI(location.href)
-      });
-      gitalk.render('gitalk-container');
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+        
 
   
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',
+        appKey: 's9mFa6SokCKP5xh5pJlTiXHv',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
 
   
 
@@ -312,18 +316,19 @@ why are you doing this?</p>
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
-  
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
 
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">sherry</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>sherry</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -334,7 +339,10 @@ why are you doing this?</p>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/snow/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/snow/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
