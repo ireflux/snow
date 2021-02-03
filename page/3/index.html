@@ -1,365 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>sherry&#39;s blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="Do something amazing."><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.80.0 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/><link href=https://ireflux.github.io/snow/index.xml rel=alternate type=application/rss+xml title="sherry's blog"><link href=https://ireflux.github.io/snow/index.xml rel=feed type=application/rss+xml title="sherry's blog"><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="sherry's blog"><meta property="og:description" content="Do something amazing."><meta property="og:type" content="website"><meta property="og:url" content="https://ireflux.github.io/snow/"><meta property="og:updated_time" content="2020-10-18T00:00:00+00:00"><meta itemprop=name content="sherry's blog"><meta itemprop=description content="Do something amazing."><meta name=twitter:card content="summary"><meta name=twitter:title content="sherry's blog"><meta name=twitter:description content="Do something amazing."><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/snow/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/snow/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><section id=posts class=posts><article class=post><header class=post-header><h1 class=post-title><a class=post-link href=/snow/post/send-mail-with-bitcoin-rate-everyday/>使用 Github Actions 每天自动发送比特币的估值邮件</a></h1><div class=post-meta><span class=post-time>2019-12-24</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>760 words</span>
+<span class=more-meta>2 mins read</span></div></header><div class=post-content><div class=post-summary><p>前段时间，在阮一峰老师那里看到了<a href=http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html>GitHub Actions 入门教程</a>，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：<a href=http://www.ruanyifeng.com/blog/2019/12/github_actions.html>GitHub Actions 教程：定时发送天气邮件</a>，这又让我想起了这个功能，于是决定重新捡起来。</p><p>Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：</p><ul><li>2-core CPU</li><li>7 GB of RAM memory</li><li>14 GB of SSD disk space</li></ul></div><div class=read-more><a href=/snow/post/send-mail-with-bitcoin-rate-everyday/ class=read-more-link>Read more...</a></div></div></article><article class=post><header class=post-header><h1 class=post-title><a class=post-link href=/snow/post/study-note-of-rabbitmq-2/>RabbitMQ 学习笔记 | 二</a></h1><div class=post-meta><span class=post-time>2019-11-29</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>772 words</span>
+<span class=more-meta>2 mins read</span></div></header><div class=post-content><div class=post-summary><p>开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：<a href=https://wanmei.ml/snow/post/study-note-of-rabbitmq-1/>RabbitMQ 学习笔记(1)</a></p><p>对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。</p><p>RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 <code>AbstractMessageListenerContainer</code> 定义的 <code>DEFAULT_PREFETCH_COUNT</code> 值为 250,如果将其设置为 1,则将会变为循环调度。</p></div><div class=read-more><a href=/snow/post/study-note-of-rabbitmq-2/ class=read-more-link>Read more...</a></div></div></article><article class=post><header class=post-header><h1 class=post-title><a class=post-link href=/snow/post/note-on-using-spring-session/>Spring Session 使用笔记</a></h1><div class=post-meta><span class=post-time>2019-11-23</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>734 words</span>
+<span class=more-meta>2 mins read</span></div></header><div class=post-content><div class=post-summary><p>Spring Session 的配置非常简单，根据<a href=https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html>官方文档</a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。</p><p>首先需要添加依赖项:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencies&gt;</span>
+	<span class=c>&lt;!-- ... --&gt;</span>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="sherry" /><meta name="description" content="Do something amazing." /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
-
-
-<link rel="canonical" href="https://ireflux.github.io/snow/" />
-  <link href="https://ireflux.github.io/snow/index.xml" rel="alternate" type="application/rss+xml" title="sherry&#39;s blog" />
-  <link href="https://ireflux.github.io/snow/index.xml" rel="feed" type="application/rss+xml" title="sherry&#39;s blog" />
-<link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
-<link rel="manifest" href="/snow/manifest.json">
-<link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<link href="/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="sherry&#39;s blog" />
-<meta property="og:description" content="Do something amazing." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ireflux.github.io/snow/" />
-<meta property="og:updated_time" content="2020-10-18T00:00:00+00:00" />
-<meta itemprop="name" content="sherry&#39;s blog">
-<meta itemprop="description" content="Do something amazing.">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="sherry&#39;s blog"/>
-<meta name="twitter:description" content="Do something amazing."/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/snow/" class="logo">sherry&#39;s blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/snow/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/snow/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/snow/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/snow/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/snow/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/snow/" class="logo">sherry&#39;s blog</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/snow/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/about/">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/send-mail-with-bitcoin-rate-everyday/">使用 Github Actions 每天自动发送比特币的估值邮件</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-12-24 </span>
-      <div class="post-category">
-          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
-          </div>
-        <span class="more-meta"> 760 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>前段时间，在阮一峰老师那里看到了<a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程</a>，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：<a href="http://www.ruanyifeng.com/blog/2019/12/github_actions.html">GitHub Actions 教程：定时发送天气邮件</a>，这又让我想起了这个功能，于是决定重新捡起来。</p>
-<p>Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：</p>
-<ul>
-<li>2-core CPU</li>
-<li>7 GB of RAM memory</li>
-<li>14 GB of SSD disk space</li>
-</ul>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/send-mail-with-bitcoin-rate-everyday/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/study-note-of-rabbitmq-2/">RabbitMQ 学习笔记 | 二</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-11-29 </span>
-      <div class="post-category">
-          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
-          </div>
-        <span class="more-meta"> 772 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：<a href="https://wanmei.ml/snow/post/study-note-of-rabbitmq-1/">RabbitMQ 学习笔记(1)</a></p>
-<p>对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。</p>
-<p>RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 <code>AbstractMessageListenerContainer</code> 定义的 <code>DEFAULT_PREFETCH_COUNT</code> 值为 250,如果将其设置为 1,则将会变为循环调度。</p>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/study-note-of-rabbitmq-2/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/note-on-using-spring-session/">Spring Session 使用笔记</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-11-23 </span>
-      <div class="post-category">
-          <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
-          </div>
-        <span class="more-meta"> 734 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Spring Session 的配置非常简单，根据<a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档</a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。</p>
-<p>首先需要添加依赖项:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
-	<span class="c">&lt;!-- ... --&gt;</span>
-
-	<span class="nt">&lt;dependency&gt;</span>
-		<span class="nt">&lt;groupId&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
-		<span class="nt">&lt;artifactId&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;/dependencies&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/note-on-using-spring-session/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/tap-to-click-not-working/">i3gaps 上触摸板的使用</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-11-10 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 272 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。</p>
-<p>在路径 <code>/etc/X11/xorg.conf.d/</code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Section <span class="s2">&#34;InputClass&#34;</span>
-        Identifier <span class="s2">&#34;touchpad&#34;</span>
-        MatchIsTouchpad <span class="s2">&#34;on&#34;</span>
-        Driver <span class="s2">&#34;libinput&#34;</span>
-        Option <span class="s2">&#34;Tapping&#34;</span> <span class="s2">&#34;on&#34;</span>
-        Option <span class="s2">&#34;TappingButtonMap&#34;</span> <span class="s2">&#34;lrm&#34;</span>
-        Option <span class="s2">&#34;NaturalScrolling&#34;</span> <span class="s2">&#34;false&#34;</span>
-        Option <span class="s2">&#34;ScrollMethod&#34;</span> <span class="s2">&#34;twofinger&#34;</span>
+	<span class=nt>&lt;dependency&gt;</span>
+		<span class=nt>&lt;groupId&gt;</span>org.springframework.session<span class=nt>&lt;/groupId&gt;</span>
+		<span class=nt>&lt;artifactId&gt;</span>spring-session-data-redis<span class=nt>&lt;/artifactId&gt;</span>
+	<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;/dependencies&gt;</span>
+</code></pre></td></tr></table></div></div></div><div class=read-more><a href=/snow/post/note-on-using-spring-session/ class=read-more-link>Read more...</a></div></div></article><article class=post><header class=post-header><h1 class=post-title><a class=post-link href=/snow/post/tap-to-click-not-working/>i3gaps 上触摸板的使用</a></h1><div class=post-meta><span class=post-time>2019-11-10</span><div class=post-category><a href=/snow/categories/%E9%9A%8F%E7%AC%94/>随笔</a></div><span class=more-meta>272 words</span>
+<span class=more-meta>1 min read</span></div></header><div class=post-content><div class=post-summary><p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。</p><p>在路径 <code>/etc/X11/xorg.conf.d/</code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>Section <span class=s2>&#34;InputClass&#34;</span>
+        Identifier <span class=s2>&#34;touchpad&#34;</span>
+        MatchIsTouchpad <span class=s2>&#34;on&#34;</span>
+        Driver <span class=s2>&#34;libinput&#34;</span>
+        Option <span class=s2>&#34;Tapping&#34;</span> <span class=s2>&#34;on&#34;</span>
+        Option <span class=s2>&#34;TappingButtonMap&#34;</span> <span class=s2>&#34;lrm&#34;</span>
+        Option <span class=s2>&#34;NaturalScrolling&#34;</span> <span class=s2>&#34;false&#34;</span>
+        Option <span class=s2>&#34;ScrollMethod&#34;</span> <span class=s2>&#34;twofinger&#34;</span>
 EndSection
-</code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/tap-to-click-not-working/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/snow/post/try-firefox-private-network/">试用 Firefox Private Network</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-13 </span>
-      <div class="post-category">
-          <a href="/snow/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
-          </div>
-        <span class="more-meta"> 211 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <blockquote>
-<p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。</p>
-</blockquote>
-    </div>
-    <div class="read-more">
-      <a href="/snow/post/try-firefox-private-network/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
-    <a class="prev" href="/snow/page/2/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
-      </a>
-    <a class="next" href="/snow/page/4/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-  </nav>
-        </div>
-        
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/ireflux" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.weibo.com/3932084845" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="http://space.bilibili.com/13546666" class="iconfont icon-bilibili" title="bilibili"></a>
-  <a href="https://ireflux.github.io/snow/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2015 - 
-    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>sherry</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/snow/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+</code></pre></td></tr></table></div></div></div><div class=read-more><a href=/snow/post/tap-to-click-not-working/ class=read-more-link>Read more...</a></div></div></article><article class=post><header class=post-header><h1 class=post-title><a class=post-link href=/snow/post/try-firefox-private-network/>试用 Firefox Private Network</a></h1><div class=post-meta><span class=post-time>2019-09-13</span><div class=post-category><a href=/snow/categories/%E9%9A%8F%E7%AC%94/>随笔</a></div><span class=more-meta>211 words</span>
+<span class=more-meta>1 min read</span></div></header><div class=post-content><div class=post-summary><blockquote><p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。</p></blockquote></div><div class=read-more><a href=/snow/post/try-firefox-private-network/ class=read-more-link>Read more...</a></div></div></article></section><nav class=pagination><a class=prev href=/snow/page/2/><i class="iconfont icon-left"></i><span class=prev-text>Prev</span></a>
+<a class=next href=/snow/page/4/><span class=next-text>Next</span>
+<i class="iconfont icon-right"></i></a></nav></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a><a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a><a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a><a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2015 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/snow/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js></script></body></html>

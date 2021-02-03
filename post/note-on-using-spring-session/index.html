@@ -1,48 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Spring Session 使用笔记 - sherry&#39;s blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="sherry" /><meta name="description" content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Spring Session 使用笔记 - sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
 首先需要添加依赖项:
-1 2 3 4 5 6 7 8  &amp;lt;dependencies&amp;gt; &amp;lt;!-- ... --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.session&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-session-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;   " /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
-
-
-<link rel="canonical" href="https://ireflux.github.io/snow/post/note-on-using-spring-session/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/snow/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/snow/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/snow/favicon-16x16.png">
-<link rel="manifest" href="/snow/manifest.json">
-<link rel="mask-icon" href="/snow/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<link href="/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="Spring Session 使用笔记" />
-<meta property="og:description" content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
+1 2 3 4 5 6 7 8  &amp;lt;dependencies&amp;gt; &amp;lt;!-- ... --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.session&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-session-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.80.0 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/post/note-on-using-spring-session/><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Spring Session 使用笔记"><meta property="og:description" content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
 首先需要添加依赖项:
 
 
@@ -56,23 +14,14 @@
 8
 
 
-&lt;dependencies&gt;
-	&lt;!-- ... --&gt;
+<dependencies>
+	<!-- ... -->
 
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;
-	&lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://ireflux.github.io/snow/post/note-on-using-spring-session/" />
-<meta property="article:published_time" content="2019-11-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-23T00:00:00+00:00" />
-<meta itemprop="name" content="Spring Session 使用笔记">
-<meta itemprop="description" content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
+	<dependency>
+		<groupId>org.springframework.session</groupId>
+		<artifactId>spring-session-data-redis</artifactId>
+	</dependency>
+</dependencies>"><meta property="og:type" content="article"><meta property="og:url" content="https://ireflux.github.io/snow/post/note-on-using-spring-session/"><meta property="article:published_time" content="2019-11-23T00:00:00+00:00"><meta property="article:modified_time" content="2019-11-23T00:00:00+00:00"><meta itemprop=name content="Spring Session 使用笔记"><meta itemprop=description content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
 首先需要添加依赖项:
 
 
@@ -86,27 +35,14 @@
 8
 
 
-&lt;dependencies&gt;
-	&lt;!-- ... --&gt;
+<dependencies>
+	<!-- ... -->
 
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;
-	&lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-
-">
-<meta itemprop="datePublished" content="2019-11-23T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-11-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="734">
-
-
-
-<meta itemprop="keywords" content="Spring Session,Spring," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Spring Session 使用笔记"/>
-<meta name="twitter:description" content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
+	<dependency>
+		<groupId>org.springframework.session</groupId>
+		<artifactId>spring-session-data-redis</artifactId>
+	</dependency>
+</dependencies>"><meta itemprop=datePublished content="2019-11-23T00:00:00+00:00"><meta itemprop=dateModified content="2019-11-23T00:00:00+00:00"><meta itemprop=wordCount content="734"><meta itemprop=keywords content="Spring Session,Spring,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Spring Session 使用笔记"><meta name=twitter:description content="Spring Session 的配置非常简单，根据官方文档的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。
 首先需要添加依赖项:
 
 
@@ -120,242 +56,107 @@
 8
 
 
-&lt;dependencies&gt;
-	&lt;!-- ... --&gt;
+<dependencies>
+	<!-- ... -->
 
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;
-	&lt;/dependency&gt;
-&lt;/dependencies&gt;
+	<dependency>
+		<groupId>org.springframework.session</groupId>
+		<artifactId>spring-session-data-redis</artifactId>
+	</dependency>
+</dependencies>"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/snow/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/snow/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Spring Session 使用笔记</h1><div class=post-meta><span class=post-time>2019-11-23</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>734 words</span>
+<span class=more-meta>2 mins read</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#参考资料>参考资料</a></li></ul></nav></div></div><div class=post-content><p>Spring Session 的配置非常简单，根据<a href=https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html>官方文档</a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。</p><p>首先需要添加依赖项:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencies&gt;</span>
+	<span class=c>&lt;!-- ... --&gt;</span>
 
-
-"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/snow/" class="logo">sherry&#39;s blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/snow/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/snow/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/snow/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/snow/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/snow/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/snow/" class="logo">sherry&#39;s blog</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/snow/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/snow/about/">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Spring Session 使用笔记</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2019-11-23 </span>
-        <div class="post-category">
-            <a href="/snow/categories/clavicula-salomonis/"> Clavicula Salomonis </a>
-            </div>
-          <span class="more-meta"> 734 words </span>
-          <span class="more-meta"> 2 mins read </span>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#参考资料">参考资料</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>Spring Session 的配置非常简单，根据<a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档</a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。</p>
-<p>首先需要添加依赖项:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
-	<span class="c">&lt;!-- ... --&gt;</span>
-
-	<span class="nt">&lt;dependency&gt;</span>
-		<span class="nt">&lt;groupId&gt;</span>org.springframework.session<span class="nt">&lt;/groupId&gt;</span>
-		<span class="nt">&lt;artifactId&gt;</span>spring-session-data-redis<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;/dependencies&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>然后在 application.properties 中添加以下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+	<span class=nt>&lt;dependency&gt;</span>
+		<span class=nt>&lt;groupId&gt;</span>org.springframework.session<span class=nt>&lt;/groupId&gt;</span>
+		<span class=nt>&lt;artifactId&gt;</span>spring-session-data-redis<span class=nt>&lt;/artifactId&gt;</span>
+	<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;/dependencies&gt;</span>
+</code></pre></td></tr></table></div></div><p>然后在 application.properties 中添加以下内容：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>
 spring.redis.host=localhost # Redis server host.
 spring.redis.password= # Login password of the redis server.
 spring.redis.port=6379 # Redis server port.
 
 spring.session.store-type=redis # Session store type.
-</code></pre></td></tr></table>
-</div>
-</div><p>至此就配置完成了，现在就可以写两个简单的方法去测试一下。例如以下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/set&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">setSession</span><span class="o">(</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">){</span>
-        <span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">,</span><span class="s">&#34;sherry&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table></div></div><p>至此就配置完成了，现在就可以写两个简单的方法去测试一下。例如以下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>    <span class=nd>@GetMapping</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;/set&#34;</span><span class=o>)</span>
+    <span class=kd>public</span> <span class=n>String</span> <span class=nf>setSession</span><span class=o>(</span><span class=n>HttpSession</span> <span class=n>session</span><span class=o>){</span>
+        <span class=n>session</span><span class=o>.</span><span class=na>setAttribute</span><span class=o>(</span><span class=s>&#34;username&#34;</span><span class=o>,</span><span class=s>&#34;sherry&#34;</span><span class=o>);</span>
 
-        <span class="k">return</span> <span class="s">&#34;ok&#34;</span><span class="o">;</span>
-    <span class="o">}</span>
+        <span class=k>return</span> <span class=s>&#34;ok&#34;</span><span class=o>;</span>
+    <span class=o>}</span>
 
-    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/get&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getSession</span><span class="o">(</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">){</span>
-        <span class="k">return</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>然后使用 maven package 将其打成 jar 包，若需要跳过测试，可使用 <code>mvn -Dmaven.test.skip=true package</code>，或者在 pom.xml 中添加插件依赖：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;plugins&gt;</span>
-    <span class="c">&lt;!-- ... --&gt;</span>
+    <span class=nd>@GetMapping</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;/get&#34;</span><span class=o>)</span>
+    <span class=kd>public</span> <span class=n>String</span> <span class=nf>getSession</span><span class=o>(</span><span class=n>HttpSession</span> <span class=n>session</span><span class=o>){</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>String</span><span class=o>)</span> <span class=n>session</span><span class=o>.</span><span class=na>getAttribute</span><span class=o>(</span><span class=s>&#34;username&#34;</span><span class=o>);</span>
+    <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>然后使用 maven package 将其打成 jar 包，若需要跳过测试，可使用 <code>mvn -Dmaven.test.skip=true package</code>，或者在 pom.xml 中添加插件依赖：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;plugins&gt;</span>
+    <span class=c>&lt;!-- ... --&gt;</span>
 
-	<span class="nt">&lt;plugin&gt;</span>
-	    <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-		    <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-		    <span class="nt">&lt;configuration&gt;</span>
-			    <span class="nt">&lt;skipTests&gt;</span>true<span class="nt">&lt;/skipTests&gt;</span>
-		    <span class="nt">&lt;/configuration&gt;</span>
-	<span class="nt">&lt;/plugin&gt;</span>
-<span class="nt">&lt;/plugins&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>然后开启两个服务：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ nohup java -jar app.jar --server.port<span class="o">=</span><span class="m">8080</span> <span class="p">&amp;</span>
-$ nohup java -jar app.jar --server.port<span class="o">=</span><span class="m">8081</span> <span class="p">&amp;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>现在在 8080 里面 set，在 8081 里面 get，会发现也可以得到结果。</p>
-<p>这里顺便歪个楼，如果服务在前台启动，比如说启动 redis 时未将 redis.conf 中的 daemonize 设置为 yes。此时可以使用 <code>CTRL + Z</code> 将其挂在后台，但此时服务会被暂停，使用 <code>fg</code> 可以将其调回前台继续运行(若后台有多个，默认调回最后启动的那个)。也可以使用 <code>bg</code> 使其后台继续运行。使用 <code>jobs</code> 可查看在后台运行的服务列表。</p>
-<p>到此为止就算完成了，但还可以更进一步，在这两个服务前面加一层 Nginx 来做反向代理，还可以设置权重。首先来修改 nginx 的配置文件，一般来说需要修改 nginx.conf，由于我现在的环境是 debian，有一个默认的配置文件位于 /etc/nginx/sites-enabled 下的 default 文件，不同的发行版文件目录结构可能不大一样，可以根据自身情况自行查找。可根据以下示例来写：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">upstream wanmei.ml{
+	<span class=nt>&lt;plugin&gt;</span>
+	    <span class=nt>&lt;groupId&gt;</span>org.apache.maven.plugins<span class=nt>&lt;/groupId&gt;</span>
+		    <span class=nt>&lt;artifactId&gt;</span>maven-surefire-plugin<span class=nt>&lt;/artifactId&gt;</span>
+		    <span class=nt>&lt;configuration&gt;</span>
+			    <span class=nt>&lt;skipTests&gt;</span>true<span class=nt>&lt;/skipTests&gt;</span>
+		    <span class=nt>&lt;/configuration&gt;</span>
+	<span class=nt>&lt;/plugin&gt;</span>
+<span class=nt>&lt;/plugins&gt;</span>
+</code></pre></td></tr></table></div></div><p>然后开启两个服务：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ nohup java -jar app.jar --server.port<span class=o>=</span><span class=m>8080</span> <span class=p>&amp;</span>
+$ nohup java -jar app.jar --server.port<span class=o>=</span><span class=m>8081</span> <span class=p>&amp;</span>
+</code></pre></td></tr></table></div></div><p>现在在 8080 里面 set，在 8081 里面 get，会发现也可以得到结果。</p><p>这里顺便歪个楼，如果服务在前台启动，比如说启动 redis 时未将 redis.conf 中的 daemonize 设置为 yes。此时可以使用 <code>CTRL + Z</code> 将其挂在后台，但此时服务会被暂停，使用 <code>fg</code> 可以将其调回前台继续运行(若后台有多个，默认调回最后启动的那个)。也可以使用 <code>bg</code> 使其后台继续运行。使用 <code>jobs</code> 可查看在后台运行的服务列表。</p><p>到此为止就算完成了，但还可以更进一步，在这两个服务前面加一层 Nginx 来做反向代理，还可以设置权重。首先来修改 nginx 的配置文件，一般来说需要修改 nginx.conf，由于我现在的环境是 debian，有一个默认的配置文件位于 /etc/nginx/sites-enabled 下的 default 文件，不同的发行版文件目录结构可能不大一样，可以根据自身情况自行查找。可根据以下示例来写：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>upstream wanmei.ml{
     server 127.0.0.1:8080 weight=1;
     server 127.0.0.1:8081 weight=2;
 }
@@ -370,125 +171,18 @@ server {
         proxy_redirect default;
     }
 }
-</code></pre></td></tr></table>
-</div>
-</div><p>然后 <code>nginx -s reload</code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。</p>
-<h1 id="参考资料">参考资料</h1>
-<p><a href="http://nginx.org/en/docs/">nginx documentation</a><br>
-<a href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html">扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”</a></p>
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">sherry</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        2019-11-23
-        
-    </span>
-  </p>
-  
-  
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/snow/tags/spring-session/">Spring Session</a>
-          <a href="/snow/tags/spring/">Spring</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/snow/post/study-note-of-rabbitmq-2/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">RabbitMQ 学习笔记 | 二</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/snow/post/tap-to-click-not-working/">
-            <span class="next-text nav-default">i3gaps 上触摸板的使用</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-  <div id="vcomments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: '9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',
-        appKey: 's9mFa6SokCKP5xh5pJlTiXHv',
-        notify:  false ,
-        verify:  false ,
-        avatar:'mm',
-        placeholder: '说点什么吧...',
-        visitor:  false 
-    });
-  </script>
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://github.com/ireflux" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.weibo.com/3932084845" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="http://space.bilibili.com/13546666" class="iconfont icon-bilibili" title="bilibili"></a>
-  <a href="https://ireflux.github.io/snow/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/snow/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2015 - 
-    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>sherry</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/snow/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+</code></pre></td></tr></table></div></div><p>然后 <code>nginx -s reload</code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。</p><h1 id=参考资料>参考资料</h1><p><a href=http://nginx.org/en/docs/>nginx documentation</a><br><a href=https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html>扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”</a></p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2019-11-23</span></p></div><footer class=post-footer><div class=post-tags><a href=/snow/tags/spring-session/>Spring Session</a>
+<a href=/snow/tags/spring/>Spring</a></div><nav class=post-nav><a class=prev href=/snow/post/study-note-of-rabbitmq-2/><i class="iconfont icon-left"></i><span class="prev-text nav-default">RabbitMQ 学习笔记 | 二</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/snow/post/tap-to-click-not-working/><span class="next-text nav-default">i3gaps 上触摸板的使用</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=//unpkg.com/valine/dist/Valine.min.js></script><script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:false,verify:false,avatar:'mm',placeholder:'说点什么吧...',visitor:false});</script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a><a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a><a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a><a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2015 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/snow/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js></script></body></html>

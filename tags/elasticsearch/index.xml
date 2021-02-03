@@ -1,24 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Elasticsearch on sherry&#39;s blog</title>
-    <link>https://ireflux.github.io/snow/tags/elasticsearch/</link>
-    <description>Recent content in Elasticsearch on sherry&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Elasticsearch 入门 | 一</title>
-      <link>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</link>
-      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</guid>
-      <description>&lt;p&gt;本文是我开始学习 Elasticsearch 系列的第一篇笔记，计划先以我初学者的状态对 Elasticsearch 的看法以及目前学到的知识做个概览性的总结，之后的系列再单独对其细节专门去学习和记录，留备后期翻阅查看。&lt;/p&gt;
-&lt;p&gt;注：截至本文发表前，Elasticsearch 的版本号为 7.6.1，本文的内容也建立于此之上。&lt;/p&gt;
-&lt;h2 id=&#34;elasticsearch-是什么&#34;&gt;Elasticsearch 是什么？&lt;/h2&gt;
-&lt;p&gt;根据官方文档和 Wikipedia 的说法：&lt;/p&gt;
-&lt;p&gt;Elasticsearch是一个基于Apache Lucene构建的分布式的开源搜索和分析引擎，可以处理所有类型的数据，包括文本，数字，地理空间，结构化和非结构化的数据。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Elasticsearch on sherry's blog</title><link>https://ireflux.github.io/snow/tags/elasticsearch/</link><description>Recent content in Elasticsearch on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml"/><item><title>Elasticsearch 入门 | 一</title><link>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</guid><description>&lt;p>本文是我开始学习 Elasticsearch 系列的第一篇笔记，计划先以我初学者的状态对 Elasticsearch 的看法以及目前学到的知识做个概览性的总结，之后的系列再单独对其细节专门去学习和记录，留备后期翻阅查看。&lt;/p>
+&lt;p>注：截至本文发表前，Elasticsearch 的版本号为 7.6.1，本文的内容也建立于此之上。&lt;/p>
+&lt;h2 id="elasticsearch-是什么">Elasticsearch 是什么？&lt;/h2>
+&lt;p>根据官方文档和 Wikipedia 的说法：&lt;/p>
+&lt;p>Elasticsearch是一个基于Apache Lucene构建的分布式的开源搜索和分析引擎，可以处理所有类型的数据，包括文本，数字，地理空间，结构化和非结构化的数据。&lt;/p></description></item></channel></rss>

@@ -1,38 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>algorithm on sherry&#39;s blog</title>
-    <link>https://ireflux.github.io/snow/tags/algorithm/</link>
-    <description>Recent content in algorithm on sherry&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>栈和队列的相互转换</title>
-      <link>https://ireflux.github.io/snow/post/stack-to-queue/</link>
-      <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid>
-      <description>&lt;p&gt;关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;如何使用栈实现队列？&lt;/li&gt;
-&lt;li&gt;如何使用队列实现栈？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)&lt;/p&gt;
-&lt;p&gt;接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：&lt;/p&gt;
-&lt;p&gt;进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>一道笔试题</title>
-      <link>https://ireflux.github.io/snow/post/an-interview-question/</link>
-      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ireflux.github.io/snow/post/an-interview-question/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong&gt;输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>algorithm on sherry's blog</title><link>https://ireflux.github.io/snow/tags/algorithm/</link><description>Recent content in algorithm on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/algorithm/index.xml" rel="self" type="application/rss+xml"/><item><title>栈和队列的相互转换</title><link>https://ireflux.github.io/snow/post/stack-to-queue/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid><description>&lt;p>关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p>
+&lt;ol>
+&lt;li>如何使用栈实现队列？&lt;/li>
+&lt;li>如何使用队列实现栈？&lt;/li>
+&lt;/ol>
+&lt;p>栈的特点是 last in, first out (LIFO)，而队列的特点是First-In-First-Out (FIFO)&lt;/p>
+&lt;p>接下来根据和队列的特点开始分析一下，首先看第一个问题，要想用栈实现队列，则至少需要两个栈，假如用 stack1 和 stack2 分别表示这两个栈。思路如下：&lt;/p>
+&lt;p>进入此 “队列” 时，需要先 push 进 stack1; pop 时如若 stack2 是非空的，则直接从 stack2 pop，如果是空的则需要将 stack1 中的元素全部 push 到 stack2 中，再进行出 pop 操作。&lt;/p></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong>&lt;/p>
+&lt;p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p></description></item></channel></rss>
