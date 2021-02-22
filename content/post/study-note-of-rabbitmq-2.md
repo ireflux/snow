@@ -38,4 +38,4 @@ RabbitMQ 不指定 Exchange 也能发送到 Queue，是因为有默认的 Exchan
 
 ## 参考资料
 
-[RabbitMQ Tutorials](https://www.rabbitmq.com/getstarted.html)
+2. [RabbitMQ Tutorials](https://www.rabbitmq.com/getstarted.html)

@@ -118,5 +118,5 @@ createdb: could not connect to database template1: FATAL:  role "[你的本机�
 
 ## 参考资料
 
-[PostgreSQL Doc](https://www.postgresql.org/docs/11/)  
-[Arch Wiki PostgreSQL](https://wiki.archlinux.org/index.php/PostgreSQL)
+1. [PostgreSQL Doc](https://www.postgresql.org/docs/11/)
+2. [Arch Wiki PostgreSQL](https://wiki.archlinux.org/index.php/PostgreSQL)

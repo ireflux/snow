@@ -45,6 +45,6 @@ linux上客户端的使用最简单的方式就是找一些配置文件改改来
 
 ## 参考资料
 
-> [Project V](https://www.v2ray.com/)  
-> [Sticky_bit](https://en.wikipedia.org/wiki/Sticky_bit)  
-> [aur helper](https://wiki.archlinux.org/index.php/AUR_helpers)
+1. [Project V](https://www.v2ray.com/)  
+2. [Sticky_bit](https://en.wikipedia.org/wiki/Sticky_bit)  
+3. [aur helper](https://wiki.archlinux.org/index.php/AUR_helpers)

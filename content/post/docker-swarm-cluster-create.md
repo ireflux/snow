@@ -64,4 +64,4 @@ $ sudo docker swarm leave --force
 
 ## 参考资料
 
-[docker docs part 3 & part 4](https://docs.docker.com/get-started/part3/)
+1. [docker docs part 3 & part 4](https://docs.docker.com/get-started/part3/)

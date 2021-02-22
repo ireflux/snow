@@ -191,4 +191,4 @@ Pinkman 得知 Gus 并没有下毒后，反而有一些内疚，有些犹豫。�
 
 ## 参考资料
 
-[Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)
+1. [Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)

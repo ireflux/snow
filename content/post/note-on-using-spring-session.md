@@ -100,7 +100,7 @@ server {
 
 然后 `nginx -s reload` 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。
 
-# 参考资料
+## 参考资料
 
-[nginx documentation](http://nginx.org/en/docs/)  
-[扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”](https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html)
+1. [nginx documentation](http://nginx.org/en/docs/)  
+2. [扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”](https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html)

@@ -97,6 +97,6 @@ uses: dawidd6/action-send-mail@master
 
 ## 参考资料
 
-> https://help.github.com/en/actions  
-> https://github.com/ruanyf/weather-action  
-> https://github.com/dawidd6/action-send-mail
+1. https://help.github.com/en/actions  
+2. https://github.com/ruanyf/weather-action  
+3. https://github.com/dawidd6/action-send-mail

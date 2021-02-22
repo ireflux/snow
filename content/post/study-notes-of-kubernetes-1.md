@@ -13,5 +13,4 @@ author: "sherry"
 
 ## 参考资料
 
-> [Installing Kubernetes with Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/)  
-> 
+1. [Installing Kubernetes with Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/)  

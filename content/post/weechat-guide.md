@@ -1,5 +1,5 @@
 ---
-title: "WeeChat 的使用指南"
+title: "WeeChat 使用指南"
 date: 2021-02-22
 lastmod: 2021-02-22
 draft: false
@@ -10,6 +10,8 @@ author: "sherry"
 前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) 这种古老的通信协议，视频中还说到 IRC 这种如今带有匿名性质的聊天室，因规模较小，审查成本较高，可能是互联网上的最后一方净土，这也正好是我感兴趣的地方 :)
 
 从 [arch wiki](https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients) 中可以找到一些主流的支持 IRC 协议的软件。根据 下面的图表对比，[WeeChat](https://WeeChat.org/) 相比于其他软件来说扩展性最好，最有优势。
+
+<!--more-->
 
 下图表搬运自 arch wiki：
 
@@ -24,8 +26,6 @@ author: "sherry"
 | sic | sicAUR | C | stdin/stdout | No |
 | tiny | tiny-irc-client-git | Rust | No | Yes |
 | WeeChat | WeeChat | C | multiple languages |Yes
-
-<!--more-->
 
 ### 启动 WeeChat
 

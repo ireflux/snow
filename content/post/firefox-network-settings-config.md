@@ -1,7 +1,7 @@
 ---
 title: "利用Firefox自带的Network Settings科学上网" 
 date: 2019-05-06
-lastmod: 2019-05-06
+lastmod: 2019-08-09
 draft: false
 categories: ["随笔"]
 tags: ["Firefox"]

@@ -95,4 +95,4 @@ Walt 晚上在酒吧里遇到了 Jane 的父亲 Donald Margolis，真是奇妙�
 
 ## 参考资料
 
-[Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)
+1. [Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)

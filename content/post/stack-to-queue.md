@@ -114,6 +114,6 @@ public class QueueToStack {
 
 ## 参考资料
 
-> [Why is ArrayDeque better than LinkedList](https://stackoverflow.com/questions/6163166/why-is-arraydeque-better-than-linkedlist)  
-[java api queue](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html)  
-[java api ArrayDeque](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html)
+1. [Why is ArrayDeque better than LinkedList](https://stackoverflow.com/questions/6163166/why-is-arraydeque-better-than-linkedlist)
+2. [java api queue](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html)
+3. [java api ArrayDeque](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html)

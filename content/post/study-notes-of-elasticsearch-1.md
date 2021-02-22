@@ -89,5 +89,5 @@ discovery.seed_hosts:
 
 ## 参考资料
 
-[Elasticsearch Wikipedia](https://en.wikipedia.org/wiki/Elasticsearch)   
-[Elasticsearch](https://www.elastic.co/)
+1. [Elasticsearch Wikipedia](https://en.wikipedia.org/wiki/Elasticsearch)
+2. [Elasticsearch](https://www.elastic.co/)

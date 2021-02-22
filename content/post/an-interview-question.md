@@ -334,7 +334,7 @@ public class num_graphic {
 
 ## 参考资料
 
-> 逆波兰表达式：https://en.wikipedia.org/wiki/Reverse_Polish_notation  
-> 调度场算法：https://en.wikipedia.org/wiki/Shunting-yard_algorithm  
-> http://www.network-science.de/ascii/  
-> https://www.asciiart.eu/faq
+1. 逆波兰表达式：https://en.wikipedia.org/wiki/Reverse_Polish_notation
+2. 调度场算法：https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+3. http://www.network-science.de/ascii/
+4. https://www.asciiart.eu/faq

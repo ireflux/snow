@@ -106,4 +106,4 @@ walt 自制铝热剂开锁，和 jesse 一起去偷甲氨。
 
 ## 参考资料
 
-[Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)
+1. [Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)

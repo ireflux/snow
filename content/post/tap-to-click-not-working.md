@@ -31,5 +31,5 @@ EndSection
 
 ## 参考资料
 
-> [archlinux libinput](https://wiki.archlinux.org/index.php/Libinput)  
-[libinput - libinput-based X.Org input driver](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)
+1. [archlinux libinput](https://wiki.archlinux.org/index.php/Libinput)
+2. [libinput - libinput-based X.Org input driver](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)

@@ -103,6 +103,6 @@ public class RedisDemoApplicationTests {
 
 ## 参考资料
 
-[lettuce github](https://github.com/lettuce-io/lettuce-core)  
-[RedisTemplate](https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html)  
-[Spring Data Redis](https://docs.spring.io/spring-data/redis/docs/2.1.9.RELEASE/reference/html/)
+1. [lettuce github](https://github.com/lettuce-io/lettuce-core)
+2. [RedisTemplate](https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html)
+3. [Spring Data Redis](https://docs.spring.io/spring-data/redis/docs/2.1.9.RELEASE/reference/html/)

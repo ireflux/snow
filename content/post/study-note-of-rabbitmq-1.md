@@ -39,4 +39,4 @@ $ rabbitmqctl set_permissions -p / username ".*" ".*" ".*"
 
 ## 参考资料
 
-[RabbitMQ Documentation](https://www.rabbitmq.com/documentation.html)
+1. [RabbitMQ Documentation](https://www.rabbitmq.com/documentation.html)

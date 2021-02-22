@@ -111,4 +111,5 @@ public class Cities implements Serializable {
 除 `swagger-ui.html` 之外，还有一些默认的文档路径，详情见[此处](https://springfox.github.io/springfox/docs/current/#customizing-the-swagger-endpoints)
 
 ## 参考资料
-[Springfox Reference Documentation](https://springfox.github.io/springfox/docs/current/)
+
+1. [Springfox Reference Documentation](https://springfox.github.io/springfox/docs/current/)

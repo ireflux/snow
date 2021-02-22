@@ -103,4 +103,4 @@ Jesse 一直在保护小孩，这可能与他的个人成长有关。他这个�
 
 ## 参考资料
 
-[Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)
+1. [Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad)

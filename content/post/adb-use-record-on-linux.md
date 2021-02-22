@@ -71,4 +71,4 @@ $ ./adb devices
 
 ## 参考资料
 
-[Android Debug Bridge](https://wiki.archlinux.org/index.php/Android_Debug_Bridge)
+1. [Android Debug Bridge](https://wiki.archlinux.org/index.php/Android_Debug_Bridge)
