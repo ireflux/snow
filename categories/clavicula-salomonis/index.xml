@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clavicula Salomonis on sherry's blog</title><link>https://ireflux.github.io/snow/categories/clavicula-salomonis/</link><description>Recent content in Clavicula Salomonis on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/clavicula-salomonis/index.xml" rel="self" type="application/rss+xml"/><item><title>Elasticsearch 入门 | 一</title><link>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</guid><description>&lt;p>本文是我开始学习 Elasticsearch 系列的第一篇笔记，计划先以我初学者的状态对 Elasticsearch 的看法以及目前学到的知识做个概览性的总结，之后的系列再单独对其细节专门去学习和记录，留备后期翻阅查看。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clavicula Salomonis on sherry's blog</title><link>https://ireflux.github.io/snow/categories/clavicula-salomonis/</link><description>Recent content in Clavicula Salomonis on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/clavicula-salomonis/index.xml" rel="self" type="application/rss+xml"/><item><title>WeeChat 的使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC&lt;/a> 这种古老的通信协议，视频中还说到 IRC 这种如今带有匿名性质的聊天室，因规模较小，审查成本较高，可能是互联网上的最后一方净土，这也正好是我感兴趣的地方 :)&lt;/p>
+&lt;p>从 &lt;a href="https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients">arch wiki&lt;/a> 中可以找到一些主流的支持 IRC 协议的软件。根据 下面的图表对比，&lt;a href="https://WeeChat.org/">WeeChat&lt;/a> 相比于其他软件来说扩展性最好，最有优势。&lt;/p>
+&lt;p>下图表搬运自 arch wiki：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Name&lt;/th>
+&lt;th style="text-align:center">Package&lt;/th>
+&lt;th style="text-align:center">Written in&lt;/th>
+&lt;th style="text-align:center">Extensible&lt;/th>
+&lt;th style="text-align:center">&lt;a href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer">SASL&lt;/a>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">BitchX&lt;/td>
+&lt;td style="text-align:center">bitchx-git&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">?&lt;/td>
+&lt;td style="text-align:center">?&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ERC&lt;/td>
+&lt;td style="text-align:center">emacs&lt;/td>
+&lt;td style="text-align:center">ELisp&lt;/td>
+&lt;td style="text-align:center">in ELisp&lt;/td>
+&lt;td style="text-align:center">via script&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ii&lt;/td>
+&lt;td style="text-align:center">iiAUR&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">stdin/stdout&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Irssi&lt;/td>
+&lt;td style="text-align:center">irssi&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">in Perl&lt;/td>
+&lt;td style="text-align:center">Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">pork&lt;/td>
+&lt;td style="text-align:center">pork&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">in Perl&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ScrollZ&lt;/td>
+&lt;td style="text-align:center">scrollz&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">?&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">sic&lt;/td>
+&lt;td style="text-align:center">sicAUR&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">stdin/stdout&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">tiny&lt;/td>
+&lt;td style="text-align:center">tiny-irc-client-git&lt;/td>
+&lt;td style="text-align:center">Rust&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align:center">Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">WeeChat&lt;/td>
+&lt;td style="text-align:center">WeeChat&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">multiple languages&lt;/td>
+&lt;td style="text-align:center">Yes&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Elasticsearch 入门 | 一</title><link>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</guid><description>&lt;p>本文是我开始学习 Elasticsearch 系列的第一篇笔记，计划先以我初学者的状态对 Elasticsearch 的看法以及目前学到的知识做个概览性的总结，之后的系列再单独对其细节专门去学习和记录，留备后期翻阅查看。&lt;/p>
 &lt;p>注：截至本文发表前，Elasticsearch 的版本号为 7.6.1，本文的内容也建立于此之上。&lt;/p>
 &lt;h2 id="elasticsearch-是什么">Elasticsearch 是什么？&lt;/h2>
 &lt;p>根据官方文档和 Wikipedia 的说法：&lt;/p>
