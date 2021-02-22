@@ -26,7 +26,7 @@ netcat 最初的作者是一个名为“*Hobbit*”的人在1995年10月28号以
 ### 开启服务
 
 ```bash
-nc -l -k -p [port]
+$ nc -l -k -p [port]
 ```
 
 作为服务端，监听端口，开启服务。假设客户端通过 `nc [ip] [port]` 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。
@@ -34,7 +34,7 @@ nc -l -k -p [port]
 ### 测试端口
 
 ```bash
-nc -nv [ip] [port]
+$ nc -nv [ip] [port]
 ```
 
 例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。
@@ -42,7 +42,7 @@ nc -nv [ip] [port]
 ### 端口扫描
 
 ```bash
-nc -znv [ip] [port-port] 2>&1 | grep succeeded
+$ nc -znv [ip] [port-port] 2>&1 | grep succeeded
 ```
 
 可以用来做渗透测试。
@@ -52,13 +52,13 @@ nc -znv [ip] [port-port] 2>&1 | grep succeeded
 首先在接收端开启监听：
 
 ``` bash
-nc -l -p [port] > [filename]
+$ nc -l -p [port] > [filename]
 ```
 
 然后在发送端发送文件:
 
 ```bash
-nc [ip] [port] < [filename]
+$ nc [ip] [port] < [filename]
 ```
 
 这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 `nc localhost [port] < [filename]` 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 `ctrl+c` 即可。
@@ -68,8 +68,8 @@ nc [ip] [port] < [filename]
 除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——[扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”](https://program-think.blogspot.com/2019/09/Netcat-Tricks.html)。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：
 
 ```bash
-mkfifo [name]
-cat [name] | /bin/bash 2>&1 | nc -l -p [port] > [name]
+$ mkfifo [name]
+$ cat [name] | /bin/bash 2>&1 | nc -l -p [port] > [name]
 ```
 
 这可能也是编程随想的博客中有提到但并未透露的“间接的方式”。
