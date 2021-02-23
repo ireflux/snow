@@ -1,15 +1,17 @@
 ---
-title: "WeeChat 使用指南"
+title: "WeeChat 不完全使用指南"
 date: 2021-02-22
-lastmod: 2021-02-22
+lastmod: 2021-02-23
 draft: false
 categories: ["Clavicula Salomonis"]
 tags: ["linux", "WeeChat"]
 author: "sherry"
 ---
-前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) 这种古老的通信协议，视频中还说到 IRC 这种如今带有匿名性质的聊天室，因规模较小，审查成本较高，可能是互联网上的最后一方净土，这也正好是我感兴趣的地方 :)
+前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) 这种古老的通信协议，大意是说 IRC 这种如今带有匿名性质的聊天室，各地的用户通过各种代理连上来，难以追溯，审查成本较高，在加上现如今用户较少，规模不复往昔，即便上面盗版横行，也失去了打击的价值，种种技术和非技术的因素，造就了这样的结果，用视频中的话说：“互联网上，没人知道你是一只狗”。
 
-从 [arch wiki](https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients) 中可以找到一些主流的支持 IRC 协议的软件。根据 下面的图表对比，[WeeChat](https://WeeChat.org/) 相比于其他软件来说扩展性最好，最有优势。
+而这也正是吸引我的地方 :)
+
+从 [arch wiki](https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients) 中可以找到一些主流的支持 IRC 协议的软件。根据下面的图表对比，[WeeChat](https://WeeChat.org/) 相比于其他软件来说扩展性最好，最有优势。
 
 <!--more-->
 
@@ -76,9 +78,9 @@ WeeChat 本身是有一些界面交互命令，如 `version`，`uptime`，`print
 
 ### 添加服务器
 
-以知名服务器 `chat.freenode.net` 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。
+以当前最大的节点 `chat.freenode.net` 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。
 
-不加密的那种我在国内尝试了下连不上，使用了加密连接才连上，写法如下，其中 freenode 是昵称：
+不加密的那种我在国内尝试了下连不上，使用了加密连接才连上，写法如下，其中 `freenode` 是昵称：
 
 ```
 /server add freenode chat.freenode.net/6697 -ssl
@@ -182,6 +184,12 @@ WeeChat 本身是有一些界面交互命令，如 `version`，`uptime`，`print
 ## 后记
 
 除了以上的一些基本用法，还有 [SASL 认证](https://weechat.org/files/doc/stable/weechat_user.en.html#irc_ssl_certificates) 以及 [使用 SASL 连接](https://freenode.net/kb/answer/sasl)、通过 [Tor 连接 Freenode](https://weechat.org/files/doc/stable/weechat_user.en.html#irc_tor_freenode) 等用法。此外，一些 WeeChat 软件的方面的问题，可以看这个 [FAQ](https://weechat.org/files/doc/stable/weechat_faq.en.html)
+
+一些常用的 IRC 站点：
+
+1. https://freenode.net
+2. https://www.dal.net/servers
+3. https://www.undernet.org
 
 ## 参考资料
 
