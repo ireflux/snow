@@ -7,11 +7,11 @@ categories: ["Clavicula Salomonis"]
 tags: ["linux", "WeeChat"]
 author: "sherry"
 ---
-前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) 这种古老的通信协议，大意是说 IRC 这种如今带有匿名性质的聊天室，各地的用户通过各种代理连上来，难以追溯，审查成本较高，在加上现如今用户较少，规模不复往昔，即便上面盗版横行，也失去了打击的价值，种种技术和非技术的因素，造就了这样的结果，用视频中的话说：“互联网上，没人知道你是一只狗”。
+前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) 这种古老的通信协议。其中有一段叙述很有意思，大意是说如今 IRC 服务器这种带有很强匿名性质的聊天室，由于界面或操作还停留在上世纪，是天然的过滤屏障，人少反而提供了优质的社区交流氛围。但同时也不容易打击盗版，用户通过各种代理、中继连上来，很难去追溯，再加上现如今用户较少，规模不复往昔，因此可能也失去了打击的价值。种种技术和非技术的因素，造就了这样的一个强匿名、低审查、较为自由的一个“避难所”。用视频中的话说：“互联网上，没人知道你是一条狗”。
 
-而这也正是吸引我的地方 :)
+而这也正是吸引人的地方 :)
 
-从 [arch wiki](https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients) 中可以找到一些主流的支持 IRC 协议的软件。根据下面的图表对比，[WeeChat](https://WeeChat.org/) 相比于其他软件来说扩展性最好，最有优势。
+从 [arch wiki](https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients) 中可以找到一些主流的支持 IRC 协议的软件。根据下面的图表对比，[WeeChat](https://WeeChat.org/) 相比于其他软件来说更强大，扩展性更好，最有优势。
 
 <!--more-->
 
