@@ -33,7 +33,7 @@ List of devices attached
 </code></pre></td></tr></table></div></div><p>这样的话，应该就能看到设备被列出来了，类似于这样：</p><blockquote><p>List of devices attached<br>[device name] device</p></blockquote><p>这样就算是完成了。</p><h2 id=后记>后记</h2><p>我自己使用的是第二种方式，能够成功找到adb。<code>adb reboot bootloader</code> 后进入bootloader也能通过 <code>fastboot devices</code> 找到设备，然而通过 <code>fastboot flash recovery xxxx.img</code> 就会莫名其妙的卡住&mldr;通过 <code>fastboot boot xxxx.img</code> 想要直接进入 twrp 也会卡在 sending&mldr;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。</p><h2 id=参考资料>参考资料</h2><ol><li><a href=https://wiki.archlinux.org/index.php/Android_Debug_Bridge>Android Debug Bridge</a></li></ol></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
 <span class=item-content>2019-05-02</span></p></div><footer class=post-footer><div class=post-tags><a href=/snow/tags/linux/>Linux</a>
-<a href=/snow/tags/adb/>adb</a></div><nav class=post-nav><a class=prev href=/snow/post/firefox-network-settings-config/><i class="iconfont icon-left"></i><span class="prev-text nav-default">利用Firefox自带的Network Settings科学上网</span>
+<a href=/snow/tags/adb/>adb</a></div><nav class=post-nav><a class=prev href=/snow/post/docker-swarm-cluster-create/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Docker Swarm 集群创建过程</span>
 <span class="prev-text nav-mobile">Prev</span></a>
 <a class=next href=/snow/post/blog-migration-record/><span class="next-text nav-default">博客迁移记录</span>
 <span class="next-text nav-mobile">Next</span>

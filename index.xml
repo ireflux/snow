@@ -162,7 +162,7 @@ EndSection
 &lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo docker swarm init
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>利用Firefox自带的Network Settings科学上网</title><link>https://ireflux.github.io/snow/post/firefox-network-settings-config/</link><pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/firefox-network-settings-config/</guid><description>&lt;p>自从 Chrome 71(没记错的话是这个版本= =) 曝出追踪用户的 &lt;a href="https://www.valuewalk.com/2018/11/google-chrome-71-track-abusive-experiences/">丑闻&lt;/a> 后，我的主力浏览器便全面切换到的 Firefox。那个时候 Firefox 推出的新版本 Firefox Quantum 也有一段时间了，是用 Rust 新写的内核，感觉确实比之前要快上不少（虽然还是不如 Chrome 快），加上界面改版的很漂亮，日常使用感觉还是很不错的。最近两天由于 Firefox 的中级证书过期，导致我这里好几个扩展都不能用了。其中就包括日常使用频率很高的 SwitchyOmega。&lt;/p></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;/div></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p>
 &lt;p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
