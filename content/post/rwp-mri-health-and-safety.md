@@ -1,5 +1,5 @@
 ---
-title: "「译文」| 磁共振成像所带来的健康与安全" 
+title: "「译文」| 磁共振成像对健康与安全方面的挑战" 
 date: 2021-05-28
 lastmod: 2021-05-28
 draft: false
@@ -7,6 +7,8 @@ categories: ["Real-world Problems"]
 author: "sherry"
 ---
 本文翻译自[Real-world Problems for Phys25, Summer 2006](https://users.physics.unc.edu/~deardorf/phys25/rwp/)系列文章第三篇[A solution to RWP2 - MRI Health and Safety](https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp2sol.html)
+
+---
 
 关于磁共振系统所产生的强静态磁场的主要安全问题是铁磁体可能会以比其重量大得多的磁力吸引，如果有人处在被吸引的磁体飞行的路线中，有可能会导致有人受伤或死亡。铁磁体（如钢纽扣）上的磁性引力大小取决于物体所在位置的磁场强度和发散度以及物体的大小。如果磁场是均匀的（例如在磁共振螺线管的中心），那么物体上就没有合力，因为每个感应磁极上的磁力是相等且相反的。然而，在螺线管的边缘附近，磁场线会明显发散（散开），因此，最接近磁体的物体的一端被一个力所吸引，该力明显大于作用在远离螺线管的感应相反极上的排斥力。课堂上学过的[亥姆霍兹](https://en.wikipedia.org/wiki/Hermann_von_Helmholtz)线圈对绳子上悬挂的回形针证明了这种效果。
 

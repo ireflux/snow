@@ -8,7 +8,9 @@ author: "sherry"
 ---
 本文翻译自[Real-world Problems for Phys25, Summer 2006](https://users.physics.unc.edu/~deardorf/phys25/rwp/)系列文章第一篇[A Solution to the Pizza Party Problem](https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html)。
 
-假设你计划为50个朋友举办一个披萨派对。当地的披萨店卖12英寸的中号披萨7.99美元，16英寸的大披萨12.99美元。选哪一种比萨更为划算?如果一个中号披萨可供3个人吃，应该点多少个披萨?如果你认为你的大多数朋友都不吃披萨皮，你的答案是否会有所不同?解释你这么回答的理由。
+---
+
+假设你计划为50个朋友举办一个披萨派对。当地的披萨店卖12英寸的中号披萨7.99美元，16英寸的大披萨12.99美元，选哪一种比萨更为划算？如果一个中号披萨可供3个人吃，应该点多少个披萨？如果你认为你的大多数朋友都不吃披萨皮，你的答案是否会有所不同？解释你这么回答的理由。
 
 <!--more-->
 

@@ -42,63 +42,32 @@ Spring核心容器依赖于Common-logging的JAR包，下载地址如下：
 
 __原文链接:__ http://springtutorials.com/spring-tutorial-1/
 
-> A simple question for you before I begin:
->
-> Can you count from 1 to 20?
->
-> Here, Let me help you. Go ahead and read it out loud.
->
-> One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten.
-> Eleven. Twelve. Thirteen. Fourteen. Fifteen. Sixteen. Seventeen. Eighteen. Nineteen. Twenty.
->
-> Do you see any pattern in the numbers above? Anything that rhymes with the words or the way you count them?
->
-> Some of these end with ‘teen’ in them but is there anything else?
->
-> Unlearn everything you know about numbers and see if you can spot anything that will help you see it?
->
-> (Hint: There is none)
->
-> My daughter was 3 (she is 7 now) when she had to go through this exercise and she found it very challenging.
->
-> I think she was 4 when she started to count a little more…
->
-> Twenty One. Twenty Two. Twenty Three. Twenty Four. Twenty Five. Twenty Six. Twenty Seven. Twenty Eight. Twenty Nine. Thirty.
->
-> Did she see any pattern now? Of course, she did. ‘Twenty‘ seemed to show up everywhere.
->
-> Counting from thirty to forty was not any different now. She was over the learning curve and needed few corrections here and there.
->
-> She spent almost a full year learning to count from 1 to 20.
-> But she spent only a few months going from 20 to 100.
->
-> Let me clarify this. Counting from 1 to 20 is the hardest thing you can do.
->
-> There is no pattern here.
->
-> You have to learn it the hard way. Get over this curve and life becomes easier.
->
-> Take that as a big lesson in life. Start anything and you have to go through the grind. Once you are past the initial struggle, things get easier.
->
-> Can you predict what I am going to say next:
->
-> Learning Spring Framework (or anything new) is no different from learning to count.
->
-> It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.
->
-> As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.
->
-> As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.
->
+> A simple question for you before I begin:  
+> Can you count from 1 to 20?  
+> Here, Let me help you. Go ahead and read it out loud.  
+> One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten. Eleven. Twelve. Thirteen. Fourteen. Fifteen. Sixteen. Seventeen. Eighteen. Nineteen. Twenty.  
+> Do you see any pattern in the numbers above? Anything that rhymes with the words or the way you count them?  
+> Some of these end with ‘teen’ in them but is there anything else?  
+> Unlearn everything you know about numbers and see if you can spot anything that will help you see it?  
+> (Hint: There is none)  
+> My daughter was 3 (she is 7 now) when she had to go through this exercise and she found it very challenging.  
+> I think she was 4 when she started to count a little more…  
+> Twenty One. Twenty Two. Twenty Three. Twenty Four. Twenty Five. Twenty Six. Twenty Seven. Twenty Eight. Twenty Nine. Thirty.  
+> Did she see any pattern now? Of course, she did. ‘Twenty‘ seemed to show up everywhere.  
+> Counting from thirty to forty was not any different now. She was over the learning curve and needed few corrections here and there.  
+> She spent almost a full year learning to count from 1 to 20. But she spent only a few months going from 20 to 100.  
+> Let me clarify this. Counting from 1 to 20 is the hardest thing you can do.  
+> There is no pattern here.  
+> You have to learn it the hard way. Get over this curve and life becomes easier.  
+> Take that as a big lesson in life. Start anything and you have to go through the grind. Once you are past the initial struggle, things get easier.  
+> Can you predict what I am going to say next:  
+> Learning Spring Framework (or anything new) is no different from learning to count.  
+> It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.  
+> As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.  
+> As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.  
 > It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.
 
 ### Building a RESTful Web Service
-
-**UPDATE:** 初学的时候不懂，感觉有点奇怪，原来这是Spring boot里的内容 =。=
-
-UPDATE(2018.12.28)：现在再回过头来看，纯粹达到会使用的话也没那么复杂，真是难了不会，会了不难，原本想要做成一个学习系列，用来督促学习的，现在看来当初的计划也失败了，就这样结束吧。
-
-哦对了，下文基本上是官方文档的英译中。嗯，就这样吧。
 
 源文档：https://spring.io/guides/gs/rest-service/
 

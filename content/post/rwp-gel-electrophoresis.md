@@ -8,15 +8,17 @@ author: "sherry"
 ---
 本文翻译自[Real-world Problems for Phys25, Summer 2006](https://users.physics.unc.edu/~deardorf/phys25/rwp/)系列文章第二篇[A Solution to RWP1 - Gel Electrophoresis](https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp1sol.html)
 
+---
+
 ## 收集信息 
 
 从问题的描述中可以得知，DNA片段带负电，并且电荷量与片段的长度成正比，但是我们不确定每个碱基对的电荷量。每个碱基对可能的最小电荷为：`q=-2e=-2(1.6e-19C)`，平均碱基对的分子“重量” = 635 [daltons](https://en.m.wikipedia.org/wiki/Dalton_(unit)) = `635(1.67e-27kg)=1.06e-24kg`，可分析的片段范围为 200bp 至 50kb，对应于：`m=2.1e-22kg` 至 `5.3e-20kg`。
 
+<!--more-->
+
 注意：该技术可分析的最大DNA片段只是单倍体细胞核DNA的一小部分：`(5e4)(635)/1.9e12=1/60000`
 
 根据DNA碎片移动所需的时间，可以肯定它们不是在加速，而是在以1英尺/小时的速度移动。尽管没有明确说明，但所施加的电场必须是均匀的，由差值为50至150v的两个平行线性电极产生。假设凝胶在盒子的长度范围内流动，则电场强度必须大约为：`E=(100V)/(20cm)=5V/cm=500V/m`
-
-<!--more-->
 
 ## 组织信息
 
