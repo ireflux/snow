@@ -2,7 +2,7 @@
 &lt;p>首先需要添加依赖项:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;span class="lnt">4
@@ -12,7 +12,7 @@
 &lt;/span>&lt;span class="lnt">8
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;dependencies&amp;gt;&lt;/span>
 &lt;span class="c">&amp;lt;!-- ... --&amp;gt;&lt;/span>
 &lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.session&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
@@ -29,7 +29,7 @@
 &lt;p>首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -42,7 +42,7 @@
 &lt;/span>&lt;span class="lnt">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger2&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>

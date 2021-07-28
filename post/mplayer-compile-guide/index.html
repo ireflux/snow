@@ -1,9 +1,34 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Linux下MPlayer编译教程 - sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="前言 本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Linux下MPlayer编译教程 - sherry's blog</title>
+<meta name=renderer content="webkit">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=theme-color content="#f8f5ec">
+<meta name=msapplication-navbutton-color content="#f8f5ec">
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
+<meta name=author content="sherry"><meta name=description content="前言 本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。
 编译之前 编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得.
 Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。
  如果是x86，就选择Linux x86
 x86_64就选择Linux AMD64
-"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.83.1 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/post/mplayer-compile-guide/><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Linux下MPlayer编译教程"><meta property="og:description" content="前言
+"><meta name=keywords content="Hugo,theme,even">
+<meta name=generator content="Hugo 0.86.0 with theme even">
+<link rel=canonical href=https://ireflux.github.io/snow/post/mplayer-compile-guide/>
+<link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png>
+<link rel=manifest href=/snow/manifest.json>
+<link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
+<meta property="og:title" content="Linux下MPlayer编译教程">
+<meta property="og:description" content="前言
 本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。
 编译之前
 编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得.
@@ -11,7 +36,13 @@ Source Code没什么好说的，选择最新的就行。Binary Codec Packages，
 
 如果是x86，就选择Linux x86
 x86_64就选择Linux AMD64
-"><meta property="og:type" content="article"><meta property="og:url" content="https://ireflux.github.io/snow/post/mplayer-compile-guide/"><meta property="article:section" content="post"><meta property="article:published_time" content="2017-11-08T00:00:00+00:00"><meta property="article:modified_time" content="2017-11-08T00:00:00+00:00"><meta itemprop=name content="Linux下MPlayer编译教程"><meta itemprop=description content="前言
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ireflux.github.io/snow/post/mplayer-compile-guide/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2017-11-08T00:00:00+00:00">
+<meta property="article:modified_time" content="2017-11-08T00:00:00+00:00">
+<meta itemprop=name content="Linux下MPlayer编译教程">
+<meta itemprop=description content="前言
 本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。
 编译之前
 编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得.
@@ -19,7 +50,12 @@ Source Code没什么好说的，选择最新的就行。Binary Codec Packages，
 
 如果是x86，就选择Linux x86
 x86_64就选择Linux AMD64
-"><meta itemprop=datePublished content="2017-11-08T00:00:00+00:00"><meta itemprop=dateModified content="2017-11-08T00:00:00+00:00"><meta itemprop=wordCount content="848"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Linux下MPlayer编译教程"><meta name=twitter:description content="前言
+"><meta itemprop=datePublished content="2017-11-08T00:00:00+00:00">
+<meta itemprop=dateModified content="2017-11-08T00:00:00+00:00">
+<meta itemprop=wordCount content="848">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Linux下MPlayer编译教程">
+<meta name=twitter:description content="前言
 本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。
 编译之前
 编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得.
@@ -27,20 +63,204 @@ Source Code没什么好说的，选择最新的就行。Binary Codec Packages，
 
 如果是x86，就选择Linux x86
 x86_64就选择Linux AMD64
-"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/snow/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/snow/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Linux下MPlayer编译教程</h1><div class=post-meta><span class=post-time>2017-11-08</span><div class=post-category><a href=/snow/categories/%E9%9A%8F%E7%AC%94/>随笔</a></div><span class=more-meta>848 words</span>
-<span class=more-meta>2 mins read</span>
-<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#前言>前言</a><ul><li><a href=#编译之前>编译之前</a></li><li><a href=#安装binary-codec-packages>安装Binary Codec Packages</a></li><li><a href=#配置mplayer>配置MPlayer</a></li><li><a href=#编译mplayer>编译MPlayer</a></li><li><a href=#安装图形界面的皮肤>安装图形界面的皮肤</a></li><li><a href=#结尾>结尾</a></li></ul></li></ul></nav></div></div><div class=post-content><h1 id=前言>前言</h1><p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。</p><h2 id=编译之前>编译之前</h2><p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在<a href=http://www.mplayerhq.hu/design7/dload.html>官方网站</a>获得.</p><p>Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。</p><blockquote><p>如果是x86，就选择Linux x86</p><p>x86_64就选择Linux AMD64</p></blockquote><p>skins随便选一个就好。没什么要推荐的：D。把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！</p><p>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。</p><h2 id=安装binary-codec-packages>安装Binary Codec Packages</h2><p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/</p><h2 id=配置mplayer>配置MPlayer</h2><p>首先Mplayer会检测所需的硬件环境，在终端中运行</p><blockquote><p>./configure</p></blockquote><p>来使用默认的选项配置MPlayer。如果想要图形界面，需要运行</p><blockquote><p>./configure &ndash;enable-gui</p></blockquote><p>如果有些东西不能用，尝试输入</p><blockquote><p>./configure &ndash;help</p></blockquote><p>来查看可用的选项并选择你想要的功能。</p><h2 id=编译mplayer>编译MPlayer</h2><p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：</p><blockquote><p>make</p></blockquote><p>安装MPlayer</p><blockquote><p>make install</p></blockquote><p>然后就等着就行了。</p><h2 id=安装图形界面的皮肤>安装图形界面的皮肤</h2><p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。</p><h2 id=结尾>结尾</h2><p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入<code>mplayer &lt;moviefile></code>或<code>gmplayer &lt;moviefile></code>来打开一个视频。</p><p>至此，MPlayer就安装完毕了，Enjoy!</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
-<span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
-<span class=item-content>2017-11-08</span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/snow/post/line/><i class="iconfont icon-left"></i>
+"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
+</head>
+<body>
+<div id=mobile-navbar class=mobile-navbar>
+<div class=mobile-header-logo>
+<a href=/snow/ class=logo>sherry's blog</a>
+</div>
+<div class=mobile-navbar-icon>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<nav id=mobile-menu class="mobile-menu slideout-menu">
+<ul class=mobile-menu-list>
+<a href=/snow/>
+<li class=mobile-menu-item>Home</li>
+</a><a href=/snow/post/>
+<li class=mobile-menu-item>Archives</li>
+</a><a href=/snow/tags/>
+<li class=mobile-menu-item>Tags</li>
+</a><a href=/snow/categories/>
+<li class=mobile-menu-item>Categories</li>
+</a><a href=/snow/about/>
+<li class=mobile-menu-item>About</li>
+</a>
+</ul>
+</nav>
+<div class=container id=mobile-panel>
+<header id=header class=header>
+<div class=logo-wrapper>
+<a href=/snow/ class=logo>sherry's blog</a>
+</div>
+<nav class=site-navbar>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a class=menu-item-link href=/snow/>Home</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/snow/post/>Archives</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/snow/tags/>Tags</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/snow/categories/>Categories</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/snow/about/>About</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=main class=main>
+<div class=content-wrapper>
+<div id=content class=content>
+<article class=post>
+<header class=post-header>
+<h1 class=post-title>Linux下MPlayer编译教程</h1>
+<div class=post-meta>
+<span class=post-time> 2017-11-08 </span>
+<div class=post-category>
+<a href=/snow/categories/%E9%9A%8F%E7%AC%94/> 随笔 </a>
+</div>
+<span class=more-meta> 848 words </span>
+<span class=more-meta> 2 mins read </span>
+<span id=busuanzi_container_page_pv class=more-meta> <span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read </span>
+</div>
+</header>
+<div class=post-toc id=post-toc>
+<h2 class=post-toc-title>Contents</h2>
+<div class="post-toc-content always-active">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a>
+<ul>
+<li><a href=#编译之前>编译之前</a></li>
+<li><a href=#安装binary-codec-packages>安装Binary Codec Packages</a></li>
+<li><a href=#配置mplayer>配置MPlayer</a></li>
+<li><a href=#编译mplayer>编译MPlayer</a></li>
+<li><a href=#安装图形界面的皮肤>安装图形界面的皮肤</a></li>
+<li><a href=#结尾>结尾</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class=post-content>
+<h1 id=前言>前言</h1>
+<p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。</p>
+<h2 id=编译之前>编译之前</h2>
+<p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在<a href=http://www.mplayerhq.hu/design7/dload.html>官方网站</a>获得.</p>
+<p>Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。</p>
+<blockquote>
+<p>如果是x86，就选择Linux x86</p>
+<p>x86_64就选择Linux AMD64</p>
+</blockquote>
+<p>skins随便选一个就好。没什么要推荐的：D。把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！</p>
+<p>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。</p>
+<h2 id=安装binary-codec-packages>安装Binary Codec Packages</h2>
+<p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/</p>
+<h2 id=配置mplayer>配置MPlayer</h2>
+<p>首先Mplayer会检测所需的硬件环境，在终端中运行</p>
+<blockquote>
+<p>./configure</p>
+</blockquote>
+<p>来使用默认的选项配置MPlayer。如果想要图形界面，需要运行</p>
+<blockquote>
+<p>./configure &ndash;enable-gui</p>
+</blockquote>
+<p>如果有些东西不能用，尝试输入</p>
+<blockquote>
+<p>./configure &ndash;help</p>
+</blockquote>
+<p>来查看可用的选项并选择你想要的功能。</p>
+<h2 id=编译mplayer>编译MPlayer</h2>
+<p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：</p>
+<blockquote>
+<p>make</p>
+</blockquote>
+<p>安装MPlayer</p>
+<blockquote>
+<p>make install</p>
+</blockquote>
+<p>然后就等着就行了。</p>
+<h2 id=安装图形界面的皮肤>安装图形界面的皮肤</h2>
+<p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。</p>
+<h2 id=结尾>结尾</h2>
+<p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入<code>mplayer &lt;moviefile></code>或<code>gmplayer &lt;moviefile></code>来打开一个视频。</p>
+<p>至此，MPlayer就安装完毕了，Enjoy!</p>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span class=item-title>Author</span>
+<span class=item-content>sherry</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>LastMod</span>
+<span class=item-content>
+2017-11-08
+</span>
+</p>
+</div>
+<footer class=post-footer>
+<nav class=post-nav>
+<a class=prev href=/snow/post/line/>
+<i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">线</span>
-<span class="prev-text nav-mobile">Prev</span></a>
-<a class=next href=/snow/post/a-dream/><span class="next-text nav-default">一个梦</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a>
+<a class=next href=/snow/post/a-dream/>
+<span class="next-text nav-default">一个梦</span>
 <span class="next-text nav-mobile">Next</span>
-<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=//unpkg.com/valine/dist/Valine.min.js></script><script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:!1,verify:!1,avatar:'mm',placeholder:'说点什么吧...',visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a><a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a><a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a><a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<i class="iconfont icon-right"></i>
+</a>
+</nav>
+</footer>
+</article>
+</div>
+<div id=vcomments></div>
+<script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:!1,verify:!1,avatar:'mm',placeholder:'说点什么吧...',visitor:!1})</script>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=social-links>
+<a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
+<a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a>
+<a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a>
+<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
+</div>
+<div class=copyright>
+<span class=power-by>
+Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span>
 <span class=division>|</span>
-<span class=theme-info>Theme -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
+<span class=theme-info>
+Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span>
+<div class=busuanzi-footer>
+<span id=busuanzi_container_site_pv> site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
 <span class=division>|</span>
-<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+<span id=busuanzi_container_site_uv> site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
+</div>
+<span class=copyright-year>
+&copy;
 2015 -
-2021<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/snow/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script></body></html>
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
+</span>
+</div>
+</footer>
+<div class=back-to-top id=back-to-top>
+<i class="iconfont icon-up"></i>
+</div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/snow/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+</body>
+</html>
