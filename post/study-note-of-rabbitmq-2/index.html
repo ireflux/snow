@@ -15,7 +15,7 @@
 对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。
 RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 AbstractMessageListenerContainer 定义的 DEFAULT_PREFETCH_COUNT 值为 250,如果将其设置为 1,则将会变为循环调度。
 "><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.86.0 with theme even">
+<meta name=generator content="Hugo 0.87.0 with theme even">
 <link rel=canonical href=https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/>
 <link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
