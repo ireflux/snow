@@ -14,7 +14,7 @@
 <meta name=author content="sherry"><meta name=description content="最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。
 在路径 /etc/X11/xorg.conf.d/ 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：
 1 2 3 4 5 6 7 8 9  Section &amp;#34;InputClass&amp;#34; Identifier &amp;#34;touchpad&amp;#34; MatchIsTouchpad &amp;#34;on&amp;#34; Driver &amp;#34;libinput&amp;#34; Option &amp;#34;Tapping&amp;#34; &amp;#34;on&amp;#34; Option &amp;#34;TappingButtonMap&amp;#34; &amp;#34;lrm&amp;#34; Option &amp;#34;NaturalScrolling&amp;#34; &amp;#34;false&amp;#34; Option &amp;#34;ScrollMethod&amp;#34; &amp;#34;twofinger&amp;#34; EndSection   "><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.88.1 with theme even">
+<meta name=generator content="Hugo 0.92.0 with theme even">
 <link rel=canonical href=https://ireflux.github.io/snow/post/tap-to-click-not-working/>
 <link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
@@ -290,7 +290,7 @@ Theme -
 <span class=copyright-year>
 &copy;
 2015 -
-2021<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
+2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
 </span>
 </div>
 </footer>
