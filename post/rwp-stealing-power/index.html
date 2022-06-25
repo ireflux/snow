@@ -1,250 +1,37 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>「译文」| 偷电问题 - sherry's blog</title>
-<meta name=renderer content="webkit">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=theme-color content="#f8f5ec">
-<meta name=msapplication-navbutton-color content="#f8f5ec">
-<meta name=apple-mobile-web-app-capable content="yes">
-<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
-<meta name=author content="sherry"><meta name=description content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
- 据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：
-"><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.92.0 with theme even">
-<link rel=canonical href=https://ireflux.github.io/snow/post/rwp-stealing-power/>
-<link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png>
-<link rel=manifest href=/snow/manifest.json>
-<link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
-<meta property="og:title" content="「译文」| 偷电问题">
-<meta property="og:description" content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>「译文」| 偷电问题 - sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
+据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.101.0 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/post/rwp-stealing-power/><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/snow/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="「译文」| 偷电问题"><meta property="og:description" content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
 
-据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://ireflux.github.io/snow/post/rwp-stealing-power/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2021-07-28T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-07-28T00:00:00+00:00">
-<meta itemprop=name content="「译文」| 偷电问题">
-<meta itemprop=description content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
+据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题："><meta property="og:type" content="article"><meta property="og:url" content="https://ireflux.github.io/snow/post/rwp-stealing-power/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-07-28T00:00:00+00:00"><meta property="article:modified_time" content="2021-07-28T00:00:00+00:00"><meta itemprop=name content="「译文」| 偷电问题"><meta itemprop=description content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
 
-据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题："><meta itemprop=datePublished content="2021-07-28T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-07-28T00:00:00+00:00">
-<meta itemprop=wordCount content="2131">
-<meta itemprop=keywords content><meta name=twitter:card content="summary">
-<meta name=twitter:title content="「译文」| 偷电问题">
-<meta name=twitter:description content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
+据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题："><meta itemprop=datePublished content="2021-07-28T00:00:00+00:00"><meta itemprop=dateModified content="2021-07-28T00:00:00+00:00"><meta itemprop=wordCount content="2131"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="「译文」| 偷电问题"><meta name=twitter:description content="本文翻译自Real-world Problems for Phys25, Summer 2006系列文章第四篇A Solution to the RWP for Exam 1 - Stealing Power。
 
 据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题："><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
-</head>
-<body>
-<div id=mobile-navbar class=mobile-navbar>
-<div class=mobile-header-logo>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<div class=mobile-navbar-icon>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-<nav id=mobile-menu class="mobile-menu slideout-menu">
-<ul class=mobile-menu-list>
-<a href=/snow/>
-<li class=mobile-menu-item>Home</li>
-</a><a href=/snow/post/>
-<li class=mobile-menu-item>Archives</li>
-</a><a href=/snow/tags/>
-<li class=mobile-menu-item>Tags</li>
-</a><a href=/snow/categories/>
-<li class=mobile-menu-item>Categories</li>
-</a><a href=/snow/about/>
-<li class=mobile-menu-item>About</li>
-</a>
-</ul>
-</nav>
-<div class=container id=mobile-panel>
-<header id=header class=header>
-<div class=logo-wrapper>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<nav class=site-navbar>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a class=menu-item-link href=/snow/>Home</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/post/>Archives</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/tags/>Tags</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/categories/>Categories</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/about/>About</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=main class=main>
-<div class=content-wrapper>
-<div id=content class=content>
-<article class=post>
-<header class=post-header>
-<h1 class=post-title>「译文」| 偷电问题</h1>
-<div class=post-meta>
-<span class=post-time> 2021-07-28 </span>
-<div class=post-category>
-<a href=/snow/categories/real-world-problems/> Real-world Problems </a>
-</div>
-<span class=more-meta> 2131 words </span>
-<span class=more-meta> 5 mins read </span>
-<span id=busuanzi_container_page_pv class=more-meta> <span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read </span>
-</div>
-</header>
-<div class=post-toc id=post-toc>
-<h2 class=post-toc-title>Contents</h2>
-<div class="post-toc-content always-active">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#参考文献>参考文献</a></li>
-</ul>
-</nav>
-</div>
-</div>
-<div class=post-content>
-<p>本文翻译自<a href=https://users.physics.unc.edu/~deardorf/phys25/rwp/>Real-world Problems for Phys25, Summer 2006</a>系列文章第四篇<a href=https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html>A Solution to the RWP for Exam 1 - Stealing Power</a>。</p>
-<hr>
-<p>据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：</p>
-<ol>
-<li>在没有检查农民财产的情况下，电力公司是怎么发现电力被偷了的?</li>
-</ol>
-<p>原则上，电力公司可以计算输送的电力和购买的电力之间的差额。其中存在的无法解释的差异（除了通过沿传输线的电阻加热造成的功率损失之外）可能是有人偷取电力的结果。实际上，在这种情况下单个用户窃取的电量很可能太小而无法检测到。</p>
-<ol start=2>
-<li>农民利用什么原理从输电线路偷电？</li>
-</ol>
-<p>农民使用法拉第感应定律在靠近高压输电线路的线圈中感应出电压和电流。这种做法是有可能的，因为通过传输线的交流电改变了它周围的磁场，如果感应线圈的位置使磁场线穿过它的区域，那么就会感应出电动势，交流电就会流过线圈。</p>
-<ol start=3>
-<li>农民必须如何放置线圈才能最有效地实现他的目标？</li>
-</ol>
-<p>线圈应尽可能靠近传输线放置，因为磁场与到传输线的距离成反比，并且线圈应垂直放置在与传输线对齐的垂直平面上，以最大限度地提高来自传输线的磁通量环绕传输线的磁场线。</p>
-<ol start=4>
-<li>假设最低传输线距离地面 10 米，并承载 60 Hz 的交流电流，最大 150 A，电压为 230 kV。如果线圈是边长为 5 米的正方形形状并接触地面，则要产生 120 V 的标准电压大约需要多少匝线圈？</li>
-</ol>
-<p>线圈中感应的最大电动势取决于磁通量的变化：<code>emf（电动势） = Nd(phi)/dt = NAdB/dt</code>。</p>
-<p>对于这个问题，磁通量会发生变化，因为磁场强度因交流电而变化，交流电在每个方向上达到峰值两次，或每 1/120 秒一次。这意味着磁场每个周期会从最大值变为零四次，因此 <code>dt = 1/240 秒 = 4.2 毫秒</code>。传输线周围的最大磁场可以根据通过导线的最大电流估算，使用长直导线的公式：<code>B(wire) = uo*I/(2pi*r)</code>。由于方形感应线圈从传输线延伸出 5 到 10 米 的距离，因此线圈远端的磁场会较弱，最近端的磁场会较强，但使用 7.5 米的平均距离可得出特定电流的平均磁通量。因此，距传输线 7.5 米处的最大磁场为 <code>B = (4pi*10^-7 T*m/A)(150 A)/(2pi)/(7.5 m) = 4.0 uT</code>，其中与参考文献 2 中指示的 230 kV 线路附近 6 uT 的平均磁场一致。</p>
-<p>产生 120 V 电压（或 170 V 峰值电压）所需的匝数为：<code>N = (170 V)(4.2 毫秒)/(25 米 ^ 2)/(4.0 uT) = 7140 圈</code></p>
-<ol start=5>
-<li>为什么线圈中的电压会随着一天中的时间而变化？你预计它什么时候最大和最小？</li>
-</ol>
-<p>线圈中感应出的电压取决于传输线产生的磁场强度，磁场强度取决于通过线路的电流量，而这取决于用户对来自这条线路的电力（负载）的需求。我们应该预计这种电力需求在下午和晚上时间最大，而在每天的清晨时间最小。峰值电力需求的这种每日变化可以在参考文献 2 的图表中看到。</p>
-<ol start=6>
-<li>线圈中电流的频率是多少？传输线中的电压与线圈之间的相位角是多少？</li>
-</ol>
-<p>由于线圈中感应的电流是由传输线中电流的变化引起的，因此它们应该具有相同的 60 Hz 频率。然而，这些电流（或相应的电压）之间的相位角将是 90 度，因为当传输线中的电流变化最大时线圈中的感应电流达到最大值，这发生在一个周期的 1/4 或 <code>360/4 = 90 度</code>在传输线中的电流峰值之前和之后。</p>
-<ol start=7>
-<li>如果线圈和与其相连的所有设备的总阻抗为 200 欧姆，那么消耗能量的最大速率是多少？</li>
-</ol>
-<p>能量消耗的最大速率（功率）为：<code>Pmax = Irms*Vrms = (Vrms)^2/Z = (120 V)^2/(200 ohms) = 72 W</code></p>
-<p>可以通过包含适当的<code>power factor（功率因数）= R/Z</code> 来更准确地估计平均功率，这可以通过计算线圈的电感和确定感抗来确定。根据参考文献 3 得知，该线圈的电感约为 1600 H（这是一个非常大的电感）。感抗为 <code>X(L) = 2(pi)(60 Hz)(1600 H) = 603000 ohms</code>！这远大于规定的 200 欧姆阻抗，因此功率因数似乎接近于零！</p>
-<ol start=8>
-<li>假设成本为 0.10 美元/kW-h，农民在一年内窃取的能源价值大约是多少？</li>
-</ol>
-<p>如果我们假设农民有一半的时间使用设备（一天的平均功耗为 36 W），那么一年的总成本将是：<code>cost（成本）= (36 W)(24 小时/天)(365 天/年)($0.10/kW-h) = $31.54/年</code>。即使在最大功率为 72 W 的情况下，被盗能源的价值也仅为 63 美元/年。这似乎不值得付出努力、风险和成本（见下文）。</p>
-<ol start=9>
-<li>估计制作线圈的成本，假设农民使用 12 号铜线，成本为 0.15 美元/英尺。评估农民设计的成本效益并计算其投资的大致回收时间。</li>
-</ol>
-<p>需要 7140 圈电线，每圈长度为 20 米，农民将需要 143 公里的电线！以 0.15 美元/英尺 = 0.50 美元/米计算，这条线将花费 71400 美元！这意味着即使在最大能源消耗率下，投资回收时间也至少为 1000 年！</p>
-<ol start=10>
-<li>你会给农民什么建议来最大限度地提高他的设计效率？</li>
-</ol>
-<p>为了最大限度地提高线圈中感应的电动势，同时使用最少的电线以节省成本，农民应将线圈尽可能靠近传输线，并使用尽可能大面积的线圈（因为将线圈的面积增加一倍，方形线圈使感应电动势增加四倍，而成本仅增加一倍）。在线圈内放置铁会提高这个变压器的效率，但效果会相当小，可能不值得付出努力。</p>
-<ol start=11>
-<li>从这个问题中还可以学到什么其他东西？</li>
-</ol>
-<p>从上面的计算来看，这种偷电方式似乎是非常低效和不切实际的。我严重怀疑是否有农民真的这样做过（也许这是一个适合<a href=https://www.imdb.com/title/tt0383126/>《流言终结者》</a>这样的节目去调查的神话！）。这种法拉第定律的应用，本质上是一种效率极低的电力变压器。法拉第定律还有许多其他应用遍布我们的现代生活。这只是一个不建议的。</p>
-<h1 id=参考文献>参考文献</h1>
-<ol>
-<li><a href=http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm>http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm</a></li>
-<li><a href=http://infoventures.com/private/federal/q&a/qaenvn2a.html>http://infoventures.com/private/federal/q&a/qaenvn2a.html</a></li>
-<li><a href="http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle">http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle</a></li>
-</ol>
-</div>
-<div class=post-copyright>
-<p class=copyright-item>
-<span class=item-title>Author</span>
-<span class=item-content>sherry</span>
-</p>
-<p class=copyright-item>
-<span class=item-title>LastMod</span>
-<span class=item-content>
-2021-07-28
-</span>
-</p>
-</div>
-<footer class=post-footer>
-<nav class=post-nav>
-<a class=prev href=/snow/post/rwp-contact-lenses/>
-<i class="iconfont icon-left"></i>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>「译文」| 偷电问题</h1><div class=post-meta><span class=post-time>2021-07-28</span><div class=post-category><a href=/snow/categories/real-world-problems/>Real-world Problems</a></div><span class=more-meta>2131 words</span>
+<span class=more-meta>5 mins read</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#参考文献>参考文献</a></li></ul></nav></div></div><div class=post-content><p>本文翻译自<a href=https://users.physics.unc.edu/~deardorf/phys25/rwp/>Real-world Problems for Phys25, Summer 2006</a>系列文章第四篇<a href=https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html>A Solution to the RWP for Exam 1 - Stealing Power</a>。</p><hr><p>据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：</p><ol><li>在没有检查农民财产的情况下，电力公司是怎么发现电力被偷了的?</li></ol><p>原则上，电力公司可以计算输送的电力和购买的电力之间的差额。其中存在的无法解释的差异（除了通过沿传输线的电阻加热造成的功率损失之外）可能是有人偷取电力的结果。实际上，在这种情况下单个用户窃取的电量很可能太小而无法检测到。</p><ol start=2><li>农民利用什么原理从输电线路偷电？</li></ol><p>农民使用法拉第感应定律在靠近高压输电线路的线圈中感应出电压和电流。这种做法是有可能的，因为通过传输线的交流电改变了它周围的磁场，如果感应线圈的位置使磁场线穿过它的区域，那么就会感应出电动势，交流电就会流过线圈。</p><ol start=3><li>农民必须如何放置线圈才能最有效地实现他的目标？</li></ol><p>线圈应尽可能靠近传输线放置，因为磁场与到传输线的距离成反比，并且线圈应垂直放置在与传输线对齐的垂直平面上，以最大限度地提高来自传输线的磁通量环绕传输线的磁场线。</p><ol start=4><li>假设最低传输线距离地面 10 米，并承载 60 Hz 的交流电流，最大 150 A，电压为 230 kV。如果线圈是边长为 5 米的正方形形状并接触地面，则要产生 120 V 的标准电压大约需要多少匝线圈？</li></ol><p>线圈中感应的最大电动势取决于磁通量的变化：<code>emf（电动势） = Nd(phi)/dt = NAdB/dt</code>。</p><p>对于这个问题，磁通量会发生变化，因为磁场强度因交流电而变化，交流电在每个方向上达到峰值两次，或每 1/120 秒一次。这意味着磁场每个周期会从最大值变为零四次，因此 <code>dt = 1/240 秒 = 4.2 毫秒</code>。传输线周围的最大磁场可以根据通过导线的最大电流估算，使用长直导线的公式：<code>B(wire) = uo*I/(2pi*r)</code>。由于方形感应线圈从传输线延伸出 5 到 10 米 的距离，因此线圈远端的磁场会较弱，最近端的磁场会较强，但使用 7.5 米的平均距离可得出特定电流的平均磁通量。因此，距传输线 7.5 米处的最大磁场为 <code>B = (4pi*10^-7 T*m/A)(150 A)/(2pi)/(7.5 m) = 4.0 uT</code>，其中与参考文献 2 中指示的 230 kV 线路附近 6 uT 的平均磁场一致。</p><p>产生 120 V 电压（或 170 V 峰值电压）所需的匝数为：<code>N = (170 V)(4.2 毫秒)/(25 米 ^ 2)/(4.0 uT) = 7140 圈</code></p><ol start=5><li>为什么线圈中的电压会随着一天中的时间而变化？你预计它什么时候最大和最小？</li></ol><p>线圈中感应出的电压取决于传输线产生的磁场强度，磁场强度取决于通过线路的电流量，而这取决于用户对来自这条线路的电力（负载）的需求。我们应该预计这种电力需求在下午和晚上时间最大，而在每天的清晨时间最小。峰值电力需求的这种每日变化可以在参考文献 2 的图表中看到。</p><ol start=6><li>线圈中电流的频率是多少？传输线中的电压与线圈之间的相位角是多少？</li></ol><p>由于线圈中感应的电流是由传输线中电流的变化引起的，因此它们应该具有相同的 60 Hz 频率。然而，这些电流（或相应的电压）之间的相位角将是 90 度，因为当传输线中的电流变化最大时线圈中的感应电流达到最大值，这发生在一个周期的 1/4 或 <code>360/4 = 90 度</code>在传输线中的电流峰值之前和之后。</p><ol start=7><li>如果线圈和与其相连的所有设备的总阻抗为 200 欧姆，那么消耗能量的最大速率是多少？</li></ol><p>能量消耗的最大速率（功率）为：<code>Pmax = Irms*Vrms = (Vrms)^2/Z = (120 V)^2/(200 ohms) = 72 W</code></p><p>可以通过包含适当的<code>power factor（功率因数）= R/Z</code> 来更准确地估计平均功率，这可以通过计算线圈的电感和确定感抗来确定。根据参考文献 3 得知，该线圈的电感约为 1600 H（这是一个非常大的电感）。感抗为 <code>X(L) = 2(pi)(60 Hz)(1600 H) = 603000 ohms</code>！这远大于规定的 200 欧姆阻抗，因此功率因数似乎接近于零！</p><ol start=8><li>假设成本为 0.10 美元/kW-h，农民在一年内窃取的能源价值大约是多少？</li></ol><p>如果我们假设农民有一半的时间使用设备（一天的平均功耗为 36 W），那么一年的总成本将是：<code>cost（成本）= (36 W)(24 小时/天)(365 天/年)($0.10/kW-h) = $31.54/年</code>。即使在最大功率为 72 W 的情况下，被盗能源的价值也仅为 63 美元/年。这似乎不值得付出努力、风险和成本（见下文）。</p><ol start=9><li>估计制作线圈的成本，假设农民使用 12 号铜线，成本为 0.15 美元/英尺。评估农民设计的成本效益并计算其投资的大致回收时间。</li></ol><p>需要 7140 圈电线，每圈长度为 20 米，农民将需要 143 公里的电线！以 0.15 美元/英尺 = 0.50 美元/米计算，这条线将花费 71400 美元！这意味着即使在最大能源消耗率下，投资回收时间也至少为 1000 年！</p><ol start=10><li>你会给农民什么建议来最大限度地提高他的设计效率？</li></ol><p>为了最大限度地提高线圈中感应的电动势，同时使用最少的电线以节省成本，农民应将线圈尽可能靠近传输线，并使用尽可能大面积的线圈（因为将线圈的面积增加一倍，方形线圈使感应电动势增加四倍，而成本仅增加一倍）。在线圈内放置铁会提高这个变压器的效率，但效果会相当小，可能不值得付出努力。</p><ol start=11><li>从这个问题中还可以学到什么其他东西？</li></ol><p>从上面的计算来看，这种偷电方式似乎是非常低效和不切实际的。我严重怀疑是否有农民真的这样做过（也许这是一个适合<a href=https://www.imdb.com/title/tt0383126/>《流言终结者》</a>这样的节目去调查的神话！）。这种法拉第定律的应用，本质上是一种效率极低的电力变压器。法拉第定律还有许多其他应用遍布我们的现代生活。这只是一个不建议的。</p><h1 id=参考文献>参考文献</h1><ol><li><a href=http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm>http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm</a></li><li><a href=http://infoventures.com/private/federal/q&a/qaenvn2a.html>http://infoventures.com/private/federal/q&a/qaenvn2a.html</a></li><li><a href="http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle">http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle</a></li></ol></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2021-07-28</span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/snow/post/rwp-contact-lenses/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">「译文」| 隐形眼镜</span>
-<span class="prev-text nav-mobile">Prev</span>
-</a>
-<a class=next href=/snow/post/rwp-mri-health-and-safety/>
-<span class="next-text nav-default">「译文」| 磁共振成像对健康与安全方面的挑战</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/snow/post/rwp-mri-health-and-safety/><span class="next-text nav-default">「译文」| 磁共振成像对健康与安全方面的挑战</span>
 <span class="next-text nav-mobile">Next</span>
-<i class="iconfont icon-right"></i>
-</a>
-</nav>
-</footer>
-</article>
-</div>
-<div id=vcomments></div>
-<script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
 <script src=//unpkg.com/valine/dist/Valine.min.js></script>
-<script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:!0,verify:!0,avatar:'mm',placeholder:'说点什么吧...',visitor:!1})</script>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=social-links>
-<a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz",appKey:"s9mFa6SokCKP5xh5pJlTiXHv",notify:!0,verify:!0,avatar:"mm",placeholder:"说点什么吧...",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
 <a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a>
 <a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a>
-<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
-</div>
-<div class=copyright>
-<span class=power-by>
-Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
-</span>
+<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
 <span class=division>|</span>
-<span class=theme-info>
-Theme -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
-</span>
-<div class=busuanzi-footer>
-<span id=busuanzi_container_site_pv> site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
 <span class=division>|</span>
-<span id=busuanzi_container_site_uv> site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
-</div>
-<span class=copyright-year>
-&copy;
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
 2015 -
-2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
-</span>
-</div>
-</footer>
-<div class=back-to-top id=back-to-top>
-<i class="iconfont icon-up"></i>
-</div>
-</div>
-<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/snow/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
-</body>
-</html>
+<script type=text/javascript src=/snow/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

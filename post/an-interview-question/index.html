@@ -1,503 +1,18 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>一道笔试题 - sherry's blog</title>
-<meta name=renderer content="webkit">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=theme-color content="#f8f5ec">
-<meta name=msapplication-navbutton-color content="#f8f5ec">
-<meta name=apple-mobile-web-app-capable content="yes">
-<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
-<meta name=author content="sherry"><meta name=description content="前言 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>一道笔试题 - sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="前言 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。
 事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(
-"><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.92.0 with theme even">
-<link rel=canonical href=https://ireflux.github.io/snow/post/an-interview-question/>
-<link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png>
-<link rel=manifest href=/snow/manifest.json>
-<link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
-<meta property="og:title" content="一道笔试题">
-<meta property="og:description" content="前言
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.101.0 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/post/an-interview-question/><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/snow/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="一道笔试题"><meta property="og:description" content="前言
 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。
-事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是<数据结构>上曾经学过的表达式求值:(">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://ireflux.github.io/snow/post/an-interview-question/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2018-04-16T00:00:00+00:00">
-<meta property="article:modified_time" content="2018-04-16T00:00:00+00:00">
-<meta itemprop=name content="一道笔试题">
-<meta itemprop=description content="前言
+事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是<数据结构>上曾经学过的表达式求值:("><meta property="og:type" content="article"><meta property="og:url" content="https://ireflux.github.io/snow/post/an-interview-question/"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-04-16T00:00:00+00:00"><meta property="article:modified_time" content="2018-04-16T00:00:00+00:00"><meta itemprop=name content="一道笔试题"><meta itemprop=description content="前言
 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。
-事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是<数据结构>上曾经学过的表达式求值:("><meta itemprop=datePublished content="2018-04-16T00:00:00+00:00">
-<meta itemprop=dateModified content="2018-04-16T00:00:00+00:00">
-<meta itemprop=wordCount content="2624">
-<meta itemprop=keywords content="algorithm,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="一道笔试题">
-<meta name=twitter:description content="前言
+事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是<数据结构>上曾经学过的表达式求值:("><meta itemprop=datePublished content="2018-04-16T00:00:00+00:00"><meta itemprop=dateModified content="2018-04-16T00:00:00+00:00"><meta itemprop=wordCount content="2624"><meta itemprop=keywords content="algorithm,"><meta name=twitter:card content="summary"><meta name=twitter:title content="一道笔试题"><meta name=twitter:description content="前言
 前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。
 事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是<数据结构>上曾经学过的表达式求值:("><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
-</head>
-<body>
-<div id=mobile-navbar class=mobile-navbar>
-<div class=mobile-header-logo>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<div class=mobile-navbar-icon>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-<nav id=mobile-menu class="mobile-menu slideout-menu">
-<ul class=mobile-menu-list>
-<a href=/snow/>
-<li class=mobile-menu-item>Home</li>
-</a><a href=/snow/post/>
-<li class=mobile-menu-item>Archives</li>
-</a><a href=/snow/tags/>
-<li class=mobile-menu-item>Tags</li>
-</a><a href=/snow/categories/>
-<li class=mobile-menu-item>Categories</li>
-</a><a href=/snow/about/>
-<li class=mobile-menu-item>About</li>
-</a>
-</ul>
-</nav>
-<div class=container id=mobile-panel>
-<header id=header class=header>
-<div class=logo-wrapper>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<nav class=site-navbar>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a class=menu-item-link href=/snow/>Home</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/post/>Archives</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/tags/>Tags</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/categories/>Categories</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/about/>About</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=main class=main>
-<div class=content-wrapper>
-<div id=content class=content>
-<article class=post>
-<header class=post-header>
-<h1 class=post-title>一道笔试题</h1>
-<div class=post-meta>
-<span class=post-time> 2018-04-16 </span>
-<div class=post-category>
-<a href=/snow/categories/clavicula-salomonis/> Clavicula Salomonis </a>
-</div>
-<span class=more-meta> 2624 words </span>
-<span class=more-meta> 6 mins read </span>
-<span id=busuanzi_container_page_pv class=more-meta> <span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read </span>
-</div>
-</header>
-<div class=post-toc id=post-toc>
-<h2 class=post-toc-title>Contents</h2>
-<div class="post-toc-content always-active">
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#前言>前言</a>
-<ul>
-<li><a href=#中缀表达式>中缀表达式</a></li>
-<li><a href=#调度场算法>调度场算法</a></li>
-<li><a href=#逆波兰表达式>逆波兰表达式</a></li>
-<li><a href=#程序>程序</a></li>
-</ul>
-</li>
-<li><a href=#参考资料>参考资料</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-<div class=post-content>
-<h2 id=前言>前言</h2>
-<p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：<strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。</strong></p>
-<p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&lt;数据结构>上曾经学过的表达式求值:(</p>
-<p>一般来说，表达式求值有“中缀表示法”和“后缀表示法”(又称“逆波兰表示法”)两种。适合人类阅读的便是“中缀表示法”，例如：5+6*7 但“后缀表示法”更适合计算机来计算，因为无需判断操作符号的优先级，例如：567*+</p>
-<p>虽然“逆波兰表示法”更容易编程，然而事实上，一般都会输入“中缀表达式”，因此还要转化为“逆波兰表示法”，所以两种算法个人感觉没有哪个更为简单。</p>
-<p>要判断运算符优先级，首先要将数字和运算符分两边存储，然后看第一个运算符和第二个运算符之间的大小，如果第一个比第二个大或者相等就可以先算第一个，反之则要先计算第二个，很符合先进先出的规则。这样就很自然的想到用到栈来表示。</p>
-<h3 id=中缀表达式>中缀表达式</h3>
-<p>以下是“中缀表达式”在栈中执行过程，假设表达式为：<strong>5+6*7/8</strong></p>
-<p>首先，遇到 5 ，把 5 送到操作数栈，遇到 + ，送到操作符栈：</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>遇到 6，压入操作数栈中</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>6</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>遇到乘，由于 * 的优先级高于 + ，所以，现在就什么也不做，只把乘号进栈：</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>6</td>
-<td style=text-align:center>*</td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>遇到 7 ，压入操作数栈：</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>7</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>6</td>
-<td style=text-align:center>*</td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>遇到 / ，即可计算 6*7 ，从操作数栈中取出两个数字，从操作符中取出一个操作符，并将结果压入操作数栈：</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>6*7</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>将 / 入操作符栈：</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>6*7</td>
-<td style=text-align:center>/</td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>将 8 入操作数栈：</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>操作数栈</th>
-<th style=text-align:center>操作符栈</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>8</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>6*7</td>
-<td style=text-align:center>/</td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>+</td>
-</tr>
-</tbody>
-</table>
-<p>全部压入栈中后，每次只需从操作数中取出两个数字，从操作符中取出一个运算符，并将其结果压入操作数栈中即可。</p>
-<h3 id=调度场算法>调度场算法</h3>
-<p>以下来源于Wikipedia:</p>
-<blockquote>
-<p>调度场算法（Shunting Yard Algorithm）是一个用于将中缀表达式转换为后缀表达式的经典算法，由艾兹格·迪杰斯特拉引入，因其操作类似于火车编组场而得名。</p>
-</blockquote>
-<p>Input: 3 + 4 × 2 ÷ ( 1 − 5 ) ^ 2 ^ 3</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>Token</th>
-<th style=text-align:left>Action</th>
-<th style=text-align:left>Output(in RPN)</th>
-<th style=text-align:right>Operator stack</th>
-<th style=text-align:center>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>3</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>+</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3</td>
-<td style=text-align:right>+</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>4</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3 4</td>
-<td style=text-align:right>+</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>×</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3 4</td>
-<td style=text-align:right>× +</td>
-<td style=text-align:center>× has higher precedence than +</td>
-</tr>
-<tr>
-<td style=text-align:center>2</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3 4 2</td>
-<td style=text-align:right>× +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>÷</td>
-<td style=text-align:left>Pop stack to output</td>
-<td style=text-align:left>3 4 2 ×</td>
-<td style=text-align:right>+</td>
-<td style=text-align:center>÷ and × have same precedence</td>
-</tr>
-<tr>
-<td style=text-align:center>(same up)</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3 4 2 ×</td>
-<td style=text-align:right>÷ +</td>
-<td style=text-align:center>÷ has higher precedence than +</td>
-</tr>
-<tr>
-<td style=text-align:center>(</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3 4 2 ×</td>
-<td style=text-align:right>( ÷ +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>1</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3 4 2 × 1</td>
-<td style=text-align:right>( ÷ +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>−</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3 4 2 × 1</td>
-<td style=text-align:right>− ( ÷ +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3 4 2 × 1 5</td>
-<td style=text-align:right>− ( ÷ +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>)</td>
-<td style=text-align:left>Pop stack to output</td>
-<td style=text-align:left>3 4 2 × 1 5 −</td>
-<td style=text-align:right>( ÷ +</td>
-<td style=text-align:center>Repeated until &ldquo;(&rdquo; found</td>
-</tr>
-<tr>
-<td style=text-align:center>(same up)</td>
-<td style=text-align:left>Pop stack</td>
-<td style=text-align:left>3 4 2 × 1 5 −</td>
-<td style=text-align:right>÷ +</td>
-<td style=text-align:center>Discard matching parenthesis</td>
-</tr>
-<tr>
-<td style=text-align:center>^</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3 4 2 × 1 5 −</td>
-<td style=text-align:right>^ ÷ +</td>
-<td style=text-align:center>^ has higher precedence than ÷</td>
-</tr>
-<tr>
-<td style=text-align:center>2</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3 4 2 × 1 5 − 2</td>
-<td style=text-align:right>^ ÷ +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>^</td>
-<td style=text-align:left>Push token to stack</td>
-<td style=text-align:left>3 4 2 × 1 5 − 2</td>
-<td style=text-align:right>^ ^ ÷ +</td>
-<td style=text-align:center>^ is evaluated right-to-left</td>
-</tr>
-<tr>
-<td style=text-align:center>3</td>
-<td style=text-align:left>Add token to output</td>
-<td style=text-align:left>3 4 2 × 1 5 − 2 3</td>
-<td style=text-align:right>^ ^ ÷ +</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>end</td>
-<td style=text-align:left>Pop entire stack to output</td>
-<td style=text-align:left>3 4 2 × 1 5 − 2 3 ^ ^ ÷ +</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>可以看出，基本上是和“中缀表达式”原理差不多的，也是需要比较运算符的优先级，按照计算的先后顺序排序。</p>
-<h3 id=逆波兰表达式>逆波兰表达式</h3>
-<p>以下例子来源于Wikipedia:</p>
-<p>例如：中缀表达式__5+((1+2)*4)−3__写作__512+4*+3−__</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>输入</th>
-<th style=text-align:center>操作</th>
-<th style=text-align:center>堆栈</th>
-<th style=text-align:center>注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>5</td>
-<td style=text-align:center>入栈</td>
-<td style=text-align:center>5</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>1</td>
-<td style=text-align:center>入栈</td>
-<td style=text-align:center>5, 1</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>2</td>
-<td style=text-align:center>入栈</td>
-<td style=text-align:center>5, 1, 2</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>+</td>
-<td style=text-align:center>加法运算</td>
-<td style=text-align:center>5, 3</td>
-<td style=text-align:center>(1, 2)出栈；将结果（3）入栈</td>
-</tr>
-<tr>
-<td style=text-align:center>4</td>
-<td style=text-align:center>入栈</td>
-<td style=text-align:center>5, 3, 4</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>*</td>
-<td style=text-align:center>乘法运算</td>
-<td style=text-align:center>5, 12</td>
-<td style=text-align:center>(3, 4)出栈；将结果（12）入栈</td>
-</tr>
-<tr>
-<td style=text-align:center>+</td>
-<td style=text-align:center>加法运算</td>
-<td style=text-align:center>17</td>
-<td style=text-align:center>(5, 12)出栈；将结果 (17)入栈</td>
-</tr>
-<tr>
-<td style=text-align:center>3</td>
-<td style=text-align:center>入栈</td>
-<td style=text-align:center>17, 3</td>
-<td></td>
-</tr>
-<tr>
-<td style=text-align:center>−</td>
-<td style=text-align:center>减法运算</td>
-<td style=text-align:center>14</td>
-<td style=text-align:center>(17, 3)出栈；将结果（14）入栈</td>
-</tr>
-</tbody>
-</table>
-<p>计算完成时，栈内只有一个操作数，这就是表达式的结果：14</p>
-<h3 id=程序>程序</h3>
-<p>再次回到这个笔试题目，我这里做了些改动，毕竟手动画出用‘6’组成的0-9的图形很累，也不美观，因此我在<a href=https://www.asciiart.eu/>AsciiArt</a>的常用问题页面找了个自动<a href=http://www.network-science.de/ascii/>生成AsciiArt</a>的网页，经过对比，感觉“larry3d”这个字体比较美观，因此我选择了这个来生成图案。</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>  1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>一道笔试题</h1><div class=post-meta><span class=post-time>2018-04-16</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>2624 words</span>
+<span class=more-meta>6 mins read</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#前言>前言</a><ul><li><a href=#中缀表达式>中缀表达式</a></li><li><a href=#调度场算法>调度场算法</a></li><li><a href=#逆波兰表达式>逆波兰表达式</a></li><li><a href=#程序>程序</a></li></ul></li><li><a href=#参考资料>参考资料</a></li></ul></li></ul></nav></div></div><div class=post-content><h2 id=前言>前言</h2><p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：<strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。</strong></p><p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&lt;数据结构>上曾经学过的表达式求值:(</p><p>一般来说，表达式求值有“中缀表示法”和“后缀表示法”(又称“逆波兰表示法”)两种。适合人类阅读的便是“中缀表示法”，例如：5+6*7 但“后缀表示法”更适合计算机来计算，因为无需判断操作符号的优先级，例如：567*+</p><p>虽然“逆波兰表示法”更容易编程，然而事实上，一般都会输入“中缀表达式”，因此还要转化为“逆波兰表示法”，所以两种算法个人感觉没有哪个更为简单。</p><p>要判断运算符优先级，首先要将数字和运算符分两边存储，然后看第一个运算符和第二个运算符之间的大小，如果第一个比第二个大或者相等就可以先算第一个，反之则要先计算第二个，很符合先进先出的规则。这样就很自然的想到用到栈来表示。</p><h3 id=中缀表达式>中缀表达式</h3><p>以下是“中缀表达式”在栈中执行过程，假设表达式为：<strong>5+6*7/8</strong></p><p>首先，遇到 5 ，把 5 送到操作数栈，遇到 + ，送到操作符栈：</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>遇到 6，压入操作数栈中</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>6</td><td></td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>遇到乘，由于 * 的优先级高于 + ，所以，现在就什么也不做，只把乘号进栈：</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>6</td><td style=text-align:center>*</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>遇到 7 ，压入操作数栈：</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>7</td><td></td></tr><tr><td style=text-align:center>6</td><td style=text-align:center>*</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>遇到 / ，即可计算 6*7 ，从操作数栈中取出两个数字，从操作符中取出一个操作符，并将结果压入操作数栈：</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>6*7</td><td></td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>将 / 入操作符栈：</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>6*7</td><td style=text-align:center>/</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>将 8 入操作数栈：</p><table><thead><tr><th style=text-align:center>操作数栈</th><th style=text-align:center>操作符栈</th></tr></thead><tbody><tr><td style=text-align:center>8</td><td></td></tr><tr><td style=text-align:center>6*7</td><td style=text-align:center>/</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>+</td></tr></tbody></table><p>全部压入栈中后，每次只需从操作数中取出两个数字，从操作符中取出一个运算符，并将其结果压入操作数栈中即可。</p><h3 id=调度场算法>调度场算法</h3><p>以下来源于Wikipedia:</p><blockquote><p>调度场算法（Shunting Yard Algorithm）是一个用于将中缀表达式转换为后缀表达式的经典算法，由艾兹格·迪杰斯特拉引入，因其操作类似于火车编组场而得名。</p></blockquote><p>Input: 3 + 4 × 2 ÷ ( 1 − 5 ) ^ 2 ^ 3</p><table><thead><tr><th style=text-align:center>Token</th><th style=text-align:left>Action</th><th style=text-align:left>Output(in RPN)</th><th style=text-align:right>Operator stack</th><th style=text-align:center>Notes</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3</td><td></td><td></td></tr><tr><td style=text-align:center>+</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3</td><td style=text-align:right>+</td><td></td></tr><tr><td style=text-align:center>4</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3 4</td><td style=text-align:right>+</td><td></td></tr><tr><td style=text-align:center>×</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3 4</td><td style=text-align:right>× +</td><td style=text-align:center>× has higher precedence than +</td></tr><tr><td style=text-align:center>2</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3 4 2</td><td style=text-align:right>× +</td><td></td></tr><tr><td style=text-align:center>÷</td><td style=text-align:left>Pop stack to output</td><td style=text-align:left>3 4 2 ×</td><td style=text-align:right>+</td><td style=text-align:center>÷ and × have same precedence</td></tr><tr><td style=text-align:center>(same up)</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3 4 2 ×</td><td style=text-align:right>÷ +</td><td style=text-align:center>÷ has higher precedence than +</td></tr><tr><td style=text-align:center>(</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3 4 2 ×</td><td style=text-align:right>( ÷ +</td><td></td></tr><tr><td style=text-align:center>1</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3 4 2 × 1</td><td style=text-align:right>( ÷ +</td><td></td></tr><tr><td style=text-align:center>−</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3 4 2 × 1</td><td style=text-align:right>− ( ÷ +</td><td></td></tr><tr><td style=text-align:center>5</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3 4 2 × 1 5</td><td style=text-align:right>− ( ÷ +</td><td></td></tr><tr><td style=text-align:center>)</td><td style=text-align:left>Pop stack to output</td><td style=text-align:left>3 4 2 × 1 5 −</td><td style=text-align:right>( ÷ +</td><td style=text-align:center>Repeated until &ldquo;(&rdquo; found</td></tr><tr><td style=text-align:center>(same up)</td><td style=text-align:left>Pop stack</td><td style=text-align:left>3 4 2 × 1 5 −</td><td style=text-align:right>÷ +</td><td style=text-align:center>Discard matching parenthesis</td></tr><tr><td style=text-align:center>^</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3 4 2 × 1 5 −</td><td style=text-align:right>^ ÷ +</td><td style=text-align:center>^ has higher precedence than ÷</td></tr><tr><td style=text-align:center>2</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3 4 2 × 1 5 − 2</td><td style=text-align:right>^ ÷ +</td><td></td></tr><tr><td style=text-align:center>^</td><td style=text-align:left>Push token to stack</td><td style=text-align:left>3 4 2 × 1 5 − 2</td><td style=text-align:right>^ ^ ÷ +</td><td style=text-align:center>^ is evaluated right-to-left</td></tr><tr><td style=text-align:center>3</td><td style=text-align:left>Add token to output</td><td style=text-align:left>3 4 2 × 1 5 − 2 3</td><td style=text-align:right>^ ^ ÷ +</td><td></td></tr><tr><td style=text-align:center>end</td><td style=text-align:left>Pop entire stack to output</td><td style=text-align:left>3 4 2 × 1 5 − 2 3 ^ ^ ÷ +</td><td></td><td></td></tr></tbody></table><p>可以看出，基本上是和“中缀表达式”原理差不多的，也是需要比较运算符的优先级，按照计算的先后顺序排序。</p><h3 id=逆波兰表达式>逆波兰表达式</h3><p>以下例子来源于Wikipedia:</p><p>例如：中缀表达式__5+((1+2)*4)−3__写作__512+4*+3−__</p><table><thead><tr><th style=text-align:center>输入</th><th style=text-align:center>操作</th><th style=text-align:center>堆栈</th><th style=text-align:center>注释</th></tr></thead><tbody><tr><td style=text-align:center>5</td><td style=text-align:center>入栈</td><td style=text-align:center>5</td><td></td></tr><tr><td style=text-align:center>1</td><td style=text-align:center>入栈</td><td style=text-align:center>5, 1</td><td></td></tr><tr><td style=text-align:center>2</td><td style=text-align:center>入栈</td><td style=text-align:center>5, 1, 2</td><td></td></tr><tr><td style=text-align:center>+</td><td style=text-align:center>加法运算</td><td style=text-align:center>5, 3</td><td style=text-align:center>(1, 2)出栈；将结果（3）入栈</td></tr><tr><td style=text-align:center>4</td><td style=text-align:center>入栈</td><td style=text-align:center>5, 3, 4</td><td></td></tr><tr><td style=text-align:center>*</td><td style=text-align:center>乘法运算</td><td style=text-align:center>5, 12</td><td style=text-align:center>(3, 4)出栈；将结果（12）入栈</td></tr><tr><td style=text-align:center>+</td><td style=text-align:center>加法运算</td><td style=text-align:center>17</td><td style=text-align:center>(5, 12)出栈；将结果 (17)入栈</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center>入栈</td><td style=text-align:center>17, 3</td><td></td></tr><tr><td style=text-align:center>−</td><td style=text-align:center>减法运算</td><td style=text-align:center>14</td><td style=text-align:center>(17, 3)出栈；将结果（14）入栈</td></tr></tbody></table><p>计算完成时，栈内只有一个操作数，这就是表达式的结果：14</p><h3 id=程序>程序</h3><p>再次回到这个笔试题目，我这里做了些改动，毕竟手动画出用‘6’组成的0-9的图形很累，也不美观，因此我在<a href=https://www.asciiart.eu/>AsciiArt</a>的常用问题页面找了个自动<a href=http://www.network-science.de/ascii/>生成AsciiArt</a>的网页，经过对比，感觉“larry3d”这个字体比较美观，因此我选择了这个来生成图案。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -694,287 +209,223 @@
 </span><span class=lnt>195
 </span><span class=lnt>196
 </span><span class=lnt>197
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kn>package</span> <span class=nn>interview</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>java.util.Scanner</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>java.util.Stack</span><span class=o>;</span>
-
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>num_graphic</span> <span class=o>{</span>
-    <span class=kd>private</span> <span class=n>String</span> <span class=nf>getGraphic</span><span class=o>(</span><span class=kt>char</span> <span class=n>rel</span><span class=o>){</span>
-        <span class=n>String</span> <span class=n>zero</span><span class=o>=</span> <span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   __     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39;__`\\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\ \\/\\ \\  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\ \\ \\ \\ \\ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; \\ \\ \\_\\ \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;          &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>one</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   _     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39; \\    \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\_, \\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\/_/\\ \\  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\ \\ \\ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;    \\ \\_\\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;     \\/_/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;         &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>two</span><span class=o>=</span><span class=s>&#34;   ___     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39;___`\\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\_\\ /\\ \\  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\/_/// /__ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   // /_\\ \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  /\\______/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\/_____/ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;           &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>three</span><span class=o>=</span><span class=s>&#34;   __     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39;__`\\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\_\\L\\ \\  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\/_/_\\_&lt;_ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  /\\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;          &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>four</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; __ __      \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\ \\\\ \\     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\ \\ \\\\ \\    \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; \\ \\ \\\\ \\_  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\ \\__ ,__\\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\/_/\\_\\_/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;      \\/_/  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;            &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>five</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; ______    \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\  ___\\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\ \\ \\__/   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; \\ \\___``\\ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\/\\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\ \\____/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;    \\/___/ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;           &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>six</span><span class=o>=</span><span class=s>&#34;  ____    \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39;___\\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\ \\__/   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\ \\  _``\\ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; \\ \\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;          &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>seven</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; ________ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\_____  \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\/___//&#39;/&#39;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;    /&#39; /&#39; \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  /&#39; /&#39;   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /\\_/     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; \\//      \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;          &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>eight</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   __     \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39;_ `\\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\ \\L\\ \\  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\/_&gt; _ &lt;_ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  /\\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;          &#34;</span><span class=o>;</span>
-        <span class=n>String</span> <span class=n>nine</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;   __      \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; /&#39;_ `\\    \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;/\\ \\L\\ \\   \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;\\ \\___, \\  \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34; \\/__,/\\ \\ \n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;      \\ \\_\\\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;       \\/_/\n&#34;</span> <span class=o>+</span>
-                <span class=s>&#34;           &#34;</span><span class=o>;</span>
-        <span class=k>switch</span> <span class=o>(</span><span class=n>rel</span><span class=o>){</span>
-            <span class=k>case</span> <span class=sc>&#39;0&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>zero</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;1&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>one</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;2&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>two</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;3&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>three</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;4&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>four</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;5&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>five</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;6&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>six</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;7&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>seven</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;8&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>eight</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;9&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>nine</span><span class=o>;</span>
-            <span class=k>default</span><span class=o>:</span>
-                <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Unknown error...&#34;</span><span class=o>);</span>
-        <span class=o>}</span>
-        <span class=k>return</span> <span class=s>&#34;&#34;</span><span class=o>;</span>
-    <span class=o>}</span>
-
-    <span class=kd>private</span> <span class=kt>float</span> <span class=nf>evaluate</span><span class=o>(</span><span class=n>String</span> <span class=n>expression</span><span class=o>)</span> <span class=o>{</span>
-        <span class=kt>char</span><span class=o>[]</span> <span class=n>tokens</span> <span class=o>=</span> <span class=n>expression</span><span class=o>.</span><span class=na>toCharArray</span><span class=o>();</span>
-
-        <span class=n>Stack</span><span class=o>&lt;</span><span class=n>Float</span><span class=o>&gt;</span> <span class=n>stackOfNum</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Stack</span><span class=o>&lt;&gt;();</span>
-        <span class=n>Stack</span><span class=o>&lt;</span><span class=n>Character</span><span class=o>&gt;</span> <span class=n>stackOfOps</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Stack</span><span class=o>&lt;&gt;();</span>
-
-        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>tokens</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
-
-            <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39; &#39;</span><span class=o>)</span>
-                <span class=k>continue</span><span class=o>;</span>
-
-            <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&gt;=</span> <span class=sc>&#39;0&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&lt;=</span> <span class=sc>&#39;9&#39;</span><span class=o>)</span> <span class=o>{</span>
-                <span class=n>StringBuilder</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StringBuilder</span><span class=o>();</span>
-
-                <span class=k>while</span> <span class=o>(</span><span class=n>i</span> <span class=o>&lt;</span> <span class=n>tokens</span><span class=o>.</span><span class=na>length</span> <span class=o>&amp;&amp;</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&gt;=</span> <span class=sc>&#39;0&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&lt;=</span> <span class=sc>&#39;9&#39;</span><span class=o>)</span> <span class=o>{</span>
-                    <span class=n>str</span><span class=o>.</span><span class=na>append</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>++]);</span>
-                <span class=o>}</span>
-                <span class=n>i</span><span class=o>--;</span> <span class=c1>// 回退一位
-</span><span class=c1></span>                <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>Float</span><span class=o>.</span><span class=na>parseFloat</span><span class=o>(</span><span class=n>str</span><span class=o>.</span><span class=na>toString</span><span class=o>()));</span>
-            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;(&#39;</span><span class=o>)</span>
-                <span class=n>stackOfOps</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
-            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;)&#39;</span><span class=o>)</span> <span class=o>{</span>
-                <span class=k>while</span> <span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>peek</span><span class=o>()</span> <span class=o>!=</span> <span class=sc>&#39;(&#39;</span><span class=o>)</span>
-                    <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>calculate</span><span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>()));</span>
-                <span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>();</span>
-            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;+&#39;</span> <span class=o>||</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;-&#39;</span> <span class=o>||</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;*&#39;</span> <span class=o>||</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;/&#39;</span><span class=o>)</span> <span class=o>{</span>
-
-                <span class=k>while</span> <span class=o>(!</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>empty</span><span class=o>()</span> <span class=o>&amp;&amp;</span> <span class=n>hasPrecedence</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>],</span> <span class=n>stackOfOps</span><span class=o>.</span><span class=na>peek</span><span class=o>()))</span>
-                    <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>calculate</span><span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>()));</span>
-
-                <span class=n>stackOfOps</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
-            <span class=o>}</span>
-        <span class=o>}</span>
-
-        <span class=k>while</span> <span class=o>(!</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>empty</span><span class=o>())</span>
-            <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>calculate</span><span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>()));</span>
-
-        <span class=k>return</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>();</span>
-    <span class=o>}</span>
-
-    <span class=kd>private</span> <span class=kt>boolean</span> <span class=nf>hasPrecedence</span><span class=o>(</span><span class=kt>char</span> <span class=n>op1</span><span class=o>,</span> <span class=kt>char</span> <span class=n>op2</span><span class=o>)</span> <span class=o>{</span>
-        <span class=k>if</span> <span class=o>(</span><span class=n>op2</span> <span class=o>==</span> <span class=sc>&#39;(&#39;</span> <span class=o>||</span> <span class=n>op2</span> <span class=o>==</span> <span class=sc>&#39;)&#39;</span><span class=o>)</span>
-            <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
-        <span class=k>return</span> <span class=o>(</span><span class=n>op1</span> <span class=o>!=</span> <span class=sc>&#39;*&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>op1</span> <span class=o>!=</span> <span class=sc>&#39;/&#39;</span><span class=o>)</span> <span class=o>||</span> <span class=o>(</span><span class=n>op2</span> <span class=o>!=</span> <span class=sc>&#39;+&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>op2</span> <span class=o>!=</span> <span class=sc>&#39;-&#39;</span><span class=o>);</span>
-    <span class=o>}</span>
-
-    <span class=kd>private</span> <span class=kt>float</span> <span class=nf>calculate</span><span class=o>(</span><span class=kt>char</span> <span class=n>op</span><span class=o>,</span> <span class=kt>float</span> <span class=n>b</span><span class=o>,</span> <span class=kt>float</span> <span class=n>a</span><span class=o>)</span> <span class=o>{</span>
-        <span class=k>switch</span> <span class=o>(</span><span class=n>op</span><span class=o>)</span> <span class=o>{</span>
-            <span class=k>case</span> <span class=sc>&#39;+&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>a</span> <span class=o>+</span> <span class=n>b</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;-&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>a</span> <span class=o>-</span> <span class=n>b</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;*&#39;</span><span class=o>:</span>
-                <span class=k>return</span> <span class=n>a</span> <span class=o>*</span> <span class=n>b</span><span class=o>;</span>
-            <span class=k>case</span> <span class=sc>&#39;/&#39;</span><span class=o>:</span>
-                <span class=k>if</span> <span class=o>(</span><span class=n>b</span> <span class=o>==</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span>
-                    <span class=k>throw</span> <span class=k>new</span> <span class=n>UnsupportedOperationException</span><span class=o>(</span><span class=s>&#34;Cannot divide by zero&#34;</span><span class=o>);</span>
-                <span class=o>}</span>
-                <span class=k>return</span> <span class=n>a</span> <span class=o>/</span> <span class=n>b</span><span class=o>;</span>
-        <span class=o>}</span>
-        <span class=k>return</span> <span class=n>0</span><span class=o>;</span>
-    <span class=o>}</span>
-
-    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>){</span>
-        <span class=n>Scanner</span> <span class=n>in</span><span class=o>=</span><span class=k>new</span> <span class=n>Scanner</span><span class=o>(</span><span class=n>System</span><span class=o>.</span><span class=na>in</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>print</span><span class=o>(</span><span class=s>&#34;Enter expression:&#34;</span><span class=o>);</span>
-        <span class=n>String</span> <span class=n>input</span><span class=o>=</span><span class=n>in</span><span class=o>.</span><span class=na>next</span><span class=o>();</span>
-<span class=c1>//        String[] parts=input.split(&#34;(?=[+-/*])|(?&lt;=[+-/*])&#34;);
-</span><span class=c1></span>        <span class=n>num_graphic</span> <span class=n>ng</span><span class=o>=</span><span class=k>new</span> <span class=n>num_graphic</span><span class=o>();</span>
-        <span class=kt>int</span> <span class=n>result</span><span class=o>=(</span><span class=kt>int</span><span class=o>)</span><span class=n>ng</span><span class=o>.</span><span class=na>evaluate</span><span class=o>(</span><span class=n>input</span><span class=o>);</span>
-        <span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>result</span><span class=o>+</span><span class=s>&#34;&#34;</span><span class=o>;</span>
-        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=n>0</span><span class=o>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>str</span><span class=o>.</span><span class=na>length</span><span class=o>();</span><span class=n>i</span><span class=o>++){</span>
-            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ng</span><span class=o>.</span><span class=na>getGraphic</span><span class=o>(</span><span class=n>str</span><span class=o>.</span><span class=na>charAt</span><span class=o>(</span><span class=n>i</span><span class=o>)));</span>
-        <span class=o>}</span>
-    <span class=o>}</span>
-<span class=o>}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=参考资料>参考资料</h2>
-<ol>
-<li>逆波兰表达式：https://en.wikipedia.org/wiki/Reverse_Polish_notation</li>
-<li>调度场算法：https://en.wikipedia.org/wiki/Shunting-yard_algorithm</li>
-<li><a href=http://www.network-science.de/ascii/>http://www.network-science.de/ascii/</a></li>
-<li><a href=https://www.asciiart.eu/faq>https://www.asciiart.eu/faq</a></li>
-</ol>
-</div>
-<div class=post-copyright>
-<p class=copyright-item>
-<span class=item-title>Author</span>
-<span class=item-content>sherry</span>
-</p>
-<p class=copyright-item>
-<span class=item-title>LastMod</span>
-<span class=item-content>
-2018-04-16
-</span>
-</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/snow/tags/algorithm/>algorithm</a>
-</div>
-<nav class=post-nav>
-<a class=prev href=/snow/post/a-question-about-the-css-box-model/>
-<i class="iconfont icon-left"></i>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>interview</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.Scanner</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.Stack</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>num_graphic</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>String</span> <span class=nf>getGraphic</span><span class=o>(</span><span class=kt>char</span> <span class=n>rel</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>zero</span><span class=o>=</span> <span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   __     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39;__`\\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\ \\/\\ \\  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\ \\ \\ \\ \\ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; \\ \\ \\_\\ \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;          &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>one</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   _     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39; \\    \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\_, \\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\/_/\\ \\  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\ \\ \\ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;    \\ \\_\\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;     \\/_/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;         &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>two</span><span class=o>=</span><span class=s>&#34;   ___     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39;___`\\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\_\\ /\\ \\  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\/_/// /__ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   // /_\\ \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  /\\______/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\/_____/ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;           &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>three</span><span class=o>=</span><span class=s>&#34;   __     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39;__`\\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\_\\L\\ \\  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\/_/_\\_&lt;_ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  /\\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;          &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>four</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; __ __      \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\ \\\\ \\     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\ \\ \\\\ \\    \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; \\ \\ \\\\ \\_  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\ \\__ ,__\\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\/_/\\_\\_/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;      \\/_/  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;            &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>five</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; ______    \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\  ___\\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\ \\ \\__/   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; \\ \\___``\\ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\/\\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\ \\____/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;    \\/___/ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;           &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>six</span><span class=o>=</span><span class=s>&#34;  ____    \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39;___\\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\ \\__/   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\ \\  _``\\ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; \\ \\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;          &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>seven</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; ________ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\_____  \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\/___//&#39;/&#39;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;    /&#39; /&#39; \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  /&#39; /&#39;   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /\\_/     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; \\//      \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;          &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>eight</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   __     \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39;_ `\\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\ \\L\\ \\  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\/_&gt; _ &lt;_ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  /\\ \\L\\ \\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;  \\ \\____/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   \\/___/ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;          &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>nine</span><span class=o>=</span><span class=s>&#34;\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;   __      \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; /&#39;_ `\\    \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;/\\ \\L\\ \\   \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;\\ \\___, \\  \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34; \\/__,/\\ \\ \n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;      \\ \\_\\\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;       \\/_/\n&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;           &#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>switch</span> <span class=o>(</span><span class=n>rel</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;0&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>zero</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;1&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>one</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;2&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>two</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;3&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>three</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;4&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>four</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;5&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>five</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;6&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>six</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;7&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>seven</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;8&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>eight</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;9&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>nine</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>default</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Unknown error...&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s>&#34;&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>float</span> <span class=nf>evaluate</span><span class=o>(</span><span class=n>String</span> <span class=n>expression</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>char</span><span class=o>[]</span> <span class=n>tokens</span> <span class=o>=</span> <span class=n>expression</span><span class=o>.</span><span class=na>toCharArray</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>Stack</span><span class=o>&lt;</span><span class=n>Float</span><span class=o>&gt;</span> <span class=n>stackOfNum</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Stack</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Stack</span><span class=o>&lt;</span><span class=n>Character</span><span class=o>&gt;</span> <span class=n>stackOfOps</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Stack</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>tokens</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39; &#39;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>                <span class=k>continue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&gt;=</span> <span class=sc>&#39;0&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&lt;=</span> <span class=sc>&#39;9&#39;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>StringBuilder</span> <span class=n>str</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StringBuilder</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=k>while</span> <span class=o>(</span><span class=n>i</span> <span class=o>&lt;</span> <span class=n>tokens</span><span class=o>.</span><span class=na>length</span> <span class=o>&amp;&amp;</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&gt;=</span> <span class=sc>&#39;0&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>&lt;=</span> <span class=sc>&#39;9&#39;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>str</span><span class=o>.</span><span class=na>append</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>++]);</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>                <span class=n>i</span><span class=o>--;</span> <span class=c1>// 回退一位
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>Float</span><span class=o>.</span><span class=na>parseFloat</span><span class=o>(</span><span class=n>str</span><span class=o>.</span><span class=na>toString</span><span class=o>()));</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;(&#39;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>                <span class=n>stackOfOps</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;)&#39;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>while</span> <span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>peek</span><span class=o>()</span> <span class=o>!=</span> <span class=sc>&#39;(&#39;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>                    <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>calculate</span><span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>()));</span>
+</span></span><span class=line><span class=cl>                <span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;+&#39;</span> <span class=o>||</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;-&#39;</span> <span class=o>||</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;*&#39;</span> <span class=o>||</span> <span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>==</span> <span class=sc>&#39;/&#39;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=k>while</span> <span class=o>(!</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>empty</span><span class=o>()</span> <span class=o>&amp;&amp;</span> <span class=n>hasPrecedence</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>],</span> <span class=n>stackOfOps</span><span class=o>.</span><span class=na>peek</span><span class=o>()))</span>
+</span></span><span class=line><span class=cl>                    <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>calculate</span><span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>()));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=n>stackOfOps</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>tokens</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(!</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>empty</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>            <span class=n>stackOfNum</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>calculate</span><span class=o>(</span><span class=n>stackOfOps</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>(),</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>()));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>stackOfNum</span><span class=o>.</span><span class=na>pop</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>boolean</span> <span class=nf>hasPrecedence</span><span class=o>(</span><span class=kt>char</span> <span class=n>op1</span><span class=o>,</span> <span class=kt>char</span> <span class=n>op2</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>op2</span> <span class=o>==</span> <span class=sc>&#39;(&#39;</span> <span class=o>||</span> <span class=n>op2</span> <span class=o>==</span> <span class=sc>&#39;)&#39;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>(</span><span class=n>op1</span> <span class=o>!=</span> <span class=sc>&#39;*&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>op1</span> <span class=o>!=</span> <span class=sc>&#39;/&#39;</span><span class=o>)</span> <span class=o>||</span> <span class=o>(</span><span class=n>op2</span> <span class=o>!=</span> <span class=sc>&#39;+&#39;</span> <span class=o>&amp;&amp;</span> <span class=n>op2</span> <span class=o>!=</span> <span class=sc>&#39;-&#39;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>float</span> <span class=nf>calculate</span><span class=o>(</span><span class=kt>char</span> <span class=n>op</span><span class=o>,</span> <span class=kt>float</span> <span class=n>b</span><span class=o>,</span> <span class=kt>float</span> <span class=n>a</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>switch</span> <span class=o>(</span><span class=n>op</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;+&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>a</span> <span class=o>+</span> <span class=n>b</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;-&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>a</span> <span class=o>-</span> <span class=n>b</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;*&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>a</span> <span class=o>*</span> <span class=n>b</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=sc>&#39;/&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>b</span> <span class=o>==</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=k>throw</span> <span class=k>new</span> <span class=n>UnsupportedOperationException</span><span class=o>(</span><span class=s>&#34;Cannot divide by zero&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>a</span> <span class=o>/</span> <span class=n>b</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>Scanner</span> <span class=n>in</span><span class=o>=</span><span class=k>new</span> <span class=n>Scanner</span><span class=o>(</span><span class=n>System</span><span class=o>.</span><span class=na>in</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>print</span><span class=o>(</span><span class=s>&#34;Enter expression:&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>input</span><span class=o>=</span><span class=n>in</span><span class=o>.</span><span class=na>next</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=c1>//        String[] parts=input.split(&#34;(?=[+-/*])|(?&lt;=[+-/*])&#34;);
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>num_graphic</span> <span class=n>ng</span><span class=o>=</span><span class=k>new</span> <span class=n>num_graphic</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>result</span><span class=o>=(</span><span class=kt>int</span><span class=o>)</span><span class=n>ng</span><span class=o>.</span><span class=na>evaluate</span><span class=o>(</span><span class=n>input</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>str</span> <span class=o>=</span> <span class=n>result</span><span class=o>+</span><span class=s>&#34;&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=n>0</span><span class=o>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>str</span><span class=o>.</span><span class=na>length</span><span class=o>();</span><span class=n>i</span><span class=o>++){</span>
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ng</span><span class=o>.</span><span class=na>getGraphic</span><span class=o>(</span><span class=n>str</span><span class=o>.</span><span class=na>charAt</span><span class=o>(</span><span class=n>i</span><span class=o>)));</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=参考资料>参考资料</h2><ol><li>逆波兰表达式：https://en.wikipedia.org/wiki/Reverse_Polish_notation</li><li>调度场算法：https://en.wikipedia.org/wiki/Shunting-yard_algorithm</li><li><a href=http://www.network-science.de/ascii/>http://www.network-science.de/ascii/</a></li><li><a href=https://www.asciiart.eu/faq>https://www.asciiart.eu/faq</a></li></ol></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2018-04-16</span></p></div><footer class=post-footer><div class=post-tags><a href=/snow/tags/algorithm/>algorithm</a></div><nav class=post-nav><a class=prev href=/snow/post/a-question-about-the-css-box-model/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">子元素margin-top影响父元素问题</span>
-<span class="prev-text nav-mobile">Prev</span>
-</a>
-<a class=next href=/snow/post/forty-years-old/>
-<span class="next-text nav-default">四十不惑</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/snow/post/forty-years-old/><span class="next-text nav-default">四十不惑</span>
 <span class="next-text nav-mobile">Next</span>
-<i class="iconfont icon-right"></i>
-</a>
-</nav>
-</footer>
-</article>
-</div>
-<div id=vcomments></div>
-<script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
 <script src=//unpkg.com/valine/dist/Valine.min.js></script>
-<script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:!0,verify:!0,avatar:'mm',placeholder:'说点什么吧...',visitor:!1})</script>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=social-links>
-<a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz",appKey:"s9mFa6SokCKP5xh5pJlTiXHv",notify:!0,verify:!0,avatar:"mm",placeholder:"说点什么吧...",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
 <a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a>
 <a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a>
-<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
-</div>
-<div class=copyright>
-<span class=power-by>
-Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
-</span>
+<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
 <span class=division>|</span>
-<span class=theme-info>
-Theme -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
-</span>
-<div class=busuanzi-footer>
-<span id=busuanzi_container_site_pv> site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
 <span class=division>|</span>
-<span id=busuanzi_container_site_uv> site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
-</div>
-<span class=copyright-year>
-&copy;
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
 2015 -
-2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
-</span>
-</div>
-</footer>
-<div class=back-to-top id=back-to-top>
-<i class="iconfont icon-up"></i>
-</div>
-</div>
-<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/snow/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
-</body>
-</html>
+<script type=text/javascript src=/snow/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

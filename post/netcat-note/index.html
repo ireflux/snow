@@ -1,278 +1,45 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>netcat 的使用笔记 - sherry's blog</title>
-<meta name=renderer content="webkit">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=theme-color content="#f8f5ec">
-<meta name=msapplication-navbutton-color content="#f8f5ec">
-<meta name=apple-mobile-web-app-capable content="yes">
-<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
-<meta name=author content="sherry"><meta name=description content="当在debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。
-"><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.92.0 with theme even">
-<link rel=canonical href=https://ireflux.github.io/snow/post/netcat-note/>
-<link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png>
-<link rel=manifest href=/snow/manifest.json>
-<link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
-<meta property="og:title" content="netcat 的使用笔记">
-<meta property="og:description" content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://ireflux.github.io/snow/post/netcat-note/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2020-03-16T00:00:00+00:00">
-<meta property="article:modified_time" content="2020-03-16T00:00:00+00:00">
-<meta itemprop=name content="netcat 的使用笔记">
-<meta itemprop=description content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。"><meta itemprop=datePublished content="2020-03-16T00:00:00+00:00">
-<meta itemprop=dateModified content="2020-03-16T00:00:00+00:00">
-<meta itemprop=wordCount content="1205">
-<meta itemprop=keywords content="linux,netcat,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="netcat 的使用笔记">
-<meta name=twitter:description content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
-</head>
-<body>
-<div id=mobile-navbar class=mobile-navbar>
-<div class=mobile-header-logo>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<div class=mobile-navbar-icon>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>netcat 的使用笔记 - sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.101.0 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/post/netcat-note/><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/snow/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="netcat 的使用笔记"><meta property="og:description" content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。"><meta property="og:type" content="article"><meta property="og:url" content="https://ireflux.github.io/snow/post/netcat-note/"><meta property="article:section" content="post"><meta property="article:published_time" content="2020-03-16T00:00:00+00:00"><meta property="article:modified_time" content="2020-03-16T00:00:00+00:00"><meta itemprop=name content="netcat 的使用笔记"><meta itemprop=description content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。"><meta itemprop=datePublished content="2020-03-16T00:00:00+00:00"><meta itemprop=dateModified content="2020-03-16T00:00:00+00:00"><meta itemprop=wordCount content="1200"><meta itemprop=keywords content="linux,netcat,"><meta name=twitter:card content="summary"><meta name=twitter:title content="netcat 的使用笔记"><meta name=twitter:description content="当在 debian 的仓库中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），源代码 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有openbsd版本，gnu版本，nmap社区版本ncat。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-<nav id=mobile-menu class="mobile-menu slideout-menu">
-<ul class=mobile-menu-list>
-<a href=/snow/>
-<li class=mobile-menu-item>Home</li>
-</a><a href=/snow/post/>
-<li class=mobile-menu-item>Archives</li>
-</a><a href=/snow/tags/>
-<li class=mobile-menu-item>Tags</li>
-</a><a href=/snow/categories/>
-<li class=mobile-menu-item>Categories</li>
-</a><a href=/snow/about/>
-<li class=mobile-menu-item>About</li>
-</a>
-</ul>
-</nav>
-<div class=container id=mobile-panel>
-<header id=header class=header>
-<div class=logo-wrapper>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<nav class=site-navbar>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a class=menu-item-link href=/snow/>Home</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/post/>Archives</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/tags/>Tags</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/categories/>Categories</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/about/>About</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=main class=main>
-<div class=content-wrapper>
-<div id=content class=content>
-<article class=post>
-<header class=post-header>
-<h1 class=post-title>netcat 的使用笔记</h1>
-<div class=post-meta>
-<span class=post-time> 2020-03-16 </span>
-<div class=post-category>
-<a href=/snow/categories/clavicula-salomonis/> Clavicula Salomonis </a>
-</div>
-<span class=more-meta> 1205 words </span>
-<span class=more-meta> 3 mins read </span>
-<span id=busuanzi_container_page_pv class=more-meta> <span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read </span>
-</div>
-</header>
-<div class=post-toc id=post-toc>
-<h2 class=post-toc-title>Contents</h2>
-<div class="post-toc-content always-active">
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href=#开启服务>开启服务</a></li>
-<li><a href=#测试端口>测试端口</a></li>
-<li><a href=#端口扫描>端口扫描</a></li>
-<li><a href=#文件传输>文件传输</a></li>
-</ul>
-</li>
-<li><a href=#后记>后记</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-<div class=post-content>
-<p>当在<a href=https://packages.debian.org/sid/netcat-openbsd> debian 的仓库</a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href=https://github.com/openbsd/src/tree/master/usr.bin/nc>源代码</a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有<a href=https://packages.debian.org/sid/netcat-openbsd>openbsd版本</a>，<a href=http://netcat.sourceforge.net/download.php>gnu版本</a>，<a href=https://nmap.org/ncat/>nmap社区版本ncat</a>。</p>
-<p>netcat 最初的作者是一个名为“<em>Hobbit</em>”的人在1995年10月28号以源代码的形式发布的。在其<a href=https://nc110.sourceforge.io/>官网</a>还能找到一些其他信息以及由“<em>Hobbit</em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。</p>
-<p>首先来看一下 <code>nc -h</code> 里平时使用频率比较高的一些选项：</p>
-<ul>
-<li>h：输出帮助信息</li>
-<li>k：可以使客户端重复连接，一般配合 l 来使用</li>
-<li>l：开启监听模式，作为服务端。若不加该选项则默认为客户端</li>
-<li>n：不对命令行中的host进行域名解析。简单来说就是host写为x.x.x.x时加上该选项，写为域名时不加</li>
-<li>p：指定端口</li>
-<li>v：输出详细信息</li>
-<li>z：通常用于端口扫描，仅判断是否能够连接，不进行数据通讯</li>
-</ul>
-<h3 id=开启服务>开启服务</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ nc -l -k -p <span class=o>[</span>port<span class=o>]</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>作为服务端，监听端口，开启服务。假设客户端通过 <code>nc [ip] [port]</code> 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。</p>
-<h3 id=测试端口>测试端口</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ nc -nv <span class=o>[</span>ip<span class=o>]</span> <span class=o>[</span>port<span class=o>]</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。</p>
-<h3 id=端口扫描>端口扫描</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ nc -znv <span class=o>[</span>ip<span class=o>]</span> <span class=o>[</span>port-port<span class=o>]</span> 2&gt;<span class=p>&amp;</span><span class=m>1</span> <span class=p>|</span> grep succeeded
-</code></pre></td></tr></table>
-</div>
-</div><p>可以用来做渗透测试。</p>
-<h3 id=文件传输>文件传输</h3>
-<p>首先在接收端开启监听：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ nc -l -p <span class=o>[</span>port<span class=o>]</span> &gt; <span class=o>[</span>filename<span class=o>]</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>然后在发送端发送文件:</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ nc <span class=o>[</span>ip<span class=o>]</span> <span class=o>[</span>port<span class=o>]</span> &lt; <span class=o>[</span>filename<span class=o>]</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 <code>nc localhost [port] &lt; [filename]</code> 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 <code>ctrl+c</code> 即可。</p>
-<h2 id=后记>后记</h2>
-<p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——<a href=https://program-think.blogspot.com/2019/09/Netcat-Tricks.html>扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”</a>。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>netcat 的使用笔记</h1><div class=post-meta><span class=post-time>2020-03-16</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>1200 words</span>
+<span class=more-meta>3 mins read</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#开启服务>开启服务</a></li><li><a href=#测试端口>测试端口</a></li><li><a href=#端口扫描>端口扫描</a></li><li><a href=#文件传输>文件传输</a></li></ul></li><li><a href=#后记>后记</a></li></ul></li></ul></nav></div></div><div class=post-content><p>当在<a href=https://packages.debian.org/sid/netcat-openbsd> debian 的仓库</a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），<a href=https://github.com/openbsd/src/tree/master/usr.bin/nc>源代码</a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有<a href=https://packages.debian.org/sid/netcat-openbsd>openbsd版本</a>，<a href=http://netcat.sourceforge.net/download.php>gnu版本</a>，<a href=https://nmap.org/ncat/>nmap社区版本ncat</a>。</p><p>netcat 最初的作者是一个名为“<em>Hobbit</em>”的人在1995年10月28号以源代码的形式发布的。在其<a href=https://nc110.sourceforge.io/>官网</a>还能找到一些其他信息以及由“<em>Hobbit</em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。</p><p>首先来看一下 <code>nc -h</code> 里平时使用频率比较高的一些选项：</p><ul><li>h：输出帮助信息</li><li>k：可以使客户端重复连接，一般配合 l 来使用</li><li>l：开启监听模式，作为服务端。若不加该选项则默认为客户端</li><li>n：不对命令行中的host进行域名解析。简单来说就是host写为x.x.x.x时加上该选项，写为域名时不加</li><li>p：指定端口</li><li>v：输出详细信息</li><li>z：通常用于端口扫描，仅判断是否能够连接，不进行数据通讯</li></ul><h3 id=开启服务>开启服务</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ nc -l -k -p <span class=o>[</span>port<span class=o>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>作为服务端，监听端口，开启服务。假设客户端通过 <code>nc [ip] [port]</code> 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。</p><h3 id=测试端口>测试端口</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ nc -nv <span class=o>[</span>ip<span class=o>]</span> <span class=o>[</span>port<span class=o>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。</p><h3 id=端口扫描>端口扫描</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ nc -znv <span class=o>[</span>ip<span class=o>]</span> <span class=o>[</span>port-port<span class=o>]</span> 2&gt;<span class=p>&amp;</span><span class=m>1</span> <span class=p>|</span> grep succeeded
+</span></span></code></pre></td></tr></table></div></div><p>可以用来做渗透测试。</p><h3 id=文件传输>文件传输</h3><p>首先在接收端开启监听：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ nc -l -p <span class=o>[</span>port<span class=o>]</span> &gt; <span class=o>[</span>filename<span class=o>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>然后在发送端发送文件:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ nc <span class=o>[</span>ip<span class=o>]</span> <span class=o>[</span>port<span class=o>]</span> &lt; <span class=o>[</span>filename<span class=o>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 <code>nc localhost [port] &lt; [filename]</code> 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 <code>ctrl+c</code> 即可。</p><h2 id=后记>后记</h2><p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——<a href=https://program-think.blogspot.com/2019/09/Netcat-Tricks.html>扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”</a>。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ mkfifo <span class=o>[</span>name<span class=o>]</span>
-$ cat <span class=o>[</span>name<span class=o>]</span> <span class=p>|</span> /bin/bash 2&gt;<span class=p>&amp;</span><span class=m>1</span> <span class=p>|</span> nc -l -p <span class=o>[</span>port<span class=o>]</span> &gt; <span class=o>[</span>name<span class=o>]</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>这可能也是编程随想的博客中有提到但并未透露的“间接的方式”。</p>
-</div>
-<div class=post-copyright>
-<p class=copyright-item>
-<span class=item-title>Author</span>
-<span class=item-content>sherry</span>
-</p>
-<p class=copyright-item>
-<span class=item-title>LastMod</span>
-<span class=item-content>
-2020-03-16
-</span>
-</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/snow/tags/linux/>linux</a>
-<a href=/snow/tags/netcat/>netcat</a>
-</div>
-<nav class=post-nav>
-<a class=prev href=/snow/post/study-notes-of-elasticsearch-1/>
-<i class="iconfont icon-left"></i>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ mkfifo <span class=o>[</span>name<span class=o>]</span>
+</span></span><span class=line><span class=cl>$ cat <span class=o>[</span>name<span class=o>]</span> <span class=p>|</span> /bin/bash 2&gt;<span class=p>&amp;</span><span class=m>1</span> <span class=p>|</span> nc -l -p <span class=o>[</span>port<span class=o>]</span> &gt; <span class=o>[</span>name<span class=o>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>这可能也是编程随想的博客中有提到但并未透露的“间接的方式”。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2020-03-16</span></p></div><footer class=post-footer><div class=post-tags><a href=/snow/tags/linux/>linux</a>
+<a href=/snow/tags/netcat/>netcat</a></div><nav class=post-nav><a class=prev href=/snow/post/study-notes-of-elasticsearch-1/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">Elasticsearch 入门 | 一</span>
-<span class="prev-text nav-mobile">Prev</span>
-</a>
-<a class=next href=/snow/post/send-mail-with-bitcoin-rate-everyday/>
-<span class="next-text nav-default">使用 Github Actions 每天自动发送比特币的估值邮件</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/snow/post/send-mail-with-bitcoin-rate-everyday/><span class="next-text nav-default">使用 Github Actions 每天自动发送比特币的估值邮件</span>
 <span class="next-text nav-mobile">Next</span>
-<i class="iconfont icon-right"></i>
-</a>
-</nav>
-</footer>
-</article>
-</div>
-<div id=vcomments></div>
-<script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
 <script src=//unpkg.com/valine/dist/Valine.min.js></script>
-<script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:!0,verify:!0,avatar:'mm',placeholder:'说点什么吧...',visitor:!1})</script>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=social-links>
-<a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz",appKey:"s9mFa6SokCKP5xh5pJlTiXHv",notify:!0,verify:!0,avatar:"mm",placeholder:"说点什么吧...",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
 <a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a>
 <a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a>
-<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
-</div>
-<div class=copyright>
-<span class=power-by>
-Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
-</span>
+<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
 <span class=division>|</span>
-<span class=theme-info>
-Theme -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
-</span>
-<div class=busuanzi-footer>
-<span id=busuanzi_container_site_pv> site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
 <span class=division>|</span>
-<span id=busuanzi_container_site_uv> site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
-</div>
-<span class=copyright-year>
-&copy;
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
 2015 -
-2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
-</span>
-</div>
-</footer>
-<div class=back-to-top id=back-to-top>
-<i class="iconfont icon-up"></i>
-</div>
-</div>
-<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/snow/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
-</body>
-</html>
+<script type=text/javascript src=/snow/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

@@ -1,31 +1,7 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>子元素margin-top影响父元素问题 - sherry's blog</title>
-<meta name=renderer content="webkit">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=theme-color content="#f8f5ec">
-<meta name=msapplication-navbutton-color content="#f8f5ec">
-<meta name=apple-mobile-web-app-capable content="yes">
-<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
-<meta name=author content="sherry"><meta name=description content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>子元素margin-top影响父元素问题 - sherry's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="sherry"><meta name=description content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
 我的HTML嵌套关系如下：
-1 2 3 4 5  &amp;lt;header id=&amp;#34;site-head&amp;#34;&amp;gt; &amp;lt;a id=&amp;#34;blog-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;logo&amp;#34; style=&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/header&amp;gt;   "><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.92.0 with theme even">
-<link rel=canonical href=https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/>
-<link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png>
-<link rel=manifest href=/snow/manifest.json>
-<link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<link href=/snow/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
-<meta property="og:title" content="子元素margin-top影响父元素问题">
-<meta property="og:description" content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
+1 2 3 4 5 &amp;lt;header id=&amp;#34;site-head&amp;#34;&amp;gt; &amp;lt;a id=&amp;#34;blog-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;logo&amp;#34; style=&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/header&amp;gt; "><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.101.0 with theme even"><link rel=canonical href=https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/><link rel=apple-touch-icon sizes=180x180 href=/snow/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/snow/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/snow/favicon-16x16.png><link rel=manifest href=/snow/manifest.json><link rel=mask-icon href=/snow/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/snow/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="子元素margin-top影响父元素问题"><meta property="og:description" content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
 我的HTML嵌套关系如下：
 
 
@@ -43,13 +19,7 @@
 </header>
 
 
-">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2018-05-10T00:00:00+00:00">
-<meta property="article:modified_time" content="2018-05-10T00:00:00+00:00">
-<meta itemprop=name content="子元素margin-top影响父元素问题">
-<meta itemprop=description content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
+"><meta property="og:type" content="article"><meta property="og:url" content="https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-05-10T00:00:00+00:00"><meta property="article:modified_time" content="2018-05-10T00:00:00+00:00"><meta itemprop=name content="子元素margin-top影响父元素问题"><meta itemprop=description content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
 我的HTML嵌套关系如下：
 
 
@@ -67,12 +37,7 @@
 </header>
 
 
-"><meta itemprop=datePublished content="2018-05-10T00:00:00+00:00">
-<meta itemprop=dateModified content="2018-05-10T00:00:00+00:00">
-<meta itemprop=wordCount content="687">
-<meta itemprop=keywords content="CSS,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="子元素margin-top影响父元素问题">
-<meta name=twitter:description content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
+"><meta itemprop=datePublished content="2018-05-10T00:00:00+00:00"><meta itemprop=dateModified content="2018-05-10T00:00:00+00:00"><meta itemprop=wordCount content="687"><meta itemprop=keywords content="CSS,"><meta name=twitter:card content="summary"><meta name=twitter:title content="子元素margin-top影响父元素问题"><meta name=twitter:description content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。
 我的HTML嵌套关系如下：
 
 
@@ -91,220 +56,62 @@
 
 
 "><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
-</head>
-<body>
-<div id=mobile-navbar class=mobile-navbar>
-<div class=mobile-header-logo>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<div class=mobile-navbar-icon>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>sherry's blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-<nav id=mobile-menu class="mobile-menu slideout-menu">
-<ul class=mobile-menu-list>
-<a href=/snow/>
-<li class=mobile-menu-item>Home</li>
-</a><a href=/snow/post/>
-<li class=mobile-menu-item>Archives</li>
-</a><a href=/snow/tags/>
-<li class=mobile-menu-item>Tags</li>
-</a><a href=/snow/categories/>
-<li class=mobile-menu-item>Categories</li>
-</a><a href=/snow/about/>
-<li class=mobile-menu-item>About</li>
-</a>
-</ul>
-</nav>
-<div class=container id=mobile-panel>
-<header id=header class=header>
-<div class=logo-wrapper>
-<a href=/snow/ class=logo>sherry's blog</a>
-</div>
-<nav class=site-navbar>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a class=menu-item-link href=/snow/>Home</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/post/>Archives</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/tags/>Tags</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/categories/>Categories</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/snow/about/>About</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=main class=main>
-<div class=content-wrapper>
-<div id=content class=content>
-<article class=post>
-<header class=post-header>
-<h1 class=post-title>子元素margin-top影响父元素问题</h1>
-<div class=post-meta>
-<span class=post-time> 2018-05-10 </span>
-<div class=post-category>
-<a href=/snow/categories/clavicula-salomonis/> Clavicula Salomonis </a>
-</div>
-<span class=more-meta> 687 words </span>
-<span class=more-meta> 2 mins read </span>
-<span id=busuanzi_container_page_pv class=more-meta> <span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read </span>
-</div>
-</header>
-<div class=post-toc id=post-toc>
-<h2 class=post-toc-title>Contents</h2>
-<div class="post-toc-content always-active">
-<nav id=TableOfContents></nav>
-</div>
-</div>
-<div class=post-content>
-<p>今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。</p>
-<p>我的HTML嵌套关系如下：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/snow/><li class=mobile-menu-item>Home</li></a><a href=/snow/post/><li class=mobile-menu-item>Archives</li></a><a href=/snow/tags/><li class=mobile-menu-item>Tags</li></a><a href=/snow/categories/><li class=mobile-menu-item>Categories</li></a><a href=/snow/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>sherry's blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/snow/>Home</a></li><li class=menu-item><a class=menu-item-link href=/snow/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/snow/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/snow/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/snow/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>子元素margin-top影响父元素问题</h1><div class=post-meta><span class=post-time>2018-05-10</span><div class=post-category><a href=/snow/categories/clavicula-salomonis/>Clavicula Salomonis</a></div><span class=more-meta>687 words</span>
+<span class=more-meta>2 mins read</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents></nav></div></div><div class=post-content><p>今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。</p><p>我的HTML嵌套关系如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>header</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;site-head&#34;</span><span class=p>&gt;</span>
-    <span class=p>&lt;</span><span class=nt>a</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;blog-logo&#34;</span><span class=p>&gt;</span>
-        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;logo&#34;</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;background: url(/resources/images/qyc.jpg)&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
-    <span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
-<span class=p>&lt;/</span><span class=nt>header</span><span class=p>&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>父元素CSS：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>header</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;site-head&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>a</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;blog-logo&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;logo&#34;</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;background: url(/resources/images/qyc.jpg)&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>header</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>父元素CSS：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=p>#</span><span class=nn>site-head</span><span class=p>{</span>
-    <span class=k>max-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
-    <span class=k>background-image</span><span class=p>:</span> <span class=nb>url</span><span class=p>(</span><span class=s2>&#34;/resources/images/header.jpg&#34;</span><span class=p>);</span>
-    <span class=k>background-size</span><span class=p>:</span> <span class=kc>cover</span><span class=p>;</span>
-<span class=p>}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>子元素CSS：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>#</span><span class=nn>site-head</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>max-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-image</span><span class=p>:</span> <span class=nb>url</span><span class=p>(</span><span class=s2>&#34;/resources/images/header.jpg&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-size</span><span class=p>:</span> <span class=kc>cover</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>子元素CSS：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=p>#</span><span class=nn>blog-logo</span> <span class=p>{</span>
-    <span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
-    <span class=k>max-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
-    <span class=k>margin</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span> <span class=kc>auto</span> <span class=mi>0</span><span class=p>;</span>
-    <span class=k>text-align</span><span class=p>:</span> <span class=kc>center</span><span class=p>;</span>
-<span class=p>}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>当子元素中margin-top为50px时，神奇的一幕发生了，子元素并没有相对于父元素向下移动50px，而是连带着父元素一起向下移动了50px。</p>
-<p>在Chrome的Developer tools中查看时，看到就连body都向下移动了50px！之后尝试在父元素中设置margin或body中设置都没有用，在父元素中设置padding也没有效果。</p>
-<p>之后搜索到的css2.1盒模型中规定的内容如下：</p>
-<blockquote>
-<p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.</p>
-</blockquote>
-<p>所有毗邻的两个或更多盒元素的margin将会合并为一个margin共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding或Border分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的margin覆盖了父元素的margin。</p>
-<p>之后找到的解决方法如下：</p>
-<ol>
-<li>父级或子元素使用浮动或者绝对定位absolute浮动或绝对定位不参与margin的折叠</li>
-<li>父级overflow:hidden;</li>
-<li>父级设置padding（破坏非空白的折叠条件）<strong>//对于这条表示怀疑，我之前设置的padding并没有起到作用(</strong></li>
-<li>父级设置border</li>
-</ol>
-<p>最终我用的<code>父级overflow:hidden;</code>完美解决问题！</p>
-</div>
-<div class=post-copyright>
-<p class=copyright-item>
-<span class=item-title>Author</span>
-<span class=item-content>sherry</span>
-</p>
-<p class=copyright-item>
-<span class=item-title>LastMod</span>
-<span class=item-content>
-2018-05-10
-</span>
-</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/snow/tags/css/>CSS</a>
-</div>
-<nav class=post-nav>
-<a class=prev href=/snow/post/talk-about-chinese-drinking-culture/>
-<i class="iconfont icon-left"></i>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>#</span><span class=nn>blog-logo</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>max-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>margin</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span> <span class=kc>auto</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>text-align</span><span class=p>:</span> <span class=kc>center</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>当子元素中margin-top为50px时，神奇的一幕发生了，子元素并没有相对于父元素向下移动50px，而是连带着父元素一起向下移动了50px。</p><p>在Chrome的Developer tools中查看时，看到就连body都向下移动了50px！之后尝试在父元素中设置margin或body中设置都没有用，在父元素中设置padding也没有效果。</p><p>之后搜索到的css2.1盒模型中规定的内容如下：</p><blockquote><p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.</p></blockquote><p>所有毗邻的两个或更多盒元素的margin将会合并为一个margin共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding或Border分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的margin覆盖了父元素的margin。</p><p>之后找到的解决方法如下：</p><ol><li>父级或子元素使用浮动或者绝对定位absolute浮动或绝对定位不参与margin的折叠</li><li>父级overflow:hidden;</li><li>父级设置padding（破坏非空白的折叠条件）<strong>//对于这条表示怀疑，我之前设置的padding并没有起到作用(</strong></li><li>父级设置border</li></ol><p>最终我用的<code>父级overflow:hidden;</code>完美解决问题！</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>sherry</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2018-05-10</span></p></div><footer class=post-footer><div class=post-tags><a href=/snow/tags/css/>CSS</a></div><nav class=post-nav><a class=prev href=/snow/post/talk-about-chinese-drinking-culture/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">漫谈中国的饮酒文化</span>
-<span class="prev-text nav-mobile">Prev</span>
-</a>
-<a class=next href=/snow/post/an-interview-question/>
-<span class="next-text nav-default">一道笔试题</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/snow/post/an-interview-question/><span class="next-text nav-default">一道笔试题</span>
 <span class="next-text nav-mobile">Next</span>
-<i class="iconfont icon-right"></i>
-</a>
-</nav>
-</footer>
-</article>
-</div>
-<div id=vcomments></div>
-<script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
 <script src=//unpkg.com/valine/dist/Valine.min.js></script>
-<script type=text/javascript>new Valine({el:'#vcomments',appId:'9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz',appKey:'s9mFa6SokCKP5xh5pJlTiXHv',notify:!0,verify:!0,avatar:'mm',placeholder:'说点什么吧...',visitor:!1})</script>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=social-links>
-<a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"9IWxYbJOcszqHGlQ12CUsxH3-gzGzoHsz",appKey:"s9mFa6SokCKP5xh5pJlTiXHv",notify:!0,verify:!0,avatar:"mm",placeholder:"说点什么吧...",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/ireflux class="iconfont icon-github" title=github></a>
 <a href=https://www.weibo.com/3932084845 class="iconfont icon-weibo" title=weibo></a>
 <a href=http://space.bilibili.com/13546666 class="iconfont icon-bilibili" title=bilibili></a>
-<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
-</div>
-<div class=copyright>
-<span class=power-by>
-Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
-</span>
+<a href=https://ireflux.github.io/snow/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
 <span class=division>|</span>
-<span class=theme-info>
-Theme -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
-</span>
-<div class=busuanzi-footer>
-<span id=busuanzi_container_site_pv> site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span>
 <span class=division>|</span>
-<span id=busuanzi_container_site_uv> site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span> </span>
-</div>
-<span class=copyright-year>
-&copy;
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/snow/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
 2015 -
-2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span>
-</span>
-</div>
-</footer>
-<div class=back-to-top id=back-to-top>
-<i class="iconfont icon-up"></i>
-</div>
-</div>
-<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+2022<span class=heart><i class="iconfont icon-heart"></i></span><span>sherry</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/snow/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
-</body>
-</html>
+<script type=text/javascript src=/snow/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
