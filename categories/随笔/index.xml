@@ -11,7 +11,7 @@
 &lt;p>由于 &lt;a href="https://www.autopiano.cn/">自由钢琴&lt;/a> 本身键位不多，而且在同时按下多个按键时无法同步发出声音，毕竟还是和真正的钢琴有较大区别，因此原视频中只跟了右手，右手有按两个按键以上的，我都自作主张裁剪成了两个按键，尽量保持音色与原视频相似。虽然整体效果不如原视频远甚，不过用来娱乐足够了。&lt;/p>
 &lt;p>注：中括号[]里的为同时按下的键&lt;br>
 注：～ 代表延音&lt;br>
-注：对于需要同时按下两个按键可以先尝试只按第一个键，毕竟一旦碰到需要操作比较多的，很容易打断连贯性。（只针对手残党，大佬请无视）&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
+注：对于需要同时按下两个按键可以先尝试只按第一个键，毕竟一旦碰到需要操作比较多的，很容易打断连贯性。（只针对手残党，大佬请无视）&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
 &lt;p>在路径 &lt;code>/etc/X11/xorg.conf.d/&lt;/code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Section &lt;span style="color:#e6db74">&amp;#34;InputClass&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Identifier &lt;span style="color:#e6db74">&amp;#34;touchpad&amp;#34;&lt;/span>
