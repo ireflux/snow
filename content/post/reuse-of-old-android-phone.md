@@ -130,6 +130,8 @@ Linux Deploy 直接安装报错 log:
 
 完结。
 
+顺便说一句，青龙真吃内存...
+
 ## 参考资料
 
 1. 12 个可替代树莓派的单板机: https://linux.cn/article-10823-1.html

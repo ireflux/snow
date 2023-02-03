@@ -5,6 +5,7 @@ on:
     branches:
       - master  # Set a branch that will trigger a deployment
   pull_request:
+      - master
 
 jobs:
   deploy:
@@ -12,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
+          submodules: false  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
