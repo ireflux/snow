@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sherry's blog</title><link>https://ireflux.github.io/snow/</link><description>Recent content on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://ireflux.github.io/snow/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/about/</guid><description>That cold black cloud is comin&amp;rsquo; down
-Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p></description></item><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p></description></item><item><title>「译文」| 隐形眼镜</title><link>https://ireflux.github.io/snow/post/rwp-contact-lenses/</link><pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-contact-lenses/</guid><description>&lt;p>本文翻译自&lt;a href="https://users.physics.unc.edu/~deardorf/phys25/rwp/">Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第五篇&lt;a href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp3sol.html">A Solution to the Real-World Problem: Contact Lenses&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sherry's blog</title><link>https://ireflux.github.io/snow/</link><description>Recent content on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://ireflux.github.io/snow/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/about/</guid><description>That cold black cloud is comin&amp;rsquo; down
+Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</description></item><item><title>旧 Android 手机的再度营业</title><link>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</link><pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了&lt;a href="https://linux.cn/article-10823-1.html">一些其他派&lt;/a>，但也不知道好不好，就这样拖了好长时间。&lt;/p>
+&lt;p>前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了&lt;/p></description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p></description></item><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p></description></item><item><title>「译文」| 隐形眼镜</title><link>https://ireflux.github.io/snow/post/rwp-contact-lenses/</link><pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-contact-lenses/</guid><description>&lt;p>本文翻译自&lt;a href="https://users.physics.unc.edu/~deardorf/phys25/rwp/">Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第五篇&lt;a href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp3sol.html">A Solution to the Real-World Problem: Contact Lenses&lt;/a>&lt;/p>
 &lt;hr>
 &lt;p>为何隐形眼镜比普通眼镜薄得多，但在矫正视力方面却同样有效？&lt;/p>
 &lt;p>提示：将球面透镜的焦距与透镜的折射率和前后表面的曲率半径联系起来的方程称为透镜制造方程：&lt;code>1/f = (n - no)(1/r1 - 1/r2)&lt;/code>, 其中 no = 1.00 代表空气。&lt;/p></description></item><item><title>「译文」| 偷电问题</title><link>https://ireflux.github.io/snow/post/rwp-stealing-power/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-stealing-power/</guid><description>&lt;p>本文翻译自&lt;a href="https://users.physics.unc.edu/~deardorf/phys25/rwp/">Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第四篇&lt;a href="https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html">A Solution to the RWP for Exam 1 - Stealing Power&lt;/a>。&lt;/p>
@@ -44,55 +46,26 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
 &lt;p>对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。&lt;/p>
 &lt;p>RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 &lt;code>AbstractMessageListenerContainer&lt;/code> 定义的 &lt;code>DEFAULT_PREFETCH_COUNT&lt;/code> 值为 250,如果将其设置为 1,则将会变为循环调度。&lt;/p></description></item><item><title>Spring Session 使用笔记</title><link>https://ireflux.github.io/snow/post/note-on-using-spring-session/</link><pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid><description>&lt;p>Spring Session 的配置非常简单，根据&lt;a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档&lt;/a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p>
 &lt;p>首先需要添加依赖项:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependencies&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c">&amp;lt;!-- ... --&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.session&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>spring-session-data-redis&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependencies&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.session&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-session-data-redis&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
 &lt;p>在路径 &lt;code>/etc/X11/xorg.conf.d/&lt;/code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Section &lt;span class="s2">&amp;#34;InputClass&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Identifier &lt;span class="s2">&amp;#34;touchpad&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MatchIsTouchpad &lt;span class="s2">&amp;#34;on&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Driver &lt;span class="s2">&amp;#34;libinput&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;Tapping&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;on&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;TappingButtonMap&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;lrm&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;NaturalScrolling&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;false&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;ScrollMethod&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;twofinger&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EndSection
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Section &lt;span style="color:#e6db74">&amp;#34;InputClass&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Identifier &lt;span style="color:#e6db74">&amp;#34;touchpad&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MatchIsTouchpad &lt;span style="color:#e6db74">&amp;#34;on&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Driver &lt;span style="color:#e6db74">&amp;#34;libinput&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;Tapping&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;on&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;TappingButtonMap&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lrm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;NaturalScrolling&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;ScrollMethod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;twofinger&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndSection
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
 &lt;p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p>
 &lt;/blockquote></description></item><item><title>创业者不应该犯的错误</title><link>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</guid><description>&lt;p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 四</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
 &lt;ol>
@@ -135,48 +108,24 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
 &lt;/blockquote></description></item><item><title>关于想象力</title><link>https://ireflux.github.io/snow/post/about-imagination/</link><pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/about-imagination/</guid><description>&lt;p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p>
 &lt;p>但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p></description></item><item><title>Spring Boot 整合 Swagger2</title><link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid><description>&lt;p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p>
 &lt;p>首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger2&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger-ui&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger2&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger-ui&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
 &lt;p>在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
 &lt;p>安装没什么可说的，直接 &lt;code>sudo pacman -S postgresql&lt;/code> 就好了。(其他发行版请使用对应的包管理器)&lt;/p>
 &lt;p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p></description></item><item><title>Docker Swarm 集群创建过程</title><link>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</link><pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</guid><description>&lt;p>Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。&lt;/p>
 &lt;h2 id="初始化">初始化&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ sudo docker swarm init
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo docker swarm init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p>
 &lt;p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
@@ -201,23 +150,12 @@ Feels like I&amp;rsquo;m knockin&amp;rsquo; on heaven&amp;rsquo;s door</descript
 &lt;p>大三时当我忽然发觉我都已经21岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经20多了啊，他感叹道。&lt;/p>
 &lt;p>对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p></description></item><item><title>漫谈中国的饮酒文化</title><link>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</link><pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</guid><description>&lt;p>中国社会有个很神奇的现象，每逢聚会或商业应酬必定要喝酒，小到还在上学的初中生，大至几十岁的大龄人员，几乎很难看到在同一桌相互认识的同龄人想喝酒的人喝酒，想喝饮料/果汁的人喝饮料/果汁的和谐景象。总有人觉得别人喝酒，自己不和人家一块喝好像不尊重别人。这一点就很奇怪，这难道不是看个人意愿？为什么“酒”这个东西在中国被赋予了如此厚重的意义？&lt;/p></description></item><item><title>子元素margin-top影响父元素问题</title><link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link><pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid><description>&lt;p>今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p>
 &lt;p>我的HTML嵌套关系如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">header&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;site-head&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;blog-logo&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;logo&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">a&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">header&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">header&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;site-head&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;blog-logo&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logo&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">header&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong>&lt;/p>
 &lt;p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p></description></item><item><title>四十不惑</title><link>https://ireflux.github.io/snow/post/forty-years-old/</link><pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/forty-years-old/</guid><description>&lt;p>When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&amp;rsquo;t know how to do is right.&lt;/p>
 &lt;p>When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p></description></item><item><title>数据结构知识点总结</title><link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link><pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid><description>&lt;p>最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p>
@@ -251,7 +189,18 @@ People writing songs that voices never shared, no one dared disturb the sound of
 &lt;h2 id="体验">体验&lt;/h2>
 &lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p></description></item><item><title>New Year's Eve</title><link>https://ireflux.github.io/snow/post/new-year-eve/</link><pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/new-year-eve/</guid><description>&lt;p>前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p>
 &lt;p>每次听到仙剑的经典音乐，总会把我拉进回忆漩涡里。那种奇特而又熟悉的感觉，就想起在玩仙剑四的场景。在游戏里探索，进入民宅搜索可用的物资，在村子里四处闲逛。&lt;/p>
-&lt;p>村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>就像在河的对岸, 我看不到她,她看不到我, 但似乎能够感受到来自对岸细若游丝的信号, 像一根随时都会断掉的线, 就像是宇宙中遥远星辰散发着若有若无的</description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>就像在河的对岸,
+我看不到她,她看不到我,
+但似乎能够感受到来自对岸细若游丝的信号,
+像一根随时都会断掉的线,
+就像是宇宙中遥远星辰散发着若有若无的光芒,
+我不知道该如何回应.
+耳边的轻音乐让我一度以为回到了从前,
+那段缓慢的,不知忧虑的时光,
+随之而来的洪流将这一切击的粉碎,
+窗外一眼望去仍然是被树木遮掩,
+四周依然是熟悉的景物,一如三年以前.
+p.s. 轻音乐：歌曲：命 歌手：石田勝範</description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。&lt;/p>
 &lt;h2 id="编译之前">编译之前&lt;/h2>
 &lt;p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在&lt;a href="http://www.mplayerhq.hu/design7/dload.html">官方网站&lt;/a>获得.&lt;/p>

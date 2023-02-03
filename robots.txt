@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://ireflux.github.io/snow/sitemap.xml

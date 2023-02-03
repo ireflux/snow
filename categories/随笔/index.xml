@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>随笔 on sherry's blog</title><link>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</link><description>Recent content in 随笔 on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml"/><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 五</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</link><pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</guid><description>&lt;h3 id="系列文章">系列文章&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>随笔 on sherry's blog</title><link>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</link><description>Recent content in 随笔 on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml"/><item><title>旧 Android 手机的再度营业</title><link>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</link><pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了&lt;a href="https://linux.cn/article-10823-1.html">一些其他派&lt;/a>，但也不知道好不好，就这样拖了好长时间。&lt;/p>
+&lt;p>前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了&lt;/p></description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 五</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</link><pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</guid><description>&lt;h3 id="系列文章">系列文章&lt;/h3>
 &lt;ol>
 &lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1">细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
@@ -9,33 +11,18 @@
 &lt;p>由于 &lt;a href="https://www.autopiano.cn/">自由钢琴&lt;/a> 本身键位不多，而且在同时按下多个按键时无法同步发出声音，毕竟还是和真正的钢琴有较大区别，因此原视频中只跟了右手，右手有按两个按键以上的，我都自作主张裁剪成了两个按键，尽量保持音色与原视频相似。虽然整体效果不如原视频远甚，不过用来娱乐足够了。&lt;/p>
 &lt;p>注：中括号[]里的为同时按下的键&lt;br>
 注：～ 代表延音&lt;br>
-注：对于需要同时按下两个按键可以先尝试只按第一个键，毕竟一旦碰到需要操作比较多的，很容易打断连贯性。（只针对手残党，大佬请无视）&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
+注：对于需要同时按下两个按键可以先尝试只按第一个键，毕竟一旦碰到需要操作比较多的，很容易打断连贯性。（只针对手残党，大佬请无视）&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
 &lt;p>在路径 &lt;code>/etc/X11/xorg.conf.d/&lt;/code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Section &lt;span class="s2">&amp;#34;InputClass&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Identifier &lt;span class="s2">&amp;#34;touchpad&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MatchIsTouchpad &lt;span class="s2">&amp;#34;on&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Driver &lt;span class="s2">&amp;#34;libinput&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;Tapping&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;on&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;TappingButtonMap&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;lrm&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;NaturalScrolling&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;false&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Option &lt;span class="s2">&amp;#34;ScrollMethod&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;twofinger&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">EndSection
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Section &lt;span style="color:#e6db74">&amp;#34;InputClass&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Identifier &lt;span style="color:#e6db74">&amp;#34;touchpad&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MatchIsTouchpad &lt;span style="color:#e6db74">&amp;#34;on&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Driver &lt;span style="color:#e6db74">&amp;#34;libinput&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;Tapping&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;on&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;TappingButtonMap&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lrm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;NaturalScrolling&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;ScrollMethod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;twofinger&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndSection
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
 &lt;p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p>
 &lt;/blockquote></description></item><item><title>创业者不应该犯的错误</title><link>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</guid><description>&lt;p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 四</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
 &lt;ol>
@@ -84,7 +71,18 @@
 &lt;h2 id="体验">体验&lt;/h2>
 &lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p></description></item><item><title>New Year's Eve</title><link>https://ireflux.github.io/snow/post/new-year-eve/</link><pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/new-year-eve/</guid><description>&lt;p>前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p>
 &lt;p>每次听到仙剑的经典音乐，总会把我拉进回忆漩涡里。那种奇特而又熟悉的感觉，就想起在玩仙剑四的场景。在游戏里探索，进入民宅搜索可用的物资，在村子里四处闲逛。&lt;/p>
-&lt;p>村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>就像在河的对岸, 我看不到她,她看不到我, 但似乎能够感受到来自对岸细若游丝的信号, 像一根随时都会断掉的线, 就像是宇宙中遥远星辰散发着若有若无的</description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>就像在河的对岸,
+我看不到她,她看不到我,
+但似乎能够感受到来自对岸细若游丝的信号,
+像一根随时都会断掉的线,
+就像是宇宙中遥远星辰散发着若有若无的光芒,
+我不知道该如何回应.
+耳边的轻音乐让我一度以为回到了从前,
+那段缓慢的,不知忧虑的时光,
+随之而来的洪流将这一切击的粉碎,
+窗外一眼望去仍然是被树木遮掩,
+四周依然是熟悉的景物,一如三年以前.
+p.s. 轻音乐：歌曲：命 歌手：石田勝範</description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。&lt;/p>
 &lt;h2 id="编译之前">编译之前&lt;/h2>
 &lt;p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在&lt;a href="http://www.mplayerhq.hu/design7/dload.html">官方网站&lt;/a>获得.&lt;/p>

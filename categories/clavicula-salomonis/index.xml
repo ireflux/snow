@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clavicula Salomonis on sherry's blog</title><link>https://ireflux.github.io/snow/categories/clavicula-salomonis/</link><description>Recent content in Clavicula Salomonis on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/clavicula-salomonis/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p></description></item><item><title>WeeChat 不完全使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC&lt;/a> 这种古老的通信协议。其中有一段叙述很有意思，大意是说如今 IRC 服务器这种带有很强匿名性质的聊天室，由于界面或操作还停留在上世纪，是天然的过滤屏障，人少反而提供了优质的社区交流氛围。但同时也不容易打击盗版，用户通过各种代理、中继连上来，很难去追溯，再加上现如今用户较少，规模不复往昔，因此可能也失去了打击的价值。种种技术和非技术的因素，造就了这样的一个强匿名、低审查、较为自由的一个“避难所”。用视频中的话说：“互联网上，没人知道你是一条狗”。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clavicula Salomonis on sherry's blog</title><link>https://ireflux.github.io/snow/categories/clavicula-salomonis/</link><description>Recent content in Clavicula Salomonis on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/clavicula-salomonis/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p></description></item><item><title>WeeChat 不完全使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC&lt;/a> 这种古老的通信协议。其中有一段叙述很有意思，大意是说如今 IRC 服务器这种带有很强匿名性质的聊天室，由于界面或操作还停留在上世纪，是天然的过滤屏障，人少反而提供了优质的社区交流氛围。但同时也不容易打击盗版，用户通过各种代理、中继连上来，很难去追溯，再加上现如今用户较少，规模不复往昔，因此可能也失去了打击的价值。种种技术和非技术的因素，造就了这样的一个强匿名、低审查、较为自由的一个“避难所”。用视频中的话说：“互联网上，没人知道你是一条狗”。&lt;/p>
 &lt;p>而这也正是吸引人的地方 :)&lt;/p>
 &lt;p>从 &lt;a href="https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients">arch wiki&lt;/a> 中可以找到一些主流的支持 IRC 协议的软件。根据下面的图表对比，&lt;a href="https://WeeChat.org/">WeeChat&lt;/a> 相比于其他软件来说更强大，扩展性更好，最有优势。&lt;/p></description></item><item><title>Elasticsearch 入门 | 一</title><link>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-notes-of-elasticsearch-1/</guid><description>&lt;p>本文是我开始学习 Elasticsearch 系列的第一篇笔记，计划先以我初学者的状态对 Elasticsearch 的看法以及目前学到的知识做个概览性的总结，之后的系列再单独对其细节专门去学习和记录，留备后期翻阅查看。&lt;/p>
 &lt;p>注：截至本文发表前，Elasticsearch 的版本号为 7.6.1，本文的内容也建立于此之上。&lt;/p>
@@ -14,29 +14,15 @@
 &lt;p>对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。&lt;/p>
 &lt;p>RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 &lt;code>AbstractMessageListenerContainer&lt;/code> 定义的 &lt;code>DEFAULT_PREFETCH_COUNT&lt;/code> 值为 250,如果将其设置为 1,则将会变为循环调度。&lt;/p></description></item><item><title>Spring Session 使用笔记</title><link>https://ireflux.github.io/snow/post/note-on-using-spring-session/</link><pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid><description>&lt;p>Spring Session 的配置非常简单，根据&lt;a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档&lt;/a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p>
 &lt;p>首先需要添加依赖项:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependencies&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c">&amp;lt;!-- ... --&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.session&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>spring-session-data-redis&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependencies&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>栈和队列的相互转换</title><link>https://ireflux.github.io/snow/post/stack-to-queue/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid><description>&lt;p>关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.session&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-session-data-redis&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>栈和队列的相互转换</title><link>https://ireflux.github.io/snow/post/stack-to-queue/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/stack-to-queue/</guid><description>&lt;p>关于栈和队列，有时会在面试题中看到诸如以下的问题：&lt;/p>
 &lt;ol>
 &lt;li>如何使用栈实现队列？&lt;/li>
 &lt;li>如何使用队列实现栈？&lt;/li>
@@ -50,48 +36,24 @@
 &lt;p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p>
 &lt;/blockquote></description></item><item><title>Spring Boot 整合 Swagger2</title><link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid><description>&lt;p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p>
 &lt;p>首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger2&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger-ui&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger2&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger-ui&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
 &lt;p>在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
 &lt;p>安装没什么可说的，直接 &lt;code>sudo pacman -S postgresql&lt;/code> 就好了。(其他发行版请使用对应的包管理器)&lt;/p>
 &lt;p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p></description></item><item><title>Docker Swarm 集群创建过程</title><link>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</link><pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/docker-swarm-cluster-create/</guid><description>&lt;p>Docker Swarm 入门用到的命令不多，初始化的时候提示写的就很详细，一步步下来感觉用起来很方便。&lt;/p>
 &lt;h2 id="初始化">初始化&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ sudo docker swarm init
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo docker swarm init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p>
 &lt;p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
@@ -102,23 +64,12 @@
 &lt;h2 id="什么是avl树">什么是AVL树&lt;/h2>
 &lt;p>AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky">Georgy Adelson-Velsky&lt;/a>和&lt;a href="https://en.wikipedia.org/wiki/Evgenii_Landis">Evgenii Landis&lt;/a>于1962年在论文《&lt;a href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf">An algorithm for the organization of information&lt;/a>》中首次提出。&lt;/p></description></item><item><title>子元素margin-top影响父元素问题</title><link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link><pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid><description>&lt;p>今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p>
 &lt;p>我的HTML嵌套关系如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">header&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;site-head&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;blog-logo&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;logo&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">a&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">header&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">header&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;site-head&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;blog-logo&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logo&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">header&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong>&lt;/p>
 &lt;p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p></description></item><item><title>数据结构知识点总结</title><link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link><pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid><description>&lt;p>最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p>
 &lt;h1 id="树">树&lt;/h1>
