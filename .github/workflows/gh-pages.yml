@@ -1,15 +1,17 @@
-name: github pages
+name: GitHub Pages
 
 on:
   push:
     branches:
-      - master  # Set a branch that will trigger a deployment
+      - master  # Set a branch to deploy
   pull_request:
       - master
 
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -27,7 +29,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
