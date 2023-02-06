@@ -1,17 +1,514 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>随笔 on sherry's blog</title><link>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</link><description>Recent content in 随笔 on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml"/><item><title>旧 Android 手机的再度营业</title><link>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</link><pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
-&lt;p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了&lt;a href="https://linux.cn/article-10823-1.html">一些其他派&lt;/a>，但也不知道好不好，就这样拖了好长时间。&lt;/p>
-&lt;p>前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了&lt;/p></description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 五</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</link><pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</guid><description>&lt;h3 id="系列文章">系列文章&lt;/h3>
+&lt;p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了&lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"
+>一些其他派&lt;/a>，但也不知道好不好，就这样拖了好长时间。&lt;/p>
+&lt;p>前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了&lt;/p>
+&lt;h2 id="安装踩坑过程">安装(踩坑)过程&lt;/h2>
+&lt;p>于是我重新线刷了一遍官方系统后，准备安装 Termux，发现 &lt;a class="link" href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/" target="_blank" rel="noopener"
+>Android 5 和 6 在 2020 年就不再支持了&lt;/a>，一想到只能用旧阪本，虽然很不情愿，但也没有办法。不过后来我又在 WIKI 里发现了一篇新的公告：&lt;a class="link" href="https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6" target="_blank" rel="noopener"
+>Termux on android 5 or 6&lt;/a>，开发者又打算在 termux-app 0.119 版本中重新加回对 android 5 和 6 的支持，这么重要的信息居然不写在最显眼的 README 里面&amp;hellip;虽然目前还没有正式 release，但是可以去 Actions 中找打好的安装包来安装，至此总算是可以舒舒服服的安装了。&lt;/p>
+&lt;p>作为 Arch 的忠实教徒，发行版当然是选择 Arch Linux 啦！在 GitHub 搜寻一番，找到了一个专门在 Termux 中一键安装的脚本 &lt;a class="link" href="https://github.com/TermuxArch/TermuxArch" target="_blank" rel="noopener"
+>TermuxArch&lt;/a>，总之到这里还算顺利。但接下来的安装遇到了一些错误，是关于 PRoot 的，提示没有 &lt;code>--sysvipc&lt;/code> 的选项，可能是我的 PRoot 的版本的缘故，但用 Termux 自带的源尝试更新了一下，发现已经是最新的版本了。Hmmm&amp;hellip;只好再次去 Termux 官网找答案，答案没找到，却在 Termux Wiki 找到了一篇关于 PRoot 的文章： &lt;a class="link" href="https://wiki.termux.com/wiki/PRoot" target="_blank" rel="noopener"
+>PRoot&lt;/a>，里面详细解释了 PRoot 和 Chroot 的区别，简单来说 PRoot 是通过 ptrace() 来劫持系统调用参数和返回值来伪造可见的文件系统布局或用户/组的 ID，会引起额外的开销，里面还提到了一个 APP： &lt;a class="link" href="https://github.com/meefik/linuxdeploy" target="_blank" rel="noopener"
+>Linux Deploy&lt;/a>。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。&lt;/p>
+&lt;p>接下来就是获取 root 权限的过程了：从线刷包里提取 boot.img -&amp;gt; magisk 修补 boot.img -&amp;gt; &lt;code>fastboot flash boot boot.img&lt;/code>&lt;/p>
+&lt;p>装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，有一些 bug 也说不定。之后各处搜寻，最终还是找到了解决方案。&lt;/p>
+&lt;p>Linux Deploy 直接安装报错 log:&lt;/p>
+&lt;pre tabindex="0">&lt;code>[11:40:17] &amp;gt;&amp;gt;&amp;gt; deploy
+[11:40:17] :: Installing bootstrap/rootfs ...
+[11:40:17] Checking installation path ... done
+[11:40:17] Making new disk image (2047 MB) ... done
+[11:40:17] Making file system (ext4) ... done
+[11:40:17] Checking file system ... done
+[11:40:17] Mounting the container:
+[11:40:17] / ... done
+[11:40:17] /proc ... done
+[11:40:17] /sys ... done
+[11:40:17] /dev ... done
+[11:40:17] /dev/shm ... skip
+[11:40:17] /dev/pts ... done
+[11:40:17] /dev/tty ... done
+[11:40:17] /proc/sys/fs/binfmt_misc ... done
+[11:40:17] :: Installing bootstrap/archlinux ...
+[11:40:17] Preparing for deployment ... done
+[11:40:20] Retrieving packages list ... done
+[11:40:20] Retrieving packages:
+[11:40:22] acl-2.3.1-2 ... done
+[11:40:25] acl-debug-2.3.1-2 ... done
+[11:40:28] amd-ucode-20221214.f3c283e-1 ... done
+[11:40:31] archlinux-keyring-20221220-1 ... done
+[11:40:33] archlinuxarm-keyring-20140119-2 ... done
+[11:40:35] argon2-20190702-4 ... done
+[11:40:38] attr-2.5.1-2 ... done
+[11:40:40] attr-debug-2.5.1-2 ... done
+[11:40:42] audit-3.0.8-1 ... done
+[11:40:45] audit-debug-3.0.8-1 ... done
+[11:40:48] autoconf-2.71-1 ... done
+[11:40:51] automake-1.16.5-1 ... done
+[11:40:52] b43-fwcutter-019-3 ... done
+[11:40:54] base-3-1 ... done
+[11:40:58] bash-5.1.016-1 ... done
+[11:41:05] binutils-2.38-5.1 ... done
+[11:41:27] binutils-debug-2.38-5.1 ... done
+[11:41:30] bison-3.8.2-4 ... done
+[11:41:33] brotli-1.0.9-9 ... done
+[11:41:37] brotli-debug-1.0.9-9 ... done
+[11:41:42] brotli-testdata-1.0.9-9 ... done
+[11:41:45] btrfs-progs-6.1-2 ... done
+[11:41:49] btrfs-progs-debug-6.1-2 ... done
+[11:41:51] bzip2-1.0.8-5 ... done
+[11:41:53] bzip2-debug-1.0.8-5 ... done
+[11:41:55] ca-certificates-20220905-1 ... done
+[11:41:57] ca-certificates-cacert-20140824-4 ... done
+[11:42:00] ca-certificates-mozilla-3.86-1 ... done
+[11:42:02] ca-certificates-utils-20220905-1 ... done
+[11:42:07] coreutils-9.1-3 ... done
+[11:42:09] cracklib-2.9.8-1 ... done
+[11:42:12] cronie-1.6.1-1 ... done
+[11:42:14] cronie-debug-1.6.1-1 ... done
+[11:42:16] cryptsetup-2.6.0-1 ... done
+[11:42:19] cryptsetup-debug-2.6.0-1 ... done
+[11:42:22] curl-7.87.0-1 ... done
+[11:42:26] curl-debug-7.87.0-1 ... done
+[11:42:28] dash-0.5.11.5-1 ... done
+[11:52:10] dash-debug-0.5.11.5-1 ... done
+[11:52:10] db-6.2.32-1 ... done
+[11:52:10] db5.3-5.3.28-2 ... done
+[11:52:10] dbus-1.14.4-1 ... done
+[11:52:10] dbus-debug-1.14.4-1 ... done
+[11:52:10] dbus-docs-1.14.4-1 ... done
+[11:52:10] debugedit-5.0-4 ... done
+[11:52:10] debuginfod-0.188-1 ... done
+[11:52:10] device-mapper-2.03.18-1 ... done
+[11:52:10] dhcpcd-9.4.1-1 ... done
+[11:52:10] dialog-1:1.3_20220728-1 ... done
+[11:52:10] diffutils-3.8-1 ... done
+[11:52:10] ding-libs-0.6.2-1 ... done
+[11:52:10] dmraid-1.0.0.rc16.3-14 ... done
+[11:52:10] dnssec-anchors-20190629-3 ... done
+[11:52:10] dosfstools-4.2-2 ... done
+[11:52:10] e2fsprogs-1.46.5-4 ... done
+[11:52:10] e2fsprogs-debug-1.46.5-4 ... done
+[11:52:10] ed-1.18-1 ... done
+[11:52:10] efivar-38-2 ... done
+[11:52:10] elfutils-0.188-1 ... done
+[11:52:10] elfutils-debug-0.188-1 ... done
+[11:52:10] expat-2.5.0-1 ... done
+[11:52:10] expat-debug-2.5.0-1 ... done
+[11:52:10] fakeroot-1.30.1-1 ... done
+[11:52:10] file-5.44-1 ... done
+[11:52:10] file-debug-5.44-1 ... done
+[11:52:10] filesystem-2022.10.18-1 ... done
+[11:52:10] findutils-4.9.0-1 ... done
+[11:52:10] flex-2.6.4-3 ... done
+[11:52:10] fuse2fs-1.46.5-4 ... done
+[11:52:10] gawk-5.2.1-1 ... done
+[11:52:10] gawk-debug-5.2.1-1 ... done
+[11:52:10] gc-8.2.2-1 ... done
+[11:52:10] gcc-12.1.0-2.1 ... done
+[11:52:10] gcc-debug-12.1.0-2.1 ... fail
+[11:52:10] &amp;lt;&amp;lt;&amp;lt; deploy
+&lt;/code>&lt;/pre>&lt;p>首先要自己先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 &lt;a class="link" href="https://mirrors.ustc.edu.cn/archlinuxarm/os/" target="_blank" rel="noopener"
+>USTC&lt;/a>，然后打开 Linux Deploy，发行版选择 &lt;code>rootfs.tar&lt;/code>，源地址写 &lt;code>${EXTERNAL_STORAGE}/[下载的镜像名称]&lt;/code>，安装类型选择 &lt;code>目录&lt;/code>，安装路径写 &lt;code>${ENV_DIR}/rootfs/linux&lt;/code>，其他选项就随意了，记得勾上 &lt;code>启用SSH&lt;/code> 就好。p.s. &lt;code>${EXTERNAL_STORAGE}&lt;/code> 事实上就是 &lt;code>/storage/emulated/0&lt;/code>，&lt;code>${ENV_DIR}&lt;/code> 就是 &lt;code>/data/data/[Linux Deploy包名]/&lt;/code>&lt;/p>
+&lt;p>接下来顺利安装完成，ssh 进入 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。然后开始安装&lt;a class="link" href="https://github.com/whyour/qinglong" target="_blank" rel="noopener"
+>青龙面板&lt;/a>，直接按照 &lt;a class="link" href="https://github.com/whyour/qinglong#%E5%BC%80%E5%8F%91" target="_blank" rel="noopener"
+>青龙 README&lt;/a> 来启动就好了。&lt;/p>
+&lt;p>完结。&lt;/p>
+&lt;p>顺便说一句，青龙真吃内存&amp;hellip;&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1">细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4">细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5">细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>The night king piano sheet</title><link>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</link><pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</guid><description>&lt;p>很喜欢 The night king 这首曲子，在 game of thrones 第八季里着实被惊艳到了，之后在油管上看钢琴版看了好多遍。迫于贫穷，买不起钢琴，只能拿这个 &lt;a href="https://www.autopiano.cn/">自由钢琴&lt;/a> 过过瘾，于是跟着这个 &lt;a href="https://www.youtube.com/watch?v=zKroWMAIFYA">视频&lt;/a> 搞了个谱子。（虽然只跟了视频的前半段:(&lt;/p>
-&lt;p>由于 &lt;a href="https://www.autopiano.cn/">自由钢琴&lt;/a> 本身键位不多，而且在同时按下多个按键时无法同步发出声音，毕竟还是和真正的钢琴有较大区别，因此原视频中只跟了右手，右手有按两个按键以上的，我都自作主张裁剪成了两个按键，尽量保持音色与原视频相似。虽然整体效果不如原视频远甚，不过用来娱乐足够了。&lt;/p>
+&lt;li>12 个可替代树莓派的单板机: &lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"
+>https://linux.cn/article-10823-1.html&lt;/a>&lt;/li>
+&lt;li>End of android-5/6 support on 2020-01-01: &lt;a class="link" href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/" target="_blank" rel="noopener"
+>https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/&lt;/a>&lt;/li>
+&lt;li>Termux on android 5 or 6: &lt;a class="link" href="https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6" target="_blank" rel="noopener"
+>https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6&lt;/a>&lt;/li>
+&lt;li>TermuxArch: &lt;a class="link" href="https://github.com/TermuxArch/TermuxArch" target="_blank" rel="noopener"
+>https://github.com/TermuxArch/TermuxArch&lt;/a>&lt;/li>
+&lt;li>PRoot: &lt;a class="link" href="https://wiki.termux.com/wiki/PRoot" target="_blank" rel="noopener"
+>https://wiki.termux.com/wiki/PRoot&lt;/a>&lt;/li>
+&lt;li>Linux Deploy: &lt;a class="link" href="https://github.com/meefik/linuxdeploy" target="_blank" rel="noopener"
+>https://github.com/meefik/linuxdeploy&lt;/a>&lt;/li>
+&lt;li>青龙面板: &lt;a class="link" href="https://github.com/whyour/qinglong" target="_blank" rel="noopener"
+>https://github.com/whyour/qinglong&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p>
+&lt;h2 id="安装">安装&lt;/h2>
+&lt;p>按照官方的&lt;a class="link" href="https://support.google.com/chromeosflex/answer/11552529?_ga=2.40629794.1417789089.1658235257-1827319735.1658235256" target="_blank" rel="noopener"
+>教程&lt;/a>先准备一个非闪迪的 U 盘（因为闪地的 USB 会有一些&lt;a class="link" href="%28https://support.google.com/chromeosflex/answer/11541806#usb%29" >已知的问题&lt;/a>），然后去
+&lt;a class="link" href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm" target="_blank" rel="noopener"
+>Chrome web store&lt;/a> 安装 &lt;code>Chromebook Recovery Utility&lt;/code> 这个扩展（并不支持 Linux 系统)，插上 U 盘后，打开新安装好的扩展，制造商选择「Google Chrome OS Flex」，产品选择「Chrome OS Flex」，点继续之后，接下来它就会自动下载并写入到你的 U 盘（话说我还是第一次见到用浏览器扩展制作启动盘的&amp;hellip;），期间会清空 U 盘上的所有信息。这个过程完成之后，你就拥有一个 Chrome OS Flex 的启动盘了，剩下的也无需赘述。&lt;/p>
+&lt;h2 id="体验">体验&lt;/h2>
+&lt;p>说说使用体验，系统启动时画面上中央会出现 ChromeOS Flex 的字样，感觉还是挺不错的。系统刚进去会有一个使用向导，一步步设置：选择语言，设置键盘布局，连接网络，登录账号，整体 UI 和交互就是原生 Android 的既视感。进去之后自带了 Google 全家桶，其他的不知道都能安装什么第三方应用，也没有看到有类似应用商店之类的东西。设置里有提供 Linux 相关工具的入口，但需要额外安装，迫于 U 盘空间不大，这部分就没体验，打开 terminal 也提示需要额外安装那个 Linux 工具集，但自带了 SSH 连接的图形化界面。打开设置里面查看系统设置信息又给人一种整个操作系统就是一个 Chrome 浏览器的感觉&amp;hellip;&lt;/p>
+&lt;p>总之体验下来个人感觉作为一个个人电脑的操作系统还是不太够，除了一个浏览器，其他的没什么可玩儿的。如果作为其他终端的操作系统，做一些定制化或许还可以，比如车载系统，银行 ATM，KTV 的点歌台之类的&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://support.google.com/chromeosflex/answer/11552529?hl=en&amp;amp;visit_id=637939238602881027-1929521378&amp;amp;ref_topic=11551271&amp;amp;rd=1" target="_blank" rel="noopener"
+>Chrome OS Flex installation guide&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://cloud.google.com/blog/products/chrome-enterprise/chromeos-flex-ready-to-scale-to-pcs-and-macs" target="_blank" rel="noopener"
+>Get ready to flex this summer: ChromeOS Flex is now ready to scale broadly to PCs and Macs&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 五</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</link><pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</guid><description>&lt;h3 id="系列文章">系列文章&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="season-5-episode-1----live-free-or-die">Season 5 Episode 1 &amp;ndash; Live Free or Die&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=w-h05P0doX4" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=w-h05P0doX4&lt;/a>&lt;/p>
+&lt;p>利用强磁场强弱的瞬间转化来消磁，很好的想法！&lt;/p>
+&lt;p>场景二：&lt;/p>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>You&amp;rsquo;re not Clarence Darrow, Saul. 你不是克莱伦斯·单诺(被后人誉为美国历史上最伟大的辩护律师) 索尔&lt;br>
+You&amp;rsquo;re a two-bit bus-bench lawyer, 你只是个廉价的底层律师&lt;br>
+and you work for me. 而且你为我效力&lt;/p>
+&lt;/blockquote>
+&lt;p>saul:&lt;/p>
+&lt;blockquote>
+&lt;p>Yeah, well, Clarence didn&amp;rsquo;t ever have a client like you 对 可克莱伦斯可没你这样的客户&lt;br>
+ask him for something&amp;hellip; 问他要&amp;hellip;&lt;br>
+like this. 这种东西&lt;br>
+Okay? Yeah, I put my ass on the line for you. 好吗 没错 我为了你连小命都搭上了&lt;br>
+Huell, too. Huh? 修尔也是&lt;br>
+He&amp;rsquo;s got fingers like hotdogs. 他的手指和热狗一样&lt;br>
+He could&amp;rsquo;ve easily busted this in two 他一不小心把这个弄破&lt;br>
+and killed everyone in the office, 然后办公室里的每个人就都死了&lt;br>
+but do I complain? 我抱怨了么&lt;br>
+No. Beg, borrow, or steal, I&amp;rsquo;m your huckleberry. 没有 不管求 借还是偷 我是你的好朋友&lt;br>
+I go the extra mile. 我要做额外的工作&lt;br>
+Only you never told me 只是你从没告诉过我&lt;br>
+that the kid would wind up in the hospital. 这孩子会进医院&lt;/p>
+&lt;/blockquote>
+&lt;p>结尾 saul 和 白老师对话也很精彩，在 Gilligan 的笔下每个人性格都是那么鲜明，活灵活现。&lt;/p>
+&lt;h3 id="season-5-episode-2----madrigal">Season 5 Episode 2 &amp;ndash; Madrigal&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=z4WMU3NbQTk" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=z4WMU3NbQTk&lt;/a>&lt;/p>
+&lt;p>最终从吸尘器里“找到了”兰铃花毒，白老师的心机越来越深了，jesse 又被摆了一道。&lt;/p>
+&lt;h3 id="season-5-episode-5----dead-freight">Season 5 Episode 5 &amp;ndash; Dead Freight&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=vWTuSWX6UQ4" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=vWTuSWX6UQ4&lt;/a>&lt;/p>
+&lt;p>神不知鬼不觉的从火车里偷到甲氨，精彩！Yeah! bitch!!&lt;/p>
+&lt;h3 id="season-5-episode-6----buyout">Season 5 Episode 6 &amp;ndash; Buyout&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8Pw7H02Hdz4" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=8Pw7H02Hdz4&lt;/a>&lt;/p>
+&lt;p>Jesse:&lt;/p>
+&lt;blockquote>
+&lt;p>Look, when you, uh, when you started this thing, 你想想 开始做这玩意时候 &lt;br>
+did you ever dream of having $5 million? 你想过能搞到500万美金吗 &lt;br>
+I know for a fact that you didn&amp;rsquo;t. 我敢保证 你没想过&lt;br>
+I know for a fact all you needed was 737,000, 我很清楚 你就需要73万7千&lt;br>
+cause you worked it all out, like, mathematically. 因为你算得清清楚楚&lt;/p>
+&lt;/blockquote>
+&lt;p>Pinkman 仍然清楚的记得白老师之前算得那笔帐。七十三万七千，这是供他的家庭直到他儿子大学毕业所需的开销。人在不同的处境下，只能做出基于自身情况所能得到的最好的选择。如果说以前的白老师是为了给家庭一笔存款，到后来的是为了活命而与那些毒贩周旋，如今一路走来，曾经想杀掉他的人都被他一一打倒。此时性命无虞，外部环境很好，，目标也会更加远大。&lt;/p>
+&lt;p>何况他们提议卖掉甲氨，这种一锤子买卖，反而是触及了曾令白老师悔及一生的往事——他曾5000美元将股份卖给了其他两位合伙人，同时也廉价卖掉了他和他孩子的未来。之后他曾经的两位创始人同伴邀请他去公司工作时，对方可能是好意，但对白老师来说，更像是一种侮辱。像白老师这样在某一领域天纵奇才却默默无闻的做了几十年中学教师，晚年一事无成却还得了癌症的人，他很不甘心就这样结束。因此，他更不希望自己重蹈覆辙，再次错过这次机会。&lt;/p>
+&lt;h3 id="season-5-episode-7----say-my-name">Season 5 Episode 7 &amp;ndash; Say My Name&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=RZPZWpEiuoA" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=RZPZWpEiuoA&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>It was perfect. But, no, you just had to blow it up. 天衣无缝 可你偏不 非要炸飞一切&lt;br>
+You and your pride and your ego! 你 你的骄傲 和你的自负&lt;br>
+You just had to be the man. 你非要掌控大局&lt;br>
+If you&amp;rsquo;d done your job, known your place, 如果你乖乖干好你的活 清楚自己的位置&lt;br>
+we&amp;rsquo;d all be fine right now! 我们现在都相安无事&lt;/p>
+&lt;/blockquote>
+&lt;p>没想到 mike 也会说出这种话，感情不是他生命受到威胁。当然他本来就和 walt 合不来，现在又被逼得被迫跑路，对 walt 说出什么话来也不奇怪.&lt;/p>
+&lt;h3 id="season-5-episode-8----gliding-over-all">Season 5 Episode 8 &amp;ndash; Gliding Over All&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8jMFkf1mJhY" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=8jMFkf1mJhY&lt;/a>&lt;/p>
+&lt;p>存在片段回忆杀，白老师退出了，还和 jesse 聊起了从前。即使和 walt 因 500 万的事曾发生了不愉快，但在打开房门的时候仍然像一个老朋友一样邀请他进屋来，并问他需不需要啤酒什么的。之后他们聊起了刚开始制毒时的 RV 旅行房车，吐槽那辆破车有多破，简直是场噩梦，每次遇到红灯都要祈祷不要在这时候出了岔子，吐槽车子的发动机动不动就吱嘎乱响，不知道的还以为碾死一笼子猫。还聊起了一起在野外制毒时发生的事情，有次车没油了，油表却一直显示还有一半，jesse 不得不提着便携油箱走了 3 英里&amp;hellip;&lt;/p>
+&lt;p>回忆起来还真是令人唏嘘不已，好喜欢他们之前的生活。&lt;/p>
+&lt;h3 id="season-5-episode-9----blood-money">Season 5 Episode 9 &amp;ndash; Blood Money&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=o8gz-G55Dxo" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=o8gz-G55Dxo&lt;/a>&lt;/p>
+&lt;p>jesse 怀疑 walt 杀掉了 mike，因为他杀掉了监狱中 mike 的部下，不会留着 mike 这个活口。但白老师矢口否认，并坚称看到他开车离开了。&lt;/p>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Listen to me. 听我说&lt;br>
+I did not kill Mike. 我没有杀麦克&lt;br>
+The last time that I saw him, 我最后一次见到他&lt;br>
+he had his bag&amp;ndash; the one that I brought him&amp;ndash; 他拿着我给他的包&lt;br>
+and he got into his car, and he drove away. 他开着自己的车走了&lt;br>
+And for all I know, he is alive and well. 就我所知 他现在平安无事&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Jesse&amp;hellip; 杰西&lt;br>
+I need you to believe this. 你得相信我说的&lt;br>
+It&amp;rsquo;s not true. It&amp;rsquo;s just not. 你揣测的都不是真的&lt;br>
+So he&amp;rsquo;s out there. 所以他还活着&lt;br>
+He&amp;rsquo;s okay. 安然无恙&lt;br>
+Yes. 没错&lt;br>
+Mike is fine. 他活得好好的&lt;br>
+Wherever he is. 不管他在哪里&lt;br>
+We both know that he can take care of himself. 咱俩都清楚他会照顾好自己&lt;br>
+And he&amp;rsquo;s certainly capable 他绝对有能力&lt;br>
+to provide for his own family, okay? 照顾好自己的家人
+Jesse? 杰西&lt;br>
+I need you to believe me. 你得信任我&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="season-5-episode-11----confessions">Season 5 Episode 11 &amp;ndash; Confessions&lt;/h3>
+&lt;p>剧情回顾：https://www.youtube.com/watch?v=8Egkod8CPCU&lt;/p>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=qCHw77Iqwuk" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=qCHw77Iqwuk&lt;/a>&lt;/p>
+&lt;p>老白想让 Jesse 离开，少一个人就少一个被攻击面，况且 Jesse 留在这里只会给老白带来麻烦，但是在对话中只字不提是为了自己，却说为了 Jesse 好，Jesse 也不傻，事态已经很明显了，于是有了以下的经典对话，对话中 Jesse 再次说出了前几季多次出现的那句话：你一点都不在乎我。&lt;/p>
+&lt;p>在沙漠的这段对话，也是唯一一次老白没有否认杀害 mike 的场景，可能是因为被 Jesse 的一番话触动，心怀愧疚，也可能出于这可能是这辈子两人见得最后一次面而变的坦诚。&lt;/p>
+&lt;p>场景的最后老白心情复杂抱住了 Jesse，竟让我想起了 S5E8 里的那段场景，老白去还 Jesse 500 万，双方阔别重逢却少有的不知道该说什么，寒暄了几句，聊了聊往事便以老白离开结束。总之这个是「真」经典场景了，以至于我把整段对话全部搬了过来：&lt;/p>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Jesse, will you let me help you? 杰西 让我帮你好吗&lt;br>
+I don&amp;rsquo;t like to see you hurting like this. 我不想看你这么痛苦&lt;br>
+Maybe it&amp;rsquo;s time for a change. 也许是时候改变一下了&lt;/p>
+&lt;/blockquote>
+&lt;p>Jesse：&lt;/p>
+&lt;blockquote>
+&lt;p>What kinda change? 什么改变&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>I don&amp;rsquo;t know. 我不知道&lt;br>
+I don&amp;rsquo;t know. Maybe&amp;hellip; 不知道 也许&lt;br>
+maybe it&amp;rsquo;s time for you to just&amp;hellip; 也许你是时候&lt;br>
+leave all of this behind. 放下这一切&lt;br>
+Just get out of town. 离开这里&lt;br>
+Don&amp;rsquo;t look back. 不要再回来&lt;br>
+Saul knows a man. 索尔认识一个人&lt;br>
+He specializes in giving people new identities. 专门帮人伪造新身份&lt;br>
+He would move you someplace far away 他会把你送到某个很远的地方&lt;br>
+and set you up with a whole new life. 让你过上全新的生活&lt;br>
+Yeah, I know. Sounds a little extreme. 我知道 听起来是有点极端&lt;br>
+But maybe it&amp;rsquo;s exactly what you need. 但也许这正是你需要的&lt;br>
+You know, I really think that would be good for you. 我觉得这样对你真的很好&lt;br>
+A clean slate. 一个新的开始&lt;br>
+Just think about it. 考虑一下&lt;br>
+You get a job. Something legitimate. Something you like. 你能找一份工作 合法的 你喜欢的&lt;br>
+Meet a girl. Start a family, even. 认识个女孩 甚至成家&lt;br>
+Hell, you&amp;rsquo;re still so damn young. 你瞧你还这么年轻&lt;br>
+And what&amp;rsquo;s here for you now anyway? 再说这里也没什么让你留恋的了&lt;br>
+I tell ya. 我跟你说&lt;br>
+If I could, I&amp;rsquo;d trade places. 如果可以 我愿意和你换&lt;br>
+A whole lifetime ahead of you 大好人生就在前面&lt;br>
+with a chance to hit the reset button. 并且有机会重新开始&lt;br>
+In a few years, this might all feel 过几年再回想起来&lt;br>
+like nothing more than a bad dream. 这一切不过是个噩梦罢了&lt;/p>
+&lt;/blockquote>
+&lt;p>Jesse：&lt;/p>
+&lt;blockquote>
+&lt;p>Would you just, for once, 你能不能就这么一次&lt;br>
+stop working me? 不要控制我&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>What are you talking about? 你在说什么&lt;/p>
+&lt;/blockquote>
+&lt;p>Jesse:&lt;/p>
+&lt;blockquote>
+&lt;p>Can you just, uh, stop working me 你能不能不要控制我&lt;br>
+for, like, ten seconds straight? 哪怕一会儿也好&lt;br>
+Huh? Stop jerking me around? 不要把我当个木偶一样&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Jesse, I am not working you. 杰西 我没有控制你&lt;/p>
+&lt;/blockquote>
+&lt;p>Jesse:&lt;/p>
+&lt;blockquote>
+&lt;p>Yes. Yes, you are. 有 你有&lt;br>
+All right? Just drop the whole concerned dad thing 好吗 不要装出一副慈父的样子&lt;br>
+And tell me the truth. 跟我说实话&lt;br>
+I mean, you&amp;rsquo;re&amp;ndash; you&amp;rsquo;re acting like 你表现得就好像&lt;br>
+me leaving town is&amp;ndash; is all about me 我跑路只对我有好处&lt;br>
+and turning over a new leaf, 可以重新开始似的&lt;br>
+but it&amp;rsquo;s really&amp;ndash; it&amp;rsquo;s really about you. 但事实上 对你好处更大&lt;br>
+I mean, you need me gone, 你需要我离开&lt;br>
+cause your dickhead brother-in-law 因为你那个混蛋小舅子&lt;br>
+is never gonna let up. 不会放手&lt;br>
+Just say so. 直说吧&lt;br>
+Just ask me for a favor. 求我帮你个忙&lt;br>
+Just tell me you don&amp;rsquo;t give a shit about me, 直接告诉我你一点都不在乎我&lt;br>
+and it&amp;rsquo;s either this&amp;ndash; 我要是不离开&lt;br>
+It&amp;rsquo;s either this or you&amp;rsquo;ll kill me 我要是不离开 你就杀了我&lt;br>
+the same way you killed Mike. 就像你杀了麦克一样&lt;br>
+I mean, isn&amp;rsquo;t that what this is all about? 不就是这么回事吗&lt;br>
+Huh? Us meeting way the hell out here? 让我们在这个鬼地方见面&lt;br>
+In case I say no? 以防我拒绝&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="season-5-episode-13----tohajiilee">Season 5 Episode 13 &amp;ndash; To&amp;rsquo;hajiilee&lt;/h3>
+&lt;p>剧情回顾：https://www.youtube.com/watch?v=sE8ebm1IZmE&lt;/p>
+&lt;p>白老师慌的一匹&lt;/p>
+&lt;h3 id="season-5-episode-14----ozymandias">Season 5 Episode 14 &amp;ndash; Ozymandias&lt;/h3>
+&lt;p>场景一：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=28kofqHQg6k&lt;/p>
+&lt;p>Hank 之死。&lt;/p>
+&lt;p>Hank Schrader：&lt;/p>
+&lt;blockquote>
+&lt;p>You&amp;rsquo;re the smartest guy I ever met. 你是我见过最聪明的家伙&lt;br>
+And you&amp;rsquo;re too stupid to see&amp;hellip; 但你却傻到看不出&lt;br>
+he made up his mind ten minutes ago. 十分钟前他就拿定了主意&lt;br>
+Do what you&amp;rsquo;re gonna do. 做你该做的事吧&lt;/p>
+&lt;/blockquote>
+&lt;p>场景二：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=Fq7c6RV88Qg&lt;/p>
+&lt;p>亲看看着 hank 被杀，walt 十分绝望但又无可奈何，加上 Jesse 设套将他逼到如此境地，最终导致了这样的结局，他现在的怒火简直能将 pinkman 吞噬。带走 pinkman 之前，walt 出于报复心理告诉 pinkman 一个关于 Jane 死亡的秘密，pinkman 听后神情呆滞的任由 Jack 的人带走。两人反目，最终走到了这般境地。&lt;/p>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>I watched Jane die. 我亲眼看着简死去&lt;br>
+I was there. 我在场&lt;br>
+And I watched her die. 我眼睁睁看着她死去&lt;br>
+I watched her overdose and choke to death. 我看着她吸毒过量 窒息致死&lt;br>
+I could have saved her. 我本可以救她&lt;br>
+But I didn&amp;rsquo;t. 但我没有&lt;/p>
+&lt;/blockquote>
+&lt;p>场景三：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=eptjj2jSl2k&lt;/p>
+&lt;p>Skyler 也很聪明，知道对方在给她脱罪。正如 saul 所说，这通电话打完对她以后到法庭上很有利。&lt;/p>
+&lt;h3 id="season-5-episode-16----felina">Season 5 Episode 16 &amp;ndash; Felina&lt;/h3>
+&lt;p>场景一：&lt;/p>
+&lt;p>视频链接1：https://www.youtube.com/watch?v=1EehA6C8b4s
+视频链接2：https://www.youtube.com/watch?v=7l6u1FqGMuY&lt;/p>
+&lt;p>让大富豪”帮忙“把钱转移给家人，smart guy！&lt;/p>
+&lt;p>场景二：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=gUJci5RWsqE&lt;/p>
+&lt;p>唉，什么都不说了，看对话吧。&lt;/p>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Skyler 斯凯勒&lt;br>
+Skyler 斯凯勒&lt;br>
+All the things that I did, 我所做的一切&lt;br>
+you need to understand&amp;ndash; 你要理解&amp;hellip;&lt;br>
+If I have to hear 如果我还得&lt;br>
+one more time 再听一次&lt;br>
+that you did this 你这么做&lt;br>
+for the family&amp;ndash; 是为了家人&amp;hellip;&lt;br>
+I did it for me. 我是为了自己&lt;br>
+I liked it. 我喜欢制毒&lt;br>
+I was good at it. 我也很擅长制毒&lt;br>
+And&amp;hellip; 而且&lt;br>
+I was&amp;hellip; 让我觉得&lt;br>
+Really&amp;hellip; 我真的&lt;br>
+I was alive. 还活着&lt;/p>
+&lt;/blockquote>
+&lt;p>场景三：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=NPRZMtrEgus&lt;/p>
+&lt;p>可以说是非常精彩了的复仇了！白老师和 Gus 一样，都是跑到对方的地盘将对方一锅端了，甚至连 Lydia 都没放过，心思缜密如此，乃至于斯！当然这也正印证了复仇前对 skyler 说的话：&lt;/p>
+&lt;p>Skyler:&lt;/p>
+&lt;blockquote>
+&lt;p>You didn&amp;rsquo;t kill anybody sneaking in here, did you? 你偷着进来没有杀谁 对吧
+You didn&amp;rsquo;t hurt anybody? 你没有伤害别人吧&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>No 没有
+Didn&amp;rsquo;t have to. 没有必要&lt;/p>
+&lt;/blockquote>
+&lt;p>Skyler:&lt;/p>
+&lt;blockquote>
+&lt;p>You look terrible. 你好狼狈&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Yeah. 是啊
+But I feel good. 但是我感觉很好&lt;/p>
+&lt;/blockquote>
+&lt;p>Skyler:&lt;/p>
+&lt;blockquote>
+&lt;p>So talk. 说吧
+Why are you here? 你为什么来这里&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>It&amp;rsquo;s over. 都结束了
+And I needed a proper goodbye. 我需要好好告别
+Not our last phone call. 上次在电话里不算&lt;/p>
+&lt;/blockquote>
+&lt;p>Skyler:&lt;/p>
+&lt;blockquote>
+&lt;p>So you&amp;rsquo;re going to the police? 你要去自首吗&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>They&amp;rsquo;ll be coming to me. 他们会来抓我&lt;/p>
+&lt;/blockquote>
+&lt;p>Skyler:&lt;/p>
+&lt;blockquote>
+&lt;p>If you&amp;rsquo;re in custody, 如果你被捕了
+what stops those people from coming back, 那些人不会回来报复吗
+those people you worked with? 跟你合作的那些人
+When&amp;ndash;when I still had the house, 我还住在家里的时候
+three men came 三个男人
+in the middle of the night, 大半夜闯进来
+wearing masks, threatening Holly and Flynn and me. 蒙着面 威胁霍莉 弗林和我
+They told me not to talk about 他们告诉我不要再提及
+that woman I saw at the car wash, 我在洗车行看到的那个女人
+and if you&amp;rsquo;re in custody and they find out&amp;ndash; 如果你被捕了 他们发现&amp;hellip;&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>They&amp;rsquo;re not coming back. 他们不会回来报复的
+Not after tonight. 今晚过后就不会了&lt;/p>
+&lt;/blockquote>
+&lt;p>场景四：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=mo7RBN5V8vs&lt;/p>
+&lt;p>Jesse 到最后还是不忍亲手杀掉老白。&lt;/p>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>Do it. 开枪
+You want this. 你想这样&lt;/p>
+&lt;/blockquote>
+&lt;p>Jesse:&lt;/p>
+&lt;blockquote>
+&lt;p>Say the words. 说出来
+Say you want this! 说你自己想死
+Nothing happens until I hear you say it. 你不说我就不开枪&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt:&lt;/p>
+&lt;blockquote>
+&lt;p>I want this. 我想死&lt;/p>
+&lt;/blockquote>
+&lt;p>Jesse:&lt;/p>
+&lt;blockquote>
+&lt;p>Then do it yourself. 那你自己动手吧&lt;/p>
+&lt;/blockquote>
+&lt;p>场景五：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=6AlEEcanbus&lt;/p>
+&lt;p>结尾白老师去了制毒现场，环顾那些熟悉的场景，摸了摸仪器，拿起了制毒时用的防毒面具，脸上的笑容看起来既欣慰又愉悦。这才是他这样的人应该待的地方！远方数辆警车带着警笛声赶来，白老师倒在了地上，身下白衣被一摊血迹浸染，镜头随即升高、升高。真的是艺术！&lt;/p>
+&lt;h3 id="结语">结语&lt;/h3>
+&lt;p>本来这篇文章一直到 S5E11 的部分我在去年九月份就写完了，由于之后 YouTuBe 官方一直没更 11 集后面的剧情回顾和精彩片段，缺少引用素材，因此就一直放下了。时隔一年，官方的 YouTuBe 频道上 14、15、16 还是没更新，所以只好在链接里引用了别人的剪辑，总而言之系列文章这个坑我还是补回来了hhh&lt;/p>
+&lt;p>刚开始我只是想做个简单的回顾，一篇搞定。但看到里面精彩的台词对话，忍不住把他们全部搬出来细细品味，结果挖了个大坑，最终把五季的台词看了个遍，把里面我认为比较精彩的部分摘录出来共同组成了这五篇《细数 breaking bad 的经典片段》&lt;/p>
+&lt;p>时至今日，Better Call Saul 都已经更完到了第五季，还是同样的风格。Breaking Bad 也出了续集电影，讲述了 Jesse 开车逃出来之后的事情，惟一的遗憾是在续集中没听到 Skyler 及其子女的情况，如今他们住在哪里？生活得怎么样？前合伙人到底有没有把钱捐给 Skyler，如果捐了，Skyler有没有收下&amp;hellip;&lt;/p>
+&lt;p>上面那些疑问可能不会再有答案了，后面还是一起来期待后续 Better Call Saul 的精彩表现吧！&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
+>Breaking Bad&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>The night king piano sheet</title><link>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</link><pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</guid><description>&lt;p>很喜欢 The night king 这首曲子，在 game of thrones 第八季里着实被惊艳到了，之后在油管上看钢琴版看了好多遍。迫于贫穷，买不起钢琴，只能拿这个 &lt;a class="link" href="https://www.autopiano.cn/" target="_blank" rel="noopener"
+>自由钢琴&lt;/a> 过过瘾，于是跟着这个 &lt;a class="link" href="https://www.youtube.com/watch?v=zKroWMAIFYA" target="_blank" rel="noopener"
+>视频&lt;/a> 搞了个谱子。（虽然只跟了视频的前半段:(&lt;/p>
+&lt;p>由于 &lt;a class="link" href="https://www.autopiano.cn/" target="_blank" rel="noopener"
+>自由钢琴&lt;/a> 本身键位不多，而且在同时按下多个按键时无法同步发出声音，毕竟还是和真正的钢琴有较大区别，因此原视频中只跟了右手，右手有按两个按键以上的，我都自作主张裁剪成了两个按键，尽量保持音色与原视频相似。虽然整体效果不如原视频远甚，不过用来娱乐足够了。&lt;/p>
 &lt;p>注：中括号[]里的为同时按下的键&lt;br>
 注：～ 代表延音&lt;br>
-注：对于需要同时按下两个按键可以先尝试只按第一个键，毕竟一旦碰到需要操作比较多的，很容易打断连贯性。（只针对手残党，大佬请无视）&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
+注：对于需要同时按下两个按键可以先尝试只按第一个键，毕竟一旦碰到需要操作比较多的，很容易打断连贯性。（只针对手残党，大佬请无视）&lt;/p>
+&lt;pre tabindex="0">&lt;code>e~ ette~ [ep]~ [ep][ts][ts][ep]~ [pf]～ pss[pd]～ [ps]～ pss[fu]～ [fj]～ ett[yp]～ [ps]～ ippu～
+tttr~ ttte~ eeeq~ qq0~
+[ts][ts][ts][ar]~ [ts][ts][ts][pe]~ [pe][pe][pe][iq]~ [iq][iq][iq][u0]~
+[yE] [ye]~ ette~ e~ ette~ e~ ette~ e~ ettr~ [ep]p~ [ep]tt[ep]~ [ep]p~ [ep]tt[pr]~ [ep]p~ [ep]tt[ep]~ [ep]p [ep]tt[pr]~ [ep]up[ep]~ [ep]~ [ep]~ [ep]tt[pr]~ [ep]~ [ep]~ [ep]up[ep]~ [ep]~ [ep]~ [ep]tt[pr]~ [ep]~ [ep]~ [pf]up[ep]~ [ep]up[ep]~ [pd]tt[rp]ew[ep]tt[rp]~ [pf]up[ep]~ [ep]up[ep]~ [pd]tt[rp]ew[ep]tt[rp]~
+[pj][sl][sl][ak][pj][oh][pj][sl][sl][pj] [pj][sl][sl][ak][pj][oh][pj][dz][dz][pj] [pj][sl][sl][ak][pj][oh][pj][sl][sl][pj] [pj]~ [sl][sl][pj]~
+ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][PE]~ [PE][PE][PE][ep]~
+&lt;/code>&lt;/pre></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
 &lt;p>在路径 &lt;code>/etc/X11/xorg.conf.d/&lt;/code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Section &lt;span style="color:#e6db74">&amp;#34;InputClass&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Identifier &lt;span style="color:#e6db74">&amp;#34;touchpad&amp;#34;&lt;/span>
@@ -22,82 +519,966 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;NaturalScrolling&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;ScrollMethod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;twofinger&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndSection
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
-&lt;p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p>
-&lt;/blockquote></description></item><item><title>创业者不应该犯的错误</title><link>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</guid><description>&lt;p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 四</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注：在有些资料中 Driver 项可能是 synaptics，这是旧的驱动，已经不再更新了。&lt;/p>
+&lt;p>上方的配置项有些可根据个人习惯来设置，例如：NaturalScrolling，TappingButtonMap，ScrollMethod&amp;hellip;它们还有一些其他的选项，可参考 &lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
+>libinput - libinput-based X.Org input driver&lt;/a>&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1">细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4">细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5">细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Libinput" target="_blank" rel="noopener"
+>archlinux libinput&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
+>libinput - libinput-based X.Org input driver&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
+&lt;p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p>
+&lt;/blockquote>
+&lt;p>以上转发自 Solidot.&lt;/p>
+&lt;p>首先需要准备一个美国 IP，然后打开&lt;a class="link" href="https://private-network.firefox.com/" target="_blank" rel="noopener"
+>链接&lt;/a>，安装扩展。&lt;/p>
+&lt;p>美国 IP 喜 +1，官方出品安全性应该也没问题，美滋滋！&lt;/p></description></item><item><title>创业者不应该犯的错误</title><link>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</guid><description>&lt;p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。&lt;/p>
+&lt;ol>
+&lt;li>老板完全不懂这个行业，仅仅根据道听途说的一些名词，认为自己足够了解，要亲自指挥，提出的问题无法切中要点，无法听取意见，不能正常沟通。&lt;/li>
+&lt;li>公司基础软硬件设施缺乏。只想招几个人来实现自己的 idea(对标国内某知名公司 APP)，希望速成，完全不考虑复杂性。&lt;/li>
+&lt;li>根据天眼查上的信息得知，是第一次开公司，注册资金写的x万(x&amp;lt;5)，疑似不懂认缴制度，就“量力而为”了。(对于员工来说这是个风险点)&lt;/li>
+&lt;li>完全不懂如何管理公司，没有详细明确的开发流程。不会主动告诉求职者公司的情况，规章制度，上班时间等一系列基本内容。(事实上也没有规章制度)&lt;/li>
+&lt;li>老板本人奇装异服，杀马特造型。(女性，目测40+，只会给人带来不专业，不靠谱的感觉)&lt;/li>
+&lt;li>不谈福利待遇，只谈干活。还会拿出马云刘强东当年”案例”加以说明。(不提后半句还只是个丑恶的资本家形象，说出后半句真是像极了骗子)&lt;/li>
+&lt;li>希望用低工资招到高级人才，招不到之后表示不打算招。(你这点钱，我很难帮你办事啊.jpg)&lt;/li>
+&lt;li>面完试还要试用两天证明能力后才能签劳动合同。(第一次见这样的公司，说明连两天的试用期工资都不想付。创业有风险，显然她不想承担任何风险)&lt;/li>
+&lt;li>公司上下只有老板一个人，所租的场地有多个公司，场地人不多，空口无凭，也无法得知是否由她所租，跑路成本极低。&lt;/li>
+&lt;/ol>
+&lt;p>以上都是从我一个普通求职者的角度来看。毕竟当局者迷，旁观者清，如果我站在她所处的位置，我也不知道能做到什么程度。接下来我来讨论一下我的看法，如果我是她，我会怎么做。&lt;/p>
+&lt;ol>
+&lt;li>首先第五条肯定不应该犯，给人的第一印象很重要。同时应该时常和员工沟通交流，让他们了解公司的情况，了解你是一个什么样的人。让他们看到你要做这个项目的决心，做好长期无法盈利的准备，证明不是临时起意，给他们信心，起码让他们相信你是一个可靠的人。&lt;/li>
+&lt;li>其次最重要的就是第七条，首先你不懂技术，如果真想做成项目，就应该找一个技术合伙人。或者重金聘请一个带有管理属性资深技术人，还要有着亲和力，领导力，和感召力。你们首先应该完善公司的基础软硬件设施，规章制度，福利待遇，软件开发流程等重要的东西。只有像一个正常的公司，才能打消员工的疑虑。然后充分放权给他，让他全权指挥。虚心听取意见，积极沟通交流，不懂的东西不要插手，让专业的人去干专业的事，只需隔一段时间向其了解情况即可。&lt;/li>
+&lt;/ol>
+&lt;p>针对她的错误，暂时想到这么多，这两点，在我看来基本上就可以了。&lt;/p>
+&lt;p>为什么我会认为这两点很重要？&lt;/p>
+&lt;p>第一点很重要不用多说，如果老板都不靠谱，那就没有进行下去的必要了。&lt;/p>
+&lt;p>我想着重谈一下为什么我会认为第二点很重要。首先作为初创公司，规章制度不完善很正常，但不能没有。基础软硬件设施以及福利待遇是绝对不能缺的，起码应该达到市场水平甚至高于市场水平，毕竟大家都是要从什么都没有的情况下开始建立。关于需要一个有着优秀管理能力的技术大佬，这一点的非常重要，直接能决定公司是否能够存活。这是我这两天来亲身体会的得出的结论。&lt;/p>
+&lt;p>对于初创公司来说，现金流是否充足？项目是否有市场前景？公司能存活多久？&amp;hellip;是摆在公司面前的问题。对于员工来说，关心的大概就是是否能发得起工资？毕竟大家萍水相逢，员工也有自己的生活，没有人会有和公司共进退的意愿和决心。如果无人领导，团队就是一盘散沙。这样的团队是很危险的，任何一个来自内部或外部的变量都会击溃整个团队。因此就需要这样一位有着优秀的管理能力人带领团队，能够起到安抚人心，凝聚人心的作用。就像国家需要众多公务员，宣传国家政策，起到维稳的作用一样。&lt;/p>
+&lt;p>若是以前，我决不会提到，领导力，亲和力，感召力，凝聚力这样的词汇。在管理层大谈企业文化和凝聚力的时候，我也认为这些都是虚幻的，毫无意义的东西。真正的生产力，能给公司带来效益的，是底下真正在做事的人。但我发现我错了，他们才是灵魂所在，至少对于创业公司来说。&lt;/p>
+&lt;p>两天的时间里，我亲眼见证了一个生态系统的建立-毁灭-再重建的过程。亲历了公司从招人，到员工之间的意见交换以及对老板的质疑到最终离开，就像一场博弈。我参与了一场完美的“实验”，它足够真实。同时也再次印证那句话：不要轻易进入一个你不了解的领域。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 四</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="season-4-episode-1----box-cutter">Season 4 Episode 1 &amp;ndash; Box Cutter&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=wGuHyy7qVcQ" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=wGuHyy7qVcQ&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>You kill me, you have nothing.&lt;br>
+You kill Jesse, you don&amp;rsquo;t have me.&lt;/p>
+&lt;/blockquote>
+&lt;p>正如现在 Walt 所做的。之后的剧情里，Jesse 也会这样对他，即使双方之间产生了矛盾。&lt;/p>
+&lt;h3 id="season-4-episode-2----thirty-eight-snub">Season 4 Episode 2 &amp;ndash; Thirty-Eight Snub&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=JkPf7MSdm-A" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=JkPf7MSdm-A&lt;/a>&lt;/p>
+&lt;p>前传中的 Mike 是一个连路人被毒贩枪杀都要去复仇的、富有正义感的人，却在第四季中为 Gus 做事中出手杀掉了逃跑的工程师。这是不是也是一种 Breaking Bad 呢？&lt;/p>
+&lt;h3 id="season-4-episode-4----bullet-points">Season 4 Episode 4 &amp;ndash; Bullet Points&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=0v0VR6Kf7KQ" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=0v0VR6Kf7KQ&lt;/a>&lt;/p>
+&lt;p>Gale 是个有趣的人，可惜死的太早了。再附一个&lt;a class="link" href="https://www.youtube.com/watch?v=o24g21iJmRM" target="_blank" rel="noopener"
+>最后的&lt;del>晚餐&lt;/del>歌曲&lt;/a>&lt;/p>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接：https://www.youtube.com/watch?v=GpyUGiyeSFg&lt;/p>
+&lt;p>&amp;ldquo;To W.W. My star, my perfect silence.&amp;rdquo;&lt;/p>
+&lt;h3 id="season-4-episode-9----bug">Season 4 Episode 9 &amp;ndash; Bug&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=jM6pNUfT6fo" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=jM6pNUfT6fo&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>You asking me if I can cook Mr. White&amp;rsquo;s crystal? Without him?&lt;br>
+Me?&lt;br>
+The junkie loser you were about to waste&lt;br>
+and dump in the desert a month ago?&lt;br>
+This is your plan, huh?&lt;br>
+Invite me in your house, make whatever this is,&lt;br>
+be my buddy and&amp;hellip; and make me feel&lt;br>
+important,&lt;br>
+then get me to keep cooking for you&lt;br>
+after you kill Mr. White.&lt;br>
+You want to&amp;hellip; you want to talk like men?&lt;br>
+Let&amp;rsquo;s talk like men!&lt;br>
+You kill Mr. White, you&amp;rsquo;re gonna have to kill me too.&lt;/p>
+&lt;/blockquote>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=2bsxH-L1v7c" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=2bsxH-L1v7c&lt;/a>&lt;/p>
+&lt;p>没什么好说的，Breaking Bad 每个场景都很好看，忍不住放出来。&lt;/p>
+&lt;h3 id="season-4-episode-10----salud">Season 4 Episode 10 &amp;ndash; Salud&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=4kyxZI1UCKM" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=4kyxZI1UCKM&lt;/a>&lt;/p>
+&lt;p>Jesse 的气场。Gus 的表情好像要笑，一种很欣慰，很为 Jesse 骄傲的感觉。&lt;/p>
+&lt;h3 id="season-4-episode-11----crawl-space">Season 4 Episode 11 &amp;ndash; Crawl Space&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=xpgfENjlcQM" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=xpgfENjlcQM&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Let Mr. White go.&lt;br>
+Pay him off or fire him.&lt;br>
+Don&amp;rsquo;t kill him.&lt;br>
+You know that won&amp;rsquo;t work.&lt;br>
+Then you&amp;rsquo;ve got a problem.&lt;/p>
+&lt;/blockquote>
+&lt;p>不止在这里，在之后 S04E12 中 DEA 带人去洗衣店里，Gus 告诉 Jesse 这都是拜他的 Partner 所赐。Pinkman 仍然坚持他的立场。&lt;/p>
+&lt;blockquote>
+&lt;p>You know, I get it.&lt;br>
+The guy&amp;rsquo;s a complete and total dick,&lt;br>
+but I can&amp;rsquo;t&amp;ndash;&lt;br>
+I&amp;rsquo;m not signing off.&lt;br>
+Okay?&lt;br>
+Like I said,&lt;br>
+if something final&lt;br>
+happens to Mr. White,&lt;br>
+we are going to have a problem.&lt;/p>
+&lt;/blockquote>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8-5DfdWrfsM" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=8-5DfdWrfsM&lt;/a>&lt;/p>
+&lt;p>在前传中，Gus 给 Hector 讲他小时候抓浣熊的故事，现在 Hector 就是他的浣熊。&lt;/p>
+&lt;p>场景3：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=Jf8GaDkFm3E" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=Jf8GaDkFm3E&lt;/a>&lt;/p>
+&lt;p>白老师演的真棒，笑声里充满了绝望。(莫名压上了韵)&lt;/p>
+&lt;h3 id="season-4-episode-12----end-times">Season 4 Episode 12 &amp;ndash; End Times&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=HutGXmWzZhA" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=HutGXmWzZhA&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>I have lived under the threat of death for a year now,&lt;br>
+and because of that,&lt;br>
+I&amp;rsquo;ve made choices.&lt;/p>
+&lt;ul>
+&lt;li>Walt- -Listen to me.&lt;br>
+I alone should suffer the consequences&lt;br>
+of those choices, no one else.&lt;br>
+And those consequences&amp;ndash;&lt;br>
+they&amp;rsquo;re coming.&lt;br>
+No more prolonging the inevitable.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>好喜欢这段，白老师最终还是承认了这一年来都饱受死亡的威胁。&lt;/p>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=ETNTqHAFam0" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=ETNTqHAFam0&lt;/a>&lt;/p>
+&lt;p>这个也是一个很经典的片段，老白受到铃兰花的启示，开始了一系列杀死 Gus 计划。&lt;/p>
+&lt;p>场景3：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=jUnx04T7e4U" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=jUnx04T7e4U&lt;/a>&lt;/p>
+&lt;p>剧情按照老白的剧本发展，成功策反了他，白老师已经变身为大 Boss 了。&lt;/p>
+&lt;h3 id="season-4-episode-13----face-off">Season 4 Episode 13 &amp;ndash; Face Off&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=MybaTnzu9AA" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=MybaTnzu9AA&lt;/a>&lt;/p>
+&lt;p>据说最后 Gus 半张脸走出房间的场景是拜托&lt;a class="link" href="https://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29" target="_blank" rel="noopener"
+>The Walking Dead&lt;/a>的剧组搞得。&lt;/p>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=WZOnmbXeZNs" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=WZOnmbXeZNs&lt;/a>&lt;/p>
+&lt;p>默契的合作，Partner 再现江湖！&lt;/p>
+&lt;p>场景3：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=-X4wWbBGvtQ" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=-X4wWbBGvtQ&lt;/a>&lt;/p>
+&lt;p>I won.&lt;/p>
+&lt;h3 id="结语">结语&lt;/h3>
+&lt;p>精彩的表演，紧张刺激的剧情，真是令人拍案叫绝。对老白即将到来的“Consequences”，不仅像一个石头一样重重地压在老白的身上，也压在观众的心上。当 Gus 死后，压抑低沉的氛围转变为轻松欢快的快节奏音乐，一切都变的云淡风轻，一切都将随风而逝。&lt;/p>
+&lt;p>在天台上，Pinkman 告诉 Walt：&lt;/p>
+&lt;blockquote>
+&lt;p>So Gus didn&amp;rsquo;t poison him after all.&lt;br>
+Still, he&amp;ndash;&lt;br>
+he had to go, right?&lt;/p>
+&lt;/blockquote>
+&lt;p>Walt 回道：&lt;/p>
+&lt;blockquote>
+&lt;p>You&amp;rsquo;re damn right.&lt;br>
+Gus had to go.&lt;/p>
+&lt;/blockquote>
+&lt;p>Pinkman 得知 Gus 并没有下毒后，反而有一些内疚，有些犹豫。善良如 Pinkman，他不知道杀死 Gus 是不是一件正确的事情，于是有了这段对话。在得到肯定的答复后，内心反而有了支持。纵观 Jesse 的过去，他一直都不是个主观意识很强的人。他希望得到别人的认可，当他独自制了一批货，去找白老师评价时，告诉白老师他严格按照步骤进行，仔细把控了每项指标，白老师告诉他他的货是个垃圾。当和 Mike 一起共事后，Mike 经常叫他 Kid，也很认可他，他觉得和 Mike 很亲近。&lt;/p>
+&lt;p>总之，他没有白老师那样的心计，他的冲动和鲁莽也会被人利用，被人耍的团团转。他是个小人物，也是一个不可或缺的重要角色。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
+>Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 三</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
 &lt;ol>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1">细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4">细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5">细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 二</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</link><pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</guid><description>&lt;p>Breaking Bad 的&lt;a href="https://twitter.com/BreakingBad/status/1165405442039676928">电影&lt;/a>要出了，后续剧情，哇，好激动！！&lt;/p>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="season-3-episode-1----no-mas">Season 3 Episode 1 &amp;ndash; No Mas&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=5-8FB6k8jik" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=5-8FB6k8jik&lt;/a>&lt;/p>
+&lt;p>Walt 真是个天生的演讲家，他的演讲总是有一种很舒服的感觉，节奏控制的很好。&lt;/p>
+&lt;h3 id="season-3-episode-6----sunset">Season 3 Episode 6 &amp;ndash; Sunset&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=s3zqUPoVmb0" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=s3zqUPoVmb0&lt;/a>&lt;/p>
+&lt;p>这段也很经典，Hank 将 Walt 和 Jesse 堵在车里的场景。&lt;/p>
+&lt;h3 id="season-3-episode-7----one-minute">Season 3 Episode 7 &amp;ndash; One Minute&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=yp2G586zOEE" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=yp2G586zOEE&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>What do you even care&lt;br>
+as long as you get what you want?&lt;br>
+Right?&lt;br>
+You don&amp;rsquo;t give a shit about me.&lt;/p>
+&lt;/blockquote>
+&lt;p>他们之间的贩毒史可以说并不是一帆风顺，总会遇到各种问题，当计划进展顺利时，俩人都非常兴奋，但一旦出现问题后俩人之间就会争吵不断，甚至还会打架，就这样一路走到了现在。就在 Walt 从最初的杀人都会找两三天理由的人，逐渐成长为 Jesse 口中杀人不眨眼的 “devil”。反观 Pinkman 还仍然是 Mike 口中的 “Kid”，在失去了很多东西后还会说出“你从来都没有关心过我”——这种像一个 Kid 说出的话。&lt;/p>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=BBs_Tw-whVs" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=BBs_Tw-whVs&lt;/a>&lt;/p>
+&lt;p>这一段 Hank 超帅，要知道在前传 &amp;lt; better call saul &amp;gt; 那哥俩俩人端了一窝毒贩，很是犀利。在这里联手却被反杀。&lt;/p>
+&lt;h3 id="season-3-episode-8----i-see-you">Season 3 Episode 8 &amp;ndash; I See You&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=sl0tZDoLw6E" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=sl0tZDoLw6E&lt;/a>&lt;/p>
+&lt;p>Have fun!&lt;/p>
+&lt;h3 id="season-3-episode-10----fly">Season 3 Episode 10 &amp;ndash; Fly&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=QY07i4CPJpQ" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=QY07i4CPJpQ&lt;/a>&lt;/p>
+&lt;p>据说建那个超级地下制毒室花了不少钱，在拍这一集的时候已经没有预算了，因此主角们的活动只能在这个制毒室展开。大家都在说 Walt 打了一整集的苍蝇，看着都要睡着了。不过我倒没这么觉得，在我不知道它是因为预算不足而被迫如此的产物之前，我依然看得很投入，依然期待接下来会如何发展。尤其是之后 Walt 提到在坠机前的一个晚上，在酒吧遇到了 Jane 的父亲，跟他聊到了家庭，他告诉 Walt 永远不要放弃你的家人。当然此时 Jesse 也不知道 Walt 说的家人就是他。之后在他意识逐渐模糊时告诉 Jesse 他对 Jane 事情很抱歉。我当时真以为他就这样告诉了 Jesse。然而没有，他睡着了。编剧安排的太巧妙了！&lt;/p>
+&lt;h3 id="season-3-episode-12----half-measures">Season 3 Episode 12 &amp;ndash; Half Measures&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=IpJjBhd9uEc" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=IpJjBhd9uEc&lt;/a>&lt;/p>
+&lt;p>从最开始去那吸毒家庭要钱，家里只有个饿着肚子的小孩，Jesse 给他弄了点吃得，还耐心的陪他玩。当小孩父母回到家后，Jesse 还细心的把小孩送进里屋。还质问他们“你们算什么父母”。小孩的母亲杀掉他父亲后，Jesse 还哄他闭上眼睛，抱着他出了家门，不想让他看到这种事。之后遇到了 Andrea，当得知 Andrea 有个孩子时，也放弃了向他出售冰毒，Andrea 问他有没有冰毒时，Jesse 马上变得很生气，也同样问出了那句话“你算什么母亲”。直到现在 Gus 的手下利用小孩，在那种形势下他也拒绝握手言和，并站起来质问 Gus 的人品。&lt;/p>
+&lt;p>Jesse 一直在保护小孩，这可能与他的个人成长有关。他这个特点使得后期 Walt 利用它策反 Jesse 一起对付 Gus，但也最终导致了后期 Walt 的大型翻车现场。顺便说一句，Walt 的成长速度简直恐怖，如果不是愤怒，此时的 Jesse 根本不敢杀人，而且至今为止 Jesse 还没杀过人，而现在的 Walt 看起来近距离杀人也不会有很大的反应。&lt;/p>
+&lt;h3 id="season-3-episode-13----full-measures">Season 3 Episode 13 &amp;ndash; Full Measures&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=KSSNXdNXcnw" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=KSSNXdNXcnw&lt;/a>&lt;/p>
+&lt;p>紧张又刺激，Jesse 听完毫不犹豫拿起枪就冲了出去，他们俩真是一对天生的 partner&lt;/p>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=N3I6a_xDqAo" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=N3I6a_xDqAo&lt;/a>&lt;/p>
+&lt;p>这是 Jesse 第一次杀人，Gale Boetticher，他没做错什么，但是却必须死。&lt;/p>
+&lt;p>附一个 &amp;lt; better call saul &amp;gt; 里的 &lt;a class="link" href="https://www.youtube.com/watch?v=90pYh8xw8gk" target="_blank" rel="noopener"
+>Gale&lt;/a>，真是很有趣的化学家，一如前传中的那样，喜欢唱，跳，rapper&amp;hellip;没有篮球。&lt;/p>
+&lt;h3 id="结语">结语&lt;/h3>
+&lt;p>本季从 Walt 开始和 Gus 合作到关系几近破裂，唯有利益关系使得各自还在勉强维持。本季中的 Jesse 从获得了爱情到之后的“had nothing”，最终使得 Jesse 戒除了吸毒。&lt;/p>
+&lt;p>如果没有 Walt，Jesse 可能还会是一个和朋友厮混，时而吸毒，时而制造一些残次的冰毒的街头小混混，一个普通人，一个 “Kid”。他没有 Walt 那种坚忍，适应环境并不断成长的能力，他只能在愤怒的时候说出“你从来没有关心过我”。&lt;/p>
+&lt;p>他和 Walt 都有各自的处事原则，而在内心深处又对对方都留有最基本的信任。因此即使病床上的 Jesse 愤怒的说它会揭发 Walt，而 Walt 仍然告诉 Saul 他不会这么做。这不止是因为他们之间都了解对方，也源于长久制毒以来所建立的信任。在之后的剧情中，Jesse 问 Mike，Gus 从他身上看到了什么？ Mike 回答说，我想可能是忠诚吧。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
+>Breaking Bad&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 二</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</link><pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</guid><description>&lt;p>Breaking Bad 的&lt;a class="link" href="https://twitter.com/BreakingBad/status/1165405442039676928" target="_blank" rel="noopener"
+>电影&lt;/a>要出了，后续剧情，哇，好激动！！&lt;/p>
 &lt;h3 id="关联文章">关联文章&lt;/h3>
 &lt;ol>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1">细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2">细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3">细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4">细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5">细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="season-2-episode-1----seven-thirty-seven">Season 2 Episode 1 &amp;ndash; Seven Thirty-Seven&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=2KjLjSD2yZA" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=2KjLjSD2yZA&lt;/a>&lt;/p>
+&lt;p>正如本集标题，$737,000，这是他们一家 10 年的生活费，剩余的房贷，两个孩子四年的大学学费。知道自己可能命不久矣，他希望临死前给家里留一笔钱，这也是最开始 walter white 制毒的目标和动力。&lt;/p>
+&lt;h3 id="season-2-episode-2----grilled">Season 2 Episode 2 &amp;ndash; Grilled&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=GVVtOYR7Do4" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=GVVtOYR7Do4&lt;/a>&lt;/p>
+&lt;p>Don Hector Salamanca 的第一次出场，他这个名字我觉得好听。Twitter 上还找到了&lt;a class="link" href="https://twitter.com/h_salamanca?lang=en" target="_blank" rel="noopener"
+>这个&lt;/a>2333，前传 &amp;lt; better call saul &amp;gt; 里面交代了他为什么变成这样。本集 Hank 和 Tuco 交火最终击毙了 Tuco。&lt;/p>
+&lt;h3 id="season-2-episode-3----bit-by-a-dead-bee">Season 2 Episode 3 &amp;ndash; Bit by a Dead Bee&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=u3qBYJ2Qgvs" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=u3qBYJ2Qgvs&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Come on, this is bullshit!&lt;br>
+Look at this dude.&lt;br>
+He doesn&amp;rsquo;t even know what planet he&amp;rsquo;s living on.&lt;/p>
+&lt;/blockquote>
+&lt;p>这段也比较搞笑。&lt;/p>
+&lt;h3 id="season-2-episode-6----peekaboo">Season 2 Episode 6 &amp;ndash; Peekaboo&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=FF30TJPK3Lk" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=FF30TJPK3Lk&lt;/a>&lt;/p>
+&lt;p>Where&amp;rsquo;s my money, bitch?&lt;/p>
+&lt;p>附带一个采访 Aaron 的&lt;a class="link" href="https://www.youtube.com/watch?v=UlmviSx09HA" target="_blank" rel="noopener"
+>视频&lt;/a>.&lt;/p>
+&lt;h3 id="season-2-episode-8----better-call-saul">Season 2 Episode 8 &amp;ndash; Better Call Saul&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=dryYPhnvIWw" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=dryYPhnvIWw&lt;/a>&lt;/p>
+&lt;p>终于出现了！Saul Goodman！原名 Jimmy McGill(全名：James Morgan McGill)，他哥哥 Chuck McGill(全名：Charles Lindbergh McGill)唱歌很好听，在前传 &amp;lt; better call saul &amp;gt; 中和 Jimmy 合唱的一首 &lt;a class="link" href="https://www.youtube.com/watch?v=qll7hCYFNjs" target="_blank" rel="noopener"
+>The Winner Takes It All&lt;/a> 很好听。&lt;/p>
+&lt;h3 id="season-2-episode-11----mandala">Season 2 Episode 11 &amp;ndash; Mandala&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=W5_HZ7d2xWc" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=W5_HZ7d2xWc&lt;/a>&lt;/p>
+&lt;p>又一个 Boss 出场了，Gustavo Fring！随着自建销售网络的失败，最终老白找上了商人 Gus。出了一个坑，随后跳进另一个坑，老白此时不知道的是，死亡的阴影又将再次笼罩向他。&lt;/p>
+&lt;h3 id="season-2-episode-12----phoenix">Season 2 Episode 12 &amp;ndash; Phoenix&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=-kyNBaoCvL8" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=-kyNBaoCvL8&lt;/a>&lt;/p>
+&lt;p>剧中 Walter White Jr. 给他父亲做的&lt;a class="link" href="http://www.savewalterwhite.com/" target="_blank" rel="noopener"
+>网站&lt;/a>是真实存在的，还有 saul 的&lt;a class="link" href="https://www.amc.com/shows/better-call-saul/saul-goodman-esq/" target="_blank" rel="noopener"
+>网站&lt;/a>也是存在的，里面的细节真的很多。&lt;/p>
+&lt;p>Walt 晚上在酒吧里遇到了 Jane 的父亲 Donald Margolis，真是奇妙，交谈中，Margolis 告诉他：&lt;/p>
+&lt;blockquote>
+&lt;p>Family.&lt;br>
+Family.&lt;br>
+You can&amp;rsquo;t give up on them. Never.&lt;/p>
+&lt;/blockquote>
+&lt;p>这使得 Walt 回去找 Jesse，推了推 Jesse，未能叫醒，反而她的女友 Jane 睡姿从侧卧被推开成了仰面朝上，Jane 被口中呕吐物呛到时，Walt 想要救她但最后还是停止了，Jane 最终因口中呕吐物窒息而死。&lt;/p>
+&lt;h3 id="结语">结语&lt;/h3>
+&lt;p>从另一方面来讲，入了 Gus 的坑也使得 Salamanca 家族的人没能杀掉他，也是好事。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
+>Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 一</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</link><pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</guid><description>&lt;p>Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p>
 &lt;blockquote>
 &lt;p>The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p>
-&lt;/blockquote></description></item><item><title>Einstein's five-houses riddle</title><link>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</link><pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</guid><description>&lt;p>最近看到一篇发布在 v2ex &lt;a href="https://www.v2ex.com/t/585712">文章&lt;/a>，po 主抛出了一个问题：“随着年龄增长越来越难以集中注意力，你们有吗？”，他在里面描述道：“解题时的注意力越来越发散，难以在头脑里形成完整的逻辑链”，“反而清楚的记得我在小学时就可以仅凭思考就算出爱因斯坦的那个著名推理题甚至不需要借助纸笔”。&lt;/p>
-&lt;p>看到他描述的现象感觉和我之前的一篇&lt;a href="https://wanmei.ml/snow/post/about-imagination/">文章&lt;/a>有一点相似之处，只不过他称之为“注意力”，我在文章中描述的是“想象力的强度”，需要“注意力”，但又不完全是”注意力“。他的经历也从某种程度上佐证了我那个观点——幼年时期的大脑皮层可能更为活跃&lt;/p></description></item><item><title>关于想象力</title><link>https://ireflux.github.io/snow/post/about-imagination/</link><pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/about-imagination/</guid><description>&lt;p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p>
-&lt;p>但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p></description></item><item><title>博客迁移记录</title><link>https://ireflux.github.io/snow/post/blog-migration-record/</link><pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/blog-migration-record/</guid><description>&lt;p>前些天看到某大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。&lt;/p></description></item><item><title>杂谈</title><link>https://ireflux.github.io/snow/post/casual-talk/</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/casual-talk/</guid><description>&lt;p>近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code>sslocal -c /path/filename.config&lt;/code> 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p>
-&lt;p>v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code>inbounds&lt;/code> 和 &lt;code>outbounds&lt;/code> 的配置，一般来说v2ray官网的 &lt;code>新手上路&lt;/code> 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p></description></item><item><title>致遥远的过去</title><link>https://ireflux.github.io/snow/post/to-the-distant-past/</link><pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid><description>&lt;blockquote>
+&lt;/blockquote>
+&lt;h3 id="关联文章">关联文章&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 二&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 三&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 四&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
+>细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="season-1-episode-1----pilot">Season 1 Episode 1 &amp;ndash; Pilot&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=syrW-M41O3U" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a>&lt;/p>
+&lt;p>这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论：&lt;/p>
+&lt;blockquote>
+&lt;p>Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p>
+&lt;/blockquote>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=6zgggVRvrd0" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=6zgggVRvrd0&lt;/a>&lt;/p>
+&lt;p>他在车里仰起头，笑着问 Mr.white 为什么要做这个。事实上这一个场景才让我真正开始注意 Aaron（饰 Jesse Pinkman）。正如在后面的剧情里，加油站女孩对他的描述是“He had really blue eyes.”，“They were really, really blue.”，“He&amp;rsquo;s dreamy.”，Hank总结道。&lt;/p>
+&lt;h3 id="season-1-episode-3----and-the-bags-in-the-river">Season 1 Episode 3 &amp;ndash; &amp;hellip;And the Bag&amp;rsquo;s in the River&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=bBRwg5Lpfa0" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=bBRwg5Lpfa0&lt;/a>&lt;/p>
+&lt;p>walter 无法克服心里的障碍，拼命在找不杀 crazy 8 的理由，哪怕只有一点点，甚至于最后直接问他本人，让他找一个理由说服自己。在之后的聚集里，他的儿子在他的网站里：http://www.savewalterwhite.com/ 以及面对记者采访中说他的父亲是一个非常聪明且心地善良的人，包括 Gretchen Schwartz 在第五季的第15集对 walt 评价道：&lt;/p>
+&lt;blockquote>
+&lt;p>But whatever&amp;ndash;&lt;br>
+whatever he became,&lt;br>
+the&amp;ndash;the sweet, kind, brilliant man&lt;br>
+that we once knew, long ago, he&amp;rsquo;s gone.&lt;/p>
+&lt;/blockquote>
+&lt;p>没错，他的却是一个善良的人，但此时内心非常纠结，最终经过在地下室的一番谈话后，walter 决定放了 crazy 8，直至他检查了盘子碎片，发现少了一块&amp;hellip;&lt;/p>
+&lt;blockquote>
+&lt;p>No, don&amp;rsquo;t do this. Don&amp;rsquo;t do this.&lt;br>
+Why are you doing this?&lt;br>
+why are you doing this?&lt;/p>
+&lt;/blockquote>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=aGY4T_Vp8cA" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=aGY4T_Vp8cA&lt;/a>&lt;/p>
+&lt;p>事到如今，为了自保白老师不得不杀了他。在看到 crazy 8 伸手探向腰间的时候，白老师眼泪都掉下来了，这是一个无可挽回的决定。这是 walt 第一次近距离亲自动手用物理方式杀人。&lt;/p>
+&lt;h3 id="season-1-episode-4----cancer-man">Season 1 Episode 4 &amp;ndash; Cancer Man&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=fI52h9YZ-bI" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=fI52h9YZ-bI&lt;/a>&lt;/p>
+&lt;p>这老哥也是倒霉，在前传 &amp;lt; better call saul &amp;gt; 中就被 Jimmy 和 Kim 骗了一次，在这里又被 Walt 搞，蛤蛤蛤。&lt;/p>
+&lt;h3 id="season-1-episode-5----gray-matter">Season 1 Episode 5 &amp;ndash; Gray Matter&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=35gWXV3y53s" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=35gWXV3y53s&lt;/a>&lt;/p>
+&lt;p>家庭会议中，walt 的演讲。其他人的演讲也很棒，可惜没找到完整的演讲视频，Hank 看起来也很萌233&lt;/p>
+&lt;h3 id="season-1-episode-6----crazy-handful-of-nothin">Season 1 Episode 6 &amp;ndash; Crazy Handful of Nothin'&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=4IAXG9rj9WQ" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=4IAXG9rj9WQ&lt;/a>&lt;/p>
+&lt;p>jesse 被 tuco 打了，白老师带着雷汞酸盐去报仇。&lt;/p>
+&lt;h3 id="season-1-episode-7----a-no-rough-stuff-type-deal">Season 1 Episode 7 &amp;ndash; A No-Rough-Stuff-Type Deal&lt;/h3>
+&lt;p>场景1：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=am_6X_B0OPE" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=am_6X_B0OPE&lt;/a>&lt;/p>
+&lt;p>白老师给 jesse 科普铝热剂。&lt;/p>
+&lt;p>场景2：&lt;/p>
+&lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=tJpfokxtr7c" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=tJpfokxtr7c&lt;/a>&lt;/p>
+&lt;p>walt 自制铝热剂开锁，和 jesse 一起去偷甲氨。&lt;/p>
+&lt;h3 id="结语">结语&lt;/h3>
+&lt;p>还是第一季看起来欢乐的多啊，到了后面几乎既不怎么能看到 Walter White 和 Jesse Pinkman 的笑容了。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
+>Breaking Bad&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Einstein's five-houses riddle</title><link>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</link><pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</guid><description>&lt;p>最近看到一篇发布在 v2ex &lt;a class="link" href="https://www.v2ex.com/t/585712" target="_blank" rel="noopener"
+>文章&lt;/a>，po 主抛出了一个问题：“随着年龄增长越来越难以集中注意力，你们有吗？”，他在里面描述道：“解题时的注意力越来越发散，难以在头脑里形成完整的逻辑链”，“反而清楚的记得我在小学时就可以仅凭思考就算出爱因斯坦的那个著名推理题甚至不需要借助纸笔”。&lt;/p>
+&lt;p>看到他描述的现象感觉和我之前的一篇&lt;a class="link" href="https://wanmei.ml/snow/post/about-imagination/" target="_blank" rel="noopener"
+>文章&lt;/a>有一点相似之处，只不过他称之为“注意力”，我在文章中描述的是“想象力的强度”，需要“注意力”，但又不完全是”注意力“。他的经历也从某种程度上佐证了我那个观点——幼年时期的大脑皮层可能更为活跃&lt;/p>
+&lt;p>之后我也来尝试不借助纸笔来推理一下那道&lt;a class="link" href="https://udel.edu/~os/riddle.html" target="_blank" rel="noopener"
+>谜题&lt;/a>。结果完全失败了，不借助纸笔只能做到把房子排列的颜色列出来，还有一些附带的零碎信息。之后只能借助纸笔，将它完全画了出来，我来说一下我的思路：&lt;/p>
+&lt;p>原题摘抄如下：&lt;/p>
+&lt;h3 id="the-situation">The situation&lt;/h3>
+&lt;ol>
+&lt;li>There are 5 houses in five different colors.&lt;/li>
+&lt;li>In each house lives a person with a different nationality.&lt;/li>
+&lt;li>These five owners drink a certain type of beverage, smoke a certain brand of cigar and keep a certain pet.&lt;/li>
+&lt;li>No owners have the same pet, smoke the same brand of cigar or drink the same beverage.&lt;/li>
+&lt;/ol>
+&lt;p>The question is: Who owns the fish?&lt;/p>
+&lt;h3 id="hints">Hints&lt;/h3>
+&lt;ul>
+&lt;li>the Brit lives in the red house&lt;/li>
+&lt;li>the Swede keeps dogs as pets&lt;/li>
+&lt;li>the Dane drinks tea&lt;/li>
+&lt;li>the green house is on the left of the white house&lt;/li>
+&lt;li>the green house&amp;rsquo;s owner drinks coffee&lt;/li>
+&lt;li>the person who smokes Pall Mall rears birds&lt;/li>
+&lt;li>the owner of the yellow house smokes Dunhill&lt;/li>
+&lt;li>the man living in the center house drinks milk&lt;/li>
+&lt;li>the Norwegian lives in the first house&lt;/li>
+&lt;li>the man who smokes blends lives next to the one who keeps cats&lt;/li>
+&lt;li>the man who keeps horses lives next to the man who smokes Dunhill&lt;/li>
+&lt;li>the owner who smokes BlueMaster drinks beer&lt;/li>
+&lt;li>the German smokes Prince&lt;/li>
+&lt;li>the Norwegian lives next to the blue house&lt;/li>
+&lt;li>the man who smokes blend has a neighbor who drinks water&lt;/li>
+&lt;/ul>
+&lt;p>Einstein wrote this riddle this century. He said that 98% of the world could not solve it.&lt;/p>
+&lt;h3 id="the-solution">The solution&lt;/h3>
+&lt;p>由上文可知，房子一共有 red，green，white，yellow，blue 五种颜色。&lt;/p>
+&lt;blockquote>
+&lt;p>he Norwegian lives in the first house&lt;br>
+the Norwegian lives next to the blue house&lt;/p>
+&lt;/blockquote>
+&lt;p>蓝色一定是排在第二位&lt;/p>
+&lt;blockquote>
+&lt;p>the green house is on the left of the white house&lt;br>
+the green house&amp;rsquo;s owner drinks coffee&lt;br>
+the man living in the center house drinks milk&lt;/p>
+&lt;/blockquote>
+&lt;p>以上三句可以推理出绿色一定是在白色左边的，而且绿色不在中间（第三位），所以绿色在第四位，白色在第五位。&lt;/p>
+&lt;blockquote>
+&lt;p>the Brit lives in the red house&lt;/p>
+&lt;/blockquote>
+&lt;p>英国人住的红房子，而住在第一个房子里的挪威人只能是黄色，红色排在第三位。&lt;/p>
+&lt;p>因此根据已知的信息我们可以得到一个关系表格：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">House&lt;/th>
+&lt;th style="text-align:center">1&lt;/th>
+&lt;th style="text-align:center">2&lt;/th>
+&lt;th style="text-align:center">3&lt;/th>
+&lt;th style="text-align:center">4&lt;/th>
+&lt;th style="text-align:center">5&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">Color&lt;/td>
+&lt;td style="text-align:center">Yellow&lt;/td>
+&lt;td style="text-align:center">Blue&lt;/td>
+&lt;td style="text-align:center">Red&lt;/td>
+&lt;td style="text-align:center">Green&lt;/td>
+&lt;td style="text-align:center">White&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Natl&lt;/td>
+&lt;td style="text-align:center">Norwegian&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">Brit&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Bevg&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Smokes&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Pet&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>再来就是他们的行为：&lt;/p>
+&lt;blockquote>
+&lt;p>the owner of the yellow house smokes Dunhill&lt;br>
+the man living in the center house drinks milk&lt;br>
+the green house&amp;rsquo;s owner drinks coffee&lt;br>
+the man who keeps horses lives next to the man who smokes Dunhill&lt;/p>
+&lt;/blockquote>
+&lt;p>这四句，显而易见，Norwegian 抽的是 Dunhill，Brit 喝得是牛奶，绿房子房主喝得是咖啡，Norwegian 的邻居（即蓝房子房主）家里养的是马。&lt;/p>
+&lt;p>此时，关系图表如下所示：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">House&lt;/th>
+&lt;th style="text-align:center">1&lt;/th>
+&lt;th style="text-align:center">2&lt;/th>
+&lt;th style="text-align:center">3&lt;/th>
+&lt;th style="text-align:center">4&lt;/th>
+&lt;th style="text-align:center">5&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">Color&lt;/td>
+&lt;td style="text-align:center">Yellow&lt;/td>
+&lt;td style="text-align:center">Blue&lt;/td>
+&lt;td style="text-align:center">Red&lt;/td>
+&lt;td style="text-align:center">Green&lt;/td>
+&lt;td style="text-align:center">White&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Natl&lt;/td>
+&lt;td style="text-align:center">Norwegian&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">Brit&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Bevg&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">Milk&lt;/td>
+&lt;td style="text-align:center">Coffee&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Smokes&lt;/td>
+&lt;td style="text-align:center">Dunhill&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Pet&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">Horse&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>the owner who smokes BlueMaster drinks beer&lt;br>
+the Dane drinks tea&lt;/p>
+&lt;/blockquote>
+&lt;p>结合已知信息，饮料一共有牛奶，咖啡，啤酒，茶和水，其中 3,4 分别是牛奶和咖啡，丹麦人喝茶（排除1，3,4,原因：挪威人，牛奶，咖啡），而抽 BlueMaster 的喝得是啤酒（排除1,3，4,原因：抽 Dunhill，牛奶，咖啡），所以只剩一个水选项，只能给挪威人。因此5号房间只能是抽 BlueMaster，喝啤酒的人。因为丹麦人喝茶，所以只能在2号房间。&lt;/p>
+&lt;blockquote>
+&lt;p>the man who smokes blend has a neighbor who drinks water&lt;/p>
+&lt;/blockquote>
+&lt;p>喝水的是一号房间，只能是二号抽的 blend。&lt;/p>
+&lt;blockquote>
+&lt;p>the German smokes Prince&lt;/p>
+&lt;/blockquote>
+&lt;p>根据 1,2,5 已有 smoke，4 是英国人，推理出 4 号房间是德国人，抽 prince&lt;/p>
+&lt;blockquote>
+&lt;p>the Swede keeps dogs as pets&lt;/p>
+&lt;/blockquote>
+&lt;p>因此，瑞典人只能是 5 号房（1：Norweg，2：Dane，3：Brit，4：German）&lt;/p>
+&lt;blockquote>
+&lt;p>the person who smokes Pall Mall rears birds&lt;/p>
+&lt;/blockquote>
+&lt;p>只有 3 号房间同时缺少 smoke 和 pet，因此 3 号房间抽 Pall Mall，养鸟。&lt;/p>
+&lt;blockquote>
+&lt;p>the man who smokes blends lives next to the one who keeps cats&lt;/p>
+&lt;/blockquote>
+&lt;p>所以只能是 1 号房间养猫（3 号已经养鸟了）&lt;/p>
+&lt;p>最后只剩下一个空位，只能是 German 养鱼。&lt;/p>
+&lt;p>最后关系图表如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">House&lt;/th>
+&lt;th style="text-align:center">1&lt;/th>
+&lt;th style="text-align:center">2&lt;/th>
+&lt;th style="text-align:center">3&lt;/th>
+&lt;th style="text-align:center">4&lt;/th>
+&lt;th style="text-align:center">5&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">Color&lt;/td>
+&lt;td style="text-align:center">Yellow&lt;/td>
+&lt;td style="text-align:center">Blue&lt;/td>
+&lt;td style="text-align:center">Red&lt;/td>
+&lt;td style="text-align:center">Green&lt;/td>
+&lt;td style="text-align:center">White&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Natl&lt;/td>
+&lt;td style="text-align:center">Norwegian&lt;/td>
+&lt;td style="text-align:center">Dane&lt;/td>
+&lt;td style="text-align:center">Brit&lt;/td>
+&lt;td style="text-align:center">German&lt;/td>
+&lt;td style="text-align:center">Swede&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">beverages&lt;/td>
+&lt;td style="text-align:center">Water&lt;/td>
+&lt;td style="text-align:center">Tea&lt;/td>
+&lt;td style="text-align:center">Milk&lt;/td>
+&lt;td style="text-align:center">Coffee&lt;/td>
+&lt;td style="text-align:center">Beer&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Smokes&lt;/td>
+&lt;td style="text-align:center">Dunhill&lt;/td>
+&lt;td style="text-align:center">Blends&lt;/td>
+&lt;td style="text-align:center">Pall Mall&lt;/td>
+&lt;td style="text-align:center">Prince&lt;/td>
+&lt;td style="text-align:center">Blue Master&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Pet&lt;/td>
+&lt;td style="text-align:center">Cat&lt;/td>
+&lt;td style="text-align:center">Horse&lt;/td>
+&lt;td style="text-align:center">Birds&lt;/td>
+&lt;td style="text-align:center">Fish&lt;/td>
+&lt;td style="text-align:center">Dogs&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>关于想象力</title><link>https://ireflux.github.io/snow/post/about-imagination/</link><pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/about-imagination/</guid><description>&lt;p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p>
+&lt;p>但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p>
+&lt;p>在此，我们可以换个角度来讨论，从想象力的强度来考虑。何为想象力的强度？即素材在大脑进行加工时，具像化的程度。就我个人而言，当我还处于幼年期，想象家里的钟表时，能毫不费力的将其具像化，并在上面进行一些加工，使其变成图像或者动画。具象化程度之高，就像在眼前出现一样清晰。而当我现在再去想象钟表，却发现很难再做到这一点，记忆还是很清晰，但是很难根据记忆用想象将它描绘出来，只能完成一个轮廓，当我集中注意力去描绘钟表细节的时候，之前描绘的轮廓又都消失了。&lt;/p>
+&lt;p>因此，就我个人的经历而言得出的结论（不具备普适性），我现在想象力的强度远远不及孩提时代，或许是成年后大脑的活跃度降低或是什么原因。因此是否也在某种程度上证明了观点一——儿童具有丰富的想象力。（这里的“丰富”指的是脑部资源的丰富，可以轻松渲染出场景及事物）&lt;/p></description></item><item><title>博客迁移记录</title><link>https://ireflux.github.io/snow/post/blog-migration-record/</link><pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/blog-migration-record/</guid><description>&lt;p>前些天看到某大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。&lt;/p>
+&lt;p>博客的迁移是个体力活，主要还是文章的迁移，由于Hugo的标头(e.g. title,tags,category)的写法和Hexo略有不同，因此需要将文章中的标头全改成Hugo能识别的写法，另外还有一些文章里用到了Hexo里带的一些写法，也要改掉。看来以后还是要尽量使用Markdown原生语法，不然迁移博客会很麻烦:(&lt;/p>
+&lt;p>Github pages上分为 &lt;code>User/Organization pages&lt;/code> 和 &lt;code>Project pages&lt;/code>，配置的方式Hugo的&lt;a class="link" href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener"
+>文档&lt;/a>写的很详细，选择一种按照步骤走就可以了。&lt;/p>
+&lt;p>我的master分支放的是源文件，gh-pages放的是生成的静态文件，正如Hugo官网所说：这样做的好处是使其有独立的版本控制。我原来用Hexo的User pages保留了，现在上面只挂一个resume，其他文章全都迁移到了Project pages上，也就是用Hugo的这个博客。体验确实很好，静态文件基本上是秒生成，完美！&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener"
+>host on github&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="noopener"
+>official documentation for custom domains&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>杂谈</title><link>https://ireflux.github.io/snow/post/casual-talk/</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/casual-talk/</guid><description>&lt;p>近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code>sslocal -c /path/filename.config&lt;/code> 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p>
+&lt;p>v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code>inbounds&lt;/code> 和 &lt;code>outbounds&lt;/code> 的配置，一般来说v2ray官网的 &lt;code>新手上路&lt;/code> 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p>
+&lt;p>linux上客户端的使用最简单的方式就是找一些配置文件改改来用。例如：可以在线生成配置文件的&lt;a class="link" href="https://www.veekxt.com/utils/v2ray_gen" target="_blank" rel="noopener"
+>配置文件生成器&lt;/a>;再比如 V2Ray 配置文件模板收集仓库 &lt;a class="link" href="https://github.com/KiriKira/vTemplate" target="_blank" rel="noopener"
+>Github&lt;/a>;还可以直接导入到Windows GUI程序中，然后再导出配置文件来用。&lt;/p>
+&lt;hr>
+&lt;p>前几天python连接docker中的redis的时候发现总是出现 &lt;code>Connection refused&lt;/code> ，刚开始还以为docker网络的配置原因，后来才发现原来是redis配置文件的缘故。将 &lt;code>bind 127.0.0.1&lt;/code> 着一条注释掉就好了 Hmmm&lt;/p>
+&lt;hr>
+&lt;p>今天照例滚系统，在安装Wps office的时候yaourt提示 &lt;code>No space left on device&lt;/code>，看了一下，原来是/tmp空间不够。搜寻了一圈之后发现两个解决方案：&lt;/p>
+&lt;ol>
+&lt;li>mount -o remount,size=5G /tmp/&lt;/li>
+&lt;li>umount /tmp &amp;amp;&amp;amp; mount -t tmpfs -o size=1048576,mode=1777 overflow /tmp&lt;/li>
+&lt;/ol>
+&lt;p>第一种要比第二种简洁很多，不过第二种的 &lt;code>mode=1777&lt;/code> 没看懂是什么意思，随后去查了man page，以下引用自man page：&lt;/p>
+&lt;blockquote>
+&lt;p>Set the mode of all files to value &amp;amp; 0777 disregarding the original permissions. Add search permission to directories that have read permission. The value is given in octal.&lt;/p>
+&lt;/blockquote>
+&lt;p>大概就是类似于 &lt;code>chmod&lt;/code> ，至于为什么会是 &lt;code>1777&lt;/code> ，以下引用 &lt;a class="link" href="https://en.wikipedia.org/wiki/Sticky_bit" target="_blank" rel="noopener"
+>wikipedia&lt;/a>:&lt;/p>
+&lt;blockquote>
+&lt;p>When a directory&amp;rsquo;s sticky bit is set, the filesystem treats the files in such directories in a special way so only the file&amp;rsquo;s owner, the directory&amp;rsquo;s owner, or root user can rename or delete the file. Without the sticky bit set, any user with write and execute permissions for the directory can rename or delete contained files, regardless of the file&amp;rsquo;s owner. Typically this is set on the /tmp directory to prevent ordinary users from deleting or moving other users&amp;rsquo; files.&lt;/p>
+&lt;/blockquote>
+&lt;p>大致意思就是说一旦设置了 &lt;code>sticky bit&lt;/code> ，只有目录/文件的所有者或者root账户才能对文件进行写操作，其他的用户即使获得了对这个目录写操作权限，也无法对其进行写操作。&lt;/p>
+&lt;p>之后又去 archlinux wiki 上看了看，发现yaourt开发者在2018年11月10号的一条&lt;a class="link" href="https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631" target="_blank" rel="noopener"
+>issue&lt;/a>中表示无意再继续维护yaourt了，之后2018年11月30号被aur helper页面标记为停更，2019年3月25号从aur help中被移除。&lt;/p>
+&lt;p>看了看发现大家比较推荐yay，自己 &lt;code>makepkg -si&lt;/code> 的话确实会麻烦一点，想了一下还是换成了yay。archlinuxcn源也能解决不少aur里的东西，于是再次添加上了archlinuxcn源。&lt;/p>
+&lt;p>不得不说 wps for linux 新版本UI变漂亮了好多。&lt;/p>
+&lt;p>嗯，真香。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://www.v2ray.com/" target="_blank" rel="noopener"
+>Project V&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Sticky_bit" target="_blank" rel="noopener"
+>Sticky_bit&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/AUR_helpers" target="_blank" rel="noopener"
+>aur helper&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>致遥远的过去</title><link>https://ireflux.github.io/snow/post/to-the-distant-past/</link><pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid><description>&lt;blockquote>
 &lt;p>最是人间留不住，朱颜辞镜花辞树&lt;/p>
 &lt;/blockquote>
 &lt;p>我依然记得她的模样。我还依稀记得，小时候去她家里，她都笑容满面的模样，有时侯她看着我们玩，有时问我一些家里的、生活上的琐事。&lt;/p>
 &lt;p>长大一些后，我更想待在家里玩电脑，不再像小时候天天跑别人家里，找别人出去玩。虽然次数开始变得很少，但每次去她家，她都会很热情的拿过来一些东西让我们吃，她每次见到我们都会笑，笑容显得很和煦。离开的时候，都会叫我们以后有空了就来玩。那时候的她看起来依然很健朗。&lt;/p>
-&lt;p>直到现在我依然觉得难以相信，只能不得不感叹有时候人的命运真的很难预料。但这却又让我想起另一件事情。&lt;/p></description></item><item><title>不再年轻</title><link>https://ireflux.github.io/snow/post/no-longer-young/</link><pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/no-longer-young/</guid><description>&lt;blockquote>
+&lt;p>直到现在我依然觉得难以相信，只能不得不感叹有时候人的命运真的很难预料。但这却又让我想起另一件事情。&lt;/p>
+&lt;p>&amp;hellip;&lt;/p>
+&lt;p>今年七月份，我有个很亲近的亲戚也不在了，他们家离我们家不远，只记得小时候爸爸会经常带着我去他们家玩，当时在他们家还拍了照片，在我很小的时候。他们家和我们家院子的布局很像。之后我每次看到这个照片，脑海中都会似有似无的浮现出当时的场景，我甚至都分不清楚这些是真实还是我臆想出来的东西。&lt;/p>
+&lt;p>我经常会分不清亲戚之间的关系，以前家里人也都和我说过好多次，我自己也问过好多次，但是每次之后都忘记了，每次碰到认识的亲戚我都不知道该称呼什么，拼命从脑海中搜寻出模糊的记忆，但又怕叫错而不敢说出来，最终都只好看着人家笑笑。&lt;/p>
+&lt;p>当家人告诉我这件事情的时候，我刚在北京实习了不到半个月，离家不远，父亲的意思是想让我回去一趟。我觉得关系很近，长大后又很少去那边玩，也总是搞不清该称呼什么，心里也觉得很亏欠，因此我自己也倾向于回家一趟。但事情往往不会遂人愿，在种种原因的结合作用下。最终，我还是没能回家。&lt;/p>
+&lt;p>一次又一次的历史证明，父亲总是对的。现在想想当时我当时真应该回去。如果我当时回家的意愿足够坚定的话，还是可以回去的。但如今我再也不能亲自回家为他送行了，我再也不能稍稍弥补一下我心里的歉意了。&lt;/p>
+&lt;p>&amp;hellip;&lt;/p>
+&lt;p>去年的时候，我的邻居离开的也很突然，我平时称呼她为小国奶奶，她是个很好的人。在我小时候，每次晚上家里停电的时候，父亲就会让我去邻居家看看，我总是兴冲冲的跑出去，跑着进她家门口就开始喊，问她家里有没有停电。&lt;/p>
+&lt;p>有段时间她买了个压面机，开始做面条来卖，去她家买面条的人很多，我经常去她家玩，因为会有很多面条都挂在一排一排的竹竿上，就像一个帘子一样，我觉得那样很好玩。有时候她会把面条一边做一边把一头挂在竹竿上，我会帮她拿着竹竿，抬高不让面条掉在地上，慢慢后退，看着面条越来越长。最后举着竹竿挂在外面，看着外面的“竹帘”慢慢变多，就很高兴，像是在完成一个艺术品。小时候什么东西都能玩的起来，总是能找到无尽的乐趣。&lt;/p>
+&lt;p>去年暑假我在家，当我看到有个人慌慌张张的跑进我们家大声喊叫，我们当时在用电锯锯钢筋，声音很大，我们都听不到。然后我们关掉电锯，那个人说了句什么，只看到父亲放下手里的活就跑了出去，我也意识到出了什么事情，就连忙跟了上去。当我看到她躺在地上的时候，我不知道作何感想，只是觉得一个时代终结了。&lt;/p>
+&lt;p>自从我上大学后，回来就很少碰到邻居，偶尔远远的看见，也只是匆匆走过，很少去主动打招呼。当事情发生后，事后回想起来，感觉世事难料的同时也觉得很奇妙。昨天我恰好碰到她，从她旁边走过，我罕见的和她打了招呼，连我自己都有种久违的感觉。她露出了笑容，目光跟随着我。她还是以前的模样，只是白头发变得多了，身子也佝偻了些，但看起来精神很好，甚至在当时的阳光下她脸上闪现着光芒，是那种由内而外的、柔和的光芒。直到现在我还清楚的记得她当时的每一个动作，她的笑容，她面庞上散发的光辉，记得那种奇妙的，玄之又玄的感觉。这是我见她生前的最后一面。&lt;/p></description></item><item><title>不再年轻</title><link>https://ireflux.github.io/snow/post/no-longer-young/</link><pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/no-longer-young/</guid><description>&lt;blockquote>
 &lt;p>那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p>
 &lt;/blockquote>
 &lt;p>大三时当我忽然发觉我都已经21岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经20多了啊，他感叹道。&lt;/p>
-&lt;p>对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p></description></item><item><title>漫谈中国的饮酒文化</title><link>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</link><pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</guid><description>&lt;p>中国社会有个很神奇的现象，每逢聚会或商业应酬必定要喝酒，小到还在上学的初中生，大至几十岁的大龄人员，几乎很难看到在同一桌相互认识的同龄人想喝酒的人喝酒，想喝饮料/果汁的人喝饮料/果汁的和谐景象。总有人觉得别人喝酒，自己不和人家一块喝好像不尊重别人。这一点就很奇怪，这难道不是看个人意愿？为什么“酒”这个东西在中国被赋予了如此厚重的意义？&lt;/p></description></item><item><title>四十不惑</title><link>https://ireflux.github.io/snow/post/forty-years-old/</link><pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/forty-years-old/</guid><description>&lt;p>When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&amp;rsquo;t know how to do is right.&lt;/p>
-&lt;p>When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p></description></item><item><title>Recommend two websites</title><link>https://ireflux.github.io/snow/post/recommend-two-sites/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid><description>&lt;h1 id="i-rememberhttpi-rememberfren">&lt;a href="http://i-remember.fr/en">I remember&lt;/a>&lt;/h1>
+&lt;p>对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p>
+&lt;p>我一直认为22岁就像是个分水岭，22岁就已经变老了，从数值上来说，21毕竟还紧挨着20，虽然年龄看起来大，但感觉上还是年轻的。一旦到了22，就已经呈现出渐渐远离的姿态，马不停蹄地奔向下一个点，就像宇宙加速膨胀，月球加速远离地球一样。&lt;/p>
+&lt;p>时间似乎也在以加速度前进。&lt;/p>
+&lt;p>20岁，以前还小的时候总觉得只存在很遥远的地方，从不敢想象，一直都以为还离得很远，当个位终于向前进了一位，现实就这样忽然间出现在眼前。&lt;/p>
+&lt;p>20岁的时候我会变成什么样子呢？&lt;/p>
+&lt;p>嗯，还真是有些失望呢&lt;/p></description></item><item><title>漫谈中国的饮酒文化</title><link>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</link><pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</guid><description>&lt;p>中国社会有个很神奇的现象，每逢聚会或商业应酬必定要喝酒，小到还在上学的初中生，大至几十岁的大龄人员，几乎很难看到在同一桌相互认识的同龄人想喝酒的人喝酒，想喝饮料/果汁的人喝饮料/果汁的和谐景象。总有人觉得别人喝酒，自己不和人家一块喝好像不尊重别人。这一点就很奇怪，这难道不是看个人意愿？为什么“酒”这个东西在中国被赋予了如此厚重的意义？&lt;/p>
+&lt;p>“酒”的口感设定是很反人类的，为什么这么说？只要将酒这种液体和市面上所有可以称之为“喝”的东西做一个横向对比，我不敢说酒的口感是最差的，但它一定不是最好的，保守点说，它的口感处于中下，这一点应该没什么异议。那为什么人们还要强迫自己喝他们不喜欢的东西呢？如果只看上面看不出酒文化有多么恶劣，那么我来举个例子就一目了然了。现在开始假设：&lt;/p>
+&lt;p>在很久以前就有了dota这款游戏，当时的四个技能的键位默认为“Q”，“Z”，“P”，“M”，相比于“F1,ctrl，Num 9，Num 3”来说它不是最差的，但不得不承认，这个键位也是相当反人类的。然后当每次大家开黑或者聚在一起聊天时都会谈起这个键位，都对其称赞有加，甚至于许多人都写文章赞美这个键位，“QZPM”这个键位在历史上享有很高的声誉。就这样，这个键位的习惯流传至今。忽然有一天，一个宿舍开黑，其中一个人说:“我不用QZPM，我想用WERF，这个更好用一点”。然后其他人就感觉受到了极大的冒犯，甚至质问他：“别人都用，凭什么你不用？”，“有更好用的，为什么不用？自己想用啥，和别人有什么关系？会影响到别人的操作？”，他反问道。话虽如此，那四个人无法反驳，但仍然感觉不被别人尊重。&lt;/p>
+&lt;p>还是要承认，洗脑是真实存在的。在如今这个自由开放的年代，仍然会有很多别有用心的人或组织、以各种形式来影响甚至是试图操控别人的思想，前段时间被曝出的有人利用Facebook用户信息涉嫌操纵美国大选就是最好的例子。回到本文，原本想喝什么跟别人是没有任何关系的，但为什么一起吃饭的时候拒绝喝酒，别人会感觉到不被尊重？换句话说，两个八竿子打不着的东西被强行揉合到一起，并在人们的心里根深蒂固，这就是酒文化赋予的附加属性，MEANLESS！人类受传统文化荼毒有多深，可见一斑。&lt;/p>
+&lt;p>&lt;del>(遵循这种垃圾文化又不会因此寿命而增加一秒(跑&lt;/del>&lt;/p></description></item><item><title>四十不惑</title><link>https://ireflux.github.io/snow/post/forty-years-old/</link><pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/forty-years-old/</guid><description>&lt;p>When I was a child, Whenever things in life have two or more options, I don’t know how to choose. Or when things are difficult for me, I don&amp;rsquo;t know how to do is right.&lt;/p>
+&lt;p>When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p>
+&lt;p>Now I&amp;rsquo;m 22. I fount I still can&amp;rsquo;t make a choice right now for difficult things. I still don&amp;rsquo;t know how to do is right. I am trying to find a perfect way to slove difficult question in the life, there may not be a &amp;lsquo;perfect&amp;rsquo; way at all. I have also seen some 30s people ask some question or chat on forum, sometimes I can feel their negative emotions. Obviously, they can&amp;rsquo;t solve all the problems either. There is a saying in the Chinese Analects：三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲，不逾矩。Can really no doubt at forty? I don&amp;rsquo;t think so. This question may be when I 40 years old, then I will be know.&lt;/p>
+&lt;p>Every adult is a child, they can&amp;rsquo;t slove everything problem. they are also need keep learning. Everyone is the same. The difference with children is that the older the more difficult to be forgiven if make a same mistake. The cost of mistakes will increase. Life does not allow them too many opportunities to try, so they can only be cautious, walking every step of the ice. They also have negative emotions, but they are not easily displayed in front of people.&lt;/p></description></item><item><title>Recommend two websites</title><link>https://ireflux.github.io/snow/post/recommend-two-sites/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid><description>&lt;h1 id="i-rememberhttpi-rememberfren">&lt;a class="link" href="http://i-remember.fr/en" target="_blank" rel="noopener"
+>I remember&lt;/a>&lt;/h1>
 &lt;p>&lt;em>Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em>&lt;/p>
 &lt;p>很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p>
 &lt;p>初次进入I remember时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p>
-&lt;p>鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p>
+&lt;p>还可以通过关键字来搜寻类似的记忆，过程特效也做的非常棒。如此炫酷的网站，还不快来体验一下！&lt;/p>
+&lt;p>&lt;strong>友情提示:&lt;/strong> 打开后可能会感觉风扇狂转，这不是错觉:D&lt;/p>
+&lt;h1 id="1000-awesome-thingshttp1000awesomethingscom">&lt;a class="link" href="http://1000awesomethings.com/" target="_blank" rel="noopener"
+>1000 Awesome things&lt;/a>&lt;/h1>
+&lt;p>快节奏的生活使人终日忙忙碌碌，还要关注着很多事情，人的大脑就像CPU一样不停歇的运转，仿佛上帝终于发现让CPU闲置就是浪费这个道理一样。长久下来难免就会产生很多负面情绪，很难开心起来。&lt;/p>
+&lt;p>即使有了闲暇的时候，也没办法完全放松下来。总感觉时间过的那么快，什么都来不及去做。大概再也回不到过去那种“忙的时候忙，闲的时候能静下来思考些东西而不必考虑时间流逝或者什么都不想只管玩”生活状态了。&lt;/p>
+&lt;p>上文转载的文章《长大后之所以不快乐，是因为成年人丧失了获取快乐的天赋！》中提到的《生命中最美好的事都是免费的》这本书以及摘抄的80个能另人开心起来的美妙时刻便是脱胎于这个网站。&lt;/p>
+&lt;p>单单那80个能令人开心起来的美妙时刻就让人感觉很平静，何况是1000个！&lt;/p>
+&lt;hr>
+&lt;p>说个我个人最近的：&lt;/p>
+&lt;ol>
+&lt;li>经常在那家板面店吃饭，我和店主都认识了。每天订的板面，店主做好后，出门前在微信上跟我说一声，随后我回应一声就穿好外套下楼。每次都是我们两个__同时__到达后门，时间上刚刚好，经常精确到秒级。&lt;/li>
+&lt;/ol></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p>
 &lt;h2 id="体验">体验&lt;/h2>
-&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p></description></item><item><title>New Year's Eve</title><link>https://ireflux.github.io/snow/post/new-year-eve/</link><pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/new-year-eve/</guid><description>&lt;p>前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p>
+&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p>
+&lt;p>之后进入了主界面，不得不说，虽然界面和Github比较像，但这不是重点，重点是那个WEBIDE的DEMO试玩了一下，真的是AWESOME，在来就是那个动态Pages了，启动部署后发现网址居然是好长（&amp;gt;30位）的一个随机码.coding.io，果然如官网所说会得到一个”xxx.coding.io“的网址:(，之前还以为是用户名+coding.io，就像Github的静态页面一样。现在这就比较坑了，不搞个域名都没什么实用的价值……然而自定义域名需要银牌会员以上，想成为银牌会员需要完善身份信息，然后还是受限制的自定义域名，每次访问都会出现“该网站托管在 Coding Pages 上” ，然后再跳转到原站。想要不受限制，需要升级到金牌会员以上，也就是充值199/year……&lt;/p>
+&lt;p>免费的东西果然还是不能想太多，考虑到WordPress过于臃肿，于是我选择了Typecho，Coding有个官方的pages-demo项目，其中README中截图显示可以在创建仓库时直接从github开源项目中导入仓库，我认真的找了下，骗子！明明没有这个选项！（不知道是不是被官方在后期更新中砍掉了)，只好自己推了，从官网下载后解压，原本想直接上传上去，结果却提示有非法字符，后来发现文件中似乎有一些&amp;quot;@&amp;ldquo;字符，这样的话只能用Git了。&lt;/p>
+&lt;p>最后用Git推送到Coding时，出现了一个错误，如下所示：&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>error: failed to push some refs to &amp;lsquo;../xxx.git&amp;rsquo;&lt;br>
+hint: Updates were rejected because the remote contains work that you do&lt;br>
+hint: not have locally. This is usually caused by another repository pushing&lt;br>
+hint: to the same ref. You may want to first integrate the remote changes&lt;br>
+hint: See the &amp;lsquo;Note about fast-forwards&amp;rsquo; in &amp;lsquo;git push &amp;ndash;help&amp;rsquo; for details.&lt;/p>
+&lt;p>原因可能是因为创建Coding仓库的时候带了一个README，和本地仓库不同步，可能需要git pull一下，我当时没试，直接git push -f origin master强制推送上去了。&lt;/p>
+&lt;p>最后重新部署一下，访问网址，然后根据动态Pages中所提供的数据库连接信息填写数据库信息，安装成功！&lt;/p></description></item><item><title>New Year's Eve</title><link>https://ireflux.github.io/snow/post/new-year-eve/</link><pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/new-year-eve/</guid><description>&lt;p>前几天，有人往群里发了一首音乐，是仙剑奇侠传一中的经典音乐。&lt;/p>
 &lt;p>每次听到仙剑的经典音乐，总会把我拉进回忆漩涡里。那种奇特而又熟悉的感觉，就想起在玩仙剑四的场景。在游戏里探索，进入民宅搜索可用的物资，在村子里四处闲逛。&lt;/p>
-&lt;p>村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>就像在河的对岸,
-我看不到她,她看不到我,
-但似乎能够感受到来自对岸细若游丝的信号,
-像一根随时都会断掉的线,
-就像是宇宙中遥远星辰散发着若有若无的光芒,
-我不知道该如何回应.
-耳边的轻音乐让我一度以为回到了从前,
-那段缓慢的,不知忧虑的时光,
-随之而来的洪流将这一切击的粉碎,
-窗外一眼望去仍然是被树木遮掩,
-四周依然是熟悉的景物,一如三年以前.
-p.s. 轻音乐：歌曲：命 歌手：石田勝範</description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>村子环境很好，各种小木屋，很漂亮，有些还是二层小楼房。神游仙境，每次看到人就想过去跟他对话。恬静舒适悠闲的环境，深深向往之。那真是相当神奇的体验。以至于它深深嵌入到我的记忆里，每次音乐响起就能感受到那种真实。因此有人说，仙剑最大的成就并不是游戏，而是音乐。&lt;/p>
+&lt;p>我最先接触到到的是仙剑一，通过电视剧。之后开始玩的第一部仙剑系列游戏便是仙剑奇侠传四，当时没通关，现在想想真是遗憾。之后仙剑三热播，那时候我已经很少看电视了。由于各电视台来来回回播了好几遍，偶尔别人在看的时候，我也在旁边跟着看一段。断断续续，竟然也拼凑完了后半部。不过讲真，我个人并不喜欢仙剑三，就后半部而言感觉电视拍的太假，可能精彩的部分在前半部吧(雾，不过音乐还是一如既往的赞！&lt;/p>
+&lt;p>当天晚上听到那首曲子后，忽然发现对于曾经在我心里留下这么深记忆的系列作品，我却从未认真了解过它。之后我逛了一些论坛，wiki，才发现它都已经出到了第六部。遗憾的是再也没有了以前的号召力，或许只有真正的粉丝(此粉丝非彼粉丝XD)才会一直追随仙剑这么久吧。&lt;/p>
+&lt;p>如今仙剑系列游戏做了一部又一部，现在的制作团队早已不是以前的了，这样一个大IP如今只剩下情怀了吧。&lt;/p>
+&lt;p>&amp;hellip;&lt;/p>
+&lt;p>这也是2017年最后一篇博文了。&lt;/p>
+&lt;p>再见了，2017。
+&lt;img src="https://s1.ax1x.com/2020/05/26/tPUMge.jpg"
+loading="lazy"
+alt="2017_2018"
+>&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;p>就像在河的对岸,&lt;br>
+我看不到她,她看不到我,&lt;br>
+但似乎能够感受到来自对岸细若游丝的信号,&lt;br>
+像一根随时都会断掉的线,&lt;br>
+就像是宇宙中遥远星辰散发着若有若无的光芒,&lt;br>
+我不知道该如何回应.&lt;br>
+耳边的轻音乐让我一度以为回到了从前,&lt;br>
+那段缓慢的,不知忧虑的时光,&lt;br>
+随之而来的洪流将这一切击的粉碎,&lt;br>
+窗外一眼望去仍然是被树木遮掩,&lt;br>
+四周依然是熟悉的景物,一如三年以前.&lt;/p>
+&lt;p>&lt;em>p.s. 轻音乐：歌曲：命 歌手：石田勝範&lt;/em>&lt;/p></description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。&lt;/p>
 &lt;h2 id="编译之前">编译之前&lt;/h2>
-&lt;p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在&lt;a href="http://www.mplayerhq.hu/design7/dload.html">官方网站&lt;/a>获得.&lt;/p>
+&lt;p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在&lt;a class="link" href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="noopener"
+>官方网站&lt;/a>获得.&lt;/p>
 &lt;p>Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。&lt;/p>
 &lt;blockquote>
 &lt;p>如果是x86，就选择Linux x86&lt;/p>
 &lt;p>x86_64就选择Linux AMD64&lt;/p>
-&lt;/blockquote></description></item><item><title>一个梦</title><link>https://ireflux.github.io/snow/post/a-dream/</link><pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-dream/</guid><description>&lt;p>2105年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。&lt;/p>
-&lt;p>我们都在沙子上坐着，背靠着身后长约五六米，高约一米的破败围墙，静静的看着前方来来往往的人，百无聊赖。黄土弥漫在空气中，有轻微的朦胧感。左前方似乎是一座被黄沙掩盖的只剩下上半截的城堡，人们在那里或来回走动，或聚在一起讨论着什么，大概是婚礼前的准备事宜吧。一眼望去，四周都是看不到边的荒漠。沙子很厚，时不时有人从沙子地下钻出来，一会又钻进去，大概是很好玩。&lt;/p></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
-&lt;p>心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p></description></item><item><title>Win10内置Linux子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;/blockquote>
+&lt;p>skins随便选一个就好。没什么要推荐的：D。把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！&lt;/p>
+&lt;p>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。&lt;/p>
+&lt;h2 id="安装binary-codec-packages">安装Binary Codec Packages&lt;/h2>
+&lt;p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/&lt;/p>
+&lt;h2 id="配置mplayer">配置MPlayer&lt;/h2>
+&lt;p>首先Mplayer会检测所需的硬件环境，在终端中运行&lt;/p>
+&lt;blockquote>
+&lt;p>./configure&lt;/p>
+&lt;/blockquote>
+&lt;p>来使用默认的选项配置MPlayer。如果想要图形界面，需要运行&lt;/p>
+&lt;blockquote>
+&lt;p>./configure &amp;ndash;enable-gui&lt;/p>
+&lt;/blockquote>
+&lt;p>如果有些东西不能用，尝试输入&lt;/p>
+&lt;blockquote>
+&lt;p>./configure &amp;ndash;help&lt;/p>
+&lt;/blockquote>
+&lt;p>来查看可用的选项并选择你想要的功能。&lt;/p>
+&lt;h2 id="编译mplayer">编译MPlayer&lt;/h2>
+&lt;p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：&lt;/p>
+&lt;blockquote>
+&lt;p>make&lt;/p>
+&lt;/blockquote>
+&lt;p>安装MPlayer&lt;/p>
+&lt;blockquote>
+&lt;p>make install&lt;/p>
+&lt;/blockquote>
+&lt;p>然后就等着就行了。&lt;/p>
+&lt;h2 id="安装图形界面的皮肤">安装图形界面的皮肤&lt;/h2>
+&lt;p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。&lt;/p>
+&lt;h2 id="结尾">结尾&lt;/h2>
+&lt;p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入&lt;code>mplayer &amp;lt;moviefile&amp;gt;&lt;/code>或&lt;code>gmplayer &amp;lt;moviefile&amp;gt;&lt;/code>来打开一个视频。&lt;/p>
+&lt;p>至此，MPlayer就安装完毕了，Enjoy!&lt;/p></description></item><item><title>一个梦</title><link>https://ireflux.github.io/snow/post/a-dream/</link><pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-dream/</guid><description>&lt;p>2105年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。&lt;/p>
+&lt;p>我们都在沙子上坐着，背靠着身后长约五六米，高约一米的破败围墙，静静的看着前方来来往往的人，百无聊赖。黄土弥漫在空气中，有轻微的朦胧感。左前方似乎是一座被黄沙掩盖的只剩下上半截的城堡，人们在那里或来回走动，或聚在一起讨论着什么，大概是婚礼前的准备事宜吧。一眼望去，四周都是看不到边的荒漠。沙子很厚，时不时有人从沙子地下钻出来，一会又钻进去，大概是很好玩。&lt;/p>
+&lt;p>其中有两个同学似乎是禁止进入的，管理人员一来我和其他同学便合伙把他藏在沙子里。等人走后，再让他出来。&lt;/p>
+&lt;p>这时候阳光直射过来，我们都低下头紧紧的蜷缩在围墙后面，就像是末日中等待救赎的人。&lt;/p>
+&lt;p>&lt;em>“什么，你问我为啥2105年还活着？”&lt;/em>&lt;br>
+&lt;em>“我怎么知道啊衰！”&lt;/em>&lt;/p></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
+&lt;p>心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p>
+&lt;p>入了Arch神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方Wiki，因为中途需要点各种链接跳来跳去，刚装Arch的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装Arch时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位dalao的基于官方Wiki的中文教程，遂引用如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a class="link" href="http://www.viseator.com/2017/05/17/arch_install/" target="_blank" rel="noopener"
+>以官方Wiki的方式安装ArchLinux&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a class="link" href="http://www.viseator.com/2017/05/19/arch_setup/" target="_blank" rel="noopener"
+>ArchLinux安装后的必须配置与图形界面安装教程&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>在这里说一句，第二篇设置NetworkManager开机启动时，如果提示错误，那就是还没装NetworkManager，先安装下一步的network-manager-applet，它会把NetworkManager作为依赖项装上，然后再设置开机启动。&lt;/p>
+&lt;p>至此，enjoy！&lt;/p></description></item><item><title>Win10内置Linux子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>主力系统之前一直用着 Win7，最近也开始感觉有点审美疲劳。一直考虑是换成 Win10 还是 Ubuntu，考虑再三还是选择了 Win10&amp;hellip;&lt;/p>
 &lt;p>体验了 Win10 半个月后，感觉系统过于臃肿。今天忽然发现 Win10 还有个 beta 项目————适用于 Linux 的 Windows 子系统。后来查了下才知道早在今年三月份就有了&amp;hellip;(lll￢ω￢)既然如此，那果断要来体验一把！&lt;/p>
 &lt;h3 id="教程">教程&lt;/h3>
-&lt;p>根据官方的&lt;a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">Guide&lt;/a>，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.&lt;/p></description></item><item><title>Windows下优秀软件收录</title><link>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</link><pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid><description>&lt;p>此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p>
+&lt;p>根据官方的&lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
+>Guide&lt;/a>，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.&lt;/p>
+&lt;p>查看方法：&lt;/p>
+&lt;blockquote>
+&lt;p>设置-&amp;gt;系统-&amp;gt;关于&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="安装">安装&lt;/h3>
+&lt;p>之后需要安装适用于 Linux 的 windows 子系统。&lt;/p>
+&lt;p>1.以管理员运行 Windows PowerShell，输入以下内容回车&lt;/p>
+&lt;blockquote>
+&lt;p>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux&lt;/p>
+&lt;/blockquote>
+&lt;p>2.重新启动Windows&lt;/p>
+&lt;p>之后打开开发者人员模式。方法如下：&lt;/p>
+&lt;blockquote>
+&lt;p>设置-&amp;gt;更新和安全-&amp;gt;针对开发人员&lt;/p>
+&lt;/blockquote>
+&lt;p>开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。&lt;/p>
+&lt;p>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。&lt;/p>
+&lt;h3 id="卸载">卸载&lt;/h3>
+&lt;p>打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。&lt;/p>
+&lt;h3 id="体验结论">体验结论&lt;/h3>
+&lt;p>这个 Windows 内置的 Linux 就是将 Linux 的系统调用实时的转换成 Windows 的系统调用，就像是 Linux 上的 Wine 的反向技术。Wine 可以将 Windows 上的应用放到 Linux 上运行，这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine 开源，微软也毫无办法。&lt;/p>
+&lt;p>不过 Windows 内置的 Linux 感觉并不自由，内置的文件不能用 Windows 的工具来创建或修改。否则可能会出现文件损坏导致 Linux 系统无法使用。因此，如果是 Linux 的初学者，用这个还不错，但是要当作开发环境，那就算了吧。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
+>官方安装指南&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/" target="_blank" rel="noopener"
+>详情链接&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Windows下优秀软件收录</title><link>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</link><pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid><description>&lt;p>此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p>
 &lt;h3 id="spacesniffer">spacesniffer&lt;/h3>
-&lt;p>它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a href="http://www.uderzo.it/main_products/space_sniffer/download.html">下载地址&lt;/a>&lt;/p>
+&lt;p>它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a class="link" href="http://www.uderzo.it/main_products/space_sniffer/download.html" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
 &lt;h3 id="ccleaner">CCleaner&lt;/h3>
-&lt;p>清理浏览器缓存和注册表很有用.&lt;a href="https://www.piriform.com/">下载地址&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>清理浏览器缓存和注册表很有用.&lt;a class="link" href="https://www.piriform.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="华宇拼音输入法">华宇拼音输入法&lt;/h3>
+&lt;p>国产老牌输入法了，体积很小，很简洁，无广告。比某些国产输入法良心多了。&lt;a class="link" href="http://www.unispim.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="everyonepiano">EveryonePiano&lt;/h3>
+&lt;p>闲来无事弹弹琴也不错。&lt;a class="link" href="http://www.everyonepiano.cn/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="7-zip">7-zip&lt;/h3>
+&lt;p>开源压缩软件，体积小。&lt;a class="link" href="http://www.7-zip.org/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-06-07更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="sumatrapdf">SumatraPDF&lt;/h3>
+&lt;p>小巧好用的pdf viewer，开源的，虽然一般用不到吧(chrome能打开pdf)。&lt;a class="link" href="https://www.sumatrapdfreader.org" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="fscapture">FSCapture&lt;/h3>
+&lt;p>小巧好用的截图软件。一般windows自带的够用了，不过特定情况下还是用得到的。&lt;a class="link" href="http://www.faststone.org" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-08-28更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="hashcheck-shell-extension">HashCheck Shell Extension&lt;/h3>
+&lt;p>这个看名字大概就知道是干什么的了。&lt;a class="link" href="http://code.kliu.org/hashcheck/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="everything">Everything&lt;/h3>
+&lt;p>用过的都将其称作‘神器’&lt;a class="link" href="http://www.voidtools.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-11-8更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="vscode">VSCode&lt;/h3>
+&lt;p>文本编辑器，巨硬出品，开源，跨平台，总之很不错。&lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2018-1-9更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="potplayer">Potplayer&lt;/h3>
+&lt;p>Windows下播放器，据说解码器很强。&lt;a class="link" href="https://potplayer.daum.net/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="rufus">Rufus&lt;/h3>
+&lt;p>开源免费，做启动盘很好用，最关键的是作者拒绝支付，简直业界良心！&lt;a class="link" href="https://rufus.akeo.ie/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>以下为作者原话：&lt;/p>
+&lt;blockquote>
+&lt;p>Finally the fact that I have the freedom to develop Free Software in my spare time should indicate that I&amp;rsquo;m well-off enough, and therefore that you should direct your generosity towards people who need it a lot more than I do. If you really insist, you can always make a donation to the Free Software Foundation, as they are the main reason software like Rufus is possible.&lt;/p>
+&lt;/blockquote>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2018-1-29更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="screentogif">ScreenToGif&lt;/h3>
+&lt;p>2M的小软件，用来录制Gif，开源免费。&lt;a class="link" href="http://www.screentogif.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="gifcam">GifCam&lt;/h3>
+&lt;p>体积&amp;lt;2m，极简风格。&lt;a class="link" href="http://blog.bahraniapps.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="listen-1">Listen 1&lt;/h3>
+&lt;p>整合了各大平台的音乐，在也不需要各大平台来回找了！&lt;a class="link" href="https://listen1.github.io/listen1/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="sysinternals">Sysinternals&lt;/h3>
+&lt;p>微软的系统管理工具包，里面有十几个小工具，也可单独下载所需要的工具。比如：autiruns用来管理开机自启动的程序。procexp相当于增强般的任务管理器。这么好的东西居然没内置！&lt;a class="link" href="https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="power-map">Power Map&lt;/h3>
+&lt;p>微软出品的3D数据地图插件，包含在线地图+在线演示+制作视频等各项功能。&lt;a class="link" href="https://www.microsoft.com/en-us/download/details.aspx?id=38395" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>未完待续&amp;hellip;&lt;/p></description></item></channel></rss>

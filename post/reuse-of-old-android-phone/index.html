@@ -1,0 +1,108 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="背景 从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了一些其他派，但也不知道好不好，就这样拖了好长时间。
+前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了
+"><title>旧 Android 手机的再度营业</title><link rel=canonical href=https://ireflux.github.io/snow/post/reuse-of-old-android-phone/><link rel=stylesheet href=/snow/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css><meta property="og:title" content="旧 Android 手机的再度营业"><meta property="og:description" content="背景 从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了一些其他派，但也不知道好不好，就这样拖了好长时间。
+前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了
+"><meta property="og:url" content="https://ireflux.github.io/snow/post/reuse-of-old-android-phone/"><meta property="og:site_name" content="sherry's blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2023-02-02T00:00:00+00:00"><meta property="article:modified_time" content="2023-02-02T00:00:00+00:00"><meta name=twitter:title content="旧 Android 手机的再度营业"><meta name=twitter:description content="背景 从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了一些其他派，但也不知道好不好，就这样拖了好长时间。
+前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了
+"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/snow><img src=/snow/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/snow>sherry's blog</a></h1><h2 class=site-description></h2></div></header><ol class=menu id=main-menu><li><a href=/snow/><span>Home</span></a></li><li><a href=/snow/post/><span>Archives</span></a></li><li><a href=/snow/tags/><span>Tags</span></a></li><li><a href=/snow/categories/><span>Categories</span></a></li><li><a href=/snow/about/><span>About</span></a></li><div class=menu-bottom-section><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>Dark Mode</span></li></div></ol></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/snow/categories/%E9%9A%8F%E7%AC%94/>随笔</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/snow/post/reuse-of-old-android-phone/>旧 Android 手机的再度营业</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Feb 02, 2023</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>3 minute read</time></div></footer></div></header><section class=article-content><h2 id=背景>背景</h2><p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了<a class=link href=https://linux.cn/article-10823-1.html target=_blank rel=noopener>一些其他派</a>，但也不知道好不好，就这样拖了好长时间。</p><p>前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了</p><h2 id=安装踩坑过程>安装(踩坑)过程</h2><p>于是我重新线刷了一遍官方系统后，准备安装 Termux，发现 <a class=link href=https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/ target=_blank rel=noopener>Android 5 和 6 在 2020 年就不再支持了</a>，一想到只能用旧阪本，虽然很不情愿，但也没有办法。不过后来我又在 WIKI 里发现了一篇新的公告：<a class=link href=https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6 target=_blank rel=noopener>Termux on android 5 or 6</a>，开发者又打算在 termux-app 0.119 版本中重新加回对 android 5 和 6 的支持，这么重要的信息居然不写在最显眼的 README 里面&mldr;虽然目前还没有正式 release，但是可以去 Actions 中找打好的安装包来安装，至此总算是可以舒舒服服的安装了。</p><p>作为 Arch 的忠实教徒，发行版当然是选择 Arch Linux 啦！在 GitHub 搜寻一番，找到了一个专门在 Termux 中一键安装的脚本 <a class=link href=https://github.com/TermuxArch/TermuxArch target=_blank rel=noopener>TermuxArch</a>，总之到这里还算顺利。但接下来的安装遇到了一些错误，是关于 PRoot 的，提示没有 <code>--sysvipc</code> 的选项，可能是我的 PRoot 的版本的缘故，但用 Termux 自带的源尝试更新了一下，发现已经是最新的版本了。Hmmm&mldr;只好再次去 Termux 官网找答案，答案没找到，却在 Termux Wiki 找到了一篇关于 PRoot 的文章： <a class=link href=https://wiki.termux.com/wiki/PRoot target=_blank rel=noopener>PRoot</a>，里面详细解释了 PRoot 和 Chroot 的区别，简单来说 PRoot 是通过 ptrace() 来劫持系统调用参数和返回值来伪造可见的文件系统布局或用户/组的 ID，会引起额外的开销，里面还提到了一个 APP： <a class=link href=https://github.com/meefik/linuxdeploy target=_blank rel=noopener>Linux Deploy</a>。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。</p><p>接下来就是获取 root 权限的过程了：从线刷包里提取 boot.img -> magisk 修补 boot.img -> <code>fastboot flash boot boot.img</code></p><p>装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，有一些 bug 也说不定。之后各处搜寻，最终还是找到了解决方案。</p><p>Linux Deploy 直接安装报错 log:</p><pre tabindex=0><code>[11:40:17] &gt;&gt;&gt; deploy
+[11:40:17] :: Installing bootstrap/rootfs ... 
+[11:40:17] Checking installation path ... done
+[11:40:17] Making new disk image (2047 MB) ... done
+[11:40:17] Making file system (ext4) ... done
+[11:40:17] Checking file system ... done
+[11:40:17] Mounting the container: 
+[11:40:17] / ... done
+[11:40:17] /proc ... done
+[11:40:17] /sys ... done
+[11:40:17] /dev ... done
+[11:40:17] /dev/shm ... skip
+[11:40:17] /dev/pts ... done
+[11:40:17] /dev/tty ... done
+[11:40:17] /proc/sys/fs/binfmt_misc ... done
+[11:40:17] :: Installing bootstrap/archlinux ... 
+[11:40:17] Preparing for deployment ... done
+[11:40:20] Retrieving packages list ... done
+[11:40:20] Retrieving packages: 
+[11:40:22] acl-2.3.1-2 ... done
+[11:40:25] acl-debug-2.3.1-2 ... done
+[11:40:28] amd-ucode-20221214.f3c283e-1 ... done
+[11:40:31] archlinux-keyring-20221220-1 ... done
+[11:40:33] archlinuxarm-keyring-20140119-2 ... done
+[11:40:35] argon2-20190702-4 ... done
+[11:40:38] attr-2.5.1-2 ... done
+[11:40:40] attr-debug-2.5.1-2 ... done
+[11:40:42] audit-3.0.8-1 ... done
+[11:40:45] audit-debug-3.0.8-1 ... done
+[11:40:48] autoconf-2.71-1 ... done
+[11:40:51] automake-1.16.5-1 ... done
+[11:40:52] b43-fwcutter-019-3 ... done
+[11:40:54] base-3-1 ... done
+[11:40:58] bash-5.1.016-1 ... done
+[11:41:05] binutils-2.38-5.1 ... done
+[11:41:27] binutils-debug-2.38-5.1 ... done
+[11:41:30] bison-3.8.2-4 ... done
+[11:41:33] brotli-1.0.9-9 ... done
+[11:41:37] brotli-debug-1.0.9-9 ... done
+[11:41:42] brotli-testdata-1.0.9-9 ... done
+[11:41:45] btrfs-progs-6.1-2 ... done
+[11:41:49] btrfs-progs-debug-6.1-2 ... done
+[11:41:51] bzip2-1.0.8-5 ... done
+[11:41:53] bzip2-debug-1.0.8-5 ... done
+[11:41:55] ca-certificates-20220905-1 ... done
+[11:41:57] ca-certificates-cacert-20140824-4 ... done
+[11:42:00] ca-certificates-mozilla-3.86-1 ... done
+[11:42:02] ca-certificates-utils-20220905-1 ... done
+[11:42:07] coreutils-9.1-3 ... done
+[11:42:09] cracklib-2.9.8-1 ... done
+[11:42:12] cronie-1.6.1-1 ... done
+[11:42:14] cronie-debug-1.6.1-1 ... done
+[11:42:16] cryptsetup-2.6.0-1 ... done
+[11:42:19] cryptsetup-debug-2.6.0-1 ... done
+[11:42:22] curl-7.87.0-1 ... done
+[11:42:26] curl-debug-7.87.0-1 ... done
+[11:42:28] dash-0.5.11.5-1 ... done
+[11:52:10] dash-debug-0.5.11.5-1 ... done
+[11:52:10] db-6.2.32-1 ... done
+[11:52:10] db5.3-5.3.28-2 ... done
+[11:52:10] dbus-1.14.4-1 ... done
+[11:52:10] dbus-debug-1.14.4-1 ... done
+[11:52:10] dbus-docs-1.14.4-1 ... done
+[11:52:10] debugedit-5.0-4 ... done
+[11:52:10] debuginfod-0.188-1 ... done
+[11:52:10] device-mapper-2.03.18-1 ... done
+[11:52:10] dhcpcd-9.4.1-1 ... done
+[11:52:10] dialog-1:1.3_20220728-1 ... done
+[11:52:10] diffutils-3.8-1 ... done
+[11:52:10] ding-libs-0.6.2-1 ... done
+[11:52:10] dmraid-1.0.0.rc16.3-14 ... done
+[11:52:10] dnssec-anchors-20190629-3 ... done
+[11:52:10] dosfstools-4.2-2 ... done
+[11:52:10] e2fsprogs-1.46.5-4 ... done
+[11:52:10] e2fsprogs-debug-1.46.5-4 ... done
+[11:52:10] ed-1.18-1 ... done
+[11:52:10] efivar-38-2 ... done
+[11:52:10] elfutils-0.188-1 ... done
+[11:52:10] elfutils-debug-0.188-1 ... done
+[11:52:10] expat-2.5.0-1 ... done
+[11:52:10] expat-debug-2.5.0-1 ... done
+[11:52:10] fakeroot-1.30.1-1 ... done
+[11:52:10] file-5.44-1 ... done
+[11:52:10] file-debug-5.44-1 ... done
+[11:52:10] filesystem-2022.10.18-1 ... done
+[11:52:10] findutils-4.9.0-1 ... done
+[11:52:10] flex-2.6.4-3 ... done
+[11:52:10] fuse2fs-1.46.5-4 ... done
+[11:52:10] gawk-5.2.1-1 ... done
+[11:52:10] gawk-debug-5.2.1-1 ... done
+[11:52:10] gc-8.2.2-1 ... done
+[11:52:10] gcc-12.1.0-2.1 ... done
+[11:52:10] gcc-debug-12.1.0-2.1 ... fail
+[11:52:10] &lt;&lt;&lt; deploy
+</code></pre><p>首先要自己先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 <a class=link href=https://mirrors.ustc.edu.cn/archlinuxarm/os/ target=_blank rel=noopener>USTC</a>，然后打开 Linux Deploy，发行版选择 <code>rootfs.tar</code>，源地址写 <code>${EXTERNAL_STORAGE}/[下载的镜像名称]</code>，安装类型选择 <code>目录</code>，安装路径写 <code>${ENV_DIR}/rootfs/linux</code>，其他选项就随意了，记得勾上 <code>启用SSH</code> 就好。p.s. <code>${EXTERNAL_STORAGE}</code> 事实上就是 <code>/storage/emulated/0</code>，<code>${ENV_DIR}</code> 就是 <code>/data/data/[Linux Deploy包名]/</code></p><p>接下来顺利安装完成，ssh 进入 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。然后开始安装<a class=link href=https://github.com/whyour/qinglong target=_blank rel=noopener>青龙面板</a>，直接按照 <a class=link href=https://github.com/whyour/qinglong#%E5%BC%80%E5%8F%91 target=_blank rel=noopener>青龙 README</a> 来启动就好了。</p><p>完结。</p><p>顺便说一句，青龙真吃内存&mldr;</p><h2 id=参考资料>参考资料</h2><ol><li>12 个可替代树莓派的单板机: <a class=link href=https://linux.cn/article-10823-1.html target=_blank rel=noopener>https://linux.cn/article-10823-1.html</a></li><li>End of android-5/6 support on 2020-01-01: <a class=link href=https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/ target=_blank rel=noopener>https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/</a></li><li>Termux on android 5 or 6: <a class=link href=https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6 target=_blank rel=noopener>https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6</a></li><li>TermuxArch: <a class=link href=https://github.com/TermuxArch/TermuxArch target=_blank rel=noopener>https://github.com/TermuxArch/TermuxArch</a></li><li>PRoot: <a class=link href=https://wiki.termux.com/wiki/PRoot target=_blank rel=noopener>https://wiki.termux.com/wiki/PRoot</a></li><li>Linux Deploy: <a class=link href=https://github.com/meefik/linuxdeploy target=_blank rel=noopener>https://github.com/meefik/linuxdeploy</a></li><li>青龙面板: <a class=link href=https://github.com/whyour/qinglong target=_blank rel=noopener>https://github.com/whyour/qinglong</a></li></ol></section><footer class=article-footer></footer></article><footer class=site-footer><section class=copyright>&copy;
+2023 sherry's blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.16.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/snow/ts/main.js defer></script>
+<script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

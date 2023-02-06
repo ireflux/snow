@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on sherry's blog</title><link>https://ireflux.github.io/snow/tags/spring/</link><description>Recent content in Spring on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Session 使用笔记</title><link>https://ireflux.github.io/snow/post/note-on-using-spring-session/</link><pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid><description>&lt;p>Spring Session 的配置非常简单，根据&lt;a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档&lt;/a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on sherry's blog</title><link>https://ireflux.github.io/snow/tags/spring/</link><description>Recent content in Spring on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Session 使用笔记</title><link>https://ireflux.github.io/snow/post/note-on-using-spring-session/</link><pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid><description>&lt;p>Spring Session 的配置非常简单，根据&lt;a class="link" href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html" target="_blank" rel="noopener"
+>官方文档&lt;/a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p>
 &lt;p>首先需要添加依赖项:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
@@ -8,11 +9,150 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-session-data-redis&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a href="https://github.com/xetorthio/jedis">Jedis&lt;/a>， &lt;a href="https://github.com/lettuce-io/lettuce-core">lettuce&lt;/a>， &lt;a href="https://github.com/mrniko/redisson">Redisson&lt;/a>， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p>
-&lt;p>以下是&lt;a href="https://github.com/lettuce-io/lettuce-core">官方&lt;/a>对 lettuce 的描述，摘录如下：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在 application.properties 中添加以下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.host&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">localhost # Redis server host.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.password&lt;/span>&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74"># Login password of the redis server.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.port&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">6379 # Redis server port.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.session.store-type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">redis # Session store type.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>至此就配置完成了，现在就可以写两个简单的方法去测试一下。例如以下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/set&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">setSession&lt;/span>&lt;span style="color:#f92672">(&lt;/span>HttpSession session&lt;span style="color:#f92672">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> session&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setAttribute&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sherry&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/get&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getSession&lt;/span>&lt;span style="color:#f92672">(&lt;/span>HttpSession session&lt;span style="color:#f92672">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">)&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getAttribute&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后使用 maven package 将其打成 jar 包，若需要跳过测试，可使用 &lt;code>mvn -Dmaven.test.skip=true package&lt;/code>，或者在 pom.xml 中添加插件依赖：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.maven.plugins&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>maven-surefire-plugin&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;skipTests&amp;gt;&lt;/span>true&lt;span style="color:#f92672">&amp;lt;/skipTests&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后开启两个服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nohup java -jar app.jar --server.port&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span> &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ nohup java -jar app.jar --server.port&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8081&lt;/span> &amp;amp;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>现在在 8080 里面 set，在 8081 里面 get，会发现也可以得到结果。&lt;/p>
+&lt;p>这里顺便歪个楼，如果服务在前台启动，比如说启动 redis 时未将 redis.conf 中的 daemonize 设置为 yes。此时可以使用 &lt;code>CTRL + Z&lt;/code> 将其挂在后台，但此时服务会被暂停，使用 &lt;code>fg&lt;/code> 可以将其调回前台继续运行(若后台有多个，默认调回最后启动的那个)。也可以使用 &lt;code>bg&lt;/code> 使其后台继续运行。使用 &lt;code>jobs&lt;/code> 可查看在后台运行的服务列表。&lt;/p>
+&lt;p>到此为止就算完成了，但还可以更进一步，在这两个服务前面加一层 Nginx 来做反向代理，还可以设置权重。首先来修改 nginx 的配置文件，一般来说需要修改 nginx.conf，由于我现在的环境是 debian，有一个默认的配置文件位于 /etc/nginx/sites-enabled 下的 default 文件，不同的发行版文件目录结构可能不大一样，可以根据自身情况自行查找。可根据以下示例来写：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">upstream wanmei.ml{
+server 127.0.0.1:8080 weight=1;
+server 127.0.0.1:8081 weight=2;
+}
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+server_name localhost;
+location / {
+proxy_pass http://wanmei.ml;
+proxy_redirect default;
+}
+}
+&lt;/code>&lt;/pre>&lt;p>然后 &lt;code>nginx -s reload&lt;/code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="http://nginx.org/en/docs/" target="_blank" rel="noopener"
+>nginx documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html" target="_blank" rel="noopener"
+>扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
+>Jedis&lt;/a>， &lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
+>lettuce&lt;/a>， &lt;a class="link" href="https://github.com/mrniko/redisson" target="_blank" rel="noopener"
+>Redisson&lt;/a>， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p>
+&lt;p>以下是&lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
+>官方&lt;/a>对 lettuce 的描述，摘录如下：&lt;/p>
 &lt;blockquote>
 &lt;p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p>
-&lt;/blockquote></description></item><item><title>Spring Boot 整合 Swagger2</title><link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid><description>&lt;p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p>
+&lt;/blockquote>
+&lt;p>因此可以看出，lettuce 是线程安全的，基于 netty，在不包含阻塞和事务的情况下多个线程还可以共用一个连接。相比之下 Jedis 的实现上是直连的 redis server，多线程环境下是非线程安全的。&lt;/p>
+&lt;p>言归正传，在开始之前，首先需要在 pom.xml 文件中添加以下依赖：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.boot&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-boot-starter-data-redis&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.commons&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>commons-pool2&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中值得一提的是，如果不添加 commons-pool2，启动 Spring Application 会报错，大意是找不到 commons-pool2 之类的 blahblahblah&amp;hellip;可以添加以下配置来解决，但还是建议直接加上这个依赖。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> LettuceConnectionFactory &lt;span style="color:#a6e22e">redisConnectionFactory&lt;/span>&lt;span style="color:#f92672">(){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> LettuceConnectionFactory&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span> RedisStandaloneConfiguration&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ip&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#ae81ff">6379&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>连接 redis 及 lettuce pool 的配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.database&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.password&lt;/span>&lt;span style="color:#f92672">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.port&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">6379&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.host&lt;/span>&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">host ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.lettuce.pool.min-idle&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.lettuce.pool.max-idle&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.lettuce.pool.max-active&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.lettuce.pool.max-wait&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">1ms&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.lettuce.shutdown-timeout&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">100ms&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>redis 中包含的几种数据结构大都在 Spring Data Redis 中能够找到对应，基本上见文知意，不再赘述。以下是我测试时的 Demo，仅供参考：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>SpringRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@SpringBootTest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">RedisDemoApplicationTests&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> StringRedisTemplate stringRedisTemplate&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">contextLoads&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValueOperations&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">,&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> valueOperations&lt;span style="color:#f92672">=&lt;/span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">opsForValue&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> valueOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">set&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;valueOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;value&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">expire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;valueOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#f92672">,&lt;/span> TimeUnit&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">SECONDS&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;-------------valueOperations -&amp;gt; key: valueOperations, value: value--------------&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;value:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>valueOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">get&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;valueOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">)+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\texpire:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getExpire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;valueOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ListOperations&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">,&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> listOperations &lt;span style="color:#f92672">=&lt;/span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">opsForList&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">leftPushAll&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;listOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;list&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Operation&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;s&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">expire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;listOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">90&lt;/span>&lt;span style="color:#f92672">,&lt;/span> TimeUnit&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">SECONDS&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;-------------listOperations -&amp;gt; key: listOperations, value: list, Operation, s--------------&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;values:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>listOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">range&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;listOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">,-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">)+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\texpire:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getExpire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;listOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HashOperations&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">,&lt;/span>String&lt;span style="color:#f92672">,&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> hashOperations &lt;span style="color:#f92672">=&lt;/span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">opsForHash&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hashOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">put&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hashOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Operations&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">expire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hashOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">80&lt;/span>&lt;span style="color:#f92672">,&lt;/span> TimeUnit&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">SECONDS&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;-------------hashOperations -&amp;gt; key: hashOperations, value: hash: Operation--------------&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;value:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>hashOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">get&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hashOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hash&amp;#34;&lt;/span>&lt;span style="color:#f92672">)+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\texpire:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getExpire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hashOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SetOperations&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">,&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> setOperations &lt;span style="color:#f92672">=&lt;/span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">opsForSet&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;setOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">expire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;setOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">70&lt;/span>&lt;span style="color:#f92672">,&lt;/span> TimeUnit&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">SECONDS&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;-------------setOperations -&amp;gt; key: setOperations, value: 1, 2, 1--------------&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;values:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>setOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">members&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;setOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">)+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\texpire:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getExpire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;setOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ZSetOperations&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">,&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> zSetOperations &lt;span style="color:#f92672">=&lt;/span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">opsForZSet&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zSetOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSetOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSet&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">expire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSetOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">60&lt;/span>&lt;span style="color:#f92672">,&lt;/span> TimeUnit&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">SECONDS&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;-------------zSetOperations -&amp;gt; key: zSetOperations, value: zSet score: 10--------------&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;value:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>zSetOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">range&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSetOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">,-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">)+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\texpire:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>stringRedisTemplate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getExpire&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSetOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">)+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\tscore:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>zSetOperations&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">score&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSetOperations&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;zSet&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其他方法可参考 Spring Data Redis 的 &lt;a class="link" href="https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html" target="_blank" rel="noopener"
+>API文档&lt;/a>&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
+>lettuce github&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html" target="_blank" rel="noopener"
+>RedisTemplate&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.spring.io/spring-data/redis/docs/2.1.9.RELEASE/reference/html/" target="_blank" rel="noopener"
+>Spring Data Redis&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Spring Boot 整合 Swagger2</title><link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid><description>&lt;p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p>
 &lt;p>首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
@@ -25,7 +165,227 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-swagger-ui&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.9.2&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Learn Spring Framework</title><link>https://ireflux.github.io/snow/post/learn-spring-framework/</link><pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后写一个 Swagger2 的配置类：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@EnableSwagger2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SwaggerConfig&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Docket &lt;span style="color:#a6e22e">createRestApi&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Docket&lt;span style="color:#f92672">(&lt;/span>DocumentationType&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">SWAGGER_2&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">pathMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">select&lt;/span>&lt;span style="color:#f92672">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">apis&lt;/span>&lt;span style="color:#f92672">(&lt;/span>RequestHandlerSelectors&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">basePackage&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;com.example.demo.spider.controller&amp;#34;&lt;/span>&lt;span style="color:#f92672">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">paths&lt;/span>&lt;span style="color:#f92672">(&lt;/span>PathSelectors&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">any&lt;/span>&lt;span style="color:#f92672">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">build&lt;/span>&lt;span style="color:#f92672">().&lt;/span>&lt;span style="color:#a6e22e">apiInfo&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span> ApiInfoBuilder&lt;span style="color:#f92672">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Swagger&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">description&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;接口信息……&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">version&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1.0&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">contact&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span> Contact&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sherry&amp;#39;s blog&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://wanmei.ml/snow&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sherry@wanmei.com&amp;#34;&lt;/span>&lt;span style="color:#f92672">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">license&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;MIT License&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">licenseUrl&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://choosealicense.com/licenses/mit/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">build&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时，启动项目，然后进入 &lt;code>http://[ip]:8080/swagger-ui.html&lt;/code> 应该就可以看到页面了，但是还没有显示任何接口，需要在接口上加上注解以保证 swagger2 能扫描到，如下所示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Api&lt;/span>&lt;span style="color:#f92672">(&lt;/span>tags &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;城市相关接口&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/city&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CitiesController&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> ICitiesService citiesService&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/list&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiOperation&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;查询城市列表&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Cities&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">getList&lt;/span>&lt;span style="color:#f92672">(){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> citiesService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getList&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/{id}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiOperation&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;根据id查询城市位置信息&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiImplicitParam&lt;/span>&lt;span style="color:#f92672">(&lt;/span>name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;编号&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> defaultValue &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> required &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Cities &lt;span style="color:#a6e22e">getCityById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> Integer id&lt;span style="color:#f92672">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> citiesService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getLocationById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此处涉及到的 API 及解释如下所示：&lt;/p>
+&lt;ol>
+&lt;li>@Api：用于标记 Controller 的功能&lt;/li>
+&lt;li>@ApiOperation：用于标记一个方法的功能。&lt;/li>
+&lt;li>@ApiImplicitParam：用于描述一个参数所代表的意思，默认值及是否必填等相关信息（这里的 &lt;code>required = true&lt;/code> 只是在文档中表明必填，不会对接口产生作用），若有多个参数，多个 &lt;code>@ApiImplicitParam&lt;/code> 注解需要放在一个 &lt;code>@ApiImplicitParams&lt;/code> 注解中&lt;/li>
+&lt;/ol>
+&lt;p>还可以对实体类进行标记：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Data&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@EqualsAndHashCode&lt;/span>&lt;span style="color:#f92672">(&lt;/span>callSuper &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Accessors&lt;/span>&lt;span style="color:#f92672">(&lt;/span>chain &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@ApiModel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Cities&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> Serializable &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> &lt;span style="color:#66d9ef">long&lt;/span> serialVersionUID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1L&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiModelProperty&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;编号&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> Integer id&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiModelProperty&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;城市名称&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String city&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiModelProperty&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;位置&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String location&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>@ApiModelProperty：对一个属性进行标记&lt;/li>
+&lt;/ol>
+&lt;p>更多&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/#overriding-descriptions-via-properties" target="_blank" rel="noopener"
+>描述&lt;/a>及&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/#property-file-lookup" target="_blank" rel="noopener"
+>示例&lt;/a>点击链接即可。&lt;/p>
+&lt;p>除 &lt;code>swagger-ui.html&lt;/code> 之外，还有一些默认的文档路径，详情见&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/#customizing-the-swagger-endpoints" target="_blank" rel="noopener"
+>此处&lt;/a>&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/" target="_blank" rel="noopener"
+>Springfox Reference Documentation&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Learn Spring Framework</title><link>https://ireflux.github.io/snow/post/learn-spring-framework/</link><pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>Recently,I was learning the Spring Framework.&lt;/p>
 &lt;p>At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p>
-&lt;p>After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p></description></item></channel></rss>
+&lt;p>After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p>
+&lt;p>Obviously, I encountered resistance.&lt;/p>
+&lt;p>One day, I searched &amp;ldquo;Why is learning Spring Framework so hard&amp;rdquo; on search engines, I found the answer in quora. The high-vote answer is very good and inspiring. So I decided to relearn the spring framework from the official website. Just like a ring. Three months later, I returned to the origin.&lt;/p>
+&lt;p>Thanks for that article again!&lt;/p>
+&lt;hr>
+&lt;p>以下是可能会用到的资料：&lt;/p>
+&lt;p>Spring Framework Documentation&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://docs.spring.io/spring/docs/" target="_blank" rel="noopener"
+>https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的&lt;/p>
+&lt;p>Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener"
+>https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Spring核心容器依赖于Common-logging的JAR包，下载地址如下：&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
+>https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="原文摘录">原文摘录&lt;/h2>
+&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
+>http://springtutorials.com/spring-tutorial-1/&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>A simple question for you before I begin:&lt;br>
+Can you count from 1 to 20?&lt;br>
+Here, Let me help you. Go ahead and read it out loud.&lt;br>
+One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten. Eleven. Twelve. Thirteen. Fourteen. Fifteen. Sixteen. Seventeen. Eighteen. Nineteen. Twenty.&lt;br>
+Do you see any pattern in the numbers above? Anything that rhymes with the words or the way you count them?&lt;br>
+Some of these end with ‘teen’ in them but is there anything else?&lt;br>
+Unlearn everything you know about numbers and see if you can spot anything that will help you see it?&lt;br>
+(Hint: There is none)&lt;br>
+My daughter was 3 (she is 7 now) when she had to go through this exercise and she found it very challenging.&lt;br>
+I think she was 4 when she started to count a little more…&lt;br>
+Twenty One. Twenty Two. Twenty Three. Twenty Four. Twenty Five. Twenty Six. Twenty Seven. Twenty Eight. Twenty Nine. Thirty.&lt;br>
+Did she see any pattern now? Of course, she did. ‘Twenty‘ seemed to show up everywhere.&lt;br>
+Counting from thirty to forty was not any different now. She was over the learning curve and needed few corrections here and there.&lt;br>
+She spent almost a full year learning to count from 1 to 20. But she spent only a few months going from 20 to 100.&lt;br>
+Let me clarify this. Counting from 1 to 20 is the hardest thing you can do.&lt;br>
+There is no pattern here.&lt;br>
+You have to learn it the hard way. Get over this curve and life becomes easier.&lt;br>
+Take that as a big lesson in life. Start anything and you have to go through the grind. Once you are past the initial struggle, things get easier.&lt;br>
+Can you predict what I am going to say next:&lt;br>
+Learning Spring Framework (or anything new) is no different from learning to count.&lt;br>
+It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.&lt;br>
+As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.&lt;br>
+As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br>
+It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service&lt;/h3>
+&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
+&lt;p>部分代码摘录如下：&lt;/p>
+&lt;h4 id="srcmainjavahellogreetingjava">src/main/java/hello/Greeting.java&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Greeting&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> &lt;span style="color:#66d9ef">long&lt;/span> id&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> String content&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Greeting&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">long&lt;/span> id&lt;span style="color:#f92672">,&lt;/span> String content&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span> &lt;span style="color:#f92672">=&lt;/span> id&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#f92672">=&lt;/span> content&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">long&lt;/span> &lt;span style="color:#a6e22e">getId&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> id&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getContent&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> content&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="srcmainjavahellogreetingcontrollerjava">src/main/java/hello/GreetingController.java&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.util.concurrent.atomic.AtomicLong&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestParam&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingController&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> String template &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, %s!&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> AtomicLong counter &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> AtomicLong&lt;span style="color:#f92672">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/greeting&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Greeting &lt;span style="color:#a6e22e">greeting&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@RequestParam&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> defaultValue&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span> String name&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Greeting&lt;span style="color:#f92672">(&lt;/span>counter&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">incrementAndGet&lt;/span>&lt;span style="color:#f92672">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">format&lt;/span>&lt;span style="color:#f92672">(&lt;/span>template&lt;span style="color:#f92672">,&lt;/span> name&lt;span style="color:#f92672">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>&lt;code>@RequestMapping&lt;/code>注解确保对/greeting的HTTP请求映射到greeting()方法中，默认映射所有HTTP操作，所以即使不指定GET，PUT还是POST也没关系.若想指定映射方式可使用&lt;code>@RequestMapping(method=GET)&lt;/code>的方式.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>@RequestParam&lt;/code>将查询字符串&lt;code>name&lt;/code>的值绑定到&lt;code>greeting()&lt;/code>方法的&lt;code>name&lt;/code>参数中.查询字符参数为可选,默认为&lt;code>required=true&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>传统的MVC控制器和上面的RESTful Web服务控制器之间的一个主要区别在于HTTP响应主体的创建方式.这个RESTful Web服务控制器只需填充并返回一个Greeting对象,而不是依赖视图技术将问候数据的服务器端呈现呈现给HTML.对象数据将作为JSON直接写入HTTP响应.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>@RestController&lt;/code>为Spring 4的新注解,它将类标记为控制器,其中每个方法都返回一个域对象而不是视图.它是&lt;code>@Controller&lt;/code>和&lt;code>@ResponseBody&lt;/code>的缩写.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="srcmainjavahelloapplicationjava">src/main/java/hello/Application.java&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.boot.SpringApplication&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.boot.autoconfigure.SpringBootApplication&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@SpringBootApplication&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Application&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SpringApplication&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">run&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Application&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">,&lt;/span> args&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>@SpringBootApplication&lt;/code>是一个方便的注释，它增加了以下所有内容：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>@Configuration&lt;/code>将类标记为应用程序上下文的bean定义的来源。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>@EnableAutoConfiguration&lt;/code>通知Spring Boot根据类路径设置，其他bean和各种属性设置开始添加bean。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>通常你会为Spring MVC应用程序添加&lt;code>@EnableWebMvc&lt;/code>，但Spring Boot在类路径中看到spring-webmvc时会自动添加。 这将该应用程序标记为Web应用程序并激活关键行为，例如设置DispatcherServlet。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>@ComponentScan&lt;/code>告诉Spring在hello包中查找其他组件，配置和服务，以便找到控制器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="测试">测试&lt;/h3>
+&lt;p>打包：mvn package&lt;/p>
+&lt;p>测试运行:java -jar gs-rest-service-0.1.0.jar&lt;/p>
+&lt;p>访问：http://localhost:8080/greeting&lt;/p>
+&lt;p>或者加入参数：http://localhost:8080/greeting?name=User&lt;/p></description></item></channel></rss>

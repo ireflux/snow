@@ -2,4 +2,55 @@
 &lt;p>注：截至本文发表前，Elasticsearch 的版本号为 7.6.1，本文的内容也建立于此之上。&lt;/p>
 &lt;h2 id="elasticsearch-是什么">Elasticsearch 是什么？&lt;/h2>
 &lt;p>根据官方文档和 Wikipedia 的说法：&lt;/p>
-&lt;p>Elasticsearch是一个基于Apache Lucene构建的分布式的开源搜索和分析引擎，可以处理所有类型的数据，包括文本，数字，地理空间，结构化和非结构化的数据。&lt;/p></description></item></channel></rss>
+&lt;p>Elasticsearch是一个基于Apache Lucene构建的分布式的开源搜索和分析引擎，可以处理所有类型的数据，包括文本，数字，地理空间，结构化和非结构化的数据。&lt;/p>
+&lt;h2 id="elasticsearch-有什么用">Elasticsearch 有什么用？&lt;/h2>
+&lt;ul>
+&lt;li>应用程序搜索&lt;/li>
+&lt;li>网站搜索&lt;/li>
+&lt;li>企业搜索&lt;/li>
+&lt;li>记录和日志分析&lt;/li>
+&lt;li>基础架构指标和容器监控&lt;/li>
+&lt;li>应用程序性能监控&lt;/li>
+&lt;li>地理位置分析和可视化&lt;/li>
+&lt;li>安全分析&lt;/li>
+&lt;li>商业分析&lt;/li>
+&lt;/ul>
+&lt;p>了解到此就可以了，想要更深入的了解可以去翻阅&lt;a class="link" href="https://www.elastic.co/what-is/elasticsearch" target="_blank" rel="noopener"
+>官方文档&lt;/a>&lt;/p>
+&lt;h2 id="elasticsearch-的配置">Elasticsearch 的配置&lt;/h2>
+&lt;p>在此跳过了 ES 的安装，是因为在我的安装体验里，并没有遇到什么阻力，因此无需记录。关于下载安装，可以查阅&lt;a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html" target="_blank" rel="noopener"
+>此页面&lt;/a>&lt;/p>
+&lt;p>ES 的配置主要是修改 &lt;code>elasticsearch.yml&lt;/code>，打开这个文件，文件中已经列出了大多数重要的设置，划分了几个区域，分别是 Cluster，Node，Paths，Memory，Network，Discorey，Gateway，Various&lt;/p>
+&lt;h3 id="关于路径的设置">关于路径的设置&lt;/h3>
+&lt;p>在生产中一定要设置其日志和数据的路径。如果使用默认路径，在升级 ES 的时候很可能会被删除掉。&lt;/p>
+&lt;h3 id="关于集群名称的设置">关于集群名称的设置&lt;/h3>
+&lt;p>不要在不同的环境中使用相同的名称，否则新节点可能会加入错误的集群中。&lt;/p>
+&lt;h3 id="关于网络的配置">关于网络的配置&lt;/h3>
+&lt;p>默认情况下，Elasticsearch 绑定的是环回地址，例如：127.0.0.1，[::1]，这在单台服务器下是没问题的。但如果要和其他服务器上的 ES 组成集群，需修改 &lt;code>network.host&lt;/code>。例如：&lt;/p>
+&lt;pre tabindex="0">&lt;code>network.host: x.x.x.x
+&lt;/code>&lt;/pre>&lt;p>注：一旦为 &lt;code>network.host&lt;/code> 设置了自定义配置，ES 就会认为你从开发模式转移到了生产模式，会自动将系统启动检查从警告升级为异常。见 &lt;a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html#dev-vs-prod" target="_blank" rel="noopener"
+>Development mode vs production mode&lt;/a>&lt;/p>
+&lt;h3 id="关于-discovery-的配置">关于 Discovery 的配置&lt;/h3>
+&lt;p>为使集群中各个 ES 之间可见，应设置 &lt;code>discovery.seed_hosts&lt;/code>：&lt;/p>
+&lt;p>以下引用官网的例子：&lt;/p>
+&lt;pre tabindex="0">&lt;code>discovery.seed_hosts:
+- 192.168.1.10:9300
+- 192.168.1.11
+- seeds.mydomain.com
+- [0:0:0:0:0:ffff:c0a8:10c]:9301
+&lt;/code>&lt;/pre>&lt;p>注: 如果不加端口号，则默认是9300。&lt;/p>
+&lt;p>当首次启动 ES 集群时，会有一个引导步骤，它确定了首次选举中来对其票数进行计数的有主要资格节点的集合。这个“计数权”在开发模式中是由节点自动确定的，但却是不安全的。若在生产模式中，应当指定 &lt;code>cluster.initial_master_nodes&lt;/code>，具体配置可详见&lt;a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/discovery-settings.html#initial_master_nodes" target="_blank" rel="noopener"
+>文档&lt;/a>&lt;/p>
+&lt;h2 id="es-的启动与关闭">ES 的启动与关闭&lt;/h2>
+&lt;p>一般而言，ES 可使用 &lt;code>./bin/elasticsearch&lt;/code> 来启动，但我们往往需要它作为一个守护进程来运行。除了使用 &lt;code>nohup&lt;/code> 之外，ES 本身有自带的方法：&lt;code>./bin/elasticsearch -d -p pid&lt;/code>&lt;/p>
+&lt;p>注：-p 选项将进程记录到文件中，因此此处的 pid 应为文件路径。&lt;/p>
+&lt;p>一旦启动后，可以通过 &lt;code>curl localhost:9200&lt;/code> 来获取 ES 的相关信息。&lt;/p>
+&lt;p>若开启了集群，可以通过 &lt;code>curl -X GET &amp;quot;localhost:9200/_cat/health?v&amp;amp;pretty&amp;quot;&lt;/code> 来查看节点信息。可以看到，多节点副本可用的情况下 status 为 green，若只有单节点的情况下执行，则 status 为 yellow，但也是正常的，只是没有副本而已。&lt;/p>
+&lt;p>关闭时，只需 &lt;code>pkill -F pid&lt;/code> 即可。或者使用更通用的方法 &lt;code>ps -ef | grep Elasticsearch&lt;/code> 或者 &lt;code>jps | grep Elasticsearch&lt;/code> 来获取进程号。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Elasticsearch" target="_blank" rel="noopener"
+>Elasticsearch Wikipedia&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.elastic.co/" target="_blank" rel="noopener"
+>Elasticsearch&lt;/a>&lt;/li>
+&lt;/ol></description></item></channel></rss>

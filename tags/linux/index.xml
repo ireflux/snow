@@ -1,6 +1,290 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on sherry's blog</title><link>https://ireflux.github.io/snow/tags/linux/</link><description>Recent content in Linux on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p></description></item><item><title>WeeChat 不完全使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC&lt;/a> 这种古老的通信协议。其中有一段叙述很有意思，大意是说如今 IRC 服务器这种带有很强匿名性质的聊天室，由于界面或操作还停留在上世纪，是天然的过滤屏障，人少反而提供了优质的社区交流氛围。但同时也不容易打击盗版，用户通过各种代理、中继连上来，很难去追溯，再加上现如今用户较少，规模不复往昔，因此可能也失去了打击的价值。种种技术和非技术的因素，造就了这样的一个强匿名、低审查、较为自由的一个“避难所”。用视频中的话说：“互联网上，没人知道你是一条狗”。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on sherry's blog</title><link>https://ireflux.github.io/snow/tags/linux/</link><description>Recent content in Linux on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p>
+&lt;h3 id="虚拟机设置">虚拟机设置&lt;/h3>
+&lt;p>首先在虚拟机上开启两个网卡，我的是 VirtualBox，就以它为例，依次进入 &lt;code>设置-&amp;gt;网络&lt;/code>，勾选两个网卡，启用网络连接，网卡一用于连接外部网络，连接方式 NAT 或桥接都可。网卡二用于和 Linux 物理机交换数据，连接方式选择 “&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html#network_hostonly" target="_blank" rel="noopener"
+>仅主机（Host-Only）网络&lt;/a>”。顺便一提，如果选择完 “仅主机（Host-Only）” 后，界面名称选项为空的话，就需要去菜单 &lt;code>管理-&amp;gt;主机网络管理器&lt;/code> 中创建一个，然后再回到原来的地方，界面名称的选项就是刚刚在网络管理器中创建的。&lt;/p>
+&lt;p>打开 Windows 虚拟机后，依次进入 &lt;code>控制面板-&amp;gt;网络和共享中心-&amp;gt;更改适配器设置&lt;/code>，里面会存在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接和两个其他本地连接，其中一个是 “NAT/桥接” 的网卡一，另一个是 “仅主机（Host-Only）” 的网卡二，需要自己分辨一下。在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接上依次 &lt;code>右键-&amp;gt;属性-&amp;gt;共享&lt;/code>，勾选 “允许其他网络用户通过此计算机 Internet 连接来连接” 选项，家庭网络连接选择 “仅主机（Host-Only）” 的本地连接，确定即可。查看一下 “仅主机（Host-Only）” 的 IP 地址，接下来需要在宿主机上设置路由，将要内网地址转发到 “仅主机（Host-Only）” 的 IP 地址上。&lt;/p>
+&lt;h3 id="宿主机设置">宿主机设置&lt;/h3>
+&lt;p>以我的为例，我的 “仅主机（Host-Only）” 的本地连接 IP 地址为 192.168.56.3，假设我要访问的公司内网 IP 在 172.16.x.x 的网段，就可以将 172.16 开头的内网地址全部转发到 “仅主机（Host-Only）” 的 IP 地址上，即在宿主机执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo route add -net 172.16.0.0/16 gw 192.168.56.3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>命令执行完后可以通过 &lt;code>route&lt;/code> 查看一下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ route
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Destination&lt;/th>
+&lt;th style="text-align:center">Gateway&lt;/th>
+&lt;th style="text-align:center">Genmask&lt;/th>
+&lt;th style="text-align:center">Flags&lt;/th>
+&lt;th style="text-align:center">Metric&lt;/th>
+&lt;th style="text-align:center">Ref&lt;/th>
+&lt;th style="text-align:center">Use&lt;/th>
+&lt;th style="text-align:center">Iface&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">default&lt;/td>
+&lt;td style="text-align:center">_gateway&lt;/td>
+&lt;td style="text-align:center">0.0.0.0&lt;/td>
+&lt;td style="text-align:center">UG&lt;/td>
+&lt;td style="text-align:center">600&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">wlp3s0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">172.16.0.0&lt;/td>
+&lt;td style="text-align:center">192.168.56.3&lt;/td>
+&lt;td style="text-align:center">255.255.0.0&lt;/td>
+&lt;td style="text-align:center">UG&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">vboxnet0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">192.168.31.0&lt;/td>
+&lt;td style="text-align:center">0.0.0.0&lt;/td>
+&lt;td style="text-align:center">255.255.255.0&lt;/td>
+&lt;td style="text-align:center">U&lt;/td>
+&lt;td style="text-align:center">600&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">wlp3s0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">192.168.56.0&lt;/td>
+&lt;td style="text-align:center">0.0.0.0&lt;/td>
+&lt;td style="text-align:center">255.255.255.0&lt;/td>
+&lt;td style="text-align:center">U&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">0&lt;/td>
+&lt;td style="text-align:center">vboxnet0&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>至此就可以在宿主机上愉快的上内网了。&lt;/p>
+&lt;p>刚刚添加的路由转发规则是临时的，宿主机重启后，就会重置。也可以在用完后手动删除，即在终端执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo route del -net 172.16.0.0/16 gw 192.168.56.3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>这么做虽然繁琐一点，但可以使得我的 Arch 连上内网的同时又避免了直接在物理机上装软件，还是感觉极度舒适。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
+>Chapter 6. Virtual Networking&lt;/a>: &lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
+>https://www.virtualbox.org/manual/ch06.html&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>WeeChat 不完全使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a class="link" href="https://en.wikipedia.org/wiki/Internet_Relay_Chat" target="_blank" rel="noopener"
+>IRC&lt;/a> 这种古老的通信协议。其中有一段叙述很有意思，大意是说如今 IRC 服务器这种带有很强匿名性质的聊天室，由于界面或操作还停留在上世纪，是天然的过滤屏障，人少反而提供了优质的社区交流氛围。但同时也不容易打击盗版，用户通过各种代理、中继连上来，很难去追溯，再加上现如今用户较少，规模不复往昔，因此可能也失去了打击的价值。种种技术和非技术的因素，造就了这样的一个强匿名、低审查、较为自由的一个“避难所”。用视频中的话说：“互联网上，没人知道你是一条狗”。&lt;/p>
 &lt;p>而这也正是吸引人的地方 :)&lt;/p>
-&lt;p>从 &lt;a href="https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients">arch wiki&lt;/a> 中可以找到一些主流的支持 IRC 协议的软件。根据下面的图表对比，&lt;a href="https://WeeChat.org/">WeeChat&lt;/a> 相比于其他软件来说更强大，扩展性更好，最有优势。&lt;/p></description></item><item><title>netcat 的使用笔记</title><link>https://ireflux.github.io/snow/post/netcat-note/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/netcat-note/</guid><description>&lt;p>当在&lt;a href="https://packages.debian.org/sid/netcat-openbsd"> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a href="https://github.com/openbsd/src/tree/master/usr.bin/nc">源代码&lt;/a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有&lt;a href="https://packages.debian.org/sid/netcat-openbsd">openbsd版本&lt;/a>，&lt;a href="http://netcat.sourceforge.net/download.php">gnu版本&lt;/a>，&lt;a href="https://nmap.org/ncat/">nmap社区版本ncat&lt;/a>。&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
+&lt;p>从 &lt;a class="link" href="https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients" target="_blank" rel="noopener"
+>arch wiki&lt;/a> 中可以找到一些主流的支持 IRC 协议的软件。根据下面的图表对比，&lt;a class="link" href="https://WeeChat.org/" target="_blank" rel="noopener"
+>WeeChat&lt;/a> 相比于其他软件来说更强大，扩展性更好，最有优势。&lt;/p>
+&lt;p>下图表搬运自 arch wiki：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Name&lt;/th>
+&lt;th style="text-align:center">Package&lt;/th>
+&lt;th style="text-align:center">Written in&lt;/th>
+&lt;th style="text-align:center">Extensible&lt;/th>
+&lt;th style="text-align:center">&lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
+>SASL&lt;/a>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">BitchX&lt;/td>
+&lt;td style="text-align:center">bitchx-git&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">?&lt;/td>
+&lt;td style="text-align:center">?&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ERC&lt;/td>
+&lt;td style="text-align:center">emacs&lt;/td>
+&lt;td style="text-align:center">ELisp&lt;/td>
+&lt;td style="text-align:center">in ELisp&lt;/td>
+&lt;td style="text-align:center">via script&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ii&lt;/td>
+&lt;td style="text-align:center">iiAUR&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">stdin/stdout&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Irssi&lt;/td>
+&lt;td style="text-align:center">irssi&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">in Perl&lt;/td>
+&lt;td style="text-align:center">Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">pork&lt;/td>
+&lt;td style="text-align:center">pork&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">in Perl&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ScrollZ&lt;/td>
+&lt;td style="text-align:center">scrollz&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">?&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">sic&lt;/td>
+&lt;td style="text-align:center">sicAUR&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">stdin/stdout&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">tiny&lt;/td>
+&lt;td style="text-align:center">tiny-irc-client-git&lt;/td>
+&lt;td style="text-align:center">Rust&lt;/td>
+&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align:center">Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">WeeChat&lt;/td>
+&lt;td style="text-align:center">WeeChat&lt;/td>
+&lt;td style="text-align:center">C&lt;/td>
+&lt;td style="text-align:center">multiple languages&lt;/td>
+&lt;td style="text-align:center">Yes&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="启动-weechat">启动 WeeChat&lt;/h3>
+&lt;p>只需在终端中输入以下命令，回车即可：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ WeeChat
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果你发现启动后出现了一些诸如 &lt;code>Errors loading plugins&lt;/code> 之类的错误，是因为 WeeChat 启动时会默认加载这些插件，而你并未安装这些插件所需运行时所致。&lt;/p>
+&lt;p>如果想要消除这些错误信息，可以使用以下两种方法：&lt;/p>
+&lt;ol>
+&lt;li>安装 lua, ruby, aspell，tcl 等软件&lt;/li>
+&lt;li>在 WeeChat 终端执行 &lt;code>/set WeeChat.plugin.autoload &amp;quot;*,!ruby,!lua,!aspell,!tcl&amp;quot;&lt;/code> 就会在启动时阻止这些插件运行&lt;/li>
+&lt;/ol>
+&lt;p>WeeChat 本身是有一些界面交互命令，如 &lt;code>version&lt;/code>，&lt;code>uptime&lt;/code>，&lt;code>print&lt;/code> 之类，如果没有插件，WeeChat 本身没什么用，什么都做不了。WeeChat 对 IRC 的支持也是通过插件来实现的，只不过 IRC 插件是默认内置的，如果想知道都加载了哪些插件，可以通过 &lt;code>/plugin&lt;/code> 来查看。还可以在 &lt;a class="link" href="https://WeeChat.org/scripts/" target="_blank" rel="noopener"
+>插件库&lt;/a> 安装脚本插件。&lt;/p>
+&lt;h3 id="在线手册">在线手册&lt;/h3>
+&lt;p>所有的命令都可以通过在 WeeChat 中输入 &lt;code>/help&lt;/code> 来查询，如果想看某个命令的功能描述和用法，比如 &lt;code>server&lt;/code>，可以像这样：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/help server
+&lt;/code>&lt;/pre>&lt;p>还可以查看某个配置项的描述和用法，比如 &lt;code>irc.server.freenode.autojoin&lt;/code>：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/help irc.server.freenode.autojoin
+&lt;/code>&lt;/pre>&lt;h3 id="设置选项">设置选项&lt;/h3>
+&lt;p>在 WeeChat 中查看所有的选项，使用 &lt;code>/set&lt;/code> 命令，现在输入 &lt;code>/set&lt;/code> 实际上是插件提供的指令 &lt;code>/fset&lt;/code> 的 alias，还可以通过模糊匹配：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/fset WeeChat.*
+&lt;/code>&lt;/pre>&lt;p>可以通过如下命令来修改选项的值，例如：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.username &amp;#34;sherry&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>修改后无需重启，WeeChat 会自动更新，或者使用 &lt;code>/save&lt;/code> 强制保存修改后的值。不建议手动编辑配置文件来修改，因为 WeeChat 可能会随时写入信息。&lt;/p>
+&lt;h3 id="添加服务器">添加服务器&lt;/h3>
+&lt;p>以当前最大的节点 &lt;code>chat.freenode.net&lt;/code> 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。&lt;/p>
+&lt;p>不加密的那种我在国内尝试了下连不上，使用了加密连接才连上，写法如下，其中 &lt;code>freenode&lt;/code> 是昵称：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/server add freenode chat.freenode.net/6697 -ssl
+&lt;/code>&lt;/pre>&lt;p>进去之后会发现自己的用户名旁边有个(+iZ)，这个代表用户模式，&lt;code>i&lt;/code> 代表隐形，&lt;code>Z&lt;/code> 是通过加密连接到服务器的用户，会自动获得这个网络状态，更多用户模式可以通过 &lt;code>/help mode&lt;/code> 查看，或者浏览官方 Wiki &lt;a class="link" href="https://freenode.net/kb/answer/usermodes" target="_blank" rel="noopener"
+>User Mode&lt;/a>&lt;/p>
+&lt;h3 id="自定义-irc-服务器选项">自定义 IRC 服务器选项&lt;/h3>
+&lt;p>如果您未为服务器选项指定特定值，则 WeeChat 会为所有服务器使用默认值。这些默认选项是 &lt;code>irc.server_default.*&lt;/code>，因此对于每个服务器都可以单独设置参数。&lt;/p>
+&lt;p>默认情况下，昵称会和 un*x 的登陆用户名称相同，还可以修改昵称：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.nicks &amp;#34;sherry&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>设置用户名和真实姓名：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.username &amp;#34;My user name&amp;#34;
+/set irc.server.freenode.realname &amp;#34;My real name&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>启动时自动连接服务器：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.autoconnect on
+&lt;/code>&lt;/pre>&lt;p>使用 SSL 加密连接：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.addresses &amp;#34;chat.freenode.net/7000&amp;#34;
+/set irc.server.freenode.ssl on
+&lt;/code>&lt;/pre>&lt;p>如果服务器上有 &lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
+>SASL&lt;/a>，可以将其用于身份验证：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.sasl_username &amp;#34;mynick&amp;#34;
+/set irc.server.freenode.sasl_password &amp;#34;xxxxxxx&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>连接到服务器时自动加入频道：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.autojoin &amp;#34;#channel1,#channel2&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>重置所设置的选项：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/unset irc.server.freenode.nicks
+&lt;/code>&lt;/pre>&lt;p>设置其他选项（xxx为输入一个不存在的选项名）：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/set irc.server.freenode.xxx value
+&lt;/code>&lt;/pre>&lt;h3 id="连接到-irc-服务器">连接到 IRC 服务器&lt;/h3>
+&lt;pre tabindex="0">&lt;code>/connect freenode
+&lt;/code>&lt;/pre>&lt;h3 id="加入离开-irc-频道">加入/离开 IRC 频道&lt;/h3>
+&lt;p>查询频道：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/list #channel
+&lt;/code>&lt;/pre>&lt;p>加入频道：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/join #channel
+&lt;/code>&lt;/pre>&lt;p>离开频道（界面不会关闭）：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/part [离开时的信息]]
+&lt;/code>&lt;/pre>&lt;p>关闭服务器/频道/私聊（同时界面也会关闭，&lt;code>/close&lt;/code> 是 &lt;code>/buffer close&lt;/code> 的 alias）：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/close
+&lt;/code>&lt;/pre>&lt;p>断开与服务器的连接：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/disconnect
+&lt;/code>&lt;/pre>&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>除了以上的一些基本用法，还有 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_ssl_certificates" target="_blank" rel="noopener"
+>SASL 认证&lt;/a> 以及 &lt;a class="link" href="https://freenode.net/kb/answer/sasl" target="_blank" rel="noopener"
+>使用 SASL 连接&lt;/a>、通过 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_tor_freenode" target="_blank" rel="noopener"
+>Tor 连接 Freenode&lt;/a> 等用法。此外，一些 WeeChat 软件的方面的问题，可以看这个 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_faq.en.html" target="_blank" rel="noopener"
+>FAQ&lt;/a>&lt;/p>
+&lt;p>一些常用的 IRC 站点：&lt;/p>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://freenode.net" target="_blank" rel="noopener"
+>https://freenode.net&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.dal.net/servers" target="_blank" rel="noopener"
+>https://www.dal.net/servers&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.undernet.org" target="_blank" rel="noopener"
+>https://www.undernet.org&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://weechat.org/doc/" target="_blank" rel="noopener"
+>WeeChat Docs&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://freenode.net/kb/all" target="_blank" rel="noopener"
+>Freenode Knowledge Base&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients" target="_blank" rel="noopener"
+>Arch Wiki IRC_clients&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
+>Wikipedia SASL&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>netcat 的使用笔记</title><link>https://ireflux.github.io/snow/post/netcat-note/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/netcat-note/</guid><description>&lt;p>当在&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
+> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a class="link" href="https://github.com/openbsd/src/tree/master/usr.bin/nc" target="_blank" rel="noopener"
+>源代码&lt;/a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
+>openbsd版本&lt;/a>，&lt;a class="link" href="http://netcat.sourceforge.net/download.php" target="_blank" rel="noopener"
+>gnu版本&lt;/a>，&lt;a class="link" href="https://nmap.org/ncat/" target="_blank" rel="noopener"
+>nmap社区版本ncat&lt;/a>。&lt;/p>
+&lt;p>netcat 最初的作者是一个名为“&lt;em>Hobbit&lt;/em>”的人在1995年10月28号以源代码的形式发布的。在其&lt;a class="link" href="https://nc110.sourceforge.io/" target="_blank" rel="noopener"
+>官网&lt;/a>还能找到一些其他信息以及由“&lt;em>Hobbit&lt;/em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。&lt;/p>
+&lt;p>首先来看一下 &lt;code>nc -h&lt;/code> 里平时使用频率比较高的一些选项：&lt;/p>
+&lt;ul>
+&lt;li>h：输出帮助信息&lt;/li>
+&lt;li>k：可以使客户端重复连接，一般配合 l 来使用&lt;/li>
+&lt;li>l：开启监听模式，作为服务端。若不加该选项则默认为客户端&lt;/li>
+&lt;li>n：不对命令行中的host进行域名解析。简单来说就是host写为x.x.x.x时加上该选项，写为域名时不加&lt;/li>
+&lt;li>p：指定端口&lt;/li>
+&lt;li>v：输出详细信息&lt;/li>
+&lt;li>z：通常用于端口扫描，仅判断是否能够连接，不进行数据通讯&lt;/li>
+&lt;/ul>
+&lt;h3 id="开启服务">开启服务&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -k -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>作为服务端，监听端口，开启服务。假设客户端通过 &lt;code>nc [ip] [port]&lt;/code> 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。&lt;/p>
+&lt;h3 id="测试端口">测试端口&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -nv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。&lt;/p>
+&lt;h3 id="端口扫描">端口扫描&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -znv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port-port&lt;span style="color:#f92672">]&lt;/span> 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | grep succeeded
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以用来做渗透测试。&lt;/p>
+&lt;h3 id="文件传输">文件传输&lt;/h3>
+&lt;p>首先在接收端开启监听：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在发送端发送文件:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;lt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 &lt;code>nc localhost [port] &amp;lt; [filename]&lt;/code> 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 &lt;code>ctrl+c&lt;/code> 即可。&lt;/p>
+&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——&lt;a class="link" href="https://program-think.blogspot.com/2019/09/Netcat-Tricks.html" target="_blank" rel="noopener"
+>扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”&lt;/a>。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ mkfifo &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span> | /bin/bash 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这可能也是编程随想的博客中有提到但并未透露的“间接的方式”。&lt;/p></description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</guid><description>&lt;p>最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p>
 &lt;p>在路径 &lt;code>/etc/X11/xorg.conf.d/&lt;/code> 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Section &lt;span style="color:#e6db74">&amp;#34;InputClass&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Identifier &lt;span style="color:#e6db74">&amp;#34;touchpad&amp;#34;&lt;/span>
@@ -11,11 +295,66 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;NaturalScrolling&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Option &lt;span style="color:#e6db74">&amp;#34;ScrollMethod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;twofinger&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndSection
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注：在有些资料中 Driver 项可能是 synaptics，这是旧的驱动，已经不再更新了。&lt;/p>
+&lt;p>上方的配置项有些可根据个人习惯来设置，例如：NaturalScrolling，TappingButtonMap，ScrollMethod&amp;hellip;它们还有一些其他的选项，可参考 &lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
+>libinput - libinput-based X.Org input driver&lt;/a>&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Libinput" target="_blank" rel="noopener"
+>archlinux libinput&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
+>libinput - libinput-based X.Org input driver&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p>
 &lt;p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
 [device name] unauthorized&lt;/p>
-&lt;/blockquote></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
-&lt;p>心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p></description></item></channel></rss>
+&lt;/blockquote>
+&lt;p>要进行配置之前，首先需要找到自己手机的USB vendor ID和product ID，启用开发者模式，然后打开usb调试模式插上手机后在terminal中执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是vendor id，后者是product id&lt;/p>
+&lt;p>下面有两种方式来写配置文件：&lt;/p>
+&lt;h3 id="添加udev规则">添加udev规则&lt;/h3>
+&lt;p>1.首先要确保系统中有安装 &lt;code>android-udev&lt;/code> 这个包。可以通过包管理器来安装或者访问&lt;a class="link" href="https://source.android.com/setup/build/initializing#configuring-usb-access" target="_blank" rel="noopener"
+>source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:&lt;/p>
+&lt;blockquote>
+&lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;p>2.然后重新载入新的配置文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo udevadm control --reload-rules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo gpasswd -a user group
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置adb">配置adb&lt;/h3>
+&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将vendor id 写入到里面，保存退出即可。&lt;/p>
+&lt;p>这两种方式任选其一即可。然后进入解压后的platform-tools目录，将下好的twrp也放到里面，在目录中启动terminal，然后执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ ./adb devices
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
+&lt;blockquote>
+&lt;p>List of devices attached&lt;br>
+[device name] device&lt;/p>
+&lt;/blockquote>
+&lt;p>这样就算是完成了。&lt;/p>
+&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入bootloader也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Android_Debug_Bridge" target="_blank" rel="noopener"
+>Android Debug Bridge&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
+&lt;p>心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p>
+&lt;p>入了Arch神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方Wiki，因为中途需要点各种链接跳来跳去，刚装Arch的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装Arch时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位dalao的基于官方Wiki的中文教程，遂引用如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a class="link" href="http://www.viseator.com/2017/05/17/arch_install/" target="_blank" rel="noopener"
+>以官方Wiki的方式安装ArchLinux&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a class="link" href="http://www.viseator.com/2017/05/19/arch_setup/" target="_blank" rel="noopener"
+>ArchLinux安装后的必须配置与图形界面安装教程&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>在这里说一句，第二篇设置NetworkManager开机启动时，如果提示错误，那就是还没装NetworkManager，先安装下一步的network-manager-applet，它会把NetworkManager作为依赖项装上，然后再设置开机启动。&lt;/p>
+&lt;p>至此，enjoy！&lt;/p></description></item></channel></rss>

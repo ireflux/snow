@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on sherry's blog</title><link>https://ireflux.github.io/snow/tags/windows/</link><description>Recent content in Windows on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 03 Jun 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows下优秀软件收录</title><link>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</link><pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid><description>&lt;p>此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p>
 &lt;h3 id="spacesniffer">spacesniffer&lt;/h3>
-&lt;p>它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a href="http://www.uderzo.it/main_products/space_sniffer/download.html">下载地址&lt;/a>&lt;/p>
+&lt;p>它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a class="link" href="http://www.uderzo.it/main_products/space_sniffer/download.html" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
 &lt;h3 id="ccleaner">CCleaner&lt;/h3>
-&lt;p>清理浏览器缓存和注册表很有用.&lt;a href="https://www.piriform.com/">下载地址&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>清理浏览器缓存和注册表很有用.&lt;a class="link" href="https://www.piriform.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="华宇拼音输入法">华宇拼音输入法&lt;/h3>
+&lt;p>国产老牌输入法了，体积很小，很简洁，无广告。比某些国产输入法良心多了。&lt;a class="link" href="http://www.unispim.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="everyonepiano">EveryonePiano&lt;/h3>
+&lt;p>闲来无事弹弹琴也不错。&lt;a class="link" href="http://www.everyonepiano.cn/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="7-zip">7-zip&lt;/h3>
+&lt;p>开源压缩软件，体积小。&lt;a class="link" href="http://www.7-zip.org/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-06-07更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="sumatrapdf">SumatraPDF&lt;/h3>
+&lt;p>小巧好用的pdf viewer，开源的，虽然一般用不到吧(chrome能打开pdf)。&lt;a class="link" href="https://www.sumatrapdfreader.org" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="fscapture">FSCapture&lt;/h3>
+&lt;p>小巧好用的截图软件。一般windows自带的够用了，不过特定情况下还是用得到的。&lt;a class="link" href="http://www.faststone.org" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-08-28更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="hashcheck-shell-extension">HashCheck Shell Extension&lt;/h3>
+&lt;p>这个看名字大概就知道是干什么的了。&lt;a class="link" href="http://code.kliu.org/hashcheck/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="everything">Everything&lt;/h3>
+&lt;p>用过的都将其称作‘神器’&lt;a class="link" href="http://www.voidtools.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-11-8更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="vscode">VSCode&lt;/h3>
+&lt;p>文本编辑器，巨硬出品，开源，跨平台，总之很不错。&lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2018-1-9更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="potplayer">Potplayer&lt;/h3>
+&lt;p>Windows下播放器，据说解码器很强。&lt;a class="link" href="https://potplayer.daum.net/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="rufus">Rufus&lt;/h3>
+&lt;p>开源免费，做启动盘很好用，最关键的是作者拒绝支付，简直业界良心！&lt;a class="link" href="https://rufus.akeo.ie/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>以下为作者原话：&lt;/p>
+&lt;blockquote>
+&lt;p>Finally the fact that I have the freedom to develop Free Software in my spare time should indicate that I&amp;rsquo;m well-off enough, and therefore that you should direct your generosity towards people who need it a lot more than I do. If you really insist, you can always make a donation to the Free Software Foundation, as they are the main reason software like Rufus is possible.&lt;/p>
+&lt;/blockquote>
+&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2018-1-29更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
+&lt;h3 id="screentogif">ScreenToGif&lt;/h3>
+&lt;p>2M的小软件，用来录制Gif，开源免费。&lt;a class="link" href="http://www.screentogif.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="gifcam">GifCam&lt;/h3>
+&lt;p>体积&amp;lt;2m，极简风格。&lt;a class="link" href="http://blog.bahraniapps.com/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="listen-1">Listen 1&lt;/h3>
+&lt;p>整合了各大平台的音乐，在也不需要各大平台来回找了！&lt;a class="link" href="https://listen1.github.io/listen1/" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="sysinternals">Sysinternals&lt;/h3>
+&lt;p>微软的系统管理工具包，里面有十几个小工具，也可单独下载所需要的工具。比如：autiruns用来管理开机自启动的程序。procexp相当于增强般的任务管理器。这么好的东西居然没内置！&lt;a class="link" href="https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;h3 id="power-map">Power Map&lt;/h3>
+&lt;p>微软出品的3D数据地图插件，包含在线地图+在线演示+制作视频等各项功能。&lt;a class="link" href="https://www.microsoft.com/en-us/download/details.aspx?id=38395" target="_blank" rel="noopener"
+>下载地址&lt;/a>&lt;/p>
+&lt;p>未完待续&amp;hellip;&lt;/p></description></item></channel></rss>

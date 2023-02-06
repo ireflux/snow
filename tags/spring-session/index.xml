@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Session on sherry's blog</title><link>https://ireflux.github.io/snow/tags/spring-session/</link><description>Recent content in Spring Session on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/spring-session/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Session 使用笔记</title><link>https://ireflux.github.io/snow/post/note-on-using-spring-session/</link><pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid><description>&lt;p>Spring Session 的配置非常简单，根据&lt;a href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html">官方文档&lt;/a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Session on sherry's blog</title><link>https://ireflux.github.io/snow/tags/spring-session/</link><description>Recent content in Spring Session on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/spring-session/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Session 使用笔记</title><link>https://ireflux.github.io/snow/post/note-on-using-spring-session/</link><pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/note-on-using-spring-session/</guid><description>&lt;p>Spring Session 的配置非常简单，根据&lt;a class="link" href="https://docs.spring.io/spring-session/docs/current/reference/html5/guides/boot-redis.html" target="_blank" rel="noopener"
+>官方文档&lt;/a>的说明，只需配置依赖及配置文件即可使用，无需任何代码相关的配置项。&lt;/p>
 &lt;p>首先需要添加依赖项:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
@@ -8,4 +9,61 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-session-data-redis&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在 application.properties 中添加以下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.host&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">localhost # Redis server host.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.password&lt;/span>&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74"># Login password of the redis server.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.redis.port&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">6379 # Redis server port.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.session.store-type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">redis # Session store type.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>至此就配置完成了，现在就可以写两个简单的方法去测试一下。例如以下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/set&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">setSession&lt;/span>&lt;span style="color:#f92672">(&lt;/span>HttpSession session&lt;span style="color:#f92672">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> session&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setAttribute&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sherry&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/get&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getSession&lt;/span>&lt;span style="color:#f92672">(&lt;/span>HttpSession session&lt;span style="color:#f92672">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">)&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getAttribute&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后使用 maven package 将其打成 jar 包，若需要跳过测试，可使用 &lt;code>mvn -Dmaven.test.skip=true package&lt;/code>，或者在 pom.xml 中添加插件依赖：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.maven.plugins&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>maven-surefire-plugin&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;skipTests&amp;gt;&lt;/span>true&lt;span style="color:#f92672">&amp;lt;/skipTests&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后开启两个服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nohup java -jar app.jar --server.port&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span> &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ nohup java -jar app.jar --server.port&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8081&lt;/span> &amp;amp;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>现在在 8080 里面 set，在 8081 里面 get，会发现也可以得到结果。&lt;/p>
+&lt;p>这里顺便歪个楼，如果服务在前台启动，比如说启动 redis 时未将 redis.conf 中的 daemonize 设置为 yes。此时可以使用 &lt;code>CTRL + Z&lt;/code> 将其挂在后台，但此时服务会被暂停，使用 &lt;code>fg&lt;/code> 可以将其调回前台继续运行(若后台有多个，默认调回最后启动的那个)。也可以使用 &lt;code>bg&lt;/code> 使其后台继续运行。使用 &lt;code>jobs&lt;/code> 可查看在后台运行的服务列表。&lt;/p>
+&lt;p>到此为止就算完成了，但还可以更进一步，在这两个服务前面加一层 Nginx 来做反向代理，还可以设置权重。首先来修改 nginx 的配置文件，一般来说需要修改 nginx.conf，由于我现在的环境是 debian，有一个默认的配置文件位于 /etc/nginx/sites-enabled 下的 default 文件，不同的发行版文件目录结构可能不大一样，可以根据自身情况自行查找。可根据以下示例来写：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">upstream wanmei.ml{
+server 127.0.0.1:8080 weight=1;
+server 127.0.0.1:8081 weight=2;
+}
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+server_name localhost;
+location / {
+proxy_pass http://wanmei.ml;
+proxy_redirect default;
+}
+}
+&lt;/code>&lt;/pre>&lt;p>然后 &lt;code>nginx -s reload&lt;/code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="http://nginx.org/en/docs/" target="_blank" rel="noopener"
+>nginx documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html" target="_blank" rel="noopener"
+>扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”&lt;/a>&lt;/li>
+&lt;/ol></description></item></channel></rss>

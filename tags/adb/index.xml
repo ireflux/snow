@@ -4,4 +4,37 @@
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
 [device name] unauthorized&lt;/p>
-&lt;/blockquote></description></item></channel></rss>
+&lt;/blockquote>
+&lt;p>要进行配置之前，首先需要找到自己手机的USB vendor ID和product ID，启用开发者模式，然后打开usb调试模式插上手机后在terminal中执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是vendor id，后者是product id&lt;/p>
+&lt;p>下面有两种方式来写配置文件：&lt;/p>
+&lt;h3 id="添加udev规则">添加udev规则&lt;/h3>
+&lt;p>1.首先要确保系统中有安装 &lt;code>android-udev&lt;/code> 这个包。可以通过包管理器来安装或者访问&lt;a class="link" href="https://source.android.com/setup/build/initializing#configuring-usb-access" target="_blank" rel="noopener"
+>source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:&lt;/p>
+&lt;blockquote>
+&lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;p>2.然后重新载入新的配置文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo udevadm control --reload-rules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo gpasswd -a user group
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置adb">配置adb&lt;/h3>
+&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将vendor id 写入到里面，保存退出即可。&lt;/p>
+&lt;p>这两种方式任选其一即可。然后进入解压后的platform-tools目录，将下好的twrp也放到里面，在目录中启动terminal，然后执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ ./adb devices
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
+&lt;blockquote>
+&lt;p>List of devices attached&lt;br>
+[device name] device&lt;/p>
+&lt;/blockquote>
+&lt;p>这样就算是完成了。&lt;/p>
+&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入bootloader也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Android_Debug_Bridge" target="_blank" rel="noopener"
+>Android Debug Bridge&lt;/a>&lt;/li>
+&lt;/ol></description></item></channel></rss>

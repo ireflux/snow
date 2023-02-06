@@ -1,4 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Postgresql on sherry's blog</title><link>https://ireflux.github.io/snow/tags/postgresql/</link><description>Recent content in Postgresql on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
 &lt;p>在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
 &lt;p>安装没什么可说的，直接 &lt;code>sudo pacman -S postgresql&lt;/code> 就好了。(其他发行版请使用对应的包管理器)&lt;/p>
-&lt;p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p></description></item></channel></rss>
+&lt;p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p>
+&lt;p>如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：&lt;/p>
+&lt;pre tabindex="0">&lt;code>postgres does not know where to find the server configuration file.
+You must specify the --config-file or -D invocation option or set the PGDATA environment variable.
+&lt;/code>&lt;/pre>&lt;p>因此需要先切换到 postgres 账户：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo -iu postgres
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后初始化配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ initdb -D /var/lib/postgres/data
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>值得一提的是，默认情况下，数据库的编码和语言环境会使用本机的系统编码和语言环境，因此如果系统不是英文环境或者编码不是 utf-8 的还是建议通过指定编码和语言环境的方式来覆盖掉默认值。就像这洋：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ initdb --locale en_US.UTF-8 -E UTF8 -D &lt;span style="color:#e6db74">&amp;#39;/var/lib/postgres/data&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上条与上上条命令中的 -D 会指定默认(default)的存储位置。若无特殊需求，一般使用默认位置就行，如果想要修改存储位置，可以看&lt;a class="link" href="https://wiki.archlinux.org/index.php/PostgreSQL#Change_default_data_directory" target="_blank" rel="noopener"
+>这里&lt;/a>，此处不再赘述。&lt;/p>
+&lt;p>如果一切顺利，应该会出现以下结果：&lt;/p>
+&lt;pre tabindex="0">&lt;code>The files belonging to this database system will be owned by user &amp;#34;postgres&amp;#34;.
+This user must also own the server process.
+The database cluster will be initialized with locale &amp;#34;en_US.UTF-8&amp;#34;.
+The default database encoding has accordingly been set to &amp;#34;UTF8&amp;#34;.
+The default text search configuration will be set to &amp;#34;english&amp;#34;.
+Data page checksums are disabled.
+fixing permissions on existing directory /var/lib/postgres/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting dynamic shared memory implementation ... posix
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+WARNING: enabling &amp;#34;trust&amp;#34; authentication for local connections
+You can change this by editing pg_hba.conf or using the option -A, or
+--auth-local and --auth-host, the next time you run initdb.
+Success. You can now start the database server using:
+pg_ctl -D /var/lib/postgres/data -l logfile start
+&lt;/code>&lt;/pre>&lt;p>然后启动 postgresql server 服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo systemctl start postgresql.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>到此处事实上已经完成了，但是这一切都是在 postgres 这个账户下进行操作的，为了便于自己本机日常使用的账户进行操作，可以在 postgresql 数据库中创建一个和自己本机账户同名的数据库账户，仍然需要 postgres 这个 Superuser 来继续操作：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ createuser --interactive
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上条命令执行后，在这里为了方便，我将其设置成了 superuser，交互如下：&lt;/p>
+&lt;pre tabindex="0">&lt;code>Enter name of role to add: [此处填写你的本机账户名]
+Shall the new role be a superuser? (y/n) y
+&lt;/code>&lt;/pre>&lt;p>创建完用户就可以输入 &lt;code>exit&lt;/code> 来换回本来的账户了。接下来创建数据库：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ createdb &lt;span style="color:#f92672">[&lt;/span>此处填写数据库名称&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果创建的数据库用户名称与本机不同名，此时通过 &lt;code>createdb&lt;/code> 命令来创建数据库就会出现如下错误：&lt;/p>
+&lt;pre tabindex="0">&lt;code>createdb: could not connect to database template1: FATAL: role &amp;#34;[你的本机账户名]&amp;#34; does not exist
+&lt;/code>&lt;/pre>&lt;p>如果一切顺利，就可以通过 &lt;code>psql -d [数据库名称]&lt;/code>来访问你的数据库了。&lt;/p>
+&lt;p>以下是进入数据库后的一些查询命令：&lt;/p>
+&lt;blockquote>
+&lt;p>\help -&amp;gt; 查看所有数据库的命令。&lt;br>
+\help [命令] -&amp;gt; 查看此命令的详细信息及用法。类似于 man page。&lt;br>
+\du -&amp;gt; 列出所有的账户及其权限。&lt;br>
+\dt -&amp;gt; 显示当前数据库所有表的摘要信息。&lt;br>
+\q -&amp;gt; 退出&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://www.postgresql.org/docs/11/" target="_blank" rel="noopener"
+>PostgreSQL Doc&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/PostgreSQL" target="_blank" rel="noopener"
+>Arch Wiki PostgreSQL&lt;/a>&lt;/li>
+&lt;/ol></description></item></channel></rss>
