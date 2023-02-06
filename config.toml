@@ -2,7 +2,18 @@ baseURL = "https://ireflux.github.io/snow"
 languageCode = "en-us"
 title = "sherry's blog"
 theme = "hugo-theme-stack"
+paginate = 5
 
+# Theme i18n support
+# Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
+DefaultContentLanguage = "zh-cn"
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage = true
+
+# Change it to your Disqus shortname before using
+# disqusShortname = "hugo-theme-stack"
 
 [author]
   name = "sherry"
@@ -12,23 +23,172 @@ theme = "hugo-theme-stack"
   priority = 0.5
   filename = "sitemap.xml"
 
-[[menu.main]]
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  url = "/"
-[[menu.main]]
-  name = "Archives"
-  weight = 20
-  identifier = "archives"
-  url = "/post/"
-[[menu.main]]
-  name = "Tags"
-  weight = 30
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "Categories"
-  weight = 40
-  identifier = "categories"
-  url = "/categories/"
+[[menu.social]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/ireflux"
+
+[menu.social.params]
+icon = "brand-github"
+
+[[menu.social]]
+identifier = "twitter"
+name = "Twitter"
+url = "https://twitter.com/HE2L0"
+
+[menu.social.params]
+icon = "brand-twitter"
+
+[params]
+  # Pages placed under these sections will be shown on homepage and archive page.
+  mainSections = ["post"]
+  # Output page's full content in RSS.
+  rssFullContent = true
+  favicon = "/favicon.ico"
+
+[params.sidebar]
+  compact = false
+  emoji = "🍥"
+  subtitle = "do something amazing."
+
+[params.sidebar.avatar]
+  enable = true
+  local = true
+  src = "img/quanyecha.jpg"
+
+
+[params.footer]
+since = 2016
+customText = ""
+
+[params.dateFormat]
+published = "Jan 02, 2006"
+lastUpdated = "Jan 02, 2006 15:04 MST"
+
+
+[params.article]
+math = false
+readingTime = true
+
+[params.article.license]
+enabled = true
+default = "Licensed under CC BY-NC-SA 4.0"
+
+## Widgets
+[[params.widgets.homepage]]
+type = "search"
+
+[[params.widgets.homepage]]
+type = "archives"
+
+[params.widgets.homepage.params]
+limit = 5
+
+[[params.widgets.homepage]]
+type = "categories"
+
+[params.widgets.homepage.params]
+limit = 10
+
+[[params.widgets.homepage]]
+type = "tag-cloud"
+
+[params.widgets.homepage.params]
+limit = 10
+
+[[params.widgets.page]]
+type = "toc"
+
+[params.opengraph.twitter]
+site = ""
+card = "summary_large_image"
+
+[params.defaultImage.opengraph]
+enabled = false
+local = false
+src = ""
+
+[params.colorScheme]
+toggle = true
+default = "auto"
+
+[params.imageProcessing.cover]
+enabled = true
+
+[params.imageProcessing.content]
+enabled = true
+
+## Comments
+[params.comments]
+enabled = true
+provider = "disqus"
+
+[params.comments.disqusjs]
+shortname = ""
+apiUrl = ""
+apiKey = ""
+admin = ""
+adminLabel = ""
+
+[params.comments.utterances]
+repo = ""
+issueTerm = "pathname"
+label = ""
+
+[params.comments.remark42]
+host = ""
+site = ""
+locale = ""
+
+[params.comments.vssue]
+platform = ""
+owner = ""
+repo = ""
+clientId = ""
+clientSecret = ""
+autoCreateIssue = false
+
+[params.comments.waline]
+serverURL = ""
+lang = ""
+visitor = ""
+avatar = ""
+emoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
+requiredMeta = ["name", "email", "url"]
+placeholder = ""
+
+[params.comments.waline.locale]
+admin = "Admin"
+
+[params.comments.twikoo]
+envId = ""
+region = ""
+path = ""
+lang = ""
+
+[params.comments.cactus]
+defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
+serverName = "cactus.chat"
+siteName = ""
+
+[params.comments.giscus]
+repo = ""
+repoID = ""
+category = ""
+categoryID = ""
+mapping = ""
+lightTheme = ""
+darkTheme = ""
+reactionsEnabled = 1
+emitMetadata = 0
+
+[params.comments.gitalk]
+owner = ""
+admin = ""
+repo = ""
+clientID = ""
+clientSecret = ""
+
+[params.comments.cusdis]
+host = ""
+id = ""
