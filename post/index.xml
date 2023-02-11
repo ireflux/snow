@@ -1384,13 +1384,13 @@ ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][P
 &lt;li>&lt;a class="link" href="https://www.elastic.co/" target="_blank" rel="noopener"
 >Elasticsearch&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>netcat 的使用笔记</title><link>https://ireflux.github.io/snow/post/netcat-note/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/netcat-note/</guid><description>&lt;p>当在&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
-> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a class="link" href="https://github.com/openbsd/src/tree/master/usr.bin/nc" target="_blank" rel="noopener"
+> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a class="link" href="https://github.com/openbsd/src/tree/master/usr.bin/nc" target="_blank" rel="noopener"
 >源代码&lt;/a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
 >openbsd版本&lt;/a>，&lt;a class="link" href="http://netcat.sourceforge.net/download.php" target="_blank" rel="noopener"
 >gnu版本&lt;/a>，&lt;a class="link" href="https://nmap.org/ncat/" target="_blank" rel="noopener"
 >nmap社区版本ncat&lt;/a>。&lt;/p>
-&lt;p>netcat 最初的作者是一个名为“&lt;em>Hobbit&lt;/em>”的人在1995年10月28号以源代码的形式发布的。在其&lt;a class="link" href="https://nc110.sourceforge.io/" target="_blank" rel="noopener"
->官网&lt;/a>还能找到一些其他信息以及由“&lt;em>Hobbit&lt;/em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。&lt;/p>
+&lt;p>netcat 最初的作者是一个名为“&lt;em>Hobbit&lt;/em>”的人在 1995 年 10 月 28 号以源代码的形式发布的。在其&lt;a class="link" href="https://nc110.sourceforge.io/" target="_blank" rel="noopener"
+>官网&lt;/a>还能找到一些其他信息以及由“&lt;em>Hobbit&lt;/em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的 netcat&lt;/p>
 &lt;p>首先来看一下 &lt;code>nc -h&lt;/code> 里平时使用频率比较高的一些选项：&lt;/p>
 &lt;ul>
 &lt;li>h：输出帮助信息&lt;/li>
@@ -1616,7 +1616,7 @@ proxy_redirect default;
 &lt;p>以上转发自 Solidot.&lt;/p>
 &lt;p>首先需要准备一个美国 IP，然后打开&lt;a class="link" href="https://private-network.firefox.com/" target="_blank" rel="noopener"
 >链接&lt;/a>，安装扩展。&lt;/p>
-&lt;p>美国 IP 喜 +1，官方出品安全性应该也没问题，美滋滋！&lt;/p></description></item><item><title>创业者不应该犯的错误</title><link>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</guid><description>&lt;p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。&lt;/p>
+&lt;p>美国 IP 喜 +1，官方出品安全性应该也没问题，美滋滋。&lt;/p></description></item><item><title>创业者不应该犯的错误</title><link>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mistakes-that-entrepreneurs-should-not-make/</guid><description>&lt;p>最近遇到了一家初创公司，在公司不到两天的时间里，看到了从老板不断的招人到无法留住员工，再继续招人的死循环过程。其创业过程犯了诸多错误，因此我想把我的想法分享出来，抛砖引玉，也希望能给即将进入软件行业的创业者一点参考。&lt;/p>
 &lt;ol>
 &lt;li>老板完全不懂这个行业，仅仅根据道听途说的一些名词，认为自己足够了解，要亲自指挥，提出的问题无法切中要点，无法听取意见，不能正常沟通。&lt;/li>
 &lt;li>公司基础软硬件设施缺乏。只想招几个人来实现自己的 idea(对标国内某知名公司 APP)，希望速成，完全不考虑复杂性。&lt;/li>
@@ -2392,7 +2392,7 @@ the Dane drinks tea&lt;/p>
 &lt;td style="text-align:center">Dogs&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
+&lt;/table></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis 官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
 >Jedis&lt;/a>， &lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
 >lettuce&lt;/a>， &lt;a class="link" href="https://github.com/mrniko/redisson" target="_blank" rel="noopener"
 >Redisson&lt;/a>， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p>
@@ -2574,7 +2574,7 @@ the Dane drinks tea&lt;/p>
 &lt;li>&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/" target="_blank" rel="noopener"
 >Springfox Reference Documentation&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
-&lt;p>在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
+&lt;p>在作了一些了解之后，记录如下。以下本文的命令是在 Arch Linux 上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
 &lt;p>安装没什么可说的，直接 &lt;code>sudo pacman -S postgresql&lt;/code> 就好了。(其他发行版请使用对应的包管理器)&lt;/p>
 &lt;p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p>
 &lt;p>如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：&lt;/p>
@@ -2666,19 +2666,19 @@ To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&a
 &lt;li>&lt;a class="link" href="https://docs.docker.com/get-started/part3/" target="_blank" rel="noopener"
 >docker docs part 3 &amp;amp; part 4&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p>
-&lt;p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
+&lt;p>我对手机的需求不高，不打游戏，只需要续航，有 Google 服务以及 root 就足够了。之前一直使用的 ADUI 的 Global 版本，再加上 Magisk 的 root 管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到 Pie 的大版本更新，把我的 root 覆盖掉了。因此，不得不重新再刷入 Magisk。不过 MIUI11 官方说会加入应用冻结的功能，这样一来我连 root 的需求似乎也没有了 /笑&lt;/p>
+&lt;p>言归正传，在 Linux 上使用 adb 有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
 [device name] unauthorized&lt;/p>
 &lt;/blockquote>
-&lt;p>要进行配置之前，首先需要找到自己手机的USB vendor ID和product ID，启用开发者模式，然后打开usb调试模式插上手机后在terminal中执行：&lt;/p>
+&lt;p>要进行配置之前，首先需要找到自己手机的 USB vendor ID 和 product ID，启用开发者模式，然后打开 usb 调试模式插上手机后在 terminal 中执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是vendor id，后者是product id&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是 vendor id，后者是 product id&lt;/p>
 &lt;p>下面有两种方式来写配置文件：&lt;/p>
 &lt;h3 id="添加udev规则">添加udev规则&lt;/h3>
 &lt;p>1.首先要确保系统中有安装 &lt;code>android-udev&lt;/code> 这个包。可以通过包管理器来安装或者访问&lt;a class="link" href="https://source.android.com/setup/build/initializing#configuring-usb-access" target="_blank" rel="noopener"
->source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:&lt;/p>
+>source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的 vendor id 和 product id 为自己的即可:&lt;/p>
 &lt;blockquote>
 &lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
 SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
@@ -2689,8 +2689,8 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo gpasswd -a user group
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置adb">配置adb&lt;/h3>
-&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将vendor id 写入到里面，保存退出即可。&lt;/p>
-&lt;p>这两种方式任选其一即可。然后进入解压后的platform-tools目录，将下好的twrp也放到里面，在目录中启动terminal，然后执行：&lt;/p>
+&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将 vendor id 写入到里面，保存退出即可。&lt;/p>
+&lt;p>这两种方式任选其一即可。然后进入解压后的 platform-tools 目录，将下好的 twrp 也放到里面，在目录中启动 terminal，然后执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ ./adb devices
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
 &lt;blockquote>
@@ -2699,36 +2699,25 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/blockquote>
 &lt;p>这样就算是完成了。&lt;/p>
 &lt;h2 id="后记">后记&lt;/h2>
-&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入bootloader也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
+&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Android_Debug_Bridge" target="_blank" rel="noopener"
 >Android Debug Bridge&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>博客迁移记录</title><link>https://ireflux.github.io/snow/post/blog-migration-record/</link><pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/blog-migration-record/</guid><description>&lt;p>前些天看到某大佬的博客主题很漂亮，名字叫做Even。从他的博客里第一次了解到Hugo，加上对Golang一直挺有好感，就一直想搞一个来玩。之后偶尔逛论坛看到有人说文章多了Hexo生成静态页面比较慢，然后下面好多V(v2ex)友都推荐Hugo，我自己的博客用的也是Hexo，大概30篇的博文要生成9秒，确实有点慢，加上一直不喜欢Nodejs的臃肿，博客换成Hugo的想法就更强烈了。今天终于有时间来迁移博客，以下权当做个记录。&lt;/p>
-&lt;p>博客的迁移是个体力活，主要还是文章的迁移，由于Hugo的标头(e.g. title,tags,category)的写法和Hexo略有不同，因此需要将文章中的标头全改成Hugo能识别的写法，另外还有一些文章里用到了Hexo里带的一些写法，也要改掉。看来以后还是要尽量使用Markdown原生语法，不然迁移博客会很麻烦:(&lt;/p>
-&lt;p>Github pages上分为 &lt;code>User/Organization pages&lt;/code> 和 &lt;code>Project pages&lt;/code>，配置的方式Hugo的&lt;a class="link" href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener"
->文档&lt;/a>写的很详细，选择一种按照步骤走就可以了。&lt;/p>
-&lt;p>我的master分支放的是源文件，gh-pages放的是生成的静态文件，正如Hugo官网所说：这样做的好处是使其有独立的版本控制。我原来用Hexo的User pages保留了，现在上面只挂一个resume，其他文章全都迁移到了Project pages上，也就是用Hugo的这个博客。体验确实很好，静态文件基本上是秒生成，完美！&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
-&lt;li>&lt;a class="link" href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener"
->host on github&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="noopener"
->official documentation for custom domains&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>杂谈</title><link>https://ireflux.github.io/snow/post/casual-talk/</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/casual-talk/</guid><description>&lt;p>近日全面将Shadowsockes向v2ray切换，原本Arch上用着 &lt;code>sslocal -c /path/filename.config&lt;/code> 还挺舒服的，配置文件看起来也比v2ray要简单得多，无奈Shadowsocks最近表现的一直不大稳定，总是被封IP。&lt;/p>
-&lt;p>v2ray的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code>inbounds&lt;/code> 和 &lt;code>outbounds&lt;/code> 的配置，一般来说v2ray官网的 &lt;code>新手上路&lt;/code> 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用websocket+TLS+Web这种方案。&lt;/p>
-&lt;p>linux上客户端的使用最简单的方式就是找一些配置文件改改来用。例如：可以在线生成配置文件的&lt;a class="link" href="https://www.veekxt.com/utils/v2ray_gen" target="_blank" rel="noopener"
+&lt;/ol></description></item><item><title>杂谈</title><link>https://ireflux.github.io/snow/post/casual-talk/</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/casual-talk/</guid><description>&lt;p>近日全面将 Shadowsockes 向 v2ray 切换，原本 Arch 上用着 &lt;code>sslocal -c /path/filename.config&lt;/code> 还挺舒服的，配置文件看起来也比 v2ray 要简单得多，无奈 Shadowsocks 最近表现的一直不大稳定，总是被封 IP。&lt;/p>
+&lt;p>v2ray 的服务端和客户端是同一套程序，配置成服务端还是客户端取决于配置文件中 &lt;code>inbounds&lt;/code> 和 &lt;code>outbounds&lt;/code> 的配置，一般来说 v2ray 官网的 &lt;code>新手上路&lt;/code> 中的配置已经足够日常使用。但是为了稳妥起见，还是要进行进一步配置。例如采用 websocket+TLS+Web 这种方案。&lt;/p>
+&lt;p>linux 上客户端的使用最简单的方式就是找一些配置文件改改来用。例如：可以在线生成配置文件的&lt;a class="link" href="https://www.veekxt.com/utils/v2ray_gen" target="_blank" rel="noopener"
 >配置文件生成器&lt;/a>;再比如 V2Ray 配置文件模板收集仓库 &lt;a class="link" href="https://github.com/KiriKira/vTemplate" target="_blank" rel="noopener"
->Github&lt;/a>;还可以直接导入到Windows GUI程序中，然后再导出配置文件来用。&lt;/p>
+>Github&lt;/a>;还可以直接导入到 Windows GUI 程序中，然后再导出配置文件来用。&lt;/p>
 &lt;hr>
-&lt;p>前几天python连接docker中的redis的时候发现总是出现 &lt;code>Connection refused&lt;/code> ，刚开始还以为docker网络的配置原因，后来才发现原来是redis配置文件的缘故。将 &lt;code>bind 127.0.0.1&lt;/code> 着一条注释掉就好了 Hmmm&lt;/p>
+&lt;p>前几天 python 连接 docker 中的 redis 的时候发现总是出现 &lt;code>Connection refused&lt;/code> ，刚开始还以为 docker 网络的配置原因，后来才发现原来是 redis 配置文件的缘故。将 &lt;code>bind 127.0.0.1&lt;/code> 着一条注释掉就好了 Hmmm&lt;/p>
 &lt;hr>
-&lt;p>今天照例滚系统，在安装Wps office的时候yaourt提示 &lt;code>No space left on device&lt;/code>，看了一下，原来是/tmp空间不够。搜寻了一圈之后发现两个解决方案：&lt;/p>
+&lt;p>今天照例滚系统，在安装 Wps office 的时候 yaourt 提示 &lt;code>No space left on device&lt;/code>，看了一下，原来是 &lt;code>/tmp&lt;/code> 空间不够。搜寻了一圈之后发现两个解决方案：&lt;/p>
 &lt;ol>
 &lt;li>mount -o remount,size=5G /tmp/&lt;/li>
 &lt;li>umount /tmp &amp;amp;&amp;amp; mount -t tmpfs -o size=1048576,mode=1777 overflow /tmp&lt;/li>
 &lt;/ol>
-&lt;p>第一种要比第二种简洁很多，不过第二种的 &lt;code>mode=1777&lt;/code> 没看懂是什么意思，随后去查了man page，以下引用自man page：&lt;/p>
+&lt;p>第一种要比第二种简洁很多，不过第二种的 &lt;code>mode=1777&lt;/code> 没看懂是什么意思，随后去查了 man page，以下引用自 man page：&lt;/p>
 &lt;blockquote>
 &lt;p>Set the mode of all files to value &amp;amp; 0777 disregarding the original permissions. Add search permission to directories that have read permission. The value is given in octal.&lt;/p>
 &lt;/blockquote>
@@ -2737,11 +2726,11 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;blockquote>
 &lt;p>When a directory&amp;rsquo;s sticky bit is set, the filesystem treats the files in such directories in a special way so only the file&amp;rsquo;s owner, the directory&amp;rsquo;s owner, or root user can rename or delete the file. Without the sticky bit set, any user with write and execute permissions for the directory can rename or delete contained files, regardless of the file&amp;rsquo;s owner. Typically this is set on the /tmp directory to prevent ordinary users from deleting or moving other users&amp;rsquo; files.&lt;/p>
 &lt;/blockquote>
-&lt;p>大致意思就是说一旦设置了 &lt;code>sticky bit&lt;/code> ，只有目录/文件的所有者或者root账户才能对文件进行写操作，其他的用户即使获得了对这个目录写操作权限，也无法对其进行写操作。&lt;/p>
-&lt;p>之后又去 archlinux wiki 上看了看，发现yaourt开发者在2018年11月10号的一条&lt;a class="link" href="https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631" target="_blank" rel="noopener"
->issue&lt;/a>中表示无意再继续维护yaourt了，之后2018年11月30号被aur helper页面标记为停更，2019年3月25号从aur help中被移除。&lt;/p>
-&lt;p>看了看发现大家比较推荐yay，自己 &lt;code>makepkg -si&lt;/code> 的话确实会麻烦一点，想了一下还是换成了yay。archlinuxcn源也能解决不少aur里的东西，于是再次添加上了archlinuxcn源。&lt;/p>
-&lt;p>不得不说 wps for linux 新版本UI变漂亮了好多。&lt;/p>
+&lt;p>大致意思就是说一旦设置了 &lt;code>sticky bit&lt;/code> ，只有目录/文件的所有者或者 root 账户才能对文件进行写操作，其他的用户即使获得了对这个目录写操作权限，也无法对其进行写操作。&lt;/p>
+&lt;p>之后又去 archlinux wiki 上看了看，发现 yaourt 开发者在2018年11月10号的一条 &lt;a class="link" href="https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631" target="_blank" rel="noopener"
+>issue&lt;/a> 中表示无意再继续维护 yaourt 了，之后 2018 年 11 月 30 号被 aur helper 页面标记为停更，2019 年 3 月 25 号从 aur help 中被移除。&lt;/p>
+&lt;p>看了看发现大家比较推荐 yay，自己 &lt;code>makepkg -si&lt;/code> 的话确实会麻烦一点，想了一下还是换成了 yay。另一方面 archlinuxcn 源也能解决不少 aur 里的东西，于是再次添加上了 archlinuxcn 源。&lt;/p>
+&lt;p>不得不说 wps for linux 新版本 UI 变漂亮了好多。&lt;/p>
 &lt;p>嗯，真香。&lt;/p>
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
@@ -2752,25 +2741,25 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/AUR_helpers" target="_blank" rel="noopener"
 >aur helper&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>AVL tree 学习笔记</title><link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link><pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
-&lt;p>最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p>
-&lt;h2 id="什么是avl树">什么是AVL树&lt;/h2>
-&lt;p>AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a class="link" href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky" target="_blank" rel="noopener"
->Georgy Adelson-Velsky&lt;/a>和&lt;a class="link" href="https://en.wikipedia.org/wiki/Evgenii_Landis" target="_blank" rel="noopener"
->Evgenii Landis&lt;/a>于1962年在论文《&lt;a class="link" href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf" target="_blank" rel="noopener"
+&lt;p>最近在复习数据结构，学习了一下 AVL 树，现记录如下。&lt;/p>
+&lt;h2 id="什么是-avl-树">什么是 AVL 树&lt;/h2>
+&lt;p>AVL 树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家 &lt;a class="link" href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky" target="_blank" rel="noopener"
+>Georgy Adelson-Velsky&lt;/a> 和 &lt;a class="link" href="https://en.wikipedia.org/wiki/Evgenii_Landis" target="_blank" rel="noopener"
+>Evgenii Landis&lt;/a> 于1962年在论文《&lt;a class="link" href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf" target="_blank" rel="noopener"
 >An algorithm for the organization of information&lt;/a>》中首次提出。&lt;/p>
-&lt;h2 id="avl树的性质">AVL树的性质&lt;/h2>
-&lt;p>AVL是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p>
+&lt;h2 id="avl-树的性质">AVL 树的性质&lt;/h2>
+&lt;p>AVL 是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p>
 &lt;ul>
 &lt;li>若左子树不空，则左子树上所有结点的值均小于它的根结点的值。&lt;/li>
 &lt;li>若右子树不空，则右子树上所有结点的值均大于它的根结点的值。&lt;/li>
 &lt;li>左、右子树也分别为二叉排序树。&lt;/li>
 &lt;/ul>
-&lt;p>AVL引入了平衡因子，即：&lt;/p>
+&lt;p>AVL 引入了平衡因子，即：&lt;/p>
 &lt;ul>
 &lt;li>每个节点的左右子树高度之间的差异小于或等于1。&lt;/li>
 &lt;/ul>
-&lt;h2 id="avl树的旋转">AVL树的旋转&lt;/h2>
-&lt;p>通过对节点的旋转来重新平衡树，通常对AVL树的旋转有以下四种情况：&lt;/p>
+&lt;h2 id="avl-树的旋转">AVL 树的旋转&lt;/h2>
+&lt;p>通过对节点的旋转来重新平衡树，通常对 AVL 树的旋转有以下四种情况：&lt;/p>
 &lt;p>LL(Left Left Case):&lt;/p>
 &lt;p>&lt;img src="http://wx1.sinaimg.cn/large/ea5eda6dly1g1gm6mz4y3j20ix04m0sq.jpg"
 loading="lazy"
@@ -2791,8 +2780,8 @@ alt="RR"
 loading="lazy"
 alt="RL"
 >&lt;/p>
-&lt;p>&lt;em>p.s. 以上图片通过draw.io绘制而成，凑活能看（&lt;/em>&lt;/p>
-&lt;p>再放一张gif，便于理解，图源来自Wikipedia:&lt;/p>
+&lt;p>&lt;em>p.s. 以上图片通过 draw.io 绘制而成，凑活能看（&lt;/em>&lt;/p>
+&lt;p>再放一张 gif，便于理解，图源来自 Wikipedia:&lt;/p>
 &lt;p>&lt;img src="http://wx2.sinaimg.cn/large/ea5eda6dly1g1f6ae2fq2g208w050dm1.gif"
 loading="lazy"
 alt="AVL"
@@ -2836,41 +2825,7 @@ alt="AVL"
 >https://en.wikipedia.org/wiki/AVL_tree&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://www.geeksforgeeks.org/avl-tree-set-1-insertion/" target="_blank" rel="noopener"
 >https://www.geeksforgeeks.org/avl-tree-set-1-insertion/&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>拍飞奇遇记</title><link>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</link><pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/take-pictures-of-the-plane/</guid><description>&lt;blockquote>
-&lt;p>本文为余晟于2018年10月28日发表在微的信公众号「余晟以为」的一篇文章。作者叙事的风格就像以前的文章一样，又让我想到了小时候。&lt;/p>
-&lt;/blockquote>
-&lt;p>去年底一个偶然的机会，我开车去浦东机场，发现起飞的飞机特别近，在高架上看得非常真切。于是我想，应该有个什么地方可以近距离拍到正在起降的飞机。&lt;/p>
-&lt;p>在很长的时间里，这都只是一个念头而没有付诸行动。我只是在网上搜了搜相关的资料，才知道这种活动叫“拍飞”，专门拍飞机的摄友自称“飞友”，而且列出了几个在浦东机场“拍飞”的好地点。到了10月1日，天气难得的好，又难得有空，我终于可以去尝试“拍飞”了。&lt;/p>
-&lt;p>按照网上的介绍，我几经摸索，就找到了最合适的“拍飞”地点，是跑道尽头的一大片荒地。出乎我意料的是，这里已经停了几辆车，估计也是专程来拍飞机的。但是只见车，不见人。&lt;/p>
-&lt;p>过了会儿，远远的终于见到一个人影，个头不高，戴帽子，端着长焦镜头，看来我猜的没错。他也看见了我，拿长焦镜头对准了我，不知道是在拍片还是在观察。我正纳闷，他忽然转头过去喊：爸爸，后面还有飞机。&lt;/p>
-&lt;p>我仔细观察才发现，原来这不是“小个子”，而是个孩子——十来岁的年纪，稚气未脱的外表，捧着一台带长焦镜头的相机，总是望着飞机要飞来的方向。不多久，一百米开外又走过来个人影，原来是他父亲，年纪和我差不多，也戴帽子，也端着一台相机，也是一边走一边看飞机飞来的方向。&lt;/p>
-&lt;p>于是我和他们搭上了话，孩子话不多，都是他父亲在介绍。原来这孩子业余时间就迷恋飞机，特别喜欢拍飞机，所以当父亲的遇上节假日就陪他过来拍飞机。而且，为了和孩子能玩在一起，他也专门买了台相机来一起玩，寻找共同语言。&lt;/p>
-&lt;p>慢慢聊得多了点，孩子也放松了些，接着他打开手机，报出下面将要降落的飞机机型、航空公司、降落时间等等，一项项说得头头是道。我又问他，是否拍到过四发（装备四台发动机）的飞机，他也很大方给我看他拍到的波音747，空客380，并告诉我拍摄的时间。&lt;/p>
-&lt;p>其实，“飞常准”的App我也会查，四发民航机主要是波音747、空客380我也知道，但难得的是孩子自然坦诚的态度，完全是在分享知识，而没有半点作秀的成分。所以我也假装什么也不知道，耐心听他讲完，让他收获几分“分享知识”的快乐。毕竟，大家都是从小孩子成长过来的，大家都清楚，哪怕孩子有一点得意，也需要有这样的机会去得意。&lt;/p>
-&lt;p>本来我以为，孩子讲完这些，当父亲的多少要夸赞一下自己的孩子懂得这样多。但出乎我意料的是这位父亲并没有。继而我们又聊起拍飞的机位，我惊奇地发现，原来这对父子熟悉全国不少机场，说起来如数家珍。我却逐渐感觉有些“不适应”，后来才发现这是因为聊天太自然了——我谈到哪个机场，他们便说起那里有没有机位，以及相关的趣事，没有那种“你看我知道吧”的俗气，也没有“一股脑儿给你灌输”的冲动。而且交流平实、完整、生动，很容易让听的人理解，留下印象并引发兴趣，可惜很长时间以来，我几乎已经习惯了“简单说几句就忙不迭掏出手机秀照片”的介绍方式。&lt;/p>
-&lt;p>我忍不住夸他们，真是有心有趣的人。结果这位父亲的回复也没有任何客套，他反而做了个出乎我意料的举动，就是对儿子说：“今天你遇到了新的飞友，这是缘分，来，我给你们拍个照吧”。&lt;/p>
-&lt;p>我仔细看去，才发现他们的相机和镜头都很普通，并非常见摄影论坛上人人追捧的“牛头”。但是在那一刻，我觉得这些都不重要，相机再好，镜头再牛，未必有这份简单自然的感觉。&lt;/p>
-&lt;p>然后我们又分开，各自寻找各自的拍摄角度。过了不知多久，我发现这父子俩不见了，再往远看，有辆车正缓缓离开，开车的正是那位父亲。见到我，他远远把车停下喊：“刚才降落的380拍到了吗？”，听我肯定的回答，他挥了挥手：“好，我们先回去了，以后再见”。蓝天下，他们的车慢慢远去，我才发现没有加微信，但是转念一想，不加微信，其实一点也不影响对“以后再见”的期盼。&lt;/p>
-&lt;p>新加坡航空的A380，摄于浦东机场&lt;/p>
-&lt;p>在之后的很多天里，我总是会回味那天的场景：他们的相机镜头都很普通，衣着也很普通，车也很普通，但就在那短短几十分钟的巧遇里，我强烈感受到久违的味道，健康、自然、让人舒服。孩子面对成年人，没有常见的错位感，没有畏惧也没有炫耀，聊起来才发现，他的经历和认知如同一座宝库，唯有以共同话题当钥匙才能打开。谈起自己真正的爱好时那种娓娓叙来的沉醉，是截然不同于“小大人”做作的滔滔不绝的。&lt;/p>
-&lt;p>更重要的是，我和这对父子交谈差不多半小时，父亲全程没有掏手机看过，没有忙不迭找机会找机会宣示孩子的成绩或者让孩子“表演”。这个年代一般父母们挥之不去的焦虑，在他的谈吐中全然找不到踪影。自始至终，这位父亲的态度一直很平淡，充其量是做一些提醒和补充，引导聊天持续下去，同时也引导孩子接触更多的话题，更广阔的世界。&lt;/p>
-&lt;p>这段经历让我印象深刻、感慨深刻，大概是对比所致。这些年，我见过不少人总是很“着急”，见面就着急让别人知道自己的镜头，自己的车，自己的衣着饰品，自己的技艺。为人父母者的“着急”似乎更普遍，“着急”于子女的成长，争分夺秒把“没用”的活动从孩子的生活里挤掉，见缝插针地引导孩子去做“有用”的事情，同时也着急告诉每个外人，自己的孩子有多么特别，多么棒，着急让孩子来几段“表演”。如果非要说有区别，也无非是有人直白，毫无掩饰，有人做作，欲说还休——无论如何总感觉不自然，外人也只能赞叹或者迎合，总少了几分平等的尊重。&lt;/p>
-&lt;p>这样对吗？如果不对，我们要怎么办？&lt;/p>
-&lt;p>我和不少朋友谈起过这个问题。普遍的答案充满了无奈：这种现象不对，但我们没有办法，因为“社会就是这样”，“时代就是这样”。我一度也认同这个答案，毕竟个人没法摆脱时代和社会习俗生活。但是年龄增长，见得多了，我想得也越来越清楚：这不对，我们也不该“没有办法”。&lt;/p>
-&lt;p>最近我看完了《成为乔布斯》，有一点印象特别深刻。在乔布斯被驱逐出苹果的那些年，他看到飞速发展的个人电脑产业完全偏离了自己的预言和认知，各家厂商都只忙于方头方脑、模样丑陋的方盒子。他也没有说“我没有办法”，而是认定“世界不应该是这个样子的”，尽管痛苦，却终于开创了高科技行业对设计感的追求，让“个人电脑”真正重视“人”的感受。&lt;/p>
-&lt;p>或许不是人人都能成为乔布斯，但我觉得大家都可以借鉴乔布斯——不管社会大环境如何，我们不是只有随风飘荡的宿命，总还有自己的一点信念，总还有一点“主观能动性”，当然我更愿意叫它“心理能量”。不管社会怎么变化，心理能量越强，总能更靠近点自己想要的，自己认为对的生活。&lt;/p>
-&lt;p>比如不少人都在感叹，水文、鸡汤文越来越多，生活越来越浮躁，自己的生活被裹挟。没错，在这个时代，营销号、短视频等等，挖空了心思吸引眼球、争夺时间、制造焦虑，且有“大数据”作为帮凶。但是你想摆脱它也很容易，只要坚定信念不听不看，坚持看自己认为高质量的内容即可。哪怕旁人认为“每天玩两小时抖音很正常，看两小时书就很奇怪”，也仅仅是奇怪而已，根本无足轻重。&lt;/p>
-&lt;p>如果说“心理能量”对普通生活已经足够重要，那么对父母就更加重要：不但要照自己认为对的方式去生活，还有责任从小示范给孩子，人生不应该是暗无天日的竞技场，不应该是你争我夺的丛林，而应当在无数细节中告诉他，健康的生活应当是怎样，应当充满愉悦和趣味，哪怕获得这一切需要付出艰苦的努力。&lt;/p>
-&lt;p>有不少人说，道理自己都懂，并不是不想这样做，只是因为现实条件限制做不到。比如，虽然经常在媒体上看到这样那样的“榜样”故事，但总觉得那些榜样距离遥远，远不是平凡人所能触及和模仿。我就看到有不少人说，看视频觉得高晓松知识特别渊博，那是因为人家出生高级知识分子世家，父母都是教授，咱们普通人只有羡慕的份，至于学识，想都别想。&lt;/p>
-&lt;p>我反对这样的观点，原因有二。第一，知识的世界是讲究平等的，不看出身，不看财富，所以只要你努力学习、掌握知识，就具备了对话和交流的权利，就会发现高晓松说的尽管很多，但也有不靠谱的成分。“平等”的另一重含义是，懂得掌握知识的目的不是去羞辱、去谩骂、去“怼”，而是以平等的态度对待世界，对待他人。第二，无论什么“世家子弟”，都是一代代积累而来，与其抱怨自己的父母没有人家那么多的知识和见识，不如努力提升自己、增加积累。哪怕要四五代才能培养出“贵族”，起码让自己成为其中的动力，而不要成为其中的阻力，也是非常有意义的事情。&lt;/p>
-&lt;p>当然还有一点也是很重要的，就是在身边发现平凡的“榜样”。媒体报道的“榜样”光彩照人但往往遥不可及，份量远不及身边的平凡“榜样”——虽然这时候说“榜样”已经不再合适。如果你以为上班已经让人精疲力尽，却看到身边有人业余写出了一本正经的书；如果你以为学英语已经难上加难，却看到身边有人慢慢掌握了第二门、第三门外语；如果你以为人生就是要从小“吃苦中苦”，追逐各种“高大上”的娱乐，却发现身边其他人的孩子在简单平凡的生活中也过得健康愉悦…… 这种感召力往往远远超过媒体报道的各种“榜样”。&lt;/p>
-&lt;p>比如这次拍飞的奇遇记，亲眼见到这对父子的默契，亲身与他们交谈过，感受过他们的乐趣，看到那个孩子充满朝气的健康自然的表情，让我坚信更加孩子不应当只培养所谓“高大上”的爱好——我相信这位父亲多半也面对过“拍飞机比不上钢琴、击剑等等运动”的说法，但他很坦然。重要的是有真正健康的爱好，没有功利、有所积累、值得钻研、乐在其中，同样重要的还有父母的支持，用心的引导和陪伴。&lt;/p>
-&lt;p>再比如，我的一位朋友经济状况并不算优越，但家庭生活非常幸福。她跟我说过一段话让我印象很深：&lt;/p>
-&lt;p>与其焦虑“输在起跑线上”，我就相信“人生不应该和跑道比”，所以打定主意让他们“输在起跑线上”，这样就彻底没有负担了。生活应该快乐，让自己在快乐中变得更健康。&lt;/p>
-&lt;p>看她的朋友圈，两个孩子也参加各种各样的活动，共同的特点是不请求、不追求高贵、不与其他人比较高下，孩子脸上总是洋溢着自然的笑容，母亲也总是为他们取得的每一点收获高兴。&lt;/p>
-&lt;p>可以说，我之所以敢于拒斥许多流行的所谓“育儿观点”，敢于在实践中对抗各种焦虑——尤其是某些精心营造出的焦虑，她的这段话给了我很大的鼓舞。原来这样做真的是对的，真的有普通人能这样做，而且真的做到了。&lt;/p>
-&lt;p>我经常看到有人引用罗曼·罗兰的名句，“生活中只有一种英雄主义，那就是在认清生活真相之后依然热爱生活”。但我总觉得“英雄主义”这个词太过宏大，距离普通人太遥远，其实这里的heroism也可以翻译为“道义勇气”或者“心理能量”——要知道，即便你只想过普通人的生活，多几分“认清生活真相之后依然热爱生活”的态度，也是非常有益的。&lt;/p>
-&lt;p>与大家共勉。&lt;/p></description></item><item><title>致遥远的过去</title><link>https://ireflux.github.io/snow/post/to-the-distant-past/</link><pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid><description>&lt;blockquote>
+&lt;/ol></description></item><item><title>致遥远的过去</title><link>https://ireflux.github.io/snow/post/to-the-distant-past/</link><pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid><description>&lt;blockquote>
 &lt;p>最是人间留不住，朱颜辞镜花辞树&lt;/p>
 &lt;/blockquote>
 &lt;p>我依然记得她的模样。我还依稀记得，小时候去她家里，她都笑容满面的模样，有时侯她看着我们玩，有时问我一些家里的、生活上的琐事。&lt;/p>
@@ -2888,51 +2843,51 @@ alt="AVL"
 &lt;p>自从我上大学后，回来就很少碰到邻居，偶尔远远的看见，也只是匆匆走过，很少去主动打招呼。当事情发生后，事后回想起来，感觉世事难料的同时也觉得很奇妙。昨天我恰好碰到她，从她旁边走过，我罕见的和她打了招呼，连我自己都有种久违的感觉。她露出了笑容，目光跟随着我。她还是以前的模样，只是白头发变得多了，身子也佝偻了些，但看起来精神很好，甚至在当时的阳光下她脸上闪现着光芒，是那种由内而外的、柔和的光芒。直到现在我还清楚的记得她当时的每一个动作，她的笑容，她面庞上散发的光辉，记得那种奇妙的，玄之又玄的感觉。这是我见她生前的最后一面。&lt;/p></description></item><item><title>不再年轻</title><link>https://ireflux.github.io/snow/post/no-longer-young/</link><pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/no-longer-young/</guid><description>&lt;blockquote>
 &lt;p>那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p>
 &lt;/blockquote>
-&lt;p>大三时当我忽然发觉我都已经21岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经20多了啊，他感叹道。&lt;/p>
-&lt;p>对啊，都20多岁了呢，不知不觉，都已经这么老了，还一直以为18、9岁，虽然差别不大，但感觉还是不一样的。&lt;/p>
-&lt;p>我一直认为22岁就像是个分水岭，22岁就已经变老了，从数值上来说，21毕竟还紧挨着20，虽然年龄看起来大，但感觉上还是年轻的。一旦到了22，就已经呈现出渐渐远离的姿态，马不停蹄地奔向下一个点，就像宇宙加速膨胀，月球加速远离地球一样。&lt;/p>
+&lt;p>大三时当我忽然发觉我都已经 21 岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经 20 多了啊，他感叹道。&lt;/p>
+&lt;p>对啊，都 20 多岁了呢，不知不觉，都已经这么老了，虽然和 18、9 岁差别不大，但感觉还是不一样的。&lt;/p>
+&lt;p>我一直认为 22 岁就像是个分水岭，22 岁就已经变老了，从数值上来说，21 毕竟还紧挨着 20，虽然年龄看起来大，但感觉上还是年轻的。一旦到了 22，就已经呈现出渐渐远离的姿态，马不停蹄地奔向下一个点，就像宇宙加速膨胀，月球加速远离地球一样。&lt;/p>
 &lt;p>时间似乎也在以加速度前进。&lt;/p>
-&lt;p>20岁，以前还小的时候总觉得只存在很遥远的地方，从不敢想象，一直都以为还离得很远，当个位终于向前进了一位，现实就这样忽然间出现在眼前。&lt;/p>
-&lt;p>20岁的时候我会变成什么样子呢？&lt;/p>
+&lt;p>20 岁，以前还小的时候总觉得只存在很遥远的地方，从不敢想象，一直都以为还离得很远，当个位终于向前进了一位，现实就这样忽然间出现在眼前。&lt;/p>
+&lt;p>20 岁的时候我会变成什么样子呢？&lt;/p>
 &lt;p>嗯，还真是有些失望呢&lt;/p></description></item><item><title>漫谈中国的饮酒文化</title><link>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</link><pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/talk-about-chinese-drinking-culture/</guid><description>&lt;p>中国社会有个很神奇的现象，每逢聚会或商业应酬必定要喝酒，小到还在上学的初中生，大至几十岁的大龄人员，几乎很难看到在同一桌相互认识的同龄人想喝酒的人喝酒，想喝饮料/果汁的人喝饮料/果汁的和谐景象。总有人觉得别人喝酒，自己不和人家一块喝好像不尊重别人。这一点就很奇怪，这难道不是看个人意愿？为什么“酒”这个东西在中国被赋予了如此厚重的意义？&lt;/p>
 &lt;p>“酒”的口感设定是很反人类的，为什么这么说？只要将酒这种液体和市面上所有可以称之为“喝”的东西做一个横向对比，我不敢说酒的口感是最差的，但它一定不是最好的，保守点说，它的口感处于中下，这一点应该没什么异议。那为什么人们还要强迫自己喝他们不喜欢的东西呢？如果只看上面看不出酒文化有多么恶劣，那么我来举个例子就一目了然了。现在开始假设：&lt;/p>
-&lt;p>在很久以前就有了dota这款游戏，当时的四个技能的键位默认为“Q”，“Z”，“P”，“M”，相比于“F1,ctrl，Num 9，Num 3”来说它不是最差的，但不得不承认，这个键位也是相当反人类的。然后当每次大家开黑或者聚在一起聊天时都会谈起这个键位，都对其称赞有加，甚至于许多人都写文章赞美这个键位，“QZPM”这个键位在历史上享有很高的声誉。就这样，这个键位的习惯流传至今。忽然有一天，一个宿舍开黑，其中一个人说:“我不用QZPM，我想用WERF，这个更好用一点”。然后其他人就感觉受到了极大的冒犯，甚至质问他：“别人都用，凭什么你不用？”，“有更好用的，为什么不用？自己想用啥，和别人有什么关系？会影响到别人的操作？”，他反问道。话虽如此，那四个人无法反驳，但仍然感觉不被别人尊重。&lt;/p>
-&lt;p>还是要承认，洗脑是真实存在的。在如今这个自由开放的年代，仍然会有很多别有用心的人或组织、以各种形式来影响甚至是试图操控别人的思想，前段时间被曝出的有人利用Facebook用户信息涉嫌操纵美国大选就是最好的例子。回到本文，原本想喝什么跟别人是没有任何关系的，但为什么一起吃饭的时候拒绝喝酒，别人会感觉到不被尊重？换句话说，两个八竿子打不着的东西被强行揉合到一起，并在人们的心里根深蒂固，这就是酒文化赋予的附加属性，MEANLESS！人类受传统文化荼毒有多深，可见一斑。&lt;/p>
-&lt;p>&lt;del>(遵循这种垃圾文化又不会因此寿命而增加一秒(跑&lt;/del>&lt;/p></description></item><item><title>子元素margin-top影响父元素问题</title><link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link><pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid><description>&lt;p>今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p>
-&lt;p>我的HTML嵌套关系如下：&lt;/p>
+&lt;p>很久很久以前，由于生产力低下，食物供给短缺，为了生存和繁衍生息，人类需要尽可能的收集所有食物。“屎”这种大小合适且无需加工即可食用的优点逐渐被大众所推崇。另外人是一种群居动物，因此人们喜欢聚集在一起生产食物并且吃饭，在一起生产食物的时候聊天吹牛也是在劳作休息之余的一种娱乐活动。他们经常会在吃饭的时候一起赞颂这个伟大的造物主，互相敬“屎”也是一种礼貌友好的表现，久而久之便形成了一种优秀社交文化，就这样流传了下来，直至如今。&lt;/p>
+&lt;p>还是要承认，洗脑是真实存在的。在如今这个自由开放的年代，仍然会有很多别有用心的人或组织、以各种形式来影响甚至是试图操控别人的思想，前段时间被曝出的有人利用 Facebook 用户信息涉嫌操纵美国大选就是最好的例子。回到本文，原本想喝什么跟别人是没有任何关系的，但为什么一起吃饭的时候拒绝喝酒，别人会感觉到不被尊重？换句话说，两个八竿子打不着的东西被强行揉合到一起，并在人们的心里根深蒂固，这就是酒文化赋予的附加属性，MEANLESS！人类受传统文化荼毒有多深，可见一斑。&lt;/p>
+&lt;p>&lt;del>(遵循这种垃圾文化又不会因此寿命而增加一秒(跑&lt;/del>&lt;/p></description></item><item><title>子元素margin-top影响父元素问题</title><link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link><pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid><description>&lt;p>今天遇到了一个问题，是关于前端 CSS 子元素的 margin-top 会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p>
+&lt;p>我的 HTML 嵌套关系如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">header&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;site-head&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;blog-logo&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logo&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">header&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>父元素CSS：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>父元素 CSS：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#site-head{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">max-width&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-image&lt;/span>: url(&lt;span style="color:#e6db74">&amp;#34;/resources/images/header.jpg&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-size&lt;/span>: &lt;span style="color:#66d9ef">cover&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>子元素CSS：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>子元素 CSS：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#blog-logo {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">block&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">max-width&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span> &lt;span style="color:#66d9ef">auto&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">text-align&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当子元素中margin-top为50px时，神奇的一幕发生了，子元素并没有相对于父元素向下移动50px，而是连带着父元素一起向下移动了50px。&lt;/p>
-&lt;p>在Chrome的Developer tools中查看时，看到就连body都向下移动了50px！之后尝试在父元素中设置margin或body中设置都没有用，在父元素中设置padding也没有效果。&lt;/p>
-&lt;p>之后搜索到的css2.1盒模型中规定的内容如下：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当子元素中 margin-top 为 50px 时，神奇的一幕发生了，子元素并没有相对于父元素向下移动 50px，而是连带着父元素一起向下移动了 50px。&lt;/p>
+&lt;p>在 Chrome 的 Developer tools 中查看时，看到就连 body 都向下移动了 50px！之后尝试在父元素中设置 margin 或 body 中设置都没有用，在父元素中设置 padding 也没有效果。&lt;/p>
+&lt;p>之后搜索到的 css2.1 盒模型中规定的内容如下：&lt;/p>
 &lt;blockquote>
 &lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>
 &lt;/blockquote>
-&lt;p>所有毗邻的两个或更多盒元素的margin将会合并为一个margin共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding或Border分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的margin覆盖了父元素的margin。&lt;/p>
+&lt;p>所有毗邻的两个或更多盒元素的 margin 将会合并为一个 margin 共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding 或 Border 分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的 margin 覆盖了父元素的 margin。&lt;/p>
 &lt;p>之后找到的解决方法如下：&lt;/p>
 &lt;ol>
-&lt;li>父级或子元素使用浮动或者绝对定位absolute浮动或绝对定位不参与margin的折叠&lt;/li>
-&lt;li>父级overflow:hidden;&lt;/li>
-&lt;li>父级设置padding（破坏非空白的折叠条件）&lt;strong>//对于这条表示怀疑，我之前设置的padding并没有起到作用(&lt;/strong>&lt;/li>
-&lt;li>父级设置border&lt;/li>
+&lt;li>父级或子元素使用浮动或者绝对定位 absolute 浮动或绝对定位不参与 margin 的折叠&lt;/li>
+&lt;li>父级 overflow:hidden;&lt;/li>
+&lt;li>父级设置 padding（破坏非空白的折叠条件）&lt;strong>//对于这条表示怀疑，我之前设置的 padding 并没有起到作用(&lt;/strong>&lt;/li>
+&lt;li>父级设置 border&lt;/li>
 &lt;/ol>
-&lt;p>最终我用的&lt;code>父级overflow:hidden;&lt;/code>完美解决问题！&lt;/p></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>最终我用的&lt;code>父级 overflow:hidden;&lt;/code>完美解决问题！&lt;/p></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong>&lt;/p>
 &lt;p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p>
 &lt;p>一般来说，表达式求值有“中缀表示法”和“后缀表示法”(又称“逆波兰表示法”)两种。适合人类阅读的便是“中缀表示法”，例如：5+6*7 但“后缀表示法”更适合计算机来计算，因为无需判断操作符号的优先级，例如：567*+&lt;/p>
@@ -3225,7 +3180,7 @@ alt="AVL"
 &lt;/table>
 &lt;p>可以看出，基本上是和“中缀表达式”原理差不多的，也是需要比较运算符的优先级，按照计算的先后顺序排序。&lt;/p>
 &lt;h3 id="逆波兰表达式">逆波兰表达式&lt;/h3>
-&lt;p>以下例子来源于Wikipedia:&lt;/p>
+&lt;p>以下例子来源于 Wikipedia:&lt;/p>
 &lt;p>例如：中缀表达式__5+((1+2)*4)−3__写作__512+4*+3−__&lt;/p>
 &lt;table>
 &lt;thead>
@@ -3866,16 +3821,16 @@ It is worth the effort to go through this randomness. A good foundation is the c
 >I remember&lt;/a>&lt;/h1>
 &lt;p>&lt;em>Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em>&lt;/p>
 &lt;p>很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p>
-&lt;p>初次进入I remember时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p>
+&lt;p>初次进入 I remember 时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p>
 &lt;p>鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p>
 &lt;p>还可以通过关键字来搜寻类似的记忆，过程特效也做的非常棒。如此炫酷的网站，还不快来体验一下！&lt;/p>
 &lt;p>&lt;strong>友情提示:&lt;/strong> 打开后可能会感觉风扇狂转，这不是错觉:D&lt;/p>
 &lt;h1 id="1000-awesome-thingshttp1000awesomethingscom">&lt;a class="link" href="http://1000awesomethings.com/" target="_blank" rel="noopener"
 >1000 Awesome things&lt;/a>&lt;/h1>
-&lt;p>快节奏的生活使人终日忙忙碌碌，还要关注着很多事情，人的大脑就像CPU一样不停歇的运转，仿佛上帝终于发现让CPU闲置就是浪费这个道理一样。长久下来难免就会产生很多负面情绪，很难开心起来。&lt;/p>
+&lt;p>快节奏的生活使人终日忙忙碌碌，还要关注着很多事情，人的大脑就像CPU一样不停歇的运转，仿佛上帝终于发现让 CPU 闲置就是浪费这个道理一样。长久下来难免就会产生很多负面情绪，很难开心起来。&lt;/p>
 &lt;p>即使有了闲暇的时候，也没办法完全放松下来。总感觉时间过的那么快，什么都来不及去做。大概再也回不到过去那种“忙的时候忙，闲的时候能静下来思考些东西而不必考虑时间流逝或者什么都不想只管玩”生活状态了。&lt;/p>
-&lt;p>上文转载的文章《长大后之所以不快乐，是因为成年人丧失了获取快乐的天赋！》中提到的《生命中最美好的事都是免费的》这本书以及摘抄的80个能另人开心起来的美妙时刻便是脱胎于这个网站。&lt;/p>
-&lt;p>单单那80个能令人开心起来的美妙时刻就让人感觉很平静，何况是1000个！&lt;/p>
+&lt;p>上文转载的文章《长大后之所以不快乐，是因为成年人丧失了获取快乐的天赋！》中提到的《生命中最美好的事都是免费的》这本书以及摘抄的 80 个能另人开心起来的美妙时刻便是脱胎于这个网站。&lt;/p>
+&lt;p>单单那 80 个能令人开心起来的美妙时刻就让人感觉很平静，何况是 1000 个！&lt;/p>
 &lt;hr>
 &lt;p>说个我个人最近的：&lt;/p>
 &lt;ol>
@@ -4328,7 +4283,7 @@ Subject: 模块、已经、完成、当前、项目、是否、开始。”&lt;/
 &lt;/blockquote></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p>
 &lt;h2 id="体验">体验&lt;/h2>
-&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人抢注了……&lt;/p>
+&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人注册了……&lt;/p>
 &lt;p>之后进入了主界面，不得不说，虽然界面和Github比较像，但这不是重点，重点是那个WEBIDE的DEMO试玩了一下，真的是AWESOME，在来就是那个动态Pages了，启动部署后发现网址居然是好长（&amp;gt;30位）的一个随机码.coding.io，果然如官网所说会得到一个”xxx.coding.io“的网址:(，之前还以为是用户名+coding.io，就像Github的静态页面一样。现在这就比较坑了，不搞个域名都没什么实用的价值……然而自定义域名需要银牌会员以上，想成为银牌会员需要完善身份信息，然后还是受限制的自定义域名，每次访问都会出现“该网站托管在 Coding Pages 上” ，然后再跳转到原站。想要不受限制，需要升级到金牌会员以上，也就是充值199/year……&lt;/p>
 &lt;p>免费的东西果然还是不能想太多，考虑到WordPress过于臃肿，于是我选择了Typecho，Coding有个官方的pages-demo项目，其中README中截图显示可以在创建仓库时直接从github开源项目中导入仓库，我认真的找了下，骗子！明明没有这个选项！（不知道是不是被官方在后期更新中砍掉了)，只好自己推了，从官网下载后解压，原本想直接上传上去，结果却提示有非法字符，后来发现文件中似乎有一些&amp;quot;@&amp;ldquo;字符，这样的话只能用Git了。&lt;/p>
 &lt;p>最后用Git推送到Coding时，出现了一个错误，如下所示：&lt;/p>
@@ -4347,90 +4302,44 @@ hint: See the &amp;lsquo;Note about fast-forwards&amp;rsquo; in &amp;lsquo;git p
 &lt;p>当天晚上听到那首曲子后，忽然发现对于曾经在我心里留下这么深记忆的系列作品，我却从未认真了解过它。之后我逛了一些论坛，wiki，才发现它都已经出到了第六部。遗憾的是再也没有了以前的号召力，或许只有真正的粉丝(此粉丝非彼粉丝XD)才会一直追随仙剑这么久吧。&lt;/p>
 &lt;p>如今仙剑系列游戏做了一部又一部，现在的制作团队早已不是以前的了，这样一个大IP如今只剩下情怀了吧。&lt;/p>
 &lt;p>&amp;hellip;&lt;/p>
-&lt;p>这也是2017年最后一篇博文了。&lt;/p>
+&lt;p>这也是 2017 年最后一篇博文了。&lt;/p>
 &lt;p>再见了，2017。
 &lt;img src="https://s1.ax1x.com/2020/05/26/tPUMge.jpg"
 loading="lazy"
 alt="2017_2018"
 >&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>&lt;!-- raw HTML omitted -->
-&lt;p>就像在河的对岸,&lt;br>
-我看不到她,她看不到我,&lt;br>
-但似乎能够感受到来自对岸细若游丝的信号,&lt;br>
-像一根随时都会断掉的线,&lt;br>
-就像是宇宙中遥远星辰散发着若有若无的光芒,&lt;br>
-我不知道该如何回应.&lt;br>
-耳边的轻音乐让我一度以为回到了从前,&lt;br>
-那段缓慢的,不知忧虑的时光,&lt;br>
-随之而来的洪流将这一切击的粉碎,&lt;br>
-窗外一眼望去仍然是被树木遮掩,&lt;br>
-四周依然是熟悉的景物,一如三年以前.&lt;/p>
-&lt;p>&lt;em>p.s. 轻音乐：歌曲：命 歌手：石田勝範&lt;/em>&lt;/p></description></item><item><title>Linux下MPlayer编译教程</title><link>https://ireflux.github.io/snow/post/mplayer-compile-guide/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/mplayer-compile-guide/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
-&lt;p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。&lt;/p>
-&lt;h2 id="编译之前">编译之前&lt;/h2>
-&lt;p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在&lt;a class="link" href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="noopener"
->官方网站&lt;/a>获得.&lt;/p>
-&lt;p>Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。&lt;/p>
-&lt;blockquote>
-&lt;p>如果是x86，就选择Linux x86&lt;/p>
-&lt;p>x86_64就选择Linux AMD64&lt;/p>
-&lt;/blockquote>
-&lt;p>skins随便选一个就好。没什么要推荐的：D。把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！&lt;/p>
-&lt;p>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。&lt;/p>
-&lt;h2 id="安装binary-codec-packages">安装Binary Codec Packages&lt;/h2>
-&lt;p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/&lt;/p>
-&lt;h2 id="配置mplayer">配置MPlayer&lt;/h2>
-&lt;p>首先Mplayer会检测所需的硬件环境，在终端中运行&lt;/p>
-&lt;blockquote>
-&lt;p>./configure&lt;/p>
-&lt;/blockquote>
-&lt;p>来使用默认的选项配置MPlayer。如果想要图形界面，需要运行&lt;/p>
-&lt;blockquote>
-&lt;p>./configure &amp;ndash;enable-gui&lt;/p>
-&lt;/blockquote>
-&lt;p>如果有些东西不能用，尝试输入&lt;/p>
-&lt;blockquote>
-&lt;p>./configure &amp;ndash;help&lt;/p>
-&lt;/blockquote>
-&lt;p>来查看可用的选项并选择你想要的功能。&lt;/p>
-&lt;h2 id="编译mplayer">编译MPlayer&lt;/h2>
-&lt;p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：&lt;/p>
-&lt;blockquote>
-&lt;p>make&lt;/p>
-&lt;/blockquote>
-&lt;p>安装MPlayer&lt;/p>
-&lt;blockquote>
-&lt;p>make install&lt;/p>
-&lt;/blockquote>
-&lt;p>然后就等着就行了。&lt;/p>
-&lt;h2 id="安装图形界面的皮肤">安装图形界面的皮肤&lt;/h2>
-&lt;p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。&lt;/p>
-&lt;h2 id="结尾">结尾&lt;/h2>
-&lt;p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入&lt;code>mplayer &amp;lt;moviefile&amp;gt;&lt;/code>或&lt;code>gmplayer &amp;lt;moviefile&amp;gt;&lt;/code>来打开一个视频。&lt;/p>
-&lt;p>至此，MPlayer就安装完毕了，Enjoy!&lt;/p></description></item><item><title>一个梦</title><link>https://ireflux.github.io/snow/post/a-dream/</link><pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-dream/</guid><description>&lt;p>2105年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。&lt;/p>
+&lt;p>就像在河的对岸&lt;br>
+我看不到她，她看不到我&lt;br>
+但似乎能够感受到来自对岸细若游丝的信号&lt;br>
+像一根随时都会断掉的线&lt;br>
+就像是宇宙中遥远星辰散发着若有若无的光芒&lt;br>
+我不知道该如何回应&lt;br>
+耳边的轻音乐让我一度以为回到了从前&lt;br>
+那段缓慢的不知忧虑的时光&lt;br>
+随之而来的洪流将这一切击的粉碎&lt;br>
+窗外一眼望去仍然是被树木遮掩&lt;br>
+四周依然是熟悉的景物，一如三年以前&lt;/p>
+&lt;p>&lt;em>p.s. 轻音乐：歌曲：命 歌手：石田勝範&lt;/em>&lt;/p></description></item><item><title>一个梦</title><link>https://ireflux.github.io/snow/post/a-dream/</link><pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-dream/</guid><description>&lt;p>2105 年，我在一个婚礼现场，周围有一些熟悉的人，他们是小学同学，另外还有一些不熟悉的人。&lt;/p>
 &lt;p>我们都在沙子上坐着，背靠着身后长约五六米，高约一米的破败围墙，静静的看着前方来来往往的人，百无聊赖。黄土弥漫在空气中，有轻微的朦胧感。左前方似乎是一座被黄沙掩盖的只剩下上半截的城堡，人们在那里或来回走动，或聚在一起讨论着什么，大概是婚礼前的准备事宜吧。一眼望去，四周都是看不到边的荒漠。沙子很厚，时不时有人从沙子地下钻出来，一会又钻进去，大概是很好玩。&lt;/p>
 &lt;p>其中有两个同学似乎是禁止进入的，管理人员一来我和其他同学便合伙把他藏在沙子里。等人走后，再让他出来。&lt;/p>
 &lt;p>这时候阳光直射过来，我们都低下头紧紧的蜷缩在围墙后面，就像是末日中等待救赎的人。&lt;/p>
-&lt;p>&lt;em>“什么，你问我为啥2105年还活着？”&lt;/em>&lt;br>
-&lt;em>“我怎么知道啊衰！”&lt;/em>&lt;/p></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了Win10一个多月后，感觉不光系统臃肿，还有些迷之BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了intel management engine interface驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
-&lt;p>心灰意懒，于是在使用了Win10一个多月后，我又决定要换系统了:D，这大概是我使用Windows系统以来时间最短的一个版本了吧（笑。&lt;/p>
-&lt;p>入了Arch神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方Wiki，因为中途需要点各种链接跳来跳去，刚装Arch的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装Arch时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位dalao的基于官方Wiki的中文教程，遂引用如下：&lt;/p>
+&lt;p>&lt;em>“什么，你问我为啥是 2105 年？”&lt;/em>&lt;br>
+&lt;em>“我怎么知道啊衰！”&lt;/em>&lt;/p></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了 Win10 一个多月后，感觉不光系统臃肿，还有些迷之 BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了 intel management engine interface 驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次 Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
+&lt;p>心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑。&lt;/p>
+&lt;p>入了 Arch 神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方 Wiki，因为中途需要点各种链接跳来跳去，刚装 Arch 的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装 Arch 时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位 dalao 的基于官方 Wiki 的中文教程，遂引用如下：&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>&lt;a class="link" href="http://www.viseator.com/2017/05/17/arch_install/" target="_blank" rel="noopener"
->以官方Wiki的方式安装ArchLinux&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a class="link" href="http://www.viseator.com/2017/05/19/arch_setup/" target="_blank" rel="noopener"
->ArchLinux安装后的必须配置与图形界面安装教程&lt;/a>&lt;/p>
-&lt;/li>
+&lt;li>&lt;a class="link" href="http://www.viseator.com/2017/05/17/arch_install/" target="_blank" rel="noopener"
+>以官方 Wiki 的方式安装 ArchLinux&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="http://www.viseator.com/2017/05/19/arch_setup/" target="_blank" rel="noopener"
+>ArchLinux 安装后的必须配置与图形界面安装教程&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;p>在这里说一句，第二篇设置NetworkManager开机启动时，如果提示错误，那就是还没装NetworkManager，先安装下一步的network-manager-applet，它会把NetworkManager作为依赖项装上，然后再设置开机启动。&lt;/p>
-&lt;p>至此，enjoy！&lt;/p></description></item><item><title>Win10内置Linux子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在这里说一句，第二篇设置 NetworkManager 开机启动时，如果提示错误，那就是还没装 NetworkManager，先安装下一步的 network-manager-applet，它会把 NetworkManager 作为依赖项装上，然后再设置开机启动。&lt;/p>
+&lt;p>至此，enjoy！&lt;/p></description></item><item><title>Win10 内置 Linux 子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>主力系统之前一直用着 Win7，最近也开始感觉有点审美疲劳。一直考虑是换成 Win10 还是 Ubuntu，考虑再三还是选择了 Win10&amp;hellip;&lt;/p>
 &lt;p>体验了 Win10 半个月后，感觉系统过于臃肿。今天忽然发现 Win10 还有个 beta 项目————适用于 Linux 的 Windows 子系统。后来查了下才知道早在今年三月份就有了&amp;hellip;(lll￢ω￢)既然如此，那果断要来体验一把！&lt;/p>
 &lt;h3 id="教程">教程&lt;/h3>
-&lt;p>根据官方的&lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
->Guide&lt;/a>，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.&lt;/p>
+&lt;p>根据官方的 &lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
+>Guide&lt;/a>，首先要查看系统的 OS 版本号和系统类型。系统类型必须是 64 位操作系统以及 OS 版本号要在 1607+&lt;/p>
 &lt;p>查看方法：&lt;/p>
 &lt;blockquote>
 &lt;p>设置-&amp;gt;系统-&amp;gt;关于&lt;/p>
@@ -4446,10 +4355,10 @@ alt="2017_2018"
 &lt;blockquote>
 &lt;p>设置-&amp;gt;更新和安全-&amp;gt;针对开发人员&lt;/p>
 &lt;/blockquote>
-&lt;p>开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。&lt;/p>
+&lt;p>开启后，打开 命令提示符，输入 bash，会提示下载 Ubuntu，输入 Y 回车即可。&lt;/p>
 &lt;p>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。&lt;/p>
 &lt;h3 id="卸载">卸载&lt;/h3>
-&lt;p>打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。&lt;/p>
+&lt;p>打开命令提示符，输入 &lt;code>lxrun /uninstall /full&lt;/code>，然后根据提示输入 Y 即可开始卸载。&lt;/p>
 &lt;h3 id="体验结论">体验结论&lt;/h3>
 &lt;p>这个 Windows 内置的 Linux 就是将 Linux 的系统调用实时的转换成 Windows 的系统调用，就像是 Linux 上的 Wine 的反向技术。Wine 可以将 Windows 上的应用放到 Linux 上运行，这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine 开源，微软也毫无办法。&lt;/p>
 &lt;p>不过 Windows 内置的 Linux 感觉并不自由，内置的文件不能用 Windows 的工具来创建或修改。否则可能会出现文件损坏导致 Linux 系统无法使用。因此，如果是 Linux 的初学者，用这个还不错，但是要当作开发环境，那就算了吧。&lt;/p>
@@ -4628,65 +4537,4 @@ alt="2017_2018"
 &lt;p>如果是那样，如果“另一个”回来了，我应该对他说什么？B先生，您已经死了，现在的您是无数镜子里的鬼魂之一？我能不能这样认为：当我们这些幸福的人无知无识地越过了今天午夜，进入B先生无法求得也无法想像的明天；在被我们超越、抛弃和遗忘的这一天里，还有一个、两个、无数个B，无可奈何、循环往复地永远被困于此。我对这些道理一点都不懂，也想不明白。&lt;/p>
 &lt;p>我怀着莫大的期望和恐惧，坐在大楼门口的管理员室内，望着窗外的夜世界。&lt;/p>
 &lt;p>我头一次注意到时间是这么奇妙，每一秒钟都仿佛在我心中跳跃着流过。流逝，流逝，流逝……在某一次循环当中，B先生此时此刻还坐在由郊外赶回来的出租车上。我心乱如麻，等待他穿过夜晚的浓雾，苍白的脸像一盏灯一样往大楼里走来；等待他从时间的某个角落佝偻着走来；等待他迷茫绝望地一边寻找一边走来。从未知走进未知，从无限走进无限，从幽暗走进幽暗，从牢笼走进牢笼。我要紧紧拉着他的手，不，我要紧紧地抱住他，跟他一起度过由今天到明天的那一秒钟。如果这样，我能够把他带进明天吗？或者是他把我拉进那循环的魔咒当中？天哪，我在想些什么？12点钟就要到了，我的心跳几乎停止。&lt;/p>
-&lt;p>窗外，夜雾茫茫。&lt;/p></description></item><item><title>Windows下优秀软件收录</title><link>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</link><pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/excellent-software-introduction-of-win-platform/</guid><description>&lt;p>此文章用于纪录一些windows下优秀的软件,这些软件会对日常生产和生活中会带来很多方便，提高很多效率，并且此文会不定期更新。&lt;/p>
-&lt;h3 id="spacesniffer">spacesniffer&lt;/h3>
-&lt;p>它就像是个文件查看器，可以快速的、以可视化的方式将硬盘里各文件所占的资源呈现出来，搜索过程看起来很酷。&lt;a class="link" href="http://www.uderzo.it/main_products/space_sniffer/download.html" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="ccleaner">CCleaner&lt;/h3>
-&lt;p>清理浏览器缓存和注册表很有用.&lt;a class="link" href="https://www.piriform.com/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="华宇拼音输入法">华宇拼音输入法&lt;/h3>
-&lt;p>国产老牌输入法了，体积很小，很简洁，无广告。比某些国产输入法良心多了。&lt;a class="link" href="http://www.unispim.com/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="everyonepiano">EveryonePiano&lt;/h3>
-&lt;p>闲来无事弹弹琴也不错。&lt;a class="link" href="http://www.everyonepiano.cn/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="7-zip">7-zip&lt;/h3>
-&lt;p>开源压缩软件，体积小。&lt;a class="link" href="http://www.7-zip.org/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-06-07更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
-&lt;h3 id="sumatrapdf">SumatraPDF&lt;/h3>
-&lt;p>小巧好用的pdf viewer，开源的，虽然一般用不到吧(chrome能打开pdf)。&lt;a class="link" href="https://www.sumatrapdfreader.org" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="fscapture">FSCapture&lt;/h3>
-&lt;p>小巧好用的截图软件。一般windows自带的够用了，不过特定情况下还是用得到的。&lt;a class="link" href="http://www.faststone.org" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-08-28更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
-&lt;h3 id="hashcheck-shell-extension">HashCheck Shell Extension&lt;/h3>
-&lt;p>这个看名字大概就知道是干什么的了。&lt;a class="link" href="http://code.kliu.org/hashcheck/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="everything">Everything&lt;/h3>
-&lt;p>用过的都将其称作‘神器’&lt;a class="link" href="http://www.voidtools.com/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2017-11-8更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
-&lt;h3 id="vscode">VSCode&lt;/h3>
-&lt;p>文本编辑器，巨硬出品，开源，跨平台，总之很不错。&lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2018-1-9更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
-&lt;h3 id="potplayer">Potplayer&lt;/h3>
-&lt;p>Windows下播放器，据说解码器很强。&lt;a class="link" href="https://potplayer.daum.net/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="rufus">Rufus&lt;/h3>
-&lt;p>开源免费，做启动盘很好用，最关键的是作者拒绝支付，简直业界良心！&lt;a class="link" href="https://rufus.akeo.ie/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;p>以下为作者原话：&lt;/p>
-&lt;blockquote>
-&lt;p>Finally the fact that I have the freedom to develop Free Software in my spare time should indicate that I&amp;rsquo;m well-off enough, and therefore that you should direct your generosity towards people who need it a lot more than I do. If you really insist, you can always make a donation to the Free Software Foundation, as they are the main reason software like Rufus is possible.&lt;/p>
-&lt;/blockquote>
-&lt;p>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-2018-1-29更新&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p>
-&lt;h3 id="screentogif">ScreenToGif&lt;/h3>
-&lt;p>2M的小软件，用来录制Gif，开源免费。&lt;a class="link" href="http://www.screentogif.com/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="gifcam">GifCam&lt;/h3>
-&lt;p>体积&amp;lt;2m，极简风格。&lt;a class="link" href="http://blog.bahraniapps.com/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="listen-1">Listen 1&lt;/h3>
-&lt;p>整合了各大平台的音乐，在也不需要各大平台来回找了！&lt;a class="link" href="https://listen1.github.io/listen1/" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="sysinternals">Sysinternals&lt;/h3>
-&lt;p>微软的系统管理工具包，里面有十几个小工具，也可单独下载所需要的工具。比如：autiruns用来管理开机自启动的程序。procexp相当于增强般的任务管理器。这么好的东西居然没内置！&lt;a class="link" href="https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;h3 id="power-map">Power Map&lt;/h3>
-&lt;p>微软出品的3D数据地图插件，包含在线地图+在线演示+制作视频等各项功能。&lt;a class="link" href="https://www.microsoft.com/en-us/download/details.aspx?id=38395" target="_blank" rel="noopener"
->下载地址&lt;/a>&lt;/p>
-&lt;p>未完待续&amp;hellip;&lt;/p></description></item></channel></rss>
+&lt;p>窗外，夜雾茫茫。&lt;/p></description></item></channel></rss>

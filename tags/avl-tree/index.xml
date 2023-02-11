@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AVL tree on sherry's blog</title><link>https://ireflux.github.io/snow/tags/avl-tree/</link><description>Recent content in AVL tree on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 26 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/avl-tree/index.xml" rel="self" type="application/rss+xml"/><item><title>AVL tree 学习笔记</title><link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link><pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
-&lt;p>最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p>
-&lt;h2 id="什么是avl树">什么是AVL树&lt;/h2>
-&lt;p>AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a class="link" href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky" target="_blank" rel="noopener"
->Georgy Adelson-Velsky&lt;/a>和&lt;a class="link" href="https://en.wikipedia.org/wiki/Evgenii_Landis" target="_blank" rel="noopener"
->Evgenii Landis&lt;/a>于1962年在论文《&lt;a class="link" href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf" target="_blank" rel="noopener"
+&lt;p>最近在复习数据结构，学习了一下 AVL 树，现记录如下。&lt;/p>
+&lt;h2 id="什么是-avl-树">什么是 AVL 树&lt;/h2>
+&lt;p>AVL 树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家 &lt;a class="link" href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky" target="_blank" rel="noopener"
+>Georgy Adelson-Velsky&lt;/a> 和 &lt;a class="link" href="https://en.wikipedia.org/wiki/Evgenii_Landis" target="_blank" rel="noopener"
+>Evgenii Landis&lt;/a> 于1962年在论文《&lt;a class="link" href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf" target="_blank" rel="noopener"
 >An algorithm for the organization of information&lt;/a>》中首次提出。&lt;/p>
-&lt;h2 id="avl树的性质">AVL树的性质&lt;/h2>
-&lt;p>AVL是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p>
+&lt;h2 id="avl-树的性质">AVL 树的性质&lt;/h2>
+&lt;p>AVL 是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p>
 &lt;ul>
 &lt;li>若左子树不空，则左子树上所有结点的值均小于它的根结点的值。&lt;/li>
 &lt;li>若右子树不空，则右子树上所有结点的值均大于它的根结点的值。&lt;/li>
 &lt;li>左、右子树也分别为二叉排序树。&lt;/li>
 &lt;/ul>
-&lt;p>AVL引入了平衡因子，即：&lt;/p>
+&lt;p>AVL 引入了平衡因子，即：&lt;/p>
 &lt;ul>
 &lt;li>每个节点的左右子树高度之间的差异小于或等于1。&lt;/li>
 &lt;/ul>
-&lt;h2 id="avl树的旋转">AVL树的旋转&lt;/h2>
-&lt;p>通过对节点的旋转来重新平衡树，通常对AVL树的旋转有以下四种情况：&lt;/p>
+&lt;h2 id="avl-树的旋转">AVL 树的旋转&lt;/h2>
+&lt;p>通过对节点的旋转来重新平衡树，通常对 AVL 树的旋转有以下四种情况：&lt;/p>
 &lt;p>LL(Left Left Case):&lt;/p>
 &lt;p>&lt;img src="http://wx1.sinaimg.cn/large/ea5eda6dly1g1gm6mz4y3j20ix04m0sq.jpg"
 loading="lazy"
@@ -38,8 +38,8 @@ alt="RR"
 loading="lazy"
 alt="RL"
 >&lt;/p>
-&lt;p>&lt;em>p.s. 以上图片通过draw.io绘制而成，凑活能看（&lt;/em>&lt;/p>
-&lt;p>再放一张gif，便于理解，图源来自Wikipedia:&lt;/p>
+&lt;p>&lt;em>p.s. 以上图片通过 draw.io 绘制而成，凑活能看（&lt;/em>&lt;/p>
+&lt;p>再放一张 gif，便于理解，图源来自 Wikipedia:&lt;/p>
 &lt;p>&lt;img src="http://wx2.sinaimg.cn/large/ea5eda6dly1g1f6ae2fq2g208w050dm1.gif"
 loading="lazy"
 alt="AVL"

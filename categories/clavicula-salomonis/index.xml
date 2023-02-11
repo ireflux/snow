@@ -302,13 +302,13 @@
 &lt;li>&lt;a class="link" href="https://www.elastic.co/" target="_blank" rel="noopener"
 >Elasticsearch&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>netcat 的使用笔记</title><link>https://ireflux.github.io/snow/post/netcat-note/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/netcat-note/</guid><description>&lt;p>当在&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
-> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a class="link" href="https://github.com/openbsd/src/tree/master/usr.bin/nc" target="_blank" rel="noopener"
+> debian 的仓库&lt;/a>中查看 openbsd 版本的 netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），&lt;a class="link" href="https://github.com/openbsd/src/tree/master/usr.bin/nc" target="_blank" rel="noopener"
 >源代码&lt;/a> 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有&lt;a class="link" href="https://packages.debian.org/sid/netcat-openbsd" target="_blank" rel="noopener"
 >openbsd版本&lt;/a>，&lt;a class="link" href="http://netcat.sourceforge.net/download.php" target="_blank" rel="noopener"
 >gnu版本&lt;/a>，&lt;a class="link" href="https://nmap.org/ncat/" target="_blank" rel="noopener"
 >nmap社区版本ncat&lt;/a>。&lt;/p>
-&lt;p>netcat 最初的作者是一个名为“&lt;em>Hobbit&lt;/em>”的人在1995年10月28号以源代码的形式发布的。在其&lt;a class="link" href="https://nc110.sourceforge.io/" target="_blank" rel="noopener"
->官网&lt;/a>还能找到一些其他信息以及由“&lt;em>Hobbit&lt;/em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。&lt;/p>
+&lt;p>netcat 最初的作者是一个名为“&lt;em>Hobbit&lt;/em>”的人在 1995 年 10 月 28 号以源代码的形式发布的。在其&lt;a class="link" href="https://nc110.sourceforge.io/" target="_blank" rel="noopener"
+>官网&lt;/a>还能找到一些其他信息以及由“&lt;em>Hobbit&lt;/em>”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的 netcat&lt;/p>
 &lt;p>首先来看一下 &lt;code>nc -h&lt;/code> 里平时使用频率比较高的一些选项：&lt;/p>
 &lt;ul>
 &lt;li>h：输出帮助信息&lt;/li>
@@ -631,7 +631,7 @@ proxy_redirect default;
 &lt;ol>
 &lt;li>&lt;a class="link" href="https://www.rabbitmq.com/documentation.html" target="_blank" rel="noopener"
 >RabbitMQ Documentation&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
+&lt;/ol></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis 官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
 >Jedis&lt;/a>， &lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
 >lettuce&lt;/a>， &lt;a class="link" href="https://github.com/mrniko/redisson" target="_blank" rel="noopener"
 >Redisson&lt;/a>， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p>
@@ -810,7 +810,7 @@ proxy_redirect default;
 &lt;li>&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/" target="_blank" rel="noopener"
 >Springfox Reference Documentation&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>初探PostgreSQL</title><link>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-exploration-of-postgresql/</guid><description>&lt;p>在群友的安利（&lt;del>传教&lt;/del>）下，成功引起了我的兴趣&amp;hellip;&lt;/p>
-&lt;p>在作了一些了解之后，记录如下。以下本文的命令是在Arch Linux上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
+&lt;p>在作了一些了解之后，记录如下。以下本文的命令是在 Arch Linux 上进行的，其他发行版暂不作讨论，不过应该也普遍适用。&lt;/p>
 &lt;p>安装没什么可说的，直接 &lt;code>sudo pacman -S postgresql&lt;/code> 就好了。(其他发行版请使用对应的包管理器)&lt;/p>
 &lt;p>安装 PostgreSQL 的时候会同时创建一个名为 postgres 的系统账户。这个账户同时也是 PostgreSQL 数据库中的 Superuser, 因此创建数据库账户或者创建数据库都需要由这个账户来进行操作。&lt;/p>
 &lt;p>如果没有指定配置文件直接在 terminal 中键入 postgres 后显示可能会显示如下结果：&lt;/p>
@@ -902,19 +902,19 @@ To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&a
 &lt;li>&lt;a class="link" href="https://docs.docker.com/get-started/part3/" target="_blank" rel="noopener"
 >docker docs part 3 &amp;amp; part 4&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>我对手机的需求不高，不打游戏，只需要续航，有Google服务以及root就足够了。之前一直使用的ADUI的Global版本，再加上Magisk的root管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到Pie的大版本更新，把我的root覆盖掉了。因此，不得不重新再刷入Magisk。不过MIUI11官方说会加入应用冻结的功能，这样一来我连root的需求似乎也没有了 /笑&lt;/p>
-&lt;p>言归正传，在Linux上使用adb有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
+&lt;p>我对手机的需求不高，不打游戏，只需要续航，有 Google 服务以及 root 就足够了。之前一直使用的 ADUI 的 Global 版本，再加上 Magisk 的 root 管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到 Pie 的大版本更新，把我的 root 覆盖掉了。因此，不得不重新再刷入 Magisk。不过 MIUI11 官方说会加入应用冻结的功能，这样一来我连 root 的需求似乎也没有了 /笑&lt;/p>
+&lt;p>言归正传，在 Linux 上使用 adb 有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
 [device name] unauthorized&lt;/p>
 &lt;/blockquote>
-&lt;p>要进行配置之前，首先需要找到自己手机的USB vendor ID和product ID，启用开发者模式，然后打开usb调试模式插上手机后在terminal中执行：&lt;/p>
+&lt;p>要进行配置之前，首先需要找到自己手机的 USB vendor ID 和 product ID，启用开发者模式，然后打开 usb 调试模式插上手机后在 terminal 中执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是vendor id，后者是product id&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是 vendor id，后者是 product id&lt;/p>
 &lt;p>下面有两种方式来写配置文件：&lt;/p>
 &lt;h3 id="添加udev规则">添加udev规则&lt;/h3>
 &lt;p>1.首先要确保系统中有安装 &lt;code>android-udev&lt;/code> 这个包。可以通过包管理器来安装或者访问&lt;a class="link" href="https://source.android.com/setup/build/initializing#configuring-usb-access" target="_blank" rel="noopener"
->source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的vendor id和product id为自己的即可:&lt;/p>
+>source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的 vendor id 和 product id 为自己的即可:&lt;/p>
 &lt;blockquote>
 &lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
 SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
@@ -925,8 +925,8 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo gpasswd -a user group
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置adb">配置adb&lt;/h3>
-&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将vendor id 写入到里面，保存退出即可。&lt;/p>
-&lt;p>这两种方式任选其一即可。然后进入解压后的platform-tools目录，将下好的twrp也放到里面，在目录中启动terminal，然后执行：&lt;/p>
+&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将 vendor id 写入到里面，保存退出即可。&lt;/p>
+&lt;p>这两种方式任选其一即可。然后进入解压后的 platform-tools 目录，将下好的 twrp 也放到里面，在目录中启动 terminal，然后执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ ./adb devices
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
 &lt;blockquote>
@@ -935,31 +935,31 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/blockquote>
 &lt;p>这样就算是完成了。&lt;/p>
 &lt;h2 id="后记">后记&lt;/h2>
-&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入bootloader也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
+&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Android_Debug_Bridge" target="_blank" rel="noopener"
 >Android Debug Bridge&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>AVL tree 学习笔记</title><link>https://ireflux.github.io/snow/post/avl-tree-study-note/</link><pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/avl-tree-study-note/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
-&lt;p>最近在复习数据结构，学习了一下AVL树，现记录如下。&lt;/p>
-&lt;h2 id="什么是avl树">什么是AVL树&lt;/h2>
-&lt;p>AVL树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家&lt;a class="link" href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky" target="_blank" rel="noopener"
->Georgy Adelson-Velsky&lt;/a>和&lt;a class="link" href="https://en.wikipedia.org/wiki/Evgenii_Landis" target="_blank" rel="noopener"
->Evgenii Landis&lt;/a>于1962年在论文《&lt;a class="link" href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf" target="_blank" rel="noopener"
+&lt;p>最近在复习数据结构，学习了一下 AVL 树，现记录如下。&lt;/p>
+&lt;h2 id="什么是-avl-树">什么是 AVL 树&lt;/h2>
+&lt;p>AVL 树是一种平衡二叉查找树(self-balancing binary search tree),由苏联两位科学家 &lt;a class="link" href="https://en.wikipedia.org/wiki/Georgy_Adelson-Velsky" target="_blank" rel="noopener"
+>Georgy Adelson-Velsky&lt;/a> 和 &lt;a class="link" href="https://en.wikipedia.org/wiki/Evgenii_Landis" target="_blank" rel="noopener"
+>Evgenii Landis&lt;/a> 于1962年在论文《&lt;a class="link" href="http://professor.ufabc.edu.br/~jesus.mena/courses/mc3305-2q-2015/AED2-10-avl-paper.pdf" target="_blank" rel="noopener"
 >An algorithm for the organization of information&lt;/a>》中首次提出。&lt;/p>
-&lt;h2 id="avl树的性质">AVL树的性质&lt;/h2>
-&lt;p>AVL是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p>
+&lt;h2 id="avl-树的性质">AVL 树的性质&lt;/h2>
+&lt;p>AVL 是一个平衡二叉查找树，首先它应是一个二叉查找树（又称二叉排序树），因此，它首先具备如下特性:&lt;/p>
 &lt;ul>
 &lt;li>若左子树不空，则左子树上所有结点的值均小于它的根结点的值。&lt;/li>
 &lt;li>若右子树不空，则右子树上所有结点的值均大于它的根结点的值。&lt;/li>
 &lt;li>左、右子树也分别为二叉排序树。&lt;/li>
 &lt;/ul>
-&lt;p>AVL引入了平衡因子，即：&lt;/p>
+&lt;p>AVL 引入了平衡因子，即：&lt;/p>
 &lt;ul>
 &lt;li>每个节点的左右子树高度之间的差异小于或等于1。&lt;/li>
 &lt;/ul>
-&lt;h2 id="avl树的旋转">AVL树的旋转&lt;/h2>
-&lt;p>通过对节点的旋转来重新平衡树，通常对AVL树的旋转有以下四种情况：&lt;/p>
+&lt;h2 id="avl-树的旋转">AVL 树的旋转&lt;/h2>
+&lt;p>通过对节点的旋转来重新平衡树，通常对 AVL 树的旋转有以下四种情况：&lt;/p>
 &lt;p>LL(Left Left Case):&lt;/p>
 &lt;p>&lt;img src="http://wx1.sinaimg.cn/large/ea5eda6dly1g1gm6mz4y3j20ix04m0sq.jpg"
 loading="lazy"
@@ -980,8 +980,8 @@ alt="RR"
 loading="lazy"
 alt="RL"
 >&lt;/p>
-&lt;p>&lt;em>p.s. 以上图片通过draw.io绘制而成，凑活能看（&lt;/em>&lt;/p>
-&lt;p>再放一张gif，便于理解，图源来自Wikipedia:&lt;/p>
+&lt;p>&lt;em>p.s. 以上图片通过 draw.io 绘制而成，凑活能看（&lt;/em>&lt;/p>
+&lt;p>再放一张 gif，便于理解，图源来自 Wikipedia:&lt;/p>
 &lt;p>&lt;img src="http://wx2.sinaimg.cn/large/ea5eda6dly1g1f6ae2fq2g208w050dm1.gif"
 loading="lazy"
 alt="AVL"
@@ -1025,41 +1025,41 @@ alt="AVL"
 >https://en.wikipedia.org/wiki/AVL_tree&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://www.geeksforgeeks.org/avl-tree-set-1-insertion/" target="_blank" rel="noopener"
 >https://www.geeksforgeeks.org/avl-tree-set-1-insertion/&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>子元素margin-top影响父元素问题</title><link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link><pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid><description>&lt;p>今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p>
-&lt;p>我的HTML嵌套关系如下：&lt;/p>
+&lt;/ol></description></item><item><title>子元素margin-top影响父元素问题</title><link>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</link><pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/a-question-about-the-css-box-model/</guid><description>&lt;p>今天遇到了一个问题，是关于前端 CSS 子元素的 margin-top 会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。&lt;/p>
+&lt;p>我的 HTML 嵌套关系如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">header&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;site-head&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;blog-logo&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logo&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;background: url(/resources/images/qyc.jpg)&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">header&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>父元素CSS：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>父元素 CSS：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#site-head{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">max-width&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-image&lt;/span>: url(&lt;span style="color:#e6db74">&amp;#34;/resources/images/header.jpg&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-size&lt;/span>: &lt;span style="color:#66d9ef">cover&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>子元素CSS：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>子元素 CSS：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#blog-logo {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">block&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">max-width&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span> &lt;span style="color:#66d9ef">auto&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">text-align&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当子元素中margin-top为50px时，神奇的一幕发生了，子元素并没有相对于父元素向下移动50px，而是连带着父元素一起向下移动了50px。&lt;/p>
-&lt;p>在Chrome的Developer tools中查看时，看到就连body都向下移动了50px！之后尝试在父元素中设置margin或body中设置都没有用，在父元素中设置padding也没有效果。&lt;/p>
-&lt;p>之后搜索到的css2.1盒模型中规定的内容如下：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当子元素中 margin-top 为 50px 时，神奇的一幕发生了，子元素并没有相对于父元素向下移动 50px，而是连带着父元素一起向下移动了 50px。&lt;/p>
+&lt;p>在 Chrome 的 Developer tools 中查看时，看到就连 body 都向下移动了 50px！之后尝试在父元素中设置 margin 或 body 中设置都没有用，在父元素中设置 padding 也没有效果。&lt;/p>
+&lt;p>之后搜索到的 css2.1 盒模型中规定的内容如下：&lt;/p>
 &lt;blockquote>
 &lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>
 &lt;/blockquote>
-&lt;p>所有毗邻的两个或更多盒元素的margin将会合并为一个margin共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding或Border分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的margin覆盖了父元素的margin。&lt;/p>
+&lt;p>所有毗邻的两个或更多盒元素的 margin 将会合并为一个 margin 共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding 或 Border 分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的 margin 覆盖了父元素的 margin。&lt;/p>
 &lt;p>之后找到的解决方法如下：&lt;/p>
 &lt;ol>
-&lt;li>父级或子元素使用浮动或者绝对定位absolute浮动或绝对定位不参与margin的折叠&lt;/li>
-&lt;li>父级overflow:hidden;&lt;/li>
-&lt;li>父级设置padding（破坏非空白的折叠条件）&lt;strong>//对于这条表示怀疑，我之前设置的padding并没有起到作用(&lt;/strong>&lt;/li>
-&lt;li>父级设置border&lt;/li>
+&lt;li>父级或子元素使用浮动或者绝对定位 absolute 浮动或绝对定位不参与 margin 的折叠&lt;/li>
+&lt;li>父级 overflow:hidden;&lt;/li>
+&lt;li>父级设置 padding（破坏非空白的折叠条件）&lt;strong>//对于这条表示怀疑，我之前设置的 padding 并没有起到作用(&lt;/strong>&lt;/li>
+&lt;li>父级设置 border&lt;/li>
 &lt;/ol>
-&lt;p>最终我用的&lt;code>父级overflow:hidden;&lt;/code>完美解决问题！&lt;/p></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>最终我用的&lt;code>父级 overflow:hidden;&lt;/code>完美解决问题！&lt;/p></description></item><item><title>一道笔试题</title><link>https://ireflux.github.io/snow/post/an-interview-question/</link><pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/an-interview-question/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：&lt;strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。&lt;/strong>&lt;/p>
 &lt;p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么表达出这些毫无规律的“数字图形”，却没意识到考点其实是&amp;lt;数据结构&amp;gt;上曾经学过的表达式求值:(&lt;/p>
 &lt;p>一般来说，表达式求值有“中缀表示法”和“后缀表示法”(又称“逆波兰表示法”)两种。适合人类阅读的便是“中缀表示法”，例如：5+6*7 但“后缀表示法”更适合计算机来计算，因为无需判断操作符号的优先级，例如：567*+&lt;/p>
@@ -1352,7 +1352,7 @@ alt="AVL"
 &lt;/table>
 &lt;p>可以看出，基本上是和“中缀表达式”原理差不多的，也是需要比较运算符的优先级，按照计算的先后顺序排序。&lt;/p>
 &lt;h3 id="逆波兰表达式">逆波兰表达式&lt;/h3>
-&lt;p>以下例子来源于Wikipedia:&lt;/p>
+&lt;p>以下例子来源于 Wikipedia:&lt;/p>
 &lt;p>例如：中缀表达式__5+((1+2)*4)−3__写作__512+4*+3−__&lt;/p>
 &lt;table>
 &lt;thead>

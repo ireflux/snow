@@ -66,7 +66,7 @@ proxy_redirect default;
 >nginx documentation&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html" target="_blank" rel="noopener"
 >扫盲 Linux＆UNIX 命令行——从“电传打字机”聊到“shell 脚本编程”&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
+&lt;/ol></description></item><item><title>Spring Data Redis 学习笔记</title><link>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-spring-data-redis/</guid><description>&lt;p>Redis 官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：&lt;a class="link" href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener"
 >Jedis&lt;/a>， &lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
 >lettuce&lt;/a>， &lt;a class="link" href="https://github.com/mrniko/redisson" target="_blank" rel="noopener"
 >Redisson&lt;/a>， Spring Boot 2.X 中默认集成了 lettuce。&lt;/p>
