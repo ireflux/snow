@@ -7,7 +7,7 @@ categories: ["Clavicula Salomonis"]
 tags: ["spring"]
 author: "sherry"
 ---
-Redis官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：[Jedis](https://github.com/xetorthio/jedis)， [lettuce](https://github.com/lettuce-io/lettuce-core)， [Redisson](https://github.com/mrniko/redisson)， Spring Boot 2.X 中默认集成了 lettuce。
+Redis 官网上有一些推荐的 redis client，在 Java 编程语言分类下，截至发文前，有三个 client 被官方推荐，分别是：[Jedis](https://github.com/xetorthio/jedis)， [lettuce](https://github.com/lettuce-io/lettuce-core)， [Redisson](https://github.com/mrniko/redisson)， Spring Boot 2.X 中默认集成了 lettuce。
 
 以下是[官方](https://github.com/lettuce-io/lettuce-core)对 lettuce 的描述，摘录如下：
 

@@ -1,5 +1,5 @@
 ---
-title: "Win10内置Linux子系统初体验"
+title: "Win10 内置 Linux 子系统初体验"
 date: 2017-08-29
 lastmod: 2017-08-29
 draft: false
@@ -14,7 +14,7 @@ author: "sherry"
 
 ### 教程
 
-根据官方的[Guide](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.
+根据官方的 [Guide](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)，首先要查看系统的 OS 版本号和系统类型。系统类型必须是 64 位操作系统以及 OS 版本号要在 1607+
 
 <!--more-->
 
@@ -33,13 +33,13 @@ author: "sherry"
 之后打开开发者人员模式。方法如下：
 > 设置->更新和安全->针对开发人员
 
-开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。
+开启后，打开 命令提示符，输入 bash，会提示下载 Ubuntu，输入 Y 回车即可。
 
 提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。
 
 ### 卸载
 
-打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。
+打开命令提示符，输入 `lxrun /uninstall /full`，然后根据提示输入 Y 即可开始卸载。
 
 ### 体验结论
 

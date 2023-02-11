@@ -7,11 +7,11 @@ categories: ["Clavicula Salomonis"]
 tags: ["linux", "netcat"]
 author: "sherry"
 ---
-当在[ debian 的仓库](https://packages.debian.org/sid/netcat-openbsd)中查看 openbsd 版本的 netcat时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），[源代码](https://github.com/openbsd/src/tree/master/usr.bin/nc) 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有[openbsd版本](https://packages.debian.org/sid/netcat-openbsd)，[gnu版本](http://netcat.sourceforge.net/download.php)，[nmap社区版本ncat](https://nmap.org/ncat/)。
+当在[ debian 的仓库](https://packages.debian.org/sid/netcat-openbsd)中查看 openbsd 版本的 netcat 时，会看到描述中有这样一句话：“TCP/IP swiss army knife”，被誉为 TCP/IP 的瑞士军刀，可以想象，这可以说是很高的赞誉了。netcat 当年还是2001年，2003年，2006年的 insecure.org 几次安全工具的投票中的前五名，它不仅是一个非常优秀的软件，体积还很小（只有几十KB），[源代码](https://github.com/openbsd/src/tree/master/usr.bin/nc) 也很少，以至于有很多人去重写，出现了很多变种。比较知名的有[openbsd版本](https://packages.debian.org/sid/netcat-openbsd)，[gnu版本](http://netcat.sourceforge.net/download.php)，[nmap社区版本ncat](https://nmap.org/ncat/)。
 
 <!--more-->
 
-netcat 最初的作者是一个名为“*Hobbit*”的人在1995年10月28号以源代码的形式发布的。在其[官网](https://nc110.sourceforge.io/)还能找到一些其他信息以及由“*Hobbit*”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的netcat。
+netcat 最初的作者是一个名为“*Hobbit*”的人在 1995 年 10 月 28 号以源代码的形式发布的。在其[官网](https://nc110.sourceforge.io/)还能找到一些其他信息以及由“*Hobbit*”最后更新于2007年的那个版本。在本文中，我使用的是 openbsd-netcat，因此以下使用记录如无特殊说明默认都是 openbsd 版本的 netcat
 
 首先来看一下 `nc -h` 里平时使用频率比较高的一些选项：
 

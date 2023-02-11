@@ -14,4 +14,4 @@ author: "sherry"
 
 首先需要准备一个美国 IP，然后打开[链接](https://private-network.firefox.com/)，安装扩展。
 
-美国 IP 喜 +1，官方出品安全性应该也没问题，美滋滋！
+美国 IP 喜 +1，官方出品安全性应该也没问题，美滋滋。
