@@ -34,7 +34,7 @@ icon = "brand-github"
 [[menu.social]]
 identifier = "twitter"
 name = "Twitter"
-url = "https://twitter.com/HE2L0"
+url = "https://twitter.com/home"
 
 [menu.social.params]
 icon = "brand-twitter"
