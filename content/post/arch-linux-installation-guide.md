@@ -1,7 +1,7 @@
 ---
-title: "ArchLinux安装教程"
+title: "ArchLinux 安装教程"
 date: 2017-10-18
-lastmod: 2017-10-18
+lastmod: 2023-07-15
 draft: false
 categories: ["随笔"]
 tags: ["Linux"]
@@ -13,11 +13,231 @@ author: "sherry"
 
 <!--more-->
 
-入了 Arch 神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方 Wiki，因为中途需要点各种链接跳来跳去，刚装 Arch 的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装 Arch 时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位 dalao 的基于官方 Wiki 的中文教程，遂引用如下：
+2023-07-15 update:
 
-1. [以官方 Wiki 的方式安装 ArchLinux](http://www.viseator.com/2017/05/17/arch_install/)  
-2. [ArchLinux 安装后的必须配置与图形界面安装教程](http://www.viseator.com/2017/05/19/arch_setup/)
+为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的[文档](https://wiki.archlinux.org/title/Installation_guide)，要翻好多篇文章。以下制作启动盘等准备工作省略，直接从进入 live 环境开始。
 
-在这里说一句，第二篇设置 NetworkManager 开机启动时，如果提示错误，那就是还没装 NetworkManager，先安装下一步的 network-manager-applet，它会把 NetworkManager 作为依赖项装上，然后再设置开机启动。
+## 安装前的准备工作
 
-至此，enjoy！
+### 联网
+
+网线直接 `dhcpd`
+
+如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 `dhcpd`
+
+### 更新系统时钟
+
+默认情况下连上网络就会自动更新的，可以用以下命令查看一下：
+
+```bash
+# timedatectl
+```
+
+### 分区
+
+这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了
+
+还是要查看一下启动模式：
+
+```bash
+# cat /sys/firmware/efi/fw_platform_size
+```
+
+返回结果的解释，这里就直接复制官网了：
+
+> If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard's manual.
+
+如果上面的命令返回 64 的话，就可以继续了，其他情况就可以 return 了
+
+开始分区：
+
+```bash
+# fdisk -l
+```
+
+就会看到磁盘例如 `/dev/sda`, `/dev/sdb` ，或者已有的分区例如 `/dev/sda1`,`/dev/sda2`
+
+假设 `/dev/sda` 是一个全新的、未创建分区表的磁盘，输入以下命令开始对 sda 操作分区
+
+```bash
+# fdisk /dev/sda
+```
+
+上述命令执行完后，输入 `m` 可以查看 help
+
+首先创建 UEFI 引导分区，输入 `g` 创建一个 GPT 分区表，然后输入 `n` 新建分区，起始序号和 First sector 默认回车就行，Last sector 输入 `+512M` 回车，创建完默认是类型 `Linux filesystem`，输入 `p` 可以查看新创建的分区，输入 `t` 选择分区序号来修改分区类型，输入 `l` 可以查看[所有的类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs)，输入 `uefi` 将分区类型修改为 EFI。然后再次输入 `n` 创建 root 分区，一路回车默认即可，最后输入 `w` 保存
+
+保存完，再次执行 `fdisk -l` 就会看到类似如下结果：
+
+| Device | Start | End | Sectors | Size | Type |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| /dev/sda1 | 2048 | 1050623 | 1048576 | 512M | EFI System |
+| /dev/sda2 | 省略 | 省略 | 省略 | 省略 | Linux filesystem |
+
+### 格式化分区
+
+格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档[EFI_system_partition#Format_the_partition](https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition)，具体我也摘抄如下：
+
+> To prevent potential issues with other operating systems and since the UEFI specification says that UEFI "encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media"[5], it is recommended to use FAT32.
+
+所以格式化 EFI 分区使用如下命令:
+
+```bash
+# mkfs.fat -F 32 /dev/sda1
+```
+
+然后格式化 root 分区：
+
+```bash
+# mkfs.ext4 /dev/sda2
+```
+
+### 挂载文件系统
+
+```bash
+# mkdir /mnt/boot
+# mount /dev/sda1 /mnt/boot
+# mount /dev/sda2 /mnt
+```
+
+## 安装
+
+### 选择镜像
+
+编辑以下文件
+
+```bash
+# vim /etc/pacman.d/mirrorlist
+```
+
+将 `Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch` 放到第一行，保存退出
+
+### 安装必要的软件包
+
+```bash
+# pacstrap -K /mnt base linux linux-firmware
+```
+
+## 系统配置
+
+### 生成 fstab 文件
+
+执行下面的命令：
+
+```bash
+# genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+查看生成的结果：
+
+```bash
+# cat /mnt/etc/fstab
+```
+
+### Chroot
+
+执行以下命令切换到新系统
+
+```bash
+# arch-chroot /mnt
+```
+
+### 设置时区
+
+```bash
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+生成 `/etc/adjtime` 文件：
+
+```bash
+# hwclock --systohc
+```
+
+### 本地化
+
+编辑文件 `/etc/locale.gen`，找到 `en_US.UTF-8 UTF-8` 这一行并取消注释，然后保存
+
+执行以下命令生成 locales：
+
+```bash
+# locale-gen
+```
+
+编辑文件 `/etc/locale.conf`，写入 `LANG=en_US.UTF-8`
+
+### 网络配置
+
+创建 `/etc/hostname` 文件:
+
+```bash
+# echo "arch" >> /etc/hostname
+```
+
+编辑 `/etc/hosts` 文件:
+
+```bash
+# echo -e "127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch"
+```
+
+### 修改密码
+
+```bash
+# passwd
+```
+
+### Boot loader
+
+启用 Microcode 更新：
+
+AMD CPU 安装：
+
+```bash
+# pacman -S amd-ucode 
+```
+
+Intel CPU 安装：
+
+```bash
+# pacman -S intel-ucode
+```
+
+安装 GRUB：
+
+```bash
+# pacman -S grub efibootmgr
+```
+
+然后执行：
+
+```bash
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+```
+
+配置 GRUB：
+
+```bash
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### 安装软件
+
+顺便再装一些必要的软件
+
+```bash
+# pacman -S sudo vim dhcpd netctl
+```
+
+### 重启
+
+```bash
+# exit
+# umount /mnt/boot
+# umount /mnt
+# reboot
+```
+
+## 参考资料
+
+1. https://wiki.archlinux.org/title/Installation_guide  
+2. https://wiki.archlinux.org/title/General_recommendations
