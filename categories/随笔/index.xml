@@ -1319,17 +1319,139 @@ alt="2017_2018"
 &lt;p>其中有两个同学似乎是禁止进入的，管理人员一来我和其他同学便合伙把他藏在沙子里。等人走后，再让他出来。&lt;/p>
 &lt;p>这时候阳光直射过来，我们都低下头紧紧的蜷缩在围墙后面，就像是末日中等待救赎的人。&lt;/p>
 &lt;p>&lt;em>“什么，你问我为啥是 2105 年？”&lt;/em>&lt;br>
-&lt;em>“我怎么知道啊衰！”&lt;/em>&lt;/p></description></item><item><title>ArchLinux安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了 Win10 一个多月后，感觉不光系统臃肿，还有些迷之 BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了 intel management engine interface 驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次 Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
+&lt;em>“我怎么知道啊衰！”&lt;/em>&lt;/p></description></item><item><title>ArchLinux 安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了 Win10 一个多月后，感觉不光系统臃肿，还有些迷之 BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了 intel management engine interface 驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次 Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
 &lt;p>心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑。&lt;/p>
-&lt;p>入了 Arch 神教有段时间了，发现这样的系统对我这种日常需求比较少的来说正合适。而且滚动更新很适合像我这种喜欢体验新版本的人。当时安装时并没有看官方 Wiki，因为中途需要点各种链接跳来跳去，刚装 Arch 的人都想按照一个教程一步步走下来把它装好，有时候看到别人说的装 Arch 时走了多少坑，突然发现有个好教程是多么幸运的一件事。当时看的另一位 dalao 的基于官方 Wiki 的中文教程，遂引用如下：&lt;/p>
+&lt;p>2023-07-15 update:&lt;/p>
+&lt;p>为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
+>文档&lt;/a>，要翻好多篇文章。以下制作启动盘等准备工作省略，直接从进入 live 环境开始。&lt;/p>
+&lt;h2 id="安装前的准备工作">安装前的准备工作&lt;/h2>
+&lt;h3 id="联网">联网&lt;/h3>
+&lt;p>网线直接 &lt;code>dhcpd&lt;/code>&lt;/p>
+&lt;p>如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 &lt;code>dhcpd&lt;/code>&lt;/p>
+&lt;h3 id="更新系统时钟">更新系统时钟&lt;/h3>
+&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># timedatectl&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="分区">分区&lt;/h3>
+&lt;p>这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了&lt;/p>
+&lt;p>还是要查看一下启动模式：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /sys/firmware/efi/fw_platform_size&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>返回结果的解释，这里就直接复制官网了：&lt;/p>
+&lt;blockquote>
+&lt;p>If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p>
+&lt;/blockquote>
+&lt;p>如果上面的命令返回 64 的话，就可以继续了，其他情况就可以 return 了&lt;/p>
+&lt;p>开始分区：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fdisk -l&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>就会看到磁盘例如 &lt;code>/dev/sda&lt;/code>, &lt;code>/dev/sdb&lt;/code> ，或者已有的分区例如 &lt;code>/dev/sda1&lt;/code>,&lt;code>/dev/sda2&lt;/code>&lt;/p>
+&lt;p>假设 &lt;code>/dev/sda&lt;/code> 是一个全新的、未创建分区表的磁盘，输入以下命令开始对 sda 操作分区&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fdisk /dev/sda&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上述命令执行完后，输入 &lt;code>m&lt;/code> 可以查看 help&lt;/p>
+&lt;p>首先创建 UEFI 引导分区，输入 &lt;code>g&lt;/code> 创建一个 GPT 分区表，然后输入 &lt;code>n&lt;/code> 新建分区，起始序号和 First sector 默认回车就行，Last sector 输入 &lt;code>+512M&lt;/code> 回车，创建完默认是类型 &lt;code>Linux filesystem&lt;/code>，输入 &lt;code>p&lt;/code> 可以查看新创建的分区，输入 &lt;code>t&lt;/code> 选择分区序号来修改分区类型，输入 &lt;code>l&lt;/code> 可以查看&lt;a class="link" href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs" target="_blank" rel="noopener"
+>所有的类型&lt;/a>，输入 &lt;code>uefi&lt;/code> 将分区类型修改为 EFI。然后再次输入 &lt;code>n&lt;/code> 创建 root 分区，一路回车默认即可，最后输入 &lt;code>w&lt;/code> 保存&lt;/p>
+&lt;p>保存完，再次执行 &lt;code>fdisk -l&lt;/code> 就会看到类似如下结果：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Device&lt;/th>
+&lt;th style="text-align:center">Start&lt;/th>
+&lt;th style="text-align:center">End&lt;/th>
+&lt;th style="text-align:center">Sectors&lt;/th>
+&lt;th style="text-align:center">Size&lt;/th>
+&lt;th style="text-align:center">Type&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">/dev/sda1&lt;/td>
+&lt;td style="text-align:center">2048&lt;/td>
+&lt;td style="text-align:center">1050623&lt;/td>
+&lt;td style="text-align:center">1048576&lt;/td>
+&lt;td style="text-align:center">512M&lt;/td>
+&lt;td style="text-align:center">EFI System&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">/dev/sda2&lt;/td>
+&lt;td style="text-align:center">省略&lt;/td>
+&lt;td style="text-align:center">省略&lt;/td>
+&lt;td style="text-align:center">省略&lt;/td>
+&lt;td style="text-align:center">省略&lt;/td>
+&lt;td style="text-align:center">Linux filesystem&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="格式化分区">格式化分区&lt;/h3>
+&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
+>EFI_system_partition#Format_the_partition&lt;/a>，具体我也摘抄如下：&lt;/p>
+&lt;blockquote>
+&lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>
+&lt;/blockquote>
+&lt;p>所以格式化 EFI 分区使用如下命令:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.fat -F 32 /dev/sda1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后格式化 root 分区：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.ext4 /dev/sda2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="挂载文件系统">挂载文件系统&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkdir /mnt/boot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mount /dev/sda1 /mnt/boot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mount /dev/sda2 /mnt&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装">安装&lt;/h2>
+&lt;h3 id="选择镜像">选择镜像&lt;/h3>
+&lt;p>编辑以下文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim /etc/pacman.d/mirrorlist&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将 &lt;code>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch&lt;/code> 放到第一行，保存退出&lt;/p>
+&lt;h3 id="安装必要的软件包">安装必要的软件包&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacstrap -K /mnt base linux linux-firmware&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="系统配置">系统配置&lt;/h2>
+&lt;h3 id="生成-fstab-文件">生成 fstab 文件&lt;/h3>
+&lt;p>执行下面的命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看生成的结果：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /mnt/etc/fstab&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="chroot">Chroot&lt;/h3>
+&lt;p>执行以下命令切换到新系统&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># arch-chroot /mnt&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置时区">设置时区&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成 &lt;code>/etc/adjtime&lt;/code> 文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># hwclock --systohc&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="本地化">本地化&lt;/h3>
+&lt;p>编辑文件 &lt;code>/etc/locale.gen&lt;/code>，找到 &lt;code>en_US.UTF-8 UTF-8&lt;/code> 这一行并取消注释，然后保存&lt;/p>
+&lt;p>执行以下命令生成 locales：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># locale-gen&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑文件 &lt;code>/etc/locale.conf&lt;/code>，写入 &lt;code>LANG=en_US.UTF-8&lt;/code>&lt;/p>
+&lt;h3 id="网络配置">网络配置&lt;/h3>
+&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo &amp;#34;arch&amp;#34; &amp;gt;&amp;gt; /etc/hostname&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑 &lt;code>/etc/hosts&lt;/code> 文件:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="修改密码">修改密码&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># passwd&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="boot-loader">Boot loader&lt;/h3>
+&lt;p>启用 Microcode 更新：&lt;/p>
+&lt;p>AMD CPU 安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S amd-ucode &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Intel CPU 安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S intel-ucode&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>安装 GRUB：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S grub efibootmgr&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 GRUB：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># grub-mkconfig -o /boot/grub/grub.cfg&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装软件">安装软件&lt;/h3>
+&lt;p>顺便再装一些必要的软件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S sudo vim dhcpd netctl&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="重启">重启&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># exit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt/boot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># reboot&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
-&lt;li>&lt;a class="link" href="http://www.viseator.com/2017/05/17/arch_install/" target="_blank" rel="noopener"
->以官方 Wiki 的方式安装 ArchLinux&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.viseator.com/2017/05/19/arch_setup/" target="_blank" rel="noopener"
->ArchLinux 安装后的必须配置与图形界面安装教程&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>在这里说一句，第二篇设置 NetworkManager 开机启动时，如果提示错误，那就是还没装 NetworkManager，先安装下一步的 network-manager-applet，它会把 NetworkManager 作为依赖项装上，然后再设置开机启动。&lt;/p>
-&lt;p>至此，enjoy！&lt;/p></description></item><item><title>Win10 内置 Linux 子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
+>https://wiki.archlinux.org/title/Installation_guide&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/General_recommendations" target="_blank" rel="noopener"
+>https://wiki.archlinux.org/title/General_recommendations&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Win10 内置 Linux 子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>主力系统之前一直用着 Win7，最近也开始感觉有点审美疲劳。一直考虑是换成 Win10 还是 Ubuntu，考虑再三还是选择了 Win10&amp;hellip;&lt;/p>
 &lt;p>体验了 Win10 半个月后，感觉系统过于臃肿。今天忽然发现 Win10 还有个 beta 项目————适用于 Linux 的 Windows 子系统。后来查了下才知道早在今年三月份就有了&amp;hellip;(lll￢ω￢)既然如此，那果断要来体验一把！&lt;/p>
 &lt;h3 id="教程">教程&lt;/h3>
