@@ -13,8 +13,6 @@ author: "sherry"
 
 <!--more-->
 
-2023-07-15 update:
-
 为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的[文档](https://wiki.archlinux.org/title/Installation_guide)，要翻好多篇文章。以下制作启动盘等准备工作省略，直接从进入 live 环境开始。
 
 ## 安装前的准备工作
@@ -28,7 +26,6 @@ author: "sherry"
 ### 更新系统时钟
 
 默认情况下连上网络就会自动更新的，可以用以下命令查看一下：
-
 ```bash
 # timedatectl
 ```
@@ -38,7 +35,6 @@ author: "sherry"
 这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了
 
 还是要查看一下启动模式：
-
 ```bash
 # cat /sys/firmware/efi/fw_platform_size
 ```
@@ -47,18 +43,16 @@ author: "sherry"
 
 > If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard's manual.
 
-如果上面的命令返回 64 的话，就可以继续了，其他情况就可以 return 了
+如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了
 
-开始分区：
-
+先查看分区：
 ```bash
 # fdisk -l
 ```
 
 就会看到磁盘例如 `/dev/sda`, `/dev/sdb` ，或者已有的分区例如 `/dev/sda1`,`/dev/sda2`
 
-假设 `/dev/sda` 是一个全新的、未创建分区表的磁盘，输入以下命令开始对 sda 操作分区
-
+假设 `/dev/sda` 是一个全新的、未创建分区表的磁盘，输入以下命令开始操作 `/dev/sda` ：
 ```bash
 # fdisk /dev/sda
 ```
@@ -68,7 +62,6 @@ author: "sherry"
 首先创建 UEFI 引导分区，输入 `g` 创建一个 GPT 分区表，然后输入 `n` 新建分区，起始序号和 First sector 默认回车就行，Last sector 输入 `+512M` 回车，创建完默认是类型 `Linux filesystem`，输入 `p` 可以查看新创建的分区，输入 `t` 选择分区序号来修改分区类型，输入 `l` 可以查看[所有的类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs)，输入 `uefi` 将分区类型修改为 EFI。然后再次输入 `n` 创建 root 分区，一路回车默认即可，最后输入 `w` 保存
 
 保存完，再次执行 `fdisk -l` 就会看到类似如下结果：
-
 | Device | Start | End | Sectors | Size | Type |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | /dev/sda1 | 2048 | 1050623 | 1048576 | 512M | EFI System |
@@ -81,13 +74,11 @@ author: "sherry"
 > To prevent potential issues with other operating systems and since the UEFI specification says that UEFI "encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media"[5], it is recommended to use FAT32.
 
 所以格式化 EFI 分区使用如下命令:
-
 ```bash
 # mkfs.fat -F 32 /dev/sda1
 ```
 
 然后格式化 root 分区：
-
 ```bash
 # mkfs.ext4 /dev/sda2
 ```
@@ -104,8 +95,7 @@ author: "sherry"
 
 ### 选择镜像
 
-编辑以下文件
-
+编辑以下文件：
 ```bash
 # vim /etc/pacman.d/mirrorlist
 ```
@@ -122,22 +112,19 @@ author: "sherry"
 
 ### 生成 fstab 文件
 
-执行下面的命令：
-
+执行下面的命令:
 ```bash
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-查看生成的结果：
-
+查看生成的结果:
 ```bash
 # cat /mnt/etc/fstab
 ```
 
 ### Chroot
 
-执行以下命令切换到新系统
-
+执行以下命令切换到新系统:
 ```bash
 # arch-chroot /mnt
 ```
@@ -149,7 +136,6 @@ author: "sherry"
 ```
 
 生成 `/etc/adjtime` 文件：
-
 ```bash
 # hwclock --systohc
 ```
@@ -159,7 +145,6 @@ author: "sherry"
 编辑文件 `/etc/locale.gen`，找到 `en_US.UTF-8 UTF-8` 这一行并取消注释，然后保存
 
 执行以下命令生成 locales：
-
 ```bash
 # locale-gen
 ```
@@ -169,13 +154,11 @@ author: "sherry"
 ### 网络配置
 
 创建 `/etc/hostname` 文件:
-
 ```bash
 # echo "arch" >> /etc/hostname
 ```
 
 编辑 `/etc/hosts` 文件:
-
 ```bash
 # echo -e "127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch"
 ```
@@ -188,44 +171,38 @@ author: "sherry"
 
 ### Boot loader
 
-启用 Microcode 更新：
+不同的 CPU 需要安装不同的 Microcode：
 
 AMD CPU 安装：
-
 ```bash
 # pacman -S amd-ucode 
 ```
 
 Intel CPU 安装：
-
 ```bash
 # pacman -S intel-ucode
 ```
 
-安装 GRUB：
-
+接下来安装 GRUB：
 ```bash
 # pacman -S grub efibootmgr
 ```
 
 然后执行：
-
 ```bash
 # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
 
 配置 GRUB：
-
 ```bash
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ### 安装软件
 
-顺便再装一些必要的软件
-
+顺便再装一些必要的软件:
 ```bash
-# pacman -S sudo vim dhcpd netctl
+# pacman -S sudo vim dhcpd netctl wpa_supplicant
 ```
 
 ### 重启
