@@ -4327,14 +4327,37 @@ alt="2017_2018"
 &lt;p>这时候阳光直射过来，我们都低下头紧紧的蜷缩在围墙后面，就像是末日中等待救赎的人。&lt;/p>
 &lt;p>&lt;em>“什么，你问我为啥是 2105 年？”&lt;/em>&lt;br>
 &lt;em>“我怎么知道啊衰！”&lt;/em>&lt;/p></description></item><item><title>ArchLinux 安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了 Win10 一个多月后，感觉不光系统臃肿，还有些迷之 BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了 intel management engine interface 驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次 Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
-&lt;p>心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑。&lt;/p>
+&lt;p>心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑&lt;/p>
 &lt;p>为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
->文档&lt;/a>，要翻好多篇文章。以下制作启动盘等准备工作省略，直接从进入 live 环境开始。&lt;/p>
+>文档&lt;/a>，以下制作启动盘等准备工作省略，直接从进入 live 环境开始。&lt;/p>
 &lt;h2 id="安装前的准备工作">安装前的准备工作&lt;/h2>
 &lt;h3 id="联网">联网&lt;/h3>
 &lt;p>网线直接 &lt;code>dhcpd&lt;/code>&lt;/p>
-&lt;p>如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 &lt;code>dhcpd&lt;/code>&lt;/p>
-&lt;h3 id="更新系统时钟">更新系统时钟&lt;/h3>
+&lt;p>如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 &lt;code>dhcpd&lt;/code> 😜&lt;/p>
+&lt;p>开个玩笑，一定要连无线网络的话，官网文档见：&lt;a class="link" href="https://wiki.archlinux.org/title/Iwd#iwctl" target="_blank" rel="noopener"
+>Iwd&lt;/a>，我也摘抄如下：&lt;/p>
+&lt;blockquote>
+&lt;p>First, if you do not know your wireless device name, list all Wi-Fi devices:&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># device list&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>If the device or its corresponding adapter is turned off, turn it on:&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># device device set-property Powered on &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># adapter adapter set-property Powered on&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Then, to initiate a scan for networks (note that this command will not output anything):&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device scan&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>You can then list all available networks:&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device get-networks&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Finally, to connect to a network:&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device connect SSID&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟&lt;/h3>
 &lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># timedatectl&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="分区">分区&lt;/h3>
@@ -4345,8 +4368,8 @@ alt="2017_2018"
 &lt;blockquote>
 &lt;p>If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p>
 &lt;/blockquote>
-&lt;p>如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了&lt;/p>
-&lt;p>先查看分区：&lt;/p>
+&lt;p>如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了 🤣&lt;/p>
+&lt;p>首先查看分区：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fdisk -l&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>就会看到磁盘例如 &lt;code>/dev/sda&lt;/code>, &lt;code>/dev/sdb&lt;/code> ，或者已有的分区例如 &lt;code>/dev/sda1&lt;/code>,&lt;code>/dev/sda2&lt;/code>&lt;/p>
 &lt;p>假设 &lt;code>/dev/sda&lt;/code> 是一个全新的、未创建分区表的磁盘，输入以下命令开始操作 &lt;code>/dev/sda&lt;/code> ：&lt;/p>
@@ -4391,7 +4414,7 @@ alt="2017_2018"
 &lt;blockquote>
 &lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>
 &lt;/blockquote>
-&lt;p>所以格式化 EFI 分区使用如下命令:&lt;/p>
+&lt;p>所以格式化 EFI 分区输入如下命令:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.fat -F 32 /dev/sda1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后格式化 root 分区：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.ext4 /dev/sda2&lt;/span>
@@ -4423,12 +4446,12 @@ alt="2017_2018"
 &lt;p>编辑文件 &lt;code>/etc/locale.gen&lt;/code>，找到 &lt;code>en_US.UTF-8 UTF-8&lt;/code> 这一行并取消注释，然后保存&lt;/p>
 &lt;p>执行以下命令生成 locales：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># locale-gen&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑文件 &lt;code>/etc/locale.conf&lt;/code>，写入 &lt;code>LANG=en_US.UTF-8&lt;/code>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑文件 &lt;code>/etc/locale.conf&lt;/code>（没有就创建），然后写入 &lt;code>LANG=en_US.UTF-8&lt;/code>&lt;/p>
 &lt;h3 id="网络配置">网络配置&lt;/h3>
-&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件:&lt;/p>
+&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件，写入:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo &amp;#34;arch&amp;#34; &amp;gt;&amp;gt; /etc/hostname&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑 &lt;code>/etc/hosts&lt;/code> 文件:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="修改密码">修改密码&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># passwd&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="boot-loader">Boot loader&lt;/h3>
@@ -4451,7 +4474,33 @@ alt="2017_2018"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># reboot&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="个人化的相关配置">个人化的相关配置&lt;/h2>
+&lt;h3 id="创建普通用户">创建普通用户&lt;/h3>
+&lt;p>以下来自官网：&lt;a class="link" href="https://wiki.archlinux.org/title/Users_and_groups#User_management" target="_blank" rel="noopener"
+>Users and groups&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>-m/&amp;ndash;create-home
+默认创建用户名同名目录&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>-G/&amp;ndash;groups
+额外添加组，例如: &lt;code>wheel&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>-s/&amp;ndash;shell
+指定用户登录 shell 的路径，例如：&lt;code>/bin/bash&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;p>执行以下命令创建普通用户，替换中括号及其内容&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件&lt;/h3>
+&lt;p>以创建 8 GiB Swap 文件为例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>设置权限：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># chmod 0600 /swapfile&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>格式化为 Swap:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkswap -U clear /swapfile&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最后编辑 &lt;code>/etc/fstab&lt;/code> 文件，将这一行 &lt;code>/swapfile none swap defaults 0 0&lt;/code> 添加进去&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
 >https://wiki.archlinux.org/title/Installation_guide&lt;/a>&lt;/li>
