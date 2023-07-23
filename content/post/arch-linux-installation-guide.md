@@ -251,7 +251,7 @@ Intel CPU 安装：
 额外添加组，例如: `wheel`
 
 > -s/--shell
-指定用户登录 shell 的路径，例如：`/bin/bash`
+指定用户登录 shell 的路径，例如：`/bin/bash`。另外也可以去 `/etc/shells` 这个文件查看来确定 shell 路径
 
 执行以下命令创建普通用户，替换中括号及其内容
 ```bash
