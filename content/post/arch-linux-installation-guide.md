@@ -1,7 +1,7 @@
 ---
 title: "ArchLinux 安装教程"
 date: 2017-10-18
-lastmod: 2023-07-15
+lastmod: 2023-07-23
 draft: false
 categories: ["随笔"]
 tags: ["Linux"]
@@ -9,11 +9,11 @@ author: "sherry"
 ---
 体验了 Win10 一个多月后，感觉不光系统臃肿，还有些迷之 BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了 intel management engine interface 驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次 Google，无论是禁用声音效果还是改声卡驱动都无济于事……
 
-心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑。
+心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑
 
 <!--more-->
 
-为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的[文档](https://wiki.archlinux.org/title/Installation_guide)，要翻好多篇文章。以下制作启动盘等准备工作省略，直接从进入 live 环境开始。
+为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的[文档](https://wiki.archlinux.org/title/Installation_guide)，以下制作启动盘等准备工作省略，直接从进入 live 环境开始。
 
 ## 安装前的准备工作
 
@@ -21,7 +21,31 @@ author: "sherry"
 
 网线直接 `dhcpd`
 
-如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 `dhcpd`
+如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 `dhcpd` 😜
+
+开个玩笑，一定要连无线网络的话，官网文档见：[Iwd](https://wiki.archlinux.org/title/Iwd#iwctl)，我也摘抄如下：
+
+> First, if you do not know your wireless device name, list all Wi-Fi devices:
+```bash
+[iwd]# device list
+```
+> If the device or its corresponding adapter is turned off, turn it on:
+```bash
+[iwd]# device device set-property Powered on  
+[iwd]# adapter adapter set-property Powered on
+```
+> Then, to initiate a scan for networks (note that this command will not output anything):
+```bash
+[iwd]# station device scan
+```
+> You can then list all available networks:
+```bash
+[iwd]# station device get-networks
+```
+> Finally, to connect to a network:
+```bash
+[iwd]# station device connect SSID
+```
 
 ### 更新系统时钟
 
@@ -43,9 +67,9 @@ author: "sherry"
 
 > If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard's manual.
 
-如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了
+如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了 🤣
 
-先查看分区：
+首先查看分区：
 ```bash
 # fdisk -l
 ```
@@ -73,7 +97,7 @@ author: "sherry"
 
 > To prevent potential issues with other operating systems and since the UEFI specification says that UEFI "encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media"[5], it is recommended to use FAT32.
 
-所以格式化 EFI 分区使用如下命令:
+所以格式化 EFI 分区输入如下命令:
 ```bash
 # mkfs.fat -F 32 /dev/sda1
 ```
@@ -149,18 +173,18 @@ author: "sherry"
 # locale-gen
 ```
 
-编辑文件 `/etc/locale.conf`，写入 `LANG=en_US.UTF-8`
+编辑文件 `/etc/locale.conf`（没有就创建），然后写入 `LANG=en_US.UTF-8`
 
 ### 网络配置
 
-创建 `/etc/hostname` 文件:
+创建 `/etc/hostname` 文件，写入:
 ```bash
 # echo "arch" >> /etc/hostname
 ```
 
 编辑 `/etc/hosts` 文件:
 ```bash
-# echo -e "127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch"
+# echo -e "127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch" >> /etc/hosts
 ```
 
 ### 修改密码
@@ -213,6 +237,45 @@ Intel CPU 安装：
 # umount /mnt
 # reboot
 ```
+
+## 个人化的相关配置
+
+### 创建普通用户
+
+以下来自官网：[Users and groups](https://wiki.archlinux.org/title/Users_and_groups#User_management)
+
+> -m/--create-home
+默认创建用户名同名目录
+
+> -G/--groups
+额外添加组，例如: `wheel`
+
+> -s/--shell
+指定用户登录 shell 的路径，例如：`/bin/bash`
+
+执行以下命令创建普通用户，替换中括号及其内容
+```bash
+# useradd -m -G [additional_groups] -s [login_shell] [username]
+```
+
+### 创建 Swap 文件
+
+以创建 8 GiB Swap 文件为例：
+```bash
+# dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress
+```
+
+设置权限：
+```bash
+# chmod 0600 /swapfile
+```
+
+格式化为 Swap:
+```bash
+# mkswap -U clear /swapfile
+```
+
+最后编辑 `/etc/fstab` 文件，将这一行 `/swapfile none swap defaults 0 0` 添加进去
 
 ## 参考资料
 
