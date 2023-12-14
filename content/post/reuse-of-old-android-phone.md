@@ -124,13 +124,12 @@ Linux Deploy 直接安装报错 log:
 [11:52:10] <<< deploy
 ```
 
-首先要自己先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 [USTC](https://mirrors.ustc.edu.cn/archlinuxarm/os/)，然后打开 Linux Deploy，发行版选择 `rootfs.tar`，源地址写 `${EXTERNAL_STORAGE}/[下载的镜像名称]`，安装类型选择 `目录`，安装路径写 `${ENV_DIR}/rootfs/linux`，其他选项就随意了，记得勾上 `启用SSH` 就好。p.s. `${EXTERNAL_STORAGE}` 事实上就是 `/storage/emulated/0`，`${ENV_DIR}` 就是 `/data/data/[Linux Deploy包名]/`
-
-接下来顺利安装完成，ssh 进入 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。然后开始安装[青龙面板](https://github.com/whyour/qinglong)，直接按照 [青龙 README](https://github.com/whyour/qinglong#%E5%BC%80%E5%8F%91) 来启动就好了。
+1. 首先要先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 [USTC](https://mirrors.ustc.edu.cn/archlinuxarm/os/)，下载我是放到了 `Download` 目录下。
+2. 开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 `rootfs.tar`，源地址写 `/storage/emulated/0/Download/[下载的镜像名称]`，安装类型选择 `目录`，安装路径要写 `/data/[后面随意命名]`，其他选项就随意了，记得勾上 `启用SSH` 就好。
+3. 点右上角菜单选择安装，日志上无明显报错即可。
+4. SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。
 
 完结。
-
-顺便说一句，青龙真吃内存...
 
 ## 参考资料
 
