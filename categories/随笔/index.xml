@@ -107,13 +107,14 @@
 [11:52:10] gcc-12.1.0-2.1 ... done
 [11:52:10] gcc-debug-12.1.0-2.1 ... fail
 [11:52:10] &amp;lt;&amp;lt;&amp;lt; deploy
-&lt;/code>&lt;/pre>&lt;p>首先要自己先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 &lt;a class="link" href="https://mirrors.ustc.edu.cn/archlinuxarm/os/" target="_blank" rel="noopener"
->USTC&lt;/a>，然后打开 Linux Deploy，发行版选择 &lt;code>rootfs.tar&lt;/code>，源地址写 &lt;code>${EXTERNAL_STORAGE}/[下载的镜像名称]&lt;/code>，安装类型选择 &lt;code>目录&lt;/code>，安装路径写 &lt;code>${ENV_DIR}/rootfs/linux&lt;/code>，其他选项就随意了，记得勾上 &lt;code>启用SSH&lt;/code> 就好。p.s. &lt;code>${EXTERNAL_STORAGE}&lt;/code> 事实上就是 &lt;code>/storage/emulated/0&lt;/code>，&lt;code>${ENV_DIR}&lt;/code> 就是 &lt;code>/data/data/[Linux Deploy包名]/&lt;/code>&lt;/p>
-&lt;p>接下来顺利安装完成，ssh 进入 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。然后开始安装&lt;a class="link" href="https://github.com/whyour/qinglong" target="_blank" rel="noopener"
->青龙面板&lt;/a>，直接按照 &lt;a class="link" href="https://github.com/whyour/qinglong#%E5%BC%80%E5%8F%91" target="_blank" rel="noopener"
->青龙 README&lt;/a> 来启动就好了。&lt;/p>
+&lt;/code>&lt;/pre>&lt;ol>
+&lt;li>首先要先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 &lt;a class="link" href="https://mirrors.ustc.edu.cn/archlinuxarm/os/" target="_blank" rel="noopener"
+>USTC&lt;/a>，下载我是放到了 &lt;code>Download&lt;/code> 目录下。&lt;/li>
+&lt;li>开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 &lt;code>rootfs.tar&lt;/code>，源地址写 &lt;code>/storage/emulated/0/Download/[下载的镜像名称]&lt;/code>，安装类型选择 &lt;code>目录&lt;/code>，安装路径要写 &lt;code>/data/[后面随意命名]&lt;/code>，其他选项就随意了，记得勾上 &lt;code>启用SSH&lt;/code> 就好。&lt;/li>
+&lt;li>点右上角菜单选择安装，日志上无明显报错即可。&lt;/li>
+&lt;li>SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。&lt;/li>
+&lt;/ol>
 &lt;p>完结。&lt;/p>
-&lt;p>顺便说一句，青龙真吃内存&amp;hellip;&lt;/p>
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
 &lt;li>12 个可替代树莓派的单板机: &lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"

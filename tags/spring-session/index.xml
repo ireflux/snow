@@ -17,17 +17,17 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.session.store-type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">redis # Session store type.&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>至此就配置完成了，现在就可以写两个简单的方法去测试一下。例如以下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/set&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">setSession&lt;/span>&lt;span style="color:#f92672">(&lt;/span>HttpSession session&lt;span style="color:#f92672">){&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> session&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setAttribute&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sherry&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>(value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/set&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">setSession&lt;/span>(HttpSession session){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> session.&lt;span style="color:#a6e22e">setAttribute&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;sherry&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ok&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/get&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getSession&lt;/span>&lt;span style="color:#f92672">(&lt;/span>HttpSession session&lt;span style="color:#f92672">){&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">)&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getAttribute&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>(value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/get&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getSession&lt;/span>(HttpSession session){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (String) session.&lt;span style="color:#a6e22e">getAttribute&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后使用 maven package 将其打成 jar 包，若需要跳过测试，可使用 &lt;code>mvn -Dmaven.test.skip=true package&lt;/code>，或者在 pom.xml 中添加插件依赖：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;plugins&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- ... --&amp;gt;&lt;/span>
@@ -46,22 +46,20 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>现在在 8080 里面 set，在 8081 里面 get，会发现也可以得到结果。&lt;/p>
 &lt;p>这里顺便歪个楼，如果服务在前台启动，比如说启动 redis 时未将 redis.conf 中的 daemonize 设置为 yes。此时可以使用 &lt;code>CTRL + Z&lt;/code> 将其挂在后台，但此时服务会被暂停，使用 &lt;code>fg&lt;/code> 可以将其调回前台继续运行(若后台有多个，默认调回最后启动的那个)。也可以使用 &lt;code>bg&lt;/code> 使其后台继续运行。使用 &lt;code>jobs&lt;/code> 可查看在后台运行的服务列表。&lt;/p>
 &lt;p>到此为止就算完成了，但还可以更进一步，在这两个服务前面加一层 Nginx 来做反向代理，还可以设置权重。首先来修改 nginx 的配置文件，一般来说需要修改 nginx.conf，由于我现在的环境是 debian，有一个默认的配置文件位于 /etc/nginx/sites-enabled 下的 default 文件，不同的发行版文件目录结构可能不大一样，可以根据自身情况自行查找。可根据以下示例来写：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-conf" data-lang="conf">&lt;span style="display:flex;">&lt;span>upstream wanmei.ml{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#ae81ff">127.0.0.1&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>8080 weight&lt;span style="color:#f92672">=&lt;/span>1;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#ae81ff">127.0.0.1&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>8081 weight&lt;span style="color:#f92672">=&lt;/span>2;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>server {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen 80 default_server;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#960050;background-color:#1e0010">[::]:&lt;/span>80 default_server;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name localhost;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#960050;background-color:#1e0010">/&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http&lt;span style="color:#960050;background-color:#1e0010">://&lt;/span>wanmei.ml;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_redirect default;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后 &lt;code>nginx -s reload&lt;/code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">upstream wanmei.ml{
+server 127.0.0.1:8080 weight=1;
+server 127.0.0.1:8081 weight=2;
+}
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+server_name localhost;
+location / {
+proxy_pass http://wanmei.ml;
+proxy_redirect default;
+}
+}
+&lt;/code>&lt;/pre>&lt;p>然后 &lt;code>nginx -s reload&lt;/code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。&lt;/p>
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ol>
 &lt;li>&lt;a class="link" href="http://nginx.org/en/docs/" target="_blank" rel="noopener"
