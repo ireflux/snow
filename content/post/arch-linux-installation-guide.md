@@ -226,7 +226,7 @@ Intel CPU 安装：
 
 顺便再装一些必要的软件:
 ```bash
-# pacman -S sudo vim dhcpd netctl wpa_supplicant
+# pacman -S sudo vim dhcpcd netctl wpa_supplicant
 ```
 
 ### 重启
