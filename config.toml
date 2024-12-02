@@ -44,7 +44,7 @@ icon = "brand-twitter"
   mainSections = ["post"]
   # Output page's full content in RSS.
   rssFullContent = true
-  favicon = "/favicon.ico"
+  favicon = "/snow/favicon.ico"
 
 [params.sidebar]
   compact = false
