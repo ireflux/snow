@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WeeChat on sherry's blog</title><link>https://ireflux.github.io/snow/tags/weechat/</link><description>Recent content in WeeChat on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/weechat/index.xml" rel="self" type="application/rss+xml"/><item><title>WeeChat 不完全使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a class="link" href="https://en.wikipedia.org/wiki/Internet_Relay_Chat" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WeeChat on sherry's blog</title><link>https://ireflux.github.io/snow/tags/weechat/</link><description>Recent content in WeeChat on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/weechat/index.xml" rel="self" type="application/rss+xml"/><item><title>WeeChat 不完全使用指南</title><link>https://ireflux.github.io/snow/post/weechat-guide/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/weechat-guide/</guid><description>&lt;p>前几天看了霍矩大佬做的一期关于 Clubhouse 视频，其中提到了 &lt;a class="link" href="https://en.wikipedia.org/wiki/Internet_Relay_Chat" target="_blank" rel="noopener"
 >IRC&lt;/a> 这种古老的通信协议。其中有一段叙述很有意思，大意是说如今 IRC 服务器这种带有很强匿名性质的聊天室，由于界面或操作还停留在上世纪，是天然的过滤屏障，人少反而提供了优质的社区交流氛围。但同时也不容易打击盗版，用户通过各种代理、中继连上来，很难去追溯，再加上现如今用户较少，规模不复往昔，因此可能也失去了打击的价值。种种技术和非技术的因素，造就了这样的一个强匿名、低审查、较为自由的一个“避难所”。用视频中的话说：“互联网上，没人知道你是一条狗”。&lt;/p>
 &lt;p>而这也正是吸引人的地方 :)&lt;/p>
 &lt;p>从 &lt;a class="link" href="https://wiki.archlinux.org/index.php/List_of_applications/Internet#IRC_clients" target="_blank" rel="noopener"
@@ -8,82 +8,82 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Name&lt;/th>
-&lt;th style="text-align:center">Package&lt;/th>
-&lt;th style="text-align:center">Written in&lt;/th>
-&lt;th style="text-align:center">Extensible&lt;/th>
-&lt;th style="text-align:center">&lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
+&lt;th style="text-align: center">Name&lt;/th>
+&lt;th style="text-align: center">Package&lt;/th>
+&lt;th style="text-align: center">Written in&lt;/th>
+&lt;th style="text-align: center">Extensible&lt;/th>
+&lt;th style="text-align: center">&lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
 >SASL&lt;/a>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">BitchX&lt;/td>
-&lt;td style="text-align:center">bitchx-git&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">?&lt;/td>
-&lt;td style="text-align:center">?&lt;/td>
+&lt;td style="text-align: center">BitchX&lt;/td>
+&lt;td style="text-align: center">bitchx-git&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">?&lt;/td>
+&lt;td style="text-align: center">?&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ERC&lt;/td>
-&lt;td style="text-align:center">emacs&lt;/td>
-&lt;td style="text-align:center">ELisp&lt;/td>
-&lt;td style="text-align:center">in ELisp&lt;/td>
-&lt;td style="text-align:center">via script&lt;/td>
+&lt;td style="text-align: center">ERC&lt;/td>
+&lt;td style="text-align: center">emacs&lt;/td>
+&lt;td style="text-align: center">ELisp&lt;/td>
+&lt;td style="text-align: center">in ELisp&lt;/td>
+&lt;td style="text-align: center">via script&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ii&lt;/td>
-&lt;td style="text-align:center">iiAUR&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">stdin/stdout&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">ii&lt;/td>
+&lt;td style="text-align: center">iiAUR&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">stdin/stdout&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Irssi&lt;/td>
-&lt;td style="text-align:center">irssi&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">in Perl&lt;/td>
-&lt;td style="text-align:center">Yes&lt;/td>
+&lt;td style="text-align: center">Irssi&lt;/td>
+&lt;td style="text-align: center">irssi&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">in Perl&lt;/td>
+&lt;td style="text-align: center">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">pork&lt;/td>
-&lt;td style="text-align:center">pork&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">in Perl&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">pork&lt;/td>
+&lt;td style="text-align: center">pork&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">in Perl&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ScrollZ&lt;/td>
-&lt;td style="text-align:center">scrollz&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">?&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">ScrollZ&lt;/td>
+&lt;td style="text-align: center">scrollz&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">?&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">sic&lt;/td>
-&lt;td style="text-align:center">sicAUR&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">stdin/stdout&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">sic&lt;/td>
+&lt;td style="text-align: center">sicAUR&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">stdin/stdout&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">tiny&lt;/td>
-&lt;td style="text-align:center">tiny-irc-client-git&lt;/td>
-&lt;td style="text-align:center">Rust&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
-&lt;td style="text-align:center">Yes&lt;/td>
+&lt;td style="text-align: center">tiny&lt;/td>
+&lt;td style="text-align: center">tiny-irc-client-git&lt;/td>
+&lt;td style="text-align: center">Rust&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
+&lt;td style="text-align: center">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">WeeChat&lt;/td>
-&lt;td style="text-align:center">WeeChat&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">multiple languages&lt;/td>
-&lt;td style="text-align:center">Yes&lt;/td>
+&lt;td style="text-align: center">WeeChat&lt;/td>
+&lt;td style="text-align: center">WeeChat&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">multiple languages&lt;/td>
+&lt;td style="text-align: center">Yes&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="启动-weechat">启动 WeeChat&lt;/h3>
-&lt;p>只需在终端中输入以下命令，回车即可：&lt;/p>
+&lt;h3 id="启动-weechat">启动 WeeChat
+&lt;/h3>&lt;p>只需在终端中输入以下命令，回车即可：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ WeeChat
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果你发现启动后出现了一些诸如 &lt;code>Errors loading plugins&lt;/code> 之类的错误，是因为 WeeChat 启动时会默认加载这些插件，而你并未安装这些插件所需运行时所致。&lt;/p>
 &lt;p>如果想要消除这些错误信息，可以使用以下两种方法：&lt;/p>
@@ -93,25 +93,25 @@
 &lt;/ol>
 &lt;p>WeeChat 本身是有一些界面交互命令，如 &lt;code>version&lt;/code>，&lt;code>uptime&lt;/code>，&lt;code>print&lt;/code> 之类，如果没有插件，WeeChat 本身没什么用，什么都做不了。WeeChat 对 IRC 的支持也是通过插件来实现的，只不过 IRC 插件是默认内置的，如果想知道都加载了哪些插件，可以通过 &lt;code>/plugin&lt;/code> 来查看。还可以在 &lt;a class="link" href="https://WeeChat.org/scripts/" target="_blank" rel="noopener"
 >插件库&lt;/a> 安装脚本插件。&lt;/p>
-&lt;h3 id="在线手册">在线手册&lt;/h3>
-&lt;p>所有的命令都可以通过在 WeeChat 中输入 &lt;code>/help&lt;/code> 来查询，如果想看某个命令的功能描述和用法，比如 &lt;code>server&lt;/code>，可以像这样：&lt;/p>
+&lt;h3 id="在线手册">在线手册
+&lt;/h3>&lt;p>所有的命令都可以通过在 WeeChat 中输入 &lt;code>/help&lt;/code> 来查询，如果想看某个命令的功能描述和用法，比如 &lt;code>server&lt;/code>，可以像这样：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/help server
 &lt;/code>&lt;/pre>&lt;p>还可以查看某个配置项的描述和用法，比如 &lt;code>irc.server.freenode.autojoin&lt;/code>：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/help irc.server.freenode.autojoin
-&lt;/code>&lt;/pre>&lt;h3 id="设置选项">设置选项&lt;/h3>
-&lt;p>在 WeeChat 中查看所有的选项，使用 &lt;code>/set&lt;/code> 命令，现在输入 &lt;code>/set&lt;/code> 实际上是插件提供的指令 &lt;code>/fset&lt;/code> 的 alias，还可以通过模糊匹配：&lt;/p>
+&lt;/code>&lt;/pre>&lt;h3 id="设置选项">设置选项
+&lt;/h3>&lt;p>在 WeeChat 中查看所有的选项，使用 &lt;code>/set&lt;/code> 命令，现在输入 &lt;code>/set&lt;/code> 实际上是插件提供的指令 &lt;code>/fset&lt;/code> 的 alias，还可以通过模糊匹配：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/fset WeeChat.*
 &lt;/code>&lt;/pre>&lt;p>可以通过如下命令来修改选项的值，例如：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/set irc.server.freenode.username &amp;#34;sherry&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>修改后无需重启，WeeChat 会自动更新，或者使用 &lt;code>/save&lt;/code> 强制保存修改后的值。不建议手动编辑配置文件来修改，因为 WeeChat 可能会随时写入信息。&lt;/p>
-&lt;h3 id="添加服务器">添加服务器&lt;/h3>
-&lt;p>以当前最大的节点 &lt;code>chat.freenode.net&lt;/code> 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。&lt;/p>
+&lt;h3 id="添加服务器">添加服务器
+&lt;/h3>&lt;p>以当前最大的节点 &lt;code>chat.freenode.net&lt;/code> 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。&lt;/p>
 &lt;p>不加密的那种我在国内尝试了下连不上，使用了加密连接才连上，写法如下，其中 &lt;code>freenode&lt;/code> 是昵称：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/server add freenode chat.freenode.net/6697 -ssl
 &lt;/code>&lt;/pre>&lt;p>进去之后会发现自己的用户名旁边有个(+iZ)，这个代表用户模式，&lt;code>i&lt;/code> 代表隐形，&lt;code>Z&lt;/code> 是通过加密连接到服务器的用户，会自动获得这个网络状态，更多用户模式可以通过 &lt;code>/help mode&lt;/code> 查看，或者浏览官方 Wiki &lt;a class="link" href="https://freenode.net/kb/answer/usermodes" target="_blank" rel="noopener"
 >User Mode&lt;/a>&lt;/p>
-&lt;h3 id="自定义-irc-服务器选项">自定义 IRC 服务器选项&lt;/h3>
-&lt;p>如果您未为服务器选项指定特定值，则 WeeChat 会为所有服务器使用默认值。这些默认选项是 &lt;code>irc.server_default.*&lt;/code>，因此对于每个服务器都可以单独设置参数。&lt;/p>
+&lt;h3 id="自定义-irc-服务器选项">自定义 IRC 服务器选项
+&lt;/h3>&lt;p>如果您未为服务器选项指定特定值，则 WeeChat 会为所有服务器使用默认值。这些默认选项是 &lt;code>irc.server_default.*&lt;/code>，因此对于每个服务器都可以单独设置参数。&lt;/p>
 &lt;p>默认情况下，昵称会和 un*x 的登陆用户名称相同，还可以修改昵称：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/set irc.server.freenode.nicks &amp;#34;sherry&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>设置用户名和真实姓名：&lt;/p>
@@ -132,10 +132,10 @@
 &lt;pre tabindex="0">&lt;code>/unset irc.server.freenode.nicks
 &lt;/code>&lt;/pre>&lt;p>设置其他选项（xxx为输入一个不存在的选项名）：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/set irc.server.freenode.xxx value
-&lt;/code>&lt;/pre>&lt;h3 id="连接到-irc-服务器">连接到 IRC 服务器&lt;/h3>
-&lt;pre tabindex="0">&lt;code>/connect freenode
-&lt;/code>&lt;/pre>&lt;h3 id="加入离开-irc-频道">加入/离开 IRC 频道&lt;/h3>
-&lt;p>查询频道：&lt;/p>
+&lt;/code>&lt;/pre>&lt;h3 id="连接到-irc-服务器">连接到 IRC 服务器
+&lt;/h3>&lt;pre tabindex="0">&lt;code>/connect freenode
+&lt;/code>&lt;/pre>&lt;h3 id="加入离开-irc-频道">加入/离开 IRC 频道
+&lt;/h3>&lt;p>查询频道：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/list #channel
 &lt;/code>&lt;/pre>&lt;p>加入频道：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/join #channel
@@ -145,8 +145,8 @@
 &lt;pre tabindex="0">&lt;code>/close
 &lt;/code>&lt;/pre>&lt;p>断开与服务器的连接：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/disconnect
-&lt;/code>&lt;/pre>&lt;h2 id="后记">后记&lt;/h2>
-&lt;p>除了以上的一些基本用法，还有 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_ssl_certificates" target="_blank" rel="noopener"
+&lt;/code>&lt;/pre>&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>除了以上的一些基本用法，还有 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_ssl_certificates" target="_blank" rel="noopener"
 >SASL 认证&lt;/a> 以及 &lt;a class="link" href="https://freenode.net/kb/answer/sasl" target="_blank" rel="noopener"
 >使用 SASL 连接&lt;/a>、通过 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_tor_freenode" target="_blank" rel="noopener"
 >Tor 连接 Freenode&lt;/a> 等用法。此外，一些 WeeChat 软件的方面的问题，可以看这个 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_faq.en.html" target="_blank" rel="noopener"
@@ -160,8 +160,8 @@
 &lt;li>&lt;a class="link" href="https://www.undernet.org" target="_blank" rel="noopener"
 >https://www.undernet.org&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://weechat.org/doc/" target="_blank" rel="noopener"
 >WeeChat Docs&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://freenode.net/kb/all" target="_blank" rel="noopener"

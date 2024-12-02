@@ -54,8 +54,8 @@ Shall the new role be a superuser? (y/n) y
 \dt -&amp;gt; 显示当前数据库所有表的摘要信息。&lt;br>
 \q -&amp;gt; 退出&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://www.postgresql.org/docs/11/" target="_blank" rel="noopener"
 >PostgreSQL Doc&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/PostgreSQL" target="_blank" rel="noopener"

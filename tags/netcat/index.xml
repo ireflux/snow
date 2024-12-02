@@ -16,23 +16,23 @@
 &lt;li>v：输出详细信息&lt;/li>
 &lt;li>z：通常用于端口扫描，仅判断是否能够连接，不进行数据通讯&lt;/li>
 &lt;/ul>
-&lt;h3 id="开启服务">开启服务&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -k -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;h3 id="开启服务">开启服务
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -k -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>作为服务端，监听端口，开启服务。假设客户端通过 &lt;code>nc [ip] [port]&lt;/code> 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。&lt;/p>
-&lt;h3 id="测试端口">测试端口&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -nv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;h3 id="测试端口">测试端口
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -nv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。&lt;/p>
-&lt;h3 id="端口扫描">端口扫描&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -znv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port-port&lt;span style="color:#f92672">]&lt;/span> 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | grep succeeded
+&lt;h3 id="端口扫描">端口扫描
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -znv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port-port&lt;span style="color:#f92672">]&lt;/span> 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | grep succeeded
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以用来做渗透测试。&lt;/p>
-&lt;h3 id="文件传输">文件传输&lt;/h3>
-&lt;p>首先在接收端开启监听：&lt;/p>
+&lt;h3 id="文件传输">文件传输
+&lt;/h3>&lt;p>首先在接收端开启监听：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在发送端发送文件:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;lt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 &lt;code>nc localhost [port] &amp;lt; [filename]&lt;/code> 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 &lt;code>ctrl+c&lt;/code> 即可。&lt;/p>
-&lt;h2 id="后记">后记&lt;/h2>
-&lt;p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——&lt;a class="link" href="https://program-think.blogspot.com/2019/09/Netcat-Tricks.html" target="_blank" rel="noopener"
+&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——&lt;a class="link" href="https://program-think.blogspot.com/2019/09/Netcat-Tricks.html" target="_blank" rel="noopener"
 >扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”&lt;/a>。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ mkfifo &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span> | /bin/bash 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>

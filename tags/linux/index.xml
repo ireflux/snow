@@ -1,76 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on sherry's blog</title><link>https://ireflux.github.io/snow/tags/linux/</link><description>Recent content in Linux on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p>
-&lt;h3 id="虚拟机设置">虚拟机设置&lt;/h3>
-&lt;p>首先在虚拟机上开启两个网卡，我的是 VirtualBox，就以它为例，依次进入 &lt;code>设置-&amp;gt;网络&lt;/code>，勾选两个网卡，启用网络连接，网卡一用于连接外部网络，连接方式 NAT 或桥接都可。网卡二用于和 Linux 物理机交换数据，连接方式选择 “&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html#network_hostonly" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on sherry's blog</title><link>https://ireflux.github.io/snow/tags/linux/</link><description>Recent content in Linux on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p>
+&lt;h3 id="虚拟机设置">虚拟机设置
+&lt;/h3>&lt;p>首先在虚拟机上开启两个网卡，我的是 VirtualBox，就以它为例，依次进入 &lt;code>设置-&amp;gt;网络&lt;/code>，勾选两个网卡，启用网络连接，网卡一用于连接外部网络，连接方式 NAT 或桥接都可。网卡二用于和 Linux 物理机交换数据，连接方式选择 “&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html#network_hostonly" target="_blank" rel="noopener"
 >仅主机（Host-Only）网络&lt;/a>”。顺便一提，如果选择完 “仅主机（Host-Only）” 后，界面名称选项为空的话，就需要去菜单 &lt;code>管理-&amp;gt;主机网络管理器&lt;/code> 中创建一个，然后再回到原来的地方，界面名称的选项就是刚刚在网络管理器中创建的。&lt;/p>
 &lt;p>打开 Windows 虚拟机后，依次进入 &lt;code>控制面板-&amp;gt;网络和共享中心-&amp;gt;更改适配器设置&lt;/code>，里面会存在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接和两个其他本地连接，其中一个是 “NAT/桥接” 的网卡一，另一个是 “仅主机（Host-Only）” 的网卡二，需要自己分辨一下。在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接上依次 &lt;code>右键-&amp;gt;属性-&amp;gt;共享&lt;/code>，勾选 “允许其他网络用户通过此计算机 Internet 连接来连接” 选项，家庭网络连接选择 “仅主机（Host-Only）” 的本地连接，确定即可。查看一下 “仅主机（Host-Only）” 的 IP 地址，接下来需要在宿主机上设置路由，将要内网地址转发到 “仅主机（Host-Only）” 的 IP 地址上。&lt;/p>
-&lt;h3 id="宿主机设置">宿主机设置&lt;/h3>
-&lt;p>以我的为例，我的 “仅主机（Host-Only）” 的本地连接 IP 地址为 192.168.56.3，假设我要访问的公司内网 IP 在 172.16.x.x 的网段，就可以将 172.16 开头的内网地址全部转发到 “仅主机（Host-Only）” 的 IP 地址上，即在宿主机执行：&lt;/p>
+&lt;h3 id="宿主机设置">宿主机设置
+&lt;/h3>&lt;p>以我的为例，我的 “仅主机（Host-Only）” 的本地连接 IP 地址为 192.168.56.3，假设我要访问的公司内网 IP 在 172.16.x.x 的网段，就可以将 172.16 开头的内网地址全部转发到 “仅主机（Host-Only）” 的 IP 地址上，即在宿主机执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo route add -net 172.16.0.0/16 gw 192.168.56.3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>命令执行完后可以通过 &lt;code>route&lt;/code> 查看一下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ route
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Destination&lt;/th>
-&lt;th style="text-align:center">Gateway&lt;/th>
-&lt;th style="text-align:center">Genmask&lt;/th>
-&lt;th style="text-align:center">Flags&lt;/th>
-&lt;th style="text-align:center">Metric&lt;/th>
-&lt;th style="text-align:center">Ref&lt;/th>
-&lt;th style="text-align:center">Use&lt;/th>
-&lt;th style="text-align:center">Iface&lt;/th>
+&lt;th style="text-align: center">Destination&lt;/th>
+&lt;th style="text-align: center">Gateway&lt;/th>
+&lt;th style="text-align: center">Genmask&lt;/th>
+&lt;th style="text-align: center">Flags&lt;/th>
+&lt;th style="text-align: center">Metric&lt;/th>
+&lt;th style="text-align: center">Ref&lt;/th>
+&lt;th style="text-align: center">Use&lt;/th>
+&lt;th style="text-align: center">Iface&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">default&lt;/td>
-&lt;td style="text-align:center">_gateway&lt;/td>
-&lt;td style="text-align:center">0.0.0.0&lt;/td>
-&lt;td style="text-align:center">UG&lt;/td>
-&lt;td style="text-align:center">600&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">wlp3s0&lt;/td>
+&lt;td style="text-align: center">default&lt;/td>
+&lt;td style="text-align: center">_gateway&lt;/td>
+&lt;td style="text-align: center">0.0.0.0&lt;/td>
+&lt;td style="text-align: center">UG&lt;/td>
+&lt;td style="text-align: center">600&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">wlp3s0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">172.16.0.0&lt;/td>
-&lt;td style="text-align:center">192.168.56.3&lt;/td>
-&lt;td style="text-align:center">255.255.0.0&lt;/td>
-&lt;td style="text-align:center">UG&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">vboxnet0&lt;/td>
+&lt;td style="text-align: center">172.16.0.0&lt;/td>
+&lt;td style="text-align: center">192.168.56.3&lt;/td>
+&lt;td style="text-align: center">255.255.0.0&lt;/td>
+&lt;td style="text-align: center">UG&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">vboxnet0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">192.168.31.0&lt;/td>
-&lt;td style="text-align:center">0.0.0.0&lt;/td>
-&lt;td style="text-align:center">255.255.255.0&lt;/td>
-&lt;td style="text-align:center">U&lt;/td>
-&lt;td style="text-align:center">600&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">wlp3s0&lt;/td>
+&lt;td style="text-align: center">192.168.31.0&lt;/td>
+&lt;td style="text-align: center">0.0.0.0&lt;/td>
+&lt;td style="text-align: center">255.255.255.0&lt;/td>
+&lt;td style="text-align: center">U&lt;/td>
+&lt;td style="text-align: center">600&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">wlp3s0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">192.168.56.0&lt;/td>
-&lt;td style="text-align:center">0.0.0.0&lt;/td>
-&lt;td style="text-align:center">255.255.255.0&lt;/td>
-&lt;td style="text-align:center">U&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">0&lt;/td>
-&lt;td style="text-align:center">vboxnet0&lt;/td>
+&lt;td style="text-align: center">192.168.56.0&lt;/td>
+&lt;td style="text-align: center">0.0.0.0&lt;/td>
+&lt;td style="text-align: center">255.255.255.0&lt;/td>
+&lt;td style="text-align: center">U&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">0&lt;/td>
+&lt;td style="text-align: center">vboxnet0&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;p>至此就可以在宿主机上愉快的上内网了。&lt;/p>
 &lt;p>刚刚添加的路由转发规则是临时的，宿主机重启后，就会重置。也可以在用完后手动删除，即在终端执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo route del -net 172.16.0.0/16 gw 192.168.56.3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="后记">后记&lt;/h2>
-&lt;p>这么做虽然繁琐一点，但可以使得我的 Arch 连上内网的同时又避免了直接在物理机上装软件，还是感觉极度舒适。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>这么做虽然繁琐一点，但可以使得我的 Arch 连上内网的同时又避免了直接在物理机上装软件，还是感觉极度舒适。&lt;/p>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
 >Chapter 6. Virtual Networking&lt;/a>: &lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
 >https://www.virtualbox.org/manual/ch06.html&lt;/a>&lt;/li>
@@ -84,82 +84,82 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Name&lt;/th>
-&lt;th style="text-align:center">Package&lt;/th>
-&lt;th style="text-align:center">Written in&lt;/th>
-&lt;th style="text-align:center">Extensible&lt;/th>
-&lt;th style="text-align:center">&lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
+&lt;th style="text-align: center">Name&lt;/th>
+&lt;th style="text-align: center">Package&lt;/th>
+&lt;th style="text-align: center">Written in&lt;/th>
+&lt;th style="text-align: center">Extensible&lt;/th>
+&lt;th style="text-align: center">&lt;a class="link" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener"
 >SASL&lt;/a>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">BitchX&lt;/td>
-&lt;td style="text-align:center">bitchx-git&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">?&lt;/td>
-&lt;td style="text-align:center">?&lt;/td>
+&lt;td style="text-align: center">BitchX&lt;/td>
+&lt;td style="text-align: center">bitchx-git&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">?&lt;/td>
+&lt;td style="text-align: center">?&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ERC&lt;/td>
-&lt;td style="text-align:center">emacs&lt;/td>
-&lt;td style="text-align:center">ELisp&lt;/td>
-&lt;td style="text-align:center">in ELisp&lt;/td>
-&lt;td style="text-align:center">via script&lt;/td>
+&lt;td style="text-align: center">ERC&lt;/td>
+&lt;td style="text-align: center">emacs&lt;/td>
+&lt;td style="text-align: center">ELisp&lt;/td>
+&lt;td style="text-align: center">in ELisp&lt;/td>
+&lt;td style="text-align: center">via script&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ii&lt;/td>
-&lt;td style="text-align:center">iiAUR&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">stdin/stdout&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">ii&lt;/td>
+&lt;td style="text-align: center">iiAUR&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">stdin/stdout&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Irssi&lt;/td>
-&lt;td style="text-align:center">irssi&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">in Perl&lt;/td>
-&lt;td style="text-align:center">Yes&lt;/td>
+&lt;td style="text-align: center">Irssi&lt;/td>
+&lt;td style="text-align: center">irssi&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">in Perl&lt;/td>
+&lt;td style="text-align: center">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">pork&lt;/td>
-&lt;td style="text-align:center">pork&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">in Perl&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">pork&lt;/td>
+&lt;td style="text-align: center">pork&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">in Perl&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">ScrollZ&lt;/td>
-&lt;td style="text-align:center">scrollz&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">?&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">ScrollZ&lt;/td>
+&lt;td style="text-align: center">scrollz&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">?&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">sic&lt;/td>
-&lt;td style="text-align:center">sicAUR&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">stdin/stdout&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
+&lt;td style="text-align: center">sic&lt;/td>
+&lt;td style="text-align: center">sicAUR&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">stdin/stdout&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">tiny&lt;/td>
-&lt;td style="text-align:center">tiny-irc-client-git&lt;/td>
-&lt;td style="text-align:center">Rust&lt;/td>
-&lt;td style="text-align:center">No&lt;/td>
-&lt;td style="text-align:center">Yes&lt;/td>
+&lt;td style="text-align: center">tiny&lt;/td>
+&lt;td style="text-align: center">tiny-irc-client-git&lt;/td>
+&lt;td style="text-align: center">Rust&lt;/td>
+&lt;td style="text-align: center">No&lt;/td>
+&lt;td style="text-align: center">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">WeeChat&lt;/td>
-&lt;td style="text-align:center">WeeChat&lt;/td>
-&lt;td style="text-align:center">C&lt;/td>
-&lt;td style="text-align:center">multiple languages&lt;/td>
-&lt;td style="text-align:center">Yes&lt;/td>
+&lt;td style="text-align: center">WeeChat&lt;/td>
+&lt;td style="text-align: center">WeeChat&lt;/td>
+&lt;td style="text-align: center">C&lt;/td>
+&lt;td style="text-align: center">multiple languages&lt;/td>
+&lt;td style="text-align: center">Yes&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="启动-weechat">启动 WeeChat&lt;/h3>
-&lt;p>只需在终端中输入以下命令，回车即可：&lt;/p>
+&lt;h3 id="启动-weechat">启动 WeeChat
+&lt;/h3>&lt;p>只需在终端中输入以下命令，回车即可：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ WeeChat
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果你发现启动后出现了一些诸如 &lt;code>Errors loading plugins&lt;/code> 之类的错误，是因为 WeeChat 启动时会默认加载这些插件，而你并未安装这些插件所需运行时所致。&lt;/p>
 &lt;p>如果想要消除这些错误信息，可以使用以下两种方法：&lt;/p>
@@ -169,25 +169,25 @@
 &lt;/ol>
 &lt;p>WeeChat 本身是有一些界面交互命令，如 &lt;code>version&lt;/code>，&lt;code>uptime&lt;/code>，&lt;code>print&lt;/code> 之类，如果没有插件，WeeChat 本身没什么用，什么都做不了。WeeChat 对 IRC 的支持也是通过插件来实现的，只不过 IRC 插件是默认内置的，如果想知道都加载了哪些插件，可以通过 &lt;code>/plugin&lt;/code> 来查看。还可以在 &lt;a class="link" href="https://WeeChat.org/scripts/" target="_blank" rel="noopener"
 >插件库&lt;/a> 安装脚本插件。&lt;/p>
-&lt;h3 id="在线手册">在线手册&lt;/h3>
-&lt;p>所有的命令都可以通过在 WeeChat 中输入 &lt;code>/help&lt;/code> 来查询，如果想看某个命令的功能描述和用法，比如 &lt;code>server&lt;/code>，可以像这样：&lt;/p>
+&lt;h3 id="在线手册">在线手册
+&lt;/h3>&lt;p>所有的命令都可以通过在 WeeChat 中输入 &lt;code>/help&lt;/code> 来查询，如果想看某个命令的功能描述和用法，比如 &lt;code>server&lt;/code>，可以像这样：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/help server
 &lt;/code>&lt;/pre>&lt;p>还可以查看某个配置项的描述和用法，比如 &lt;code>irc.server.freenode.autojoin&lt;/code>：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/help irc.server.freenode.autojoin
-&lt;/code>&lt;/pre>&lt;h3 id="设置选项">设置选项&lt;/h3>
-&lt;p>在 WeeChat 中查看所有的选项，使用 &lt;code>/set&lt;/code> 命令，现在输入 &lt;code>/set&lt;/code> 实际上是插件提供的指令 &lt;code>/fset&lt;/code> 的 alias，还可以通过模糊匹配：&lt;/p>
+&lt;/code>&lt;/pre>&lt;h3 id="设置选项">设置选项
+&lt;/h3>&lt;p>在 WeeChat 中查看所有的选项，使用 &lt;code>/set&lt;/code> 命令，现在输入 &lt;code>/set&lt;/code> 实际上是插件提供的指令 &lt;code>/fset&lt;/code> 的 alias，还可以通过模糊匹配：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/fset WeeChat.*
 &lt;/code>&lt;/pre>&lt;p>可以通过如下命令来修改选项的值，例如：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/set irc.server.freenode.username &amp;#34;sherry&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>修改后无需重启，WeeChat 会自动更新，或者使用 &lt;code>/save&lt;/code> 强制保存修改后的值。不建议手动编辑配置文件来修改，因为 WeeChat 可能会随时写入信息。&lt;/p>
-&lt;h3 id="添加服务器">添加服务器&lt;/h3>
-&lt;p>以当前最大的节点 &lt;code>chat.freenode.net&lt;/code> 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。&lt;/p>
+&lt;h3 id="添加服务器">添加服务器
+&lt;/h3>&lt;p>以当前最大的节点 &lt;code>chat.freenode.net&lt;/code> 为例，端口号为 6665-6667 和 8000-8002 用于纯文本连接，端口 6697, 7000 和 7070 为 TLS 加密连接。&lt;/p>
 &lt;p>不加密的那种我在国内尝试了下连不上，使用了加密连接才连上，写法如下，其中 &lt;code>freenode&lt;/code> 是昵称：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/server add freenode chat.freenode.net/6697 -ssl
 &lt;/code>&lt;/pre>&lt;p>进去之后会发现自己的用户名旁边有个(+iZ)，这个代表用户模式，&lt;code>i&lt;/code> 代表隐形，&lt;code>Z&lt;/code> 是通过加密连接到服务器的用户，会自动获得这个网络状态，更多用户模式可以通过 &lt;code>/help mode&lt;/code> 查看，或者浏览官方 Wiki &lt;a class="link" href="https://freenode.net/kb/answer/usermodes" target="_blank" rel="noopener"
 >User Mode&lt;/a>&lt;/p>
-&lt;h3 id="自定义-irc-服务器选项">自定义 IRC 服务器选项&lt;/h3>
-&lt;p>如果您未为服务器选项指定特定值，则 WeeChat 会为所有服务器使用默认值。这些默认选项是 &lt;code>irc.server_default.*&lt;/code>，因此对于每个服务器都可以单独设置参数。&lt;/p>
+&lt;h3 id="自定义-irc-服务器选项">自定义 IRC 服务器选项
+&lt;/h3>&lt;p>如果您未为服务器选项指定特定值，则 WeeChat 会为所有服务器使用默认值。这些默认选项是 &lt;code>irc.server_default.*&lt;/code>，因此对于每个服务器都可以单独设置参数。&lt;/p>
 &lt;p>默认情况下，昵称会和 un*x 的登陆用户名称相同，还可以修改昵称：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/set irc.server.freenode.nicks &amp;#34;sherry&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>设置用户名和真实姓名：&lt;/p>
@@ -208,10 +208,10 @@
 &lt;pre tabindex="0">&lt;code>/unset irc.server.freenode.nicks
 &lt;/code>&lt;/pre>&lt;p>设置其他选项（xxx为输入一个不存在的选项名）：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/set irc.server.freenode.xxx value
-&lt;/code>&lt;/pre>&lt;h3 id="连接到-irc-服务器">连接到 IRC 服务器&lt;/h3>
-&lt;pre tabindex="0">&lt;code>/connect freenode
-&lt;/code>&lt;/pre>&lt;h3 id="加入离开-irc-频道">加入/离开 IRC 频道&lt;/h3>
-&lt;p>查询频道：&lt;/p>
+&lt;/code>&lt;/pre>&lt;h3 id="连接到-irc-服务器">连接到 IRC 服务器
+&lt;/h3>&lt;pre tabindex="0">&lt;code>/connect freenode
+&lt;/code>&lt;/pre>&lt;h3 id="加入离开-irc-频道">加入/离开 IRC 频道
+&lt;/h3>&lt;p>查询频道：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/list #channel
 &lt;/code>&lt;/pre>&lt;p>加入频道：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/join #channel
@@ -221,8 +221,8 @@
 &lt;pre tabindex="0">&lt;code>/close
 &lt;/code>&lt;/pre>&lt;p>断开与服务器的连接：&lt;/p>
 &lt;pre tabindex="0">&lt;code>/disconnect
-&lt;/code>&lt;/pre>&lt;h2 id="后记">后记&lt;/h2>
-&lt;p>除了以上的一些基本用法，还有 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_ssl_certificates" target="_blank" rel="noopener"
+&lt;/code>&lt;/pre>&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>除了以上的一些基本用法，还有 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_ssl_certificates" target="_blank" rel="noopener"
 >SASL 认证&lt;/a> 以及 &lt;a class="link" href="https://freenode.net/kb/answer/sasl" target="_blank" rel="noopener"
 >使用 SASL 连接&lt;/a>、通过 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_user.en.html#irc_tor_freenode" target="_blank" rel="noopener"
 >Tor 连接 Freenode&lt;/a> 等用法。此外，一些 WeeChat 软件的方面的问题，可以看这个 &lt;a class="link" href="https://weechat.org/files/doc/stable/weechat_faq.en.html" target="_blank" rel="noopener"
@@ -236,8 +236,8 @@
 &lt;li>&lt;a class="link" href="https://www.undernet.org" target="_blank" rel="noopener"
 >https://www.undernet.org&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://weechat.org/doc/" target="_blank" rel="noopener"
 >WeeChat Docs&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://freenode.net/kb/all" target="_blank" rel="noopener"
@@ -264,23 +264,23 @@
 &lt;li>v：输出详细信息&lt;/li>
 &lt;li>z：通常用于端口扫描，仅判断是否能够连接，不进行数据通讯&lt;/li>
 &lt;/ul>
-&lt;h3 id="开启服务">开启服务&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -k -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;h3 id="开启服务">开启服务
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -k -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>作为服务端，监听端口，开启服务。假设客户端通过 &lt;code>nc [ip] [port]&lt;/code> 连上服务端，当断开客户端，服务端也会停止，加上选项 k 可以使其保持开启状态。这个是挺常见的用法，使用频率挺高，例如在flink的官方教程就用到了这个。&lt;/p>
-&lt;h3 id="测试端口">测试端口&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -nv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
+&lt;h3 id="测试端口">测试端口
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -nv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>例如某个远程主机上开启了某个端口，这样做可以测试端口是否能连上，若其中的 ip 的位置为域名，就不需要加 n 了。&lt;/p>
-&lt;h3 id="端口扫描">端口扫描&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -znv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port-port&lt;span style="color:#f92672">]&lt;/span> 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | grep succeeded
+&lt;h3 id="端口扫描">端口扫描
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -znv &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port-port&lt;span style="color:#f92672">]&lt;/span> 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | grep succeeded
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以用来做渗透测试。&lt;/p>
-&lt;h3 id="文件传输">文件传输&lt;/h3>
-&lt;p>首先在接收端开启监听：&lt;/p>
+&lt;h3 id="文件传输">文件传输
+&lt;/h3>&lt;p>首先在接收端开启监听：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在发送端发送文件:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ nc &lt;span style="color:#f92672">[&lt;/span>ip&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;lt; &lt;span style="color:#f92672">[&lt;/span>filename&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样传输文件的好处是不需要应用层，直接在传输层层面传输的，相比于通过应用层的软件之间的传输，性能上会有优势。假如从本机要传文件到开启了nat模式的虚拟机中，由于此时虚拟机对于宿主机的访问是单向的，因此可以先在虚拟机上配置一个端口转发，然后从本机 &lt;code>nc localhost [port] &amp;lt; [filename]&lt;/code> 。注：传输过程中没有进度条，因此需要重新开一个 terminal，自行对比文件的大小判断是否发送完后，然后在发送端 &lt;code>ctrl+c&lt;/code> 即可。&lt;/p>
-&lt;h2 id="后记">后记&lt;/h2>
-&lt;p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——&lt;a class="link" href="https://program-think.blogspot.com/2019/09/Netcat-Tricks.html" target="_blank" rel="noopener"
+&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>除了以上的常见操作外，netcat还能配合一些其他命令做到更多高端操作，诸如端口转发，代理转发，备份系统，开启后门等等，更多操作可以参考编程随想的博文——&lt;a class="link" href="https://program-think.blogspot.com/2019/09/Netcat-Tricks.html" target="_blank" rel="noopener"
 >扫盲 netcat（网猫）的 N 种用法——从“网络诊断”到“系统入侵”&lt;/a>。值得一提的是开启后门的选项 -e 在 openbsd-netcat 被删掉了，可能是作者觉得过于危险，但是在其他很多变种中这个选项还有保留。虽然 -e 在 openbsd-netcat 中被删除了，但是还是可以通过创建命名管道的方法间接达到 -e 的作用：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ mkfifo &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span> | /bin/bash 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff">1&lt;/span> | nc -l -p &lt;span style="color:#f92672">[&lt;/span>port&lt;span style="color:#f92672">]&lt;/span> &amp;gt; &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span>
@@ -298,14 +298,14 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注：在有些资料中 Driver 项可能是 synaptics，这是旧的驱动，已经不再更新了。&lt;/p>
 &lt;p>上方的配置项有些可根据个人习惯来设置，例如：NaturalScrolling，TappingButtonMap，ScrollMethod&amp;hellip;它们还有一些其他的选项，可参考 &lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
 >libinput - libinput-based X.Org input driver&lt;/a>&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Libinput" target="_blank" rel="noopener"
 >archlinux libinput&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
 >libinput - libinput-based X.Org input driver&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>我对手机的需求不高，不打游戏，只需要续航，有 Google 服务以及 root 就足够了。之前一直使用的 ADUI 的 Global 版本，再加上 Magisk 的 root 管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到 Pie 的大版本更新，把我的 root 覆盖掉了。因此，不得不重新再刷入 Magisk。不过 MIUI11 官方说会加入应用冻结的功能，这样一来我连 root 的需求似乎也没有了 /笑&lt;/p>
+&lt;/ol></description></item><item><title>Linux上adb的使用记录</title><link>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/adb-use-record-on-linux/</guid><description>&lt;h2 id="前言">前言
+&lt;/h2>&lt;p>我对手机的需求不高，不打游戏，只需要续航，有 Google 服务以及 root 就足够了。之前一直使用的 ADUI 的 Global 版本，再加上 Magisk 的 root 管理，配上冰箱也足以应付诸如微信这一类的国产毒瘤了。但之前有一次升级到 Pie 的大版本更新，把我的 root 覆盖掉了。因此，不得不重新再刷入 Magisk。不过 MIUI11 官方说会加入应用冻结的功能，这样一来我连 root 的需求似乎也没有了 /笑&lt;/p>
 &lt;p>言归正传，在 Linux 上使用 adb 有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
@@ -315,8 +315,8 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是 vendor id，后者是 product id&lt;/p>
 &lt;p>下面有两种方式来写配置文件：&lt;/p>
-&lt;h3 id="添加udev规则">添加udev规则&lt;/h3>
-&lt;p>1.首先要确保系统中有安装 &lt;code>android-udev&lt;/code> 这个包。可以通过包管理器来安装或者访问&lt;a class="link" href="https://source.android.com/setup/build/initializing#configuring-usb-access" target="_blank" rel="noopener"
+&lt;h3 id="添加udev规则">添加udev规则
+&lt;/h3>&lt;p>1.首先要确保系统中有安装 &lt;code>android-udev&lt;/code> 这个包。可以通过包管理器来安装或者访问&lt;a class="link" href="https://source.android.com/setup/build/initializing#configuring-usb-access" target="_blank" rel="noopener"
 >source.android.com&lt;/a>来手动安装。在这里新建一个文件：&lt;code>/etc/udev/rules.d/51-android.rules&lt;/code>，然后写入以下配置，只需修改其中的 vendor id 和 product id 为自己的即可:&lt;/p>
 &lt;blockquote>
 &lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
@@ -327,8 +327,8 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo udevadm control --reload-rules
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo gpasswd -a user group
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置adb">配置adb&lt;/h3>
-&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将 vendor id 写入到里面，保存退出即可。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置adb">配置adb
+&lt;/h3>&lt;p>在这个位置创建文件 &lt;code>~/.android/adb_usb.ini&lt;/code> ，然后将 vendor id 写入到里面，保存退出即可。&lt;/p>
 &lt;p>这两种方式任选其一即可。然后进入解压后的 platform-tools 目录，将下好的 twrp 也放到里面，在目录中启动 terminal，然后执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ ./adb devices
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
@@ -337,19 +337,19 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 [device name] device&lt;/p>
 &lt;/blockquote>
 &lt;p>这样就算是完成了。&lt;/p>
-&lt;h2 id="后记">后记&lt;/h2>
-&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Android_Debug_Bridge" target="_blank" rel="noopener"
 >Android Debug Bridge&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>ArchLinux 安装教程</title><link>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</link><pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/arch-linux-installation-guide/</guid><description>&lt;p>体验了 Win10 一个多月后，感觉不光系统臃肿，还有些迷之 BUG，首先是点关机后，系统实际上并未关闭，根据网上的方法禁用了 intel management engine interface 驱动后解决。另一个是看视频暂停后，再继续声音会突然变大，只能在系统音量那随便调一下就正常。虽然并不怎么影响使用，但作为完美主义者这是绝对无法忍受的。曾数次 Google，无论是禁用声音效果还是改声卡驱动都无济于事……&lt;/p>
 &lt;p>心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑&lt;/p>
 &lt;p>为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
 >文档&lt;/a>，以下制作启动盘等准备工作省略，直接从进入 live 环境开始。&lt;/p>
-&lt;h2 id="安装前的准备工作">安装前的准备工作&lt;/h2>
-&lt;h3 id="联网">联网&lt;/h3>
-&lt;p>网线直接 &lt;code>dhcpd&lt;/code>&lt;/p>
+&lt;h2 id="安装前的准备工作">安装前的准备工作
+&lt;/h2>&lt;h3 id="联网">联网
+&lt;/h3>&lt;p>网线直接 &lt;code>dhcpd&lt;/code>&lt;/p>
 &lt;p>如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 &lt;code>dhcpd&lt;/code> 😜&lt;/p>
 &lt;p>开个玩笑，一定要连无线网络的话，官网文档见：&lt;a class="link" href="https://wiki.archlinux.org/title/Iwd#iwctl" target="_blank" rel="noopener"
 >Iwd&lt;/a>，我也摘抄如下：&lt;/p>
@@ -374,11 +374,11 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;p>Finally, to connect to a network:&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device connect SSID&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟&lt;/h3>
-&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟
+&lt;/h3>&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># timedatectl&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="分区">分区&lt;/h3>
-&lt;p>这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="分区">分区
+&lt;/h3>&lt;p>这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了&lt;/p>
 &lt;p>还是要查看一下启动模式：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /sys/firmware/efi/fw_platform_size&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>返回结果的解释，这里就直接复制官网了：&lt;/p>
@@ -398,35 +398,35 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Device&lt;/th>
-&lt;th style="text-align:center">Start&lt;/th>
-&lt;th style="text-align:center">End&lt;/th>
-&lt;th style="text-align:center">Sectors&lt;/th>
-&lt;th style="text-align:center">Size&lt;/th>
-&lt;th style="text-align:center">Type&lt;/th>
+&lt;th style="text-align: center">Device&lt;/th>
+&lt;th style="text-align: center">Start&lt;/th>
+&lt;th style="text-align: center">End&lt;/th>
+&lt;th style="text-align: center">Sectors&lt;/th>
+&lt;th style="text-align: center">Size&lt;/th>
+&lt;th style="text-align: center">Type&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">/dev/sda1&lt;/td>
-&lt;td style="text-align:center">2048&lt;/td>
-&lt;td style="text-align:center">1050623&lt;/td>
-&lt;td style="text-align:center">1048576&lt;/td>
-&lt;td style="text-align:center">512M&lt;/td>
-&lt;td style="text-align:center">EFI System&lt;/td>
+&lt;td style="text-align: center">/dev/sda1&lt;/td>
+&lt;td style="text-align: center">2048&lt;/td>
+&lt;td style="text-align: center">1050623&lt;/td>
+&lt;td style="text-align: center">1048576&lt;/td>
+&lt;td style="text-align: center">512M&lt;/td>
+&lt;td style="text-align: center">EFI System&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">/dev/sda2&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">Linux filesystem&lt;/td>
+&lt;td style="text-align: center">/dev/sda2&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">Linux filesystem&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="格式化分区">格式化分区&lt;/h3>
-&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
+&lt;h3 id="格式化分区">格式化分区
+&lt;/h3>&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
 >EFI_system_partition#Format_the_partition&lt;/a>，具体我也摘抄如下：&lt;/p>
 &lt;blockquote>
 &lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>
@@ -435,44 +435,44 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.fat -F 32 /dev/sda1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后格式化 root 分区：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.ext4 /dev/sda2&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="挂载文件系统">挂载文件系统&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkdir /mnt/boot&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="挂载文件系统">挂载文件系统
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkdir /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mount /dev/sda1 /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mount /dev/sda2 /mnt&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装">安装&lt;/h2>
-&lt;h3 id="选择镜像">选择镜像&lt;/h3>
-&lt;p>编辑以下文件：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装">安装
+&lt;/h2>&lt;h3 id="选择镜像">选择镜像
+&lt;/h3>&lt;p>编辑以下文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim /etc/pacman.d/mirrorlist&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将 &lt;code>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch&lt;/code> 放到第一行，保存退出&lt;/p>
-&lt;h3 id="安装必要的软件包">安装必要的软件包&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacstrap -K /mnt base linux linux-firmware&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="系统配置">系统配置&lt;/h2>
-&lt;h3 id="生成-fstab-文件">生成 fstab 文件&lt;/h3>
-&lt;p>执行下面的命令:&lt;/p>
+&lt;h3 id="安装必要的软件包">安装必要的软件包
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacstrap -K /mnt base linux linux-firmware&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="系统配置">系统配置
+&lt;/h2>&lt;h3 id="生成-fstab-文件">生成 fstab 文件
+&lt;/h3>&lt;p>执行下面的命令:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看生成的结果:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /mnt/etc/fstab&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="chroot">Chroot&lt;/h3>
-&lt;p>执行以下命令切换到新系统:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="chroot">Chroot
+&lt;/h3>&lt;p>执行以下命令切换到新系统:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># arch-chroot /mnt&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置时区">设置时区&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置时区">设置时区
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成 &lt;code>/etc/adjtime&lt;/code> 文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># hwclock --systohc&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="本地化">本地化&lt;/h3>
-&lt;p>编辑文件 &lt;code>/etc/locale.gen&lt;/code>，找到 &lt;code>en_US.UTF-8 UTF-8&lt;/code> 这一行并取消注释，然后保存&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="本地化">本地化
+&lt;/h3>&lt;p>编辑文件 &lt;code>/etc/locale.gen&lt;/code>，找到 &lt;code>en_US.UTF-8 UTF-8&lt;/code> 这一行并取消注释，然后保存&lt;/p>
 &lt;p>执行以下命令生成 locales：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># locale-gen&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑文件 &lt;code>/etc/locale.conf&lt;/code>（没有就创建），然后写入 &lt;code>LANG=en_US.UTF-8&lt;/code>&lt;/p>
-&lt;h3 id="网络配置">网络配置&lt;/h3>
-&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件，写入:&lt;/p>
+&lt;h3 id="网络配置">网络配置
+&lt;/h3>&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件，写入:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo &amp;#34;arch&amp;#34; &amp;gt;&amp;gt; /etc/hostname&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑 &lt;code>/etc/hosts&lt;/code> 文件:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="修改密码">修改密码&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># passwd&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="boot-loader">Boot loader&lt;/h3>
-&lt;p>不同的 CPU 需要安装不同的 Microcode：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="修改密码">修改密码
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># passwd&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="boot-loader">Boot loader
+&lt;/h3>&lt;p>不同的 CPU 需要安装不同的 Microcode：&lt;/p>
 &lt;p>AMD CPU 安装：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S amd-ucode &lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Intel CPU 安装：&lt;/p>
@@ -483,17 +483,17 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 GRUB：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># grub-mkconfig -o /boot/grub/grub.cfg&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装软件">安装软件&lt;/h3>
-&lt;p>顺便再装一些必要的软件:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装软件">安装软件
+&lt;/h3>&lt;p>顺便再装一些必要的软件:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S sudo vim dhcpcd netctl wpa_supplicant&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="重启">重启&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="重启">重启
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># exit&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># reboot&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="个人化的相关配置">个人化的相关配置&lt;/h2>
-&lt;h3 id="创建普通用户">创建普通用户&lt;/h3>
-&lt;p>以下来自官网：&lt;a class="link" href="https://wiki.archlinux.org/title/Users_and_groups#User_management" target="_blank" rel="noopener"
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="个人化的相关配置">个人化的相关配置
+&lt;/h2>&lt;h3 id="创建普通用户">创建普通用户
+&lt;/h3>&lt;p>以下来自官网：&lt;a class="link" href="https://wiki.archlinux.org/title/Users_and_groups#User_management" target="_blank" rel="noopener"
 >Users and groups&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>-m/&amp;ndash;create-home
@@ -509,16 +509,16 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/blockquote>
 &lt;p>执行以下命令创建普通用户，替换中括号及其内容&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件&lt;/h3>
-&lt;p>以创建 8 GiB Swap 文件为例：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件
+&lt;/h3>&lt;p>以创建 8 GiB Swap 文件为例：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>设置权限：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># chmod 0600 /swapfile&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>格式化为 Swap:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkswap -U clear /swapfile&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最后编辑 &lt;code>/etc/fstab&lt;/code> 文件，将这一行 &lt;code>/swapfile none swap defaults 0 0&lt;/code> 添加进去&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
 >https://wiki.archlinux.org/title/Installation_guide&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/General_recommendations" target="_blank" rel="noopener"

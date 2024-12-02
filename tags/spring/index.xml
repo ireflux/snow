@@ -60,8 +60,8 @@ proxy_redirect default;
 }
 }
 &lt;/code>&lt;/pre>&lt;p>然后 &lt;code>nginx -s reload&lt;/code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="http://nginx.org/en/docs/" target="_blank" rel="noopener"
 >nginx documentation&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html" target="_blank" rel="noopener"
@@ -144,8 +144,8 @@ proxy_redirect default;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其他方法可参考 Spring Data Redis 的 &lt;a class="link" href="https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html" target="_blank" rel="noopener"
 >API文档&lt;/a>&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
 >lettuce github&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://docs.spring.io/spring-data/redis/docs/current/api/org/springframework/data/redis/core/RedisTemplate.html" target="_blank" rel="noopener"
@@ -240,12 +240,12 @@ proxy_redirect default;
 >示例&lt;/a>点击链接即可。&lt;/p>
 &lt;p>除 &lt;code>swagger-ui.html&lt;/code> 之外，还有一些默认的文档路径，详情见&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/#customizing-the-swagger-endpoints" target="_blank" rel="noopener"
 >此处&lt;/a>&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://springfox.github.io/springfox/docs/current/" target="_blank" rel="noopener"
 >Springfox Reference Documentation&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Learn Spring Framework</title><link>https://ireflux.github.io/snow/post/learn-spring-framework/</link><pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
-&lt;p>Recently,I was learning the Spring Framework.&lt;/p>
+&lt;/ol></description></item><item><title>Learn Spring Framework</title><link>https://ireflux.github.io/snow/post/learn-spring-framework/</link><pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid><description>&lt;h1 id="前言">前言
+&lt;/h1>&lt;p>Recently,I was learning the Spring Framework.&lt;/p>
 &lt;p>At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p>
 &lt;p>After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p>
 &lt;p>Obviously, I encountered resistance.&lt;/p>
@@ -269,8 +269,8 @@ proxy_redirect default;
 &lt;p>&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
 >https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="原文摘录">原文摘录&lt;/h2>
-&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
+&lt;h2 id="原文摘录">原文摘录
+&lt;/h2>&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
 >http://springtutorials.com/spring-tutorial-1/&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>A simple question for you before I begin:&lt;br>
@@ -298,11 +298,11 @@ As a kid, It took me a while to learn the colors of the rainbow in its correct o
 As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br>
 It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service&lt;/h3>
-&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
+&lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service
+&lt;/h3>&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
 &lt;p>部分代码摘录如下：&lt;/p>
-&lt;h4 id="srcmainjavahellogreetingjava">src/main/java/hello/Greeting.java&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
+&lt;h4 id="srcmainjavahellogreetingjava">src/main/java/hello/Greeting.java
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Greeting&lt;/span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -322,8 +322,8 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> content;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="srcmainjavahellogreetingcontrollerjava">src/main/java/hello/GreetingController.java&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="srcmainjavahellogreetingcontrollerjava">src/main/java/hello/GreetingController.java
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.util.concurrent.atomic.AtomicLong;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping;
@@ -356,8 +356,8 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;p>&lt;code>@RestController&lt;/code>为Spring 4的新注解,它将类标记为控制器,其中每个方法都返回一个域对象而不是视图.它是&lt;code>@Controller&lt;/code>和&lt;code>@ResponseBody&lt;/code>的缩写.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;h4 id="srcmainjavahelloapplicationjava">src/main/java/hello/Application.java&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
+&lt;h4 id="srcmainjavahelloapplicationjava">src/main/java/hello/Application.java
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.boot.SpringApplication;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -384,8 +384,8 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;p>&lt;code>@ComponentScan&lt;/code>告诉Spring在hello包中查找其他组件，配置和服务，以便找到控制器。&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="测试">测试&lt;/h3>
-&lt;p>打包：mvn package&lt;/p>
+&lt;h3 id="测试">测试
+&lt;/h3>&lt;p>打包：mvn package&lt;/p>
 &lt;p>测试运行:java -jar gs-rest-service-0.1.0.jar&lt;/p>
 &lt;p>访问：http://localhost:8080/greeting&lt;/p>
 &lt;p>或者加入参数：http://localhost:8080/greeting?name=User&lt;/p></description></item></channel></rss>

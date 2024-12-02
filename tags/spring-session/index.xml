@@ -60,8 +60,8 @@ proxy_redirect default;
 }
 }
 &lt;/code>&lt;/pre>&lt;p>然后 &lt;code>nginx -s reload&lt;/code> 重新加载配置文件。现在再来访问此服务器的 ip 地址，流量就会经过 nginx 了，可以查看位于 /var/log/nginx 下的 access.log 日志进行确认。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="http://nginx.org/en/docs/" target="_blank" rel="noopener"
 >nginx documentation&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://program-think.blogspot.com/2019/11/POSIX-TUI-from-TTY-to-Shell-Programming.html" target="_blank" rel="noopener"

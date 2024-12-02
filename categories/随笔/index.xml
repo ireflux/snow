@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>随笔 on sherry's blog</title><link>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</link><description>Recent content in 随笔 on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml"/><item><title>旧 Android 手机的再度营业</title><link>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</link><pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
-&lt;p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了&lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>随笔 on sherry's blog</title><link>https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/</link><description>Recent content in 随笔 on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml"/><item><title>旧 Android 手机的再度营业</title><link>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</link><pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/reuse-of-old-android-phone/</guid><description>&lt;h2 id="背景">背景
+&lt;/h2>&lt;p>从前年开始，我就特别希望找一个体积小、方便携带、噪音小的单板计算机，类似于树莓派那种，打算平时拿来跑跑脚本什么的。但发现树莓派的价格比起过去简直翻了好几倍，于是果断放弃。当然按照习惯我也在网络上搜寻了&lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"
 >一些其他派&lt;/a>，但也不知道好不好，就这样拖了好长时间。&lt;/p>
 &lt;p>前一段时间过年回家，发现家里有个旧手机红米4a，Android 6.0 还可以，但是是个移动合约机，玩了一下发现除了电池不太行以外其他各方面都很好。刚好想起来以前在酷安上看到有人用 Termux 装过 Ubantu，结合我之前的需求，可以说刚好满足，而且旧手机废物利用，拿来跑脚本再合适不过了&lt;/p>
-&lt;h2 id="安装踩坑过程">安装(踩坑)过程&lt;/h2>
-&lt;p>于是我重新线刷了一遍官方系统后，准备安装 Termux，发现 &lt;a class="link" href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/" target="_blank" rel="noopener"
+&lt;h2 id="安装踩坑过程">安装(踩坑)过程
+&lt;/h2>&lt;p>于是我重新线刷了一遍官方系统后，准备安装 Termux，发现 &lt;a class="link" href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/" target="_blank" rel="noopener"
 >Android 5 和 6 在 2020 年就不再支持了&lt;/a>，一想到只能用旧阪本，虽然很不情愿，但也没有办法。不过后来我又在 WIKI 里发现了一篇新的公告：&lt;a class="link" href="https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6" target="_blank" rel="noopener"
 >Termux on android 5 or 6&lt;/a>，开发者又打算在 termux-app 0.119 版本中重新加回对 android 5 和 6 的支持，这么重要的信息居然不写在最显眼的 README 里面&amp;hellip;虽然目前还没有正式 release，但是可以去 Actions 中找打好的安装包来安装，至此总算是可以舒舒服服的安装了。&lt;/p>
 &lt;p>作为 Arch 的忠实教徒，发行版当然是选择 Arch Linux 啦！在 GitHub 搜寻一番，找到了一个专门在 Termux 中一键安装的脚本 &lt;a class="link" href="https://github.com/TermuxArch/TermuxArch" target="_blank" rel="noopener"
@@ -115,8 +115,8 @@
 &lt;li>SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。&lt;/li>
 &lt;/ol>
 &lt;p>完结。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>12 个可替代树莓派的单板机: &lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"
 >https://linux.cn/article-10823-1.html&lt;/a>&lt;/li>
 &lt;li>End of android-5/6 support on 2020-01-01: &lt;a class="link" href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/" target="_blank" rel="noopener"
@@ -132,22 +132,22 @@
 &lt;li>青龙面板: &lt;a class="link" href="https://github.com/whyour/qinglong" target="_blank" rel="noopener"
 >https://github.com/whyour/qinglong&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p>
-&lt;h2 id="安装">安装&lt;/h2>
-&lt;p>按照官方的&lt;a class="link" href="https://support.google.com/chromeosflex/answer/11552529?_ga=2.40629794.1417789089.1658235257-1827319735.1658235256" target="_blank" rel="noopener"
+&lt;h2 id="安装">安装
+&lt;/h2>&lt;p>按照官方的&lt;a class="link" href="https://support.google.com/chromeosflex/answer/11552529?_ga=2.40629794.1417789089.1658235257-1827319735.1658235256" target="_blank" rel="noopener"
 >教程&lt;/a>先准备一个非闪迪的 U 盘（因为闪地的 USB 会有一些&lt;a class="link" href="%28https://support.google.com/chromeosflex/answer/11541806#usb%29" >已知的问题&lt;/a>），然后去
 &lt;a class="link" href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm" target="_blank" rel="noopener"
 >Chrome web store&lt;/a> 安装 &lt;code>Chromebook Recovery Utility&lt;/code> 这个扩展（并不支持 Linux 系统)，插上 U 盘后，打开新安装好的扩展，制造商选择「Google Chrome OS Flex」，产品选择「Chrome OS Flex」，点继续之后，接下来它就会自动下载并写入到你的 U 盘（话说我还是第一次见到用浏览器扩展制作启动盘的&amp;hellip;），期间会清空 U 盘上的所有信息。这个过程完成之后，你就拥有一个 Chrome OS Flex 的启动盘了，剩下的也无需赘述。&lt;/p>
-&lt;h2 id="体验">体验&lt;/h2>
-&lt;p>说说使用体验，系统启动时画面上中央会出现 ChromeOS Flex 的字样，感觉还是挺不错的。系统刚进去会有一个使用向导，一步步设置：选择语言，设置键盘布局，连接网络，登录账号，整体 UI 和交互就是原生 Android 的既视感。进去之后自带了 Google 全家桶，其他的不知道都能安装什么第三方应用，也没有看到有类似应用商店之类的东西。设置里有提供 Linux 相关工具的入口，但需要额外安装，迫于 U 盘空间不大，这部分就没体验，打开 terminal 也提示需要额外安装那个 Linux 工具集，但自带了 SSH 连接的图形化界面。打开设置里面查看系统设置信息又给人一种整个操作系统就是一个 Chrome 浏览器的感觉&amp;hellip;&lt;/p>
+&lt;h2 id="体验">体验
+&lt;/h2>&lt;p>说说使用体验，系统启动时画面上中央会出现 ChromeOS Flex 的字样，感觉还是挺不错的。系统刚进去会有一个使用向导，一步步设置：选择语言，设置键盘布局，连接网络，登录账号，整体 UI 和交互就是原生 Android 的既视感。进去之后自带了 Google 全家桶，其他的不知道都能安装什么第三方应用，也没有看到有类似应用商店之类的东西。设置里有提供 Linux 相关工具的入口，但需要额外安装，迫于 U 盘空间不大，这部分就没体验，打开 terminal 也提示需要额外安装那个 Linux 工具集，但自带了 SSH 连接的图形化界面。打开设置里面查看系统设置信息又给人一种整个操作系统就是一个 Chrome 浏览器的感觉&amp;hellip;&lt;/p>
 &lt;p>总之体验下来个人感觉作为一个个人电脑的操作系统还是不太够，除了一个浏览器，其他的没什么可玩儿的。如果作为其他终端的操作系统，做一些定制化或许还可以，比如车载系统，银行 ATM，KTV 的点歌台之类的&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://support.google.com/chromeosflex/answer/11552529?hl=en&amp;amp;visit_id=637939238602881027-1929521378&amp;amp;ref_topic=11551271&amp;amp;rd=1" target="_blank" rel="noopener"
 >Chrome OS Flex installation guide&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://cloud.google.com/blog/products/chrome-enterprise/chromeos-flex-ready-to-scale-to-pcs-and-macs" target="_blank" rel="noopener"
 >Get ready to flex this summer: ChromeOS Flex is now ready to scale broadly to PCs and Macs&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 五</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</link><pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</guid><description>&lt;h3 id="系列文章">系列文章&lt;/h3>
-&lt;ol>
+&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 五</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</link><pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5/</guid><description>&lt;h3 id="系列文章">系列文章
+&lt;/h3>&lt;ol>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
@@ -159,8 +159,8 @@
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-5-episode-1----live-free-or-die">Season 5 Episode 1 &amp;ndash; Live Free or Die&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-1----live-free-or-die">Season 5 Episode 1 &amp;ndash; Live Free or Die
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=w-h05P0doX4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=w-h05P0doX4&lt;/a>&lt;/p>
 &lt;p>利用强磁场强弱的瞬间转化来消磁，很好的想法！&lt;/p>
@@ -188,18 +188,18 @@ Only you never told me 只是你从没告诉过我&lt;br>
 that the kid would wind up in the hospital. 这孩子会进医院&lt;/p>
 &lt;/blockquote>
 &lt;p>结尾 saul 和 白老师对话也很精彩，在 Gilligan 的笔下每个人性格都是那么鲜明，活灵活现。&lt;/p>
-&lt;h3 id="season-5-episode-2----madrigal">Season 5 Episode 2 &amp;ndash; Madrigal&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-2----madrigal">Season 5 Episode 2 &amp;ndash; Madrigal
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=z4WMU3NbQTk" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=z4WMU3NbQTk&lt;/a>&lt;/p>
 &lt;p>最终从吸尘器里“找到了”兰铃花毒，白老师的心机越来越深了，jesse 又被摆了一道。&lt;/p>
-&lt;h3 id="season-5-episode-5----dead-freight">Season 5 Episode 5 &amp;ndash; Dead Freight&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-5----dead-freight">Season 5 Episode 5 &amp;ndash; Dead Freight
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=vWTuSWX6UQ4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=vWTuSWX6UQ4&lt;/a>&lt;/p>
 &lt;p>神不知鬼不觉的从火车里偷到甲氨，精彩！Yeah! bitch!!&lt;/p>
-&lt;h3 id="season-5-episode-6----buyout">Season 5 Episode 6 &amp;ndash; Buyout&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-6----buyout">Season 5 Episode 6 &amp;ndash; Buyout
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8Pw7H02Hdz4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=8Pw7H02Hdz4&lt;/a>&lt;/p>
 &lt;p>Jesse:&lt;/p>
@@ -212,8 +212,8 @@ cause you worked it all out, like, mathematically. 因为你算得清清楚楚&l
 &lt;/blockquote>
 &lt;p>Pinkman 仍然清楚的记得白老师之前算得那笔帐。七十三万七千，这是供他的家庭直到他儿子大学毕业所需的开销。人在不同的处境下，只能做出基于自身情况所能得到的最好的选择。如果说以前的白老师是为了给家庭一笔存款，到后来的是为了活命而与那些毒贩周旋，如今一路走来，曾经想杀掉他的人都被他一一打倒。此时性命无虞，外部环境很好，，目标也会更加远大。&lt;/p>
 &lt;p>何况他们提议卖掉甲氨，这种一锤子买卖，反而是触及了曾令白老师悔及一生的往事——他曾5000美元将股份卖给了其他两位合伙人，同时也廉价卖掉了他和他孩子的未来。之后他曾经的两位创始人同伴邀请他去公司工作时，对方可能是好意，但对白老师来说，更像是一种侮辱。像白老师这样在某一领域天纵奇才却默默无闻的做了几十年中学教师，晚年一事无成却还得了癌症的人，他很不甘心就这样结束。因此，他更不希望自己重蹈覆辙，再次错过这次机会。&lt;/p>
-&lt;h3 id="season-5-episode-7----say-my-name">Season 5 Episode 7 &amp;ndash; Say My Name&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-7----say-my-name">Season 5 Episode 7 &amp;ndash; Say My Name
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=RZPZWpEiuoA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=RZPZWpEiuoA&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -224,14 +224,14 @@ If you&amp;rsquo;d done your job, known your place, 如果你乖乖干好你的�
 we&amp;rsquo;d all be fine right now! 我们现在都相安无事&lt;/p>
 &lt;/blockquote>
 &lt;p>没想到 mike 也会说出这种话，感情不是他生命受到威胁。当然他本来就和 walt 合不来，现在又被逼得被迫跑路，对 walt 说出什么话来也不奇怪.&lt;/p>
-&lt;h3 id="season-5-episode-8----gliding-over-all">Season 5 Episode 8 &amp;ndash; Gliding Over All&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-8----gliding-over-all">Season 5 Episode 8 &amp;ndash; Gliding Over All
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8jMFkf1mJhY" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=8jMFkf1mJhY&lt;/a>&lt;/p>
 &lt;p>存在片段回忆杀，白老师退出了，还和 jesse 聊起了从前。即使和 walt 因 500 万的事曾发生了不愉快，但在打开房门的时候仍然像一个老朋友一样邀请他进屋来，并问他需不需要啤酒什么的。之后他们聊起了刚开始制毒时的 RV 旅行房车，吐槽那辆破车有多破，简直是场噩梦，每次遇到红灯都要祈祷不要在这时候出了岔子，吐槽车子的发动机动不动就吱嘎乱响，不知道的还以为碾死一笼子猫。还聊起了一起在野外制毒时发生的事情，有次车没油了，油表却一直显示还有一半，jesse 不得不提着便携油箱走了 3 英里&amp;hellip;&lt;/p>
 &lt;p>回忆起来还真是令人唏嘘不已，好喜欢他们之前的生活。&lt;/p>
-&lt;h3 id="season-5-episode-9----blood-money">Season 5 Episode 9 &amp;ndash; Blood Money&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-5-episode-9----blood-money">Season 5 Episode 9 &amp;ndash; Blood Money
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=o8gz-G55Dxo" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=o8gz-G55Dxo&lt;/a>&lt;/p>
 &lt;p>jesse 怀疑 walt 杀掉了 mike，因为他杀掉了监狱中 mike 的部下，不会留着 mike 这个活口。但白老师矢口否认，并坚称看到他开车离开了。&lt;/p>
@@ -260,8 +260,8 @@ to provide for his own family, okay? 照顾好自己的家人
 Jesse? 杰西&lt;br>
 I need you to believe me. 你得信任我&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="season-5-episode-11----confessions">Season 5 Episode 11 &amp;ndash; Confessions&lt;/h3>
-&lt;p>剧情回顾：https://www.youtube.com/watch?v=8Egkod8CPCU&lt;/p>
+&lt;h3 id="season-5-episode-11----confessions">Season 5 Episode 11 &amp;ndash; Confessions
+&lt;/h3>&lt;p>剧情回顾：https://www.youtube.com/watch?v=8Egkod8CPCU&lt;/p>
 &lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=qCHw77Iqwuk" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=qCHw77Iqwuk&lt;/a>&lt;/p>
@@ -347,11 +347,11 @@ I mean, isn&amp;rsquo;t that what this is all about? 不就是这么回事吗&lt
 Huh? Us meeting way the hell out here? 让我们在这个鬼地方见面&lt;br>
 In case I say no? 以防我拒绝&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="season-5-episode-13----tohajiilee">Season 5 Episode 13 &amp;ndash; To&amp;rsquo;hajiilee&lt;/h3>
-&lt;p>剧情回顾：https://www.youtube.com/watch?v=sE8ebm1IZmE&lt;/p>
+&lt;h3 id="season-5-episode-13----tohajiilee">Season 5 Episode 13 &amp;ndash; To&amp;rsquo;hajiilee
+&lt;/h3>&lt;p>剧情回顾：https://www.youtube.com/watch?v=sE8ebm1IZmE&lt;/p>
 &lt;p>白老师慌的一匹&lt;/p>
-&lt;h3 id="season-5-episode-14----ozymandias">Season 5 Episode 14 &amp;ndash; Ozymandias&lt;/h3>
-&lt;p>场景一：&lt;/p>
+&lt;h3 id="season-5-episode-14----ozymandias">Season 5 Episode 14 &amp;ndash; Ozymandias
+&lt;/h3>&lt;p>场景一：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=28kofqHQg6k&lt;/p>
 &lt;p>Hank 之死。&lt;/p>
 &lt;p>Hank Schrader：&lt;/p>
@@ -376,8 +376,8 @@ But I didn&amp;rsquo;t. 但我没有&lt;/p>
 &lt;p>场景三：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=eptjj2jSl2k&lt;/p>
 &lt;p>Skyler 也很聪明，知道对方在给她脱罪。正如 saul 所说，这通电话打完对她以后到法庭上很有利。&lt;/p>
-&lt;h3 id="season-5-episode-16----felina">Season 5 Episode 16 &amp;ndash; Felina&lt;/h3>
-&lt;p>场景一：&lt;/p>
+&lt;h3 id="season-5-episode-16----felina">Season 5 Episode 16 &amp;ndash; Felina
+&lt;/h3>&lt;p>场景一：&lt;/p>
 &lt;p>视频链接1：https://www.youtube.com/watch?v=1EehA6C8b4s
 视频链接2：https://www.youtube.com/watch?v=7l6u1FqGMuY&lt;/p>
 &lt;p>让大富豪”帮忙“把钱转移给家人，smart guy！&lt;/p>
@@ -486,13 +486,13 @@ Nothing happens until I hear you say it. 你不说我就不开枪&lt;/p>
 &lt;p>场景五：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=6AlEEcanbus&lt;/p>
 &lt;p>结尾白老师去了制毒现场，环顾那些熟悉的场景，摸了摸仪器，拿起了制毒时用的防毒面具，脸上的笑容看起来既欣慰又愉悦。这才是他这样的人应该待的地方！远方数辆警车带着警笛声赶来，白老师倒在了地上，身下白衣被一摊血迹浸染，镜头随即升高、升高。真的是艺术！&lt;/p>
-&lt;h3 id="结语">结语&lt;/h3>
-&lt;p>本来这篇文章一直到 S5E11 的部分我在去年九月份就写完了，由于之后 YouTuBe 官方一直没更 11 集后面的剧情回顾和精彩片段，缺少引用素材，因此就一直放下了。时隔一年，官方的 YouTuBe 频道上 14、15、16 还是没更新，所以只好在链接里引用了别人的剪辑，总而言之系列文章这个坑我还是补回来了hhh&lt;/p>
+&lt;h3 id="结语">结语
+&lt;/h3>&lt;p>本来这篇文章一直到 S5E11 的部分我在去年九月份就写完了，由于之后 YouTuBe 官方一直没更 11 集后面的剧情回顾和精彩片段，缺少引用素材，因此就一直放下了。时隔一年，官方的 YouTuBe 频道上 14、15、16 还是没更新，所以只好在链接里引用了别人的剪辑，总而言之系列文章这个坑我还是补回来了hhh&lt;/p>
 &lt;p>刚开始我只是想做个简单的回顾，一篇搞定。但看到里面精彩的台词对话，忍不住把他们全部搬出来细细品味，结果挖了个大坑，最终把五季的台词看了个遍，把里面我认为比较精彩的部分摘录出来共同组成了这五篇《细数 breaking bad 的经典片段》&lt;/p>
 &lt;p>时至今日，Better Call Saul 都已经更完到了第五季，还是同样的风格。Breaking Bad 也出了续集电影，讲述了 Jesse 开车逃出来之后的事情，惟一的遗憾是在续集中没听到 Skyler 及其子女的情况，如今他们住在哪里？生活得怎么样？前合伙人到底有没有把钱捐给 Skyler，如果捐了，Skyler有没有收下&amp;hellip;&lt;/p>
 &lt;p>上面那些疑问可能不会再有答案了，后面还是一起来期待后续 Better Call Saul 的精彩表现吧！&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
 >Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>The night king piano sheet</title><link>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</link><pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-night-king-piano-sheet/</guid><description>&lt;p>很喜欢 The night king 这首曲子，在 game of thrones 第八季里着实被惊艳到了，之后在油管上看钢琴版看了好多遍。迫于贫穷，买不起钢琴，只能拿这个 &lt;a class="link" href="https://www.autopiano.cn/" target="_blank" rel="noopener"
@@ -523,8 +523,8 @@ ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][P
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注：在有些资料中 Driver 项可能是 synaptics，这是旧的驱动，已经不再更新了。&lt;/p>
 &lt;p>上方的配置项有些可根据个人习惯来设置，例如：NaturalScrolling，TappingButtonMap，ScrollMethod&amp;hellip;它们还有一些其他的选项，可参考 &lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
 >libinput - libinput-based X.Org input driver&lt;/a>&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/index.php/Libinput" target="_blank" rel="noopener"
 >archlinux libinput&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
@@ -558,8 +558,8 @@ ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][P
 &lt;p>我想着重谈一下为什么我会认为第二点很重要。首先作为初创公司，规章制度不完善很正常，但不能没有。基础软硬件设施以及福利待遇是绝对不能缺的，起码应该达到市场水平甚至高于市场水平，毕竟大家都是要从什么都没有的情况下开始建立。关于需要一个有着优秀管理能力的技术大佬，这一点的非常重要，直接能决定公司是否能够存活。这是我这两天来亲身体会的得出的结论。&lt;/p>
 &lt;p>对于初创公司来说，现金流是否充足？项目是否有市场前景？公司能存活多久？&amp;hellip;是摆在公司面前的问题。对于员工来说，关心的大概就是是否能发得起工资？毕竟大家萍水相逢，员工也有自己的生活，没有人会有和公司共进退的意愿和决心。如果无人领导，团队就是一盘散沙。这样的团队是很危险的，任何一个来自内部或外部的变量都会击溃整个团队。因此就需要这样一位有着优秀的管理能力人带领团队，能够起到安抚人心，凝聚人心的作用。就像国家需要众多公务员，宣传国家政策，起到维稳的作用一样。&lt;/p>
 &lt;p>若是以前，我决不会提到，领导力，亲和力，感召力，凝聚力这样的词汇。在管理层大谈企业文化和凝聚力的时候，我也认为这些都是虚幻的，毫无意义的东西。真正的生产力，能给公司带来效益的，是底下真正在做事的人。但我发现我错了，他们才是灵魂所在，至少对于创业公司来说。&lt;/p>
-&lt;p>两天的时间里，我亲眼见证了一个生态系统的建立-毁灭-再重建的过程。亲历了公司从招人，到员工之间的意见交换以及对老板的质疑到最终离开，就像一场博弈。我参与了一场完美的“实验”，它足够真实。同时也再次印证那句话：不要轻易进入一个你不了解的领域。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 四</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
-&lt;ol>
+&lt;p>两天的时间里，我亲眼见证了一个生态系统的建立-毁灭-再重建的过程。亲历了公司从招人，到员工之间的意见交换以及对老板的质疑到最终离开，就像一场博弈。我参与了一场完美的“实验”，它足够真实。同时也再次印证那句话：不要轻易进入一个你不了解的领域。&lt;/p></description></item><item><title>细数 Breaking Bad 经典片段 | 四</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-4/</guid><description>&lt;h3 id="关联文章">关联文章
+&lt;/h3>&lt;ol>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
@@ -571,8 +571,8 @@ ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][P
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-4-episode-1----box-cutter">Season 4 Episode 1 &amp;ndash; Box Cutter&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-1----box-cutter">Season 4 Episode 1 &amp;ndash; Box Cutter
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=wGuHyy7qVcQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=wGuHyy7qVcQ&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -580,13 +580,13 @@ ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][P
 You kill Jesse, you don&amp;rsquo;t have me.&lt;/p>
 &lt;/blockquote>
 &lt;p>正如现在 Walt 所做的。之后的剧情里，Jesse 也会这样对他，即使双方之间产生了矛盾。&lt;/p>
-&lt;h3 id="season-4-episode-2----thirty-eight-snub">Season 4 Episode 2 &amp;ndash; Thirty-Eight Snub&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-2----thirty-eight-snub">Season 4 Episode 2 &amp;ndash; Thirty-Eight Snub
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=JkPf7MSdm-A" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=JkPf7MSdm-A&lt;/a>&lt;/p>
 &lt;p>前传中的 Mike 是一个连路人被毒贩枪杀都要去复仇的、富有正义感的人，却在第四季中为 Gus 做事中出手杀掉了逃跑的工程师。这是不是也是一种 Breaking Bad 呢？&lt;/p>
-&lt;h3 id="season-4-episode-4----bullet-points">Season 4 Episode 4 &amp;ndash; Bullet Points&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-4----bullet-points">Season 4 Episode 4 &amp;ndash; Bullet Points
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=0v0VR6Kf7KQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=0v0VR6Kf7KQ&lt;/a>&lt;/p>
 &lt;p>Gale 是个有趣的人，可惜死的太早了。再附一个&lt;a class="link" href="https://www.youtube.com/watch?v=o24g21iJmRM" target="_blank" rel="noopener"
@@ -594,8 +594,8 @@ You kill Jesse, you don&amp;rsquo;t have me.&lt;/p>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=GpyUGiyeSFg&lt;/p>
 &lt;p>&amp;ldquo;To W.W. My star, my perfect silence.&amp;rdquo;&lt;/p>
-&lt;h3 id="season-4-episode-9----bug">Season 4 Episode 9 &amp;ndash; Bug&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-9----bug">Season 4 Episode 9 &amp;ndash; Bug
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=jM6pNUfT6fo" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=jM6pNUfT6fo&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -617,13 +617,13 @@ You kill Mr. White, you&amp;rsquo;re gonna have to kill me too.&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=2bsxH-L1v7c" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=2bsxH-L1v7c&lt;/a>&lt;/p>
 &lt;p>没什么好说的，Breaking Bad 每个场景都很好看，忍不住放出来。&lt;/p>
-&lt;h3 id="season-4-episode-10----salud">Season 4 Episode 10 &amp;ndash; Salud&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-10----salud">Season 4 Episode 10 &amp;ndash; Salud
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=4kyxZI1UCKM" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=4kyxZI1UCKM&lt;/a>&lt;/p>
 &lt;p>Jesse 的气场。Gus 的表情好像要笑，一种很欣慰，很为 Jesse 骄傲的感觉。&lt;/p>
-&lt;h3 id="season-4-episode-11----crawl-space">Season 4 Episode 11 &amp;ndash; Crawl Space&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-11----crawl-space">Season 4 Episode 11 &amp;ndash; Crawl Space
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=xpgfENjlcQM" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=xpgfENjlcQM&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -653,8 +653,8 @@ we are going to have a problem.&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=Jf8GaDkFm3E" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=Jf8GaDkFm3E&lt;/a>&lt;/p>
 &lt;p>白老师演的真棒，笑声里充满了绝望。(莫名压上了韵)&lt;/p>
-&lt;h3 id="season-4-episode-12----end-times">Season 4 Episode 12 &amp;ndash; End Times&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-12----end-times">Season 4 Episode 12 &amp;ndash; End Times
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=HutGXmWzZhA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=HutGXmWzZhA&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -679,8 +679,8 @@ No more prolonging the inevitable.&lt;/li>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=jUnx04T7e4U" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=jUnx04T7e4U&lt;/a>&lt;/p>
 &lt;p>剧情按照老白的剧本发展，成功策反了他，白老师已经变身为大 Boss 了。&lt;/p>
-&lt;h3 id="season-4-episode-13----face-off">Season 4 Episode 13 &amp;ndash; Face Off&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-4-episode-13----face-off">Season 4 Episode 13 &amp;ndash; Face Off
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=MybaTnzu9AA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=MybaTnzu9AA&lt;/a>&lt;/p>
 &lt;p>据说最后 Gus 半张脸走出房间的场景是拜托&lt;a class="link" href="https://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29" target="_blank" rel="noopener"
@@ -693,8 +693,8 @@ No more prolonging the inevitable.&lt;/li>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=-X4wWbBGvtQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=-X4wWbBGvtQ&lt;/a>&lt;/p>
 &lt;p>I won.&lt;/p>
-&lt;h3 id="结语">结语&lt;/h3>
-&lt;p>精彩的表演，紧张刺激的剧情，真是令人拍案叫绝。对老白即将到来的“Consequences”，不仅像一个石头一样重重地压在老白的身上，也压在观众的心上。当 Gus 死后，压抑低沉的氛围转变为轻松欢快的快节奏音乐，一切都变的云淡风轻，一切都将随风而逝。&lt;/p>
+&lt;h3 id="结语">结语
+&lt;/h3>&lt;p>精彩的表演，紧张刺激的剧情，真是令人拍案叫绝。对老白即将到来的“Consequences”，不仅像一个石头一样重重地压在老白的身上，也压在观众的心上。当 Gus 死后，压抑低沉的氛围转变为轻松欢快的快节奏音乐，一切都变的云淡风轻，一切都将随风而逝。&lt;/p>
 &lt;p>在天台上，Pinkman 告诉 Walt：&lt;/p>
 &lt;blockquote>
 &lt;p>So Gus didn&amp;rsquo;t poison him after all.&lt;br>
@@ -708,12 +708,12 @@ Gus had to go.&lt;/p>
 &lt;/blockquote>
 &lt;p>Pinkman 得知 Gus 并没有下毒后，反而有一些内疚，有些犹豫。善良如 Pinkman，他不知道杀死 Gus 是不是一件正确的事情，于是有了这段对话。在得到肯定的答复后，内心反而有了支持。纵观 Jesse 的过去，他一直都不是个主观意识很强的人。他希望得到别人的认可，当他独自制了一批货，去找白老师评价时，告诉白老师他严格按照步骤进行，仔细把控了每项指标，白老师告诉他他的货是个垃圾。当和 Mike 一起共事后，Mike 经常叫他 Kid，也很认可他，他觉得和 Mike 很亲近。&lt;/p>
 &lt;p>总之，他没有白老师那样的心计，他的冲动和鲁莽也会被人利用，被人耍的团团转。他是个小人物，也是一个不可或缺的重要角色。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
 >Breaking Bad&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 三</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</guid><description>&lt;h3 id="关联文章">关联文章&lt;/h3>
-&lt;ol>
+&lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 三</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-3/</guid><description>&lt;h3 id="关联文章">关联文章
+&lt;/h3>&lt;ol>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
@@ -725,18 +725,18 @@ Gus had to go.&lt;/p>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-3-episode-1----no-mas">Season 3 Episode 1 &amp;ndash; No Mas&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-1----no-mas">Season 3 Episode 1 &amp;ndash; No Mas
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=5-8FB6k8jik" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=5-8FB6k8jik&lt;/a>&lt;/p>
 &lt;p>Walt 真是个天生的演讲家，他的演讲总是有一种很舒服的感觉，节奏控制的很好。&lt;/p>
-&lt;h3 id="season-3-episode-6----sunset">Season 3 Episode 6 &amp;ndash; Sunset&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-6----sunset">Season 3 Episode 6 &amp;ndash; Sunset
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=s3zqUPoVmb0" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=s3zqUPoVmb0&lt;/a>&lt;/p>
 &lt;p>这段也很经典，Hank 将 Walt 和 Jesse 堵在车里的场景。&lt;/p>
-&lt;h3 id="season-3-episode-7----one-minute">Season 3 Episode 7 &amp;ndash; One Minute&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-7----one-minute">Season 3 Episode 7 &amp;ndash; One Minute
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=yp2G586zOEE" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=yp2G586zOEE&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -750,24 +750,24 @@ You don&amp;rsquo;t give a shit about me.&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=BBs_Tw-whVs" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=BBs_Tw-whVs&lt;/a>&lt;/p>
 &lt;p>这一段 Hank 超帅，要知道在前传 &amp;lt; better call saul &amp;gt; 那哥俩俩人端了一窝毒贩，很是犀利。在这里联手却被反杀。&lt;/p>
-&lt;h3 id="season-3-episode-8----i-see-you">Season 3 Episode 8 &amp;ndash; I See You&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-8----i-see-you">Season 3 Episode 8 &amp;ndash; I See You
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=sl0tZDoLw6E" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=sl0tZDoLw6E&lt;/a>&lt;/p>
 &lt;p>Have fun!&lt;/p>
-&lt;h3 id="season-3-episode-10----fly">Season 3 Episode 10 &amp;ndash; Fly&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-10----fly">Season 3 Episode 10 &amp;ndash; Fly
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=QY07i4CPJpQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=QY07i4CPJpQ&lt;/a>&lt;/p>
 &lt;p>据说建那个超级地下制毒室花了不少钱，在拍这一集的时候已经没有预算了，因此主角们的活动只能在这个制毒室展开。大家都在说 Walt 打了一整集的苍蝇，看着都要睡着了。不过我倒没这么觉得，在我不知道它是因为预算不足而被迫如此的产物之前，我依然看得很投入，依然期待接下来会如何发展。尤其是之后 Walt 提到在坠机前的一个晚上，在酒吧遇到了 Jane 的父亲，跟他聊到了家庭，他告诉 Walt 永远不要放弃你的家人。当然此时 Jesse 也不知道 Walt 说的家人就是他。之后在他意识逐渐模糊时告诉 Jesse 他对 Jane 事情很抱歉。我当时真以为他就这样告诉了 Jesse。然而没有，他睡着了。编剧安排的太巧妙了！&lt;/p>
-&lt;h3 id="season-3-episode-12----half-measures">Season 3 Episode 12 &amp;ndash; Half Measures&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-12----half-measures">Season 3 Episode 12 &amp;ndash; Half Measures
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=IpJjBhd9uEc" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=IpJjBhd9uEc&lt;/a>&lt;/p>
 &lt;p>从最开始去那吸毒家庭要钱，家里只有个饿着肚子的小孩，Jesse 给他弄了点吃得，还耐心的陪他玩。当小孩父母回到家后，Jesse 还细心的把小孩送进里屋。还质问他们“你们算什么父母”。小孩的母亲杀掉他父亲后，Jesse 还哄他闭上眼睛，抱着他出了家门，不想让他看到这种事。之后遇到了 Andrea，当得知 Andrea 有个孩子时，也放弃了向他出售冰毒，Andrea 问他有没有冰毒时，Jesse 马上变得很生气，也同样问出了那句话“你算什么母亲”。直到现在 Gus 的手下利用小孩，在那种形势下他也拒绝握手言和，并站起来质问 Gus 的人品。&lt;/p>
 &lt;p>Jesse 一直在保护小孩，这可能与他的个人成长有关。他这个特点使得后期 Walt 利用它策反 Jesse 一起对付 Gus，但也最终导致了后期 Walt 的大型翻车现场。顺便说一句，Walt 的成长速度简直恐怖，如果不是愤怒，此时的 Jesse 根本不敢杀人，而且至今为止 Jesse 还没杀过人，而现在的 Walt 看起来近距离杀人也不会有很大的反应。&lt;/p>
-&lt;h3 id="season-3-episode-13----full-measures">Season 3 Episode 13 &amp;ndash; Full Measures&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-3-episode-13----full-measures">Season 3 Episode 13 &amp;ndash; Full Measures
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=KSSNXdNXcnw" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=KSSNXdNXcnw&lt;/a>&lt;/p>
 &lt;p>紧张又刺激，Jesse 听完毫不犹豫拿起枪就冲了出去，他们俩真是一对天生的 partner&lt;/p>
@@ -777,18 +777,18 @@ You don&amp;rsquo;t give a shit about me.&lt;/p>
 &lt;p>这是 Jesse 第一次杀人，Gale Boetticher，他没做错什么，但是却必须死。&lt;/p>
 &lt;p>附一个 &amp;lt; better call saul &amp;gt; 里的 &lt;a class="link" href="https://www.youtube.com/watch?v=90pYh8xw8gk" target="_blank" rel="noopener"
 >Gale&lt;/a>，真是很有趣的化学家，一如前传中的那样，喜欢唱，跳，rapper&amp;hellip;没有篮球。&lt;/p>
-&lt;h3 id="结语">结语&lt;/h3>
-&lt;p>本季从 Walt 开始和 Gus 合作到关系几近破裂，唯有利益关系使得各自还在勉强维持。本季中的 Jesse 从获得了爱情到之后的“had nothing”，最终使得 Jesse 戒除了吸毒。&lt;/p>
+&lt;h3 id="结语">结语
+&lt;/h3>&lt;p>本季从 Walt 开始和 Gus 合作到关系几近破裂，唯有利益关系使得各自还在勉强维持。本季中的 Jesse 从获得了爱情到之后的“had nothing”，最终使得 Jesse 戒除了吸毒。&lt;/p>
 &lt;p>如果没有 Walt，Jesse 可能还会是一个和朋友厮混，时而吸毒，时而制造一些残次的冰毒的街头小混混，一个普通人，一个 “Kid”。他没有 Walt 那种坚忍，适应环境并不断成长的能力，他只能在愤怒的时候说出“你从来没有关心过我”。&lt;/p>
 &lt;p>他和 Walt 都有各自的处事原则，而在内心深处又对对方都留有最基本的信任。因此即使病床上的 Jesse 愤怒的说它会揭发 Walt，而 Walt 仍然告诉 Saul 他不会这么做。这不止是因为他们之间都了解对方，也源于长久制毒以来所建立的信任。在之后的剧情中，Jesse 问 Mike，Gus 从他身上看到了什么？ Mike 回答说，我想可能是忠诚吧。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
 >Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 二</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</link><pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2/</guid><description>&lt;p>Breaking Bad 的&lt;a class="link" href="https://twitter.com/BreakingBad/status/1165405442039676928" target="_blank" rel="noopener"
 >电影&lt;/a>要出了，后续剧情，哇，好激动！！&lt;/p>
-&lt;h3 id="关联文章">关联文章&lt;/h3>
-&lt;ol>
+&lt;h3 id="关联文章">关联文章
+&lt;/h3>&lt;ol>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
@@ -800,19 +800,19 @@ You don&amp;rsquo;t give a shit about me.&lt;/p>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-2-episode-1----seven-thirty-seven">Season 2 Episode 1 &amp;ndash; Seven Thirty-Seven&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-1----seven-thirty-seven">Season 2 Episode 1 &amp;ndash; Seven Thirty-Seven
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=2KjLjSD2yZA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=2KjLjSD2yZA&lt;/a>&lt;/p>
 &lt;p>正如本集标题，$737,000，这是他们一家 10 年的生活费，剩余的房贷，两个孩子四年的大学学费。知道自己可能命不久矣，他希望临死前给家里留一笔钱，这也是最开始 walter white 制毒的目标和动力。&lt;/p>
-&lt;h3 id="season-2-episode-2----grilled">Season 2 Episode 2 &amp;ndash; Grilled&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-2----grilled">Season 2 Episode 2 &amp;ndash; Grilled
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=GVVtOYR7Do4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=GVVtOYR7Do4&lt;/a>&lt;/p>
 &lt;p>Don Hector Salamanca 的第一次出场，他这个名字我觉得好听。Twitter 上还找到了&lt;a class="link" href="https://twitter.com/h_salamanca?lang=en" target="_blank" rel="noopener"
 >这个&lt;/a>2333，前传 &amp;lt; better call saul &amp;gt; 里面交代了他为什么变成这样。本集 Hank 和 Tuco 交火最终击毙了 Tuco。&lt;/p>
-&lt;h3 id="season-2-episode-3----bit-by-a-dead-bee">Season 2 Episode 3 &amp;ndash; Bit by a Dead Bee&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-3----bit-by-a-dead-bee">Season 2 Episode 3 &amp;ndash; Bit by a Dead Bee
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=u3qBYJ2Qgvs" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=u3qBYJ2Qgvs&lt;/a>&lt;/p>
 &lt;blockquote>
@@ -821,26 +821,26 @@ Look at this dude.&lt;br>
 He doesn&amp;rsquo;t even know what planet he&amp;rsquo;s living on.&lt;/p>
 &lt;/blockquote>
 &lt;p>这段也比较搞笑。&lt;/p>
-&lt;h3 id="season-2-episode-6----peekaboo">Season 2 Episode 6 &amp;ndash; Peekaboo&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-6----peekaboo">Season 2 Episode 6 &amp;ndash; Peekaboo
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=FF30TJPK3Lk" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=FF30TJPK3Lk&lt;/a>&lt;/p>
 &lt;p>Where&amp;rsquo;s my money, bitch?&lt;/p>
 &lt;p>附带一个采访 Aaron 的&lt;a class="link" href="https://www.youtube.com/watch?v=UlmviSx09HA" target="_blank" rel="noopener"
 >视频&lt;/a>.&lt;/p>
-&lt;h3 id="season-2-episode-8----better-call-saul">Season 2 Episode 8 &amp;ndash; Better Call Saul&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-8----better-call-saul">Season 2 Episode 8 &amp;ndash; Better Call Saul
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=dryYPhnvIWw" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=dryYPhnvIWw&lt;/a>&lt;/p>
 &lt;p>终于出现了！Saul Goodman！原名 Jimmy McGill(全名：James Morgan McGill)，他哥哥 Chuck McGill(全名：Charles Lindbergh McGill)唱歌很好听，在前传 &amp;lt; better call saul &amp;gt; 中和 Jimmy 合唱的一首 &lt;a class="link" href="https://www.youtube.com/watch?v=qll7hCYFNjs" target="_blank" rel="noopener"
 >The Winner Takes It All&lt;/a> 很好听。&lt;/p>
-&lt;h3 id="season-2-episode-11----mandala">Season 2 Episode 11 &amp;ndash; Mandala&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-11----mandala">Season 2 Episode 11 &amp;ndash; Mandala
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=W5_HZ7d2xWc" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=W5_HZ7d2xWc&lt;/a>&lt;/p>
 &lt;p>又一个 Boss 出场了，Gustavo Fring！随着自建销售网络的失败，最终老白找上了商人 Gus。出了一个坑，随后跳进另一个坑，老白此时不知道的是，死亡的阴影又将再次笼罩向他。&lt;/p>
-&lt;h3 id="season-2-episode-12----phoenix">Season 2 Episode 12 &amp;ndash; Phoenix&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-2-episode-12----phoenix">Season 2 Episode 12 &amp;ndash; Phoenix
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=-kyNBaoCvL8" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=-kyNBaoCvL8&lt;/a>&lt;/p>
 &lt;p>剧中 Walter White Jr. 给他父亲做的&lt;a class="link" href="http://www.savewalterwhite.com/" target="_blank" rel="noopener"
@@ -853,18 +853,18 @@ Family.&lt;br>
 You can&amp;rsquo;t give up on them. Never.&lt;/p>
 &lt;/blockquote>
 &lt;p>这使得 Walt 回去找 Jesse，推了推 Jesse，未能叫醒，反而她的女友 Jane 睡姿从侧卧被推开成了仰面朝上，Jane 被口中呕吐物呛到时，Walt 想要救她但最后还是停止了，Jane 最终因口中呕吐物窒息而死。&lt;/p>
-&lt;h3 id="结语">结语&lt;/h3>
-&lt;p>从另一方面来讲，入了 Gus 的坑也使得 Salamanca 家族的人没能杀掉他，也是好事。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h3 id="结语">结语
+&lt;/h3>&lt;p>从另一方面来讲，入了 Gus 的坑也使得 Salamanca 家族的人没能杀掉他，也是好事。&lt;/p>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
 >Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 一</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</link><pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</guid><description>&lt;p>Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p>
 &lt;blockquote>
 &lt;p>The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="关联文章">关联文章&lt;/h3>
-&lt;ol>
+&lt;h3 id="关联文章">关联文章
+&lt;/h3>&lt;ol>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 一&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-2" target="_blank" rel="noopener"
@@ -876,8 +876,8 @@ You can&amp;rsquo;t give up on them. Never.&lt;/p>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-1-episode-1----pilot">Season 1 Episode 1 &amp;ndash; Pilot&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-1-episode-1----pilot">Season 1 Episode 1 &amp;ndash; Pilot
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=syrW-M41O3U" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a>&lt;/p>
 &lt;p>这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论：&lt;/p>
@@ -888,8 +888,8 @@ You can&amp;rsquo;t give up on them. Never.&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=6zgggVRvrd0" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=6zgggVRvrd0&lt;/a>&lt;/p>
 &lt;p>他在车里仰起头，笑着问 Mr.white 为什么要做这个。事实上这一个场景才让我真正开始注意 Aaron（饰 Jesse Pinkman）。正如在后面的剧情里，加油站女孩对他的描述是“He had really blue eyes.”，“They were really, really blue.”，“He&amp;rsquo;s dreamy.”，Hank总结道。&lt;/p>
-&lt;h3 id="season-1-episode-3----and-the-bags-in-the-river">Season 1 Episode 3 &amp;ndash; &amp;hellip;And the Bag&amp;rsquo;s in the River&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-1-episode-3----and-the-bags-in-the-river">Season 1 Episode 3 &amp;ndash; &amp;hellip;And the Bag&amp;rsquo;s in the River
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=bBRwg5Lpfa0" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=bBRwg5Lpfa0&lt;/a>&lt;/p>
 &lt;p>walter 无法克服心里的障碍，拼命在找不杀 crazy 8 的理由，哪怕只有一点点，甚至于最后直接问他本人，让他找一个理由说服自己。在之后的聚集里，他的儿子在他的网站里：http://www.savewalterwhite.com/ 以及面对记者采访中说他的父亲是一个非常聪明且心地善良的人，包括 Gretchen Schwartz 在第五季的第15集对 walt 评价道：&lt;/p>
@@ -909,23 +909,23 @@ why are you doing this?&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=aGY4T_Vp8cA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=aGY4T_Vp8cA&lt;/a>&lt;/p>
 &lt;p>事到如今，为了自保白老师不得不杀了他。在看到 crazy 8 伸手探向腰间的时候，白老师眼泪都掉下来了，这是一个无可挽回的决定。这是 walt 第一次近距离亲自动手用物理方式杀人。&lt;/p>
-&lt;h3 id="season-1-episode-4----cancer-man">Season 1 Episode 4 &amp;ndash; Cancer Man&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-1-episode-4----cancer-man">Season 1 Episode 4 &amp;ndash; Cancer Man
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=fI52h9YZ-bI" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=fI52h9YZ-bI&lt;/a>&lt;/p>
 &lt;p>这老哥也是倒霉，在前传 &amp;lt; better call saul &amp;gt; 中就被 Jimmy 和 Kim 骗了一次，在这里又被 Walt 搞，蛤蛤蛤。&lt;/p>
-&lt;h3 id="season-1-episode-5----gray-matter">Season 1 Episode 5 &amp;ndash; Gray Matter&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-1-episode-5----gray-matter">Season 1 Episode 5 &amp;ndash; Gray Matter
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=35gWXV3y53s" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=35gWXV3y53s&lt;/a>&lt;/p>
 &lt;p>家庭会议中，walt 的演讲。其他人的演讲也很棒，可惜没找到完整的演讲视频，Hank 看起来也很萌233&lt;/p>
-&lt;h3 id="season-1-episode-6----crazy-handful-of-nothin">Season 1 Episode 6 &amp;ndash; Crazy Handful of Nothin'&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-1-episode-6----crazy-handful-of-nothin">Season 1 Episode 6 &amp;ndash; Crazy Handful of Nothin'
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=4IAXG9rj9WQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=4IAXG9rj9WQ&lt;/a>&lt;/p>
 &lt;p>jesse 被 tuco 打了，白老师带着雷汞酸盐去报仇。&lt;/p>
-&lt;h3 id="season-1-episode-7----a-no-rough-stuff-type-deal">Season 1 Episode 7 &amp;ndash; A No-Rough-Stuff-Type Deal&lt;/h3>
-&lt;p>场景1：&lt;/p>
+&lt;h3 id="season-1-episode-7----a-no-rough-stuff-type-deal">Season 1 Episode 7 &amp;ndash; A No-Rough-Stuff-Type Deal
+&lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=am_6X_B0OPE" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=am_6X_B0OPE&lt;/a>&lt;/p>
 &lt;p>白老师给 jesse 科普铝热剂。&lt;/p>
@@ -933,10 +933,10 @@ why are you doing this?&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=tJpfokxtr7c" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=tJpfokxtr7c&lt;/a>&lt;/p>
 &lt;p>walt 自制铝热剂开锁，和 jesse 一起去偷甲氨。&lt;/p>
-&lt;h3 id="结语">结语&lt;/h3>
-&lt;p>还是第一季看起来欢乐的多啊，到了后面几乎既不怎么能看到 Walter White 和 Jesse Pinkman 的笑容了。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h3 id="结语">结语
+&lt;/h3>&lt;p>还是第一季看起来欢乐的多啊，到了后面几乎既不怎么能看到 Walter White 和 Jesse Pinkman 的笑容了。&lt;/p>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Breaking_Bad" target="_blank" rel="noopener"
 >Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Einstein's five-houses riddle</title><link>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</link><pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/einsteins-five-houses-riddle/</guid><description>&lt;p>最近看到一篇发布在 v2ex &lt;a class="link" href="https://www.v2ex.com/t/585712" target="_blank" rel="noopener"
@@ -946,16 +946,16 @@ why are you doing this?&lt;/p>
 &lt;p>之后我也来尝试不借助纸笔来推理一下那道&lt;a class="link" href="https://udel.edu/~os/riddle.html" target="_blank" rel="noopener"
 >谜题&lt;/a>。结果完全失败了，不借助纸笔只能做到把房子排列的颜色列出来，还有一些附带的零碎信息。之后只能借助纸笔，将它完全画了出来，我来说一下我的思路：&lt;/p>
 &lt;p>原题摘抄如下：&lt;/p>
-&lt;h3 id="the-situation">The situation&lt;/h3>
-&lt;ol>
+&lt;h3 id="the-situation">The situation
+&lt;/h3>&lt;ol>
 &lt;li>There are 5 houses in five different colors.&lt;/li>
 &lt;li>In each house lives a person with a different nationality.&lt;/li>
 &lt;li>These five owners drink a certain type of beverage, smoke a certain brand of cigar and keep a certain pet.&lt;/li>
 &lt;li>No owners have the same pet, smoke the same brand of cigar or drink the same beverage.&lt;/li>
 &lt;/ol>
 &lt;p>The question is: Who owns the fish?&lt;/p>
-&lt;h3 id="hints">Hints&lt;/h3>
-&lt;ul>
+&lt;h3 id="hints">Hints
+&lt;/h3>&lt;ul>
 &lt;li>the Brit lives in the red house&lt;/li>
 &lt;li>the Swede keeps dogs as pets&lt;/li>
 &lt;li>the Dane drinks tea&lt;/li>
@@ -973,8 +973,8 @@ why are you doing this?&lt;/p>
 &lt;li>the man who smokes blend has a neighbor who drinks water&lt;/li>
 &lt;/ul>
 &lt;p>Einstein wrote this riddle this century. He said that 98% of the world could not solve it.&lt;/p>
-&lt;h3 id="the-solution">The solution&lt;/h3>
-&lt;p>由上文可知，房子一共有 red，green，white，yellow，blue 五种颜色。&lt;/p>
+&lt;h3 id="the-solution">The solution
+&lt;/h3>&lt;p>由上文可知，房子一共有 red，green，white，yellow，blue 五种颜色。&lt;/p>
 &lt;blockquote>
 &lt;p>he Norwegian lives in the first house&lt;br>
 the Norwegian lives next to the blue house&lt;/p>
@@ -994,54 +994,54 @@ the man living in the center house drinks milk&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">House&lt;/th>
-&lt;th style="text-align:center">1&lt;/th>
-&lt;th style="text-align:center">2&lt;/th>
-&lt;th style="text-align:center">3&lt;/th>
-&lt;th style="text-align:center">4&lt;/th>
-&lt;th style="text-align:center">5&lt;/th>
+&lt;th style="text-align: center">House&lt;/th>
+&lt;th style="text-align: center">1&lt;/th>
+&lt;th style="text-align: center">2&lt;/th>
+&lt;th style="text-align: center">3&lt;/th>
+&lt;th style="text-align: center">4&lt;/th>
+&lt;th style="text-align: center">5&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">Color&lt;/td>
-&lt;td style="text-align:center">Yellow&lt;/td>
-&lt;td style="text-align:center">Blue&lt;/td>
-&lt;td style="text-align:center">Red&lt;/td>
-&lt;td style="text-align:center">Green&lt;/td>
-&lt;td style="text-align:center">White&lt;/td>
+&lt;td style="text-align: center">Color&lt;/td>
+&lt;td style="text-align: center">Yellow&lt;/td>
+&lt;td style="text-align: center">Blue&lt;/td>
+&lt;td style="text-align: center">Red&lt;/td>
+&lt;td style="text-align: center">Green&lt;/td>
+&lt;td style="text-align: center">White&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Natl&lt;/td>
-&lt;td style="text-align:center">Norwegian&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">Brit&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Natl&lt;/td>
+&lt;td style="text-align: center">Norwegian&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Brit&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Bevg&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Bevg&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Smokes&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Smokes&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Pet&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Pet&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1057,54 +1057,54 @@ the man who keeps horses lives next to the man who smokes Dunhill&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">House&lt;/th>
-&lt;th style="text-align:center">1&lt;/th>
-&lt;th style="text-align:center">2&lt;/th>
-&lt;th style="text-align:center">3&lt;/th>
-&lt;th style="text-align:center">4&lt;/th>
-&lt;th style="text-align:center">5&lt;/th>
+&lt;th style="text-align: center">House&lt;/th>
+&lt;th style="text-align: center">1&lt;/th>
+&lt;th style="text-align: center">2&lt;/th>
+&lt;th style="text-align: center">3&lt;/th>
+&lt;th style="text-align: center">4&lt;/th>
+&lt;th style="text-align: center">5&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">Color&lt;/td>
-&lt;td style="text-align:center">Yellow&lt;/td>
-&lt;td style="text-align:center">Blue&lt;/td>
-&lt;td style="text-align:center">Red&lt;/td>
-&lt;td style="text-align:center">Green&lt;/td>
-&lt;td style="text-align:center">White&lt;/td>
+&lt;td style="text-align: center">Color&lt;/td>
+&lt;td style="text-align: center">Yellow&lt;/td>
+&lt;td style="text-align: center">Blue&lt;/td>
+&lt;td style="text-align: center">Red&lt;/td>
+&lt;td style="text-align: center">Green&lt;/td>
+&lt;td style="text-align: center">White&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Natl&lt;/td>
-&lt;td style="text-align:center">Norwegian&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">Brit&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Natl&lt;/td>
+&lt;td style="text-align: center">Norwegian&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Brit&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Bevg&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">Milk&lt;/td>
-&lt;td style="text-align:center">Coffee&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Bevg&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Milk&lt;/td>
+&lt;td style="text-align: center">Coffee&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Smokes&lt;/td>
-&lt;td style="text-align:center">Dunhill&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Smokes&lt;/td>
+&lt;td style="text-align: center">Dunhill&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Pet&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">Horse&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">Pet&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">Horse&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1138,54 +1138,54 @@ the Dane drinks tea&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">House&lt;/th>
-&lt;th style="text-align:center">1&lt;/th>
-&lt;th style="text-align:center">2&lt;/th>
-&lt;th style="text-align:center">3&lt;/th>
-&lt;th style="text-align:center">4&lt;/th>
-&lt;th style="text-align:center">5&lt;/th>
+&lt;th style="text-align: center">House&lt;/th>
+&lt;th style="text-align: center">1&lt;/th>
+&lt;th style="text-align: center">2&lt;/th>
+&lt;th style="text-align: center">3&lt;/th>
+&lt;th style="text-align: center">4&lt;/th>
+&lt;th style="text-align: center">5&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">Color&lt;/td>
-&lt;td style="text-align:center">Yellow&lt;/td>
-&lt;td style="text-align:center">Blue&lt;/td>
-&lt;td style="text-align:center">Red&lt;/td>
-&lt;td style="text-align:center">Green&lt;/td>
-&lt;td style="text-align:center">White&lt;/td>
+&lt;td style="text-align: center">Color&lt;/td>
+&lt;td style="text-align: center">Yellow&lt;/td>
+&lt;td style="text-align: center">Blue&lt;/td>
+&lt;td style="text-align: center">Red&lt;/td>
+&lt;td style="text-align: center">Green&lt;/td>
+&lt;td style="text-align: center">White&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Natl&lt;/td>
-&lt;td style="text-align:center">Norwegian&lt;/td>
-&lt;td style="text-align:center">Dane&lt;/td>
-&lt;td style="text-align:center">Brit&lt;/td>
-&lt;td style="text-align:center">German&lt;/td>
-&lt;td style="text-align:center">Swede&lt;/td>
+&lt;td style="text-align: center">Natl&lt;/td>
+&lt;td style="text-align: center">Norwegian&lt;/td>
+&lt;td style="text-align: center">Dane&lt;/td>
+&lt;td style="text-align: center">Brit&lt;/td>
+&lt;td style="text-align: center">German&lt;/td>
+&lt;td style="text-align: center">Swede&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">beverages&lt;/td>
-&lt;td style="text-align:center">Water&lt;/td>
-&lt;td style="text-align:center">Tea&lt;/td>
-&lt;td style="text-align:center">Milk&lt;/td>
-&lt;td style="text-align:center">Coffee&lt;/td>
-&lt;td style="text-align:center">Beer&lt;/td>
+&lt;td style="text-align: center">beverages&lt;/td>
+&lt;td style="text-align: center">Water&lt;/td>
+&lt;td style="text-align: center">Tea&lt;/td>
+&lt;td style="text-align: center">Milk&lt;/td>
+&lt;td style="text-align: center">Coffee&lt;/td>
+&lt;td style="text-align: center">Beer&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Smokes&lt;/td>
-&lt;td style="text-align:center">Dunhill&lt;/td>
-&lt;td style="text-align:center">Blends&lt;/td>
-&lt;td style="text-align:center">Pall Mall&lt;/td>
-&lt;td style="text-align:center">Prince&lt;/td>
-&lt;td style="text-align:center">Blue Master&lt;/td>
+&lt;td style="text-align: center">Smokes&lt;/td>
+&lt;td style="text-align: center">Dunhill&lt;/td>
+&lt;td style="text-align: center">Blends&lt;/td>
+&lt;td style="text-align: center">Pall Mall&lt;/td>
+&lt;td style="text-align: center">Prince&lt;/td>
+&lt;td style="text-align: center">Blue Master&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">Pet&lt;/td>
-&lt;td style="text-align:center">Cat&lt;/td>
-&lt;td style="text-align:center">Horse&lt;/td>
-&lt;td style="text-align:center">Birds&lt;/td>
-&lt;td style="text-align:center">Fish&lt;/td>
-&lt;td style="text-align:center">Dogs&lt;/td>
+&lt;td style="text-align: center">Pet&lt;/td>
+&lt;td style="text-align: center">Cat&lt;/td>
+&lt;td style="text-align: center">Horse&lt;/td>
+&lt;td style="text-align: center">Birds&lt;/td>
+&lt;td style="text-align: center">Fish&lt;/td>
+&lt;td style="text-align: center">Dogs&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>关于想象力</title><link>https://ireflux.github.io/snow/post/about-imagination/</link><pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/about-imagination/</guid><description>&lt;p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p>
@@ -1219,8 +1219,8 @@ the Dane drinks tea&lt;/p>
 &lt;p>看了看发现大家比较推荐 yay，自己 &lt;code>makepkg -si&lt;/code> 的话确实会麻烦一点，想了一下还是换成了 yay。另一方面 archlinuxcn 源也能解决不少 aur 里的东西，于是再次添加上了 archlinuxcn 源。&lt;/p>
 &lt;p>不得不说 wps for linux 新版本 UI 变漂亮了好多。&lt;/p>
 &lt;p>嗯，真香。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://www.v2ray.com/" target="_blank" rel="noopener"
 >Project V&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Sticky_bit" target="_blank" rel="noopener"
@@ -1259,16 +1259,16 @@ the Dane drinks tea&lt;/p>
 &lt;p>When I saw 20s people encounter problems, they could handled it very well. They seem to know everything. So I thought I can do this like them when I 20s. At that time, I will no need anyone to ask for help.&lt;/p>
 &lt;p>Now I&amp;rsquo;m 22. I fount I still can&amp;rsquo;t make a choice right now for difficult things. I still don&amp;rsquo;t know how to do is right. I am trying to find a perfect way to slove difficult question in the life, there may not be a &amp;lsquo;perfect&amp;rsquo; way at all. I have also seen some 30s people ask some question or chat on forum, sometimes I can feel their negative emotions. Obviously, they can&amp;rsquo;t solve all the problems either. There is a saying in the Chinese Analects：三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲，不逾矩。Can really no doubt at forty? I don&amp;rsquo;t think so. This question may be when I 40 years old, then I will be know.&lt;/p>
 &lt;p>Every adult is a child, they can&amp;rsquo;t slove everything problem. they are also need keep learning. Everyone is the same. The difference with children is that the older the more difficult to be forgiven if make a same mistake. The cost of mistakes will increase. Life does not allow them too many opportunities to try, so they can only be cautious, walking every step of the ice. They also have negative emotions, but they are not easily displayed in front of people.&lt;/p></description></item><item><title>Recommend two websites</title><link>https://ireflux.github.io/snow/post/recommend-two-sites/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid><description>&lt;h1 id="i-rememberhttpi-rememberfren">&lt;a class="link" href="http://i-remember.fr/en" target="_blank" rel="noopener"
->I remember&lt;/a>&lt;/h1>
-&lt;p>&lt;em>Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em>&lt;/p>
+>I remember&lt;/a>
+&lt;/h1>&lt;p>&lt;em>Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em>&lt;/p>
 &lt;p>很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p>
 &lt;p>初次进入 I remember 时，它就像一个充满了闪光沙粒的异世界——由记忆组成。这个世界给予了充分的自由，可以拖动鼠标向前行进或后退，前后左右，甚至斜着走。去任何你想去的地方，探索任何你想探索的东西。&lt;/p>
 &lt;p>鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p>
 &lt;p>还可以通过关键字来搜寻类似的记忆，过程特效也做的非常棒。如此炫酷的网站，还不快来体验一下！&lt;/p>
 &lt;p>&lt;strong>友情提示:&lt;/strong> 打开后可能会感觉风扇狂转，这不是错觉:D&lt;/p>
 &lt;h1 id="1000-awesome-thingshttp1000awesomethingscom">&lt;a class="link" href="http://1000awesomethings.com/" target="_blank" rel="noopener"
->1000 Awesome things&lt;/a>&lt;/h1>
-&lt;p>快节奏的生活使人终日忙忙碌碌，还要关注着很多事情，人的大脑就像CPU一样不停歇的运转，仿佛上帝终于发现让 CPU 闲置就是浪费这个道理一样。长久下来难免就会产生很多负面情绪，很难开心起来。&lt;/p>
+>1000 Awesome things&lt;/a>
+&lt;/h1>&lt;p>快节奏的生活使人终日忙忙碌碌，还要关注着很多事情，人的大脑就像CPU一样不停歇的运转，仿佛上帝终于发现让 CPU 闲置就是浪费这个道理一样。长久下来难免就会产生很多负面情绪，很难开心起来。&lt;/p>
 &lt;p>即使有了闲暇的时候，也没办法完全放松下来。总感觉时间过的那么快，什么都来不及去做。大概再也回不到过去那种“忙的时候忙，闲的时候能静下来思考些东西而不必考虑时间流逝或者什么都不想只管玩”生活状态了。&lt;/p>
 &lt;p>上文转载的文章《长大后之所以不快乐，是因为成年人丧失了获取快乐的天赋！》中提到的《生命中最美好的事都是免费的》这本书以及摘抄的 80 个能另人开心起来的美妙时刻便是脱胎于这个网站。&lt;/p>
 &lt;p>单单那 80 个能令人开心起来的美妙时刻就让人感觉很平静，何况是 1000 个！&lt;/p>
@@ -1276,10 +1276,10 @@ the Dane drinks tea&lt;/p>
 &lt;p>说个我个人最近的：&lt;/p>
 &lt;ol>
 &lt;li>经常在那家板面店吃饭，我和店主都认识了。每天订的板面，店主做好后，出门前在微信上跟我说一声，随后我回应一声就穿好外套下楼。每次都是我们两个__同时__到达后门，时间上刚刚好，经常精确到秒级。&lt;/li>
-&lt;/ol></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
-&lt;p>前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p>
-&lt;h2 id="体验">体验&lt;/h2>
-&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人注册了……&lt;/p>
+&lt;/ol></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言
+&lt;/h1>&lt;p>前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p>
+&lt;h2 id="体验">体验
+&lt;/h2>&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人注册了……&lt;/p>
 &lt;p>之后进入了主界面，不得不说，虽然界面和Github比较像，但这不是重点，重点是那个WEBIDE的DEMO试玩了一下，真的是AWESOME，在来就是那个动态Pages了，启动部署后发现网址居然是好长（&amp;gt;30位）的一个随机码.coding.io，果然如官网所说会得到一个”xxx.coding.io“的网址:(，之前还以为是用户名+coding.io，就像Github的静态页面一样。现在这就比较坑了，不搞个域名都没什么实用的价值……然而自定义域名需要银牌会员以上，想成为银牌会员需要完善身份信息，然后还是受限制的自定义域名，每次访问都会出现“该网站托管在 Coding Pages 上” ，然后再跳转到原站。想要不受限制，需要升级到金牌会员以上，也就是充值199/year……&lt;/p>
 &lt;p>免费的东西果然还是不能想太多，考虑到WordPress过于臃肿，于是我选择了Typecho，Coding有个官方的pages-demo项目，其中README中截图显示可以在创建仓库时直接从github开源项目中导入仓库，我认真的找了下，骗子！明明没有这个选项！（不知道是不是被官方在后期更新中砍掉了)，只好自己推了，从官网下载后解压，原本想直接上传上去，结果却提示有非法字符，后来发现文件中似乎有一些&amp;quot;@&amp;ldquo;字符，这样的话只能用Git了。&lt;/p>
 &lt;p>最后用Git推送到Coding时，出现了一个错误，如下所示：&lt;/p>
@@ -1324,9 +1324,9 @@ alt="2017_2018"
 &lt;p>心灰意懒，于是在使用了 Win10 一个多月后，我又决定要换系统了:D，这大概是我使用 Windows 系统以来时间最短的一个版本了吧（笑&lt;/p>
 &lt;p>为了方便，还是自己重新写一个吧，基本上是从官网复制一遍，省的每次都要去翻官网的&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
 >文档&lt;/a>，以下制作启动盘等准备工作省略，直接从进入 live 环境开始。&lt;/p>
-&lt;h2 id="安装前的准备工作">安装前的准备工作&lt;/h2>
-&lt;h3 id="联网">联网&lt;/h3>
-&lt;p>网线直接 &lt;code>dhcpd&lt;/code>&lt;/p>
+&lt;h2 id="安装前的准备工作">安装前的准备工作
+&lt;/h2>&lt;h3 id="联网">联网
+&lt;/h3>&lt;p>网线直接 &lt;code>dhcpd&lt;/code>&lt;/p>
 &lt;p>如果没有网线，直接手机开 USB 共享网络，插到电脑上，然后再 &lt;code>dhcpd&lt;/code> 😜&lt;/p>
 &lt;p>开个玩笑，一定要连无线网络的话，官网文档见：&lt;a class="link" href="https://wiki.archlinux.org/title/Iwd#iwctl" target="_blank" rel="noopener"
 >Iwd&lt;/a>，我也摘抄如下：&lt;/p>
@@ -1351,11 +1351,11 @@ alt="2017_2018"
 &lt;p>Finally, to connect to a network:&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device connect SSID&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟&lt;/h3>
-&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟
+&lt;/h3>&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># timedatectl&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="分区">分区&lt;/h3>
-&lt;p>这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="分区">分区
+&lt;/h3>&lt;p>这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了&lt;/p>
 &lt;p>还是要查看一下启动模式：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /sys/firmware/efi/fw_platform_size&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>返回结果的解释，这里就直接复制官网了：&lt;/p>
@@ -1375,35 +1375,35 @@ alt="2017_2018"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Device&lt;/th>
-&lt;th style="text-align:center">Start&lt;/th>
-&lt;th style="text-align:center">End&lt;/th>
-&lt;th style="text-align:center">Sectors&lt;/th>
-&lt;th style="text-align:center">Size&lt;/th>
-&lt;th style="text-align:center">Type&lt;/th>
+&lt;th style="text-align: center">Device&lt;/th>
+&lt;th style="text-align: center">Start&lt;/th>
+&lt;th style="text-align: center">End&lt;/th>
+&lt;th style="text-align: center">Sectors&lt;/th>
+&lt;th style="text-align: center">Size&lt;/th>
+&lt;th style="text-align: center">Type&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">/dev/sda1&lt;/td>
-&lt;td style="text-align:center">2048&lt;/td>
-&lt;td style="text-align:center">1050623&lt;/td>
-&lt;td style="text-align:center">1048576&lt;/td>
-&lt;td style="text-align:center">512M&lt;/td>
-&lt;td style="text-align:center">EFI System&lt;/td>
+&lt;td style="text-align: center">/dev/sda1&lt;/td>
+&lt;td style="text-align: center">2048&lt;/td>
+&lt;td style="text-align: center">1050623&lt;/td>
+&lt;td style="text-align: center">1048576&lt;/td>
+&lt;td style="text-align: center">512M&lt;/td>
+&lt;td style="text-align: center">EFI System&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">/dev/sda2&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">省略&lt;/td>
-&lt;td style="text-align:center">Linux filesystem&lt;/td>
+&lt;td style="text-align: center">/dev/sda2&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">省略&lt;/td>
+&lt;td style="text-align: center">Linux filesystem&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="格式化分区">格式化分区&lt;/h3>
-&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
+&lt;h3 id="格式化分区">格式化分区
+&lt;/h3>&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
 >EFI_system_partition#Format_the_partition&lt;/a>，具体我也摘抄如下：&lt;/p>
 &lt;blockquote>
 &lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>
@@ -1412,44 +1412,44 @@ alt="2017_2018"
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.fat -F 32 /dev/sda1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后格式化 root 分区：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.ext4 /dev/sda2&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="挂载文件系统">挂载文件系统&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkdir /mnt/boot&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="挂载文件系统">挂载文件系统
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkdir /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mount /dev/sda1 /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mount /dev/sda2 /mnt&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装">安装&lt;/h2>
-&lt;h3 id="选择镜像">选择镜像&lt;/h3>
-&lt;p>编辑以下文件：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装">安装
+&lt;/h2>&lt;h3 id="选择镜像">选择镜像
+&lt;/h3>&lt;p>编辑以下文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim /etc/pacman.d/mirrorlist&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将 &lt;code>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch&lt;/code> 放到第一行，保存退出&lt;/p>
-&lt;h3 id="安装必要的软件包">安装必要的软件包&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacstrap -K /mnt base linux linux-firmware&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="系统配置">系统配置&lt;/h2>
-&lt;h3 id="生成-fstab-文件">生成 fstab 文件&lt;/h3>
-&lt;p>执行下面的命令:&lt;/p>
+&lt;h3 id="安装必要的软件包">安装必要的软件包
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacstrap -K /mnt base linux linux-firmware&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="系统配置">系统配置
+&lt;/h2>&lt;h3 id="生成-fstab-文件">生成 fstab 文件
+&lt;/h3>&lt;p>执行下面的命令:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看生成的结果:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /mnt/etc/fstab&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="chroot">Chroot&lt;/h3>
-&lt;p>执行以下命令切换到新系统:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="chroot">Chroot
+&lt;/h3>&lt;p>执行以下命令切换到新系统:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># arch-chroot /mnt&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置时区">设置时区&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置时区">设置时区
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成 &lt;code>/etc/adjtime&lt;/code> 文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># hwclock --systohc&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="本地化">本地化&lt;/h3>
-&lt;p>编辑文件 &lt;code>/etc/locale.gen&lt;/code>，找到 &lt;code>en_US.UTF-8 UTF-8&lt;/code> 这一行并取消注释，然后保存&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="本地化">本地化
+&lt;/h3>&lt;p>编辑文件 &lt;code>/etc/locale.gen&lt;/code>，找到 &lt;code>en_US.UTF-8 UTF-8&lt;/code> 这一行并取消注释，然后保存&lt;/p>
 &lt;p>执行以下命令生成 locales：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># locale-gen&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑文件 &lt;code>/etc/locale.conf&lt;/code>（没有就创建），然后写入 &lt;code>LANG=en_US.UTF-8&lt;/code>&lt;/p>
-&lt;h3 id="网络配置">网络配置&lt;/h3>
-&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件，写入:&lt;/p>
+&lt;h3 id="网络配置">网络配置
+&lt;/h3>&lt;p>创建 &lt;code>/etc/hostname&lt;/code> 文件，写入:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo &amp;#34;arch&amp;#34; &amp;gt;&amp;gt; /etc/hostname&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑 &lt;code>/etc/hosts&lt;/code> 文件:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="修改密码">修改密码&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># passwd&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="boot-loader">Boot loader&lt;/h3>
-&lt;p>不同的 CPU 需要安装不同的 Microcode：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="修改密码">修改密码
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># passwd&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="boot-loader">Boot loader
+&lt;/h3>&lt;p>不同的 CPU 需要安装不同的 Microcode：&lt;/p>
 &lt;p>AMD CPU 安装：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S amd-ucode &lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Intel CPU 安装：&lt;/p>
@@ -1460,17 +1460,17 @@ alt="2017_2018"
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 GRUB：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># grub-mkconfig -o /boot/grub/grub.cfg&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装软件">安装软件&lt;/h3>
-&lt;p>顺便再装一些必要的软件:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装软件">安装软件
+&lt;/h3>&lt;p>顺便再装一些必要的软件:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pacman -S sudo vim dhcpcd netctl wpa_supplicant&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="重启">重启&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="重启">重启
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># exit&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt/boot&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># umount /mnt&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># reboot&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="个人化的相关配置">个人化的相关配置&lt;/h2>
-&lt;h3 id="创建普通用户">创建普通用户&lt;/h3>
-&lt;p>以下来自官网：&lt;a class="link" href="https://wiki.archlinux.org/title/Users_and_groups#User_management" target="_blank" rel="noopener"
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="个人化的相关配置">个人化的相关配置
+&lt;/h2>&lt;h3 id="创建普通用户">创建普通用户
+&lt;/h3>&lt;p>以下来自官网：&lt;a class="link" href="https://wiki.archlinux.org/title/Users_and_groups#User_management" target="_blank" rel="noopener"
 >Users and groups&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>-m/&amp;ndash;create-home
@@ -1486,32 +1486,32 @@ alt="2017_2018"
 &lt;/blockquote>
 &lt;p>执行以下命令创建普通用户，替换中括号及其内容&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件&lt;/h3>
-&lt;p>以创建 8 GiB Swap 文件为例：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件
+&lt;/h3>&lt;p>以创建 8 GiB Swap 文件为例：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>设置权限：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># chmod 0600 /swapfile&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>格式化为 Swap:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkswap -U clear /swapfile&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最后编辑 &lt;code>/etc/fstab&lt;/code> 文件，将这一行 &lt;code>/swapfile none swap defaults 0 0&lt;/code> 添加进去&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener"
 >https://wiki.archlinux.org/title/Installation_guide&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://wiki.archlinux.org/title/General_recommendations" target="_blank" rel="noopener"
 >https://wiki.archlinux.org/title/General_recommendations&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Win10 内置 Linux 子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>主力系统之前一直用着 Win7，最近也开始感觉有点审美疲劳。一直考虑是换成 Win10 还是 Ubuntu，考虑再三还是选择了 Win10&amp;hellip;&lt;/p>
+&lt;/ol></description></item><item><title>Win10 内置 Linux 子系统初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</link><pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-win10-built-in-linux-sub-system/</guid><description>&lt;h2 id="前言">前言
+&lt;/h2>&lt;p>主力系统之前一直用着 Win7，最近也开始感觉有点审美疲劳。一直考虑是换成 Win10 还是 Ubuntu，考虑再三还是选择了 Win10&amp;hellip;&lt;/p>
 &lt;p>体验了 Win10 半个月后，感觉系统过于臃肿。今天忽然发现 Win10 还有个 beta 项目————适用于 Linux 的 Windows 子系统。后来查了下才知道早在今年三月份就有了&amp;hellip;(lll￢ω￢)既然如此，那果断要来体验一把！&lt;/p>
-&lt;h3 id="教程">教程&lt;/h3>
-&lt;p>根据官方的 &lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
+&lt;h3 id="教程">教程
+&lt;/h3>&lt;p>根据官方的 &lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
 >Guide&lt;/a>，首先要查看系统的 OS 版本号和系统类型。系统类型必须是 64 位操作系统以及 OS 版本号要在 1607+&lt;/p>
 &lt;p>查看方法：&lt;/p>
 &lt;blockquote>
 &lt;p>设置-&amp;gt;系统-&amp;gt;关于&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="安装">安装&lt;/h3>
-&lt;p>之后需要安装适用于 Linux 的 windows 子系统。&lt;/p>
+&lt;h3 id="安装">安装
+&lt;/h3>&lt;p>之后需要安装适用于 Linux 的 windows 子系统。&lt;/p>
 &lt;p>1.以管理员运行 Windows PowerShell，输入以下内容回车&lt;/p>
 &lt;blockquote>
 &lt;p>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux&lt;/p>
@@ -1523,13 +1523,13 @@ alt="2017_2018"
 &lt;/blockquote>
 &lt;p>开启后，打开 命令提示符，输入 bash，会提示下载 Ubuntu，输入 Y 回车即可。&lt;/p>
 &lt;p>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。&lt;/p>
-&lt;h3 id="卸载">卸载&lt;/h3>
-&lt;p>打开命令提示符，输入 &lt;code>lxrun /uninstall /full&lt;/code>，然后根据提示输入 Y 即可开始卸载。&lt;/p>
-&lt;h3 id="体验结论">体验结论&lt;/h3>
-&lt;p>这个 Windows 内置的 Linux 就是将 Linux 的系统调用实时的转换成 Windows 的系统调用，就像是 Linux 上的 Wine 的反向技术。Wine 可以将 Windows 上的应用放到 Linux 上运行，这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine 开源，微软也毫无办法。&lt;/p>
+&lt;h3 id="卸载">卸载
+&lt;/h3>&lt;p>打开命令提示符，输入 &lt;code>lxrun /uninstall /full&lt;/code>，然后根据提示输入 Y 即可开始卸载。&lt;/p>
+&lt;h3 id="体验结论">体验结论
+&lt;/h3>&lt;p>这个 Windows 内置的 Linux 就是将 Linux 的系统调用实时的转换成 Windows 的系统调用，就像是 Linux 上的 Wine 的反向技术。Wine 可以将 Windows 上的应用放到 Linux 上运行，这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine 开源，微软也毫无办法。&lt;/p>
 &lt;p>不过 Windows 内置的 Linux 感觉并不自由，内置的文件不能用 Windows 的工具来创建或修改。否则可能会出现文件损坏导致 Linux 系统无法使用。因此，如果是 Linux 的初学者，用这个还不错，但是要当作开发环境，那就算了吧。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="noopener"
 >官方安装指南&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/" target="_blank" rel="noopener"

@@ -70,8 +70,8 @@
 &lt;p>发送邮件的用法可见 &lt;a class="link" href="https://github.com/dawidd6/action-send-mail" target="_blank" rel="noopener"
 >dawidd6/action-send-mail&lt;/a>&lt;/p>
 &lt;p>注： 开启 163 邮箱的 POP3/SMTP 服务，原来的密码处应填写为授权码。&lt;/p>
-&lt;h2 id="参考资料">参考资料&lt;/h2>
-&lt;ol>
+&lt;h2 id="参考资料">参考资料
+&lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://help.github.com/en/actions" target="_blank" rel="noopener"
 >https://help.github.com/en/actions&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://github.com/ruanyf/weather-action" target="_blank" rel="noopener"
