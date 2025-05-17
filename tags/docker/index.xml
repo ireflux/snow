@@ -6,13 +6,11 @@
 &lt;p>Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.&lt;br>
 To add a worker to this swarm, run the following command:&lt;br>
 docker swarm join &amp;ndash;token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377&lt;br>
-To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&amp;rsquo; and follow the instructions.&lt;/p>
-&lt;/blockquote>
+To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&amp;rsquo; and follow the instructions.&lt;/p>&lt;/blockquote>
 &lt;h2 id="加入集群">加入集群
 &lt;/h2>&lt;p>直接复制初始化后显示的命令，在同一网段的另一台主机上输入即可。如果成功的话，会出现如下反馈：&lt;/p>
 &lt;blockquote>
-&lt;p>This node joined a swarm as a worker.&lt;/p>
-&lt;/blockquote>
+&lt;p>This node joined a swarm as a worker.&lt;/p>&lt;/blockquote>
 &lt;p>如果不小心关掉了 terminal ，还可以通过以下命令看到 token：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo docker swarm join-token worker
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还可以查看添加管理节点到集群的 token：&lt;/p>

@@ -309,8 +309,7 @@
 &lt;p>言归正传，在 Linux 上使用 adb 有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
-[device name] unauthorized&lt;/p>
-&lt;/blockquote>
+[device name] unauthorized&lt;/p>&lt;/blockquote>
 &lt;p>要进行配置之前，首先需要找到自己手机的 USB vendor ID 和 product ID，启用开发者模式，然后打开 usb 调试模式插上手机后在 terminal 中执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是 vendor id，后者是 product id&lt;/p>
@@ -321,8 +320,7 @@
 &lt;blockquote>
 &lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
 SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
-SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>
-&lt;/blockquote>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>&lt;/blockquote>
 &lt;p>2.然后重新载入新的配置文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo udevadm control --reload-rules
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
@@ -334,8 +332,7 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
-[device name] device&lt;/p>
-&lt;/blockquote>
+[device name] device&lt;/p>&lt;/blockquote>
 &lt;p>这样就算是完成了。&lt;/p>
 &lt;h2 id="后记">后记
 &lt;/h2>&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
@@ -354,25 +351,20 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;p>开个玩笑，一定要连无线网络的话，官网文档见：&lt;a class="link" href="https://wiki.archlinux.org/title/Iwd#iwctl" target="_blank" rel="noopener"
 >Iwd&lt;/a>，我也摘抄如下：&lt;/p>
 &lt;blockquote>
-&lt;p>First, if you do not know your wireless device name, list all Wi-Fi devices:&lt;/p>
-&lt;/blockquote>
+&lt;p>First, if you do not know your wireless device name, list all Wi-Fi devices:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># device list&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>If the device or its corresponding adapter is turned off, turn it on:&lt;/p>
-&lt;/blockquote>
+&lt;p>If the device or its corresponding adapter is turned off, turn it on:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># device device set-property Powered on &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># adapter adapter set-property Powered on&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>Then, to initiate a scan for networks (note that this command will not output anything):&lt;/p>
-&lt;/blockquote>
+&lt;p>Then, to initiate a scan for networks (note that this command will not output anything):&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device scan&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>You can then list all available networks:&lt;/p>
-&lt;/blockquote>
+&lt;p>You can then list all available networks:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device get-networks&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>Finally, to connect to a network:&lt;/p>
-&lt;/blockquote>
+&lt;p>Finally, to connect to a network:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device connect SSID&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟
 &lt;/h3>&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
@@ -383,8 +375,7 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /sys/firmware/efi/fw_platform_size&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>返回结果的解释，这里就直接复制官网了：&lt;/p>
 &lt;blockquote>
-&lt;p>If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p>
-&lt;/blockquote>
+&lt;p>If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p>&lt;/blockquote>
 &lt;p>如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了 🤣&lt;/p>
 &lt;p>首先查看分区：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fdisk -l&lt;/span>
@@ -429,8 +420,7 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/h3>&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
 >EFI_system_partition#Format_the_partition&lt;/a>，具体我也摘抄如下：&lt;/p>
 &lt;blockquote>
-&lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>
-&lt;/blockquote>
+&lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>&lt;/blockquote>
 &lt;p>所以格式化 EFI 分区输入如下命令:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.fat -F 32 /dev/sda1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后格式化 root 分区：&lt;/p>
@@ -497,16 +487,13 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 >Users and groups&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>-m/&amp;ndash;create-home
-默认创建用户名同名目录&lt;/p>
-&lt;/blockquote>
+默认创建用户名同名目录&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>-G/&amp;ndash;groups
-额外添加组，例如: &lt;code>wheel&lt;/code>&lt;/p>
-&lt;/blockquote>
+额外添加组，例如: &lt;code>wheel&lt;/code>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>-s/&amp;ndash;shell
-指定用户登录 shell 的路径，例如：&lt;code>/bin/bash&lt;/code>。另外也可以去 &lt;code>/etc/shells&lt;/code> 这个文件查看来确定 shell 路径&lt;/p>
-&lt;/blockquote>
+指定用户登录 shell 的路径，例如：&lt;code>/bin/bash&lt;/code>。另外也可以去 &lt;code>/etc/shells&lt;/code> 这个文件查看来确定 shell 路径&lt;/p>&lt;/blockquote>
 &lt;p>执行以下命令创建普通用户，替换中括号及其内容&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件

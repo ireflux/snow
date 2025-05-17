@@ -52,8 +52,7 @@ Shall the new role be a superuser? (y/n) y
 \help [命令] -&amp;gt; 查看此命令的详细信息及用法。类似于 man page。&lt;br>
 \du -&amp;gt; 列出所有的账户及其权限。&lt;br>
 \dt -&amp;gt; 显示当前数据库所有表的摘要信息。&lt;br>
-\q -&amp;gt; 退出&lt;/p>
-&lt;/blockquote>
+\q -&amp;gt; 退出&lt;/p>&lt;/blockquote>
 &lt;h2 id="参考资料">参考资料
 &lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://www.postgresql.org/docs/11/" target="_blank" rel="noopener"

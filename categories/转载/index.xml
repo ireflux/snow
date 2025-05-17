@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>转载 on sherry's blog</title><link>https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/</link><description>Recent content in 转载 on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/%E8%BD%AC%E8%BD%BD/index.xml" rel="self" type="application/rss+xml"/><item><title>Github RSS</title><link>https://ireflux.github.io/snow/post/github-rss/</link><pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/github-rss/</guid><description>&lt;blockquote>
 &lt;p>本文转载于 &lt;a class="link" href="https://www.ronaldsvilcins.com/2020/03/26/rss-feeds-for-your-github-releases-tags-and-activity/" target="_blank" rel="noopener"
->ronaldsvilcins&lt;/a>，以下为原文：&lt;/p>
-&lt;/blockquote>
+>ronaldsvilcins&lt;/a>，以下为原文：&lt;/p>&lt;/blockquote>
 &lt;p>RSS feeds for your Github releases, tags and activity&lt;/p>
 &lt;p>GitHub provides several timeline resources in Atom format. That’s how I get latest info about projects that I follow and their fixed bugs and new features. Some of official RSS feeds are:&lt;/p>
 &lt;blockquote>
 &lt;p>Repo releases&lt;br>
 &lt;a class="link" href="https://github.com/:owner/:repo/releases.atom" target="_blank" rel="noopener"
->https://github.com/:owner/:repo/releases.atom&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:owner/:repo/releases.atom&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Repo commits&lt;br>
 &lt;a class="link" href="https://github.com/:owner/:repo/commits.atom" target="_blank" rel="noopener"
->https://github.com/:owner/:repo/commits.atom&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:owner/:repo/commits.atom&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Private feed (You can find Subscribe to your news feed in dashboard page after login)&lt;br>
 &lt;a class="link" href="https://github.com/:user.private.atom?token=:secret" target="_blank" rel="noopener"
->https://github.com/:user.private.atom?token=:secret&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:user.private.atom?token=:secret&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Repo tags&lt;br>
 &lt;a class="link" href="https://github.com/:user/:repo/tags.atom" target="_blank" rel="noopener"
->https://github.com/:user/:repo/tags.atom&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:user/:repo/tags.atom&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>User activity&lt;br>
 &lt;a class="link" href="https://github.com/:user.atom" target="_blank" rel="noopener"
->https://github.com/:user.atom&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>追逐快乐</title><link>https://ireflux.github.io/snow/post/chasing-happiness/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/chasing-happiness/</guid><description>&lt;blockquote>
-&lt;p>此文系转载，原文来源：豆瓣，地址:https://www.douban.com/note/323805946/&lt;/p>
-&lt;/blockquote>
+>https://github.com/:user.atom&lt;/a>&lt;/p>&lt;/blockquote></description></item><item><title>追逐快乐</title><link>https://ireflux.github.io/snow/post/chasing-happiness/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/chasing-happiness/</guid><description>&lt;blockquote>
+&lt;p>此文系转载，原文来源：豆瓣，地址:https://www.douban.com/note/323805946/&lt;/p>&lt;/blockquote>
 &lt;p>不知道你是否注意到这样一种情况：&lt;/p>
 &lt;p>那些容易快乐的人，常常都被冠以这样的评价：热爱生活！&lt;/p>
 &lt;p>可他妈的什么叫热爱生活？积极？坦然？开放？热忱？都对又都不对！&lt;/p>
@@ -133,11 +126,9 @@
 &lt;p>希望我们在干巴巴的成人世界里，能逐渐找回遗失掉的寻找快乐的天赋！&lt;/p>
 &lt;p>也希望你跟帖分享那些生活中的快乐点滴。&lt;/p>
 &lt;blockquote>
-&lt;p>原文地址:https://www.douban.com/note/323805946/&lt;/p>
-&lt;/blockquote></description></item><item><title>寂静之城 (The Silence City)</title><link>https://ireflux.github.io/snow/post/the-silence-city/</link><pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-silence-city/</guid><description>&lt;blockquote>
+&lt;p>原文地址:https://www.douban.com/note/323805946/&lt;/p>&lt;/blockquote></description></item><item><title>寂静之城 (The Silence City)</title><link>https://ireflux.github.io/snow/post/the-silence-city/</link><pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-silence-city/</guid><description>&lt;blockquote>
 &lt;p>马伯庸《寂静之城》未删节版本全文&lt;br>
-发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p>
-&lt;/blockquote>
+发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p>&lt;/blockquote>
 &lt;p>And in the naked light I saw ten thousand people, maybe more.&lt;br>
 People talking without speaking, people hearing without listening.&lt;br>
 People writing songs that voices never shared, no one dared disturb the sound of silence.&lt;/p>
@@ -472,11 +463,9 @@ Subject: 模块、已经、完成、当前、项目、是否、开始。”&lt;/
 &lt;p>10年前看完觉得这是个笑话&lt;br>
 10年后，现实成了一个笑话&lt;br>
 寂静之城，一语成谶&lt;br>
-——豆瓣某已注销用户&lt;/p>
-&lt;/blockquote></description></item><item><title>一日囚</title><link>https://ireflux.github.io/snow/post/one-day-prisoner/</link><pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/one-day-prisoner/</guid><description>&lt;blockquote>
+——豆瓣某已注销用户&lt;/p>&lt;/blockquote></description></item><item><title>一日囚</title><link>https://ireflux.github.io/snow/post/one-day-prisoner/</link><pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/one-day-prisoner/</guid><description>&lt;blockquote>
 &lt;p>《一日囚》作者：柳文扬&lt;br>
-发表于2002年11期《科幻世界》&lt;/p>
-&lt;/blockquote>
+发表于2002年11期《科幻世界》&lt;/p>&lt;/blockquote>
 &lt;p>B先生死了。就在他搬进这座大楼不到二十四小时。&lt;/p>
 &lt;p>B先生是昨夜，不，准确地说是今天凌晨0点住进来的。那时夜雾弥漫，有两个黑衣男子陪着他，拎着三只大提箱，敲开我值班的房门，要租一间不带家具的房子。这个要求有点奇怪，因为大多数人都想要有家具的房间。&lt;/p>
 &lt;p>“请问你们要租多大的屋子？”我打量着B的光头问。他戴着眼镜，苍白而又腼腆，脸上有种愁苦的模样。&lt;/p>

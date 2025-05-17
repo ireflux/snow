@@ -22,8 +22,7 @@
 &lt;p>在 Chrome 的 Developer tools 中查看时，看到就连 body 都向下移动了 50px！之后尝试在父元素中设置 margin 或 body 中设置都没有用，在父元素中设置 padding 也没有效果。&lt;/p>
 &lt;p>之后搜索到的 css2.1 盒模型中规定的内容如下：&lt;/p>
 &lt;blockquote>
-&lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>
-&lt;/blockquote>
+&lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>&lt;/blockquote>
 &lt;p>所有毗邻的两个或更多盒元素的 margin 将会合并为一个 margin 共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding 或 Border 分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的 margin 覆盖了父元素的 margin。&lt;/p>
 &lt;p>之后找到的解决方法如下：&lt;/p>
 &lt;ol>

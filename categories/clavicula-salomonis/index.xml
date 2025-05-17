@@ -638,8 +638,7 @@ proxy_redirect default;
 &lt;p>以下是&lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
 >官方&lt;/a>对 lettuce 的描述，摘录如下：&lt;/p>
 &lt;blockquote>
-&lt;p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p>
-&lt;/blockquote>
+&lt;p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p>&lt;/blockquote>
 &lt;p>因此可以看出，lettuce 是线程安全的，基于 netty，在不包含阻塞和事务的情况下多个线程还可以共用一个连接。相比之下 Jedis 的实现上是直连的 redis server，多线程环境下是非线程安全的。&lt;/p>
 &lt;p>言归正传，在开始之前，首先需要在 pom.xml 文件中添加以下依赖：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
@@ -863,8 +862,7 @@ Shall the new role be a superuser? (y/n) y
 \help [命令] -&amp;gt; 查看此命令的详细信息及用法。类似于 man page。&lt;br>
 \du -&amp;gt; 列出所有的账户及其权限。&lt;br>
 \dt -&amp;gt; 显示当前数据库所有表的摘要信息。&lt;br>
-\q -&amp;gt; 退出&lt;/p>
-&lt;/blockquote>
+\q -&amp;gt; 退出&lt;/p>&lt;/blockquote>
 &lt;h2 id="参考资料">参考资料
 &lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://www.postgresql.org/docs/11/" target="_blank" rel="noopener"
@@ -879,13 +877,11 @@ Shall the new role be a superuser? (y/n) y
 &lt;p>Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.&lt;br>
 To add a worker to this swarm, run the following command:&lt;br>
 docker swarm join &amp;ndash;token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377&lt;br>
-To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&amp;rsquo; and follow the instructions.&lt;/p>
-&lt;/blockquote>
+To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&amp;rsquo; and follow the instructions.&lt;/p>&lt;/blockquote>
 &lt;h2 id="加入集群">加入集群
 &lt;/h2>&lt;p>直接复制初始化后显示的命令，在同一网段的另一台主机上输入即可。如果成功的话，会出现如下反馈：&lt;/p>
 &lt;blockquote>
-&lt;p>This node joined a swarm as a worker.&lt;/p>
-&lt;/blockquote>
+&lt;p>This node joined a swarm as a worker.&lt;/p>&lt;/blockquote>
 &lt;p>如果不小心关掉了 terminal ，还可以通过以下命令看到 token：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo docker swarm join-token worker
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还可以查看添加管理节点到集群的 token：&lt;/p>
@@ -906,8 +902,7 @@ To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&a
 &lt;p>言归正传，在 Linux 上使用 adb 有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
-[device name] unauthorized&lt;/p>
-&lt;/blockquote>
+[device name] unauthorized&lt;/p>&lt;/blockquote>
 &lt;p>要进行配置之前，首先需要找到自己手机的 USB vendor ID 和 product ID，启用开发者模式，然后打开 usb 调试模式插上手机后在 terminal 中执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是 vendor id，后者是 product id&lt;/p>
@@ -918,8 +913,7 @@ To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&a
 &lt;blockquote>
 &lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
 SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
-SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>
-&lt;/blockquote>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>&lt;/blockquote>
 &lt;p>2.然后重新载入新的配置文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo udevadm control --reload-rules
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
@@ -931,8 +925,7 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
-[device name] device&lt;/p>
-&lt;/blockquote>
+[device name] device&lt;/p>&lt;/blockquote>
 &lt;p>这样就算是完成了。&lt;/p>
 &lt;h2 id="后记">后记
 &lt;/h2>&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
@@ -1049,8 +1042,7 @@ alt="AVL"
 &lt;p>在 Chrome 的 Developer tools 中查看时，看到就连 body 都向下移动了 50px！之后尝试在父元素中设置 margin 或 body 中设置都没有用，在父元素中设置 padding 也没有效果。&lt;/p>
 &lt;p>之后搜索到的 css2.1 盒模型中规定的内容如下：&lt;/p>
 &lt;blockquote>
-&lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>
-&lt;/blockquote>
+&lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>&lt;/blockquote>
 &lt;p>所有毗邻的两个或更多盒元素的 margin 将会合并为一个 margin 共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding 或 Border 分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的 margin 覆盖了父元素的 margin。&lt;/p>
 &lt;p>之后找到的解决方法如下：&lt;/p>
 &lt;ol>
@@ -1208,8 +1200,7 @@ alt="AVL"
 &lt;h3 id="调度场算法">调度场算法
 &lt;/h3>&lt;p>以下来源于Wikipedia:&lt;/p>
 &lt;blockquote>
-&lt;p>调度场算法（Shunting Yard Algorithm）是一个用于将中缀表达式转换为后缀表达式的经典算法，由艾兹格·迪杰斯特拉引入，因其操作类似于火车编组场而得名。&lt;/p>
-&lt;/blockquote>
+&lt;p>调度场算法（Shunting Yard Algorithm）是一个用于将中缀表达式转换为后缀表达式的经典算法，由艾兹格·迪杰斯特拉引入，因其操作类似于火车编组场而得名。&lt;/p>&lt;/blockquote>
 &lt;p>Input: 3 + 4 × 2 ÷ ( 1 − 5 ) ^ 2 ^ 3&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1854,19 +1845,16 @@ alt="AVL"
 &lt;p>Spring Framework Documentation&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://docs.spring.io/spring/docs/" target="_blank" rel="noopener"
->https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的&lt;/p>
 &lt;p>Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener"
->https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>Spring核心容器依赖于Common-logging的JAR包，下载地址如下：&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
->https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;h2 id="原文摘录">原文摘录
 &lt;/h2>&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
 >http://springtutorials.com/spring-tutorial-1/&lt;/a>&lt;/p>
@@ -1894,8 +1882,7 @@ Learning Spring Framework (or anything new) is no different from learning to cou
 It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.&lt;br>
 As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.&lt;br>
 As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br>
-It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>
-&lt;/blockquote>
+It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>&lt;/blockquote>
 &lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service
 &lt;/h3>&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
 &lt;p>部分代码摘录如下：&lt;/p>

@@ -9,8 +9,8 @@
 &lt;p>作为 Arch 的忠实教徒，发行版当然是选择 Arch Linux 啦！在 GitHub 搜寻一番，找到了一个专门在 Termux 中一键安装的脚本 &lt;a class="link" href="https://github.com/TermuxArch/TermuxArch" target="_blank" rel="noopener"
 >TermuxArch&lt;/a>，总之到这里还算顺利。但接下来的安装遇到了一些错误，是关于 PRoot 的，提示没有 &lt;code>--sysvipc&lt;/code> 的选项，可能是我的 PRoot 的版本的缘故，但用 Termux 自带的源尝试更新了一下，发现已经是最新的版本了。Hmmm&amp;hellip;只好再次去 Termux 官网找答案，答案没找到，却在 Termux Wiki 找到了一篇关于 PRoot 的文章： &lt;a class="link" href="https://wiki.termux.com/wiki/PRoot" target="_blank" rel="noopener"
 >PRoot&lt;/a>，里面详细解释了 PRoot 和 Chroot 的区别，简单来说 PRoot 是通过 ptrace() 来劫持系统调用参数和返回值来伪造可见的文件系统布局或用户/组的 ID，会引起额外的开销，里面还提到了一个 APP： &lt;a class="link" href="https://github.com/meefik/linuxdeploy" target="_blank" rel="noopener"
->Linux Deploy&lt;/a>。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。&lt;/p>
-&lt;p>接下来就是获取 root 权限的过程了：从线刷包里提取 boot.img -&amp;gt; magisk 修补 boot.img -&amp;gt; &lt;code>fastboot flash boot boot.img&lt;/code>&lt;/p>
+>Linux Deploy&lt;/a>，但需要 root 权限。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。&lt;/p>
+&lt;p>接下来就是常规获取 root 权限的过程了，一带而过：从线刷包里提取 boot.img -&amp;gt; magisk 修补 boot.img -&amp;gt; &lt;code>fastboot flash boot boot.img&lt;/code>&lt;/p>
 &lt;p>装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，有一些 bug 也说不定。之后各处搜寻，最终还是找到了解决方案。&lt;/p>
 &lt;p>Linux Deploy 直接安装报错 log:&lt;/p>
 &lt;pre tabindex="0">&lt;code>[11:40:17] &amp;gt;&amp;gt;&amp;gt; deploy
@@ -129,12 +129,10 @@
 >https://wiki.termux.com/wiki/PRoot&lt;/a>&lt;/li>
 &lt;li>Linux Deploy: &lt;a class="link" href="https://github.com/meefik/linuxdeploy" target="_blank" rel="noopener"
 >https://github.com/meefik/linuxdeploy&lt;/a>&lt;/li>
-&lt;li>青龙面板: &lt;a class="link" href="https://github.com/whyour/qinglong" target="_blank" rel="noopener"
->https://github.com/whyour/qinglong&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>ChromeOS Flex 初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-chromeos-flex/</guid><description>&lt;p>最近看到了 Google 推出了他们操作系统「ChromeOS Flex」，声称适用于任何场合。我记得之前就看到过 Google 新操作系统的消息，好像之前还只是在测试阶段，但也允许下载体验。由于是非正式版本就没有尝试，不过最近终于看到他们释出正式版本，而且可以直接装到 USB 上启动，那得好好体验一下。&lt;/p>
 &lt;h2 id="安装">安装
 &lt;/h2>&lt;p>按照官方的&lt;a class="link" href="https://support.google.com/chromeosflex/answer/11552529?_ga=2.40629794.1417789089.1658235257-1827319735.1658235256" target="_blank" rel="noopener"
->教程&lt;/a>先准备一个非闪迪的 U 盘（因为闪地的 USB 会有一些&lt;a class="link" href="%28https://support.google.com/chromeosflex/answer/11541806#usb%29" >已知的问题&lt;/a>），然后去
+>教程&lt;/a>先准备一个非闪迪的 U 盘（因为闪迪会有一些&lt;a class="link" href="%28https://support.google.com/chromeosflex/answer/11541806#usb%29" >已知的问题&lt;/a>），然后去
 &lt;a class="link" href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm" target="_blank" rel="noopener"
 >Chrome web store&lt;/a> 安装 &lt;code>Chromebook Recovery Utility&lt;/code> 这个扩展（并不支持 Linux 系统)，插上 U 盘后，打开新安装好的扩展，制造商选择「Google Chrome OS Flex」，产品选择「Chrome OS Flex」，点继续之后，接下来它就会自动下载并写入到你的 U 盘（话说我还是第一次见到用浏览器扩展制作启动盘的&amp;hellip;），期间会清空 U 盘上的所有信息。这个过程完成之后，你就拥有一个 Chrome OS Flex 的启动盘了，剩下的也无需赘述。&lt;/p>
 &lt;h2 id="体验">体验
@@ -568,7 +566,7 @@
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-5-episode-1----live-free-or-die">Season 5 Episode 1 &amp;ndash; Live Free or Die
+&lt;h3 id="season-5-episode-1--live-free-or-die">Season 5 Episode 1 &amp;ndash; Live Free or Die
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=w-h05P0doX4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=w-h05P0doX4&lt;/a>&lt;/p>
@@ -578,8 +576,7 @@
 &lt;blockquote>
 &lt;p>You&amp;rsquo;re not Clarence Darrow, Saul. 你不是克莱伦斯·单诺(被后人誉为美国历史上最伟大的辩护律师) 索尔&lt;br>
 You&amp;rsquo;re a two-bit bus-bench lawyer, 你只是个廉价的底层律师&lt;br>
-and you work for me. 而且你为我效力&lt;/p>
-&lt;/blockquote>
+and you work for me. 而且你为我效力&lt;/p>&lt;/blockquote>
 &lt;p>saul:&lt;/p>
 &lt;blockquote>
 &lt;p>Yeah, well, Clarence didn&amp;rsquo;t ever have a client like you 对 可克莱伦斯可没你这样的客户&lt;br>
@@ -594,20 +591,19 @@ but do I complain? 我抱怨了么&lt;br>
 No. Beg, borrow, or steal, I&amp;rsquo;m your huckleberry. 没有 不管求 借还是偷 我是你的好朋友&lt;br>
 I go the extra mile. 我要做额外的工作&lt;br>
 Only you never told me 只是你从没告诉过我&lt;br>
-that the kid would wind up in the hospital. 这孩子会进医院&lt;/p>
-&lt;/blockquote>
+that the kid would wind up in the hospital. 这孩子会进医院&lt;/p>&lt;/blockquote>
 &lt;p>结尾 saul 和 白老师对话也很精彩，在 Gilligan 的笔下每个人性格都是那么鲜明，活灵活现。&lt;/p>
-&lt;h3 id="season-5-episode-2----madrigal">Season 5 Episode 2 &amp;ndash; Madrigal
+&lt;h3 id="season-5-episode-2--madrigal">Season 5 Episode 2 &amp;ndash; Madrigal
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=z4WMU3NbQTk" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=z4WMU3NbQTk&lt;/a>&lt;/p>
 &lt;p>最终从吸尘器里“找到了”兰铃花毒，白老师的心机越来越深了，jesse 又被摆了一道。&lt;/p>
-&lt;h3 id="season-5-episode-5----dead-freight">Season 5 Episode 5 &amp;ndash; Dead Freight
+&lt;h3 id="season-5-episode-5--dead-freight">Season 5 Episode 5 &amp;ndash; Dead Freight
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=vWTuSWX6UQ4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=vWTuSWX6UQ4&lt;/a>&lt;/p>
 &lt;p>神不知鬼不觉的从火车里偷到甲氨，精彩！Yeah! bitch!!&lt;/p>
-&lt;h3 id="season-5-episode-6----buyout">Season 5 Episode 6 &amp;ndash; Buyout
+&lt;h3 id="season-5-episode-6--buyout">Season 5 Episode 6 &amp;ndash; Buyout
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8Pw7H02Hdz4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=8Pw7H02Hdz4&lt;/a>&lt;/p>
@@ -617,11 +613,10 @@ that the kid would wind up in the hospital. 这孩子会进医院&lt;/p>
 did you ever dream of having $5 million? 你想过能搞到500万美金吗 &lt;br>
 I know for a fact that you didn&amp;rsquo;t. 我敢保证 你没想过&lt;br>
 I know for a fact all you needed was 737,000, 我很清楚 你就需要73万7千&lt;br>
-cause you worked it all out, like, mathematically. 因为你算得清清楚楚&lt;/p>
-&lt;/blockquote>
+cause you worked it all out, like, mathematically. 因为你算得清清楚楚&lt;/p>&lt;/blockquote>
 &lt;p>Pinkman 仍然清楚的记得白老师之前算得那笔帐。七十三万七千，这是供他的家庭直到他儿子大学毕业所需的开销。人在不同的处境下，只能做出基于自身情况所能得到的最好的选择。如果说以前的白老师是为了给家庭一笔存款，到后来的是为了活命而与那些毒贩周旋，如今一路走来，曾经想杀掉他的人都被他一一打倒。此时性命无虞，外部环境很好，，目标也会更加远大。&lt;/p>
 &lt;p>何况他们提议卖掉甲氨，这种一锤子买卖，反而是触及了曾令白老师悔及一生的往事——他曾5000美元将股份卖给了其他两位合伙人，同时也廉价卖掉了他和他孩子的未来。之后他曾经的两位创始人同伴邀请他去公司工作时，对方可能是好意，但对白老师来说，更像是一种侮辱。像白老师这样在某一领域天纵奇才却默默无闻的做了几十年中学教师，晚年一事无成却还得了癌症的人，他很不甘心就这样结束。因此，他更不希望自己重蹈覆辙，再次错过这次机会。&lt;/p>
-&lt;h3 id="season-5-episode-7----say-my-name">Season 5 Episode 7 &amp;ndash; Say My Name
+&lt;h3 id="season-5-episode-7--say-my-name">Season 5 Episode 7 &amp;ndash; Say My Name
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=RZPZWpEiuoA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=RZPZWpEiuoA&lt;/a>&lt;/p>
@@ -630,16 +625,15 @@ cause you worked it all out, like, mathematically. 因为你算得清清楚楚&l
 You and your pride and your ego! 你 你的骄傲 和你的自负&lt;br>
 You just had to be the man. 你非要掌控大局&lt;br>
 If you&amp;rsquo;d done your job, known your place, 如果你乖乖干好你的活 清楚自己的位置&lt;br>
-we&amp;rsquo;d all be fine right now! 我们现在都相安无事&lt;/p>
-&lt;/blockquote>
+we&amp;rsquo;d all be fine right now! 我们现在都相安无事&lt;/p>&lt;/blockquote>
 &lt;p>没想到 mike 也会说出这种话，感情不是他生命受到威胁。当然他本来就和 walt 合不来，现在又被逼得被迫跑路，对 walt 说出什么话来也不奇怪.&lt;/p>
-&lt;h3 id="season-5-episode-8----gliding-over-all">Season 5 Episode 8 &amp;ndash; Gliding Over All
+&lt;h3 id="season-5-episode-8--gliding-over-all">Season 5 Episode 8 &amp;ndash; Gliding Over All
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8jMFkf1mJhY" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=8jMFkf1mJhY&lt;/a>&lt;/p>
 &lt;p>存在片段回忆杀，白老师退出了，还和 jesse 聊起了从前。即使和 walt 因 500 万的事曾发生了不愉快，但在打开房门的时候仍然像一个老朋友一样邀请他进屋来，并问他需不需要啤酒什么的。之后他们聊起了刚开始制毒时的 RV 旅行房车，吐槽那辆破车有多破，简直是场噩梦，每次遇到红灯都要祈祷不要在这时候出了岔子，吐槽车子的发动机动不动就吱嘎乱响，不知道的还以为碾死一笼子猫。还聊起了一起在野外制毒时发生的事情，有次车没油了，油表却一直显示还有一半，jesse 不得不提着便携油箱走了 3 英里&amp;hellip;&lt;/p>
 &lt;p>回忆起来还真是令人唏嘘不已，好喜欢他们之前的生活。&lt;/p>
-&lt;h3 id="season-5-episode-9----blood-money">Season 5 Episode 9 &amp;ndash; Blood Money
+&lt;h3 id="season-5-episode-9--blood-money">Season 5 Episode 9 &amp;ndash; Blood Money
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=o8gz-G55Dxo" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=o8gz-G55Dxo&lt;/a>&lt;/p>
@@ -651,8 +645,7 @@ I did not kill Mike. 我没有杀麦克&lt;br>
 The last time that I saw him, 我最后一次见到他&lt;br>
 he had his bag&amp;ndash; the one that I brought him&amp;ndash; 他拿着我给他的包&lt;br>
 and he got into his car, and he drove away. 他开着自己的车走了&lt;br>
-And for all I know, he is alive and well. 就我所知 他现在平安无事&lt;/p>
-&lt;/blockquote>
+And for all I know, he is alive and well. 就我所知 他现在平安无事&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>Jesse&amp;hellip; 杰西&lt;br>
@@ -667,9 +660,8 @@ We both know that he can take care of himself. 咱俩都清楚他会照顾好自
 And he&amp;rsquo;s certainly capable 他绝对有能力&lt;br>
 to provide for his own family, okay? 照顾好自己的家人
 Jesse? 杰西&lt;br>
-I need you to believe me. 你得信任我&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="season-5-episode-11----confessions">Season 5 Episode 11 &amp;ndash; Confessions
+I need you to believe me. 你得信任我&lt;/p>&lt;/blockquote>
+&lt;h3 id="season-5-episode-11--confessions">Season 5 Episode 11 &amp;ndash; Confessions
 &lt;/h3>&lt;p>剧情回顾：https://www.youtube.com/watch?v=8Egkod8CPCU&lt;/p>
 &lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=qCHw77Iqwuk" target="_blank" rel="noopener"
@@ -681,12 +673,10 @@ I need you to believe me. 你得信任我&lt;/p>
 &lt;blockquote>
 &lt;p>Jesse, will you let me help you? 杰西 让我帮你好吗&lt;br>
 I don&amp;rsquo;t like to see you hurting like this. 我不想看你这么痛苦&lt;br>
-Maybe it&amp;rsquo;s time for a change. 也许是时候改变一下了&lt;/p>
-&lt;/blockquote>
+Maybe it&amp;rsquo;s time for a change. 也许是时候改变一下了&lt;/p>&lt;/blockquote>
 &lt;p>Jesse：&lt;/p>
 &lt;blockquote>
-&lt;p>What kinda change? 什么改变&lt;/p>
-&lt;/blockquote>
+&lt;p>What kinda change? 什么改变&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>I don&amp;rsquo;t know. 我不知道&lt;br>
@@ -713,27 +703,22 @@ If I could, I&amp;rsquo;d trade places. 如果可以 我愿意和你换&lt;br>
 A whole lifetime ahead of you 大好人生就在前面&lt;br>
 with a chance to hit the reset button. 并且有机会重新开始&lt;br>
 In a few years, this might all feel 过几年再回想起来&lt;br>
-like nothing more than a bad dream. 这一切不过是个噩梦罢了&lt;/p>
-&lt;/blockquote>
+like nothing more than a bad dream. 这一切不过是个噩梦罢了&lt;/p>&lt;/blockquote>
 &lt;p>Jesse：&lt;/p>
 &lt;blockquote>
 &lt;p>Would you just, for once, 你能不能就这么一次&lt;br>
-stop working me? 不要控制我&lt;/p>
-&lt;/blockquote>
+stop working me? 不要控制我&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
-&lt;p>What are you talking about? 你在说什么&lt;/p>
-&lt;/blockquote>
+&lt;p>What are you talking about? 你在说什么&lt;/p>&lt;/blockquote>
 &lt;p>Jesse:&lt;/p>
 &lt;blockquote>
 &lt;p>Can you just, uh, stop working me 你能不能不要控制我&lt;br>
 for, like, ten seconds straight? 哪怕一会儿也好&lt;br>
-Huh? Stop jerking me around? 不要把我当个木偶一样&lt;/p>
-&lt;/blockquote>
+Huh? Stop jerking me around? 不要把我当个木偶一样&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
-&lt;p>Jesse, I am not working you. 杰西 我没有控制你&lt;/p>
-&lt;/blockquote>
+&lt;p>Jesse, I am not working you. 杰西 我没有控制你&lt;/p>&lt;/blockquote>
 &lt;p>Jesse:&lt;/p>
 &lt;blockquote>
 &lt;p>Yes. Yes, you are. 有 你有&lt;br>
@@ -754,12 +739,11 @@ It&amp;rsquo;s either this or you&amp;rsquo;ll kill me 我要是不离开 你就
 the same way you killed Mike. 就像你杀了麦克一样&lt;br>
 I mean, isn&amp;rsquo;t that what this is all about? 不就是这么回事吗&lt;br>
 Huh? Us meeting way the hell out here? 让我们在这个鬼地方见面&lt;br>
-In case I say no? 以防我拒绝&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="season-5-episode-13----tohajiilee">Season 5 Episode 13 &amp;ndash; To&amp;rsquo;hajiilee
+In case I say no? 以防我拒绝&lt;/p>&lt;/blockquote>
+&lt;h3 id="season-5-episode-13--tohajiilee">Season 5 Episode 13 &amp;ndash; To&amp;rsquo;hajiilee
 &lt;/h3>&lt;p>剧情回顾：https://www.youtube.com/watch?v=sE8ebm1IZmE&lt;/p>
 &lt;p>白老师慌的一匹&lt;/p>
-&lt;h3 id="season-5-episode-14----ozymandias">Season 5 Episode 14 &amp;ndash; Ozymandias
+&lt;h3 id="season-5-episode-14--ozymandias">Season 5 Episode 14 &amp;ndash; Ozymandias
 &lt;/h3>&lt;p>场景一：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=28kofqHQg6k&lt;/p>
 &lt;p>Hank 之死。&lt;/p>
@@ -768,8 +752,7 @@ In case I say no? 以防我拒绝&lt;/p>
 &lt;p>You&amp;rsquo;re the smartest guy I ever met. 你是我见过最聪明的家伙&lt;br>
 And you&amp;rsquo;re too stupid to see&amp;hellip; 但你却傻到看不出&lt;br>
 he made up his mind ten minutes ago. 十分钟前他就拿定了主意&lt;br>
-Do what you&amp;rsquo;re gonna do. 做你该做的事吧&lt;/p>
-&lt;/blockquote>
+Do what you&amp;rsquo;re gonna do. 做你该做的事吧&lt;/p>&lt;/blockquote>
 &lt;p>场景二：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=Fq7c6RV88Qg&lt;/p>
 &lt;p>亲看看着 hank 被杀，walt 十分绝望但又无可奈何，加上 Jesse 设套将他逼到如此境地，最终导致了这样的结局，他现在的怒火简直能将 pinkman 吞噬。带走 pinkman 之前，walt 出于报复心理告诉 pinkman 一个关于 Jane 死亡的秘密，pinkman 听后神情呆滞的任由 Jack 的人带走。两人反目，最终走到了这般境地。&lt;/p>
@@ -780,12 +763,11 @@ I was there. 我在场&lt;br>
 And I watched her die. 我眼睁睁看着她死去&lt;br>
 I watched her overdose and choke to death. 我看着她吸毒过量 窒息致死&lt;br>
 I could have saved her. 我本可以救她&lt;br>
-But I didn&amp;rsquo;t. 但我没有&lt;/p>
-&lt;/blockquote>
+But I didn&amp;rsquo;t. 但我没有&lt;/p>&lt;/blockquote>
 &lt;p>场景三：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=eptjj2jSl2k&lt;/p>
 &lt;p>Skyler 也很聪明，知道对方在给她脱罪。正如 saul 所说，这通电话打完对她以后到法庭上很有利。&lt;/p>
-&lt;h3 id="season-5-episode-16----felina">Season 5 Episode 16 &amp;ndash; Felina
+&lt;h3 id="season-5-episode-16--felina">Season 5 Episode 16 &amp;ndash; Felina
 &lt;/h3>&lt;p>场景一：&lt;/p>
 &lt;p>视频链接1：https://www.youtube.com/watch?v=1EehA6C8b4s
 视频链接2：https://www.youtube.com/watch?v=7l6u1FqGMuY&lt;/p>
@@ -809,49 +791,40 @@ I was good at it. 我也很擅长制毒&lt;br>
 And&amp;hellip; 而且&lt;br>
 I was&amp;hellip; 让我觉得&lt;br>
 Really&amp;hellip; 我真的&lt;br>
-I was alive. 还活着&lt;/p>
-&lt;/blockquote>
+I was alive. 还活着&lt;/p>&lt;/blockquote>
 &lt;p>场景三：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=NPRZMtrEgus&lt;/p>
 &lt;p>可以说是非常精彩了的复仇了！白老师和 Gus 一样，都是跑到对方的地盘将对方一锅端了，甚至连 Lydia 都没放过，心思缜密如此，乃至于斯！当然这也正印证了复仇前对 skyler 说的话：&lt;/p>
 &lt;p>Skyler:&lt;/p>
 &lt;blockquote>
 &lt;p>You didn&amp;rsquo;t kill anybody sneaking in here, did you? 你偷着进来没有杀谁 对吧
-You didn&amp;rsquo;t hurt anybody? 你没有伤害别人吧&lt;/p>
-&lt;/blockquote>
+You didn&amp;rsquo;t hurt anybody? 你没有伤害别人吧&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>No 没有
-Didn&amp;rsquo;t have to. 没有必要&lt;/p>
-&lt;/blockquote>
+Didn&amp;rsquo;t have to. 没有必要&lt;/p>&lt;/blockquote>
 &lt;p>Skyler:&lt;/p>
 &lt;blockquote>
-&lt;p>You look terrible. 你好狼狈&lt;/p>
-&lt;/blockquote>
+&lt;p>You look terrible. 你好狼狈&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>Yeah. 是啊
-But I feel good. 但是我感觉很好&lt;/p>
-&lt;/blockquote>
+But I feel good. 但是我感觉很好&lt;/p>&lt;/blockquote>
 &lt;p>Skyler:&lt;/p>
 &lt;blockquote>
 &lt;p>So talk. 说吧
-Why are you here? 你为什么来这里&lt;/p>
-&lt;/blockquote>
+Why are you here? 你为什么来这里&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>It&amp;rsquo;s over. 都结束了
 And I needed a proper goodbye. 我需要好好告别
-Not our last phone call. 上次在电话里不算&lt;/p>
-&lt;/blockquote>
+Not our last phone call. 上次在电话里不算&lt;/p>&lt;/blockquote>
 &lt;p>Skyler:&lt;/p>
 &lt;blockquote>
-&lt;p>So you&amp;rsquo;re going to the police? 你要去自首吗&lt;/p>
-&lt;/blockquote>
+&lt;p>So you&amp;rsquo;re going to the police? 你要去自首吗&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
-&lt;p>They&amp;rsquo;ll be coming to me. 他们会来抓我&lt;/p>
-&lt;/blockquote>
+&lt;p>They&amp;rsquo;ll be coming to me. 他们会来抓我&lt;/p>&lt;/blockquote>
 &lt;p>Skyler:&lt;/p>
 &lt;blockquote>
 &lt;p>If you&amp;rsquo;re in custody, 如果你被捕了
@@ -863,35 +836,29 @@ in the middle of the night, 大半夜闯进来
 wearing masks, threatening Holly and Flynn and me. 蒙着面 威胁霍莉 弗林和我
 They told me not to talk about 他们告诉我不要再提及
 that woman I saw at the car wash, 我在洗车行看到的那个女人
-and if you&amp;rsquo;re in custody and they find out&amp;ndash; 如果你被捕了 他们发现&amp;hellip;&lt;/p>
-&lt;/blockquote>
+and if you&amp;rsquo;re in custody and they find out&amp;ndash; 如果你被捕了 他们发现&amp;hellip;&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>They&amp;rsquo;re not coming back. 他们不会回来报复的
-Not after tonight. 今晚过后就不会了&lt;/p>
-&lt;/blockquote>
+Not after tonight. 今晚过后就不会了&lt;/p>&lt;/blockquote>
 &lt;p>场景四：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=mo7RBN5V8vs&lt;/p>
 &lt;p>Jesse 到最后还是不忍亲手杀掉老白。&lt;/p>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
 &lt;p>Do it. 开枪
-You want this. 你想这样&lt;/p>
-&lt;/blockquote>
+You want this. 你想这样&lt;/p>&lt;/blockquote>
 &lt;p>Jesse:&lt;/p>
 &lt;blockquote>
 &lt;p>Say the words. 说出来
 Say you want this! 说你自己想死
-Nothing happens until I hear you say it. 你不说我就不开枪&lt;/p>
-&lt;/blockquote>
+Nothing happens until I hear you say it. 你不说我就不开枪&lt;/p>&lt;/blockquote>
 &lt;p>Walt:&lt;/p>
 &lt;blockquote>
-&lt;p>I want this. 我想死&lt;/p>
-&lt;/blockquote>
+&lt;p>I want this. 我想死&lt;/p>&lt;/blockquote>
 &lt;p>Jesse:&lt;/p>
 &lt;blockquote>
-&lt;p>Then do it yourself. 那你自己动手吧&lt;/p>
-&lt;/blockquote>
+&lt;p>Then do it yourself. 那你自己动手吧&lt;/p>&lt;/blockquote>
 &lt;p>场景五：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=6AlEEcanbus&lt;/p>
 &lt;p>结尾白老师去了制毒现场，环顾那些熟悉的场景，摸了摸仪器，拿起了制毒时用的防毒面具，脸上的笑容看起来既欣慰又愉悦。这才是他这样的人应该待的地方！远方数辆警车带着警笛声赶来，白老师倒在了地上，身下白衣被一摊血迹浸染，镜头随即升高、升高。真的是艺术！&lt;/p>
@@ -906,35 +873,29 @@ Nothing happens until I hear you say it. 你不说我就不开枪&lt;/p>
 >Breaking Bad&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Github RSS</title><link>https://ireflux.github.io/snow/post/github-rss/</link><pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/github-rss/</guid><description>&lt;blockquote>
 &lt;p>本文转载于 &lt;a class="link" href="https://www.ronaldsvilcins.com/2020/03/26/rss-feeds-for-your-github-releases-tags-and-activity/" target="_blank" rel="noopener"
->ronaldsvilcins&lt;/a>，以下为原文：&lt;/p>
-&lt;/blockquote>
+>ronaldsvilcins&lt;/a>，以下为原文：&lt;/p>&lt;/blockquote>
 &lt;p>RSS feeds for your Github releases, tags and activity&lt;/p>
 &lt;p>GitHub provides several timeline resources in Atom format. That’s how I get latest info about projects that I follow and their fixed bugs and new features. Some of official RSS feeds are:&lt;/p>
 &lt;blockquote>
 &lt;p>Repo releases&lt;br>
 &lt;a class="link" href="https://github.com/:owner/:repo/releases.atom" target="_blank" rel="noopener"
->https://github.com/:owner/:repo/releases.atom&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:owner/:repo/releases.atom&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Repo commits&lt;br>
 &lt;a class="link" href="https://github.com/:owner/:repo/commits.atom" target="_blank" rel="noopener"
->https://github.com/:owner/:repo/commits.atom&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:owner/:repo/commits.atom&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Private feed (You can find Subscribe to your news feed in dashboard page after login)&lt;br>
 &lt;a class="link" href="https://github.com/:user.private.atom?token=:secret" target="_blank" rel="noopener"
->https://github.com/:user.private.atom?token=:secret&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:user.private.atom?token=:secret&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Repo tags&lt;br>
 &lt;a class="link" href="https://github.com/:user/:repo/tags.atom" target="_blank" rel="noopener"
->https://github.com/:user/:repo/tags.atom&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://github.com/:user/:repo/tags.atom&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>User activity&lt;br>
 &lt;a class="link" href="https://github.com/:user.atom" target="_blank" rel="noopener"
->https://github.com/:user.atom&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>「译文」| 结论(五)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-5/</link><pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-5/</guid><description>&lt;p>美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。&lt;/p>
+>https://github.com/:user.atom&lt;/a>&lt;/p>&lt;/blockquote></description></item><item><title>「译文」| 结论(五)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-5/</link><pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-5/</guid><description>&lt;p>美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。&lt;/p>
 &lt;p>如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。&lt;/p>
 &lt;p>我们发现这些处理器已经从 Zen 1 设计中进行了多个地方的更改。很多人怀疑它们是 Zen 1 SoC 的副本，这是不正确的——设计中的变化已经足够多，以至于这些部件之间能够重新平衡，主要是因为其性能比 Zen 1 同类产品差。整数性能基本上是相同的，但是浮点性能已降低——普通指令的吞吐量只有一半，并且随机数生成已调整为既慢又产生质量较低的随机数。加密引擎也已被替换，从而不再加速常见的 AES 指令，而是包含了一些更专门针对中国安全性的指令，例如 SM2，SM3 和 SM4。在我们的测试中，尽管处理器在探测时显示支持 AVX/AVX2，但似乎已被禁用。我们怀疑这更多是固件错误，而不是海光 CPU 的限制。&lt;/p>
 &lt;p>AMD 将其第一代 Zen 核心设计的修改后的版本变成为“中国”设计的 x86 CPU 的方法非常复杂。首先与一个叫做中国天津海光先进技术投资有限公司(THATIC)的中国公司建立合资企业，然后组建海光微电子有限公司(HMC)和成都海光集成电路设计有限公司(Hygon)，AMD和中国天津海光(THATIC)分别持有这两家公司不同的股份，他们讨论了各自对 IP 有控制权的部分，以便让机密仍掌握在 AMD 手中，允许合资企业的中方有进行修改的请求权利。而且必须批准这些请求，然后海光微电子(HMC)从 &lt;a class="link" href="https://www.globalfoundries.com/" target="_blank" rel="noopener"
@@ -1236,8 +1197,7 @@ alt="img"
 &lt;p>最后一点最为重要，美国政府根据来自 Intel，AMD 或其他厂商的 CPU 的性能为其评估价值指数。这种指数是根据 CPU 每秒浮点运算次数以及其能力的某种加权综合而来，超过特定阈值的产品会被认为过于强大，无法在某些市场上出售。其范围包括半定制处理器，其中 AMD/Intel 搞的核心数量/频率，并包含了非线路图的部分。&lt;/p>
 &lt;p>AMD当时发表了以下声明：&lt;/p>
 &lt;blockquote>
-&lt;p>从2015年开始，AMD 在进入合资企业之前，积极地向美国国防部，商务部和美国政府内的多个其他机构地介绍情况。AMD 没有收到任何机构对合资企业的成立或技术转让的反对，这些技术的性能要比其他商用处理器低。实际上在成立合资企业和转让技术之前，商务部就已经通知 AMD，它所提议的技术哪些不受限制，哪些禁止转让。有了这些明确的反馈，AMD 便得以继续与合资企业合作。&lt;/p>
-&lt;/blockquote>
+&lt;p>从2015年开始，AMD 在进入合资企业之前，积极地向美国国防部，商务部和美国政府内的多个其他机构地介绍情况。AMD 没有收到任何机构对合资企业的成立或技术转让的反对，这些技术的性能要比其他商用处理器低。实际上在成立合资企业和转让技术之前，商务部就已经通知 AMD，它所提议的技术哪些不受限制，哪些禁止转让。有了这些明确的反馈，AMD 便得以继续与合资企业合作。&lt;/p>&lt;/blockquote>
 &lt;p>AMD 已经联系了国防部和国防部，以及所有其他部门，并且已经得到了批准。新的微架构被认为性能很低，不会影响到任何出口禁令。在“提议的技术中哪些不受限制，哪些禁止转让”这一点，ADM 也得到了非常明确的回复，这是一个非常明确的声明。在这一点上，很显然 AMD 可能已经提交了一个这个 IP 的修改版本到了美国的相关部门，而不是我们在 Ryzen 1000 系列中看到的微架构。&lt;/p>
 &lt;h2 id="合资企业中的合资企业">合资企业中的合资企业
 &lt;/h2>&lt;p>所有这一切的最终目标是能够向中国提供 AMD 的 Zen 1 CPU 版本，该版本可以称为“中国版”，而非“美版”。与过去十年或更长时间的情况一样，中国希望减少对美国技术和知识产权的依赖，以实现自给自足。AMD 合资企业实际上是通过一种迂回的方式来实现为海光 Dhyana 的设计工作的。&lt;/p>
@@ -1297,12 +1257,10 @@ alt="img"
 >&lt;/p>
 &lt;p>值得一提的是，我们在贸易展览会上确实见过海光处理器，您可能会在底部看到一些中文文字。有趣的是，我们翻译了CPU的右下角。直译是：&lt;/p>
 &lt;blockquote>
-&lt;p>“用芯片计算未来”&lt;/p>
-&lt;/blockquote>
+&lt;p>“用芯片计算未来”&lt;/p>&lt;/blockquote>
 &lt;p>但是，标语中使用的第二个字符是谐音，可以翻译为:&lt;/p>
 &lt;blockquote>
-&lt;p>&amp;ldquo;用热爱计算未来”&lt;/p>
-&lt;/blockquote>
+&lt;p>&amp;ldquo;用热爱计算未来”&lt;/p>&lt;/blockquote>
 &lt;p>在接下来的几页中，我们将更详细地研究这两个系统，然后看看和我们在过去几年中已经测试过的 Ryzen 1000 和 EPYC Naples 处理器在内核和 SoC 级别上有哪些差异之处。&lt;/p>
 &lt;p>(未完待续&amp;hellip;)&lt;/p>
 &lt;h2 id="相关篇章">相关篇章
@@ -1612,8 +1570,7 @@ proxy_redirect default;
 &lt;li>&lt;a class="link" href="https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4" target="_blank" rel="noopener"
 >libinput - libinput-based X.Org input driver&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>试用 Firefox Private Network</title><link>https://ireflux.github.io/snow/post/try-firefox-private-network/</link><pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/try-firefox-private-network/</guid><description>&lt;blockquote>
-&lt;p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p>
-&lt;/blockquote>
+&lt;p>Mozilla 宣布了 Test Pilot Program 回归，推出了 Firefox Private Network Beta 服务。你可以称这是一个 VPN 服务，但它实际上是一个 HTTP/HTTPS 代理，由 Mozilla 的合作伙伴 Cloudflare 运营，目前只对美国桌面版用户提供，暂时不会收费。Mozilla 称，Firefox Private Network 是一个扩展，向用户提供一个安全加密的访问 Web 的通道，通过测试 Mozilla 将根据用户需求探索不同的价格选项。使用该服务需要有一个 Firefox 账号。&lt;/p>&lt;/blockquote>
 &lt;p>以上转发自 Solidot.&lt;/p>
 &lt;p>首先需要准备一个美国 IP，然后打开&lt;a class="link" href="https://private-network.firefox.com/" target="_blank" rel="noopener"
 >链接&lt;/a>，安装扩展。&lt;/p>
@@ -1653,21 +1610,20 @@ proxy_redirect default;
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-4-episode-1----box-cutter">Season 4 Episode 1 &amp;ndash; Box Cutter
+&lt;h3 id="season-4-episode-1--box-cutter">Season 4 Episode 1 &amp;ndash; Box Cutter
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=wGuHyy7qVcQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=wGuHyy7qVcQ&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>You kill me, you have nothing.&lt;br>
-You kill Jesse, you don&amp;rsquo;t have me.&lt;/p>
-&lt;/blockquote>
+You kill Jesse, you don&amp;rsquo;t have me.&lt;/p>&lt;/blockquote>
 &lt;p>正如现在 Walt 所做的。之后的剧情里，Jesse 也会这样对他，即使双方之间产生了矛盾。&lt;/p>
-&lt;h3 id="season-4-episode-2----thirty-eight-snub">Season 4 Episode 2 &amp;ndash; Thirty-Eight Snub
+&lt;h3 id="season-4-episode-2--thirty-eight-snub">Season 4 Episode 2 &amp;ndash; Thirty-Eight Snub
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=JkPf7MSdm-A" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=JkPf7MSdm-A&lt;/a>&lt;/p>
 &lt;p>前传中的 Mike 是一个连路人被毒贩枪杀都要去复仇的、富有正义感的人，却在第四季中为 Gus 做事中出手杀掉了逃跑的工程师。这是不是也是一种 Breaking Bad 呢？&lt;/p>
-&lt;h3 id="season-4-episode-4----bullet-points">Season 4 Episode 4 &amp;ndash; Bullet Points
+&lt;h3 id="season-4-episode-4--bullet-points">Season 4 Episode 4 &amp;ndash; Bullet Points
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=0v0VR6Kf7KQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=0v0VR6Kf7KQ&lt;/a>&lt;/p>
@@ -1676,7 +1632,7 @@ You kill Jesse, you don&amp;rsquo;t have me.&lt;/p>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接：https://www.youtube.com/watch?v=GpyUGiyeSFg&lt;/p>
 &lt;p>&amp;ldquo;To W.W. My star, my perfect silence.&amp;rdquo;&lt;/p>
-&lt;h3 id="season-4-episode-9----bug">Season 4 Episode 9 &amp;ndash; Bug
+&lt;h3 id="season-4-episode-9--bug">Season 4 Episode 9 &amp;ndash; Bug
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=jM6pNUfT6fo" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=jM6pNUfT6fo&lt;/a>&lt;/p>
@@ -1693,18 +1649,17 @@ then get me to keep cooking for you&lt;br>
 after you kill Mr. White.&lt;br>
 You want to&amp;hellip; you want to talk like men?&lt;br>
 Let&amp;rsquo;s talk like men!&lt;br>
-You kill Mr. White, you&amp;rsquo;re gonna have to kill me too.&lt;/p>
-&lt;/blockquote>
+You kill Mr. White, you&amp;rsquo;re gonna have to kill me too.&lt;/p>&lt;/blockquote>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=2bsxH-L1v7c" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=2bsxH-L1v7c&lt;/a>&lt;/p>
 &lt;p>没什么好说的，Breaking Bad 每个场景都很好看，忍不住放出来。&lt;/p>
-&lt;h3 id="season-4-episode-10----salud">Season 4 Episode 10 &amp;ndash; Salud
+&lt;h3 id="season-4-episode-10--salud">Season 4 Episode 10 &amp;ndash; Salud
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=4kyxZI1UCKM" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=4kyxZI1UCKM&lt;/a>&lt;/p>
 &lt;p>Jesse 的气场。Gus 的表情好像要笑，一种很欣慰，很为 Jesse 骄傲的感觉。&lt;/p>
-&lt;h3 id="season-4-episode-11----crawl-space">Season 4 Episode 11 &amp;ndash; Crawl Space
+&lt;h3 id="season-4-episode-11--crawl-space">Season 4 Episode 11 &amp;ndash; Crawl Space
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=xpgfENjlcQM" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=xpgfENjlcQM&lt;/a>&lt;/p>
@@ -1713,8 +1668,7 @@ You kill Mr. White, you&amp;rsquo;re gonna have to kill me too.&lt;/p>
 Pay him off or fire him.&lt;br>
 Don&amp;rsquo;t kill him.&lt;br>
 You know that won&amp;rsquo;t work.&lt;br>
-Then you&amp;rsquo;ve got a problem.&lt;/p>
-&lt;/blockquote>
+Then you&amp;rsquo;ve got a problem.&lt;/p>&lt;/blockquote>
 &lt;p>不止在这里，在之后 S04E12 中 DEA 带人去洗衣店里，Gus 告诉 Jesse 这都是拜他的 Partner 所赐。Pinkman 仍然坚持他的立场。&lt;/p>
 &lt;blockquote>
 &lt;p>You know, I get it.&lt;br>
@@ -1725,8 +1679,7 @@ Okay?&lt;br>
 Like I said,&lt;br>
 if something final&lt;br>
 happens to Mr. White,&lt;br>
-we are going to have a problem.&lt;/p>
-&lt;/blockquote>
+we are going to have a problem.&lt;/p>&lt;/blockquote>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=8-5DfdWrfsM" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=8-5DfdWrfsM&lt;/a>&lt;/p>
@@ -1735,7 +1688,7 @@ we are going to have a problem.&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=Jf8GaDkFm3E" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=Jf8GaDkFm3E&lt;/a>&lt;/p>
 &lt;p>白老师演的真棒，笑声里充满了绝望。(莫名压上了韵)&lt;/p>
-&lt;h3 id="season-4-episode-12----end-times">Season 4 Episode 12 &amp;ndash; End Times
+&lt;h3 id="season-4-episode-12--end-times">Season 4 Episode 12 &amp;ndash; End Times
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=HutGXmWzZhA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=HutGXmWzZhA&lt;/a>&lt;/p>
@@ -1750,8 +1703,7 @@ of those choices, no one else.&lt;br>
 And those consequences&amp;ndash;&lt;br>
 they&amp;rsquo;re coming.&lt;br>
 No more prolonging the inevitable.&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;p>好喜欢这段，白老师最终还是承认了这一年来都饱受死亡的威胁。&lt;/p>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=ETNTqHAFam0" target="_blank" rel="noopener"
@@ -1761,7 +1713,7 @@ No more prolonging the inevitable.&lt;/li>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=jUnx04T7e4U" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=jUnx04T7e4U&lt;/a>&lt;/p>
 &lt;p>剧情按照老白的剧本发展，成功策反了他，白老师已经变身为大 Boss 了。&lt;/p>
-&lt;h3 id="season-4-episode-13----face-off">Season 4 Episode 13 &amp;ndash; Face Off
+&lt;h3 id="season-4-episode-13--face-off">Season 4 Episode 13 &amp;ndash; Face Off
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=MybaTnzu9AA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=MybaTnzu9AA&lt;/a>&lt;/p>
@@ -1781,13 +1733,11 @@ No more prolonging the inevitable.&lt;/li>
 &lt;blockquote>
 &lt;p>So Gus didn&amp;rsquo;t poison him after all.&lt;br>
 Still, he&amp;ndash;&lt;br>
-he had to go, right?&lt;/p>
-&lt;/blockquote>
+he had to go, right?&lt;/p>&lt;/blockquote>
 &lt;p>Walt 回道：&lt;/p>
 &lt;blockquote>
 &lt;p>You&amp;rsquo;re damn right.&lt;br>
-Gus had to go.&lt;/p>
-&lt;/blockquote>
+Gus had to go.&lt;/p>&lt;/blockquote>
 &lt;p>Pinkman 得知 Gus 并没有下毒后，反而有一些内疚，有些犹豫。善良如 Pinkman，他不知道杀死 Gus 是不是一件正确的事情，于是有了这段对话。在得到肯定的答复后，内心反而有了支持。纵观 Jesse 的过去，他一直都不是个主观意识很强的人。他希望得到别人的认可，当他独自制了一批货，去找白老师评价时，告诉白老师他严格按照步骤进行，仔细把控了每项指标，白老师告诉他他的货是个垃圾。当和 Mike 一起共事后，Mike 经常叫他 Kid，也很认可他，他觉得和 Mike 很亲近。&lt;/p>
 &lt;p>总之，他没有白老师那样的心计，他的冲动和鲁莽也会被人利用，被人耍的团团转。他是个小人物，也是一个不可或缺的重要角色。&lt;/p>
 &lt;h2 id="参考资料">参考资料
@@ -1807,17 +1757,17 @@ Gus had to go.&lt;/p>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-3-episode-1----no-mas">Season 3 Episode 1 &amp;ndash; No Mas
+&lt;h3 id="season-3-episode-1--no-mas">Season 3 Episode 1 &amp;ndash; No Mas
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=5-8FB6k8jik" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=5-8FB6k8jik&lt;/a>&lt;/p>
 &lt;p>Walt 真是个天生的演讲家，他的演讲总是有一种很舒服的感觉，节奏控制的很好。&lt;/p>
-&lt;h3 id="season-3-episode-6----sunset">Season 3 Episode 6 &amp;ndash; Sunset
+&lt;h3 id="season-3-episode-6--sunset">Season 3 Episode 6 &amp;ndash; Sunset
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=s3zqUPoVmb0" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=s3zqUPoVmb0&lt;/a>&lt;/p>
 &lt;p>这段也很经典，Hank 将 Walt 和 Jesse 堵在车里的场景。&lt;/p>
-&lt;h3 id="season-3-episode-7----one-minute">Season 3 Episode 7 &amp;ndash; One Minute
+&lt;h3 id="season-3-episode-7--one-minute">Season 3 Episode 7 &amp;ndash; One Minute
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=yp2G586zOEE" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=yp2G586zOEE&lt;/a>&lt;/p>
@@ -1825,30 +1775,29 @@ Gus had to go.&lt;/p>
 &lt;p>What do you even care&lt;br>
 as long as you get what you want?&lt;br>
 Right?&lt;br>
-You don&amp;rsquo;t give a shit about me.&lt;/p>
-&lt;/blockquote>
+You don&amp;rsquo;t give a shit about me.&lt;/p>&lt;/blockquote>
 &lt;p>他们之间的贩毒史可以说并不是一帆风顺，总会遇到各种问题，当计划进展顺利时，俩人都非常兴奋，但一旦出现问题后俩人之间就会争吵不断，甚至还会打架，就这样一路走到了现在。就在 Walt 从最初的杀人都会找两三天理由的人，逐渐成长为 Jesse 口中杀人不眨眼的 “devil”。反观 Pinkman 还仍然是 Mike 口中的 “Kid”，在失去了很多东西后还会说出“你从来都没有关心过我”——这种像一个 Kid 说出的话。&lt;/p>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=BBs_Tw-whVs" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=BBs_Tw-whVs&lt;/a>&lt;/p>
 &lt;p>这一段 Hank 超帅，要知道在前传 &amp;lt; better call saul &amp;gt; 那哥俩俩人端了一窝毒贩，很是犀利。在这里联手却被反杀。&lt;/p>
-&lt;h3 id="season-3-episode-8----i-see-you">Season 3 Episode 8 &amp;ndash; I See You
+&lt;h3 id="season-3-episode-8--i-see-you">Season 3 Episode 8 &amp;ndash; I See You
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=sl0tZDoLw6E" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=sl0tZDoLw6E&lt;/a>&lt;/p>
 &lt;p>Have fun!&lt;/p>
-&lt;h3 id="season-3-episode-10----fly">Season 3 Episode 10 &amp;ndash; Fly
+&lt;h3 id="season-3-episode-10--fly">Season 3 Episode 10 &amp;ndash; Fly
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=QY07i4CPJpQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=QY07i4CPJpQ&lt;/a>&lt;/p>
 &lt;p>据说建那个超级地下制毒室花了不少钱，在拍这一集的时候已经没有预算了，因此主角们的活动只能在这个制毒室展开。大家都在说 Walt 打了一整集的苍蝇，看着都要睡着了。不过我倒没这么觉得，在我不知道它是因为预算不足而被迫如此的产物之前，我依然看得很投入，依然期待接下来会如何发展。尤其是之后 Walt 提到在坠机前的一个晚上，在酒吧遇到了 Jane 的父亲，跟他聊到了家庭，他告诉 Walt 永远不要放弃你的家人。当然此时 Jesse 也不知道 Walt 说的家人就是他。之后在他意识逐渐模糊时告诉 Jesse 他对 Jane 事情很抱歉。我当时真以为他就这样告诉了 Jesse。然而没有，他睡着了。编剧安排的太巧妙了！&lt;/p>
-&lt;h3 id="season-3-episode-12----half-measures">Season 3 Episode 12 &amp;ndash; Half Measures
+&lt;h3 id="season-3-episode-12--half-measures">Season 3 Episode 12 &amp;ndash; Half Measures
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=IpJjBhd9uEc" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=IpJjBhd9uEc&lt;/a>&lt;/p>
 &lt;p>从最开始去那吸毒家庭要钱，家里只有个饿着肚子的小孩，Jesse 给他弄了点吃得，还耐心的陪他玩。当小孩父母回到家后，Jesse 还细心的把小孩送进里屋。还质问他们“你们算什么父母”。小孩的母亲杀掉他父亲后，Jesse 还哄他闭上眼睛，抱着他出了家门，不想让他看到这种事。之后遇到了 Andrea，当得知 Andrea 有个孩子时，也放弃了向他出售冰毒，Andrea 问他有没有冰毒时，Jesse 马上变得很生气，也同样问出了那句话“你算什么母亲”。直到现在 Gus 的手下利用小孩，在那种形势下他也拒绝握手言和，并站起来质问 Gus 的人品。&lt;/p>
 &lt;p>Jesse 一直在保护小孩，这可能与他的个人成长有关。他这个特点使得后期 Walt 利用它策反 Jesse 一起对付 Gus，但也最终导致了后期 Walt 的大型翻车现场。顺便说一句，Walt 的成长速度简直恐怖，如果不是愤怒，此时的 Jesse 根本不敢杀人，而且至今为止 Jesse 还没杀过人，而现在的 Walt 看起来近距离杀人也不会有很大的反应。&lt;/p>
-&lt;h3 id="season-3-episode-13----full-measures">Season 3 Episode 13 &amp;ndash; Full Measures
+&lt;h3 id="season-3-episode-13--full-measures">Season 3 Episode 13 &amp;ndash; Full Measures
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=KSSNXdNXcnw" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=KSSNXdNXcnw&lt;/a>&lt;/p>
@@ -1882,46 +1831,45 @@ You don&amp;rsquo;t give a shit about me.&lt;/p>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-2-episode-1----seven-thirty-seven">Season 2 Episode 1 &amp;ndash; Seven Thirty-Seven
+&lt;h3 id="season-2-episode-1--seven-thirty-seven">Season 2 Episode 1 &amp;ndash; Seven Thirty-Seven
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=2KjLjSD2yZA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=2KjLjSD2yZA&lt;/a>&lt;/p>
 &lt;p>正如本集标题，$737,000，这是他们一家 10 年的生活费，剩余的房贷，两个孩子四年的大学学费。知道自己可能命不久矣，他希望临死前给家里留一笔钱，这也是最开始 walter white 制毒的目标和动力。&lt;/p>
-&lt;h3 id="season-2-episode-2----grilled">Season 2 Episode 2 &amp;ndash; Grilled
+&lt;h3 id="season-2-episode-2--grilled">Season 2 Episode 2 &amp;ndash; Grilled
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=GVVtOYR7Do4" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=GVVtOYR7Do4&lt;/a>&lt;/p>
 &lt;p>Don Hector Salamanca 的第一次出场，他这个名字我觉得好听。Twitter 上还找到了&lt;a class="link" href="https://twitter.com/h_salamanca?lang=en" target="_blank" rel="noopener"
 >这个&lt;/a>2333，前传 &amp;lt; better call saul &amp;gt; 里面交代了他为什么变成这样。本集 Hank 和 Tuco 交火最终击毙了 Tuco。&lt;/p>
-&lt;h3 id="season-2-episode-3----bit-by-a-dead-bee">Season 2 Episode 3 &amp;ndash; Bit by a Dead Bee
+&lt;h3 id="season-2-episode-3--bit-by-a-dead-bee">Season 2 Episode 3 &amp;ndash; Bit by a Dead Bee
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=u3qBYJ2Qgvs" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=u3qBYJ2Qgvs&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>Come on, this is bullshit!&lt;br>
 Look at this dude.&lt;br>
-He doesn&amp;rsquo;t even know what planet he&amp;rsquo;s living on.&lt;/p>
-&lt;/blockquote>
+He doesn&amp;rsquo;t even know what planet he&amp;rsquo;s living on.&lt;/p>&lt;/blockquote>
 &lt;p>这段也比较搞笑。&lt;/p>
-&lt;h3 id="season-2-episode-6----peekaboo">Season 2 Episode 6 &amp;ndash; Peekaboo
+&lt;h3 id="season-2-episode-6--peekaboo">Season 2 Episode 6 &amp;ndash; Peekaboo
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=FF30TJPK3Lk" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=FF30TJPK3Lk&lt;/a>&lt;/p>
 &lt;p>Where&amp;rsquo;s my money, bitch?&lt;/p>
 &lt;p>附带一个采访 Aaron 的&lt;a class="link" href="https://www.youtube.com/watch?v=UlmviSx09HA" target="_blank" rel="noopener"
 >视频&lt;/a>.&lt;/p>
-&lt;h3 id="season-2-episode-8----better-call-saul">Season 2 Episode 8 &amp;ndash; Better Call Saul
+&lt;h3 id="season-2-episode-8--better-call-saul">Season 2 Episode 8 &amp;ndash; Better Call Saul
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=dryYPhnvIWw" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=dryYPhnvIWw&lt;/a>&lt;/p>
 &lt;p>终于出现了！Saul Goodman！原名 Jimmy McGill(全名：James Morgan McGill)，他哥哥 Chuck McGill(全名：Charles Lindbergh McGill)唱歌很好听，在前传 &amp;lt; better call saul &amp;gt; 中和 Jimmy 合唱的一首 &lt;a class="link" href="https://www.youtube.com/watch?v=qll7hCYFNjs" target="_blank" rel="noopener"
 >The Winner Takes It All&lt;/a> 很好听。&lt;/p>
-&lt;h3 id="season-2-episode-11----mandala">Season 2 Episode 11 &amp;ndash; Mandala
+&lt;h3 id="season-2-episode-11--mandala">Season 2 Episode 11 &amp;ndash; Mandala
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=W5_HZ7d2xWc" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=W5_HZ7d2xWc&lt;/a>&lt;/p>
 &lt;p>又一个 Boss 出场了，Gustavo Fring！随着自建销售网络的失败，最终老白找上了商人 Gus。出了一个坑，随后跳进另一个坑，老白此时不知道的是，死亡的阴影又将再次笼罩向他。&lt;/p>
-&lt;h3 id="season-2-episode-12----phoenix">Season 2 Episode 12 &amp;ndash; Phoenix
+&lt;h3 id="season-2-episode-12--phoenix">Season 2 Episode 12 &amp;ndash; Phoenix
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=-kyNBaoCvL8" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=-kyNBaoCvL8&lt;/a>&lt;/p>
@@ -1932,8 +1880,7 @@ He doesn&amp;rsquo;t even know what planet he&amp;rsquo;s living on.&lt;/p>
 &lt;blockquote>
 &lt;p>Family.&lt;br>
 Family.&lt;br>
-You can&amp;rsquo;t give up on them. Never.&lt;/p>
-&lt;/blockquote>
+You can&amp;rsquo;t give up on them. Never.&lt;/p>&lt;/blockquote>
 &lt;p>这使得 Walt 回去找 Jesse，推了推 Jesse，未能叫醒，反而她的女友 Jane 睡姿从侧卧被推开成了仰面朝上，Jane 被口中呕吐物呛到时，Walt 想要救她但最后还是停止了，Jane 最终因口中呕吐物窒息而死。&lt;/p>
 &lt;h3 id="结语">结语
 &lt;/h3>&lt;p>从另一方面来讲，入了 Gus 的坑也使得 Salamanca 家族的人没能杀掉他，也是好事。&lt;/p>
@@ -2041,8 +1988,7 @@ You can&amp;rsquo;t give up on them. Never.&lt;/p>
 >java api ArrayDeque&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>细数 Breaking Bad 经典片段 | 一</title><link>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</link><pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1/</guid><description>&lt;p>Breaking Bad 是美国南方的一个俚语，大致意思就是一个人由善开始转为作恶的一个过程。引用 Wikipedia 中的话就是：&lt;/p>
 &lt;blockquote>
-&lt;p>The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p>
-&lt;/blockquote>
+&lt;p>The title comes from the Southern colloquialism &amp;ldquo;breaking bad&amp;rdquo; which means to &amp;ldquo;raise hell&amp;rdquo; or turn to a life of crime.Gilligan characterized the series as showing Walter&amp;rsquo;s transformation from a soft-spoken Mr. Chips into Scarface.&lt;/p>&lt;/blockquote>
 &lt;h3 id="关联文章">关联文章
 &lt;/h3>&lt;ol>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-1" target="_blank" rel="noopener"
@@ -2056,19 +2002,18 @@ You can&amp;rsquo;t give up on them. Never.&lt;/p>
 &lt;li>&lt;a class="link" href="https://ireflux.github.io/snow/post/the-classic-scene-of-breaking-bad-5" target="_blank" rel="noopener"
 >细数 Breaking Bad 经典片段 | 五&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;h3 id="season-1-episode-1----pilot">Season 1 Episode 1 &amp;ndash; Pilot
+&lt;h3 id="season-1-episode-1--pilot">Season 1 Episode 1 &amp;ndash; Pilot
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接: &lt;a class="link" href="https://www.youtube.com/watch?v=syrW-M41O3U" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=syrW-M41O3U&lt;/a>&lt;/p>
 &lt;p>这是剧中 jesse 和 walter 之间的第一次对话，jesse 的着装和表演太棒了，笑起来也很好看。附下面热评第一的评论：&lt;/p>
 &lt;blockquote>
-&lt;p>Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p>
-&lt;/blockquote>
+&lt;p>Benji Morgan: And this my friends is where our dearly beloved Jesse Pinkman signed his soul to the devil himself&lt;/p>&lt;/blockquote>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=6zgggVRvrd0" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=6zgggVRvrd0&lt;/a>&lt;/p>
 &lt;p>他在车里仰起头，笑着问 Mr.white 为什么要做这个。事实上这一个场景才让我真正开始注意 Aaron（饰 Jesse Pinkman）。正如在后面的剧情里，加油站女孩对他的描述是“He had really blue eyes.”，“They were really, really blue.”，“He&amp;rsquo;s dreamy.”，Hank总结道。&lt;/p>
-&lt;h3 id="season-1-episode-3----and-the-bags-in-the-river">Season 1 Episode 3 &amp;ndash; &amp;hellip;And the Bag&amp;rsquo;s in the River
+&lt;h3 id="season-1-episode-3--and-the-bags-in-the-river">Season 1 Episode 3 &amp;ndash; &amp;hellip;And the Bag&amp;rsquo;s in the River
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=bBRwg5Lpfa0" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=bBRwg5Lpfa0&lt;/a>&lt;/p>
@@ -2077,34 +2022,32 @@ You can&amp;rsquo;t give up on them. Never.&lt;/p>
 &lt;p>But whatever&amp;ndash;&lt;br>
 whatever he became,&lt;br>
 the&amp;ndash;the sweet, kind, brilliant man&lt;br>
-that we once knew, long ago, he&amp;rsquo;s gone.&lt;/p>
-&lt;/blockquote>
+that we once knew, long ago, he&amp;rsquo;s gone.&lt;/p>&lt;/blockquote>
 &lt;p>没错，他的却是一个善良的人，但此时内心非常纠结，最终经过在地下室的一番谈话后，walter 决定放了 crazy 8，直至他检查了盘子碎片，发现少了一块&amp;hellip;&lt;/p>
 &lt;blockquote>
 &lt;p>No, don&amp;rsquo;t do this. Don&amp;rsquo;t do this.&lt;br>
 Why are you doing this?&lt;br>
-why are you doing this?&lt;/p>
-&lt;/blockquote>
+why are you doing this?&lt;/p>&lt;/blockquote>
 &lt;p>场景2：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=aGY4T_Vp8cA" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=aGY4T_Vp8cA&lt;/a>&lt;/p>
 &lt;p>事到如今，为了自保白老师不得不杀了他。在看到 crazy 8 伸手探向腰间的时候，白老师眼泪都掉下来了，这是一个无可挽回的决定。这是 walt 第一次近距离亲自动手用物理方式杀人。&lt;/p>
-&lt;h3 id="season-1-episode-4----cancer-man">Season 1 Episode 4 &amp;ndash; Cancer Man
+&lt;h3 id="season-1-episode-4--cancer-man">Season 1 Episode 4 &amp;ndash; Cancer Man
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=fI52h9YZ-bI" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=fI52h9YZ-bI&lt;/a>&lt;/p>
 &lt;p>这老哥也是倒霉，在前传 &amp;lt; better call saul &amp;gt; 中就被 Jimmy 和 Kim 骗了一次，在这里又被 Walt 搞，蛤蛤蛤。&lt;/p>
-&lt;h3 id="season-1-episode-5----gray-matter">Season 1 Episode 5 &amp;ndash; Gray Matter
+&lt;h3 id="season-1-episode-5--gray-matter">Season 1 Episode 5 &amp;ndash; Gray Matter
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=35gWXV3y53s" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=35gWXV3y53s&lt;/a>&lt;/p>
 &lt;p>家庭会议中，walt 的演讲。其他人的演讲也很棒，可惜没找到完整的演讲视频，Hank 看起来也很萌233&lt;/p>
-&lt;h3 id="season-1-episode-6----crazy-handful-of-nothin">Season 1 Episode 6 &amp;ndash; Crazy Handful of Nothin'
+&lt;h3 id="season-1-episode-6--crazy-handful-of-nothin">Season 1 Episode 6 &amp;ndash; Crazy Handful of Nothin'
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=4IAXG9rj9WQ" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=4IAXG9rj9WQ&lt;/a>&lt;/p>
 &lt;p>jesse 被 tuco 打了，白老师带着雷汞酸盐去报仇。&lt;/p>
-&lt;h3 id="season-1-episode-7----a-no-rough-stuff-type-deal">Season 1 Episode 7 &amp;ndash; A No-Rough-Stuff-Type Deal
+&lt;h3 id="season-1-episode-7--a-no-rough-stuff-type-deal">Season 1 Episode 7 &amp;ndash; A No-Rough-Stuff-Type Deal
 &lt;/h3>&lt;p>场景1：&lt;/p>
 &lt;p>视频链接： &lt;a class="link" href="https://www.youtube.com/watch?v=am_6X_B0OPE" target="_blank" rel="noopener"
 >https://www.youtube.com/watch?v=am_6X_B0OPE&lt;/a>&lt;/p>
@@ -2182,18 +2125,15 @@ why are you doing this?&lt;/p>
 &lt;/h3>&lt;p>由上文可知，房子一共有 red，green，white，yellow，blue 五种颜色。&lt;/p>
 &lt;blockquote>
 &lt;p>he Norwegian lives in the first house&lt;br>
-the Norwegian lives next to the blue house&lt;/p>
-&lt;/blockquote>
+the Norwegian lives next to the blue house&lt;/p>&lt;/blockquote>
 &lt;p>蓝色一定是排在第二位&lt;/p>
 &lt;blockquote>
 &lt;p>the green house is on the left of the white house&lt;br>
 the green house&amp;rsquo;s owner drinks coffee&lt;br>
-the man living in the center house drinks milk&lt;/p>
-&lt;/blockquote>
+the man living in the center house drinks milk&lt;/p>&lt;/blockquote>
 &lt;p>以上三句可以推理出绿色一定是在白色左边的，而且绿色不在中间（第三位），所以绿色在第四位，白色在第五位。&lt;/p>
 &lt;blockquote>
-&lt;p>the Brit lives in the red house&lt;/p>
-&lt;/blockquote>
+&lt;p>the Brit lives in the red house&lt;/p>&lt;/blockquote>
 &lt;p>英国人住的红房子，而住在第一个房子里的挪威人只能是黄色，红色排在第三位。&lt;/p>
 &lt;p>因此根据已知的信息我们可以得到一个关系表格：&lt;/p>
 &lt;table>
@@ -2255,8 +2195,7 @@ the man living in the center house drinks milk&lt;/p>
 &lt;p>the owner of the yellow house smokes Dunhill&lt;br>
 the man living in the center house drinks milk&lt;br>
 the green house&amp;rsquo;s owner drinks coffee&lt;br>
-the man who keeps horses lives next to the man who smokes Dunhill&lt;/p>
-&lt;/blockquote>
+the man who keeps horses lives next to the man who smokes Dunhill&lt;/p>&lt;/blockquote>
 &lt;p>这四句，显而易见，Norwegian 抽的是 Dunhill，Brit 喝得是牛奶，绿房子房主喝得是咖啡，Norwegian 的邻居（即蓝房子房主）家里养的是马。&lt;/p>
 &lt;p>此时，关系图表如下所示：&lt;/p>
 &lt;table>
@@ -2315,28 +2254,22 @@ the man who keeps horses lives next to the man who smokes Dunhill&lt;/p>
 &lt;/table>
 &lt;blockquote>
 &lt;p>the owner who smokes BlueMaster drinks beer&lt;br>
-the Dane drinks tea&lt;/p>
-&lt;/blockquote>
+the Dane drinks tea&lt;/p>&lt;/blockquote>
 &lt;p>结合已知信息，饮料一共有牛奶，咖啡，啤酒，茶和水，其中 3,4 分别是牛奶和咖啡，丹麦人喝茶（排除1，3,4,原因：挪威人，牛奶，咖啡），而抽 BlueMaster 的喝得是啤酒（排除1,3，4,原因：抽 Dunhill，牛奶，咖啡），所以只剩一个水选项，只能给挪威人。因此5号房间只能是抽 BlueMaster，喝啤酒的人。因为丹麦人喝茶，所以只能在2号房间。&lt;/p>
 &lt;blockquote>
-&lt;p>the man who smokes blend has a neighbor who drinks water&lt;/p>
-&lt;/blockquote>
+&lt;p>the man who smokes blend has a neighbor who drinks water&lt;/p>&lt;/blockquote>
 &lt;p>喝水的是一号房间，只能是二号抽的 blend。&lt;/p>
 &lt;blockquote>
-&lt;p>the German smokes Prince&lt;/p>
-&lt;/blockquote>
+&lt;p>the German smokes Prince&lt;/p>&lt;/blockquote>
 &lt;p>根据 1,2,5 已有 smoke，4 是英国人，推理出 4 号房间是德国人，抽 prince&lt;/p>
 &lt;blockquote>
-&lt;p>the Swede keeps dogs as pets&lt;/p>
-&lt;/blockquote>
+&lt;p>the Swede keeps dogs as pets&lt;/p>&lt;/blockquote>
 &lt;p>因此，瑞典人只能是 5 号房（1：Norweg，2：Dane，3：Brit，4：German）&lt;/p>
 &lt;blockquote>
-&lt;p>the person who smokes Pall Mall rears birds&lt;/p>
-&lt;/blockquote>
+&lt;p>the person who smokes Pall Mall rears birds&lt;/p>&lt;/blockquote>
 &lt;p>只有 3 号房间同时缺少 smoke 和 pet，因此 3 号房间抽 Pall Mall，养鸟。&lt;/p>
 &lt;blockquote>
-&lt;p>the man who smokes blends lives next to the one who keeps cats&lt;/p>
-&lt;/blockquote>
+&lt;p>the man who smokes blends lives next to the one who keeps cats&lt;/p>&lt;/blockquote>
 &lt;p>所以只能是 1 号房间养猫（3 号已经养鸟了）&lt;/p>
 &lt;p>最后只剩下一个空位，只能是 German 养鱼。&lt;/p>
 &lt;p>最后关系图表如下：&lt;/p>
@@ -2400,8 +2333,7 @@ the Dane drinks tea&lt;/p>
 &lt;p>以下是&lt;a class="link" href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener"
 >官方&lt;/a>对 lettuce 的描述，摘录如下：&lt;/p>
 &lt;blockquote>
-&lt;p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p>
-&lt;/blockquote>
+&lt;p>Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models.&lt;/p>&lt;/blockquote>
 &lt;p>因此可以看出，lettuce 是线程安全的，基于 netty，在不包含阻塞和事务的情况下多个线程还可以共用一个连接。相比之下 Jedis 的实现上是直连的 redis server，多线程环境下是非线程安全的。&lt;/p>
 &lt;p>言归正传，在开始之前，首先需要在 pom.xml 文件中添加以下依赖：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
@@ -2482,7 +2414,7 @@ the Dane drinks tea&lt;/p>
 &lt;/ol></description></item><item><title>关于想象力</title><link>https://ireflux.github.io/snow/post/about-imagination/</link><pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/about-imagination/</guid><description>&lt;p>许多心理学家和教育家都认为儿童拥有很丰富的想象力，作家和菜头在每年的六一儿童节都会写一篇给孩子们的信，每次都会提到他们的想象力是他们最大的财富。通常认为，儿童的思维模式尚未形成，思想中所受到的限制与规则较成年人来说要少，因此，更有可能会出现天马行空的想象力。&lt;/p>
 &lt;p>但也有人认为只是因为孩子们无知，无畏，孩子的想法通常在成年人看来并不觉得惊艳，反而是胡思乱想。通常认为，想象力是对接触到的一些事物的反馈并对其进行意识加工的过程，通常不能凭空创造（或者说很难凭空创造）。持这个结论的基本上基于人类是否有自由意志这一命题，人类自身的决策和行为无意识的受到外界事物的影响，即是对外界事物而作出的反馈。很难找到由人类“自发”做出的决策或行为。因此，凭空创造也几乎不可能了。既然不能凭空创造，而儿童受限于知识的广度，因此往往可能成人的想象力更为丰富。&lt;/p>
 &lt;p>在此，我们可以换个角度来讨论，从想象力的强度来考虑。何为想象力的强度？即素材在大脑进行加工时，具像化的程度。就我个人而言，当我还处于幼年期，想象家里的钟表时，能毫不费力的将其具像化，并在上面进行一些加工，使其变成图像或者动画。具象化程度之高，就像在眼前出现一样清晰。而当我现在再去想象钟表，却发现很难再做到这一点，记忆还是很清晰，但是很难根据记忆用想象将它描绘出来，只能完成一个轮廓，当我集中注意力去描绘钟表细节的时候，之前描绘的轮廓又都消失了。&lt;/p>
-&lt;p>因此，就我个人的经历而言得出的结论（不具备普适性），我现在想象力的强度远远不及孩提时代，或许是成年后大脑的活跃度降低或是什么原因。因此是否也在某种程度上证明了观点一——儿童具有丰富的想象力。（这里的“丰富”指的是脑部资源的丰富，可以轻松渲染出场景及事物）&lt;/p></description></item><item><title>Spring Boot 整合 Swagger2</title><link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid><description>&lt;p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p>
+&lt;p>因此，就我个人的经历而言得出的结论（不具备普适性），我现在想象力的强度远远不及孩提时代，或许是成年后大脑的活跃度降低或是什么原因。因此是否也在某种程度上证明了观点——儿童具有丰富的想象力。（这里的“丰富”指的是脑部资源的丰富，可以轻松渲染出场景及事物）&lt;/p></description></item><item><title>Spring Boot 整合 Swagger2</title><link>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/spring-boot-and-swagger2/</guid><description>&lt;p>关于 Spring Boot 整合 Swagger2，网络上有很多详细的文章，此文仅作个学习记录。&lt;/p>
 &lt;p>首先需要引入 Swagger2 的依赖，截止发文前版本号如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
@@ -2628,8 +2560,7 @@ Shall the new role be a superuser? (y/n) y
 \help [命令] -&amp;gt; 查看此命令的详细信息及用法。类似于 man page。&lt;br>
 \du -&amp;gt; 列出所有的账户及其权限。&lt;br>
 \dt -&amp;gt; 显示当前数据库所有表的摘要信息。&lt;br>
-\q -&amp;gt; 退出&lt;/p>
-&lt;/blockquote>
+\q -&amp;gt; 退出&lt;/p>&lt;/blockquote>
 &lt;h2 id="参考资料">参考资料
 &lt;/h2>&lt;ol>
 &lt;li>&lt;a class="link" href="https://www.postgresql.org/docs/11/" target="_blank" rel="noopener"
@@ -2644,13 +2575,11 @@ Shall the new role be a superuser? (y/n) y
 &lt;p>Swarm initialized: current node (xxxxxxxxxxxxxxxxxxxxxxxxx) is now a manager.&lt;br>
 To add a worker to this swarm, run the following command:&lt;br>
 docker swarm join &amp;ndash;token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [ip]:2377&lt;br>
-To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&amp;rsquo; and follow the instructions.&lt;/p>
-&lt;/blockquote>
+To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&amp;rsquo; and follow the instructions.&lt;/p>&lt;/blockquote>
 &lt;h2 id="加入集群">加入集群
 &lt;/h2>&lt;p>直接复制初始化后显示的命令，在同一网段的另一台主机上输入即可。如果成功的话，会出现如下反馈：&lt;/p>
 &lt;blockquote>
-&lt;p>This node joined a swarm as a worker.&lt;/p>
-&lt;/blockquote>
+&lt;p>This node joined a swarm as a worker.&lt;/p>&lt;/blockquote>
 &lt;p>如果不小心关掉了 terminal ，还可以通过以下命令看到 token：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo docker swarm join-token worker
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还可以查看添加管理节点到集群的 token：&lt;/p>
@@ -2671,8 +2600,7 @@ To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&a
 &lt;p>言归正传，在 Linux 上使用 adb 有些机型还是需要做一些配置，不然 &lt;code>adb devices&lt;/code> 会显示：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
-[device name] unauthorized&lt;/p>
-&lt;/blockquote>
+[device name] unauthorized&lt;/p>&lt;/blockquote>
 &lt;p>要进行配置之前，首先需要找到自己手机的 USB vendor ID 和 product ID，启用开发者模式，然后打开 usb 调试模式插上手机后在 terminal 中执行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ lsusb
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它将会显示出好几条类似 &lt;code>Bus xxx Device xxx: ID xxxx:xxxx &lt;/code> 的东西，根据后面显示的公司信息很容易分辨出自己的手机是哪一个，ID 之后的 &lt;code>xxxx：xxxx&lt;/code>，前者是 vendor id，后者是 product id&lt;/p>
@@ -2683,8 +2611,7 @@ To add a manager to this swarm, run &amp;lsquo;docker swarm join-token manager&a
 &lt;blockquote>
 &lt;p>SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;, ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;, MODE=&amp;ldquo;0660&amp;rdquo;, GROUP=&amp;ldquo;adbusers&amp;rdquo;&lt;br>
 SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_adb&amp;rdquo;&lt;br>
-SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>
-&lt;/blockquote>
+SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;quot;,ATTR{idProduct}==&amp;quot;[PRODUCT ID]&amp;quot;,SYMLINK+=&amp;ldquo;android_fastboot&amp;rdquo;&lt;/p>&lt;/blockquote>
 &lt;p>2.然后重新载入新的配置文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo udevadm control --reload-rules
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>3.然后将当前的用户添加到 &lt;code>adbusers&lt;/code> 这个组里：&lt;/p>
@@ -2696,8 +2623,7 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的话，应该就能看到设备被列出来了，类似于这样：&lt;/p>
 &lt;blockquote>
 &lt;p>List of devices attached&lt;br>
-[device name] device&lt;/p>
-&lt;/blockquote>
+[device name] device&lt;/p>&lt;/blockquote>
 &lt;p>这样就算是完成了。&lt;/p>
 &lt;h2 id="后记">后记
 &lt;/h2>&lt;p>我自己使用的是第二种方式，能够成功找到adb。&lt;code>adb reboot bootloader&lt;/code> 后进入 bootloader 也能通过 &lt;code>fastboot devices&lt;/code> 找到设备，然而通过 &lt;code>fastboot flash recovery xxxx.img&lt;/code> 就会莫名其妙的卡住&amp;hellip;通过 &lt;code>fastboot boot xxxx.img&lt;/code> 想要直接进入 twrp 也会卡在 sending&amp;hellip;这里。不知道是什么原因，先挖个坑，以后再慢慢研究好了。&lt;/p>
@@ -2720,13 +2646,11 @@ SUBSYSTEM==&amp;ldquo;usb&amp;rdquo;,ATTR{idVendor}==&amp;quot;[VENDOR ID]&amp;q
 &lt;/ol>
 &lt;p>第一种要比第二种简洁很多，不过第二种的 &lt;code>mode=1777&lt;/code> 没看懂是什么意思，随后去查了 man page，以下引用自 man page：&lt;/p>
 &lt;blockquote>
-&lt;p>Set the mode of all files to value &amp;amp; 0777 disregarding the original permissions. Add search permission to directories that have read permission. The value is given in octal.&lt;/p>
-&lt;/blockquote>
+&lt;p>Set the mode of all files to value &amp;amp; 0777 disregarding the original permissions. Add search permission to directories that have read permission. The value is given in octal.&lt;/p>&lt;/blockquote>
 &lt;p>大概就是类似于 &lt;code>chmod&lt;/code> ，至于为什么会是 &lt;code>1777&lt;/code> ，以下引用 &lt;a class="link" href="https://en.wikipedia.org/wiki/Sticky_bit" target="_blank" rel="noopener"
 >wikipedia&lt;/a>:&lt;/p>
 &lt;blockquote>
-&lt;p>When a directory&amp;rsquo;s sticky bit is set, the filesystem treats the files in such directories in a special way so only the file&amp;rsquo;s owner, the directory&amp;rsquo;s owner, or root user can rename or delete the file. Without the sticky bit set, any user with write and execute permissions for the directory can rename or delete contained files, regardless of the file&amp;rsquo;s owner. Typically this is set on the /tmp directory to prevent ordinary users from deleting or moving other users&amp;rsquo; files.&lt;/p>
-&lt;/blockquote>
+&lt;p>When a directory&amp;rsquo;s sticky bit is set, the filesystem treats the files in such directories in a special way so only the file&amp;rsquo;s owner, the directory&amp;rsquo;s owner, or root user can rename or delete the file. Without the sticky bit set, any user with write and execute permissions for the directory can rename or delete contained files, regardless of the file&amp;rsquo;s owner. Typically this is set on the /tmp directory to prevent ordinary users from deleting or moving other users&amp;rsquo; files.&lt;/p>&lt;/blockquote>
 &lt;p>大致意思就是说一旦设置了 &lt;code>sticky bit&lt;/code> ，只有目录/文件的所有者或者 root 账户才能对文件进行写操作，其他的用户即使获得了对这个目录写操作权限，也无法对其进行写操作。&lt;/p>
 &lt;p>之后又去 archlinux wiki 上看了看，发现 yaourt 开发者在2018年11月10号的一条 &lt;a class="link" href="https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631" target="_blank" rel="noopener"
 >issue&lt;/a> 中表示无意再继续维护 yaourt 了，之后 2018 年 11 月 30 号被 aur helper 页面标记为停更，2019 年 3 月 25 号从 aur help 中被移除。&lt;/p>
@@ -2827,8 +2751,7 @@ alt="AVL"
 &lt;li>&lt;a class="link" href="https://www.geeksforgeeks.org/avl-tree-set-1-insertion/" target="_blank" rel="noopener"
 >https://www.geeksforgeeks.org/avl-tree-set-1-insertion/&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>致遥远的过去</title><link>https://ireflux.github.io/snow/post/to-the-distant-past/</link><pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/to-the-distant-past/</guid><description>&lt;blockquote>
-&lt;p>最是人间留不住，朱颜辞镜花辞树&lt;/p>
-&lt;/blockquote>
+&lt;p>最是人间留不住，朱颜辞镜花辞树&lt;/p>&lt;/blockquote>
 &lt;p>我依然记得她的模样。我还依稀记得，小时候去她家里，她都笑容满面的模样，有时侯她看着我们玩，有时问我一些家里的、生活上的琐事。&lt;/p>
 &lt;p>长大一些后，我更想待在家里玩电脑，不再像小时候天天跑别人家里，找别人出去玩。虽然次数开始变得很少，但每次去她家，她都会很热情的拿过来一些东西让我们吃，她每次见到我们都会笑，笑容显得很和煦。离开的时候，都会叫我们以后有空了就来玩。那时候的她看起来依然很健朗。&lt;/p>
 &lt;p>直到现在我依然觉得难以相信，只能不得不感叹有时候人的命运真的很难预料。但这却又让我想起另一件事情。&lt;/p>
@@ -2841,9 +2764,10 @@ alt="AVL"
 &lt;p>去年的时候，我的邻居离开的也很突然，我平时称呼她为小国奶奶，她是个很好的人。在我小时候，每次晚上家里停电的时候，父亲就会让我去邻居家看看，我总是兴冲冲的跑出去，跑着进她家门口就开始喊，问她家里有没有停电。&lt;/p>
 &lt;p>有段时间她买了个压面机，开始做面条来卖，去她家买面条的人很多，我经常去她家玩，因为会有很多面条都挂在一排一排的竹竿上，就像一个帘子一样，我觉得那样很好玩。有时候她会把面条一边做一边把一头挂在竹竿上，我会帮她拿着竹竿，抬高不让面条掉在地上，慢慢后退，看着面条越来越长。最后举着竹竿挂在外面，看着外面的“竹帘”慢慢变多，就很高兴，像是在完成一个艺术品。小时候什么东西都能玩的起来，总是能找到无尽的乐趣。&lt;/p>
 &lt;p>去年暑假我在家，当我看到有个人慌慌张张的跑进我们家大声喊叫，我们当时在用电锯锯钢筋，声音很大，我们都听不到。然后我们关掉电锯，那个人说了句什么，只看到父亲放下手里的活就跑了出去，我也意识到出了什么事情，就连忙跟了上去。当我看到她躺在地上的时候，我不知道作何感想，只是觉得一个时代终结了。&lt;/p>
-&lt;p>自从我上大学后，回来就很少碰到邻居，偶尔远远的看见，也只是匆匆走过，很少去主动打招呼。当事情发生后，事后回想起来，感觉世事难料的同时也觉得很奇妙。昨天我恰好碰到她，从她旁边走过，我罕见的和她打了招呼，连我自己都有种久违的感觉。她露出了笑容，目光跟随着我。她还是以前的模样，只是白头发变得多了，身子也佝偻了些，但看起来精神很好，甚至在当时的阳光下她脸上闪现着光芒，是那种由内而外的、柔和的光芒。直到现在我还清楚的记得她当时的每一个动作，她的笑容，她面庞上散发的光辉，记得那种奇妙的，玄之又玄的感觉。这是我见她生前的最后一面。&lt;/p></description></item><item><title>不再年轻</title><link>https://ireflux.github.io/snow/post/no-longer-young/</link><pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/no-longer-young/</guid><description>&lt;blockquote>
-&lt;p>那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p>
-&lt;/blockquote>
+&lt;p>自从我上大学后，回来就很少碰到邻居，偶尔远远的看见，也只是匆匆走过，很少去主动打招呼。当事情发生后，事后回想起来，感觉世事难料的同时也觉得很奇妙。昨天我恰好碰到她，从她旁边走过，我罕见的和她打了招呼，连我自己都有种久违的感觉。她露出了笑容，目光跟随着我，看着我从她旁边慢慢走过。她还是以前的模样，只是白头发变得多了，身子也佝偻了些，但看起来精神很好，甚至在当时的阳光下她脸上闪现着光芒，是那种由内而外的、柔和的光芒。&lt;/p>
+&lt;p>直到现在我还清楚的记得她当时的每一个动作，她的笑容，她面庞上散发的光辉，记得那种奇妙的，玄之又玄的感觉。&lt;/p>
+&lt;p>这是我见她生前的最后一面。&lt;/p></description></item><item><title>不再年轻</title><link>https://ireflux.github.io/snow/post/no-longer-young/</link><pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/no-longer-young/</guid><description>&lt;blockquote>
+&lt;p>那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。 ——《黄金时代》王小波&lt;/p>&lt;/blockquote>
 &lt;p>大三时当我忽然发觉我都已经 21 岁的时候，我和舍友说，他想了想，好似也刚发现一样，啊~都已经 20 多了啊，他感叹道。&lt;/p>
 &lt;p>对啊，都 20 多岁了呢，不知不觉，都已经这么老了，虽然和 18、9 岁差别不大，但感觉还是不一样的。&lt;/p>
 &lt;p>我一直认为 22 岁就像是个分水岭，22 岁就已经变老了，从数值上来说，21 毕竟还紧挨着 20，虽然年龄看起来大，但感觉上还是年轻的。一旦到了 22，就已经呈现出渐渐远离的姿态，马不停蹄地奔向下一个点，就像宇宙加速膨胀，月球加速远离地球一样。&lt;/p>
@@ -2878,8 +2802,7 @@ alt="AVL"
 &lt;p>在 Chrome 的 Developer tools 中查看时，看到就连 body 都向下移动了 50px！之后尝试在父元素中设置 margin 或 body 中设置都没有用，在父元素中设置 padding 也没有效果。&lt;/p>
 &lt;p>之后搜索到的 css2.1 盒模型中规定的内容如下：&lt;/p>
 &lt;blockquote>
-&lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>
-&lt;/blockquote>
+&lt;p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.&lt;/p>&lt;/blockquote>
 &lt;p>所有毗邻的两个或更多盒元素的 margin 将会合并为一个 margin 共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding 或 Border 分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的 margin 覆盖了父元素的 margin。&lt;/p>
 &lt;p>之后找到的解决方法如下：&lt;/p>
 &lt;ol>
@@ -3037,8 +2960,7 @@ alt="AVL"
 &lt;h3 id="调度场算法">调度场算法
 &lt;/h3>&lt;p>以下来源于Wikipedia:&lt;/p>
 &lt;blockquote>
-&lt;p>调度场算法（Shunting Yard Algorithm）是一个用于将中缀表达式转换为后缀表达式的经典算法，由艾兹格·迪杰斯特拉引入，因其操作类似于火车编组场而得名。&lt;/p>
-&lt;/blockquote>
+&lt;p>调度场算法（Shunting Yard Algorithm）是一个用于将中缀表达式转换为后缀表达式的经典算法，由艾兹格·迪杰斯特拉引入，因其操作类似于火车编组场而得名。&lt;/p>&lt;/blockquote>
 &lt;p>Input: 3 + 4 × 2 ÷ ( 1 − 5 ) ^ 2 ^ 3&lt;/p>
 &lt;table>
 &lt;thead>
@@ -3686,19 +3608,16 @@ alt="AVL"
 &lt;p>Spring Framework Documentation&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://docs.spring.io/spring/docs/" target="_blank" rel="noopener"
->https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的&lt;/p>
 &lt;p>Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener"
->https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>Spring核心容器依赖于Common-logging的JAR包，下载地址如下：&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
->https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;h2 id="原文摘录">原文摘录
 &lt;/h2>&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
 >http://springtutorials.com/spring-tutorial-1/&lt;/a>&lt;/p>
@@ -3726,8 +3645,7 @@ Learning Spring Framework (or anything new) is no different from learning to cou
 It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.&lt;br>
 As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.&lt;br>
 As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br>
-It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>
-&lt;/blockquote>
+It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>&lt;/blockquote>
 &lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service
 &lt;/h3>&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
 &lt;p>部分代码摘录如下：&lt;/p>
@@ -3818,7 +3736,7 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;/h3>&lt;p>打包：mvn package&lt;/p>
 &lt;p>测试运行:java -jar gs-rest-service-0.1.0.jar&lt;/p>
 &lt;p>访问：http://localhost:8080/greeting&lt;/p>
-&lt;p>或者加入参数：http://localhost:8080/greeting?name=User&lt;/p></description></item><item><title>Recommend two websites</title><link>https://ireflux.github.io/snow/post/recommend-two-sites/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid><description>&lt;h1 id="i-rememberhttpi-rememberfren">&lt;a class="link" href="http://i-remember.fr/en" target="_blank" rel="noopener"
+&lt;p>或者加入参数：http://localhost:8080/greeting?name=User&lt;/p></description></item><item><title>Recommend two websites</title><link>https://ireflux.github.io/snow/post/recommend-two-sites/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/recommend-two-sites/</guid><description>&lt;h1 id="i-remember">&lt;a class="link" href="http://i-remember.fr/en" target="_blank" rel="noopener"
 >I remember&lt;/a>
 &lt;/h1>&lt;p>&lt;em>Let&amp;rsquo;s share our memories and make sure this website does not disappear.&lt;/em>&lt;/p>
 &lt;p>很明显，这是一个分享记忆的网站，网站本身做的也是非常炫酷。&lt;/p>
@@ -3826,7 +3744,7 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;p>鼠标滚轮可以进行视角的放大或缩小，放大后可以点击每一个闪光，从而查看别人分享的记忆。人们在这里分享心情、游记甚至表达对未来的寄托。这个完全由用户上传，汇聚了来自全世界的记忆的地方，以此组成一个完整的记忆世界。&lt;/p>
 &lt;p>还可以通过关键字来搜寻类似的记忆，过程特效也做的非常棒。如此炫酷的网站，还不快来体验一下！&lt;/p>
 &lt;p>&lt;strong>友情提示:&lt;/strong> 打开后可能会感觉风扇狂转，这不是错觉:D&lt;/p>
-&lt;h1 id="1000-awesome-thingshttp1000awesomethingscom">&lt;a class="link" href="http://1000awesomethings.com/" target="_blank" rel="noopener"
+&lt;h1 id="1000-awesome-things">&lt;a class="link" href="http://1000awesomethings.com/" target="_blank" rel="noopener"
 >1000 Awesome things&lt;/a>
 &lt;/h1>&lt;p>快节奏的生活使人终日忙忙碌碌，还要关注着很多事情，人的大脑就像CPU一样不停歇的运转，仿佛上帝终于发现让 CPU 闲置就是浪费这个道理一样。长久下来难免就会产生很多负面情绪，很难开心起来。&lt;/p>
 &lt;p>即使有了闲暇的时候，也没办法完全放松下来。总感觉时间过的那么快，什么都来不及去做。大概再也回不到过去那种“忙的时候忙，闲的时候能静下来思考些东西而不必考虑时间流逝或者什么都不想只管玩”生活状态了。&lt;/p>
@@ -3835,10 +3753,9 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;hr>
 &lt;p>说个我个人最近的：&lt;/p>
 &lt;ol>
-&lt;li>经常在那家板面店吃饭，我和店主都认识了。每天订的板面，店主做好后，出门前在微信上跟我说一声，随后我回应一声就穿好外套下楼。每次都是我们两个__同时__到达后门，时间上刚刚好，经常精确到秒级。&lt;/li>
+&lt;li>经常在那家板面店吃饭，我和店主都认识了。每天订的板面，店主做好后，出门前在微信上跟我说一声，随后我回应一声就穿好外套下楼。每次都是我们两个&lt;strong>同时&lt;/strong>到达后门，时间上刚刚好，经常精确到秒级。&lt;/li>
 &lt;/ol></description></item><item><title>追逐快乐</title><link>https://ireflux.github.io/snow/post/chasing-happiness/</link><pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/chasing-happiness/</guid><description>&lt;blockquote>
-&lt;p>此文系转载，原文来源：豆瓣，地址:https://www.douban.com/note/323805946/&lt;/p>
-&lt;/blockquote>
+&lt;p>此文系转载，原文来源：豆瓣，地址:https://www.douban.com/note/323805946/&lt;/p>&lt;/blockquote>
 &lt;p>不知道你是否注意到这样一种情况：&lt;/p>
 &lt;p>那些容易快乐的人，常常都被冠以这样的评价：热爱生活！&lt;/p>
 &lt;p>可他妈的什么叫热爱生活？积极？坦然？开放？热忱？都对又都不对！&lt;/p>
@@ -3941,11 +3858,9 @@ It is worth the effort to go through this randomness. A good foundation is the c
 &lt;p>希望我们在干巴巴的成人世界里，能逐渐找回遗失掉的寻找快乐的天赋！&lt;/p>
 &lt;p>也希望你跟帖分享那些生活中的快乐点滴。&lt;/p>
 &lt;blockquote>
-&lt;p>原文地址:https://www.douban.com/note/323805946/&lt;/p>
-&lt;/blockquote></description></item><item><title>寂静之城 (The Silence City)</title><link>https://ireflux.github.io/snow/post/the-silence-city/</link><pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-silence-city/</guid><description>&lt;blockquote>
+&lt;p>原文地址:https://www.douban.com/note/323805946/&lt;/p>&lt;/blockquote></description></item><item><title>寂静之城 (The Silence City)</title><link>https://ireflux.github.io/snow/post/the-silence-city/</link><pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-silence-city/</guid><description>&lt;blockquote>
 &lt;p>马伯庸《寂静之城》未删节版本全文&lt;br>
-发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p>
-&lt;/blockquote>
+发表在 2005 年第 5 期《科幻世界》上的本文由于众所周知的原因进行了删节。以下是发在马伯庸个人网站上的原文。&lt;/p>&lt;/blockquote>
 &lt;p>And in the naked light I saw ten thousand people, maybe more.&lt;br>
 People talking without speaking, people hearing without listening.&lt;br>
 People writing songs that voices never shared, no one dared disturb the sound of silence.&lt;/p>
@@ -4280,8 +4195,7 @@ Subject: 模块、已经、完成、当前、项目、是否、开始。”&lt;/
 &lt;p>10年前看完觉得这是个笑话&lt;br>
 10年后，现实成了一个笑话&lt;br>
 寂静之城，一语成谶&lt;br>
-——豆瓣某已注销用户&lt;/p>
-&lt;/blockquote></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言
+——豆瓣某已注销用户&lt;/p>&lt;/blockquote></description></item><item><title>Coding动态Pages初体验</title><link>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/the-first-experience-of-coding-dynamic-pages/</guid><description>&lt;h1 id="前言">前言
 &lt;/h1>&lt;p>前一段时间发现国内的Coding可以部署动态Pages，意味着不需要购买服务器就可以免费得到一个带评论的动态博客，还是很不错的，毕竟Github的静态Pages要评论的话只能借助第三方服务，而且Coding在国内，速度上有天然优势。&lt;/p>
 &lt;h2 id="体验">体验
 &lt;/h2>&lt;p>于是美滋滋的注册了一个帐号，现在的注册人数应该不多，三位数纯英文的用户名都可以轻松注册的到（最低要求三位），想当年注册个Google帐号六位纯英文的已经很难了，而且各种奇葩丑到爆六位英文组合都被人注册了……&lt;/p>
@@ -4304,11 +4218,21 @@ hint: See the &amp;lsquo;Note about fast-forwards&amp;rsquo; in &amp;lsquo;git p
 &lt;p>如今仙剑系列游戏做了一部又一部，现在的制作团队早已不是以前的了，这样一个大IP如今只剩下情怀了吧。&lt;/p>
 &lt;p>&amp;hellip;&lt;/p>
 &lt;p>这也是 2017 年最后一篇博文了。&lt;/p>
-&lt;p>再见了，2017。
-&lt;img src="https://s1.ax1x.com/2020/05/26/tPUMge.jpg"
+&lt;p>再见了，2017。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/05/26/tPUMge.jpg"
 loading="lazy"
 alt="2017_2018"
->&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>&lt;!-- raw HTML omitted -->
+>&lt;/p></description></item><item><title>线</title><link>https://ireflux.github.io/snow/post/line/</link><pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/line/</guid><description>&lt;div class="music-player">
+&lt;iframe
+frameborder="no"
+border="0"
+marginwidth="0"
+marginheight="0"
+width="100%"
+height="86"
+src="https://music.163.com/outchain/player?type=2&amp;id=4881805&amp;auto=0&amp;height=66"
+>&lt;/iframe>
+&lt;/div>
 &lt;p>就像在河的对岸&lt;br>
 我看不到她，她看不到我&lt;br>
 但似乎能够感受到来自对岸细若游丝的信号&lt;br>
@@ -4336,25 +4260,20 @@ alt="2017_2018"
 &lt;p>开个玩笑，一定要连无线网络的话，官网文档见：&lt;a class="link" href="https://wiki.archlinux.org/title/Iwd#iwctl" target="_blank" rel="noopener"
 >Iwd&lt;/a>，我也摘抄如下：&lt;/p>
 &lt;blockquote>
-&lt;p>First, if you do not know your wireless device name, list all Wi-Fi devices:&lt;/p>
-&lt;/blockquote>
+&lt;p>First, if you do not know your wireless device name, list all Wi-Fi devices:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># device list&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>If the device or its corresponding adapter is turned off, turn it on:&lt;/p>
-&lt;/blockquote>
+&lt;p>If the device or its corresponding adapter is turned off, turn it on:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># device device set-property Powered on &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># adapter adapter set-property Powered on&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>Then, to initiate a scan for networks (note that this command will not output anything):&lt;/p>
-&lt;/blockquote>
+&lt;p>Then, to initiate a scan for networks (note that this command will not output anything):&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device scan&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>You can then list all available networks:&lt;/p>
-&lt;/blockquote>
+&lt;p>You can then list all available networks:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device get-networks&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>Finally, to connect to a network:&lt;/p>
-&lt;/blockquote>
+&lt;p>Finally, to connect to a network:&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>iwd&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#75715e"># station device connect SSID&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="更新系统时钟">更新系统时钟
 &lt;/h3>&lt;p>默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p>
@@ -4365,8 +4284,7 @@ alt="2017_2018"
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># cat /sys/firmware/efi/fw_platform_size&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>返回结果的解释，这里就直接复制官网了：&lt;/p>
 &lt;blockquote>
-&lt;p>If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p>
-&lt;/blockquote>
+&lt;p>If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p>&lt;/blockquote>
 &lt;p>如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了 🤣&lt;/p>
 &lt;p>首先查看分区：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fdisk -l&lt;/span>
@@ -4411,8 +4329,7 @@ alt="2017_2018"
 &lt;/h3>&lt;p>格式化 UEFI 分区建议使用 FAT32 格式，详情见官网文档&lt;a class="link" href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" target="_blank" rel="noopener"
 >EFI_system_partition#Format_the_partition&lt;/a>，具体我也摘抄如下：&lt;/p>
 &lt;blockquote>
-&lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>
-&lt;/blockquote>
+&lt;p>To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p>&lt;/blockquote>
 &lt;p>所以格式化 EFI 分区输入如下命令:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mkfs.fat -F 32 /dev/sda1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后格式化 root 分区：&lt;/p>
@@ -4479,16 +4396,13 @@ alt="2017_2018"
 >Users and groups&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>-m/&amp;ndash;create-home
-默认创建用户名同名目录&lt;/p>
-&lt;/blockquote>
+默认创建用户名同名目录&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>-G/&amp;ndash;groups
-额外添加组，例如: &lt;code>wheel&lt;/code>&lt;/p>
-&lt;/blockquote>
+额外添加组，例如: &lt;code>wheel&lt;/code>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>-s/&amp;ndash;shell
-指定用户登录 shell 的路径，例如：&lt;code>/bin/bash&lt;/code>。另外也可以去 &lt;code>/etc/shells&lt;/code> 这个文件查看来确定 shell 路径&lt;/p>
-&lt;/blockquote>
+指定用户登录 shell 的路径，例如：&lt;code>/bin/bash&lt;/code>。另外也可以去 &lt;code>/etc/shells&lt;/code> 这个文件查看来确定 shell 路径&lt;/p>&lt;/blockquote>
 &lt;p>执行以下命令创建普通用户，替换中括号及其内容&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建-swap-文件">创建 Swap 文件
@@ -4513,19 +4427,16 @@ alt="2017_2018"
 >Guide&lt;/a>，首先要查看系统的 OS 版本号和系统类型。系统类型必须是 64 位操作系统以及 OS 版本号要在 1607+&lt;/p>
 &lt;p>查看方法：&lt;/p>
 &lt;blockquote>
-&lt;p>设置-&amp;gt;系统-&amp;gt;关于&lt;/p>
-&lt;/blockquote>
+&lt;p>设置-&amp;gt;系统-&amp;gt;关于&lt;/p>&lt;/blockquote>
 &lt;h3 id="安装">安装
 &lt;/h3>&lt;p>之后需要安装适用于 Linux 的 windows 子系统。&lt;/p>
 &lt;p>1.以管理员运行 Windows PowerShell，输入以下内容回车&lt;/p>
 &lt;blockquote>
-&lt;p>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux&lt;/p>
-&lt;/blockquote>
+&lt;p>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux&lt;/p>&lt;/blockquote>
 &lt;p>2.重新启动Windows&lt;/p>
 &lt;p>之后打开开发者人员模式。方法如下：&lt;/p>
 &lt;blockquote>
-&lt;p>设置-&amp;gt;更新和安全-&amp;gt;针对开发人员&lt;/p>
-&lt;/blockquote>
+&lt;p>设置-&amp;gt;更新和安全-&amp;gt;针对开发人员&lt;/p>&lt;/blockquote>
 &lt;p>开启后，打开 命令提示符，输入 bash，会提示下载 Ubuntu，输入 Y 回车即可。&lt;/p>
 &lt;p>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。&lt;/p>
 &lt;h3 id="卸载">卸载
@@ -4541,8 +4452,7 @@ alt="2017_2018"
 >详情链接&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>一日囚</title><link>https://ireflux.github.io/snow/post/one-day-prisoner/</link><pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/one-day-prisoner/</guid><description>&lt;blockquote>
 &lt;p>《一日囚》作者：柳文扬&lt;br>
-发表于2002年11期《科幻世界》&lt;/p>
-&lt;/blockquote>
+发表于2002年11期《科幻世界》&lt;/p>&lt;/blockquote>
 &lt;p>B先生死了。就在他搬进这座大楼不到二十四小时。&lt;/p>
 &lt;p>B先生是昨夜，不，准确地说是今天凌晨0点住进来的。那时夜雾弥漫，有两个黑衣男子陪着他，拎着三只大提箱，敲开我值班的房门，要租一间不带家具的房子。这个要求有点奇怪，因为大多数人都想要有家具的房间。&lt;/p>
 &lt;p>“请问你们要租多大的屋子？”我打量着B的光头问。他戴着眼镜，苍白而又腼腆，脸上有种愁苦的模样。&lt;/p>

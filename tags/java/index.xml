@@ -10,19 +10,16 @@
 &lt;p>Spring Framework Documentation&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://docs.spring.io/spring/docs/" target="_blank" rel="noopener"
->https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的&lt;/p>
 &lt;p>Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener"
->https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>Spring核心容器依赖于Common-logging的JAR包，下载地址如下：&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
->https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>
-&lt;/blockquote>
+>https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;h2 id="原文摘录">原文摘录
 &lt;/h2>&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
 >http://springtutorials.com/spring-tutorial-1/&lt;/a>&lt;/p>
@@ -50,8 +47,7 @@ Learning Spring Framework (or anything new) is no different from learning to cou
 It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.&lt;br>
 As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.&lt;br>
 As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br>
-It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>
-&lt;/blockquote>
+It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>&lt;/blockquote>
 &lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service
 &lt;/h3>&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
 &lt;p>部分代码摘录如下：&lt;/p>
