@@ -12,7 +12,7 @@ author: "sherry"
 
 ## 安装
 
-按照官方的[教程](https://support.google.com/chromeosflex/answer/11552529?_ga=2.40629794.1417789089.1658235257-1827319735.1658235256)先准备一个非闪迪的 U 盘（因为闪地的 USB 会有一些[已知的问题]((https://support.google.com/chromeosflex/answer/11541806#usb))），然后去 
+按照官方的[教程](https://support.google.com/chromeosflex/answer/11552529?_ga=2.40629794.1417789089.1658235257-1827319735.1658235256)先准备一个非闪迪的 U 盘（因为闪迪会有一些[已知的问题]((https://support.google.com/chromeosflex/answer/11541806#usb))），然后去 
 [Chrome web store](https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm) 安装 `Chromebook Recovery Utility` 这个扩展（并不支持 Linux 系统)，插上 U 盘后，打开新安装好的扩展，制造商选择「Google Chrome OS Flex」，产品选择「Chrome OS Flex」，点继续之后，接下来它就会自动下载并写入到你的 U 盘（话说我还是第一次见到用浏览器扩展制作启动盘的...），期间会清空 U 盘上的所有信息。这个过程完成之后，你就拥有一个 Chrome OS Flex 的启动盘了，剩下的也无需赘述。
 
 ## 体验
