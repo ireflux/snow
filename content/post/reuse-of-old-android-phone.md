@@ -19,9 +19,9 @@ author: "sherry"
 
 于是我重新线刷了一遍官方系统后，准备安装 Termux，发现 [Android 5 和 6 在 2020 年就不再支持了](https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/)，一想到只能用旧阪本，虽然很不情愿，但也没有办法。不过后来我又在 WIKI 里发现了一篇新的公告：[Termux on android 5 or 6](https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6)，开发者又打算在 termux-app 0.119 版本中重新加回对 android 5 和 6 的支持，这么重要的信息居然不写在最显眼的 README 里面...虽然目前还没有正式 release，但是可以去 Actions 中找打好的安装包来安装，至此总算是可以舒舒服服的安装了。
 
-作为 Arch 的忠实教徒，发行版当然是选择 Arch Linux 啦！在 GitHub 搜寻一番，找到了一个专门在 Termux 中一键安装的脚本 [TermuxArch](https://github.com/TermuxArch/TermuxArch)，总之到这里还算顺利。但接下来的安装遇到了一些错误，是关于 PRoot 的，提示没有 `--sysvipc` 的选项，可能是我的 PRoot 的版本的缘故，但用 Termux 自带的源尝试更新了一下，发现已经是最新的版本了。Hmmm...只好再次去 Termux 官网找答案，答案没找到，却在 Termux Wiki 找到了一篇关于 PRoot 的文章： [PRoot](https://wiki.termux.com/wiki/PRoot)，里面详细解释了 PRoot 和 Chroot 的区别，简单来说 PRoot 是通过 ptrace() 来劫持系统调用参数和返回值来伪造可见的文件系统布局或用户/组的 ID，会引起额外的开销，里面还提到了一个 APP： [Linux Deploy](https://github.com/meefik/linuxdeploy)。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。
+作为 Arch 的忠实教徒，发行版当然是选择 Arch Linux 啦！在 GitHub 搜寻一番，找到了一个专门在 Termux 中一键安装的脚本 [TermuxArch](https://github.com/TermuxArch/TermuxArch)，总之到这里还算顺利。但接下来的安装遇到了一些错误，是关于 PRoot 的，提示没有 `--sysvipc` 的选项，可能是我的 PRoot 的版本的缘故，但用 Termux 自带的源尝试更新了一下，发现已经是最新的版本了。Hmmm...只好再次去 Termux 官网找答案，答案没找到，却在 Termux Wiki 找到了一篇关于 PRoot 的文章： [PRoot](https://wiki.termux.com/wiki/PRoot)，里面详细解释了 PRoot 和 Chroot 的区别，简单来说 PRoot 是通过 ptrace() 来劫持系统调用参数和返回值来伪造可见的文件系统布局或用户/组的 ID，会引起额外的开销，里面还提到了一个 APP： [Linux Deploy](https://github.com/meefik/linuxdeploy)，但需要 root 权限。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。
 
-接下来就是获取 root 权限的过程了：从线刷包里提取 boot.img -> magisk 修补 boot.img -> `fastboot flash boot boot.img`
+接下来就是常规获取 root 权限的过程了，一带而过：从线刷包里提取 boot.img -> magisk 修补 boot.img -> `fastboot flash boot boot.img`
 
 装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，有一些 bug 也说不定。之后各处搜寻，最终还是找到了解决方案。
 
@@ -139,4 +139,3 @@ Linux Deploy 直接安装报错 log:
 4. TermuxArch: https://github.com/TermuxArch/TermuxArch
 5. PRoot: https://wiki.termux.com/wiki/PRoot
 6. Linux Deploy: https://github.com/meefik/linuxdeploy
-7. 青龙面板: https://github.com/whyour/qinglong
