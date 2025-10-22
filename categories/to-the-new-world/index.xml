@@ -1,379 +1,382 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>To the New World on sherry's blog</title><link>https://ireflux.github.io/snow/categories/to-the-new-world/</link><description>Recent content in To the New World on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/to-the-new-world/index.xml" rel="self" type="application/rss+xml"/><item><title>「译文」| 结论(五)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-5/</link><pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-5/</guid><description>&lt;p>美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。&lt;/p>
-&lt;p>如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。&lt;/p>
-&lt;p>我们发现这些处理器已经从 Zen 1 设计中进行了多个地方的更改。很多人怀疑它们是 Zen 1 SoC 的副本，这是不正确的——设计中的变化已经足够多，以至于这些部件之间能够重新平衡，主要是因为其性能比 Zen 1 同类产品差。整数性能基本上是相同的，但是浮点性能已降低——普通指令的吞吐量只有一半，并且随机数生成已调整为既慢又产生质量较低的随机数。加密引擎也已被替换，从而不再加速常见的 AES 指令，而是包含了一些更专门针对中国安全性的指令，例如 SM2，SM3 和 SM4。在我们的测试中，尽管处理器在探测时显示支持 AVX/AVX2，但似乎已被禁用。我们怀疑这更多是固件错误，而不是海光 CPU 的限制。&lt;/p>
-&lt;p>AMD 将其第一代 Zen 核心设计的修改后的版本变成为“中国”设计的 x86 CPU 的方法非常复杂。首先与一个叫做中国天津海光先进技术投资有限公司(THATIC)的中国公司建立合资企业，然后组建海光微电子有限公司(HMC)和成都海光集成电路设计有限公司(Hygon)，AMD和中国天津海光(THATIC)分别持有这两家公司不同的股份，他们讨论了各自对 IP 有控制权的部分，以便让机密仍掌握在 AMD 手中，允许合资企业的中方有进行修改的请求权利。而且必须批准这些请求，然后海光微电子(HMC)从 &lt;a class="link" href="https://www.globalfoundries.com/" target="_blank" rel="noopener"
->GlobalFoundries&lt;/a> 下芯片订单，而成都海光集成电路(Hygon)打包并将其出售给中科曙光(sugon)等公司。我们在第一章的概述中对此进行了详细介绍，但是足以说明所有方面的工作几乎就像在玩被蒙住眼睛的风险游戏一样。&lt;/p>
-&lt;p>由于 AMD 不愿在记录上讨论处理器的安排或更改的任何更详细的细节，当被问及是否可以披露处理器的更改方式时，我们被告知“如果您发现任何问题，我们可能会确认“。有一次我看到海光 Dhyana 处理器，是由于在台北电脑展时和海光的供应商之一之间有误解，事件发生后，让我拍照的那个人突然停止与我交流（我猜想是为了保住他的工作）。经过一些讨论后，仍然花费了一年多的时间才得以拿到芯片来测试，而且由于当前美国实体列表禁令涵盖了其中一家合资公司，我们才能够获得这些芯片。这从根本上杀死了该项目，并导致美国一家子公司被封存，使某些零件泄漏到曾经受到严格控制的市场上。&lt;/p>
-&lt;p>总体而言，这些海光 CPU 为中国市场提供了英特尔之外的替代产品，并且或许比通过进口限制而购买的那些速度更快。AMD 在急需的时候赚到了一些钱，但是随着 Zen 2 平台的成功，我不认为 AMD 在未来十年内还需要做类似的事情。AMD、中国天津海光(THATIC)和合资公司之间协议的性质仅针对单一核心设计 Zen 1，而非 Zen 2，从而限制了其竞争力。此外，出于所有意图和目的，美国实体名单禁止合资企业使该项目无效。中国的海光 Dhyana x86 处理器在未来几年仍将被政府和其他类似组织使用，但这必将成为半导体历史上最奇怪的历史之一。&lt;/p>
-&lt;p>(完)&lt;/p>
-&lt;h2 id="其他篇章">其他篇章
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
->「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
->「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
->「译文」| 海光 CPU：中版的加密方式，不同的性能(三)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
->「译文」| 基准测试：Windows(四)&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 基准测试：Windows(四)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-4/</link><pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-4/</guid><description>&lt;p>对于这两个系统，我们安装了 Windows：小型的8核 Dhyana 系统装了 Windows 10 专业版，而大型双32核 Dhyana Plus 服务器上安装 Windows 10 企业版，由于 AVX / AVX2 无法正常工作，因此我们的测试范围受到了限制。正如之前所说的，某些软件在系统上无法运行，例如服务器上的 CPU-Z。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBZL9.png"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>To the New World on sherry's blog</title><link>https://ireflux.github.io/snow/categories/to-the-new-world/</link><description>Recent content in To the New World on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/to-the-new-world/index.xml" rel="self" type="application/rss+xml"/><item><title>「译文」| 结论(五)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-5/</link><pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-5/</guid><description>&lt;p&gt;美国制造的每个处理器都必须具有一定的性能水平，才能被认为适合出口。公司拥有大量与硬件性能有关的文档，这些文档都由美国法律的度量标准决定。这些指标包括以千兆字节（GFLOP）度量的原始处理能力，调整后的性能峰值（APP）和/或综合理论性能（CTP）。根据要出口的地区，可能会应用这些指标中的一项或多项。&lt;/p&gt;
+&lt;p&gt;如果无法进口 CPU，解决此问题的一种方法是获得构建许可证。除此之外，如果你可以调整许可并在设计中加入一些自定义的东西，在合理范围内则可以将硬件重新标记为本地设备。这就是 AMD 的核心设计之一，在经过修改之后，如何使其成为面向中国市场的“中文版” x86 CPU 的。包装的主要优点不是避免进口问题，而是随之附上的“中国”标签。再者，人们假设使用这些 CPU 的人在购买商品上没有选择权。&lt;/p&gt;
+&lt;p&gt;我们发现这些处理器已经从 Zen 1 设计中进行了多个地方的更改。很多人怀疑它们是 Zen 1 SoC 的副本，这是不正确的——设计中的变化已经足够多，以至于这些部件之间能够重新平衡，主要是因为其性能比 Zen 1 同类产品差。整数性能基本上是相同的，但是浮点性能已降低——普通指令的吞吐量只有一半，并且随机数生成已调整为既慢又产生质量较低的随机数。加密引擎也已被替换，从而不再加速常见的 AES 指令，而是包含了一些更专门针对中国安全性的指令，例如 SM2，SM3 和 SM4。在我们的测试中，尽管处理器在探测时显示支持 AVX/AVX2，但似乎已被禁用。我们怀疑这更多是固件错误，而不是海光 CPU 的限制。&lt;/p&gt;
+&lt;p&gt;AMD 将其第一代 Zen 核心设计的修改后的版本变成为“中国”设计的 x86 CPU 的方法非常复杂。首先与一个叫做中国天津海光先进技术投资有限公司(THATIC)的中国公司建立合资企业，然后组建海光微电子有限公司(HMC)和成都海光集成电路设计有限公司(Hygon)，AMD和中国天津海光(THATIC)分别持有这两家公司不同的股份，他们讨论了各自对 IP 有控制权的部分，以便让机密仍掌握在 AMD 手中，允许合资企业的中方有进行修改的请求权利。而且必须批准这些请求，然后海光微电子(HMC)从 &lt;a class="link" href="https://www.globalfoundries.com/" target="_blank" rel="noopener"
+&gt;GlobalFoundries&lt;/a&gt; 下芯片订单，而成都海光集成电路(Hygon)打包并将其出售给中科曙光(sugon)等公司。我们在第一章的概述中对此进行了详细介绍，但是足以说明所有方面的工作几乎就像在玩被蒙住眼睛的风险游戏一样。&lt;/p&gt;
+&lt;p&gt;由于 AMD 不愿在记录上讨论处理器的安排或更改的任何更详细的细节，当被问及是否可以披露处理器的更改方式时，我们被告知“如果您发现任何问题，我们可能会确认“。有一次我看到海光 Dhyana 处理器，是由于在台北电脑展时和海光的供应商之一之间有误解，事件发生后，让我拍照的那个人突然停止与我交流（我猜想是为了保住他的工作）。经过一些讨论后，仍然花费了一年多的时间才得以拿到芯片来测试，而且由于当前美国实体列表禁令涵盖了其中一家合资公司，我们才能够获得这些芯片。这从根本上杀死了该项目，并导致美国一家子公司被封存，使某些零件泄漏到曾经受到严格控制的市场上。&lt;/p&gt;
+&lt;p&gt;总体而言，这些海光 CPU 为中国市场提供了英特尔之外的替代产品，并且或许比通过进口限制而购买的那些速度更快。AMD 在急需的时候赚到了一些钱，但是随着 Zen 2 平台的成功，我不认为 AMD 在未来十年内还需要做类似的事情。AMD、中国天津海光(THATIC)和合资公司之间协议的性质仅针对单一核心设计 Zen 1，而非 Zen 2，从而限制了其竞争力。此外，出于所有意图和目的，美国实体名单禁止合资企业使该项目无效。中国的海光 Dhyana x86 处理器在未来几年仍将被政府和其他类似组织使用，但这必将成为半导体历史上最奇怪的历史之一。&lt;/p&gt;
+&lt;p&gt;(完)&lt;/p&gt;
+&lt;h2 id="其他篇章"&gt;其他篇章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
+&gt;「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
+&gt;「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
+&gt;「译文」| 海光 CPU：中版的加密方式，不同的性能(三)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
+&gt;「译文」| 基准测试：Windows(四)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 基准测试：Windows(四)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-4/</link><pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-4/</guid><description>&lt;p&gt;对于这两个系统，我们安装了 Windows：小型的8核 Dhyana 系统装了 Windows 10 专业版，而大型双32核 Dhyana Plus 服务器上安装 Windows 10 企业版，由于 AVX / AVX2 无法正常工作，因此我们的测试范围受到了限制。正如之前所说的，某些软件在系统上无法运行，例如服务器上的 CPU-Z。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBZL9.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBVsJ.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBVsJ.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBmZR.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBmZR.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBiGT.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBiGT.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBFRU.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBFRU.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBkzF.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBkzF.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/16/NFBEM4.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/16/NFBEM4.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>从数据中可以看出，由于时钟速度的原因，8核 Dhyana 处理器介于6核 Ryzen 5 1600X 和8核 Ryzen 6 1800X 之间，但在某些方面的测试中，它甚至还不如速龙(Athlon) 200GE。而双32核 Dhyana Plus 服务器的结果似乎看起来杂乱无章，很多方面甚至被 Ryzen 7 1800X 吊打，即使有些方面能够超过 Ryzen 7 1800X 但却轻易的被 Ryzen 9 3950X 吊打。唯一一个确实表现出色的基准测试是 Corona——一个基于内存/&lt;a class="link" href="https://en.wikipedia.org/wiki/Non-uniform_memory_access" target="_blank" rel="noopener"
->NUMA(Non-uniform memory access)&lt;/a> 的不可知整数渲染器——这一点的测试结果看起来倒是和这个芯片很相合。&lt;/p>
-&lt;p>(未完待续&amp;hellip;)&lt;/p>
-&lt;h2 id="其他篇章">其他篇章
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
->「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
->「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
->「译文」| 海光 CPU：中版的加密方式，不同的性能(三)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
->「译文」| 结论(五)&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 海光 CPU：中版的加密方式，不同的性能(三)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-3/</link><pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-3/</guid><description>&lt;p>最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。&lt;/p>
-&lt;p>从总体上来看，我们可以确定，核心布局是相同的，缓存大小，&lt;a class="link" href="https://en.wikipedia.org/wiki/Translation_lookaside_buffer" target="_blank" rel="noopener"
->TLB(Translation Lookaside Buffer 转换后备缓冲区)&lt;/a> 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下：&lt;/p>
-&lt;ul>
-&lt;li>L1D + L1I: 4K/2M/1G 64-entry&lt;/li>
-&lt;li>L2D: 4K 1536-entry 6-way, 2M 1536-entry 3-way, no 1G&lt;/li>
-&lt;li>L2I: 4K/2M 1024-entry 8-way, no 1G&lt;/li>
-&lt;/ul>
-&lt;p>L1 的内存访问时间为4个周期，L2 的为12个周期，L3 的为37-40个周期。记忆潜伏期在284-307个周期内测量。&lt;/p>
-&lt;p>L1 读取速度的测量约为每个时钟32个字节（总计805 GB/s，每个内核约100 GB/s），而写入速度测量的每个时钟约为16个字节（总计408 GB/s，每个内核约51 GB/s） ）。 8核的 DDR4 内存速度使读取速度为38.5 GB/s，写入速度为35.8 GB/s。&lt;/p>
-&lt;h2 id="加密上的变化">加密上的变化
-&lt;/h2>&lt;p>对于加密更改，Linux 内核更新中详细介绍了这些更改。更新围绕 AMD 的虚拟化功能或 &lt;a class="link" href="https://en.wikipedia.org/wiki/Zen_%28first_generation_microarchitecture%29#Enhanced_security_and_virtualization_support" target="_blank" rel="noopener"
->SEV(Secure Encrypted Virtualization 安全加密虚拟化)&lt;/a> 的安全加密进行。通常，对于 EPYC 处理器，SEV 由 AMD 定义的加密协议控制，在这种情况下为 &lt;a class="link" href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29" target="_blank" rel="noopener"
->RSA(Rivest–Shamir–Adleman)&lt;/a>，&lt;a class="link" href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm" target="_blank" rel="noopener"
->ECDSA(Elliptic Curve Digital Signature Algorithm)&lt;/a>，&lt;a class="link" href="https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman" target="_blank" rel="noopener"
->ECDH(Elliptic-curve Diffie–Hellman)&lt;/a>，&lt;a class="link" href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms" target="_blank" rel="noopener"
->SHA(Secure Hash Algorithms)&lt;/a> 和 &lt;a class="link" href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank" rel="noopener"
->AES(Advanced Encryption Standard)&lt;/a>。为了生成正确的密钥，SEV 使用这些方法。但是，在海光 Dhyana 设计中，SEV 被构建为使用称为 SM2，SM3 和 SM4 的算法。&lt;/p>
-&lt;p>正如更新中所述，SM2 基于椭圆曲线密码学，并且需要其他私钥/公钥交换。SM3 是类似于 SHA-256 的哈希算法，SM4 是类似于 AES-128 的分组密码算法。为了支持这些算法所需的额外功能，这些命令已加入到 Linux 内核中。说明书中指出，这些算法已在海光 Dhyana Plus（可能是大型 CPU）处理器上成功测试过，也已在 AMD 的 EPYC CPU 上成功测试过。&lt;/p>
-&lt;h2 id="减缓指令执行速度">减缓指令执行速度
-&lt;/h2>&lt;p>我们能够确定的最大设计上的变更是指令吞吐量。我们认为 Dhyana Plus 和之前提到的 EPYC 之间没什么不同，并且我们做了额外的检查以确保我们的软件能够显示正确的数据，但只是故意将某些指令放慢了他们的执行速度。这里面有一些相当严肃的含义，尤其是取决于它何时在管道中发生。&lt;/p>
-&lt;p>我们认为情况是，为了让 AMD 导出其 SoC 设计，海光还必须共享与 CPU 解释指令的方式有关的微代码，并且还要放慢某些关键指令的执行速度（或完全禁用），以便合资公司继续和中国合作。&lt;/p>
-&lt;p>在我们的测试中，我们发现，尽管海光和 EPYC 之间的整数性能相似，但某些浮点指令（即 DIV 和 SQRT 运算）并未在海光 CPU 中进行流水线处理。这意味着吞吐量和延迟减少了。许多简单的 &lt;a class="link" href="https://en.wikipedia.org/wiki/MMX_%28instruction_set%29" target="_blank" rel="noopener"
->MMX&lt;/a> / &lt;a class="link" href="https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions" target="_blank" rel="noopener"
->SSE(Streaming SIMD Extensions)&lt;/a> 指令降低了吞吐量，以下表格列出了指令吞吐量差异：&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: center">AnandTech&lt;/th>
-&lt;th style="text-align: center">EPYC Naples&lt;/th>
-&lt;th style="text-align: center">Hygon Dhyana&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: center">ADD/SUB&lt;/td>
-&lt;td style="text-align: center">2 per clock&lt;/td>
-&lt;td style="text-align: center">1 per clock&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">CMP/MULP*&lt;/td>
-&lt;td style="text-align: center">2 per clock&lt;/td>
-&lt;td style="text-align: center">1 per clock&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">ADDSUBP*&lt;/td>
-&lt;td style="text-align: center">2 per clock&lt;/td>
-&lt;td style="text-align: center">1 per clock&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">RCP*/RSQRT*&lt;/td>
-&lt;td style="text-align: center">1 per clock&lt;/td>
-&lt;td style="text-align: center">0.5 per clock&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">BLENDW&lt;/td>
-&lt;td style="text-align: center">3 per clock&lt;/td>
-&lt;td style="text-align: center">2 per clock&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">PMIN/MAX*&lt;/td>
-&lt;td style="text-align: center">3 per clock&lt;/td>
-&lt;td style="text-align: center">2 per clcok&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">PAND/ANDN/OR/XOR&lt;/td>
-&lt;td style="text-align: center">4 per clock&lt;/td>
-&lt;td style="text-align: center">2 per clock&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">MOVs&lt;/td>
-&lt;td style="text-align: center">4 per clock&lt;/td>
-&lt;td style="text-align: center">2 per clock&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>所有这些指令对于基本任务都非常重要。通过限制这些指令的并行吞吐率，这意味着这些 CPU 无法计算并行化的代码，从而降低性能。&lt;/p>
-&lt;p>但是，最大的变化或许是服务器版“Dhyana Plus”和消费版“Dhyana”版本之间的差异。Dhyana Plus 大大减少了随机数生成的作用。关键指令 RDRAND 和 RDSEED 具有各种导致速度变慢或变快的原因。&lt;/p>
-&lt;p>RDRAND 指令比较如下：&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: center">AnandTech&lt;/th>
-&lt;th style="text-align: center">Zen 1 Desktop&lt;/th>
-&lt;th style="text-align: center">Hygon Dhyana&lt;/th>
-&lt;th style="text-align: center">Hygon Dhyana Plus&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: center">16-bit&lt;/td>
-&lt;td style="text-align: center">1200 clocks&lt;/td>
-&lt;td style="text-align: center">1100 clocks&lt;/td>
-&lt;td style="text-align: center">800 clocks&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">32-bit&lt;/td>
-&lt;td style="text-align: center">1200 clocks&lt;/td>
-&lt;td style="text-align: center">1100 clocks&lt;/td>
-&lt;td style="text-align: center">800 clocks&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">64-bit&lt;/td>
-&lt;td style="text-align: center">2365 clocks&lt;/td>
-&lt;td style="text-align: center">2125 clocks&lt;/td>
-&lt;td style="text-align: center">1520 clocks&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>RDSEED 指令比较如下：&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: center">AnandTech&lt;/th>
-&lt;th style="text-align: center">Zen 1 Desktop&lt;/th>
-&lt;th style="text-align: center">Hygon Dhyana&lt;/th>
-&lt;th style="text-align: center">Hygon Dhyana Plus&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: center">16-bit&lt;/td>
-&lt;td style="text-align: center">1200 clocks&lt;/td>
-&lt;td style="text-align: center">1100 clocks&lt;/td>
-&lt;td style="text-align: center">12000 clocks&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">32-bit&lt;/td>
-&lt;td style="text-align: center">1200 clocks&lt;/td>
-&lt;td style="text-align: center">1100 clocks&lt;/td>
-&lt;td style="text-align: center">12000 clocks&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">64-bit&lt;/td>
-&lt;td style="text-align: center">2365 clocks&lt;/td>
-&lt;td style="text-align: center">2125 clocks&lt;/td>
-&lt;td style="text-align: center">27100 clocks&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>看上图发现差异还是很大的，尤其是在 RDSEED 中。我们看到 RDSEED（用于生成随机数算法的种子生成）在服务器芯片上的速度慢了10倍以上，而用于实际基于硬件的随机数生成 RDRAND 则比标准 Ryzen 快——在服务器芯片上也是如此。有趣的是，在 Ryzen Mobile 和 Ryzen Desktop APU 上也看到了服务器芯片的 RDSEED 相同的延迟。&lt;/p>
-&lt;p>对于 RDRAND 指令，拥有更快的随机数生成器可以说明两件事：要么实际上更快，要么随机算法的周期性较低。例如：指向一个自我包装的算法。最好的伪随机数生成具有最大的周期性，因此在这种情况下，很快我们就能得出 RDRAND 指令结论，周期性较低，从而导致生成质量较低的随机数。&lt;/p>
-&lt;p>对于 RDSEED 指令，它慢10倍的情况有点不同。RDSEED 指令从主板上的各种传感器中获取信息，并输出一个随机值来初始化 RDRAND——每个周期只能调用一次。较慢的 RDSEED 要么意味着它从更多源获取数据，要么是故意放慢了。&lt;/p>
-&lt;p>实际上，RDRAND 和 RDSEED 可以在我们的 Dhyana Plus 系统的 BIOS 中启用或禁用。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/11/tbDBAx.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;从数据中可以看出，由于时钟速度的原因，8核 Dhyana 处理器介于6核 Ryzen 5 1600X 和8核 Ryzen 6 1800X 之间，但在某些方面的测试中，它甚至还不如速龙(Athlon) 200GE。而双32核 Dhyana Plus 服务器的结果似乎看起来杂乱无章，很多方面甚至被 Ryzen 7 1800X 吊打，即使有些方面能够超过 Ryzen 7 1800X 但却轻易的被 Ryzen 9 3950X 吊打。唯一一个确实表现出色的基准测试是 Corona——一个基于内存/&lt;a class="link" href="https://en.wikipedia.org/wiki/Non-uniform_memory_access" target="_blank" rel="noopener"
+&gt;NUMA(Non-uniform memory access)&lt;/a&gt; 的不可知整数渲染器——这一点的测试结果看起来倒是和这个芯片很相合。&lt;/p&gt;
+&lt;p&gt;(未完待续&amp;hellip;)&lt;/p&gt;
+&lt;h2 id="其他篇章"&gt;其他篇章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
+&gt;「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
+&gt;「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
+&gt;「译文」| 海光 CPU：中版的加密方式，不同的性能(三)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
+&gt;「译文」| 结论(五)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 海光 CPU：中版的加密方式，不同的性能(三)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-3/</link><pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-3/</guid><description>&lt;p&gt;最重要的问题是与标准 Ryzen 和 EPYC CPU 相比，这些处理器究竟发生了什么变化。有人怀疑它们是重新贴了个标签的 AMD 处理器，这是完全不对的——我们可以通过 Linux 内核更新提供的不同加密引擎来反驳这一点。而且我们还发现了其他差异。&lt;/p&gt;
+&lt;p&gt;从总体上来看，我们可以确定，核心布局是相同的，缓存大小，&lt;a class="link" href="https://en.wikipedia.org/wiki/Translation_lookaside_buffer" target="_blank" rel="noopener"
+&gt;TLB(Translation Lookaside Buffer 转换后备缓冲区)&lt;/a&gt; 大小和端口分配都相同——在此基础级别上没有差异。海光 CPU 仍然为 L1 高速指令缓存提供64 KB 4路，为 L1 高速数据缓存提供32 KB 8路，为 L2 高速缓存提供512 KB 8路，为 L3 高速缓存提供8 MB 16路。这些和 Zen 1 核心是相同的。 转换后备缓冲区条目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L1D + L1I: 4K/2M/1G 64-entry&lt;/li&gt;
+&lt;li&gt;L2D: 4K 1536-entry 6-way, 2M 1536-entry 3-way, no 1G&lt;/li&gt;
+&lt;li&gt;L2I: 4K/2M 1024-entry 8-way, no 1G&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;L1 的内存访问时间为4个周期，L2 的为12个周期，L3 的为37-40个周期。记忆潜伏期在284-307个周期内测量。&lt;/p&gt;
+&lt;p&gt;L1 读取速度的测量约为每个时钟32个字节（总计805 GB/s，每个内核约100 GB/s），而写入速度测量的每个时钟约为16个字节（总计408 GB/s，每个内核约51 GB/s） ）。 8核的 DDR4 内存速度使读取速度为38.5 GB/s，写入速度为35.8 GB/s。&lt;/p&gt;
+&lt;h2 id="加密上的变化"&gt;加密上的变化
+&lt;/h2&gt;&lt;p&gt;对于加密更改，Linux 内核更新中详细介绍了这些更改。更新围绕 AMD 的虚拟化功能或 &lt;a class="link" href="https://en.wikipedia.org/wiki/Zen_%28first_generation_microarchitecture%29#Enhanced_security_and_virtualization_support" target="_blank" rel="noopener"
+&gt;SEV(Secure Encrypted Virtualization 安全加密虚拟化)&lt;/a&gt; 的安全加密进行。通常，对于 EPYC 处理器，SEV 由 AMD 定义的加密协议控制，在这种情况下为 &lt;a class="link" href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29" target="_blank" rel="noopener"
+&gt;RSA(Rivest–Shamir–Adleman)&lt;/a&gt;，&lt;a class="link" href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm" target="_blank" rel="noopener"
+&gt;ECDSA(Elliptic Curve Digital Signature Algorithm)&lt;/a&gt;，&lt;a class="link" href="https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman" target="_blank" rel="noopener"
+&gt;ECDH(Elliptic-curve Diffie–Hellman)&lt;/a&gt;，&lt;a class="link" href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms" target="_blank" rel="noopener"
+&gt;SHA(Secure Hash Algorithms)&lt;/a&gt; 和 &lt;a class="link" href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank" rel="noopener"
+&gt;AES(Advanced Encryption Standard)&lt;/a&gt;。为了生成正确的密钥，SEV 使用这些方法。但是，在海光 Dhyana 设计中，SEV 被构建为使用称为 SM2，SM3 和 SM4 的算法。&lt;/p&gt;
+&lt;p&gt;正如更新中所述，SM2 基于椭圆曲线密码学，并且需要其他私钥/公钥交换。SM3 是类似于 SHA-256 的哈希算法，SM4 是类似于 AES-128 的分组密码算法。为了支持这些算法所需的额外功能，这些命令已加入到 Linux 内核中。说明书中指出，这些算法已在海光 Dhyana Plus（可能是大型 CPU）处理器上成功测试过，也已在 AMD 的 EPYC CPU 上成功测试过。&lt;/p&gt;
+&lt;h2 id="减缓指令执行速度"&gt;减缓指令执行速度
+&lt;/h2&gt;&lt;p&gt;我们能够确定的最大设计上的变更是指令吞吐量。我们认为 Dhyana Plus 和之前提到的 EPYC 之间没什么不同，并且我们做了额外的检查以确保我们的软件能够显示正确的数据，但只是故意将某些指令放慢了他们的执行速度。这里面有一些相当严肃的含义，尤其是取决于它何时在管道中发生。&lt;/p&gt;
+&lt;p&gt;我们认为情况是，为了让 AMD 导出其 SoC 设计，海光还必须共享与 CPU 解释指令的方式有关的微代码，并且还要放慢某些关键指令的执行速度（或完全禁用），以便合资公司继续和中国合作。&lt;/p&gt;
+&lt;p&gt;在我们的测试中，我们发现，尽管海光和 EPYC 之间的整数性能相似，但某些浮点指令（即 DIV 和 SQRT 运算）并未在海光 CPU 中进行流水线处理。这意味着吞吐量和延迟减少了。许多简单的 &lt;a class="link" href="https://en.wikipedia.org/wiki/MMX_%28instruction_set%29" target="_blank" rel="noopener"
+&gt;MMX&lt;/a&gt; / &lt;a class="link" href="https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions" target="_blank" rel="noopener"
+&gt;SSE(Streaming SIMD Extensions)&lt;/a&gt; 指令降低了吞吐量，以下表格列出了指令吞吐量差异：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;AnandTech&lt;/th&gt;
+&lt;th style="text-align: center"&gt;EPYC Naples&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Hygon Dhyana&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;ADD/SUB&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;CMP/MULP*&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;ADDSUBP*&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;RCP*/RSQRT*&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0.5 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;BLENDW&lt;/td&gt;
+&lt;td style="text-align: center"&gt;3 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;PMIN/MAX*&lt;/td&gt;
+&lt;td style="text-align: center"&gt;3 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clcok&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;PAND/ANDN/OR/XOR&lt;/td&gt;
+&lt;td style="text-align: center"&gt;4 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;MOVs&lt;/td&gt;
+&lt;td style="text-align: center"&gt;4 per clock&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2 per clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;所有这些指令对于基本任务都非常重要。通过限制这些指令的并行吞吐率，这意味着这些 CPU 无法计算并行化的代码，从而降低性能。&lt;/p&gt;
+&lt;p&gt;但是，最大的变化或许是服务器版“Dhyana Plus”和消费版“Dhyana”版本之间的差异。Dhyana Plus 大大减少了随机数生成的作用。关键指令 RDRAND 和 RDSEED 具有各种导致速度变慢或变快的原因。&lt;/p&gt;
+&lt;p&gt;RDRAND 指令比较如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;AnandTech&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Zen 1 Desktop&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Hygon Dhyana&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Hygon Dhyana Plus&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;16-bit&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1200 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1100 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;800 clocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;32-bit&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1200 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1100 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;800 clocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;64-bit&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2365 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2125 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1520 clocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;RDSEED 指令比较如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;AnandTech&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Zen 1 Desktop&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Hygon Dhyana&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Hygon Dhyana Plus&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;16-bit&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1200 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1100 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;12000 clocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;32-bit&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1200 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1100 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;12000 clocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;64-bit&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2365 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;2125 clocks&lt;/td&gt;
+&lt;td style="text-align: center"&gt;27100 clocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;看上图发现差异还是很大的，尤其是在 RDSEED 中。我们看到 RDSEED（用于生成随机数算法的种子生成）在服务器芯片上的速度慢了10倍以上，而用于实际基于硬件的随机数生成 RDRAND 则比标准 Ryzen 快——在服务器芯片上也是如此。有趣的是，在 Ryzen Mobile 和 Ryzen Desktop APU 上也看到了服务器芯片的 RDSEED 相同的延迟。&lt;/p&gt;
+&lt;p&gt;对于 RDRAND 指令，拥有更快的随机数生成器可以说明两件事：要么实际上更快，要么随机算法的周期性较低。例如：指向一个自我包装的算法。最好的伪随机数生成具有最大的周期性，因此在这种情况下，很快我们就能得出 RDRAND 指令结论，周期性较低，从而导致生成质量较低的随机数。&lt;/p&gt;
+&lt;p&gt;对于 RDSEED 指令，它慢10倍的情况有点不同。RDSEED 指令从主板上的各种传感器中获取信息，并输出一个随机值来初始化 RDRAND——每个周期只能调用一次。较慢的 RDSEED 要么意味着它从更多源获取数据，要么是故意放慢了。&lt;/p&gt;
+&lt;p&gt;实际上，RDRAND 和 RDSEED 可以在我们的 Dhyana Plus 系统的 BIOS 中启用或禁用。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/11/tbDBAx.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>有趣的是，此菜单称为“Moksha 通用选项”。 Moksha 通常是与“启蒙”或“释放”相关的词。这要么是一个有趣的文字游戏，要么是有人无视上下文从古汉英词典中找的词。&lt;/p>
-&lt;p>关于 AVX 和 AVX2 的性能，即使 CPU 标识着支持 AVX 和 AVX2，但尝试实际测量这些指令时却失败了——在我们的指令转储中，它们被列为“支持的，已禁用”。关于所支持的功能，Zen 1 通常将 AESNI，SHA，CLMUL，FMA4，BMI 和 BMI2 列为支持的指令——海光 CPU 不支持这些指令。&lt;/p>
-&lt;p>对于 AES 之类的东西，我们做了一个基准测试，这些 CPU 不支持 AES，意味着性能大打折扣：&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/11/tbDwH1.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;有趣的是，此菜单称为“Moksha 通用选项”。 Moksha 通常是与“启蒙”或“释放”相关的词。这要么是一个有趣的文字游戏，要么是有人无视上下文从古汉英词典中找的词。&lt;/p&gt;
+&lt;p&gt;关于 AVX 和 AVX2 的性能，即使 CPU 标识着支持 AVX 和 AVX2，但尝试实际测量这些指令时却失败了——在我们的指令转储中，它们被列为“支持的，已禁用”。关于所支持的功能，Zen 1 通常将 AESNI，SHA，CLMUL，FMA4，BMI 和 BMI2 列为支持的指令——海光 CPU 不支持这些指令。&lt;/p&gt;
+&lt;p&gt;对于 AES 之类的东西，我们做了一个基准测试，这些 CPU 不支持 AES，意味着性能大打折扣：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/11/tbDwH1.png"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>还有一点需要注意，通过探测寄存器来查找 AMD CPU 功耗的典型手段在这里也失效了。似乎完全从 CPU 中删除了。&lt;/p>
-&lt;p>(未完待续&amp;hellip;)&lt;/p>
-&lt;h2 id="其他篇章">其他篇章
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
->「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
->「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
->「译文」| 基准测试：Windows(四)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
->「译文」| 结论(五)&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-2/</link><pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-2/</guid><description>&lt;p>海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2jV9P.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;还有一点需要注意，通过探测寄存器来查找 AMD CPU 功耗的典型手段在这里也失效了。似乎完全从 CPU 中删除了。&lt;/p&gt;
+&lt;p&gt;(未完待续&amp;hellip;)&lt;/p&gt;
+&lt;h2 id="其他篇章"&gt;其他篇章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
+&gt;「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
+&gt;「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
+&gt;「译文」| 基准测试：Windows(四)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
+&gt;「译文」| 结论(五)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-2/</link><pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-2/</guid><description>&lt;p&gt;海光的所有已知发行版可归结为两个平台：一个包含一个8核 Zen 1 芯片，类似于台式机系列处理器（或 EPYC 3000），以及一组由四个芯片构建的服务器处理器，布局和 Naples 系列相似。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2jV9P.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>我们要测试的8核工程样本系统没有提供任何准确的 SKU 编号——CPU上标着“C86”，代表“中国的 x86”。其余的编号可能与硅片所来自的晶圆和批次相关，但是我们没有可用的&lt;a class="link" href="https://en.wikipedia.org/wiki/Secret_decoder_ring" target="_blank" rel="noopener"
->解码器环&lt;/a>。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2jktI.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;我们要测试的8核工程样本系统没有提供任何准确的 SKU 编号——CPU上标着“C86”，代表“中国的 x86”。其余的编号可能与硅片所来自的晶圆和批次相关，但是我们没有可用的&lt;a class="link" href="https://en.wikipedia.org/wiki/Secret_decoder_ring" target="_blank" rel="noopener"
+&gt;解码器环&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2jktI.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>主板使用 &lt;a class="link" href="https://en.wikipedia.org/wiki/MicroATX" target="_blank" rel="noopener"
->microATX&lt;/a> 尺寸，并且是一个带有横向 DDR4 插槽的服务器主板，以便引导气流通过服务器机箱中的系统。现在从最主要的插槽开始说，由于我们目前拿到的 CPU 是无插槽 BGA 设计，已经绑定到主板上了，因此无法升级，这个有点类似于我们在笔记本电脑和嵌入式系统中看到的那种。而且这些安装孔让我感到有点惊讶——这些不是我们通常在 Ryzen 消费级产品中看到的那种 AM4 安装孔，而是 Intel 的安装孔。我猜肯定是有人有很多旧的 Intel 散热器？要么就是为了能够更容易找到特定的服务器级的散热器。&lt;/p>
-&lt;p>这个 CPU 具有六相电力输送系统，并且由于这个是纯 CPU，因此没有集成图形。左下方是 IPMI 控制器提供的 2D 图形，这是我们在服务器系统中常见的经典的&lt;a class="link" href="https://www.aspeedtech.com/" target="_blank" rel="noopener"
->信驊科技&lt;/a>的 AST2500 芯片。不像其他 microATX 主板，这个没有典型的四插槽设计，而是三插槽设计，带有两个全长 PCIe 3.0 插槽（能够支持 x16/x0 或 x8/x8）和一个开放式 PCIe x4 插槽。&lt;/p>
-&lt;p>通常，这些 CPU 确实不需要芯片组，因为它们在芯片上具有 SoC 级别的 IO 功能，尽管在 Ryzen 1000 家族首次推出时，消费级的 Ryzen CPU 需要与 X370 芯片组搭配使用。但海光并未使用这些芯片组，而是将 CPU 与 &lt;a class="link" href="https://www.latticesemi.com/" target="_blank" rel="noopener"
->Lattice 半导体公司&lt;/a>的现场可编程门阵列(FPGA)搭配作为芯片组。于是从整体上来看这个主板提供了一套奇特的组合 IO，包括 SATA 端口，四个双 LED 显示屏，许多自定义的连接器和按钮以及许多我们不知道的未记载的东西。例如，主板上似乎有两块电池——一个应该是用来保持开机时间，另一个看起来似乎时间更久但是我们不知道为什么要放在那个地方。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2jZ1f.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;主板使用 &lt;a class="link" href="https://en.wikipedia.org/wiki/MicroATX" target="_blank" rel="noopener"
+&gt;microATX&lt;/a&gt; 尺寸，并且是一个带有横向 DDR4 插槽的服务器主板，以便引导气流通过服务器机箱中的系统。现在从最主要的插槽开始说，由于我们目前拿到的 CPU 是无插槽 BGA 设计，已经绑定到主板上了，因此无法升级，这个有点类似于我们在笔记本电脑和嵌入式系统中看到的那种。而且这些安装孔让我感到有点惊讶——这些不是我们通常在 Ryzen 消费级产品中看到的那种 AM4 安装孔，而是 Intel 的安装孔。我猜肯定是有人有很多旧的 Intel 散热器？要么就是为了能够更容易找到特定的服务器级的散热器。&lt;/p&gt;
+&lt;p&gt;这个 CPU 具有六相电力输送系统，并且由于这个是纯 CPU，因此没有集成图形。左下方是 IPMI 控制器提供的 2D 图形，这是我们在服务器系统中常见的经典的&lt;a class="link" href="https://www.aspeedtech.com/" target="_blank" rel="noopener"
+&gt;信驊科技&lt;/a&gt;的 AST2500 芯片。不像其他 microATX 主板，这个没有典型的四插槽设计，而是三插槽设计，带有两个全长 PCIe 3.0 插槽（能够支持 x16/x0 或 x8/x8）和一个开放式 PCIe x4 插槽。&lt;/p&gt;
+&lt;p&gt;通常，这些 CPU 确实不需要芯片组，因为它们在芯片上具有 SoC 级别的 IO 功能，尽管在 Ryzen 1000 家族首次推出时，消费级的 Ryzen CPU 需要与 X370 芯片组搭配使用。但海光并未使用这些芯片组，而是将 CPU 与 &lt;a class="link" href="https://www.latticesemi.com/" target="_blank" rel="noopener"
+&gt;Lattice 半导体公司&lt;/a&gt;的现场可编程门阵列(FPGA)搭配作为芯片组。于是从整体上来看这个主板提供了一套奇特的组合 IO，包括 SATA 端口，四个双 LED 显示屏，许多自定义的连接器和按钮以及许多我们不知道的未记载的东西。例如，主板上似乎有两块电池——一个应该是用来保持开机时间，另一个看起来似乎时间更久但是我们不知道为什么要放在那个地方。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2jZ1f.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>这是主板，我们在上面放置了等效的 AM4 消费级 Ryzen CPU，以显示尺寸。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2jAht.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;这是主板，我们在上面放置了等效的 AM4 消费级 Ryzen CPU，以显示尺寸。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2jAht.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>相比之下，双插槽服务器有点像一头野兽。据我们了解，这些服务器是为计算和存储而构建的，每个 CPU 都与四个具有4个 U.2 驱动器或 16 路 SATA 连接能力的分支连接器配对。 CPU 具有八通道内存功能，但是由于一些原因，我们不得不在四通道模式下对其进行测试。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2jFAA.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;相比之下，双插槽服务器有点像一头野兽。据我们了解，这些服务器是为计算和存储而构建的，每个 CPU 都与四个具有4个 U.2 驱动器或 16 路 SATA 连接能力的分支连接器配对。 CPU 具有八通道内存功能，但是由于一些原因，我们不得不在四通道模式下对其进行测试。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2jFAA.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>这个 CPU 虽称为 C86，但型号上也标明着数字7185，表示是 32 核 CPU。外壳是红色的，而 Naples EPYC CPU 为蓝色，Threadripper CPU 为橙色，Rome EPYC CPU 为绿色。红色可能是对中国的致敬，但也没人能和我们确认这一点。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2jec8.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;这个 CPU 虽称为 C86，但型号上也标明着数字7185，表示是 32 核 CPU。外壳是红色的，而 Naples EPYC CPU 为蓝色，Threadripper CPU 为橙色，Rome EPYC CPU 为绿色。红色可能是对中国的致敬，但也没人能和我们确认这一点。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2jec8.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>该服务器实际上是曙光信息产业有限公司设计，具有12个前面板2.5英寸驱动器插槽。对于这个8核系统，我们将其放入标准台式机壳中并配备 CPU 散热器。两种系统都通过远程桌面访问进行了测试，因为当我回到伦敦时，它们已经被 Wendell 托管在他在肯塔基州的实验室中了。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/06/07/t2vp80.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;该服务器实际上是曙光信息产业有限公司设计，具有12个前面板2.5英寸驱动器插槽。对于这个8核系统，我们将其放入标准台式机壳中并配备 CPU 散热器。两种系统都通过远程桌面访问进行了测试，因为当我回到伦敦时，它们已经被 Wendell 托管在他在肯塔基州的实验室中了。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/06/07/t2vp80.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>当我们尝试探测该 CPU 时，CPU-Z 似乎没有太多线索。该软件为8核用户提供了该接口，显示了 3.2 GHz 频率，但只有一个核，除了对 AVX，AVX2 和 FMA3 的支持外，没有其他的细节。对于服务器 CPU，CPU-Z 完全无法运行。而且似乎对于海光的型号，在 AMD 消费级 CPU 上访问数据的一些常用方法都已经全部更改，要么规避常规方法检测，要么遵循不同的标准。有趣的一点是，尽管 CPU-Z 检测到 AVX 和 AVX2，但我们的某些软件无法检测到，因此我们不得不恢复为 SSE 检测，以使该软件运行。&lt;/p>
-&lt;p>(未完待续&amp;hellip;)&lt;/p>
-&lt;h2 id="其他篇章">其他篇章
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
->「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
->「译文」| 海光 CPU：中国版的加密方式，不同的性能(三)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
->「译文」| 基准测试：Windows(四)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
->「译文」| 结论(五)&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的海光 Dhyana 处理器(一)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-1/</link><pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-1/</guid><description>&lt;p>从阮老师的一篇 &lt;a class="link" href="http://www.ruanyifeng.com/blog/2020/05/weekly-issue-106.html" target="_blank" rel="noopener"
->周刊&lt;/a> 中发现了这篇文章，感觉很有趣的样子。原文链接在这里：&lt;a class="link" href="https://www.anandtech.com/show/15493/hygon-dhyana-reviewed-chinese-x86-cpus-amd" target="_blank" rel="noopener"
->Testing a Chinese x86 CPU: A Deep Dive into Zen-based Hygon Dhyana Processors&lt;/a>，以下为译文。&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/05/26/tPUYUP.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;当我们尝试探测该 CPU 时，CPU-Z 似乎没有太多线索。该软件为8核用户提供了该接口，显示了 3.2 GHz 频率，但只有一个核，除了对 AVX，AVX2 和 FMA3 的支持外，没有其他的细节。对于服务器 CPU，CPU-Z 完全无法运行。而且似乎对于海光的型号，在 AMD 消费级 CPU 上访问数据的一些常用方法都已经全部更改，要么规避常规方法检测，要么遵循不同的标准。有趣的一点是，尽管 CPU-Z 检测到 AVX 和 AVX2，但我们的某些软件无法检测到，因此我们不得不恢复为 SSE 检测，以使该软件运行。&lt;/p&gt;
+&lt;p&gt;(未完待续&amp;hellip;)&lt;/p&gt;
+&lt;h2 id="其他篇章"&gt;其他篇章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-1/" target="_blank" rel="noopener"
+&gt;「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的 Hygon Dhyana 处理器(一)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
+&gt;「译文」| 海光 CPU：中国版的加密方式，不同的性能(三)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
+&gt;「译文」| 基准测试：Windows(四)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
+&gt;「译文」| 结论(五)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 测试中国的 x86 CPU：深入研究基于 Zen 的海光 Dhyana 处理器(一)</title><link>https://ireflux.github.io/snow/post/hygon-cpus-1/</link><pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/hygon-cpus-1/</guid><description>&lt;p&gt;从阮老师的一篇 &lt;a class="link" href="http://www.ruanyifeng.com/blog/2020/05/weekly-issue-106.html" target="_blank" rel="noopener"
+&gt;周刊&lt;/a&gt; 中发现了这篇文章，感觉很有趣的样子。原文链接在这里：&lt;a class="link" href="https://www.anandtech.com/show/15493/hygon-dhyana-reviewed-chinese-x86-cpus-amd" target="_blank" rel="noopener"
+&gt;Testing a Chinese x86 CPU: A Deep Dive into Zen-based Hygon Dhyana Processors&lt;/a&gt;，以下为译文。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/05/26/tPUYUP.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>早在 2016 年，AMD 通过一系列合资企业和创建公司，将其第一代 Zen x86 处理器的设计许可销售给中国。此举同时达到了双方的目的：中国想要一个高性能的 x86 计算的本土化解决方案，而当时的 AMD 需要资金注入。最终结果就是海光 Dhyana 系列的处理器，其应用范围从商业用途扩大到了服务器用途。由于它基于 Zen 1 的设计基础，因此其性能可以看作和 Ryzen 1000 以及 Naples EPYC 是处于统一水平线的，而且西方还没有人公开测试过该硬件。此次多亏了与朋友 Wendell Wilson 在 YouTube 频道 Level1Techs 上的合作，我们才得以对海光 CPU 进行首次的全面评测。&lt;/p>
-&lt;h2 id="让我们从头开始">让我们从头开始
-&lt;/h2>&lt;p>x86 处理器有两、三个主要制造商：Intel，AMD 和 Via/Centaur。Inter 和 AMD 在高性能计算领域都已经竞争了数十年，但有许可限制存在因而没有市场其他竞争者。由于关乎 x86 架构的专利，Intel 不希望其他任何人进入，分食市场份额，因为这会影响其主导地位，更复杂的是，所有相关人员目前正在使用的都是 AMD 的 64 位 x86 版本。这就使得 Intel 和 AMD 之间联系非常紧密。另一方面，Via/Centaur 在亚洲的市场份额很小，并且缺乏前沿的高性能竞争对手，因此它和老牌对手争夺市场势在必行。&lt;/p>
-&lt;p>对于那些从未关注过 AMD 的人来说，该公司曾经历了许多风风雨雨。当时在开发 Bulldozer CPU 架构期间，耗资巨大，性能却不是很好，而同一时期的 Intel 在笔记本电脑，台式机，商用和企业等所有领域均取得了长足的进步。Intel CPU 的设计及其市场主导策略，再加上缺乏领先的竞争产品，以及对图形公司 ATI 的收购，AMD 几近破产。直到在前首席执行官 Rory Read 领导下，AMD 才开始稳定下来，并且在现任首席执行官 Lisa Su 博士的主持下，将大量资源重新投入到 x86 CPU 设计中。一方面，AMD 的债务高于其实际资产，甚至不得不出售其总部，并从业主那里租回建筑物，以此来维持下去。&lt;/p>
-&lt;p>这种“活下去”策略的另一个要素是对 AMD x86 IP 的转授权，最终使得中国制造出了海光 Dhyana x86 处理器。之后有的人说这是 AMD 活下去的关键点，现在大家普遍认为，在最初的2.93亿美元的交易中，这份转授权使得 AMD 获得了大约2亿美元，直到美国实体名单禁令出现。当时，AMD 已经凭借其 Ryzen 1000 系列处理器迅速进入了消费市场，该处理器提供了八个具有适度竞争性能的内核，同时在性价比上胜过了 Intel，这使得 AMD 有足够的资金再次加大其关键领域的投资。第一代 Ryzen 产品组合是成功的，并且转授权的存在最终也为 AMD 提供了更多的安全网。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/05/26/tPUt4f.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;早在 2016 年，AMD 通过一系列合资企业和创建公司，将其第一代 Zen x86 处理器的设计许可销售给中国。此举同时达到了双方的目的：中国想要一个高性能的 x86 计算的本土化解决方案，而当时的 AMD 需要资金注入。最终结果就是海光 Dhyana 系列的处理器，其应用范围从商业用途扩大到了服务器用途。由于它基于 Zen 1 的设计基础，因此其性能可以看作和 Ryzen 1000 以及 Naples EPYC 是处于统一水平线的，而且西方还没有人公开测试过该硬件。此次多亏了与朋友 Wendell Wilson 在 YouTube 频道 Level1Techs 上的合作，我们才得以对海光 CPU 进行首次的全面评测。&lt;/p&gt;
+&lt;h2 id="让我们从头开始"&gt;让我们从头开始
+&lt;/h2&gt;&lt;p&gt;x86 处理器有两、三个主要制造商：Intel，AMD 和 Via/Centaur。Inter 和 AMD 在高性能计算领域都已经竞争了数十年，但有许可限制存在因而没有市场其他竞争者。由于关乎 x86 架构的专利，Intel 不希望其他任何人进入，分食市场份额，因为这会影响其主导地位，更复杂的是，所有相关人员目前正在使用的都是 AMD 的 64 位 x86 版本。这就使得 Intel 和 AMD 之间联系非常紧密。另一方面，Via/Centaur 在亚洲的市场份额很小，并且缺乏前沿的高性能竞争对手，因此它和老牌对手争夺市场势在必行。&lt;/p&gt;
+&lt;p&gt;对于那些从未关注过 AMD 的人来说，该公司曾经历了许多风风雨雨。当时在开发 Bulldozer CPU 架构期间，耗资巨大，性能却不是很好，而同一时期的 Intel 在笔记本电脑，台式机，商用和企业等所有领域均取得了长足的进步。Intel CPU 的设计及其市场主导策略，再加上缺乏领先的竞争产品，以及对图形公司 ATI 的收购，AMD 几近破产。直到在前首席执行官 Rory Read 领导下，AMD 才开始稳定下来，并且在现任首席执行官 Lisa Su 博士的主持下，将大量资源重新投入到 x86 CPU 设计中。一方面，AMD 的债务高于其实际资产，甚至不得不出售其总部，并从业主那里租回建筑物，以此来维持下去。&lt;/p&gt;
+&lt;p&gt;这种“活下去”策略的另一个要素是对 AMD x86 IP 的转授权，最终使得中国制造出了海光 Dhyana x86 处理器。之后有的人说这是 AMD 活下去的关键点，现在大家普遍认为，在最初的2.93亿美元的交易中，这份转授权使得 AMD 获得了大约2亿美元，直到美国实体名单禁令出现。当时，AMD 已经凭借其 Ryzen 1000 系列处理器迅速进入了消费市场，该处理器提供了八个具有适度竞争性能的内核，同时在性价比上胜过了 Intel，这使得 AMD 有足够的资金再次加大其关键领域的投资。第一代 Ryzen 产品组合是成功的，并且转授权的存在最终也为 AMD 提供了更多的安全网。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/05/26/tPUt4f.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;h2 id="amd-的尽职调查">AMD 的尽职调查
-&lt;/h2>&lt;p>简单来讲就是“AMD 已为其 x86 设计之一授予 IP 许可”，尽管在之后的大多数时间里这听起来仍然显得不大真实，如果 AMD 或 Intel 知道出售其 CPU 设计有这么大的利润，那么为什么直到 2015/2016 年才这么做？虽然这里面显然有 AMD 的钱，但它并没有违反任何 Intel-AMD 许可协议。而且最重要的是，它没有违反美国有关高性能计算知识产权出口的任何法律。&lt;/p>
-&lt;p>最后一点最为重要，美国政府根据来自 Intel，AMD 或其他厂商的 CPU 的性能为其评估价值指数。这种指数是根据 CPU 每秒浮点运算次数以及其能力的某种加权综合而来，超过特定阈值的产品会被认为过于强大，无法在某些市场上出售。其范围包括半定制处理器，其中 AMD/Intel 搞的核心数量/频率，并包含了非线路图的部分。&lt;/p>
-&lt;p>AMD当时发表了以下声明：&lt;/p>
-&lt;blockquote>
-&lt;p>从2015年开始，AMD 在进入合资企业之前，积极地向美国国防部，商务部和美国政府内的多个其他机构地介绍情况。AMD 没有收到任何机构对合资企业的成立或技术转让的反对，这些技术的性能要比其他商用处理器低。实际上在成立合资企业和转让技术之前，商务部就已经通知 AMD，它所提议的技术哪些不受限制，哪些禁止转让。有了这些明确的反馈，AMD 便得以继续与合资企业合作。&lt;/p>&lt;/blockquote>
-&lt;p>AMD 已经联系了国防部和国防部，以及所有其他部门，并且已经得到了批准。新的微架构被认为性能很低，不会影响到任何出口禁令。在“提议的技术中哪些不受限制，哪些禁止转让”这一点，ADM 也得到了非常明确的回复，这是一个非常明确的声明。在这一点上，很显然 AMD 可能已经提交了一个这个 IP 的修改版本到了美国的相关部门，而不是我们在 Ryzen 1000 系列中看到的微架构。&lt;/p>
-&lt;h2 id="合资企业中的合资企业">合资企业中的合资企业
-&lt;/h2>&lt;p>所有这一切的最终目标是能够向中国提供 AMD 的 Zen 1 CPU 版本，该版本可以称为“中国版”，而非“美版”。与过去十年或更长时间的情况一样，中国希望减少对美国技术和知识产权的依赖，以实现自给自足。AMD 合资企业实际上是通过一种迂回的方式来实现为海光 Dhyana 的设计工作的。&lt;/p>
-&lt;p>负责监督该业务的合资企业的名称为 THATIC，即天津海光先进技术投资有限公司。该公司由 AMD 和包括中国科学院在内的多家中国公共和私营公司共同持有，其中 AMD 至少持有51％的股份。&lt;/p>
-&lt;p>为了执行所需的步骤，创建了两家公司——这些公司将由 AMD 和天津海光(THATIC) 共同持有（注意，AMD也持有天津海光(THATIC) 的一部分）。这些公司是：&lt;/p>
-&lt;ul>
-&lt;li>HMC：海光微电子有限公司&lt;/li>
-&lt;li>Hygon：成都海光集成电路设计有限公司&lt;/li>
-&lt;/ul>
-&lt;p>在这些公司中，&lt;/p>
-&lt;ul>
-&lt;li>AMD 持有海光微电子51％的股份，天津海光(THATIC)持有剩下的49％的股份。&lt;/li>
-&lt;li>AMD 持有海光集成电路30％的股份，天津海光(THATIC)持有70％的股份。&lt;/li>
-&lt;/ul>
-&lt;p>这些公司在芯片链条中扮演着不同的角色。 海光微电子与 AMD 合作进行设计，并与 &lt;a class="link" href="https://www.globalfoundries.com/" target="_blank" rel="noopener"
->GlobalFoundries&lt;/a> 合作进行制造，海光集成电路与海光微电子合作添加协同设计元素和包装，然后将其出售到中国。&lt;/p>
-&lt;h2 id="核心-ip-的授权不同于-x86-的转授权">核心 IP 的授权不同于 x86 的转授权
-&lt;/h2>&lt;p>当天津海光(THATIC)合资企业成立时，人们产生了很多困惑。最主要的问题是，AMD 是否以某种方式将完整的 x86/x64 架构许可给了一家中国公司，从而允许他们构建功能全面的定制化 x86 CPU，将 Intel 和 AMD 挤出市场。但其实这家合资企业不是这种情况。&lt;/p>
-&lt;p>AMD 所做的是向海光微电子许可了单核设计以及 SoC 布局。从这一点来看，AMD 已正式“放手”，但是 AMD 工程师和高管参与了 海光微电子，因此从技术上讲，他们仍然有参与。通过这些核心设计和 SoC 布局，海光微电子将设计平面图（而不是RTL）发送给海光请求更新。海光集成电路向海光微电子提交更新，之后该更新由 AMD 工程师批准或拒绝。然后海光微电子将所更改的地方整合出来，然后从海光集成电路接受订单以进行制造。在海光集成电路的订单下，海光微电子带着设计去 GlobalFoundries 并订购所需的硅。最后海光微电子将硅片卖给海光集成电路，后者将 CPU 封装成各种配置并将其出售到中国市场。在这其中海光集成电路也会帮助设计新平台的主板。&lt;/p>
-&lt;p>细分的话主要为以下步骤：&lt;/p>
-&lt;ol>
-&lt;li>AMD 通过建议的 SoC 布局将核心设计许可给海光微电子&lt;/li>
-&lt;li>海光微电子为海光集成电路提供设计平面图&lt;/li>
-&lt;li>海光集成电路为海光微电子提出修改意见&lt;/li>
-&lt;li>在海光微电子的 AMD 工程师对其更改批准或拒绝&lt;/li>
-&lt;li>海光微电子提供最终的设计平面图给海光集成电路，准备接受订单&lt;/li>
-&lt;li>海光集成电路向海光微电子订购晶圆/硅芯片&lt;/li>
-&lt;li>海光微电子通过 GlobalFoundries 进行制造&lt;/li>
-&lt;li>GlobalFoundries 根据要求在其新设计上达到特定的频率/良品率&lt;/li>
-&lt;li>海光微电子将完成的硅片卖给海光集成电路&lt;/li>
-&lt;li>海光集成电路将硅片进行包装&lt;/li>
-&lt;li>海光集成电路将成品的 CPU 卖到中国市场&lt;/li>
-&lt;/ol>
-&lt;p>由于海光微电子是唯一一个海光集成电路的提供者，因此尽管底层设计来自 AMD，但仍然可以将此 CPU 归类到“中国版”。&lt;/p>
-&lt;p>当 AMD 宣布创建天津海光(THATIC) 时，它谈到了将其 Zen 核心 IP 分包许可给合资企业。它被描述为多年的合作伙伴关系，但是在一次贸易展览会上证实，AMD 仅对其 IP 的单个版本进行分许可，并且没有计划对任何其他作品进行分许可。&lt;/p>
-&lt;p>当时，假定 AMD 对和已发布的 Ryzen 1000 系列处理器、EPYC Naples 处理器相同版本的 Zen 核心 IP 进行了再授权。但是，正如本次审查的一部分所示，AMD 似乎在对合资企业进行设计之前就对其设计进行了一些性能更改——特定指令的吞吐率低于我们直接从AMD处理器中看到的吞吐量。&lt;/p>
-&lt;p>不仅如此，在步骤清单中，第四点最能体现出这种倾向。海光集成电路被要求针对中国市场进行特定更改。在每个人都在“为中国政府创建后门”而奋斗之前，我们知道由于 Linux 内核更新而进行的一些修改。与西方国家相比，在中国使用了不同于西方的椭圆密码算法，因此更改了它们的硬件加速功能，并使用了不同的微码来启用这些功能。该审查的一部分是尝试发现是否还有其他更改。&lt;/p>
-&lt;p>这种蛛网布局的最终产品是海光 Dhyana x86 内核，这是“针对中国的更新的 Zen 内核”，海光集成电路将其打包为嵌入式，商业和企业系统使用。我们在 &lt;a class="link" href="https://www.anandtech.com/show/14456/spotted-at-computex-let-bygones-be-bygons-with-a-sugon-hygon" target="_blank" rel="noopener"
->Computex 2018&lt;/a> 上看到中国服务器供应商中科曙光参与了该项目，该公司展示了其基于32核海光 CPU 构建的服务器。根据在线基准数据库，还看到了针对8核商业和嵌入式版本的提交，这些版本可能用于政府和教育部门的部署。&lt;/p>
-&lt;p>值得一提的是，我们曾多次问过 AMD 海光 Dhyana 设计与原始 Zen 1 内核有什么不同。但我们总是被简单地告知 “AMD” 在这一切中扮演的角色有限，如果我们能弄到一个海光CPU，如果我们能够在测试中发现两者之间设计的差别，他们可能会考虑承认或否认。尽管 AMD 对于 Ryzen 和 EPYC 系列处理器很开放，但是在谈论海光时却与之形成了鲜明的对比。&lt;/p>
-&lt;p>首批海光 CPU 于2018年进入中国市场，但几乎无法采购。海光 CPU 从未打算出售给西方国家，而且 CPU 的性质和与之打交道的公司意味着我们能找到的人都不会对我们的样品感兴趣。&lt;/p>
-&lt;p>2019年，美国建立了中国公司的“实体清单”，被视为对美国市场的潜在安全威胁。结果，与这些公司（在美国创造至少25％的产品或IP）的任何商业互动均受到限制。天津海光(THATIC) 是名单上的公司之一，这意味着 AMD 不再被允许向合资企业授予任何其他 IP 许可。天津海光(THATIC) 仍然可以访问其获得许可的原始 IP，并且可以继续对其进行改造（尽管没有AMD的协助），而且，该禁令还限制了海光微电子从 GlobalFoundries 订购硅，如果不取消限制，将会使整个流程将陷入困境。&lt;/p>
-&lt;p>非常感谢 Usman Pirzada 出色的写作，文章中许多地方都以此为依据，以及来自 AMD 的 Drew Prairie，他为 AMD 的布局提供了更多背景信息。&lt;/p>
-&lt;h2 id="与-wendell-合作采购海光cpu">与 Wendell 合作：采购海光CPU
-&lt;/h2>&lt;p>对于本次复盘，我们能够测试在 Wendell Wilson 实验室中远程安置的两个系统，他是 Level1Techs YouTube 频道的主持人。我们都收到了消息，有人询问我们是否要购买系统，收集到的是来自美国海光集成电路或中科曙光子公司的旧工程样本，这些子样本正在进行制造后分析和性能测试。该子公司现已解散，实体名单禁令产生了连锁反应，并且该公司内的工程硬件（我们从未听过）被卖掉了。因此我们有机会借用了两个解散后的系统。由于位置原因，Wendell 提供了容纳它们的空间，并拍摄了一些图片和视频，而我们俩都制定了性能基准。来自广受欢迎的 YouTube 频道 LinusTechTips 的 Linus 团队也受邀参加——您可以在 &lt;a class="link" href="https://www.youtube.com/watch?v=Sj1auKJeSlw" target="_blank" rel="noopener"
->此处&lt;/a> 观看制作的视频。&lt;/p>
-&lt;p>最终，我们最终使用了两种系统进行测试——一台商业版 “海光 Dhyana” 和一台企业版 “海光 Dhyana Plus”。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/05/26/tPUUC8.jpg"
+&gt;&lt;/p&gt;
+&lt;h2 id="amd-的尽职调查"&gt;AMD 的尽职调查
+&lt;/h2&gt;&lt;p&gt;简单来讲就是“AMD 已为其 x86 设计之一授予 IP 许可”，尽管在之后的大多数时间里这听起来仍然显得不大真实，如果 AMD 或 Intel 知道出售其 CPU 设计有这么大的利润，那么为什么直到 2015/2016 年才这么做？虽然这里面显然有 AMD 的钱，但它并没有违反任何 Intel-AMD 许可协议。而且最重要的是，它没有违反美国有关高性能计算知识产权出口的任何法律。&lt;/p&gt;
+&lt;p&gt;最后一点最为重要，美国政府根据来自 Intel，AMD 或其他厂商的 CPU 的性能为其评估价值指数。这种指数是根据 CPU 每秒浮点运算次数以及其能力的某种加权综合而来，超过特定阈值的产品会被认为过于强大，无法在某些市场上出售。其范围包括半定制处理器，其中 AMD/Intel 搞的核心数量/频率，并包含了非线路图的部分。&lt;/p&gt;
+&lt;p&gt;AMD当时发表了以下声明：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;从2015年开始，AMD 在进入合资企业之前，积极地向美国国防部，商务部和美国政府内的多个其他机构地介绍情况。AMD 没有收到任何机构对合资企业的成立或技术转让的反对，这些技术的性能要比其他商用处理器低。实际上在成立合资企业和转让技术之前，商务部就已经通知 AMD，它所提议的技术哪些不受限制，哪些禁止转让。有了这些明确的反馈，AMD 便得以继续与合资企业合作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;AMD 已经联系了国防部和国防部，以及所有其他部门，并且已经得到了批准。新的微架构被认为性能很低，不会影响到任何出口禁令。在“提议的技术中哪些不受限制，哪些禁止转让”这一点，ADM 也得到了非常明确的回复，这是一个非常明确的声明。在这一点上，很显然 AMD 可能已经提交了一个这个 IP 的修改版本到了美国的相关部门，而不是我们在 Ryzen 1000 系列中看到的微架构。&lt;/p&gt;
+&lt;h2 id="合资企业中的合资企业"&gt;合资企业中的合资企业
+&lt;/h2&gt;&lt;p&gt;所有这一切的最终目标是能够向中国提供 AMD 的 Zen 1 CPU 版本，该版本可以称为“中国版”，而非“美版”。与过去十年或更长时间的情况一样，中国希望减少对美国技术和知识产权的依赖，以实现自给自足。AMD 合资企业实际上是通过一种迂回的方式来实现为海光 Dhyana 的设计工作的。&lt;/p&gt;
+&lt;p&gt;负责监督该业务的合资企业的名称为 THATIC，即天津海光先进技术投资有限公司。该公司由 AMD 和包括中国科学院在内的多家中国公共和私营公司共同持有，其中 AMD 至少持有51％的股份。&lt;/p&gt;
+&lt;p&gt;为了执行所需的步骤，创建了两家公司——这些公司将由 AMD 和天津海光(THATIC) 共同持有（注意，AMD也持有天津海光(THATIC) 的一部分）。这些公司是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HMC：海光微电子有限公司&lt;/li&gt;
+&lt;li&gt;Hygon：成都海光集成电路设计有限公司&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在这些公司中，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AMD 持有海光微电子51％的股份，天津海光(THATIC)持有剩下的49％的股份。&lt;/li&gt;
+&lt;li&gt;AMD 持有海光集成电路30％的股份，天津海光(THATIC)持有70％的股份。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些公司在芯片链条中扮演着不同的角色。 海光微电子与 AMD 合作进行设计，并与 &lt;a class="link" href="https://www.globalfoundries.com/" target="_blank" rel="noopener"
+&gt;GlobalFoundries&lt;/a&gt; 合作进行制造，海光集成电路与海光微电子合作添加协同设计元素和包装，然后将其出售到中国。&lt;/p&gt;
+&lt;h2 id="核心-ip-的授权不同于-x86-的转授权"&gt;核心 IP 的授权不同于 x86 的转授权
+&lt;/h2&gt;&lt;p&gt;当天津海光(THATIC)合资企业成立时，人们产生了很多困惑。最主要的问题是，AMD 是否以某种方式将完整的 x86/x64 架构许可给了一家中国公司，从而允许他们构建功能全面的定制化 x86 CPU，将 Intel 和 AMD 挤出市场。但其实这家合资企业不是这种情况。&lt;/p&gt;
+&lt;p&gt;AMD 所做的是向海光微电子许可了单核设计以及 SoC 布局。从这一点来看，AMD 已正式“放手”，但是 AMD 工程师和高管参与了 海光微电子，因此从技术上讲，他们仍然有参与。通过这些核心设计和 SoC 布局，海光微电子将设计平面图（而不是RTL）发送给海光请求更新。海光集成电路向海光微电子提交更新，之后该更新由 AMD 工程师批准或拒绝。然后海光微电子将所更改的地方整合出来，然后从海光集成电路接受订单以进行制造。在海光集成电路的订单下，海光微电子带着设计去 GlobalFoundries 并订购所需的硅。最后海光微电子将硅片卖给海光集成电路，后者将 CPU 封装成各种配置并将其出售到中国市场。在这其中海光集成电路也会帮助设计新平台的主板。&lt;/p&gt;
+&lt;p&gt;细分的话主要为以下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AMD 通过建议的 SoC 布局将核心设计许可给海光微电子&lt;/li&gt;
+&lt;li&gt;海光微电子为海光集成电路提供设计平面图&lt;/li&gt;
+&lt;li&gt;海光集成电路为海光微电子提出修改意见&lt;/li&gt;
+&lt;li&gt;在海光微电子的 AMD 工程师对其更改批准或拒绝&lt;/li&gt;
+&lt;li&gt;海光微电子提供最终的设计平面图给海光集成电路，准备接受订单&lt;/li&gt;
+&lt;li&gt;海光集成电路向海光微电子订购晶圆/硅芯片&lt;/li&gt;
+&lt;li&gt;海光微电子通过 GlobalFoundries 进行制造&lt;/li&gt;
+&lt;li&gt;GlobalFoundries 根据要求在其新设计上达到特定的频率/良品率&lt;/li&gt;
+&lt;li&gt;海光微电子将完成的硅片卖给海光集成电路&lt;/li&gt;
+&lt;li&gt;海光集成电路将硅片进行包装&lt;/li&gt;
+&lt;li&gt;海光集成电路将成品的 CPU 卖到中国市场&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;由于海光微电子是唯一一个海光集成电路的提供者，因此尽管底层设计来自 AMD，但仍然可以将此 CPU 归类到“中国版”。&lt;/p&gt;
+&lt;p&gt;当 AMD 宣布创建天津海光(THATIC) 时，它谈到了将其 Zen 核心 IP 分包许可给合资企业。它被描述为多年的合作伙伴关系，但是在一次贸易展览会上证实，AMD 仅对其 IP 的单个版本进行分许可，并且没有计划对任何其他作品进行分许可。&lt;/p&gt;
+&lt;p&gt;当时，假定 AMD 对和已发布的 Ryzen 1000 系列处理器、EPYC Naples 处理器相同版本的 Zen 核心 IP 进行了再授权。但是，正如本次审查的一部分所示，AMD 似乎在对合资企业进行设计之前就对其设计进行了一些性能更改——特定指令的吞吐率低于我们直接从AMD处理器中看到的吞吐量。&lt;/p&gt;
+&lt;p&gt;不仅如此，在步骤清单中，第四点最能体现出这种倾向。海光集成电路被要求针对中国市场进行特定更改。在每个人都在“为中国政府创建后门”而奋斗之前，我们知道由于 Linux 内核更新而进行的一些修改。与西方国家相比，在中国使用了不同于西方的椭圆密码算法，因此更改了它们的硬件加速功能，并使用了不同的微码来启用这些功能。该审查的一部分是尝试发现是否还有其他更改。&lt;/p&gt;
+&lt;p&gt;这种蛛网布局的最终产品是海光 Dhyana x86 内核，这是“针对中国的更新的 Zen 内核”，海光集成电路将其打包为嵌入式，商业和企业系统使用。我们在 &lt;a class="link" href="https://www.anandtech.com/show/14456/spotted-at-computex-let-bygones-be-bygons-with-a-sugon-hygon" target="_blank" rel="noopener"
+&gt;Computex 2018&lt;/a&gt; 上看到中国服务器供应商中科曙光参与了该项目，该公司展示了其基于32核海光 CPU 构建的服务器。根据在线基准数据库，还看到了针对8核商业和嵌入式版本的提交，这些版本可能用于政府和教育部门的部署。&lt;/p&gt;
+&lt;p&gt;值得一提的是，我们曾多次问过 AMD 海光 Dhyana 设计与原始 Zen 1 内核有什么不同。但我们总是被简单地告知 “AMD” 在这一切中扮演的角色有限，如果我们能弄到一个海光CPU，如果我们能够在测试中发现两者之间设计的差别，他们可能会考虑承认或否认。尽管 AMD 对于 Ryzen 和 EPYC 系列处理器很开放，但是在谈论海光时却与之形成了鲜明的对比。&lt;/p&gt;
+&lt;p&gt;首批海光 CPU 于2018年进入中国市场，但几乎无法采购。海光 CPU 从未打算出售给西方国家，而且 CPU 的性质和与之打交道的公司意味着我们能找到的人都不会对我们的样品感兴趣。&lt;/p&gt;
+&lt;p&gt;2019年，美国建立了中国公司的“实体清单”，被视为对美国市场的潜在安全威胁。结果，与这些公司（在美国创造至少25％的产品或IP）的任何商业互动均受到限制。天津海光(THATIC) 是名单上的公司之一，这意味着 AMD 不再被允许向合资企业授予任何其他 IP 许可。天津海光(THATIC) 仍然可以访问其获得许可的原始 IP，并且可以继续对其进行改造（尽管没有AMD的协助），而且，该禁令还限制了海光微电子从 GlobalFoundries 订购硅，如果不取消限制，将会使整个流程将陷入困境。&lt;/p&gt;
+&lt;p&gt;非常感谢 Usman Pirzada 出色的写作，文章中许多地方都以此为依据，以及来自 AMD 的 Drew Prairie，他为 AMD 的布局提供了更多背景信息。&lt;/p&gt;
+&lt;h2 id="与-wendell-合作采购海光cpu"&gt;与 Wendell 合作：采购海光CPU
+&lt;/h2&gt;&lt;p&gt;对于本次复盘，我们能够测试在 Wendell Wilson 实验室中远程安置的两个系统，他是 Level1Techs YouTube 频道的主持人。我们都收到了消息，有人询问我们是否要购买系统，收集到的是来自美国海光集成电路或中科曙光子公司的旧工程样本，这些子样本正在进行制造后分析和性能测试。该子公司现已解散，实体名单禁令产生了连锁反应，并且该公司内的工程硬件（我们从未听过）被卖掉了。因此我们有机会借用了两个解散后的系统。由于位置原因，Wendell 提供了容纳它们的空间，并拍摄了一些图片和视频，而我们俩都制定了性能基准。来自广受欢迎的 YouTube 频道 LinusTechTips 的 Linus 团队也受邀参加——您可以在 &lt;a class="link" href="https://www.youtube.com/watch?v=Sj1auKJeSlw" target="_blank" rel="noopener"
+&gt;此处&lt;/a&gt; 观看制作的视频。&lt;/p&gt;
+&lt;p&gt;最终，我们最终使用了两种系统进行测试——一台商业版 “海光 Dhyana” 和一台企业版 “海光 Dhyana Plus”。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/05/26/tPUUC8.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>商业版系统看起来像普通的8核 Ryzen 1000 系列系统，但是它实际上是球栅阵列封装设计，无法升级。事实上，这似乎是早期的工程示例，因为 CPU 甚至都没有关联的数字。挂载点这里也有一些有趣的地方，之后我们将在适当的时候进行介绍。&lt;/p>
-&lt;p>企业版系统是一个双32核海光2U 服务器。这些 CPU 表示它们是“7185”型号，我们知道这是海光提供的最高内核数，也是性能最高的32核部件之一。将其中两个放入服务器看起来非常像 2P EPYC Naples 设计。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/05/26/tPUa8S.jpg"
+&gt;&lt;/p&gt;
+&lt;p&gt;商业版系统看起来像普通的8核 Ryzen 1000 系列系统，但是它实际上是球栅阵列封装设计，无法升级。事实上，这似乎是早期的工程示例，因为 CPU 甚至都没有关联的数字。挂载点这里也有一些有趣的地方，之后我们将在适当的时候进行介绍。&lt;/p&gt;
+&lt;p&gt;企业版系统是一个双32核海光2U 服务器。这些 CPU 表示它们是“7185”型号，我们知道这是海光提供的最高内核数，也是性能最高的32核部件之一。将其中两个放入服务器看起来非常像 2P EPYC Naples 设计。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/05/26/tPUa8S.jpg"
 loading="lazy"
 alt="img"
->&lt;/p>
-&lt;p>值得一提的是，我们在贸易展览会上确实见过海光处理器，您可能会在底部看到一些中文文字。有趣的是，我们翻译了CPU的右下角。直译是：&lt;/p>
-&lt;blockquote>
-&lt;p>“用芯片计算未来”&lt;/p>&lt;/blockquote>
-&lt;p>但是，标语中使用的第二个字符是谐音，可以翻译为:&lt;/p>
-&lt;blockquote>
-&lt;p>&amp;ldquo;用热爱计算未来”&lt;/p>&lt;/blockquote>
-&lt;p>在接下来的几页中，我们将更详细地研究这两个系统，然后看看和我们在过去几年中已经测试过的 Ryzen 1000 和 EPYC Naples 处理器在内核和 SoC 级别上有哪些差异之处。&lt;/p>
-&lt;p>(未完待续&amp;hellip;)&lt;/p>
-&lt;h2 id="相关篇章">相关篇章
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
->「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
->「译文」|海光CPU：中国版的加密方式，不同的性能(三)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
->「译文」| 基准测试：Windows(四)&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
->「译文」| 结论(五)&lt;/a>&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&gt;&lt;/p&gt;
+&lt;p&gt;值得一提的是，我们在贸易展览会上确实见过海光处理器，您可能会在底部看到一些中文文字。有趣的是，我们翻译了CPU的右下角。直译是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“用芯片计算未来”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但是，标语中使用的第二个字符是谐音，可以翻译为:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;用热爱计算未来”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在接下来的几页中，我们将更详细地研究这两个系统，然后看看和我们在过去几年中已经测试过的 Ryzen 1000 和 EPYC Naples 处理器在内核和 SoC 级别上有哪些差异之处。&lt;/p&gt;
+&lt;p&gt;(未完待续&amp;hellip;)&lt;/p&gt;
+&lt;h2 id="相关篇章"&gt;相关篇章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-2/" target="_blank" rel="noopener"
+&gt;「译文」| 我们的海光系统：8核 Dhyana 和双32核 Dhyana Plus(二)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-3/" target="_blank" rel="noopener"
+&gt;「译文」|海光CPU：中国版的加密方式，不同的性能(三)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-4/" target="_blank" rel="noopener"
+&gt;「译文」| 基准测试：Windows(四)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://sherry.ml/snow/post/hygon-cpus-5/" target="_blank" rel="noopener"
+&gt;「译文」| 结论(五)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

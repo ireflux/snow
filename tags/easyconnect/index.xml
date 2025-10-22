@@ -1,77 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Easyconnect on sherry's blog</title><link>https://ireflux.github.io/snow/tags/easyconnect/</link><description>Recent content in Easyconnect on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/easyconnect/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p>EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p>
-&lt;h3 id="虚拟机设置">虚拟机设置
-&lt;/h3>&lt;p>首先在虚拟机上开启两个网卡，我的是 VirtualBox，就以它为例，依次进入 &lt;code>设置-&amp;gt;网络&lt;/code>，勾选两个网卡，启用网络连接，网卡一用于连接外部网络，连接方式 NAT 或桥接都可。网卡二用于和 Linux 物理机交换数据，连接方式选择 “&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html#network_hostonly" target="_blank" rel="noopener"
->仅主机（Host-Only）网络&lt;/a>”。顺便一提，如果选择完 “仅主机（Host-Only）” 后，界面名称选项为空的话，就需要去菜单 &lt;code>管理-&amp;gt;主机网络管理器&lt;/code> 中创建一个，然后再回到原来的地方，界面名称的选项就是刚刚在网络管理器中创建的。&lt;/p>
-&lt;p>打开 Windows 虚拟机后，依次进入 &lt;code>控制面板-&amp;gt;网络和共享中心-&amp;gt;更改适配器设置&lt;/code>，里面会存在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接和两个其他本地连接，其中一个是 “NAT/桥接” 的网卡一，另一个是 “仅主机（Host-Only）” 的网卡二，需要自己分辨一下。在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接上依次 &lt;code>右键-&amp;gt;属性-&amp;gt;共享&lt;/code>，勾选 “允许其他网络用户通过此计算机 Internet 连接来连接” 选项，家庭网络连接选择 “仅主机（Host-Only）” 的本地连接，确定即可。查看一下 “仅主机（Host-Only）” 的 IP 地址，接下来需要在宿主机上设置路由，将要内网地址转发到 “仅主机（Host-Only）” 的 IP 地址上。&lt;/p>
-&lt;h3 id="宿主机设置">宿主机设置
-&lt;/h3>&lt;p>以我的为例，我的 “仅主机（Host-Only）” 的本地连接 IP 地址为 192.168.56.3，假设我要访问的公司内网 IP 在 172.16.x.x 的网段，就可以将 172.16 开头的内网地址全部转发到 “仅主机（Host-Only）” 的 IP 地址上，即在宿主机执行：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo route add -net 172.16.0.0/16 gw 192.168.56.3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>命令执行完后可以通过 &lt;code>route&lt;/code> 查看一下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ route
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: center">Destination&lt;/th>
-&lt;th style="text-align: center">Gateway&lt;/th>
-&lt;th style="text-align: center">Genmask&lt;/th>
-&lt;th style="text-align: center">Flags&lt;/th>
-&lt;th style="text-align: center">Metric&lt;/th>
-&lt;th style="text-align: center">Ref&lt;/th>
-&lt;th style="text-align: center">Use&lt;/th>
-&lt;th style="text-align: center">Iface&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: center">default&lt;/td>
-&lt;td style="text-align: center">_gateway&lt;/td>
-&lt;td style="text-align: center">0.0.0.0&lt;/td>
-&lt;td style="text-align: center">UG&lt;/td>
-&lt;td style="text-align: center">600&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">wlp3s0&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">172.16.0.0&lt;/td>
-&lt;td style="text-align: center">192.168.56.3&lt;/td>
-&lt;td style="text-align: center">255.255.0.0&lt;/td>
-&lt;td style="text-align: center">UG&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">vboxnet0&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">192.168.31.0&lt;/td>
-&lt;td style="text-align: center">0.0.0.0&lt;/td>
-&lt;td style="text-align: center">255.255.255.0&lt;/td>
-&lt;td style="text-align: center">U&lt;/td>
-&lt;td style="text-align: center">600&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">wlp3s0&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">192.168.56.0&lt;/td>
-&lt;td style="text-align: center">0.0.0.0&lt;/td>
-&lt;td style="text-align: center">255.255.255.0&lt;/td>
-&lt;td style="text-align: center">U&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">0&lt;/td>
-&lt;td style="text-align: center">vboxnet0&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>至此就可以在宿主机上愉快的上内网了。&lt;/p>
-&lt;p>刚刚添加的路由转发规则是临时的，宿主机重启后，就会重置。也可以在用完后手动删除，即在终端执行：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo route del -net 172.16.0.0/16 gw 192.168.56.3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="后记">后记
-&lt;/h2>&lt;p>这么做虽然繁琐一点，但可以使得我的 Arch 连上内网的同时又避免了直接在物理机上装软件，还是感觉极度舒适。&lt;/p>
-&lt;h2 id="参考资料">参考资料
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
->Chapter 6. Virtual Networking&lt;/a>: &lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
->https://www.virtualbox.org/manual/ch06.html&lt;/a>&lt;/li>
-&lt;/ol></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Easyconnect on sherry's blog</title><link>https://ireflux.github.io/snow/tags/easyconnect/</link><description>Recent content in Easyconnect on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/easyconnect/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 通过虚拟机路由转发连接 EasyConnect</title><link>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/route-forward-connect-easyconnect/</guid><description>&lt;p&gt;EasyConnect 虽然也有 Linux 版本，但在网上逛了一圈，好像会有一些坑，而且需要 root 权限执行一些操作，对于一向没啥节操的国产软件还是果断放弃物理机直接装的方案。但我还想在我的 Arch 上连内网，本着某些国产软件能不装到物理机就不装到物理机的原则，就想通过连着 EasyConnect 的虚拟机来上内网，又在网络上搜寻了一圈，没想到还真的找到一些解决方案，果然大家的痛点都是一样的。&lt;/p&gt;
+&lt;h3 id="虚拟机设置"&gt;虚拟机设置
+&lt;/h3&gt;&lt;p&gt;首先在虚拟机上开启两个网卡，我的是 VirtualBox，就以它为例，依次进入 &lt;code&gt;设置-&amp;gt;网络&lt;/code&gt;，勾选两个网卡，启用网络连接，网卡一用于连接外部网络，连接方式 NAT 或桥接都可。网卡二用于和 Linux 物理机交换数据，连接方式选择 “&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html#network_hostonly" target="_blank" rel="noopener"
+&gt;仅主机（Host-Only）网络&lt;/a&gt;”。顺便一提，如果选择完 “仅主机（Host-Only）” 后，界面名称选项为空的话，就需要去菜单 &lt;code&gt;管理-&amp;gt;主机网络管理器&lt;/code&gt; 中创建一个，然后再回到原来的地方，界面名称的选项就是刚刚在网络管理器中创建的。&lt;/p&gt;
+&lt;p&gt;打开 Windows 虚拟机后，依次进入 &lt;code&gt;控制面板-&amp;gt;网络和共享中心-&amp;gt;更改适配器设置&lt;/code&gt;，里面会存在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接和两个其他本地连接，其中一个是 “NAT/桥接” 的网卡一，另一个是 “仅主机（Host-Only）” 的网卡二，需要自己分辨一下。在 “Sangfor SSL VPN CS Support System VNIC” 的本地连接上依次 &lt;code&gt;右键-&amp;gt;属性-&amp;gt;共享&lt;/code&gt;，勾选 “允许其他网络用户通过此计算机 Internet 连接来连接” 选项，家庭网络连接选择 “仅主机（Host-Only）” 的本地连接，确定即可。查看一下 “仅主机（Host-Only）” 的 IP 地址，接下来需要在宿主机上设置路由，将要内网地址转发到 “仅主机（Host-Only）” 的 IP 地址上。&lt;/p&gt;
+&lt;h3 id="宿主机设置"&gt;宿主机设置
+&lt;/h3&gt;&lt;p&gt;以我的为例，我的 “仅主机（Host-Only）” 的本地连接 IP 地址为 192.168.56.3，假设我要访问的公司内网 IP 在 172.16.x.x 的网段，就可以将 172.16 开头的内网地址全部转发到 “仅主机（Host-Only）” 的 IP 地址上，即在宿主机执行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo route add -net 172.16.0.0/16 gw 192.168.56.3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;命令执行完后可以通过 &lt;code&gt;route&lt;/code&gt; 查看一下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ route
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;Destination&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Gateway&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Genmask&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Flags&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Metric&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Ref&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Use&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Iface&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;default&lt;/td&gt;
+&lt;td style="text-align: center"&gt;_gateway&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0.0.0.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;UG&lt;/td&gt;
+&lt;td style="text-align: center"&gt;600&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;wlp3s0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;172.16.0.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;192.168.56.3&lt;/td&gt;
+&lt;td style="text-align: center"&gt;255.255.0.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;UG&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;vboxnet0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;192.168.31.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0.0.0.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;255.255.255.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;U&lt;/td&gt;
+&lt;td style="text-align: center"&gt;600&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;wlp3s0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;192.168.56.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0.0.0.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;255.255.255.0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;U&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;vboxnet0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;至此就可以在宿主机上愉快的上内网了。&lt;/p&gt;
+&lt;p&gt;刚刚添加的路由转发规则是临时的，宿主机重启后，就会重置。也可以在用完后手动删除，即在终端执行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo route del -net 172.16.0.0/16 gw 192.168.56.3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="后记"&gt;后记
+&lt;/h2&gt;&lt;p&gt;这么做虽然繁琐一点，但可以使得我的 Arch 连上内网的同时又避免了直接在物理机上装软件，还是感觉极度舒适。&lt;/p&gt;
+&lt;h2 id="参考资料"&gt;参考资料
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
+&gt;Chapter 6. Virtual Networking&lt;/a&gt;: &lt;a class="link" href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener"
+&gt;https://www.virtualbox.org/manual/ch06.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

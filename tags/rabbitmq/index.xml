@@ -1,47 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RabbitMQ on sherry's blog</title><link>https://ireflux.github.io/snow/tags/rabbitmq/</link><description>Recent content in RabbitMQ on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml"/><item><title>RabbitMQ 学习笔记 | 二</title><link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/</link><pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/</guid><description>&lt;p>开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：&lt;a class="link" href="https://wanmei.ml/snow/post/study-note-of-rabbitmq-1/" target="_blank" rel="noopener"
->RabbitMQ 学习笔记(1)&lt;/a>&lt;/p>
-&lt;p>对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。&lt;/p>
-&lt;p>RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 &lt;code>AbstractMessageListenerContainer&lt;/code> 定义的 &lt;code>DEFAULT_PREFETCH_COUNT&lt;/code> 值为 250,如果将其设置为 1,则将会变为循环调度。&lt;/p>
-&lt;p>RabbitMQ 不指定 Exchange 也能发送到 Queue，是因为有默认的 Exchange，可使用 &lt;code>sudo rabbitmqctl list_exchanges&lt;/code>命令查看。当使用默认的 Exchange 的时候，每个 Queue 都会以自己的名字作为 routing key 自动绑定到默认的 Exchange。一般情况下，我们会根据情景选择 Exchange 自行绑定来进行使用，以下列举出几个常见的 Exchange。&lt;/p>
-&lt;h3 id="fanout-exchange">Fanout exchange
-&lt;/h3>&lt;p>这种 Exchange 可以一次性将消息发送到多个 consumer，也称为广播。但是无法灵活的控制消息发送，例如只发送到某个 consumer。此时就出现了另一个 Exchange，叫做 Direct exchange&lt;/p>
-&lt;h3 id="direct-exchange">Direct exchange
-&lt;/h3>&lt;p>可以发现，它可以在绑定 Queue 时多了个 &lt;code>.with(routing key)&lt;/code> 选项，用以指定某个 routing key，发送消息时指定这个 routing key，消息便会被 Exchange 转发绑定的 Queue 中。但它仍然有局限性，就是不能以多个条件进行路由，不够灵活，因此 Topic exchange 出现了。&lt;/p>
-&lt;h3 id="topic-exchange">Topic exchange
-&lt;/h3>&lt;p>它的 routing key 是以多个单词组成的，单词之间以 &lt;code>.&lt;/code> 隔开。因此我们就可以使用“通配符”来匹配，有以下两种“通配符”：&lt;/p>
-&lt;ul>
-&lt;li>* 可以代替一个单词&lt;/li>
-&lt;li># 可以代替零个或多个单词&lt;/li>
-&lt;/ul>
-&lt;p>可以看出，Topic exchange 是灵活度最高的，它甚至可以“退化”为 Direct exchange 和 Fanout exchange&lt;/p>
-&lt;p>由于它们使用起来都大同小异，因此不再展示代码，测试的时候可以通过 &lt;code>sudo rabbitmqctl list_bindings&lt;/code> 来确认是否绑定了自定义的 exchange。根据官方的文档，还有一种exchange 叫做 headers，tutorial 中没有介绍，以后有用到的时候再补吧。&lt;/p>
-&lt;h2 id="参考资料">参考资料
-&lt;/h2>&lt;ol start="2">
-&lt;li>&lt;a class="link" href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="noopener"
->RabbitMQ Tutorials&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>RabbitMQ 学习笔记 | 一</title><link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</link><pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</guid><description>&lt;p>此文仅作个记录&lt;/p>
-&lt;p>开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#apt" target="_blank" rel="noopener"
->apt repository on Package Cloud or Bintray&lt;/a>这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a class="link" href="https://www.rabbitmq.com/which-erlang.html#compatibility-matrix" target="_blank" rel="noopener"
->表格&lt;/a>&lt;/p>
-&lt;p>然而 Debian 的 Erlang 版本很旧，因此还需要先安装 Erlang，关于&lt;a class="link" href="https://www.rabbitmq.com/which-erlang.html#debian" target="_blank" rel="noopener"
->这一点&lt;/a>，官网上也提到了。因此也给出了&lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#erlang-repositories" target="_blank" rel="noopener"
->解决方案&lt;/a>，安装过程此处不再赘述。&lt;/p>
-&lt;p>安装完毕之后，其他一些需要注意的地方：比如说默认情况下端口号是 5672，HTTP的端口是 15672，更多默认端口可以参考&lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#ports" target="_blank" rel="noopener"
->这里&lt;/a>。RabbitMQ 自带了一个管理界面，如若要开启这个 WEB 界面，需要开启一个插件，只需要输入以下命令即可开启：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ rabbitmq-plugins enable rabbitmq_management
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后访问 &lt;code>ip:15672&lt;/code> 这个地址，这样就可以愉快的使用图形化界面来管理 RabbitMQ 了，更多详情还可以看&lt;a class="link" href="https://www.rabbitmq.com/management.html" target="_blank" rel="noopener"
->这里&lt;/a>。&lt;/p>
-&lt;p>默认情况下还会有一个默认的账户用于登录，账户名和密码都是：guest，而且只能从本机上连接。一般正常使用过程中都是需要装在服务器上，然后远程连接的，新创建一个账户就没有这个限制了。可以使用上面那个图形化界面来添加账户，也可以使用 rabbitmqctl 来创建。命令如下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ rabbitmqctl add_user username password
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ rabbitmqctl set_user_tags username administrator
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ rabbitmqctl set_permissions -p / username &lt;span style="color:#e6db74">&amp;#34;.*&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.*&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.*&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以上命令大概看英文就知道命令是做什么用的，几乎不用解释，更多关于权限控制的可以看&lt;a class="link" href="https://www.rabbitmq.com/access-control.html" target="_blank" rel="noopener"
->这里&lt;/a>&lt;/p>
-&lt;p>还有一个关于配置的文档，里面包含很多配置信息，以及很多基础配置的默认值都可以在这里找到，戳&lt;a class="link" href="https://www.rabbitmq.com/configure.html" target="_blank" rel="noopener"
->这里&lt;/a>查看。&lt;/p>
-&lt;p>不得不说，RabbitMQ 的文档还是很全面的，基本上遇到的问题都可以在官方文档上找到想要的信息。&lt;/p>
-&lt;h2 id="参考资料">参考资料
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://www.rabbitmq.com/documentation.html" target="_blank" rel="noopener"
->RabbitMQ Documentation&lt;/a>&lt;/li>
-&lt;/ol></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RabbitMQ on sherry's blog</title><link>https://ireflux.github.io/snow/tags/rabbitmq/</link><description>Recent content in RabbitMQ on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml"/><item><title>RabbitMQ 学习笔记 | 二</title><link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/</link><pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-2/</guid><description>&lt;p&gt;开始填坑第二篇笔记，没想到这一隔就是将近四个月/笑。第一篇在这里：&lt;a class="link" href="https://wanmei.ml/snow/post/study-note-of-rabbitmq-1/" target="_blank" rel="noopener"
+&gt;RabbitMQ 学习笔记(1)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对于 Spring AMQP，消息默认是持久化的，前提是消息到达的终端队列也必须是持久的。尽管是持久化的，但是在消息接收的短时间内并未保存在磁盘上，而是在内存里。&lt;/p&gt;
+&lt;p&gt;RabbitMQ 有两种消息调度方式，一种是其默认的循环调度，即每个 consumer 都会收到相同数量的消息。另一种是公平调度，为 Spring AMQP 的默认配置。Spring AMQP 中 &lt;code&gt;AbstractMessageListenerContainer&lt;/code&gt; 定义的 &lt;code&gt;DEFAULT_PREFETCH_COUNT&lt;/code&gt; 值为 250,如果将其设置为 1,则将会变为循环调度。&lt;/p&gt;
+&lt;p&gt;RabbitMQ 不指定 Exchange 也能发送到 Queue，是因为有默认的 Exchange，可使用 &lt;code&gt;sudo rabbitmqctl list_exchanges&lt;/code&gt;命令查看。当使用默认的 Exchange 的时候，每个 Queue 都会以自己的名字作为 routing key 自动绑定到默认的 Exchange。一般情况下，我们会根据情景选择 Exchange 自行绑定来进行使用，以下列举出几个常见的 Exchange。&lt;/p&gt;
+&lt;h3 id="fanout-exchange"&gt;Fanout exchange
+&lt;/h3&gt;&lt;p&gt;这种 Exchange 可以一次性将消息发送到多个 consumer，也称为广播。但是无法灵活的控制消息发送，例如只发送到某个 consumer。此时就出现了另一个 Exchange，叫做 Direct exchange&lt;/p&gt;
+&lt;h3 id="direct-exchange"&gt;Direct exchange
+&lt;/h3&gt;&lt;p&gt;可以发现，它可以在绑定 Queue 时多了个 &lt;code&gt;.with(routing key)&lt;/code&gt; 选项，用以指定某个 routing key，发送消息时指定这个 routing key，消息便会被 Exchange 转发绑定的 Queue 中。但它仍然有局限性，就是不能以多个条件进行路由，不够灵活，因此 Topic exchange 出现了。&lt;/p&gt;
+&lt;h3 id="topic-exchange"&gt;Topic exchange
+&lt;/h3&gt;&lt;p&gt;它的 routing key 是以多个单词组成的，单词之间以 &lt;code&gt;.&lt;/code&gt; 隔开。因此我们就可以使用“通配符”来匹配，有以下两种“通配符”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;* 可以代替一个单词&lt;/li&gt;
+&lt;li&gt;# 可以代替零个或多个单词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看出，Topic exchange 是灵活度最高的，它甚至可以“退化”为 Direct exchange 和 Fanout exchange&lt;/p&gt;
+&lt;p&gt;由于它们使用起来都大同小异，因此不再展示代码，测试的时候可以通过 &lt;code&gt;sudo rabbitmqctl list_bindings&lt;/code&gt; 来确认是否绑定了自定义的 exchange。根据官方的文档，还有一种exchange 叫做 headers，tutorial 中没有介绍，以后有用到的时候再补吧。&lt;/p&gt;
+&lt;h2 id="参考资料"&gt;参考资料
+&lt;/h2&gt;&lt;ol start="2"&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="noopener"
+&gt;RabbitMQ Tutorials&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>RabbitMQ 学习笔记 | 一</title><link>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</link><pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/study-note-of-rabbitmq-1/</guid><description>&lt;p&gt;此文仅作个记录&lt;/p&gt;
+&lt;p&gt;开始之前，首先需要安装 RabbitMQ 的服务端，由于我此次的安装环境为 Debian，根据官网所说，推荐使用 &lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#apt" target="_blank" rel="noopener"
+&gt;apt repository on Package Cloud or Bintray&lt;/a&gt;这种方式来安装，然而在这里还是遇到了一些问题，想要安装最新的 RabbitMQ，则需要高版本的 Erlang，具体详情可以看这个关于 RabbitMQ 和 Erlang/OPT 的兼容性&lt;a class="link" href="https://www.rabbitmq.com/which-erlang.html#compatibility-matrix" target="_blank" rel="noopener"
+&gt;表格&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然而 Debian 的 Erlang 版本很旧，因此还需要先安装 Erlang，关于&lt;a class="link" href="https://www.rabbitmq.com/which-erlang.html#debian" target="_blank" rel="noopener"
+&gt;这一点&lt;/a&gt;，官网上也提到了。因此也给出了&lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#erlang-repositories" target="_blank" rel="noopener"
+&gt;解决方案&lt;/a&gt;，安装过程此处不再赘述。&lt;/p&gt;
+&lt;p&gt;安装完毕之后，其他一些需要注意的地方：比如说默认情况下端口号是 5672，HTTP的端口是 15672，更多默认端口可以参考&lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#ports" target="_blank" rel="noopener"
+&gt;这里&lt;/a&gt;。RabbitMQ 自带了一个管理界面，如若要开启这个 WEB 界面，需要开启一个插件，只需要输入以下命令即可开启：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmq-plugins enable rabbitmq_management
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后访问 &lt;code&gt;ip:15672&lt;/code&gt; 这个地址，这样就可以愉快的使用图形化界面来管理 RabbitMQ 了，更多详情还可以看&lt;a class="link" href="https://www.rabbitmq.com/management.html" target="_blank" rel="noopener"
+&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;默认情况下还会有一个默认的账户用于登录，账户名和密码都是：guest，而且只能从本机上连接。一般正常使用过程中都是需要装在服务器上，然后远程连接的，新创建一个账户就没有这个限制了。可以使用上面那个图形化界面来添加账户，也可以使用 rabbitmqctl 来创建。命令如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl add_user username password
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl set_user_tags username administrator
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl set_permissions -p / username &lt;span style="color:#e6db74"&gt;&amp;#34;.*&amp;#34;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;.*&amp;#34;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;.*&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上命令大概看英文就知道命令是做什么用的，几乎不用解释，更多关于权限控制的可以看&lt;a class="link" href="https://www.rabbitmq.com/access-control.html" target="_blank" rel="noopener"
+&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;还有一个关于配置的文档，里面包含很多配置信息，以及很多基础配置的默认值都可以在这里找到，戳&lt;a class="link" href="https://www.rabbitmq.com/configure.html" target="_blank" rel="noopener"
+&gt;这里&lt;/a&gt;查看。&lt;/p&gt;
+&lt;p&gt;不得不说，RabbitMQ 的文档还是很全面的，基本上遇到的问题都可以在官方文档上找到想要的信息。&lt;/p&gt;
+&lt;h2 id="参考资料"&gt;参考资料
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.rabbitmq.com/documentation.html" target="_blank" rel="noopener"
+&gt;RabbitMQ Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

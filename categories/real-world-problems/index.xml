@@ -1,162 +1,162 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Real-World Problems on sherry's blog</title><link>https://ireflux.github.io/snow/categories/real-world-problems/</link><description>Recent content in Real-World Problems on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/real-world-problems/index.xml" rel="self" type="application/rss+xml"/><item><title>「译文」| 隐形眼镜</title><link>https://ireflux.github.io/snow/post/rwp-contact-lenses/</link><pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-contact-lenses/</guid><description>&lt;p>本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
->Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第五篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp3sol.html" target="_blank" rel="noopener"
->A Solution to the Real-World Problem: Contact Lenses&lt;/a>&lt;/p>
-&lt;hr>
-&lt;p>为何隐形眼镜比普通眼镜薄得多，但在矫正视力方面却同样有效？&lt;/p>
-&lt;p>提示：将球面透镜的焦距与透镜的折射率和前后表面的曲率半径联系起来的方程称为透镜制造方程：&lt;code>1/f = (n - no)(1/r1 - 1/r2)&lt;/code>, 其中 no = 1.00 代表空气。&lt;/p>
-&lt;h2 id="收集信息">收集信息
-&lt;/h2>&lt;p>隐形眼镜直接戴在眼睛上，角膜半径约为 0.8 厘米（参考文献 3），折射率为 1.42 至 1.52（参考文献 3），厚度约为 0.2 毫米。&lt;/p>
-&lt;p>普通眼镜通常戴在距离眼睛 2 厘米处，折射率为 1.5 到 1.7（参考文献 2），曲率半径约 10 厘米（通过检查几种眼镜并与类似曲率的球进行比较而发现），厚度为 2 - 5 毫米（比隐形眼镜厚约 10 倍）。&lt;/p>
-&lt;h2 id="组织信息">组织信息
-&lt;/h2>&lt;p>从镜片制造方程可以看出，对于给定的屈光力 (1/f)，镜片的厚度取决于镜片材料的折射率（n 越大，屈光力越大）以及两者之间的相对差异镜片前后表面的曲率半径（半径差异越大，镜片越厚）。镜片的厚度还取决于所用材料的类型以及它必须具有多大的刚性才能避免破裂或撕裂。&lt;/p>
-&lt;h2 id="分析">分析
-&lt;/h2>&lt;p>由于以下原因，隐形眼镜可以做得比普通眼镜更薄：&lt;/p>
-&lt;ol>
-&lt;li>由于隐形眼镜直接戴在眼球上，因此隐形眼镜矫正视力所需的屈光力略低于普通眼镜。例如，假设一个人有远视，近点为 57 厘米（如示例 27-3 所示）。距离眼睛 2.0 厘米的普通眼镜所需的屈光力为 2.53 D (f = 39.5 厘米)。但是，如活动示例 27-4 中所述，同一个人将需要屈光力仅为 2.25 D (f = 44.5 厘米) 的隐形眼镜。虽然这个约 10% 的差异比较显著，但对于视力较好的人来说，相对差异要小很多，但这种影响只是隐形眼镜和普通眼镜之间厚度差异的一部分。&lt;/li>
-&lt;li>隐形眼镜可以由具有更高折射率的材料制成。虽然这可能是真的，但是大多数现代眼镜都是由轻质塑料材料制成的，折射率 n = 1.5 至 1.7，而隐形眼镜的指数通常为 1.4 至 1.5（参考文献 2&amp;amp;3），因此这个似乎无法作为解释。&lt;/li>
-&lt;li>隐形眼镜的平均曲率半径约为普通眼镜的 1/10。为了检查这种平均半径差异的影响，假设我们比较了具有相同折射率 (n = 1.5) 和屈光力 (2.0 D) 的普通眼镜和隐形眼镜。根据透镜制造方程，并假设空气作为周围介质，我们可以求解一个曲率半径，给定另一个：&lt;code>1/r2 = 1/r1 - 1/[f(n-1)]&lt;/code>。因此，对于隐形眼镜 (r1 = 1.00 厘米)：r2 = 1.04 厘米，而对于普通眼镜 (r1 = 10.0 厘米)：r2 = 16.7 厘米。这意味着使用类似折射率的材料，隐形眼镜的半径仅需要 4% 的差异，即可产生与半径差异 50% 的普通眼镜相同的屈光力！显然，这是一个重要因素，可以解释大多数隐形眼镜和普通眼镜之间的厚度差异。但是请注意，这种效果对于隐形眼镜来说并不那么明显，因为隐形眼镜的后表面接触角膜，而角膜的折射率几乎与隐形眼镜相同，因此基本上所有的折射都必须发生在隐形眼镜的前表面。&lt;/li>
-&lt;li>隐形眼镜不需要像普通眼镜那样坚硬，因此可以做得更薄。虽然这一点很显然，但它却是隐形眼镜和普通眼镜之间厚度差异最重要的原因。&lt;/li>
-&lt;/ol>
-&lt;h2 id="学习">学习
-&lt;/h2>&lt;p>有趣的是，镜片的厚度更多地取决于平均曲率半径，而不是它相对于眼睛的位置。隐形眼镜所需的前后半径差异相对较小，这意味着这些镜片的制造精度必须比眼镜高得多。这是精密工程的又一个奇迹。&lt;/p>
-&lt;h2 id="参考资料">参考资料
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/lenmak.html" target="_blank" rel="noopener"
->http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/lenmak.html&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.healthatoz.com/healthatoz/Atoz/ency/eye_glasses_and_contact_lenses.jsp" target="_blank" rel="noopener"
->http://www.healthatoz.com/healthatoz/Atoz/ency/eye_glasses_and_contact_lenses.jsp&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.ophthalmic.hyperguides.com/default.asp?section=/tutorials/clinical/contact_lenses/tutorial.asp" target="_blank" rel="noopener"
->http://www.ophthalmic.hyperguides.com/default.asp?section=/tutorials/clinical/contact_lenses/tutorial.asp&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://research.opt.indiana.edu/library/waveGuidedLens/waveGuidedLens.html" target="_blank" rel="noopener"
->http://research.opt.indiana.edu/library/waveGuidedLens/waveGuidedLens.html&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.findarticles.com/p/articles/mi_g2601/is_0005/ai_2601000518" target="_blank" rel="noopener"
->http://www.findarticles.com/p/articles/mi_g2601/is_0005/ai_2601000518&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.eyeglasshouse.com/contactcosmetic.htm" target="_blank" rel="noopener"
->http://www.eyeglasshouse.com/contactcosmetic.htm&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://cvu.strath.ac.uk/courseware/msc/jbaggot/lenses/lenses.html" target="_blank" rel="noopener"
->http://cvu.strath.ac.uk/courseware/msc/jbaggot/lenses/lenses.html&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 偷电问题</title><link>https://ireflux.github.io/snow/post/rwp-stealing-power/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-stealing-power/</guid><description>&lt;p>本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
->Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第四篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html" target="_blank" rel="noopener"
->A Solution to the RWP for Exam 1 - Stealing Power&lt;/a>。&lt;/p>
-&lt;hr>
-&lt;p>据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：&lt;/p>
-&lt;ol>
-&lt;li>在没有检查农民财产的情况下，电力公司是怎么发现电力被偷了的?&lt;/li>
-&lt;/ol>
-&lt;p>原则上，电力公司可以计算输送的电力和购买的电力之间的差额。其中存在的无法解释的差异（除了通过沿传输线的电阻加热造成的功率损失之外）可能是有人偷取电力的结果。实际上，在这种情况下单个用户窃取的电量很可能太小而无法检测到。&lt;/p>
-&lt;ol start="2">
-&lt;li>农民利用什么原理从输电线路偷电？&lt;/li>
-&lt;/ol>
-&lt;p>农民使用法拉第感应定律在靠近高压输电线路的线圈中感应出电压和电流。这种做法是有可能的，因为通过传输线的交流电改变了它周围的磁场，如果感应线圈的位置使磁场线穿过它的区域，那么就会感应出电动势，交流电就会流过线圈。&lt;/p>
-&lt;ol start="3">
-&lt;li>农民必须如何放置线圈才能最有效地实现他的目标？&lt;/li>
-&lt;/ol>
-&lt;p>线圈应尽可能靠近传输线放置，因为磁场与到传输线的距离成反比，并且线圈应垂直放置在与传输线对齐的垂直平面上，以最大限度地提高来自传输线的磁通量环绕传输线的磁场线。&lt;/p>
-&lt;ol start="4">
-&lt;li>假设最低传输线距离地面 10 米，并承载 60 Hz 的交流电流，最大 150 A，电压为 230 kV。如果线圈是边长为 5 米的正方形形状并接触地面，则要产生 120 V 的标准电压大约需要多少匝线圈？&lt;/li>
-&lt;/ol>
-&lt;p>线圈中感应的最大电动势取决于磁通量的变化：&lt;code>emf（电动势） = Nd(phi)/dt = NAdB/dt&lt;/code>。&lt;/p>
-&lt;p>对于这个问题，磁通量会发生变化，因为磁场强度因交流电而变化，交流电在每个方向上达到峰值两次，或每 1/120 秒一次。这意味着磁场每个周期会从最大值变为零四次，因此 &lt;code>dt = 1/240 秒 = 4.2 毫秒&lt;/code>。传输线周围的最大磁场可以根据通过导线的最大电流估算，使用长直导线的公式：&lt;code>B(wire) = uo*I/(2pi*r)&lt;/code>。由于方形感应线圈从传输线延伸出 5 到 10 米 的距离，因此线圈远端的磁场会较弱，最近端的磁场会较强，但使用 7.5 米的平均距离可得出特定电流的平均磁通量。因此，距传输线 7.5 米处的最大磁场为 &lt;code>B = (4pi*10^-7 T*m/A)(150 A)/(2pi)/(7.5 m) = 4.0 uT&lt;/code>，其中与参考文献 2 中指示的 230 kV 线路附近 6 uT 的平均磁场一致。&lt;/p>
-&lt;p>产生 120 V 电压（或 170 V 峰值电压）所需的匝数为：&lt;code>N = (170 V)(4.2 毫秒)/(25 米 ^ 2)/(4.0 uT) = 7140 圈&lt;/code>&lt;/p>
-&lt;ol start="5">
-&lt;li>为什么线圈中的电压会随着一天中的时间而变化？你预计它什么时候最大和最小？&lt;/li>
-&lt;/ol>
-&lt;p>线圈中感应出的电压取决于传输线产生的磁场强度，磁场强度取决于通过线路的电流量，而这取决于用户对来自这条线路的电力（负载）的需求。我们应该预计这种电力需求在下午和晚上时间最大，而在每天的清晨时间最小。峰值电力需求的这种每日变化可以在参考文献 2 的图表中看到。&lt;/p>
-&lt;ol start="6">
-&lt;li>线圈中电流的频率是多少？传输线中的电压与线圈之间的相位角是多少？&lt;/li>
-&lt;/ol>
-&lt;p>由于线圈中感应的电流是由传输线中电流的变化引起的，因此它们应该具有相同的 60 Hz 频率。然而，这些电流（或相应的电压）之间的相位角将是 90 度，因为当传输线中的电流变化最大时线圈中的感应电流达到最大值，这发生在一个周期的 1/4 或 &lt;code>360/4 = 90 度&lt;/code>在传输线中的电流峰值之前和之后。&lt;/p>
-&lt;ol start="7">
-&lt;li>如果线圈和与其相连的所有设备的总阻抗为 200 欧姆，那么消耗能量的最大速率是多少？&lt;/li>
-&lt;/ol>
-&lt;p>能量消耗的最大速率（功率）为：&lt;code>Pmax = Irms*Vrms = (Vrms)^2/Z = (120 V)^2/(200 ohms) = 72 W&lt;/code>&lt;/p>
-&lt;p>可以通过包含适当的&lt;code>power factor（功率因数）= R/Z&lt;/code> 来更准确地估计平均功率，这可以通过计算线圈的电感和确定感抗来确定。根据参考文献 3 得知，该线圈的电感约为 1600 H（这是一个非常大的电感）。感抗为 &lt;code>X(L) = 2(pi)(60 Hz)(1600 H) = 603000 ohms&lt;/code>！这远大于规定的 200 欧姆阻抗，因此功率因数似乎接近于零！&lt;/p>
-&lt;ol start="8">
-&lt;li>假设成本为 0.10 美元/kW-h，农民在一年内窃取的能源价值大约是多少？&lt;/li>
-&lt;/ol>
-&lt;p>如果我们假设农民有一半的时间使用设备（一天的平均功耗为 36 W），那么一年的总成本将是：&lt;code>cost（成本）= (36 W)(24 小时/天)(365 天/年)($0.10/kW-h) = $31.54/年&lt;/code>。即使在最大功率为 72 W 的情况下，被盗能源的价值也仅为 63 美元/年。这似乎不值得付出努力、风险和成本（见下文）。&lt;/p>
-&lt;ol start="9">
-&lt;li>估计制作线圈的成本，假设农民使用 12 号铜线，成本为 0.15 美元/英尺。评估农民设计的成本效益并计算其投资的大致回收时间。&lt;/li>
-&lt;/ol>
-&lt;p>需要 7140 圈电线，每圈长度为 20 米，农民将需要 143 公里的电线！以 0.15 美元/英尺 = 0.50 美元/米计算，这条线将花费 71400 美元！这意味着即使在最大能源消耗率下，投资回收时间也至少为 1000 年！&lt;/p>
-&lt;ol start="10">
-&lt;li>你会给农民什么建议来最大限度地提高他的设计效率？&lt;/li>
-&lt;/ol>
-&lt;p>为了最大限度地提高线圈中感应的电动势，同时使用最少的电线以节省成本，农民应将线圈尽可能靠近传输线，并使用尽可能大面积的线圈（因为将线圈的面积增加一倍，方形线圈使感应电动势增加四倍，而成本仅增加一倍）。在线圈内放置铁会提高这个变压器的效率，但效果会相当小，可能不值得付出努力。&lt;/p>
-&lt;ol start="11">
-&lt;li>从这个问题中还可以学到什么其他东西？&lt;/li>
-&lt;/ol>
-&lt;p>从上面的计算来看，这种偷电方式似乎是非常低效和不切实际的。我严重怀疑是否有农民真的这样做过（也许这是一个适合&lt;a class="link" href="https://www.imdb.com/title/tt0383126/" target="_blank" rel="noopener"
->《流言终结者》&lt;/a>这样的节目去调查的神话！）。这种法拉第定律的应用，本质上是一种效率极低的电力变压器。法拉第定律还有许多其他应用遍布我们的现代生活。这只是一个不建议的。&lt;/p>
-&lt;h1 id="参考文献">参考文献
-&lt;/h1>&lt;ol>
-&lt;li>&lt;a class="link" href="http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm" target="_blank" rel="noopener"
->http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://infoventures.com/private/federal/q&amp;amp;a/qaenvn2a.html" target="_blank" rel="noopener"
->http://infoventures.com/private/federal/q&amp;a/qaenvn2a.html&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle" target="_blank" rel="noopener"
->http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 磁共振成像对健康与安全方面的挑战</title><link>https://ireflux.github.io/snow/post/rwp-mri-health-and-safety/</link><pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-mri-health-and-safety/</guid><description>&lt;p>本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
->Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第三篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp2sol.html" target="_blank" rel="noopener"
->A solution to RWP2 - MRI Health and Safety&lt;/a>&lt;/p>
-&lt;hr>
-&lt;p>关于磁共振系统所产生的强静态磁场的主要安全问题是铁磁体可能会以比其重量大得多的磁力吸引，如果有人处在被吸引的磁体飞行的路线中，有可能会导致有人受伤或死亡。铁磁体（如钢纽扣）上的磁性引力大小取决于物体所在位置的磁场强度和发散度以及物体的大小。如果磁场是均匀的（例如在磁共振螺线管的中心），那么物体上就没有合力，因为每个感应磁极上的磁力是相等且相反的。然而，在螺线管的边缘附近，磁场线会明显发散（散开），因此，最接近磁体的物体的一端被一个力所吸引，该力明显大于作用在远离螺线管的感应相反极上的排斥力。课堂上学过的&lt;a class="link" href="https://en.wikipedia.org/wiki/Hermann_von_Helmholtz" target="_blank" rel="noopener"
->亥姆霍兹&lt;/a>线圈对绳子上悬挂的回形针证明了这种效果。&lt;/p>
-&lt;p>虽然我们没有方程式可用来确定铁磁性物体上的磁力，但我们可以利用我们的日常经验和按比例推理来估算钢制纽扣上受的力。从课堂上的回形针案例中可以看出，回形针靠近一个线圈的边缘，当弦线与垂直线成大约成45度夹角时，线圈对回形针的吸引力大约等于其自身的重力。我们从e/m实验室得知流过线圈的电流约为2A，它会产生约50G的磁场，这是地球磁场的约100倍。由于来自磁共振系统的磁场约为1.5T或15kG，因此靠近开口的按钮所受的磁力大约是其重量的300倍。假设按钮的质量约为5克(相当于一枚镍币)，那么这就意味着它在一个处于运行状态的磁共振系统附近的磁力约为15牛或3磅。虽然这看起来可能不是很大的力，但是想象一下，对于一个更大的物体，比如一个重10磅的氧气罐，这个力会大多少。这时磁铁的吸引力可以达到10000磅，足以杀死一个人——就像「参考文献1」中的例子一样&lt;/p>
-&lt;p>另一个与磁共振成像磁场相关的主要问题是金属物体（不仅仅是铁磁材料）中会感应出大电流，这些电流会使金属产生很大的热量。例如，如果患者在磁共振成像扫描期间佩戴金项链，不断变化的磁场（约 50 T/m/s）可能会在项链中感应出大约为：&lt;code>电动势(emf)= d(Phi)/dt =面积(area)*回转(slew)~(0.02 m^2)(50 T/s) = 1 V&lt;/code>。虽然这个感应电动势可能看起来不大，但重要的是要知道导体的电阻非常小（约0.001 欧姆 - 请参见下面的示例计算），在这种情况下，感应电流将为 1000A，其消耗的功率为电阻加热为：&lt;code>P = IV = 1000 W&lt;/code>。这种电能类似于烤面包机，很容易导致像「参考文献 2」中那样严重的皮肤灼伤！如果磁通量发生变化（由于磁场或导体方向的变化），也可能在靠近磁铁的医疗助理佩戴的导体中感应出潜在的有害电流。由于螺线管外部的磁场远小于内部的磁场，因此烧伤的风险显著降低，但这仍可能是一个问题。&lt;/p>
-&lt;p>金项链的近似电阻：&lt;/p>
-&lt;p>金的电阻率：&lt;code>r = 2.2e-8 ohm-m&lt;/code>，项链长度：&lt;code>L = 18 英寸(in) = 45 厘米(cm)&lt;/code>，横截面积：&lt;code>A = pi*(0.002 m)^2 = 1.2e-5 m^2&lt;/code>，因此电阻为：&lt;code>R = rL/A = 0.0008 欧姆&lt;/code>&lt;/p>
-&lt;p>网络上其他（物理很差）人的见解：&lt;/p>
-&lt;p>作为此问题的「参考资料3」列出的网站中有一张图表，其中包含物体上的磁体吸引力的方程式：&lt;code>F = m/d^2&lt;/code>，但是这个方程肯定是错误的，因为右边的单位不是力的单位。而且该方程也不包括磁场强度及其散度，这两者都是计算吸引力所必需的。磁体吸引力还更多地取决于物体的大小和磁化率，而不是它的质量。这个网站还有一个关于环绕磁体的5g条纹场的图表，但是显示的磁场线与偶极子的磁场线不一致，偶极子的磁场在两极附近比中心更强。&lt;/p>
-&lt;p>由于磁共振系统的强磁场对健康影响的检查引发了有关当今广泛销售的磁疗法功效的问题。许多人声称放置在皮肤附近的磁铁可以刺激体内循环并缓解疼痛和疼痛，但是科学研究还不能证实这些说法或解释这种过程是如何发生的。磁疗供应商的许多说法不符合物理定律；然而，有研究证实了当患者相信某种疗法的疗效时，可能会产生安慰剂效应，即使没有科学理由证明这种疗法具有治愈效果。（参考文献4）&lt;/p>
-&lt;h2 id="参考文献">参考文献
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="http://www.fda.gov/cdrh/safety/mrisafety.html" target="_blank" rel="noopener"
->http://www.fda.gov/cdrh/safety/mrisafety.html&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.massgeneralimaging.org/newsletter" target="_blank" rel="noopener"
->http://www.massgeneralimaging.org/newsletter&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://www.erads.com/mrsafety.htm" target="_blank" rel="noopener"
->http://www.erads.com/mrsafety.htm&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="http://skepdic.com/magnetic.html" target="_blank" rel="noopener"
->http://skepdic.com/magnetic.html&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>「译文」| 凝胶电泳</title><link>https://ireflux.github.io/snow/post/rwp-gel-electrophoresis/</link><pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-gel-electrophoresis/</guid><description>&lt;p>本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
->Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第二篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp1sol.html" target="_blank" rel="noopener"
->A Solution to RWP1 - Gel Electrophoresis&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="收集信息">收集信息
-&lt;/h2>&lt;p>从问题的描述中可以得知，DNA片段带负电，并且电荷量与片段的长度成正比，但是我们不确定每个碱基对的电荷量。每个碱基对可能的最小电荷为：&lt;code>q=-2e=-2(1.6e-19C)&lt;/code>，平均碱基对的分子“重量” = 635 &lt;a class="link" href="https://en.m.wikipedia.org/wiki/Dalton_%28unit%29" target="_blank" rel="noopener"
->daltons&lt;/a> = &lt;code>635(1.67e-27kg)=1.06e-24kg&lt;/code>，可分析的片段范围为 200bp 至 50kb，对应于：&lt;code>m=2.1e-22kg&lt;/code> 至 &lt;code>5.3e-20kg&lt;/code>。&lt;/p>
-&lt;p>注意：该技术可分析的最大DNA片段只是单倍体细胞核DNA的一小部分：&lt;code>(5e4)(635)/1.9e12=1/60000&lt;/code>&lt;/p>
-&lt;p>根据DNA碎片移动所需的时间，可以肯定它们不是在加速，而是在以1英尺/小时的速度移动。尽管没有明确说明，但所施加的电场必须是均匀的，由差值为50至150v的两个平行线性电极产生。假设凝胶在盒子的长度范围内流动，则电场强度必须大约为：&lt;code>E=(100V)/(20cm)=5V/cm=500V/m&lt;/code>&lt;/p>
-&lt;h2 id="组织信息">组织信息
-&lt;/h2>&lt;p>这个问题主要是一个均匀电场的应用。与以往教科书问题不同的重要方面是，凝胶对带负电荷的DNA片段提供了一种与静电力相反的阻力。&lt;/p>
-&lt;h2 id="分析">分析
-&lt;/h2>&lt;p>作用在DNA片段上的合力必须为零，否则它会加速，并在不到30分钟内移动~20厘米。&lt;/p>
-&lt;p>验证：假设每个碱基对的最小电荷为-2e，则长度为 1000bp 的典型DNA片段上的力为 &lt;code>F=qE=-2(1.6e-19 C)(500 N/C)=-1.6e-16N&lt;/code>，如果没有相反的力，这将导致加速度：&lt;code>a=F/m=(1.6e-16N)/(1000*1.06e-24kg)=1.5e5m/s^2=15000g&lt;/code>！！！如果真是这样，那么DNA片段将在瞬间穿过凝胶盒的长度！&lt;/p>
-&lt;p>从Physlet模拟中可以清楚地看出，较小的DNA片段确实比较大的分子移动得更快，移动得更远，尽管事实上较大的分子应该具有更大的电力，因为电荷与碱基对的数量成比例。显然，这些分子所受的阻力很大程度上取决于它们的大小，就像物体在空气中下落一样，在决定终极速度方面，密度比大小更重要。&lt;/p>
-&lt;p>Physlet模拟并未显示出较大的DNA片段在较高的电场中按比例迁移得更快，而是随着施加电压的增加，在条带的位置只是向右不断地移动。如果这种非线性效应确实发生在现实生活中(如问题陈述中所示)，那么它可能是由于作用在较大分子上的非线性阻力。&lt;/p>
-&lt;p>从这个模拟中可以看出，迁移速率随外加场强的增加而增加，但不是线性的。相反，在较低的场，迁移速率增加得很快，而在较高场，迁移速率增加得比较慢，形成了一条曲线，看起来类似于灯泡的I-V(电流-电压)图(在开始趋于平稳时上升并向右)。&lt;/p>
-&lt;h2 id="学习">学习
-&lt;/h2>&lt;p>DNA片段在凝胶电泳箱中的移动与电子在导线中的移动非常相似。在这两种情况下，带负电荷的粒子都是在外部电场的作用下移动，但是这些移动的粒子会因为障碍物的阻碍而放慢速度，就像“蜗牛一样”。如果电极是点而不是线，那么产生的电场就是不均匀的，并且在中心(电场最强的地方)的迁移速度会比靠近凝胶盒边缘的地方大。即使具有平行线几何形状，在盒子侧面附近的电场也较弱，因此希望分析仅限于线性电极之间的矩形区域。&lt;/p></description></item><item><title>「译文」| 比萨派对问题</title><link>https://ireflux.github.io/snow/post/rwp-pizza-party/</link><pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-pizza-party/</guid><description>&lt;p>本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
->Real-world Problems for Phys25, Summer 2006&lt;/a>系列文章第一篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html" target="_blank" rel="noopener"
->A Solution to the Pizza Party Problem&lt;/a>。&lt;/p>
-&lt;hr>
-&lt;p>假设你计划为50个朋友举办一个披萨派对。当地的披萨店卖12英寸的中号披萨7.99美元，16英寸的大披萨12.99美元，选哪一种比萨更为划算？如果一个中号披萨可供3个人吃，应该点多少个披萨？如果你认为你的大多数朋友都不吃披萨皮，你的答案是否会有所不同？解释你这么回答的理由。&lt;/p>
-&lt;h1 id="解决方案">解决方案
-&lt;/h1>&lt;h2 id="收集信息">收集信息
-&lt;/h2>&lt;p>一般来说，购买大的产品比较经济实惠，经常被称为“经济尺寸”。然而，也有可能中号披萨是以比平时更低的特价出售的。因此大约需要&lt;code>50/3 = 17&lt;/code>个中等的比萨饼才能满足50人的需求，而选大号比萨饼的话，数量会少一些，假设每4个人吃一个大号比萨，大概只需要12个。。如果想要最少的饼皮，大的比萨饼似乎是更好的选择，因为小比萨饼有更多的皮。&lt;/p>
-&lt;h2 id="组织信息">组织信息
-&lt;/h2>&lt;p>这是一个比率问题，可以用简单的代数和圆的面积公式求解：&lt;code>A =(PI)r^2&lt;/code>，每单位面积的价格是比较两个比萨饼成本的最佳方法。&lt;/p>
-&lt;h2 id="分析">分析
-&lt;/h2>&lt;p>中号披萨的单位面积成本为：&lt;code>$7.99/PI(6 英寸)^2 = $0.071/英寸^2&lt;/code>，大披萨的单位面积成本为：&lt;code>$12.99/PI(8 英寸)^2 = $0.065/英寸^2&lt;/code>，所以买一个大披萨比买一个中号披萨要便宜10%。&lt;/p>
-&lt;p>假设一个中等的比萨饼足以供3人食用，则&lt;code>50/3 = 16.7&lt;/code>，因此需要17个中等的比萨饼，成本为135.83美元。&lt;/p>
-&lt;p>然而，我们想找与中等比萨饼总量相同的大比萨饼的数量：&lt;code>N(大)A(大)= N(中)A(中)&lt;/code>&lt;/p>
-&lt;p>因此，N(大)= [PI(6英寸)^2/PI(8英寸)^2]*(50/3)= 9.4&lt;/p>
-&lt;p>因此，需要10个大的比萨饼，成本为129.99美元(比中型比萨饼的价格节省了5.84美元)&lt;/p>
-&lt;p>另外比萨饼皮的数量与比萨饼的周长成正比：&lt;code>C =(PI)D&lt;/code>&lt;/p>
-&lt;p>中号比萨饼的皮约有&lt;code>16.7*(12英寸)*(PI)= 630英寸&lt;/code>。&lt;/p>
-&lt;p>大比萨饼的皮约有&lt;code>9.4*(16英寸)*(PI)= 470英寸&lt;/code>。&lt;/p>
-&lt;p>由于大披萨的总的皮较少，因此它仍然是更好的选择。&lt;/p>
-&lt;h2 id="学习结论">学习结论
-&lt;/h2>&lt;p>正如我们所想，就成本和最少的皮而言，大披萨是最好的选择。在解决该问题中，重要的是区分圆的面积和周长。仔细注意单位有助于避免混淆这两个公式。&lt;/p>
-&lt;p>解决此问题时使用了几种假设。根据你朋友的饥饿程度以及提供的其他食物的不同，假设一个中等的比萨饼可以供3个人食用有可能是错误的。我们还假定价格是固定的，并且没有优惠券或其他折扣。最重要的是，这个问题并不像决定披萨上应该放什么配料这样具有挑战性的任务那么复杂!&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Real-World Problems on sherry's blog</title><link>https://ireflux.github.io/snow/categories/real-world-problems/</link><description>Recent content in Real-World Problems on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/categories/real-world-problems/index.xml" rel="self" type="application/rss+xml"/><item><title>「译文」| 隐形眼镜</title><link>https://ireflux.github.io/snow/post/rwp-contact-lenses/</link><pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-contact-lenses/</guid><description>&lt;p&gt;本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
+&gt;Real-world Problems for Phys25, Summer 2006&lt;/a&gt;系列文章第五篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp3sol.html" target="_blank" rel="noopener"
+&gt;A Solution to the Real-World Problem: Contact Lenses&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;为何隐形眼镜比普通眼镜薄得多，但在矫正视力方面却同样有效？&lt;/p&gt;
+&lt;p&gt;提示：将球面透镜的焦距与透镜的折射率和前后表面的曲率半径联系起来的方程称为透镜制造方程：&lt;code&gt;1/f = (n - no)(1/r1 - 1/r2)&lt;/code&gt;, 其中 no = 1.00 代表空气。&lt;/p&gt;
+&lt;h2 id="收集信息"&gt;收集信息
+&lt;/h2&gt;&lt;p&gt;隐形眼镜直接戴在眼睛上，角膜半径约为 0.8 厘米（参考文献 3），折射率为 1.42 至 1.52（参考文献 3），厚度约为 0.2 毫米。&lt;/p&gt;
+&lt;p&gt;普通眼镜通常戴在距离眼睛 2 厘米处，折射率为 1.5 到 1.7（参考文献 2），曲率半径约 10 厘米（通过检查几种眼镜并与类似曲率的球进行比较而发现），厚度为 2 - 5 毫米（比隐形眼镜厚约 10 倍）。&lt;/p&gt;
+&lt;h2 id="组织信息"&gt;组织信息
+&lt;/h2&gt;&lt;p&gt;从镜片制造方程可以看出，对于给定的屈光力 (1/f)，镜片的厚度取决于镜片材料的折射率（n 越大，屈光力越大）以及两者之间的相对差异镜片前后表面的曲率半径（半径差异越大，镜片越厚）。镜片的厚度还取决于所用材料的类型以及它必须具有多大的刚性才能避免破裂或撕裂。&lt;/p&gt;
+&lt;h2 id="分析"&gt;分析
+&lt;/h2&gt;&lt;p&gt;由于以下原因，隐形眼镜可以做得比普通眼镜更薄：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;由于隐形眼镜直接戴在眼球上，因此隐形眼镜矫正视力所需的屈光力略低于普通眼镜。例如，假设一个人有远视，近点为 57 厘米（如示例 27-3 所示）。距离眼睛 2.0 厘米的普通眼镜所需的屈光力为 2.53 D (f = 39.5 厘米)。但是，如活动示例 27-4 中所述，同一个人将需要屈光力仅为 2.25 D (f = 44.5 厘米) 的隐形眼镜。虽然这个约 10% 的差异比较显著，但对于视力较好的人来说，相对差异要小很多，但这种影响只是隐形眼镜和普通眼镜之间厚度差异的一部分。&lt;/li&gt;
+&lt;li&gt;隐形眼镜可以由具有更高折射率的材料制成。虽然这可能是真的，但是大多数现代眼镜都是由轻质塑料材料制成的，折射率 n = 1.5 至 1.7，而隐形眼镜的指数通常为 1.4 至 1.5（参考文献 2&amp;amp;3），因此这个似乎无法作为解释。&lt;/li&gt;
+&lt;li&gt;隐形眼镜的平均曲率半径约为普通眼镜的 1/10。为了检查这种平均半径差异的影响，假设我们比较了具有相同折射率 (n = 1.5) 和屈光力 (2.0 D) 的普通眼镜和隐形眼镜。根据透镜制造方程，并假设空气作为周围介质，我们可以求解一个曲率半径，给定另一个：&lt;code&gt;1/r2 = 1/r1 - 1/[f(n-1)]&lt;/code&gt;。因此，对于隐形眼镜 (r1 = 1.00 厘米)：r2 = 1.04 厘米，而对于普通眼镜 (r1 = 10.0 厘米)：r2 = 16.7 厘米。这意味着使用类似折射率的材料，隐形眼镜的半径仅需要 4% 的差异，即可产生与半径差异 50% 的普通眼镜相同的屈光力！显然，这是一个重要因素，可以解释大多数隐形眼镜和普通眼镜之间的厚度差异。但是请注意，这种效果对于隐形眼镜来说并不那么明显，因为隐形眼镜的后表面接触角膜，而角膜的折射率几乎与隐形眼镜相同，因此基本上所有的折射都必须发生在隐形眼镜的前表面。&lt;/li&gt;
+&lt;li&gt;隐形眼镜不需要像普通眼镜那样坚硬，因此可以做得更薄。虽然这一点很显然，但它却是隐形眼镜和普通眼镜之间厚度差异最重要的原因。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="学习"&gt;学习
+&lt;/h2&gt;&lt;p&gt;有趣的是，镜片的厚度更多地取决于平均曲率半径，而不是它相对于眼睛的位置。隐形眼镜所需的前后半径差异相对较小，这意味着这些镜片的制造精度必须比眼镜高得多。这是精密工程的又一个奇迹。&lt;/p&gt;
+&lt;h2 id="参考资料"&gt;参考资料
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/lenmak.html" target="_blank" rel="noopener"
+&gt;http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/lenmak.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.healthatoz.com/healthatoz/Atoz/ency/eye_glasses_and_contact_lenses.jsp" target="_blank" rel="noopener"
+&gt;http://www.healthatoz.com/healthatoz/Atoz/ency/eye_glasses_and_contact_lenses.jsp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.ophthalmic.hyperguides.com/default.asp?section=/tutorials/clinical/contact_lenses/tutorial.asp" target="_blank" rel="noopener"
+&gt;http://www.ophthalmic.hyperguides.com/default.asp?section=/tutorials/clinical/contact_lenses/tutorial.asp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://research.opt.indiana.edu/library/waveGuidedLens/waveGuidedLens.html" target="_blank" rel="noopener"
+&gt;http://research.opt.indiana.edu/library/waveGuidedLens/waveGuidedLens.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.findarticles.com/p/articles/mi_g2601/is_0005/ai_2601000518" target="_blank" rel="noopener"
+&gt;http://www.findarticles.com/p/articles/mi_g2601/is_0005/ai_2601000518&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.eyeglasshouse.com/contactcosmetic.htm" target="_blank" rel="noopener"
+&gt;http://www.eyeglasshouse.com/contactcosmetic.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://cvu.strath.ac.uk/courseware/msc/jbaggot/lenses/lenses.html" target="_blank" rel="noopener"
+&gt;http://cvu.strath.ac.uk/courseware/msc/jbaggot/lenses/lenses.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 偷电问题</title><link>https://ireflux.github.io/snow/post/rwp-stealing-power/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-stealing-power/</guid><description>&lt;p&gt;本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
+&gt;Real-world Problems for Phys25, Summer 2006&lt;/a&gt;系列文章第四篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html" target="_blank" rel="noopener"
+&gt;A Solution to the RWP for Exam 1 - Stealing Power&lt;/a&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;据报道，一名农民通过策略性地将一大圈电线放在跨越其田地的高压输电线路下方，从而偷走了电力。几年以来，这个农民将免费获取的电力用于他的农场操作设备，直到最终被电力公司发现。最终，尽管输电线路没有建立物理连接，但农民仍被判窃电罪名成立。使用此信息和您的物理学知识回答以下问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在没有检查农民财产的情况下，电力公司是怎么发现电力被偷了的?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;原则上，电力公司可以计算输送的电力和购买的电力之间的差额。其中存在的无法解释的差异（除了通过沿传输线的电阻加热造成的功率损失之外）可能是有人偷取电力的结果。实际上，在这种情况下单个用户窃取的电量很可能太小而无法检测到。&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;农民利用什么原理从输电线路偷电？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;农民使用法拉第感应定律在靠近高压输电线路的线圈中感应出电压和电流。这种做法是有可能的，因为通过传输线的交流电改变了它周围的磁场，如果感应线圈的位置使磁场线穿过它的区域，那么就会感应出电动势，交流电就会流过线圈。&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;农民必须如何放置线圈才能最有效地实现他的目标？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;线圈应尽可能靠近传输线放置，因为磁场与到传输线的距离成反比，并且线圈应垂直放置在与传输线对齐的垂直平面上，以最大限度地提高来自传输线的磁通量环绕传输线的磁场线。&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;假设最低传输线距离地面 10 米，并承载 60 Hz 的交流电流，最大 150 A，电压为 230 kV。如果线圈是边长为 5 米的正方形形状并接触地面，则要产生 120 V 的标准电压大约需要多少匝线圈？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;线圈中感应的最大电动势取决于磁通量的变化：&lt;code&gt;emf（电动势） = Nd(phi)/dt = NAdB/dt&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;对于这个问题，磁通量会发生变化，因为磁场强度因交流电而变化，交流电在每个方向上达到峰值两次，或每 1/120 秒一次。这意味着磁场每个周期会从最大值变为零四次，因此 &lt;code&gt;dt = 1/240 秒 = 4.2 毫秒&lt;/code&gt;。传输线周围的最大磁场可以根据通过导线的最大电流估算，使用长直导线的公式：&lt;code&gt;B(wire) = uo*I/(2pi*r)&lt;/code&gt;。由于方形感应线圈从传输线延伸出 5 到 10 米 的距离，因此线圈远端的磁场会较弱，最近端的磁场会较强，但使用 7.5 米的平均距离可得出特定电流的平均磁通量。因此，距传输线 7.5 米处的最大磁场为 &lt;code&gt;B = (4pi*10^-7 T*m/A)(150 A)/(2pi)/(7.5 m) = 4.0 uT&lt;/code&gt;，其中与参考文献 2 中指示的 230 kV 线路附近 6 uT 的平均磁场一致。&lt;/p&gt;
+&lt;p&gt;产生 120 V 电压（或 170 V 峰值电压）所需的匝数为：&lt;code&gt;N = (170 V)(4.2 毫秒)/(25 米 ^ 2)/(4.0 uT) = 7140 圈&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;为什么线圈中的电压会随着一天中的时间而变化？你预计它什么时候最大和最小？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;线圈中感应出的电压取决于传输线产生的磁场强度，磁场强度取决于通过线路的电流量，而这取决于用户对来自这条线路的电力（负载）的需求。我们应该预计这种电力需求在下午和晚上时间最大，而在每天的清晨时间最小。峰值电力需求的这种每日变化可以在参考文献 2 的图表中看到。&lt;/p&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;线圈中电流的频率是多少？传输线中的电压与线圈之间的相位角是多少？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;由于线圈中感应的电流是由传输线中电流的变化引起的，因此它们应该具有相同的 60 Hz 频率。然而，这些电流（或相应的电压）之间的相位角将是 90 度，因为当传输线中的电流变化最大时线圈中的感应电流达到最大值，这发生在一个周期的 1/4 或 &lt;code&gt;360/4 = 90 度&lt;/code&gt;在传输线中的电流峰值之前和之后。&lt;/p&gt;
+&lt;ol start="7"&gt;
+&lt;li&gt;如果线圈和与其相连的所有设备的总阻抗为 200 欧姆，那么消耗能量的最大速率是多少？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;能量消耗的最大速率（功率）为：&lt;code&gt;Pmax = Irms*Vrms = (Vrms)^2/Z = (120 V)^2/(200 ohms) = 72 W&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可以通过包含适当的&lt;code&gt;power factor（功率因数）= R/Z&lt;/code&gt; 来更准确地估计平均功率，这可以通过计算线圈的电感和确定感抗来确定。根据参考文献 3 得知，该线圈的电感约为 1600 H（这是一个非常大的电感）。感抗为 &lt;code&gt;X(L) = 2(pi)(60 Hz)(1600 H) = 603000 ohms&lt;/code&gt;！这远大于规定的 200 欧姆阻抗，因此功率因数似乎接近于零！&lt;/p&gt;
+&lt;ol start="8"&gt;
+&lt;li&gt;假设成本为 0.10 美元/kW-h，农民在一年内窃取的能源价值大约是多少？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果我们假设农民有一半的时间使用设备（一天的平均功耗为 36 W），那么一年的总成本将是：&lt;code&gt;cost（成本）= (36 W)(24 小时/天)(365 天/年)($0.10/kW-h) = $31.54/年&lt;/code&gt;。即使在最大功率为 72 W 的情况下，被盗能源的价值也仅为 63 美元/年。这似乎不值得付出努力、风险和成本（见下文）。&lt;/p&gt;
+&lt;ol start="9"&gt;
+&lt;li&gt;估计制作线圈的成本，假设农民使用 12 号铜线，成本为 0.15 美元/英尺。评估农民设计的成本效益并计算其投资的大致回收时间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;需要 7140 圈电线，每圈长度为 20 米，农民将需要 143 公里的电线！以 0.15 美元/英尺 = 0.50 美元/米计算，这条线将花费 71400 美元！这意味着即使在最大能源消耗率下，投资回收时间也至少为 1000 年！&lt;/p&gt;
+&lt;ol start="10"&gt;
+&lt;li&gt;你会给农民什么建议来最大限度地提高他的设计效率？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了最大限度地提高线圈中感应的电动势，同时使用最少的电线以节省成本，农民应将线圈尽可能靠近传输线，并使用尽可能大面积的线圈（因为将线圈的面积增加一倍，方形线圈使感应电动势增加四倍，而成本仅增加一倍）。在线圈内放置铁会提高这个变压器的效率，但效果会相当小，可能不值得付出努力。&lt;/p&gt;
+&lt;ol start="11"&gt;
+&lt;li&gt;从这个问题中还可以学到什么其他东西？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;从上面的计算来看，这种偷电方式似乎是非常低效和不切实际的。我严重怀疑是否有农民真的这样做过（也许这是一个适合&lt;a class="link" href="https://www.imdb.com/title/tt0383126/" target="_blank" rel="noopener"
+&gt;《流言终结者》&lt;/a&gt;这样的节目去调查的神话！）。这种法拉第定律的应用，本质上是一种效率极低的电力变压器。法拉第定律还有许多其他应用遍布我们的现代生活。这只是一个不建议的。&lt;/p&gt;
+&lt;h1 id="参考文献"&gt;参考文献
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm" target="_blank" rel="noopener"
+&gt;http://sci-phys-plasma.caeds.eng.uml.edu/1999/01-99-011.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://infoventures.com/private/federal/q&amp;amp;a/qaenvn2a.html" target="_blank" rel="noopener"
+&gt;http://infoventures.com/private/federal/q&amp;a/qaenvn2a.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle" target="_blank" rel="noopener"
+&gt;http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=util_inductance_rectangle&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 磁共振成像对健康与安全方面的挑战</title><link>https://ireflux.github.io/snow/post/rwp-mri-health-and-safety/</link><pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-mri-health-and-safety/</guid><description>&lt;p&gt;本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
+&gt;Real-world Problems for Phys25, Summer 2006&lt;/a&gt;系列文章第三篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp2sol.html" target="_blank" rel="noopener"
+&gt;A solution to RWP2 - MRI Health and Safety&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;关于磁共振系统所产生的强静态磁场的主要安全问题是铁磁体可能会以比其重量大得多的磁力吸引，如果有人处在被吸引的磁体飞行的路线中，有可能会导致有人受伤或死亡。铁磁体（如钢纽扣）上的磁性引力大小取决于物体所在位置的磁场强度和发散度以及物体的大小。如果磁场是均匀的（例如在磁共振螺线管的中心），那么物体上就没有合力，因为每个感应磁极上的磁力是相等且相反的。然而，在螺线管的边缘附近，磁场线会明显发散（散开），因此，最接近磁体的物体的一端被一个力所吸引，该力明显大于作用在远离螺线管的感应相反极上的排斥力。课堂上学过的&lt;a class="link" href="https://en.wikipedia.org/wiki/Hermann_von_Helmholtz" target="_blank" rel="noopener"
+&gt;亥姆霍兹&lt;/a&gt;线圈对绳子上悬挂的回形针证明了这种效果。&lt;/p&gt;
+&lt;p&gt;虽然我们没有方程式可用来确定铁磁性物体上的磁力，但我们可以利用我们的日常经验和按比例推理来估算钢制纽扣上受的力。从课堂上的回形针案例中可以看出，回形针靠近一个线圈的边缘，当弦线与垂直线成大约成45度夹角时，线圈对回形针的吸引力大约等于其自身的重力。我们从e/m实验室得知流过线圈的电流约为2A，它会产生约50G的磁场，这是地球磁场的约100倍。由于来自磁共振系统的磁场约为1.5T或15kG，因此靠近开口的按钮所受的磁力大约是其重量的300倍。假设按钮的质量约为5克(相当于一枚镍币)，那么这就意味着它在一个处于运行状态的磁共振系统附近的磁力约为15牛或3磅。虽然这看起来可能不是很大的力，但是想象一下，对于一个更大的物体，比如一个重10磅的氧气罐，这个力会大多少。这时磁铁的吸引力可以达到10000磅，足以杀死一个人——就像「参考文献1」中的例子一样&lt;/p&gt;
+&lt;p&gt;另一个与磁共振成像磁场相关的主要问题是金属物体（不仅仅是铁磁材料）中会感应出大电流，这些电流会使金属产生很大的热量。例如，如果患者在磁共振成像扫描期间佩戴金项链，不断变化的磁场（约 50 T/m/s）可能会在项链中感应出大约为：&lt;code&gt;电动势(emf)= d(Phi)/dt =面积(area)*回转(slew)~(0.02 m^2)(50 T/s) = 1 V&lt;/code&gt;。虽然这个感应电动势可能看起来不大，但重要的是要知道导体的电阻非常小（约0.001 欧姆 - 请参见下面的示例计算），在这种情况下，感应电流将为 1000A，其消耗的功率为电阻加热为：&lt;code&gt;P = IV = 1000 W&lt;/code&gt;。这种电能类似于烤面包机，很容易导致像「参考文献 2」中那样严重的皮肤灼伤！如果磁通量发生变化（由于磁场或导体方向的变化），也可能在靠近磁铁的医疗助理佩戴的导体中感应出潜在的有害电流。由于螺线管外部的磁场远小于内部的磁场，因此烧伤的风险显著降低，但这仍可能是一个问题。&lt;/p&gt;
+&lt;p&gt;金项链的近似电阻：&lt;/p&gt;
+&lt;p&gt;金的电阻率：&lt;code&gt;r = 2.2e-8 ohm-m&lt;/code&gt;，项链长度：&lt;code&gt;L = 18 英寸(in) = 45 厘米(cm)&lt;/code&gt;，横截面积：&lt;code&gt;A = pi*(0.002 m)^2 = 1.2e-5 m^2&lt;/code&gt;，因此电阻为：&lt;code&gt;R = rL/A = 0.0008 欧姆&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;网络上其他（物理很差）人的见解：&lt;/p&gt;
+&lt;p&gt;作为此问题的「参考资料3」列出的网站中有一张图表，其中包含物体上的磁体吸引力的方程式：&lt;code&gt;F = m/d^2&lt;/code&gt;，但是这个方程肯定是错误的，因为右边的单位不是力的单位。而且该方程也不包括磁场强度及其散度，这两者都是计算吸引力所必需的。磁体吸引力还更多地取决于物体的大小和磁化率，而不是它的质量。这个网站还有一个关于环绕磁体的5g条纹场的图表，但是显示的磁场线与偶极子的磁场线不一致，偶极子的磁场在两极附近比中心更强。&lt;/p&gt;
+&lt;p&gt;由于磁共振系统的强磁场对健康影响的检查引发了有关当今广泛销售的磁疗法功效的问题。许多人声称放置在皮肤附近的磁铁可以刺激体内循环并缓解疼痛和疼痛，但是科学研究还不能证实这些说法或解释这种过程是如何发生的。磁疗供应商的许多说法不符合物理定律；然而，有研究证实了当患者相信某种疗法的疗效时，可能会产生安慰剂效应，即使没有科学理由证明这种疗法具有治愈效果。（参考文献4）&lt;/p&gt;
+&lt;h2 id="参考文献"&gt;参考文献
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.fda.gov/cdrh/safety/mrisafety.html" target="_blank" rel="noopener"
+&gt;http://www.fda.gov/cdrh/safety/mrisafety.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.massgeneralimaging.org/newsletter" target="_blank" rel="noopener"
+&gt;http://www.massgeneralimaging.org/newsletter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://www.erads.com/mrsafety.htm" target="_blank" rel="noopener"
+&gt;http://www.erads.com/mrsafety.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://skepdic.com/magnetic.html" target="_blank" rel="noopener"
+&gt;http://skepdic.com/magnetic.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>「译文」| 凝胶电泳</title><link>https://ireflux.github.io/snow/post/rwp-gel-electrophoresis/</link><pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-gel-electrophoresis/</guid><description>&lt;p&gt;本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
+&gt;Real-world Problems for Phys25, Summer 2006&lt;/a&gt;系列文章第二篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/rwp1sol.html" target="_blank" rel="noopener"
+&gt;A Solution to RWP1 - Gel Electrophoresis&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="收集信息"&gt;收集信息
+&lt;/h2&gt;&lt;p&gt;从问题的描述中可以得知，DNA片段带负电，并且电荷量与片段的长度成正比，但是我们不确定每个碱基对的电荷量。每个碱基对可能的最小电荷为：&lt;code&gt;q=-2e=-2(1.6e-19C)&lt;/code&gt;，平均碱基对的分子“重量” = 635 &lt;a class="link" href="https://en.m.wikipedia.org/wiki/Dalton_%28unit%29" target="_blank" rel="noopener"
+&gt;daltons&lt;/a&gt; = &lt;code&gt;635(1.67e-27kg)=1.06e-24kg&lt;/code&gt;，可分析的片段范围为 200bp 至 50kb，对应于：&lt;code&gt;m=2.1e-22kg&lt;/code&gt; 至 &lt;code&gt;5.3e-20kg&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;注意：该技术可分析的最大DNA片段只是单倍体细胞核DNA的一小部分：&lt;code&gt;(5e4)(635)/1.9e12=1/60000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;根据DNA碎片移动所需的时间，可以肯定它们不是在加速，而是在以1英尺/小时的速度移动。尽管没有明确说明，但所施加的电场必须是均匀的，由差值为50至150v的两个平行线性电极产生。假设凝胶在盒子的长度范围内流动，则电场强度必须大约为：&lt;code&gt;E=(100V)/(20cm)=5V/cm=500V/m&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="组织信息"&gt;组织信息
+&lt;/h2&gt;&lt;p&gt;这个问题主要是一个均匀电场的应用。与以往教科书问题不同的重要方面是，凝胶对带负电荷的DNA片段提供了一种与静电力相反的阻力。&lt;/p&gt;
+&lt;h2 id="分析"&gt;分析
+&lt;/h2&gt;&lt;p&gt;作用在DNA片段上的合力必须为零，否则它会加速，并在不到30分钟内移动~20厘米。&lt;/p&gt;
+&lt;p&gt;验证：假设每个碱基对的最小电荷为-2e，则长度为 1000bp 的典型DNA片段上的力为 &lt;code&gt;F=qE=-2(1.6e-19 C)(500 N/C)=-1.6e-16N&lt;/code&gt;，如果没有相反的力，这将导致加速度：&lt;code&gt;a=F/m=(1.6e-16N)/(1000*1.06e-24kg)=1.5e5m/s^2=15000g&lt;/code&gt;！！！如果真是这样，那么DNA片段将在瞬间穿过凝胶盒的长度！&lt;/p&gt;
+&lt;p&gt;从Physlet模拟中可以清楚地看出，较小的DNA片段确实比较大的分子移动得更快，移动得更远，尽管事实上较大的分子应该具有更大的电力，因为电荷与碱基对的数量成比例。显然，这些分子所受的阻力很大程度上取决于它们的大小，就像物体在空气中下落一样，在决定终极速度方面，密度比大小更重要。&lt;/p&gt;
+&lt;p&gt;Physlet模拟并未显示出较大的DNA片段在较高的电场中按比例迁移得更快，而是随着施加电压的增加，在条带的位置只是向右不断地移动。如果这种非线性效应确实发生在现实生活中(如问题陈述中所示)，那么它可能是由于作用在较大分子上的非线性阻力。&lt;/p&gt;
+&lt;p&gt;从这个模拟中可以看出，迁移速率随外加场强的增加而增加，但不是线性的。相反，在较低的场，迁移速率增加得很快，而在较高场，迁移速率增加得比较慢，形成了一条曲线，看起来类似于灯泡的I-V(电流-电压)图(在开始趋于平稳时上升并向右)。&lt;/p&gt;
+&lt;h2 id="学习"&gt;学习
+&lt;/h2&gt;&lt;p&gt;DNA片段在凝胶电泳箱中的移动与电子在导线中的移动非常相似。在这两种情况下，带负电荷的粒子都是在外部电场的作用下移动，但是这些移动的粒子会因为障碍物的阻碍而放慢速度，就像“蜗牛一样”。如果电极是点而不是线，那么产生的电场就是不均匀的，并且在中心(电场最强的地方)的迁移速度会比靠近凝胶盒边缘的地方大。即使具有平行线几何形状，在盒子侧面附近的电场也较弱，因此希望分析仅限于线性电极之间的矩形区域。&lt;/p&gt;</description></item><item><title>「译文」| 比萨派对问题</title><link>https://ireflux.github.io/snow/post/rwp-pizza-party/</link><pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/rwp-pizza-party/</guid><description>&lt;p&gt;本文翻译自&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/" target="_blank" rel="noopener"
+&gt;Real-world Problems for Phys25, Summer 2006&lt;/a&gt;系列文章第一篇&lt;a class="link" href="https://users.physics.unc.edu/~deardorf/phys25/rwp/pizzasol.html" target="_blank" rel="noopener"
+&gt;A Solution to the Pizza Party Problem&lt;/a&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;假设你计划为50个朋友举办一个披萨派对。当地的披萨店卖12英寸的中号披萨7.99美元，16英寸的大披萨12.99美元，选哪一种比萨更为划算？如果一个中号披萨可供3个人吃，应该点多少个披萨？如果你认为你的大多数朋友都不吃披萨皮，你的答案是否会有所不同？解释你这么回答的理由。&lt;/p&gt;
+&lt;h1 id="解决方案"&gt;解决方案
+&lt;/h1&gt;&lt;h2 id="收集信息"&gt;收集信息
+&lt;/h2&gt;&lt;p&gt;一般来说，购买大的产品比较经济实惠，经常被称为“经济尺寸”。然而，也有可能中号披萨是以比平时更低的特价出售的。因此大约需要&lt;code&gt;50/3 = 17&lt;/code&gt;个中等的比萨饼才能满足50人的需求，而选大号比萨饼的话，数量会少一些，假设每4个人吃一个大号比萨，大概只需要12个。。如果想要最少的饼皮，大的比萨饼似乎是更好的选择，因为小比萨饼有更多的皮。&lt;/p&gt;
+&lt;h2 id="组织信息"&gt;组织信息
+&lt;/h2&gt;&lt;p&gt;这是一个比率问题，可以用简单的代数和圆的面积公式求解：&lt;code&gt;A =(PI)r^2&lt;/code&gt;，每单位面积的价格是比较两个比萨饼成本的最佳方法。&lt;/p&gt;
+&lt;h2 id="分析"&gt;分析
+&lt;/h2&gt;&lt;p&gt;中号披萨的单位面积成本为：&lt;code&gt;$7.99/PI(6 英寸)^2 = $0.071/英寸^2&lt;/code&gt;，大披萨的单位面积成本为：&lt;code&gt;$12.99/PI(8 英寸)^2 = $0.065/英寸^2&lt;/code&gt;，所以买一个大披萨比买一个中号披萨要便宜10%。&lt;/p&gt;
+&lt;p&gt;假设一个中等的比萨饼足以供3人食用，则&lt;code&gt;50/3 = 16.7&lt;/code&gt;，因此需要17个中等的比萨饼，成本为135.83美元。&lt;/p&gt;
+&lt;p&gt;然而，我们想找与中等比萨饼总量相同的大比萨饼的数量：&lt;code&gt;N(大)A(大)= N(中)A(中)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;因此，N(大)= [PI(6英寸)^2/PI(8英寸)^2]*(50/3)= 9.4&lt;/p&gt;
+&lt;p&gt;因此，需要10个大的比萨饼，成本为129.99美元(比中型比萨饼的价格节省了5.84美元)&lt;/p&gt;
+&lt;p&gt;另外比萨饼皮的数量与比萨饼的周长成正比：&lt;code&gt;C =(PI)D&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;中号比萨饼的皮约有&lt;code&gt;16.7*(12英寸)*(PI)= 630英寸&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;大比萨饼的皮约有&lt;code&gt;9.4*(16英寸)*(PI)= 470英寸&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;由于大披萨的总的皮较少，因此它仍然是更好的选择。&lt;/p&gt;
+&lt;h2 id="学习结论"&gt;学习结论
+&lt;/h2&gt;&lt;p&gt;正如我们所想，就成本和最少的皮而言，大披萨是最好的选择。在解决该问题中，重要的是区分圆的面积和周长。仔细注意单位有助于避免混淆这两个公式。&lt;/p&gt;
+&lt;p&gt;解决此问题时使用了几种假设。根据你朋友的饥饿程度以及提供的其他食物的不同，假设一个中等的比萨饼可以供3个人食用有可能是错误的。我们还假定价格是固定的，并且没有优惠券或其他折扣。最重要的是，这个问题并不像决定披萨上应该放什么配料这样具有挑战性的任务那么复杂!&lt;/p&gt;</description></item></channel></rss>

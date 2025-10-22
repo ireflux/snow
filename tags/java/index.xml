@@ -1,141 +1,145 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on sherry's blog</title><link>https://ireflux.github.io/snow/tags/java/</link><description>Recent content in Java on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Learn Spring Framework</title><link>https://ireflux.github.io/snow/post/learn-spring-framework/</link><pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid><description>&lt;h1 id="前言">前言
-&lt;/h1>&lt;p>Recently,I was learning the Spring Framework.&lt;/p>
-&lt;p>At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p>
-&lt;p>After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p>
-&lt;p>Obviously, I encountered resistance.&lt;/p>
-&lt;p>One day, I searched &amp;ldquo;Why is learning Spring Framework so hard&amp;rdquo; on search engines, I found the answer in quora. The high-vote answer is very good and inspiring. So I decided to relearn the spring framework from the official website. Just like a ring. Three months later, I returned to the origin.&lt;/p>
-&lt;p>Thanks for that article again!&lt;/p>
-&lt;hr>
-&lt;p>以下是可能会用到的资料：&lt;/p>
-&lt;p>Spring Framework Documentation&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;a class="link" href="https://docs.spring.io/spring/docs/" target="_blank" rel="noopener"
->https://docs.spring.io/spring/docs/&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;p>Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的&lt;/p>
-&lt;p>Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;a class="link" href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener"
->https://repo.spring.io/release/org/springframework/spring/&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;p>Spring核心容器依赖于Common-logging的JAR包，下载地址如下：&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
->https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h2 id="原文摘录">原文摘录
-&lt;/h2>&lt;p>&lt;strong>原文链接:&lt;/strong> &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
->http://springtutorials.com/spring-tutorial-1/&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>A simple question for you before I begin:&lt;br>
-Can you count from 1 to 20?&lt;br>
-Here, Let me help you. Go ahead and read it out loud.&lt;br>
-One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten. Eleven. Twelve. Thirteen. Fourteen. Fifteen. Sixteen. Seventeen. Eighteen. Nineteen. Twenty.&lt;br>
-Do you see any pattern in the numbers above? Anything that rhymes with the words or the way you count them?&lt;br>
-Some of these end with ‘teen’ in them but is there anything else?&lt;br>
-Unlearn everything you know about numbers and see if you can spot anything that will help you see it?&lt;br>
-(Hint: There is none)&lt;br>
-My daughter was 3 (she is 7 now) when she had to go through this exercise and she found it very challenging.&lt;br>
-I think she was 4 when she started to count a little more…&lt;br>
-Twenty One. Twenty Two. Twenty Three. Twenty Four. Twenty Five. Twenty Six. Twenty Seven. Twenty Eight. Twenty Nine. Thirty.&lt;br>
-Did she see any pattern now? Of course, she did. ‘Twenty‘ seemed to show up everywhere.&lt;br>
-Counting from thirty to forty was not any different now. She was over the learning curve and needed few corrections here and there.&lt;br>
-She spent almost a full year learning to count from 1 to 20. But she spent only a few months going from 20 to 100.&lt;br>
-Let me clarify this. Counting from 1 to 20 is the hardest thing you can do.&lt;br>
-There is no pattern here.&lt;br>
-You have to learn it the hard way. Get over this curve and life becomes easier.&lt;br>
-Take that as a big lesson in life. Start anything and you have to go through the grind. Once you are past the initial struggle, things get easier.&lt;br>
-Can you predict what I am going to say next:&lt;br>
-Learning Spring Framework (or anything new) is no different from learning to count.&lt;br>
-It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.&lt;br>
-As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.&lt;br>
-As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br>
-It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p>&lt;/blockquote>
-&lt;h3 id="building-a-restful-web-service">Building a RESTful Web Service
-&lt;/h3>&lt;p>源文档：https://spring.io/guides/gs/rest-service/&lt;/p>
-&lt;p>部分代码摘录如下：&lt;/p>
-&lt;h4 id="srcmainjavahellogreetingjava">src/main/java/hello/Greeting.java
-&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Greeting&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> &lt;span style="color:#66d9ef">long&lt;/span> id;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> String content;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Greeting&lt;/span>(&lt;span style="color:#66d9ef">long&lt;/span> id, String content) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">id&lt;/span> &lt;span style="color:#f92672">=&lt;/span> id;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#f92672">=&lt;/span> content;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">long&lt;/span> &lt;span style="color:#a6e22e">getId&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> id;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getContent&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> content;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="srcmainjavahellogreetingcontrollerjava">src/main/java/hello/GreetingController.java
-&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.util.concurrent.atomic.AtomicLong;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestParam;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingController&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> String template &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, %s!&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> AtomicLong counter &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> AtomicLong();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@RequestMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/greeting&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Greeting &lt;span style="color:#a6e22e">greeting&lt;/span>(&lt;span style="color:#a6e22e">@RequestParam&lt;/span>(value&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>, defaultValue&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>) String name) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Greeting(counter.&lt;span style="color:#a6e22e">incrementAndGet&lt;/span>(),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String.&lt;span style="color:#a6e22e">format&lt;/span>(template, name));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
-&lt;li>
-&lt;p>&lt;code>@RequestMapping&lt;/code>注解确保对/greeting的HTTP请求映射到greeting()方法中，默认映射所有HTTP操作，所以即使不指定GET，PUT还是POST也没关系.若想指定映射方式可使用&lt;code>@RequestMapping(method=GET)&lt;/code>的方式.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>@RequestParam&lt;/code>将查询字符串&lt;code>name&lt;/code>的值绑定到&lt;code>greeting()&lt;/code>方法的&lt;code>name&lt;/code>参数中.查询字符参数为可选,默认为&lt;code>required=true&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>传统的MVC控制器和上面的RESTful Web服务控制器之间的一个主要区别在于HTTP响应主体的创建方式.这个RESTful Web服务控制器只需填充并返回一个Greeting对象,而不是依赖视图技术将问候数据的服务器端呈现呈现给HTML.对象数据将作为JSON直接写入HTTP响应.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>@RestController&lt;/code>为Spring 4的新注解,它将类标记为控制器,其中每个方法都返回一个域对象而不是视图.它是&lt;code>@Controller&lt;/code>和&lt;code>@ResponseBody&lt;/code>的缩写.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h4 id="srcmainjavahelloapplicationjava">src/main/java/hello/Application.java
-&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> hello;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.boot.SpringApplication;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.boot.autoconfigure.SpringBootApplication;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@SpringBootApplication&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Application&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SpringApplication.&lt;span style="color:#a6e22e">run&lt;/span>(Application.&lt;span style="color:#a6e22e">class&lt;/span>, args);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>@SpringBootApplication&lt;/code>是一个方便的注释，它增加了以下所有内容：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;code>@Configuration&lt;/code>将类标记为应用程序上下文的bean定义的来源。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>@EnableAutoConfiguration&lt;/code>通知Spring Boot根据类路径设置，其他bean和各种属性设置开始添加bean。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>通常你会为Spring MVC应用程序添加&lt;code>@EnableWebMvc&lt;/code>，但Spring Boot在类路径中看到spring-webmvc时会自动添加。 这将该应用程序标记为Web应用程序并激活关键行为，例如设置DispatcherServlet。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>@ComponentScan&lt;/code>告诉Spring在hello包中查找其他组件，配置和服务，以便找到控制器。&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="测试">测试
-&lt;/h3>&lt;p>打包：mvn package&lt;/p>
-&lt;p>测试运行:java -jar gs-rest-service-0.1.0.jar&lt;/p>
-&lt;p>访问：http://localhost:8080/greeting&lt;/p>
-&lt;p>或者加入参数：http://localhost:8080/greeting?name=User&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on sherry's blog</title><link>https://ireflux.github.io/snow/tags/java/</link><description>Recent content in Java on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Learn Spring Framework</title><link>https://ireflux.github.io/snow/post/learn-spring-framework/</link><pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/learn-spring-framework/</guid><description>&lt;h1 id="前言"&gt;前言
+&lt;/h1&gt;&lt;p&gt;Recently,I was learning the Spring Framework.&lt;/p&gt;
+&lt;p&gt;At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I had to give up.&lt;/p&gt;
+&lt;p&gt;After that, I looked for other guides to learn and saw many examples of IOC(Inversion of Control), DI(Dependency Injection), and AOP(Aspect Oriented Programming). I probably understand, but I still can&amp;rsquo;t use the Spirng framework. on the forum, Someone told me that I only need more practice. But I don&amp;rsquo;t even know it how to work, e.g. annotation.&lt;/p&gt;
+&lt;p&gt;Obviously, I encountered resistance.&lt;/p&gt;
+&lt;p&gt;One day, I searched &amp;ldquo;Why is learning Spring Framework so hard&amp;rdquo; on search engines, I found the answer in quora. The high-vote answer is very good and inspiring. So I decided to relearn the spring framework from the official website. Just like a ring. Three months later, I returned to the origin.&lt;/p&gt;
+&lt;p&gt;Thanks for that article again!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;以下是可能会用到的资料：&lt;/p&gt;
+&lt;p&gt;Spring Framework Documentation&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="link" href="https://docs.spring.io/spring/docs/" target="_blank" rel="noopener"
+&gt;https://docs.spring.io/spring/docs/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Spring官方建议使用Maven、Gradle之类的包管理工具，因此官网上隐藏了下载地址，不过还是可以通过链接访问的&lt;/p&gt;
+&lt;p&gt;Spring-framework-release，截止博文发表之前，版本号为spring-framework-5.0.4.RELEASE&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="link" href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener"
+&gt;https://repo.spring.io/release/org/springframework/spring/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Spring核心容器依赖于Common-logging的JAR包，下载地址如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="link" href="https://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener"
+&gt;https://commons.apache.org/proper/commons-logging/download_logging.cgi&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="原文摘录"&gt;原文摘录
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原文链接:&lt;/strong&gt; &lt;a class="link" href="http://springtutorials.com/spring-tutorial-1/" target="_blank" rel="noopener"
+&gt;http://springtutorials.com/spring-tutorial-1/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A simple question for you before I begin:&lt;br&gt;
+Can you count from 1 to 20?&lt;br&gt;
+Here, Let me help you. Go ahead and read it out loud.&lt;br&gt;
+One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten. Eleven. Twelve. Thirteen. Fourteen. Fifteen. Sixteen. Seventeen. Eighteen. Nineteen. Twenty.&lt;br&gt;
+Do you see any pattern in the numbers above? Anything that rhymes with the words or the way you count them?&lt;br&gt;
+Some of these end with ‘teen’ in them but is there anything else?&lt;br&gt;
+Unlearn everything you know about numbers and see if you can spot anything that will help you see it?&lt;br&gt;
+(Hint: There is none)&lt;br&gt;
+My daughter was 3 (she is 7 now) when she had to go through this exercise and she found it very challenging.&lt;br&gt;
+I think she was 4 when she started to count a little more…&lt;br&gt;
+Twenty One. Twenty Two. Twenty Three. Twenty Four. Twenty Five. Twenty Six. Twenty Seven. Twenty Eight. Twenty Nine. Thirty.&lt;br&gt;
+Did she see any pattern now? Of course, she did. ‘Twenty‘ seemed to show up everywhere.&lt;br&gt;
+Counting from thirty to forty was not any different now. She was over the learning curve and needed few corrections here and there.&lt;br&gt;
+She spent almost a full year learning to count from 1 to 20. But she spent only a few months going from 20 to 100.&lt;br&gt;
+Let me clarify this. Counting from 1 to 20 is the hardest thing you can do.&lt;br&gt;
+There is no pattern here.&lt;br&gt;
+You have to learn it the hard way. Get over this curve and life becomes easier.&lt;br&gt;
+Take that as a big lesson in life. Start anything and you have to go through the grind. Once you are past the initial struggle, things get easier.&lt;br&gt;
+Can you predict what I am going to say next:&lt;br&gt;
+Learning Spring Framework (or anything new) is no different from learning to count.&lt;br&gt;
+It is challenging at first but becomes easier as you progress. You will make mistakes. We all do. Have some patience.&lt;br&gt;
+As a kid, It took me a while to learn the colors of the rainbow in its correct order. And then my best friend gave me a pattern – ROYGBIV or VIBGYOR. I still remember it decades later.&lt;br&gt;
+As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.&lt;br&gt;
+It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="building-a-restful-web-service"&gt;Building a RESTful Web Service
+&lt;/h3&gt;&lt;p&gt;源文档：https://spring.io/guides/gs/rest-service/&lt;/p&gt;
+&lt;p&gt;部分代码摘录如下：&lt;/p&gt;
+&lt;h4 id="srcmainjavahellogreetingjava"&gt;src/main/java/hello/Greeting.java
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; hello;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Greeting&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;final&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;long&lt;/span&gt; id;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;final&lt;/span&gt; String content;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Greeting&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;long&lt;/span&gt; id, String content) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;id&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; id;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;content&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; content;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;long&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;getId&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; id;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; String &lt;span style="color:#a6e22e"&gt;getContent&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; content;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="srcmainjavahellogreetingcontrollerjava"&gt;src/main/java/hello/GreetingController.java
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; hello;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; java.util.concurrent.atomic.AtomicLong;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.web.bind.annotation.RequestMapping;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.web.bind.annotation.RequestParam;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.web.bind.annotation.RestController;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@RestController&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;GreetingController&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;final&lt;/span&gt; String template &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello, %s!&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;final&lt;/span&gt; AtomicLong counter &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; AtomicLong();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@RequestMapping&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;/greeting&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; Greeting &lt;span style="color:#a6e22e"&gt;greeting&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;@RequestParam&lt;/span&gt;(value&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;, defaultValue&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;World&amp;#34;&lt;/span&gt;) String name) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Greeting(counter.&lt;span style="color:#a6e22e"&gt;incrementAndGet&lt;/span&gt;(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; String.&lt;span style="color:#a6e22e"&gt;format&lt;/span&gt;(template, name));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@RequestMapping&lt;/code&gt;注解确保对/greeting的HTTP请求映射到greeting()方法中，默认映射所有HTTP操作，所以即使不指定GET，PUT还是POST也没关系.若想指定映射方式可使用&lt;code&gt;@RequestMapping(method=GET)&lt;/code&gt;的方式.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@RequestParam&lt;/code&gt;将查询字符串&lt;code&gt;name&lt;/code&gt;的值绑定到&lt;code&gt;greeting()&lt;/code&gt;方法的&lt;code&gt;name&lt;/code&gt;参数中.查询字符参数为可选,默认为&lt;code&gt;required=true&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;传统的MVC控制器和上面的RESTful Web服务控制器之间的一个主要区别在于HTTP响应主体的创建方式.这个RESTful Web服务控制器只需填充并返回一个Greeting对象,而不是依赖视图技术将问候数据的服务器端呈现呈现给HTML.对象数据将作为JSON直接写入HTTP响应.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@RestController&lt;/code&gt;为Spring 4的新注解,它将类标记为控制器,其中每个方法都返回一个域对象而不是视图.它是&lt;code&gt;@Controller&lt;/code&gt;和&lt;code&gt;@ResponseBody&lt;/code&gt;的缩写.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="srcmainjavahelloapplicationjava"&gt;src/main/java/hello/Application.java
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; hello;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.boot.SpringApplication;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.boot.autoconfigure.SpringBootApplication;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@SpringBootApplication&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Application&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; SpringApplication.&lt;span style="color:#a6e22e"&gt;run&lt;/span&gt;(Application.&lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;, args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;@SpringBootApplication&lt;/code&gt;是一个方便的注释，它增加了以下所有内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@Configuration&lt;/code&gt;将类标记为应用程序上下文的bean定义的来源。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@EnableAutoConfiguration&lt;/code&gt;通知Spring Boot根据类路径设置，其他bean和各种属性设置开始添加bean。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通常你会为Spring MVC应用程序添加&lt;code&gt;@EnableWebMvc&lt;/code&gt;，但Spring Boot在类路径中看到spring-webmvc时会自动添加。 这将该应用程序标记为Web应用程序并激活关键行为，例如设置DispatcherServlet。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@ComponentScan&lt;/code&gt;告诉Spring在hello包中查找其他组件，配置和服务，以便找到控制器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="测试"&gt;测试
+&lt;/h3&gt;&lt;p&gt;打包：mvn package&lt;/p&gt;
+&lt;p&gt;测试运行:java -jar gs-rest-service-0.1.0.jar&lt;/p&gt;
+&lt;p&gt;访问：http://localhost:8080/greeting&lt;/p&gt;
+&lt;p&gt;或者加入参数：http://localhost:8080/greeting?name=User&lt;/p&gt;</description></item></channel></rss>

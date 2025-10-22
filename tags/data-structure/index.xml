@@ -1,213 +1,213 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data-Structure on sherry's blog</title><link>https://ireflux.github.io/snow/tags/data-structure/</link><description>Recent content in Data-Structure on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/data-structure/index.xml" rel="self" type="application/rss+xml"/><item><title>数据结构知识点总结</title><link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link><pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid><description>&lt;p>最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p>
-&lt;h1 id="树">树
-&lt;/h1>&lt;p>&lt;strong>树(Tree)&lt;strong>是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的__子树(SubTree)&lt;/strong>。节点拥有的子树的个数称为__节点的度(Degree)&lt;/strong>。
-度为0的节点称为__叶子节点(Leaf)&lt;strong>或__终端节点&lt;/strong>。不为0的称为__非终端节点__或__分支节点__。节点的子树的根称为该节点的__孩子(Child)&lt;strong>，相应的，该节点称为孩子的__双亲(Parent)&lt;/strong>。&lt;/p>
-&lt;p>如果将树中节点的各子树堪称从左至右是有次序的(即不能互换)，则称该树为__有序树__，否则为__无序树__。森林(Forest)是m(m&amp;gt;0)棵互不相交的树的集合。&lt;/p>
-&lt;h2 id="二叉树">二叉树
-&lt;/h2>&lt;p>__二叉树(Binary Tree)__中每个节点至多只有两颗子树(即二叉树中不存在度大于2的节点)，二叉树的子树有左右之分，其次序不能任意颠倒。&lt;/p>
-&lt;p>深度为k且有2^k-1个节点的二叉树称为__满二叉树__&lt;/p>
-&lt;p>二叉树的性质：&lt;/p>
-&lt;ol>
-&lt;li>在二叉树的第i层上至多有2ⁱ⁻¹个节点(i&amp;gt;1)。&lt;/li>
-&lt;li>深度为k的二叉树至多有2ᵏ⁻¹个节点(k&amp;gt;=1)。&lt;/li>
-&lt;li>对任何一棵二叉树T，如果其终端节点树为n₀,度为2的节点数为n₂,则n₀=n₂+1。&lt;/li>
-&lt;li>具有n个节点的完全二叉树的深度为Log₂n+1。&lt;/li>
-&lt;/ol>
-&lt;h3 id="avl树">AVL树
-&lt;/h3>&lt;p>AVL树是一种自平衡的二叉查找树，详见: &lt;a class="link" href="https://wanmei.ml/snow/post/avl-tree-study-note/" target="_blank" rel="noopener"
->AVL树学习笔记&lt;/a>&lt;/p>
-&lt;h3 id="遍历二叉树">遍历二叉树
-&lt;/h3>&lt;p>&lt;strong>遍历二叉树(Traversing Binary Tree)&lt;/strong>：按照某条搜索路径巡访树中每个节点，使得每个节点均被访问一次，而且仅被访问一次。&lt;/p>
-&lt;p>二叉树的遍历方法总共有六种，但是一般限定为先左后右，因此只剩下三种方式，分别是__先序遍历(DLR)__，&lt;strong>中序遍历(LDR)&lt;/strong>，&lt;strong>后序遍历(LRD)&lt;/strong>。&lt;/p>
-&lt;p>具体算法：&lt;/p>
-&lt;h3 id="线索二叉树">线索二叉树
-&lt;/h3>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: center">左子树&lt;/th>
-&lt;th style="text-align: center">左标志域&lt;/th>
-&lt;th style="text-align: center">数据&lt;/th>
-&lt;th style="text-align: center">右标志域&lt;/th>
-&lt;th style="text-align: center">右子树&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: center">lchild&lt;/td>
-&lt;td style="text-align: center">LTag&lt;/td>
-&lt;td style="text-align: center">data&lt;/td>
-&lt;td style="text-align: center">RTag&lt;/td>
-&lt;td style="text-align: center">rchild&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>LTag包括：0 lchild域所指节点的左孩子;1 lchild域所指节点的前驱&lt;/p>
-&lt;p>RTag包括：0 rchild域所指节点的右孩子;1 rchild域所指节点的后继&lt;/p>
-&lt;p>这种节点结构构成的额二叉链表作为二叉树的存储结构，称为__线索链表__。其中指向节点前驱和后继的指针，叫做__线索__。加上线索的二叉树称为__线索二叉树__。&lt;/p>
-&lt;h3 id="赫夫曼树">赫夫曼树
-&lt;/h3>&lt;p>__赫夫曼树__又称最优二叉树，即带权路径长度最短的树。&lt;/p>
-&lt;p>从树中一个节点到另一个节点之间的分支构成这两个节点之间的路径，路径上的分支数目称为__路径长度__。从树根到每个节点的路径长度之和称为__树的路径长度__。__树的带权路径长度__为树中所有叶子节点的带权路径长度之和，通常记作WPL=&lt;/p>
-&lt;h3 id="赫夫曼编码">赫夫曼编码
-&lt;/h3>&lt;h1 id="查找">查找
-&lt;/h1>&lt;h2 id="静态查找表">静态查找表
-&lt;/h2>&lt;p>为记录在查找表中的位置，需和给定值进行比较的关键字个数的期望值称为查找算法在查找成功时的__平均查找长度__。对于有n个记录的表，查找成功的平均查找长度为：ASL=&lt;/p>
-&lt;h2 id="动态查找表">动态查找表
-&lt;/h2>&lt;p>二叉排序树性质：&lt;/p>
-&lt;ol>
-&lt;li>若它的左子树不空，则左子树上所有节点的值均小于它根节点的值&lt;/li>
-&lt;li>若它的右子树不空，则右子树上所有节点的值均大于它根节点的值&lt;/li>
-&lt;li>它的左右子树也分别为二叉排序树&lt;/li>
-&lt;/ol>
-&lt;h2 id="哈希表">哈希表
-&lt;/h2>&lt;h1 id="排序方式">排序方式
-&lt;/h1>&lt;p>排序方式分为__内部排序__和__外部排序__，以下排序我会一一复习一遍并加入一些看法，篇幅可能会比较长。因此我会另开文章，专门进行讨论学习。先开个坑，慢慢写。&lt;/p>
-&lt;h2 id="内部排序">内部排序
-&lt;/h2>&lt;ol>
-&lt;li>插入排序:直接插入排序, 二分插入排序, 希尔排序&lt;/li>
-&lt;li>交换排序:冒泡排序, 快速排序&lt;/li>
-&lt;li>选择排序:直接选择排序, 堆排序&lt;/li>
-&lt;li>归并排序&lt;/li>
-&lt;li>基数排序&lt;/li>
-&lt;/ol>
-&lt;h3 id="插入排序">插入排序
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>直接插入排序&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>二分插入排序&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>希尔排序&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h3 id="交换排序">交换排序
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>&lt;a class="link" href="https://en.wikipedia.org/wiki/Bubble_sort" target="_blank" rel="noopener"
->冒泡排序&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a class="link" href="https://en.wikipedia.org/wiki/Quicksort" target="_blank" rel="noopener"
->快速排序&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h3 id="选择排序">选择排序
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>直接选择排序&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>堆排序&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h3 id="归并排序">归并排序
-&lt;/h3>&lt;h3 id="基数排序">基数排序
-&lt;/h3>&lt;h2 id="外部排序">外部排序
-&lt;/h2>&lt;p>外部排序于我个人而言不常用，因此以后用到在补吧。&lt;/p>
-&lt;h1 id="复杂度比较">复杂度比较
-&lt;/h1>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: center">排序算法&lt;/th>
-&lt;th style="text-align: center">平均时间复杂度&lt;/th>
-&lt;th style="text-align: center">最好情况&lt;/th>
-&lt;th style="text-align: center">最坏情况&lt;/th>
-&lt;th style="text-align: center">空间复杂度&lt;/th>
-&lt;th style="text-align: center">排序方式&lt;/th>
-&lt;th style="text-align: center">稳定性&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: center">冒泡排序&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(n)&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(1)&lt;/td>
-&lt;td style="text-align: center">In-Place&lt;/td>
-&lt;td style="text-align: center">稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">选择排序&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(1)&lt;/td>
-&lt;td style="text-align: center">In-Place&lt;/td>
-&lt;td style="text-align: center">不稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">插入排序&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(n)&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(1)&lt;/td>
-&lt;td style="text-align: center">In-Place&lt;/td>
-&lt;td style="text-align: center">稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">希尔排序&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n log^2 n)&lt;/td>
-&lt;td style="text-align: center">O(n log^2 n)&lt;/td>
-&lt;td style="text-align: center">O(1)&lt;/td>
-&lt;td style="text-align: center">In-Place&lt;/td>
-&lt;td style="text-align: center">不稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">归并排序&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n)&lt;/td>
-&lt;td style="text-align: center">Out-Place&lt;/td>
-&lt;td style="text-align: center">稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">快速排序&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(log n)&lt;/td>
-&lt;td style="text-align: center">In-Place&lt;/td>
-&lt;td style="text-align: center">不稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">堆排序&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(n log n)&lt;/td>
-&lt;td style="text-align: center">O(1)&lt;/td>
-&lt;td style="text-align: center">In-Place&lt;/td>
-&lt;td style="text-align: center">不稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">计数排序&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">O(k)&lt;/td>
-&lt;td style="text-align: center">Out-Place&lt;/td>
-&lt;td style="text-align: center">稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">桶排序&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">O(n^2)&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">Out-Place&lt;/td>
-&lt;td style="text-align: center">稳定&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: center">基数排序&lt;/td>
-&lt;td style="text-align: center">O(n*k)&lt;/td>
-&lt;td style="text-align: center">O(n*k)&lt;/td>
-&lt;td style="text-align: center">O(n*k)&lt;/td>
-&lt;td style="text-align: center">O(n+k)&lt;/td>
-&lt;td style="text-align: center">Out-Place&lt;/td>
-&lt;td style="text-align: center">稳定&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data-Structure on sherry's blog</title><link>https://ireflux.github.io/snow/tags/data-structure/</link><description>Recent content in Data-Structure on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/data-structure/index.xml" rel="self" type="application/rss+xml"/><item><title>数据结构知识点总结</title><link>https://ireflux.github.io/snow/post/summary-of-data-structure/</link><pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/summary-of-data-structure/</guid><description>&lt;p&gt;最近准备面试，复习一下数据结构，顺便总结下概念，加深印象，算法什么的以后慢慢补充～&lt;/p&gt;
+&lt;h1 id="树"&gt;树
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;树(Tree)&lt;strong&gt;是(n&amp;gt;=0)个节点的有限集。当n&amp;gt;0,其余节点可分为m(m&amp;gt;0)个互不相交的有限集的集合(e.g. 有限集T1,T2&amp;hellip;)，其中每个集合又是一棵树，称为根的__子树(SubTree)&lt;/strong&gt;。节点拥有的子树的个数称为__节点的度(Degree)&lt;/strong&gt;。
+度为0的节点称为__叶子节点(Leaf)&lt;strong&gt;或__终端节点&lt;/strong&gt;。不为0的称为__非终端节点__或__分支节点__。节点的子树的根称为该节点的__孩子(Child)&lt;strong&gt;，相应的，该节点称为孩子的__双亲(Parent)&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果将树中节点的各子树堪称从左至右是有次序的(即不能互换)，则称该树为__有序树__，否则为__无序树__。森林(Forest)是m(m&amp;gt;0)棵互不相交的树的集合。&lt;/p&gt;
+&lt;h2 id="二叉树"&gt;二叉树
+&lt;/h2&gt;&lt;p&gt;__二叉树(Binary Tree)__中每个节点至多只有两颗子树(即二叉树中不存在度大于2的节点)，二叉树的子树有左右之分，其次序不能任意颠倒。&lt;/p&gt;
+&lt;p&gt;深度为k且有2^k-1个节点的二叉树称为__满二叉树__&lt;/p&gt;
+&lt;p&gt;二叉树的性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在二叉树的第i层上至多有2ⁱ⁻¹个节点(i&amp;gt;1)。&lt;/li&gt;
+&lt;li&gt;深度为k的二叉树至多有2ᵏ⁻¹个节点(k&amp;gt;=1)。&lt;/li&gt;
+&lt;li&gt;对任何一棵二叉树T，如果其终端节点树为n₀,度为2的节点数为n₂,则n₀=n₂+1。&lt;/li&gt;
+&lt;li&gt;具有n个节点的完全二叉树的深度为Log₂n+1。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="avl树"&gt;AVL树
+&lt;/h3&gt;&lt;p&gt;AVL树是一种自平衡的二叉查找树，详见: &lt;a class="link" href="https://wanmei.ml/snow/post/avl-tree-study-note/" target="_blank" rel="noopener"
+&gt;AVL树学习笔记&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="遍历二叉树"&gt;遍历二叉树
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;遍历二叉树(Traversing Binary Tree)&lt;/strong&gt;：按照某条搜索路径巡访树中每个节点，使得每个节点均被访问一次，而且仅被访问一次。&lt;/p&gt;
+&lt;p&gt;二叉树的遍历方法总共有六种，但是一般限定为先左后右，因此只剩下三种方式，分别是__先序遍历(DLR)__，&lt;strong&gt;中序遍历(LDR)&lt;/strong&gt;，&lt;strong&gt;后序遍历(LRD)&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;具体算法：&lt;/p&gt;
+&lt;h3 id="线索二叉树"&gt;线索二叉树
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;左子树&lt;/th&gt;
+&lt;th style="text-align: center"&gt;左标志域&lt;/th&gt;
+&lt;th style="text-align: center"&gt;数据&lt;/th&gt;
+&lt;th style="text-align: center"&gt;右标志域&lt;/th&gt;
+&lt;th style="text-align: center"&gt;右子树&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;lchild&lt;/td&gt;
+&lt;td style="text-align: center"&gt;LTag&lt;/td&gt;
+&lt;td style="text-align: center"&gt;data&lt;/td&gt;
+&lt;td style="text-align: center"&gt;RTag&lt;/td&gt;
+&lt;td style="text-align: center"&gt;rchild&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;LTag包括：0 lchild域所指节点的左孩子;1 lchild域所指节点的前驱&lt;/p&gt;
+&lt;p&gt;RTag包括：0 rchild域所指节点的右孩子;1 rchild域所指节点的后继&lt;/p&gt;
+&lt;p&gt;这种节点结构构成的额二叉链表作为二叉树的存储结构，称为__线索链表__。其中指向节点前驱和后继的指针，叫做__线索__。加上线索的二叉树称为__线索二叉树__。&lt;/p&gt;
+&lt;h3 id="赫夫曼树"&gt;赫夫曼树
+&lt;/h3&gt;&lt;p&gt;__赫夫曼树__又称最优二叉树，即带权路径长度最短的树。&lt;/p&gt;
+&lt;p&gt;从树中一个节点到另一个节点之间的分支构成这两个节点之间的路径，路径上的分支数目称为__路径长度__。从树根到每个节点的路径长度之和称为__树的路径长度__。__树的带权路径长度__为树中所有叶子节点的带权路径长度之和，通常记作WPL=&lt;/p&gt;
+&lt;h3 id="赫夫曼编码"&gt;赫夫曼编码
+&lt;/h3&gt;&lt;h1 id="查找"&gt;查找
+&lt;/h1&gt;&lt;h2 id="静态查找表"&gt;静态查找表
+&lt;/h2&gt;&lt;p&gt;为记录在查找表中的位置，需和给定值进行比较的关键字个数的期望值称为查找算法在查找成功时的__平均查找长度__。对于有n个记录的表，查找成功的平均查找长度为：ASL=&lt;/p&gt;
+&lt;h2 id="动态查找表"&gt;动态查找表
+&lt;/h2&gt;&lt;p&gt;二叉排序树性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;若它的左子树不空，则左子树上所有节点的值均小于它根节点的值&lt;/li&gt;
+&lt;li&gt;若它的右子树不空，则右子树上所有节点的值均大于它根节点的值&lt;/li&gt;
+&lt;li&gt;它的左右子树也分别为二叉排序树&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="哈希表"&gt;哈希表
+&lt;/h2&gt;&lt;h1 id="排序方式"&gt;排序方式
+&lt;/h1&gt;&lt;p&gt;排序方式分为__内部排序__和__外部排序__，以下排序我会一一复习一遍并加入一些看法，篇幅可能会比较长。因此我会另开文章，专门进行讨论学习。先开个坑，慢慢写。&lt;/p&gt;
+&lt;h2 id="内部排序"&gt;内部排序
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;插入排序:直接插入排序, 二分插入排序, 希尔排序&lt;/li&gt;
+&lt;li&gt;交换排序:冒泡排序, 快速排序&lt;/li&gt;
+&lt;li&gt;选择排序:直接选择排序, 堆排序&lt;/li&gt;
+&lt;li&gt;归并排序&lt;/li&gt;
+&lt;li&gt;基数排序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="插入排序"&gt;插入排序
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接插入排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二分插入排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;希尔排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="交换排序"&gt;交换排序
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class="link" href="https://en.wikipedia.org/wiki/Bubble_sort" target="_blank" rel="noopener"
+&gt;冒泡排序&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class="link" href="https://en.wikipedia.org/wiki/Quicksort" target="_blank" rel="noopener"
+&gt;快速排序&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="选择排序"&gt;选择排序
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接选择排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;堆排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="归并排序"&gt;归并排序
+&lt;/h3&gt;&lt;h3 id="基数排序"&gt;基数排序
+&lt;/h3&gt;&lt;h2 id="外部排序"&gt;外部排序
+&lt;/h2&gt;&lt;p&gt;外部排序于我个人而言不常用，因此以后用到在补吧。&lt;/p&gt;
+&lt;h1 id="复杂度比较"&gt;复杂度比较
+&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;排序算法&lt;/th&gt;
+&lt;th style="text-align: center"&gt;平均时间复杂度&lt;/th&gt;
+&lt;th style="text-align: center"&gt;最好情况&lt;/th&gt;
+&lt;th style="text-align: center"&gt;最坏情况&lt;/th&gt;
+&lt;th style="text-align: center"&gt;空间复杂度&lt;/th&gt;
+&lt;th style="text-align: center"&gt;排序方式&lt;/th&gt;
+&lt;th style="text-align: center"&gt;稳定性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;冒泡排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(1)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;In-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;选择排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(1)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;In-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;插入排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(1)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;In-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;希尔排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log^2 n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log^2 n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(1)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;In-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;归并排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;Out-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;快速排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;In-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;堆排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n log n)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(1)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;In-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;计数排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;Out-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;桶排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n^2)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;Out-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;基数排序&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n*k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n*k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n*k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;O(n+k)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;Out-Place&lt;/td&gt;
+&lt;td style="text-align: center"&gt;稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>

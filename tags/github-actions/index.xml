@@ -1,81 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github Actions on sherry's blog</title><link>https://ireflux.github.io/snow/tags/github-actions/</link><description>Recent content in Github Actions on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Github Actions 每天自动发送比特币的估值邮件</title><link>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</link><pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</guid><description>&lt;p>前段时间，在阮一峰老师那里看到了&lt;a class="link" href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html" target="_blank" rel="noopener"
->GitHub Actions 入门教程&lt;/a>，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：&lt;a class="link" href="http://www.ruanyifeng.com/blog/2019/12/github_actions.html" target="_blank" rel="noopener"
->GitHub Actions 教程：定时发送天气邮件&lt;/a>，这又让我想起了这个功能，于是决定重新捡起来。&lt;/p>
-&lt;p>Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：&lt;/p>
-&lt;ul>
-&lt;li>2-core CPU&lt;/li>
-&lt;li>7 GB of RAM memory&lt;/li>
-&lt;li>14 GB of SSD disk space&lt;/li>
-&lt;/ul>
-&lt;p>但为什么说“部分”呢？因为它还有一些限制，以下引用来自 github：&lt;/p>
-&lt;ul>
-&lt;li>You can execute up to 1000 API requests in an hour across all actions within a repository.&lt;/li>
-&lt;li>Each job in a workflow can run for up to 6 hours of execution time.&lt;/li>
-&lt;/ul>
-&lt;p>如果需求不高，只是拿它来跑一些定时爬虫任务什么的还是很香的。&lt;/p>
-&lt;p>本次阮老师的文章里面用到了一个非常有趣的项目：&lt;a class="link" href="https://github.com/chubin/wttr.in" target="_blank" rel="noopener"
->wttr.in&lt;/a>，于是我又去找了一些类似的好玩的项目：&lt;/p>
-&lt;ol>
-&lt;li>&lt;a class="link" href="https://github.com/chubin/cheat.sh" target="_blank" rel="noopener"
->cheat.sh&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://github.com/chubin/rate.sx" target="_blank" rel="noopener"
->rate.sx&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>在这个项目里，我使用 &lt;a class="link" href="https://github.com/chubin/rate.sx" target="_blank" rel="noopener"
->rate.sx&lt;/a> 来每天向我发送各种币的估值信息以及比特币的估值曲线：&lt;/p>
-&lt;p>参考 rate.sx 的 README，直接获取各币种估值：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl rate.sx
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还可以获取单个币种的估值曲线如btc：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl rate.sx/btc
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>接下来配置 actions，在项目中创建文件夹 &lt;code>.github/workflows&lt;/code>，yml 配置文件必须放在 workflows 文件夹下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;Github Actions Bitcoin Bot&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">push&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">schedule&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">cron&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;0 20 * * *&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
-&lt;li>name： workflow 的名称&lt;/li>
-&lt;li>on： 任务触发条件&lt;/li>
-&lt;/ol>
-&lt;p>以上触发方式为push以及定时任务，定时任务将在 UTC 时间 20 点执行，也就是北京时间 4 点，详情见&lt;a class="link" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#scheduled-events-schedule" target="_blank" rel="noopener"
->文档&lt;/a>。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-latest&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Checkout codes&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Get Result&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">bash ./bitcoin.sh&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
-&lt;li>runs-on: 运行环境，官方目前提供了&lt;a class="link" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners" target="_blank" rel="noopener"
->四种虚拟环境&lt;/a>：Windows Server 2019，Ubuntu 18.04，Ubuntu 16.04，macOS Catalina 10.15&lt;/li>
-&lt;li>uses: 所使用的其他 actions，更多可见 &lt;a class="link" href="https://github.com/actions" target="_blank" rel="noopener"
->GitHub Actions&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>接下来是发送邮件:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Send mail&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">dawidd6/action-send-mail@master&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server_address&lt;/span>: &lt;span style="color:#ae81ff">smtp.163.com&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server_port&lt;/span>: &lt;span style="color:#ae81ff">465&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">username&lt;/span>: &lt;span style="color:#ae81ff">${{secrets.MAIL_USERNAME}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">password&lt;/span>: &lt;span style="color:#ae81ff">${{secrets.MAIL_PASSWORD}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">subject&lt;/span>: &lt;span style="color:#ae81ff">Bitcoin Rate Report&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">body&lt;/span>: &lt;span style="color:#ae81ff">file://result.html&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">to&lt;/span>: &lt;span style="color:#ae81ff">mapleblue2007@gmail.com&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">from&lt;/span>: &lt;span style="color:#ae81ff">GitHub Actions&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">content_type&lt;/span>: &lt;span style="color:#ae81ff">text/html&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以上的 username 和 password 可在仓库的 &lt;code>Setting -&amp;gt; Secrets&lt;/code> 添加，还有更多用法可见&lt;a class="link" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets" target="_blank" rel="noopener"
->官方文档&lt;/a>。&lt;/p>
-&lt;p>发送邮件的用法可见 &lt;a class="link" href="https://github.com/dawidd6/action-send-mail" target="_blank" rel="noopener"
->dawidd6/action-send-mail&lt;/a>&lt;/p>
-&lt;p>注： 开启 163 邮箱的 POP3/SMTP 服务，原来的密码处应填写为授权码。&lt;/p>
-&lt;h2 id="参考资料">参考资料
-&lt;/h2>&lt;ol>
-&lt;li>&lt;a class="link" href="https://help.github.com/en/actions" target="_blank" rel="noopener"
->https://help.github.com/en/actions&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://github.com/ruanyf/weather-action" target="_blank" rel="noopener"
->https://github.com/ruanyf/weather-action&lt;/a>&lt;/li>
-&lt;li>&lt;a class="link" href="https://github.com/dawidd6/action-send-mail" target="_blank" rel="noopener"
->https://github.com/dawidd6/action-send-mail&lt;/a>&lt;/li>
-&lt;/ol></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github Actions on sherry's blog</title><link>https://ireflux.github.io/snow/tags/github-actions/</link><description>Recent content in Github Actions on sherry's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ireflux.github.io/snow/tags/github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Github Actions 每天自动发送比特币的估值邮件</title><link>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</link><pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/send-mail-with-bitcoin-rate-everyday/</guid><description>&lt;p&gt;前段时间，在阮一峰老师那里看到了&lt;a class="link" href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html" target="_blank" rel="noopener"
+&gt;GitHub Actions 入门教程&lt;/a&gt;，于是自己也跑去申请了体验资格，然而玩了一下感觉太复杂就放弃了。时隔数日，Github Actions 正式发布了，阮老师又发布了一篇关于此的文章：&lt;a class="link" href="http://www.ruanyifeng.com/blog/2019/12/github_actions.html" target="_blank" rel="noopener"
+&gt;GitHub Actions 教程：定时发送天气邮件&lt;/a&gt;，这又让我想起了这个功能，于是决定重新捡起来。&lt;/p&gt;
+&lt;p&gt;Github Actions 对于个人用户来说确实是一个很棒的东西，因为它确实可以部分取代服务器，每个虚拟机的配置也足够：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2-core CPU&lt;/li&gt;
+&lt;li&gt;7 GB of RAM memory&lt;/li&gt;
+&lt;li&gt;14 GB of SSD disk space&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但为什么说“部分”呢？因为它还有一些限制，以下引用来自 github：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can execute up to 1000 API requests in an hour across all actions within a repository.&lt;/li&gt;
+&lt;li&gt;Each job in a workflow can run for up to 6 hours of execution time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果需求不高，只是拿它来跑一些定时爬虫任务什么的还是很香的。&lt;/p&gt;
+&lt;p&gt;本次阮老师的文章里面用到了一个非常有趣的项目：&lt;a class="link" href="https://github.com/chubin/wttr.in" target="_blank" rel="noopener"
+&gt;wttr.in&lt;/a&gt;，于是我又去找了一些类似的好玩的项目：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/chubin/cheat.sh" target="_blank" rel="noopener"
+&gt;cheat.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/chubin/rate.sx" target="_blank" rel="noopener"
+&gt;rate.sx&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在这个项目里，我使用 &lt;a class="link" href="https://github.com/chubin/rate.sx" target="_blank" rel="noopener"
+&gt;rate.sx&lt;/a&gt; 来每天向我发送各种币的估值信息以及比特币的估值曲线：&lt;/p&gt;
+&lt;p&gt;参考 rate.sx 的 README，直接获取各币种估值：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl rate.sx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还可以获取单个币种的估值曲线如btc：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl rate.sx/btc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来配置 actions，在项目中创建文件夹 &lt;code&gt;.github/workflows&lt;/code&gt;，yml 配置文件必须放在 workflows 文件夹下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml" data-lang="yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;Github Actions Bitcoin Bot&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;on&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;push&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;schedule&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;cron&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;0 20 * * *&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;name： workflow 的名称&lt;/li&gt;
+&lt;li&gt;on： 任务触发条件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以上触发方式为push以及定时任务，定时任务将在 UTC 时间 20 点执行，也就是北京时间 4 点，详情见&lt;a class="link" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#scheduled-events-schedule" target="_blank" rel="noopener"
+&gt;文档&lt;/a&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml" data-lang="yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;runs-on&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;ubuntu-latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;steps&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Checkout codes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;actions/checkout@v1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Get Result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;bash ./bitcoin.sh&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;runs-on: 运行环境，官方目前提供了&lt;a class="link" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners" target="_blank" rel="noopener"
+&gt;四种虚拟环境&lt;/a&gt;：Windows Server 2019，Ubuntu 18.04，Ubuntu 16.04，macOS Catalina 10.15&lt;/li&gt;
+&lt;li&gt;uses: 所使用的其他 actions，更多可见 &lt;a class="link" href="https://github.com/actions" target="_blank" rel="noopener"
+&gt;GitHub Actions&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;接下来是发送邮件:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml" data-lang="yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;- &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Send mail&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;dawidd6/action-send-mail@master&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;with&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;server_address&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;smtp.163.com&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;server_port&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;465&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;username&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{secrets.MAIL_USERNAME}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;password&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{secrets.MAIL_PASSWORD}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;subject&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Bitcoin Rate Report&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;body&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;file://result.html&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;to&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;mapleblue2007@gmail.com&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;from&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;GitHub Actions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;content_type&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;text/html&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上的 username 和 password 可在仓库的 &lt;code&gt;Setting -&amp;gt; Secrets&lt;/code&gt; 添加，还有更多用法可见&lt;a class="link" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets" target="_blank" rel="noopener"
+&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;发送邮件的用法可见 &lt;a class="link" href="https://github.com/dawidd6/action-send-mail" target="_blank" rel="noopener"
+&gt;dawidd6/action-send-mail&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注： 开启 163 邮箱的 POP3/SMTP 服务，原来的密码处应填写为授权码。&lt;/p&gt;
+&lt;h2 id="参考资料"&gt;参考资料
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://help.github.com/en/actions" target="_blank" rel="noopener"
+&gt;https://help.github.com/en/actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/ruanyf/weather-action" target="_blank" rel="noopener"
+&gt;https://github.com/ruanyf/weather-action&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/dawidd6/action-send-mail" target="_blank" rel="noopener"
+&gt;https://github.com/dawidd6/action-send-mail&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>
