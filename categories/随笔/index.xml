@@ -11,7 +11,7 @@
 &gt;PRoot&lt;/a&gt;，里面详细解释了 PRoot 和 Chroot 的区别，简单来说 PRoot 是通过 ptrace() 来劫持系统调用参数和返回值来伪造可见的文件系统布局或用户/组的 ID，会引起额外的开销，里面还提到了一个 APP： &lt;a class="link" href="https://github.com/meefik/linuxdeploy" target="_blank" rel="noopener"
 &gt;Linux Deploy&lt;/a&gt;，但需要 root 权限。考虑到我的手机性能，开销这种东西还是能少一点就少一点，于是果断选择换方案。&lt;/p&gt;
 &lt;p&gt;接下来就是常规获取 root 权限的过程了，一带而过：从线刷包里提取 boot.img -&amp;gt; magisk 修补 boot.img -&amp;gt; &lt;code&gt;fastboot flash boot boot.img&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，有一些 bug 也说不定。之后各处搜寻，最终还是找到了解决方案。&lt;/p&gt;
+&lt;p&gt;装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，事情也发生了一些变化也说不定。之后各处搜寻，最终还是找到了解决方案。&lt;/p&gt;
 &lt;p&gt;Linux Deploy 直接安装报错 log:&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;[11:40:17] &amp;gt;&amp;gt;&amp;gt; deploy
 [11:40:17] :: Installing bootstrap/rootfs ...
@@ -107,14 +107,41 @@
 [11:52:10] gcc-12.1.0-2.1 ... done
 [11:52:10] gcc-debug-12.1.0-2.1 ... fail
 [11:52:10] &amp;lt;&amp;lt;&amp;lt; deploy
-&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
-&lt;li&gt;首先要先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 &lt;a class="link" href="https://mirrors.ustc.edu.cn/archlinuxarm/os/" target="_blank" rel="noopener"
-&gt;USTC&lt;/a&gt;，下载我是放到了 &lt;code&gt;Download&lt;/code&gt; 目录下。&lt;/li&gt;
-&lt;li&gt;开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 &lt;code&gt;rootfs.tar&lt;/code&gt;，源地址写 &lt;code&gt;/storage/emulated/0/Download/[下载的镜像名称]&lt;/code&gt;，安装类型选择 &lt;code&gt;目录&lt;/code&gt;，安装路径要写 &lt;code&gt;/data/[后面随意命名]&lt;/code&gt;，其他选项就随意了，记得勾上 &lt;code&gt;启用SSH&lt;/code&gt; 就好。&lt;/li&gt;
-&lt;li&gt;点右上角菜单选择安装，日志上无明显报错即可。&lt;/li&gt;
-&lt;li&gt;SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="可选前置"&gt;可选前置
+&lt;/h3&gt;&lt;p&gt;这个作者提供了一个 &lt;a class="link" href="https://github.com/meefik/busybox" target="_blank" rel="noopener"
+&gt;BusyBox&lt;/a&gt;，可以提前把这个安装到手机中，里面提供了不少命令，后续可以用在 Linux Deploy 中。&lt;/p&gt;
+&lt;p&gt;在 BusyBox INSTALL 完成后，打开 Linux Deploy，&lt;code&gt;设置 -&amp;gt; Path 变量&lt;/code&gt; 中写上路径：&lt;code&gt;/system/xbin&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="arch-篇"&gt;Arch 篇
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;首先要先把 Archlinux 系统镜像下载下来，这个随便找个国内的镜像就好，比如 &lt;a class="link" href="https://mirrors.ustc.edu.cn/archlinuxarm/os/" target="_blank" rel="noopener"
+&gt;USTC&lt;/a&gt;，选择 &lt;code&gt;ArchLinuxARM-aarch64-latest.tar.gz&lt;/code&gt; 下载&lt;/li&gt;
+&lt;li&gt;开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 &lt;code&gt;rootfs.tar&lt;/code&gt;，架构根据设备自行选择，现代手机一般选 &lt;code&gt;arm64&lt;/code&gt;，源地址写镜像所在的位置，例如放到 &lt;code&gt;/storage/emulated/0/Download/[下载的镜像名称]&lt;/code&gt;，安装类型选择 &lt;code&gt;目录&lt;/code&gt;，安装路径写 &lt;code&gt;/data/[后面随意命名]&lt;/code&gt;，其他选项就随意了，记得勾上 &lt;code&gt;启用SSH&lt;/code&gt; 就好&lt;/li&gt;
+&lt;li&gt;点右上角菜单选择安装，日志上无明显报错即可&lt;/li&gt;
+&lt;li&gt;SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="debian-篇"&gt;Debian 篇
+&lt;/h3&gt;&lt;p&gt;Debian 是可以直接在 Linux Deploy 上配置好源地址直接下载的，但不能使用 &lt;code&gt;https&lt;/code&gt;，只能用 &lt;code&gt;http&lt;/code&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从 &lt;a class="link" href="https://www.debian.org/mirror/list.zh-cn.html" target="_blank" rel="noopener"
+&gt;Debian 全球镜像站&lt;/a&gt; 可以找到中国大陆的镜像源，有些镜像浏览器打开是没问题的，例如 USTC，清华源，然而配置到这个里面却一直是下载失败，不知道为什么。有一些就是可以正常下载安装的例如：&lt;a class="link" href="http://mirrors.zju.edu.cn" target="_blank" rel="noopener"
+&gt;浙江大学开源软件镜像站&lt;/a&gt;，&lt;a class="link" href="http://mirrors.163.com/debian" target="_blank" rel="noopener"
+&gt;网易163镜像站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;发行版选择 Debian，架构根据设备自行选择，现代手机一般选 arm64，发行版选 stable，源地址 &lt;code&gt;http://mirrors.163.com/debian&lt;/code&gt;,安装类型：目录，安装路径：&lt;code&gt;/data/linux/debian&lt;/code&gt;，其他选项根据需求选择，记得勾上 &lt;code&gt;启用SSH&lt;/code&gt; 就好&lt;/li&gt;
+&lt;li&gt;点右上角菜单选择安装，会存在部分包下载失败的情况，找个网络稳定的地方，多试几次就好了&lt;/li&gt;
+&lt;li&gt;等出现 &lt;code&gt;&amp;lt;&amp;lt;&amp;lt;deply&lt;/code&gt; 之后就可以点击启动了。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;完结。&lt;/p&gt;
+&lt;h2 id="更新证书"&gt;更新证书
+&lt;/h2&gt;&lt;p&gt;近日发现这个手机使用 via 访问网站总是提示证书过期，可以通过导入 &lt;a class="link" href="https://letsencrypt.org/" target="_blank" rel="noopener"
+&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; 的证书来解决这个问题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载 &lt;a class="link" href="https://letsencrypt.org/certs/isrgrootx1.pem" target="_blank" rel="noopener"
+&gt;ISRG Root X1&lt;/a&gt; 和 &lt;a class="link" href="https://letsencrypt.org/certs/isrg-root-x2.pem" target="_blank" rel="noopener"
+&gt;ISRG Root X2&lt;/a&gt; 证书，分别重命名为 &lt;code&gt;6187b673.0&lt;/code&gt; 和 &lt;code&gt;8794b4e3.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将这两个文件移动至 &lt;code&gt;/system/etc/security/cacerts/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重启手机&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;问题解决。&lt;/p&gt;
 &lt;h2 id="参考资料"&gt;参考资料
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;12 个可替代树莓派的单板机: &lt;a class="link" href="https://linux.cn/article-10823-1.html" target="_blank" rel="noopener"
@@ -509,7 +536,7 @@ tttr~ ttte~ eeeq~ qq0~
 ette~ ette~ [ig]~ [ig][ig][ig][uf]~ [ig]~ [ig][ig][ig][yd]~ [yd]~ [yd][yd][yd][PE]~ [PE][PE][PE][ep]~
 &lt;/code&gt;&lt;/pre&gt;</description></item><item><title>i3gaps 上触摸板的使用</title><link>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</link><pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate><guid>https://ireflux.github.io/snow/post/tap-to-click-not-working-on-i3gaps/</guid><description>&lt;p&gt;最近切换到了 i3gaps，发现触摸板的 tap to click 的功能不起作用，只有按键和二指滑动可用。看了下 Arch Wiki 后，发现只需要加一个配置文件就可以了。&lt;/p&gt;
 &lt;p&gt;在路径 &lt;code&gt;/etc/X11/xorg.conf.d/&lt;/code&gt; 下创建例如 30-touchpad.conf 这样的配置文件，并其中写入如下配置项：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Section &lt;span style="color:#e6db74"&gt;&amp;#34;InputClass&amp;#34;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Section &lt;span style="color:#e6db74"&gt;&amp;#34;InputClass&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Identifier &lt;span style="color:#e6db74"&gt;&amp;#34;touchpad&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; MatchIsTouchpad &lt;span style="color:#e6db74"&gt;&amp;#34;on&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Driver &lt;span style="color:#e6db74"&gt;&amp;#34;libinput&amp;#34;&lt;/span&gt;
@@ -1343,41 +1370,41 @@ src="https://music.163.com/outchain/player?type=2&amp;id=4881805&amp;auto=0&amp;
 &lt;blockquote&gt;
 &lt;p&gt;First, if you do not know your wireless device name, list all Wi-Fi devices:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# device list&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# device list&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;If the device or its corresponding adapter is turned off, turn it on:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# device device set-property Powered on &lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# device device set-property Powered on &lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# adapter adapter set-property Powered on&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Then, to initiate a scan for networks (note that this command will not output anything):&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# station device scan&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# station device scan&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;You can then list all available networks:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# station device get-networks&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# station device get-networks&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Finally, to connect to a network:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# station device connect SSID&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;iwd&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# station device connect SSID&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="更新系统时钟"&gt;更新系统时钟
 &lt;/h3&gt;&lt;p&gt;默认情况下连上网络就会自动更新的，可以用以下命令查看一下：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# timedatectl&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# timedatectl&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="分区"&gt;分区
 &lt;/h3&gt;&lt;p&gt;这里只写使用 64-bit x64 UEFI 引导启动的情况，毕竟 2023 年了，32-bit IA32 UEFI 和 MBR 越来越少了&lt;/p&gt;
 &lt;p&gt;还是要查看一下启动模式：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# cat /sys/firmware/efi/fw_platform_size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# cat /sys/firmware/efi/fw_platform_size&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;返回结果的解释，这里就直接复制官网了：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired (UEFI vs BIOS), refer to your motherboard&amp;rsquo;s manual.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果上面的命令返回 64 的话，就可以继续了，其他情况可以 return 了 🤣&lt;/p&gt;
 &lt;p&gt;首先查看分区：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# fdisk -l&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# fdisk -l&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就会看到磁盘例如 &lt;code&gt;/dev/sda&lt;/code&gt;, &lt;code&gt;/dev/sdb&lt;/code&gt; ，或者已有的分区例如 &lt;code&gt;/dev/sda1&lt;/code&gt;,&lt;code&gt;/dev/sda2&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;假设 &lt;code&gt;/dev/sda&lt;/code&gt; 是一个全新的、未创建分区表的磁盘，输入以下命令开始操作 &lt;code&gt;/dev/sda&lt;/code&gt; ：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# fdisk /dev/sda&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# fdisk /dev/sda&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述命令执行完后，输入 &lt;code&gt;m&lt;/code&gt; 可以查看 help&lt;/p&gt;
 &lt;p&gt;首先创建 UEFI 引导分区，输入 &lt;code&gt;g&lt;/code&gt; 创建一个 GPT 分区表，然后输入 &lt;code&gt;n&lt;/code&gt; 新建分区，起始序号和 First sector 默认回车就行，Last sector 输入 &lt;code&gt;+512M&lt;/code&gt; 回车，创建完默认是类型 &lt;code&gt;Linux filesystem&lt;/code&gt;，输入 &lt;code&gt;p&lt;/code&gt; 可以查看新创建的分区，输入 &lt;code&gt;t&lt;/code&gt; 选择分区序号来修改分区类型，输入 &lt;code&gt;l&lt;/code&gt; 可以查看&lt;a class="link" href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs" target="_blank" rel="noopener"
 &gt;所有的类型&lt;/a&gt;，输入 &lt;code&gt;uefi&lt;/code&gt; 将分区类型修改为 EFI。然后再次输入 &lt;code&gt;n&lt;/code&gt; 创建 root 分区，一路回车默认即可，最后输入 &lt;code&gt;w&lt;/code&gt; 保存&lt;/p&gt;
@@ -1419,62 +1446,62 @@ src="https://music.163.com/outchain/player?type=2&amp;id=4881805&amp;auto=0&amp;
 &lt;p&gt;To prevent potential issues with other operating systems and since the UEFI specification says that UEFI &amp;ldquo;encompasses the use of FAT32 for a system partition, and FAT12 or FAT16 for removable media&amp;rdquo;[5], it is recommended to use FAT32.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;所以格式化 EFI 分区输入如下命令:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkfs.fat -F 32 /dev/sda1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkfs.fat -F 32 /dev/sda1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后格式化 root 分区：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkfs.ext4 /dev/sda2&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkfs.ext4 /dev/sda2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="挂载文件系统"&gt;挂载文件系统
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkdir /mnt/boot&lt;/span&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkdir /mnt/boot&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mount /dev/sda1 /mnt/boot&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mount /dev/sda2 /mnt&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装"&gt;安装
 &lt;/h2&gt;&lt;h3 id="选择镜像"&gt;选择镜像
 &lt;/h3&gt;&lt;p&gt;编辑以下文件：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# vim /etc/pacman.d/mirrorlist&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# vim /etc/pacman.d/mirrorlist&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;将 &lt;code&gt;Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch&lt;/code&gt; 放到第一行，保存退出&lt;/p&gt;
 &lt;h3 id="安装必要的软件包"&gt;安装必要的软件包
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacstrap -K /mnt base linux linux-firmware&lt;/span&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacstrap -K /mnt base linux linux-firmware&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="系统配置"&gt;系统配置
 &lt;/h2&gt;&lt;h3 id="生成-fstab-文件"&gt;生成 fstab 文件
 &lt;/h3&gt;&lt;p&gt;执行下面的命令:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看生成的结果:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# cat /mnt/etc/fstab&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# cat /mnt/etc/fstab&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="chroot"&gt;Chroot
 &lt;/h3&gt;&lt;p&gt;执行以下命令切换到新系统:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# arch-chroot /mnt&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# arch-chroot /mnt&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="设置时区"&gt;设置时区
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;生成 &lt;code&gt;/etc/adjtime&lt;/code&gt; 文件：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# hwclock --systohc&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# hwclock --systohc&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="本地化"&gt;本地化
 &lt;/h3&gt;&lt;p&gt;编辑文件 &lt;code&gt;/etc/locale.gen&lt;/code&gt;，找到 &lt;code&gt;en_US.UTF-8 UTF-8&lt;/code&gt; 这一行并取消注释，然后保存&lt;/p&gt;
 &lt;p&gt;执行以下命令生成 locales：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# locale-gen&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# locale-gen&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;编辑文件 &lt;code&gt;/etc/locale.conf&lt;/code&gt;（没有就创建），然后写入 &lt;code&gt;LANG=en_US.UTF-8&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id="网络配置"&gt;网络配置
 &lt;/h3&gt;&lt;p&gt;创建 &lt;code&gt;/etc/hostname&lt;/code&gt; 文件，写入:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# echo &amp;#34;arch&amp;#34; &amp;gt;&amp;gt; /etc/hostname&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# echo &amp;#34;arch&amp;#34; &amp;gt;&amp;gt; /etc/hostname&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;编辑 &lt;code&gt;/etc/hosts&lt;/code&gt; 文件:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# echo -e &amp;#34;127.0.0.1 localhost\n::1 localhost\n127.0.1.1 arch.localdomain arch&amp;#34; &amp;gt;&amp;gt; /etc/hosts&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="修改密码"&gt;修改密码
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# passwd&lt;/span&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# passwd&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="boot-loader"&gt;Boot loader
 &lt;/h3&gt;&lt;p&gt;不同的 CPU 需要安装不同的 Microcode：&lt;/p&gt;
 &lt;p&gt;AMD CPU 安装：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S amd-ucode &lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S amd-ucode &lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Intel CPU 安装：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S intel-ucode&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S intel-ucode&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来安装 GRUB：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S grub efibootmgr&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S grub efibootmgr&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后执行：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;配置 GRUB：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# grub-mkconfig -o /boot/grub/grub.cfg&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# grub-mkconfig -o /boot/grub/grub.cfg&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="安装软件"&gt;安装软件
 &lt;/h3&gt;&lt;p&gt;顺便再装一些必要的软件:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S sudo vim dhcpcd netctl wpa_supplicant&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pacman -S sudo vim dhcpcd netctl wpa_supplicant&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="重启"&gt;重启
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# exit&lt;/span&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# exit&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# umount /mnt/boot&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# umount /mnt&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# reboot&lt;/span&gt;
@@ -1495,14 +1522,14 @@ src="https://music.163.com/outchain/player?type=2&amp;id=4881805&amp;auto=0&amp;
 指定用户登录 shell 的路径，例如：&lt;code&gt;/bin/bash&lt;/code&gt;。另外也可以去 &lt;code&gt;/etc/shells&lt;/code&gt; 这个文件查看来确定 shell 路径&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;执行以下命令创建普通用户，替换中括号及其内容&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# useradd -m -G [additional_groups] -s [login_shell] [username]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="创建-swap-文件"&gt;创建 Swap 文件
 &lt;/h3&gt;&lt;p&gt;以创建 8 GiB Swap 文件为例：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;设置权限：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# chmod 0600 /swapfile&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# chmod 0600 /swapfile&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;格式化为 Swap:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkswap -U clear /swapfile&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# mkswap -U clear /swapfile&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后编辑 &lt;code&gt;/etc/fstab&lt;/code&gt; 文件，将这一行 &lt;code&gt;/swapfile none swap defaults 0 0&lt;/code&gt; 添加进去&lt;/p&gt;
 &lt;h2 id="参考资料"&gt;参考资料
 &lt;/h2&gt;&lt;ol&gt;

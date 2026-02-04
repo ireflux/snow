@@ -84,7 +84,7 @@
 &lt;/table&gt;
 &lt;h3 id="启动-weechat"&gt;启动 WeeChat
 &lt;/h3&gt;&lt;p&gt;只需在终端中输入以下命令，回车即可：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ WeeChat
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ WeeChat
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果你发现启动后出现了一些诸如 &lt;code&gt;Errors loading plugins&lt;/code&gt; 之类的错误，是因为 WeeChat 启动时会默认加载这些插件，而你并未安装这些插件所需运行时所致。&lt;/p&gt;
 &lt;p&gt;如果想要消除这些错误信息，可以使用以下两种方法：&lt;/p&gt;
 &lt;ol&gt;

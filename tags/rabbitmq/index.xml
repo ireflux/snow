@@ -28,11 +28,11 @@
 &gt;解决方案&lt;/a&gt;，安装过程此处不再赘述。&lt;/p&gt;
 &lt;p&gt;安装完毕之后，其他一些需要注意的地方：比如说默认情况下端口号是 5672，HTTP的端口是 15672，更多默认端口可以参考&lt;a class="link" href="https://www.rabbitmq.com/install-debian.html#ports" target="_blank" rel="noopener"
 &gt;这里&lt;/a&gt;。RabbitMQ 自带了一个管理界面，如若要开启这个 WEB 界面，需要开启一个插件，只需要输入以下命令即可开启：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmq-plugins enable rabbitmq_management
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmq-plugins enable rabbitmq_management
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后访问 &lt;code&gt;ip:15672&lt;/code&gt; 这个地址，这样就可以愉快的使用图形化界面来管理 RabbitMQ 了，更多详情还可以看&lt;a class="link" href="https://www.rabbitmq.com/management.html" target="_blank" rel="noopener"
 &gt;这里&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;默认情况下还会有一个默认的账户用于登录，账户名和密码都是：guest，而且只能从本机上连接。一般正常使用过程中都是需要装在服务器上，然后远程连接的，新创建一个账户就没有这个限制了。可以使用上面那个图形化界面来添加账户，也可以使用 rabbitmqctl 来创建。命令如下：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl add_user username password
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl add_user username password
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl set_user_tags username administrator
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ rabbitmqctl set_permissions -p / username &lt;span style="color:#e6db74"&gt;&amp;#34;.*&amp;#34;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;.*&amp;#34;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;.*&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上命令大概看英文就知道命令是做什么用的，几乎不用解释，更多关于权限控制的可以看&lt;a class="link" href="https://www.rabbitmq.com/access-control.html" target="_blank" rel="noopener"
