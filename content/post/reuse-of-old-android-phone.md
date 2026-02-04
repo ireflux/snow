@@ -23,7 +23,7 @@ author: "sherry"
 
 接下来就是常规获取 root 权限的过程了，一带而过：从线刷包里提取 boot.img -> magisk 修补 boot.img -> `fastboot flash boot boot.img`
 
-装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，有一些 bug 也说不定。之后各处搜寻，最终还是找到了解决方案。
+装完 Linux Deploy 后，本以为接下来会顺利一点，但没想到仍然遇到了一些坑。安装选的 Arch，但每次装到 gcc-debug 这个包这里就会 fail，然后就没有然后了，无论是官方的源还是国内镜像源，都是同样的错误。考虑到这个软件停更了，最新的版本还停留在 2020 年 2 月份，两年过去了，事情也发生了一些变化也说不定。之后各处搜寻，最终还是找到了解决方案。
 
 Linux Deploy 直接安装报错 log:
 
@@ -123,13 +123,38 @@ Linux Deploy 直接安装报错 log:
 [11:52:10] gcc-debug-12.1.0-2.1 ... fail
 [11:52:10] <<< deploy
 ```
+### 可选前置
 
-1. 首先要先把 Archlinuxarm 系统镜像下载下来，这个随便找个国内的镜像就好，比如 [USTC](https://mirrors.ustc.edu.cn/archlinuxarm/os/)，下载我是放到了 `Download` 目录下。
-2. 开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 `rootfs.tar`，源地址写 `/storage/emulated/0/Download/[下载的镜像名称]`，安装类型选择 `目录`，安装路径要写 `/data/[后面随意命名]`，其他选项就随意了，记得勾上 `启用SSH` 就好。
-3. 点右上角菜单选择安装，日志上无明显报错即可。
-4. SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建。
+这个作者提供了一个 [BusyBox](https://github.com/meefik/busybox)，可以提前把这个安装到手机中，里面提供了不少命令，后续可以用在 Linux Deploy 中。
+
+在 BusyBox INSTALL 完成后，打开 Linux Deploy，`设置 -> Path 变量` 中写上路径：`/system/xbin`
+
+### Arch 篇
+
+1. 首先要先把 Archlinux 系统镜像下载下来，这个随便找个国内的镜像就好，比如 [USTC](https://mirrors.ustc.edu.cn/archlinuxarm/os/)，选择 `ArchLinuxARM-aarch64-latest.tar.gz` 下载
+2. 开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 `rootfs.tar`，架构根据设备自行选择，现代手机一般选 `arm64`，源地址写镜像所在的位置，例如放到 `/storage/emulated/0/Download/[下载的镜像名称]`，安装类型选择 `目录`，安装路径写 `/data/[后面随意命名]`，其他选项就随意了，记得勾上 `启用SSH` 就好
+3. 点右上角菜单选择安装，日志上无明显报错即可
+4. SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建
+
+### Debian 篇
+
+Debian 是可以直接在 Linux Deploy 上配置好源地址直接下载的，但不能使用 `https`，只能用 `http`。
+1. 从 [Debian 全球镜像站](https://www.debian.org/mirror/list.zh-cn.html) 可以找到中国大陆的镜像源，有些镜像浏览器打开是没问题的，例如 USTC，清华源，然而配置到这个里面却一直是下载失败，不知道为什么。有一些就是可以正常下载安装的例如：[浙江大学开源软件镜像站](http://mirrors.zju.edu.cn)，[网易163镜像站](http://mirrors.163.com/debian)
+2. 发行版选择 Debian，架构根据设备自行选择，现代手机一般选 arm64，发行版选 stable，源地址 `http://mirrors.163.com/debian`,安装类型：目录，安装路径：`/data/linux/debian`，其他选项根据需求选择，记得勾上 `启用SSH` 就好
+3. 点右上角菜单选择安装，会存在部分包下载失败的情况，找个网络稳定的地方，多试几次就好了
+4. 等出现 `<<<deply` 之后就可以点击启动了。
 
 完结。
+
+## 更新证书
+
+近日发现这个手机使用 via 访问网站总是提示证书过期，可以通过导入 [Let's Encrypt](https://letsencrypt.org/) 的证书来解决这个问题。
+
+1. 下载 [ISRG Root X1](https://letsencrypt.org/certs/isrgrootx1.pem) 和 [ISRG Root X2](https://letsencrypt.org/certs/isrg-root-x2.pem) 证书，分别重命名为 `6187b673.0` 和 `8794b4e3.0`
+2. 将这两个文件移动至 `/system/etc/security/cacerts/`
+3. 重启手机
+
+问题解决。
 
 ## 参考资料
 
