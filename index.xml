@@ -115,9 +115,9 @@
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;首先要先把 Archlinux 系统镜像下载下来，这个随便找个国内的镜像就好，比如 &lt;a class="link" href="https://mirrors.ustc.edu.cn/archlinuxarm/os/" target="_blank" rel="noopener"
 &gt;USTC&lt;/a&gt;，选择 &lt;code&gt;ArchLinuxARM-aarch64-latest.tar.gz&lt;/code&gt; 下载&lt;/li&gt;
-&lt;li&gt;开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 &lt;code&gt;rootfs.tar&lt;/code&gt;，架构根据设备自行选择，现代手机一般选 &lt;code&gt;arm64&lt;/code&gt;，源地址写镜像所在的位置，例如放到 &lt;code&gt;/storage/emulated/0/Download/[下载的镜像名称]&lt;/code&gt;，安装类型选择 &lt;code&gt;目录&lt;/code&gt;，安装路径写 &lt;code&gt;/data/[后面随意命名]&lt;/code&gt;，其他选项就随意了，记得勾上 &lt;code&gt;启用SSH&lt;/code&gt; 就好&lt;/li&gt;
-&lt;li&gt;点右上角菜单选择安装，日志上无明显报错即可&lt;/li&gt;
-&lt;li&gt;SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建&lt;/li&gt;
+&lt;li&gt;开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 &lt;code&gt;rootfs.tar&lt;/code&gt;，架构根据设备自行选择，现代手机一般选 &lt;code&gt;arm64&lt;/code&gt;，源地址写镜像所在的位置，例如放到 &lt;code&gt;/storage/emulated/0/Download/[下载的镜像名称]&lt;/code&gt;，安装类型选择 &lt;code&gt;目录&lt;/code&gt;，安装路径例如写 &lt;code&gt;/data/linux/archlinux&lt;/code&gt;，勾选 &lt;code&gt;初始化系统&lt;/code&gt;，勾选 &lt;code&gt;启用SSH&lt;/code&gt;，自行设置用户名和用户密码，其他根据需要勾选。&lt;/li&gt;
+&lt;li&gt;点右上角菜单选择安装，日志上无明显报错即可，然后点击启动。&lt;/li&gt;
+&lt;li&gt;SSH 进入装好的 Arch，默认的 resolv.conf 为空，删掉 resolv.conf 重建&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="debian-篇"&gt;Debian 篇
 &lt;/h3&gt;&lt;p&gt;Debian 是可以直接在 Linux Deploy 上配置好源地址直接下载的，但不能使用 &lt;code&gt;https&lt;/code&gt;，只能用 &lt;code&gt;http&lt;/code&gt;。&lt;/p&gt;
@@ -126,8 +126,8 @@
 &gt;Debian 全球镜像站&lt;/a&gt; 可以找到中国大陆的镜像源，有些镜像浏览器打开是没问题的，例如 USTC，清华源，然而配置到这个里面却一直是下载失败，不知道为什么。有一些就是可以正常下载安装的例如：&lt;a class="link" href="http://mirrors.zju.edu.cn" target="_blank" rel="noopener"
 &gt;浙江大学开源软件镜像站&lt;/a&gt;，&lt;a class="link" href="http://mirrors.163.com/debian" target="_blank" rel="noopener"
 &gt;网易163镜像站&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;发行版选择 Debian，架构根据设备自行选择，现代手机一般选 arm64，发行版选 stable，源地址 &lt;code&gt;http://mirrors.163.com/debian&lt;/code&gt;,安装类型：目录，安装路径：&lt;code&gt;/data/linux/debian&lt;/code&gt;，其他选项根据需求选择，记得勾上 &lt;code&gt;启用SSH&lt;/code&gt; 就好&lt;/li&gt;
-&lt;li&gt;点右上角菜单选择安装，会存在部分包下载失败的情况，找个网络稳定的地方，多试几次就好了&lt;/li&gt;
+&lt;li&gt;发行版选择 Debian，架构根据设备自行选择，现代手机一般选 arm64，发行版选 stable，源地址 &lt;code&gt;http://mirrors.163.com/debian&lt;/code&gt;，安装类型：目录，安装路径：&lt;code&gt;/data/linux/debian&lt;/code&gt;，勾选 &lt;code&gt;初始化系统&lt;/code&gt;，勾选 &lt;code&gt;启用SSH&lt;/code&gt;，自行设置用户名和用户密码，其他根据需要勾选。&lt;/li&gt;
+&lt;li&gt;点右上角菜单选择安装&lt;/li&gt;
 &lt;li&gt;等出现 &lt;code&gt;&amp;lt;&amp;lt;&amp;lt;deply&lt;/code&gt; 之后就可以点击启动了。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;完结。&lt;/p&gt;
