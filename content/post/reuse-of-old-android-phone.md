@@ -132,16 +132,16 @@ Linux Deploy 直接安装报错 log:
 ### Arch 篇
 
 1. 首先要先把 Archlinux 系统镜像下载下来，这个随便找个国内的镜像就好，比如 [USTC](https://mirrors.ustc.edu.cn/archlinuxarm/os/)，选择 `ArchLinuxARM-aarch64-latest.tar.gz` 下载
-2. 开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 `rootfs.tar`，架构根据设备自行选择，现代手机一般选 `arm64`，源地址写镜像所在的位置，例如放到 `/storage/emulated/0/Download/[下载的镜像名称]`，安装类型选择 `目录`，安装路径写 `/data/[后面随意命名]`，其他选项就随意了，记得勾上 `启用SSH` 就好
-3. 点右上角菜单选择安装，日志上无明显报错即可
-4. SSH 进入装好的 Arch，默认的 DNS 有问题，删掉 resolv.conf 重建
+2. 开始 Linux Deploy 相关设置，打开 Linux Deploy，发行版选择 `rootfs.tar`，架构根据设备自行选择，现代手机一般选 `arm64`，源地址写镜像所在的位置，例如放到 `/storage/emulated/0/Download/[下载的镜像名称]`，安装类型选择 `目录`，安装路径例如写 `/data/linux/archlinux`，勾选 `初始化系统`，勾选 `启用SSH`，自行设置用户名和用户密码，其他根据需要勾选。
+3. 点右上角菜单选择安装，日志上无明显报错即可，然后点击启动。
+4. SSH 进入装好的 Arch，默认的 resolv.conf 为空，删掉 resolv.conf 重建
 
 ### Debian 篇
 
 Debian 是可以直接在 Linux Deploy 上配置好源地址直接下载的，但不能使用 `https`，只能用 `http`。
 1. 从 [Debian 全球镜像站](https://www.debian.org/mirror/list.zh-cn.html) 可以找到中国大陆的镜像源，有些镜像浏览器打开是没问题的，例如 USTC，清华源，然而配置到这个里面却一直是下载失败，不知道为什么。有一些就是可以正常下载安装的例如：[浙江大学开源软件镜像站](http://mirrors.zju.edu.cn)，[网易163镜像站](http://mirrors.163.com/debian)
-2. 发行版选择 Debian，架构根据设备自行选择，现代手机一般选 arm64，发行版选 stable，源地址 `http://mirrors.163.com/debian`,安装类型：目录，安装路径：`/data/linux/debian`，其他选项根据需求选择，记得勾上 `启用SSH` 就好
-3. 点右上角菜单选择安装，会存在部分包下载失败的情况，找个网络稳定的地方，多试几次就好了
+2. 发行版选择 Debian，架构根据设备自行选择，现代手机一般选 arm64，发行版选 stable，源地址 `http://mirrors.163.com/debian`，安装类型：目录，安装路径：`/data/linux/debian`，勾选 `初始化系统`，勾选 `启用SSH`，自行设置用户名和用户密码，其他根据需要勾选。
+3. 点右上角菜单选择安装
 4. 等出现 `<<<deply` 之后就可以点击启动了。
 
 完结。
